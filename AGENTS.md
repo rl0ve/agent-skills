@@ -37,6 +37,27 @@ Treat every match as a review prompt, not a verdict. Patterns are evidence in cl
 
 Tests: `cd plugins/natural-writing/skills/natural-writing && python3 -m unittest discover -s tests`
 
+## design-router (Codex)
+
+`codex/design-router/` is the Codex-native sibling of `claude-ui-router`: it routes UI,
+UX, design-review, motion, design-to-code and interface-copy work through a researched
+skill catalog and whatever is actually installed.
+
+```bash
+./codex/install.sh                 # copies the skill into ~/.codex/skills
+./codex/install.sh --target agents # or an AGENTS.md-style location
+./codex/install.sh --dry-run       # show what it would do; no network, no third-party installs
+```
+
+`codex/guide/index.html` is a standalone field guide (open it directly) and
+`codex/router-data.json` is the structured data behind it.
+
+**Reconciled with the Claude port.** The two forked on 2026-08-16. Content the Claude
+side learned since has been brought across - most importantly the writing route, which
+used to chain three humanizers in sequence and now uses `natural-writing` as the single
+context-holding editor with the others as fallbacks. Platform specifics stay different
+on purpose: Codex hooks, `codex-plugin` installs, and Codex portability notes.
+
 ## For Claude Code
 
 This repo is also a plugin marketplace.
