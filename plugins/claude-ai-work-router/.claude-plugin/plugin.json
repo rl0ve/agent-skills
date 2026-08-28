@@ -1,0 +1,16 @@
+{
+  "name": "claude-ai-work-router",
+  "version": "1.0.0",
+  "description": "Route Claude Code work across the parent session and bounded Haiku, Sonnet, Opus, or Fable agents while controlling latency, token use, and write ownership.",
+  "author": {
+    "name": "Robert Love"
+  },
+  "keywords": [
+    "claude-code",
+    "routing",
+    "models",
+    "effort",
+    "tokens",
+    "latency"
+  ]
+}

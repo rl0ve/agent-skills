@@ -1,0 +1,19 @@
+{
+  "name": "claude-ui-router",
+  "version": "1.2.0",
+  "description": "Route Claude Code UI and frontend work through canonical and available skill chains, with Natural Writing as a verified companion rather than an assumed install. Last updated: 2026-08-22.",
+  "author": {
+    "name": "Robert Love"
+  },
+  "keywords": [
+    "claude-code",
+    "ui",
+    "design",
+    "frontend",
+    "skills",
+    "routing",
+    "copy",
+    "writing",
+    "anti-slop"
+  ]
+}

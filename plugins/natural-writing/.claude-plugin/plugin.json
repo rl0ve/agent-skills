@@ -1,0 +1,18 @@
+{
+  "name": "natural-writing",
+  "version": "1.8.0",
+  "description": "Diagnose, edit, rewrite, or draft natural prose while preserving facts, formatting, intent, register, and author voice.",
+  "author": {
+    "name": "Robert Love"
+  },
+  "keywords": [
+    "writing",
+    "editing",
+    "natural-prose",
+    "reader-ready",
+    "voice",
+    "claude-code",
+    "product-copy",
+    "executive-writing"
+  ]
+}
