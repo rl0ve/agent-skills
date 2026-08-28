@@ -18,7 +18,7 @@ Status language:
 | `interface-design` | `Dammyjay93/interface-design` | Product and dashboard design lead | Apps, dashboards, admin, tools, settings, data interfaces | canonical |
 | `ui-ux-pro-max` | `nextlevelbuilder/ui-ux-pro-max-skill` | Broad UI/UX rule and style library | Fallback or broad exploration, not the default lead | canonical |
 | `paperclip` | `getpaperclipai/paperclip` · `design-guide` | Opinionated product design guide | Alternative product/app lead | lower confidence |
-| `frontend-design` | Anthropic's official Claude Code plugin or `anthropics/skills` | General aesthetic frontend baseline | Installed fallback when a canonical specialist is unavailable | compatibility fallback |
+| `frontend-design` | `anthropics/skills`, or the equivalent plugin for your agent | General aesthetic frontend baseline | Installed fallback when a canonical specialist is unavailable | compatibility fallback |
 
 ## Persistent operating layer
 
@@ -81,7 +81,7 @@ Impeccable modes are part of routing: **Persuade** for marketing, **Operate** fo
 
 | Key | Upstream | Role | Use | Research status |
 |---|---|---|---|---|
-| `natural-writing` | Companion Claude plugin synthesized from high-quality writing and editing sources | Voice-preserving editor and anti-slop router | Default final editor for standalone prose, interface copy, marketing copy, documentation, and executive writing | companion; verify installed |
+| `natural-writing` | This repository (`plugins/natural-writing`), tool-neutral | Voice-preserving editor and anti-slop router | Default final editor for standalone prose, interface copy, marketing copy, documentation, and executive writing | companion; verify installed |
 | `no-ai-slop` | `petergyang/no-ai-slop` | Concise, voice-preserving removal of AI tells | Anti-slop primary | canonical |
 | `blader-humanizer` | `blader/humanizer` | General AI-tell removal | Fallback editor when Natural Writing is unavailable | canonical |
 | `write-like-me` | `dookaloosy/write-like-me` | Derive a reusable voice profile from writing samples | Voice calibration | canonical |
@@ -108,7 +108,7 @@ Keep these as watchlist entries. Do not imply endorsement or installation withou
 | Gap | Candidate | Judgment |
 |---|---|---|
 | Web data visualization and charts | `openai/plugins` · `build-web-data-visualization` | Strong, distinct orchestration reference from OpenAI's plugin repository. Keep on the watchlist until the complete plugin and its sibling references can be installed together; do not extract the single router skill by itself. |
-| Mobile-native UI | `mdrmuhaimin/agentic-skills` · `mobile-ui-ux-designer` | Detailed candidate, but not promoted into a default Claude chain without more adoption and maintenance evidence. |
+| Mobile-native UI | `mdrmuhaimin/agentic-skills` · `mobile-ui-ux-designer` | Detailed candidate, but not promoted into a default chain without more adoption and maintenance evidence. |
 | Complex forms | Existing `interface-design`, Impeccable, Jakub accessibility, Addy quality, and `open-dashboard` coverage | No clearly superior standalone specialist surfaced. Preserve this as a real gap instead of padding the stack with a weak candidate. |
 | Email design | Corey Haines email/marketing skills plus framework-native React Email or MJML documentation | No strong dedicated agent skill surfaced. Keep the route at marketing craft plus implementation documentation. |
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Plan or install explicitly selected Design Router dependencies.
+"""Plan or install explicitly selected Claude UI Router dependencies.
 
 The default behavior is read-only. Pass --execute to run the printed commands.
-No command is evaluated by a shell.
+Commands are passed to subprocess as argument arrays and are never evaluated by a shell.
 """
 
 from __future__ import annotations
@@ -19,7 +19,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CATALOG_PATH = ROOT / "references" / "optional-skills.json"
+CATALOG_PATH = ROOT / "skills" / "route-ui-work" / "references" / "optional-skills.json"
 
 
 def refuse_elevated_execution(effective_uid: int | None = None, sudo_uid: str | None = None) -> None:
@@ -39,7 +39,9 @@ def skill_index(catalog: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return {item["key"]: item for item in catalog["skills"]}
 
 
-def resolve_selection(catalog: dict[str, Any], skill_keys: list[str], profiles: list[str]) -> list[dict[str, Any]]:
+def resolve_selection(
+    catalog: dict[str, Any], skill_keys: list[str], profiles: list[str]
+) -> list[dict[str, Any]]:
     index = skill_index(catalog)
     unknown_skills = sorted(set(skill_keys) - set(index))
     unknown_profiles = sorted(set(profiles) - set(catalog["profiles"]))
@@ -62,19 +64,30 @@ def resolve_selection(catalog: dict[str, Any], skill_keys: list[str], profiles: 
     return selected
 
 
-def build_command(item: dict[str, Any], agent: str, scope: str, assume_yes: bool) -> list[str]:
-    installer = item["installer"]
+def build_command(
+    item: dict[str, Any], scope: str, assume_yes: bool, allow_third_party_hooks: bool
+) -> list[str]:
+    # A couple of entries install differently on Codex than on Claude Code.
+    # One catalog, the difference carried as data rather than a forked file.
+    agent = os.environ.get("AGENT_HOST", "").lower()
+    if agent == "codex" and item.get("installer_codex"):
+        installer = item["installer_codex"]
+        item = {**item, "extra_args": item.get("extra_args_codex", [])}
+    else:
+        installer = item["installer"]
     if installer == "skills":
-        command = ["npx", "-y", "skills", "add", item["source"], "--agent", agent]
+        command = ["npx", "-y", "skills", "add", item["source"], "--agent", "claude-code"]
         for skill in item.get("skills", []):
             command.extend(["--skill", skill])
-        if scope == "global":
+        if scope == "user":
             command.append("--global")
         if assume_yes:
             command.append("--yes")
         return command
     if installer == "impeccable":
-        return ["npx", "-y", "impeccable", "install"]
+        if allow_third_party_hooks:
+            return ["npx", "-y", "impeccable", "install"]
+        return ["npx", "-y", "impeccable", "skills", "install"]
     if installer == "codex-plugin":
         return ["codex", "plugin", "marketplace", "add", item["source"], *item.get("extra_args", [])]
     raise SystemExit(f"Unsupported installer for {item['key']}: {installer}")
@@ -90,68 +103,72 @@ def print_catalog(catalog: dict[str, Any]) -> None:
         print(f"  {item['key']:<24} {item['source']}{selectors}")
 
 
-def print_plan(items: list[dict[str, Any]], agent: str, scope: str, assume_yes: bool) -> None:
-    print(f"Plan: {len(items)} selected item(s) | agent={agent} | scope={scope}")
+def print_plan(
+    items: list[dict[str, Any]], scope: str, assume_yes: bool, allow_third_party_hooks: bool
+) -> None:
+    print(f"Plan: {len(items)} selected item(s) | agent=claude-code | scope={scope}")
     print("Nothing runs unless --execute is supplied.\n")
     for number, item in enumerate(items, start=1):
-        command = build_command(item, agent, scope, assume_yes)
+        command = build_command(item, scope, assume_yes, allow_third_party_hooks)
         print(f"{number}. {item['name']} [{item['key']}]")
         print(f"   Source:  {item['url']}")
         print(f"   Why:     {item['note']}")
         print(f"   Command: {shlex.join(command)}")
         if item.get("writes_hooks"):
-            print("   Gate:    writes a Codex hooks file; --allow-hooks is required")
+            state = "enabled by explicit flag" if allow_third_party_hooks else "disabled; skills-only install"
+            print(f"   Hooks:   {state}")
         print()
 
 
-def executable_for(command: list[str]) -> str | None:
-    return shutil.which(command[0])
-
-
-def execute_plan(items: list[dict[str, Any]], agent: str, scope: str, assume_yes: bool, allow_hooks: bool, project_dir: Path) -> None:
-    hook_items = [item["key"] for item in items if item.get("writes_hooks")]
-    if hook_items and not allow_hooks:
-        raise SystemExit(
-            "Selection includes a hook-writing installer "
-            f"({', '.join(hook_items)}). Review its upstream source, then rerun with --allow-hooks."
-        )
-
-    missing: set[str] = set()
-    commands: list[tuple[dict[str, Any], list[str]]] = []
-    for item in items:
-        command = build_command(item, agent, scope, assume_yes)
-        commands.append((item, command))
-        if not executable_for(command):
-            missing.add(command[0])
+def execute_plan(
+    items: list[dict[str, Any]],
+    scope: str,
+    assume_yes: bool,
+    allow_third_party_hooks: bool,
+    project_dir: Path,
+) -> None:
+    commands = [
+        (item, build_command(item, scope, assume_yes, allow_third_party_hooks)) for item in items
+    ]
+    missing = sorted({command[0] for _, command in commands if not shutil.which(command[0])})
     if missing:
-        raise SystemExit(f"Required command(s) not found on PATH: {', '.join(sorted(missing))}")
+        raise SystemExit(f"Required command(s) not found on PATH: {', '.join(missing)}")
 
     cwd = project_dir.resolve()
     if not cwd.is_dir():
         raise SystemExit(f"Project directory does not exist: {cwd}")
 
+    completed: list[str] = []
     for item, command in commands:
         print(f"Installing {item['name']} from {item['url']}", flush=True)
         result = subprocess.run(command, cwd=cwd, check=False)
         if result.returncode != 0:
-            raise SystemExit(f"Install failed for {item['key']} with exit code {result.returncode}.")
+            done = ", ".join(completed) if completed else "none"
+            raise SystemExit(
+                f"Install failed for {item['key']} with exit code {result.returncode}. Completed: {done}."
+            )
+        completed.append(item["key"])
 
     print("\nSelected installations completed.")
-    if hook_items:
-        print("Open /hooks in Codex, inspect the Impeccable hook, and approve it explicitly.")
+    print("Restart Claude Code or run /reload-plugins, then verify the expected skills are listed.")
+    if allow_third_party_hooks:
+        print("Review the Impeccable hook in /hooks before relying on it.")
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--list", action="store_true", help="List profiles and installable skill keys.")
-    parser.add_argument("--skill", action="append", default=[], metavar="KEY", help="Select one skill key. Repeat as needed.")
-    parser.add_argument("--profile", action="append", default=[], metavar="NAME", help="Select a curated profile. Repeat as needed.")
-    parser.add_argument("--agent", choices=["codex", "claude-code"], default="codex")
-    parser.add_argument("--scope", choices=["project", "global"], default="global")
-    parser.add_argument("--project-dir", type=Path, default=Path.cwd(), help="Working directory for project-scope installs.")
-    parser.add_argument("--execute", action="store_true", help="Run the printed plan. Without this flag, the command is read-only.")
-    parser.add_argument("--yes", action="store_true", help="Skip skills CLI confirmations. Requires --execute.")
-    parser.add_argument("--allow-hooks", action="store_true", help="Allow explicitly selected installers that write Codex hooks.")
+    parser.add_argument("--skill", action="append", default=[], metavar="KEY", help="Select one skill key.")
+    parser.add_argument("--profile", action="append", default=[], metavar="NAME", help="Select a profile.")
+    parser.add_argument("--scope", choices=["project", "user"], default="user")
+    parser.add_argument("--project-dir", type=Path, default=Path.cwd())
+    parser.add_argument("--execute", action="store_true", help="Run the printed plan.")
+    parser.add_argument("--yes", action="store_true", help="Skip skills CLI confirmations; requires --execute.")
+    parser.add_argument(
+        "--allow-third-party-hooks",
+        action="store_true",
+        help="Allow the Impeccable installer to offer its own Claude Code hook.",
+    )
     return parser.parse_args(argv)
 
 
@@ -160,6 +177,8 @@ def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     if args.yes and not args.execute:
         raise SystemExit("--yes is valid only with --execute.")
+    if args.allow_third_party_hooks and not args.execute:
+        raise SystemExit("--allow-third-party-hooks is valid only with --execute.")
 
     catalog = load_catalog()
     if args.list or (not args.skill and not args.profile):
@@ -168,11 +187,15 @@ def main(argv: list[str] | None = None) -> int:
             return 0
 
     selected = resolve_selection(catalog, args.skill, args.profile)
-    print_plan(selected, args.agent, args.scope, args.yes)
-    if not args.execute:
-        return 0
-
-    execute_plan(selected, args.agent, args.scope, args.yes, args.allow_hooks, args.project_dir)
+    print_plan(selected, args.scope, args.yes, args.allow_third_party_hooks)
+    if args.execute:
+        execute_plan(
+            selected,
+            args.scope,
+            args.yes,
+            args.allow_third_party_hooks,
+            args.project_dir,
+        )
     return 0
 
 

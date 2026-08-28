@@ -12,48 +12,53 @@ and subagents, and those are Claude-specific by nature.
 
 ## Layout
 
-Two manifests over **one** plugin tree — not two trees. The two agents discover plugins
-differently but the plugins themselves are nearly the same shape, so duplicating them would
-only guarantee they drift apart.
+Two manifests over **one** plugin tree. A plugin is installable by whichever agent's
+manifest it carries, and a plugin that carries both is one folder with one skills
+directory — the shape every dual-agent plugin uses, and the only shape that cannot drift
+against itself.
 
 ```
 .claude-plugin/marketplace.json    Claude Code discovery
 .agents/plugins/marketplace.json   Codex discovery
 plugins/
-  natural-writing/       .claude-plugin/ + .codex-plugin/   both agents
-  design-router/         .codex-plugin/                     Codex
-  claude-ui-router/      .claude-plugin/                    Claude Code
-  claude-ai-work-router/ .claude-plugin/                    Claude Code
-codex/install.sh                   copy design-router straight into ~/.codex/skills,
-                                   for when you do not want a marketplace at all
+  ui-router/              .claude-plugin/ + .codex-plugin/   both
+  natural-writing/        .claude-plugin/ + .codex-plugin/   both
+  claude-ai-work-router/  .claude-plugin/                    Claude Code
+  ai-work-router/         .codex-plugin/                     Codex
 ```
 
-A plugin is installable by an agent when it carries that agent's manifest. `natural-writing`
-carries both because nothing in it is Claude- or Codex-specific; the two routers carry one
-each because they genuinely do route their own platform's models and subagents.
+`ui-router` and `natural-writing` are single plugins serving both agents. The two work
+routers are still separate because their content has genuinely diverged — different
+SKILL.md, no overlapping reference files — and pretending otherwise with one folder would
+just hide that. Merging them is the outstanding job.
 
 ## What is in it
 
-| | What it does | Works with |
+| | What it does | Installs in |
 |---|---|---|
-| **Natural Writing** | Diagnoses, edits, rewrites, voice-matches, or drafts prose while preserving facts, formatting, terminology, register, and the author's voice. Ships a linter with a per-document mode and a set-level mode. | Any agent |
-| **Design Router** (`codex/`) | Routes UI, UX, design-review, motion, design-to-code, and interface-copy work through a researched skill catalog and what is actually installed. | Codex |
-| **Claude UI Router** | The same routing idea as a Claude Code plugin, with scout, builder, and critic subagents. Uses Natural Writing as its sole final editor for copy. | Claude Code |
+| **Natural Writing** | Diagnoses, edits, rewrites, voice-matches, or drafts prose while preserving facts, formatting, terminology, register, and the author's voice. Ships a linter with a per-document mode and a set-level mode. | Claude Code · Codex |
+| **UI Router** | Routes UI, UX, design-review, motion, design-to-code, and interface-copy work through a researched skill catalog and what is actually installed. Uses Natural Writing as its sole final editor for copy. | Claude Code · Codex |
 | **Claude AI Work Router** | Chooses whether work stays in the parent session or moves to a bounded Haiku, Sonnet, Opus, or Fable subagent, optimizing latency and token use rather than defaulting to the largest model. | Claude Code |
+| **AI Work Router** | The same idea for Codex: classify the work, then pick the direct path or a subagent on latency, quality, cost, ambiguity, risk, and write ownership. | Codex |
 
-The two Claude routing plugins include a deterministic `PreToolUse` hook that blocks Bash
-commands containing `sudo`. The installers refuse root or `sudo` execution and never
-evaluate a shell string.
+Both work routers ship a deterministic hook that blocks Bash commands containing `sudo`.
+The installers refuse root or `sudo` execution and never evaluate a shell string.
 
-## Codex
+## Install
 
 ```bash
-./codex/install.sh              # copy design-router into ~/.codex/skills
-./codex/install.sh --dry-run    # show what it would do; no network, no third-party installs
+# Claude Code
+claude plugin marketplace add rl0ve/agent-skills
+claude plugin install ui-router@rl0ve-agent-skills
+
+# Codex
+codex plugin marketplace add rl0ve/agent-skills
+codex plugin add ui-router@rl0ve-agent-skills
 ```
 
-Open `codex/guide/index.html` directly for the field guide. See [AGENTS.md](AGENTS.md) for
-the read order and the linter commands.
+If you would rather not add a marketplace at all,
+`plugins/ui-router/scripts/install-into-codex-skills.sh` copies the routing skill straight
+into `~/.codex/skills`. `plugins/ui-router/docs/field-guide.html` opens standalone.
 
 ## Fast local test (Claude Code)
 
@@ -61,7 +66,7 @@ From this directory, start a disposable session with any one plugin:
 
 ```bash
 claude --plugin-dir ./plugins/claude-ai-work-router
-claude --plugin-dir ./plugins/claude-ui-router
+claude --plugin-dir ./plugins/ui-router
 claude --plugin-dir ./plugins/natural-writing
 ```
 
@@ -69,7 +74,7 @@ Then try:
 
 ```text
 /claude-ai-work-router:route-ai-work review this task and choose the leanest reliable route
-/claude-ui-router:route-ui-work design a B2B operations dashboard
+/ui-router:route-ui-work design a B2B operations dashboard
 Humanize this email and keep my voice: ...
 ```
 
@@ -91,9 +96,9 @@ Equivalent Claude Code commands:
 
 ```bash
 claude plugin marketplace add . --scope user
-claude plugin install claude-ai-work-router@rlove-claude-routers --scope user
-claude plugin install claude-ui-router@rlove-claude-routers --scope user
-claude plugin install natural-writing@rlove-claude-routers --scope user
+claude plugin install claude-ai-work-router@rl0ve-agent-skills --scope user
+claude plugin install ui-router@rl0ve-agent-skills --scope user
+claude plugin install natural-writing@rl0ve-agent-skills --scope user
 ```
 
 Restart Claude Code or run `/reload-plugins` after installation.
@@ -109,17 +114,17 @@ The AI router uses family aliases rather than pinning provider-specific IDs. If 
 The UI router does not silently install its catalog. List or plan a curated profile:
 
 ```bash
-python3 plugins/claude-ui-router/scripts/install_optional_skills.py --list
-python3 plugins/claude-ui-router/scripts/install_optional_skills.py --profile product
+python3 plugins/ui-router/scripts/install_optional_skills.py --list
+python3 plugins/ui-router/scripts/install_optional_skills.py --profile product
 ```
 
 Execution is explicit:
 
 ```bash
-python3 plugins/claude-ui-router/scripts/install_optional_skills.py --profile product --execute
+python3 plugins/ui-router/scripts/install_optional_skills.py --profile product --execute
 ```
 
-The same flow is available inside Claude Code through `/claude-ui-router:install-ui-stack`.
+The same flow is available inside Claude Code through `/ui-router:install-ui-stack`.
 
 ## Version boundary
 

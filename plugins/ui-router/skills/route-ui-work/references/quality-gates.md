@@ -23,7 +23,7 @@ Apply every relevant gate before declaring the routed task complete.
 
 ## Evidence
 
-- When the writing route is selected, verify the Natural Writing companion is available. Package presence alone is not installation evidence.
+- When the writing route is selected, verify the Natural Writing skill is available. Package presence alone is not installation evidence.
 
 - Run the narrowest relevant tests or browser checks.
 - Report what was checked and what could not be checked.

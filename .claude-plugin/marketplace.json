@@ -24,10 +24,10 @@
       ]
     },
     {
-      "name": "claude-ui-router",
-      "source": "./plugins/claude-ui-router",
-      "description": "Routes UI work through canonical and available skill chains, and uses the Natural Writing companion as the sole final editor when present.",
-      "version": "1.2.0",
+      "name": "ui-router",
+      "source": "./plugins/ui-router",
+      "description": "Route Claude Code UI and frontend work through canonical and available skill chains, with Natural Writing as a verified companion rather than an assumed install. Last updated: 2026-08-22.",
+      "version": "1.3.0",
       "category": "Development",
       "tags": [
         "ui",

@@ -1,4 +1,4 @@
-# Claude UI Router
+# UI Router
 
 Claude Code-native companion to the Codex Design Router.
 
@@ -9,8 +9,8 @@ It preserves the original named skill universe—including Taste, Hallmark, Inte
 
 The plugin contributes:
 
-- `/claude-ui-router:route-ui-work`, an auto-invocable UI routing skill;
-- `/claude-ui-router:install-ui-stack`, a manual, plan-first optional installer;
+- `/ui-router:route-ui-work`, an auto-invocable UI routing skill;
+- `/ui-router:install-ui-stack`, a manual, plan-first optional installer;
 - read-only scout and critic agents plus one Sonnet UI builder;
 - the complete routing catalog and quality references;
 - the two polished UI reference cards;

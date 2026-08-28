@@ -31,9 +31,9 @@ When the Claude AI Work Router is installed, apply its work route after composin
 
 | UI work | Agent | Model | Effort |
 |---|---|---|---|
-| Route discovery, inventory, and reference mapping | `claude-ui-router:ui-scout` | Sonnet | medium |
-| Defined UI implementation | `claude-ui-router:ui-builder` | Sonnet | high |
-| Consequential visual, accessibility, or system review | `claude-ui-router:ui-critic` | Opus | high |
+| Route discovery, inventory, and reference mapping | `ui-router:ui-scout` | Sonnet | medium |
+| Defined UI implementation | `ui-router:ui-builder` | Sonnet | high |
+| Consequential visual, accessibility, or system review | `ui-router:ui-critic` | Opus | high |
 
 Keep trivial UI adjustments in the parent. Use Fable only for a connected, long-horizon multi-surface or design-system transformation that truly benefits from sustained autonomy.
 
@@ -61,7 +61,7 @@ Do not stack two broad aesthetic directors. A broad lead can pair with focused a
 
 ## Optional skill installs
 
-Use `/claude-ui-router:install-ui-stack` only when the user explicitly asks to install skills. The companion script is plan-first:
+Use `/ui-router:install-ui-stack` only when the user explicitly asks to install skills. The companion script is plan-first:
 
 ```bash
 python3 scripts/install_optional_skills.py --list

@@ -1,23 +1,26 @@
 {
-  "name": "design-router",
-  "version": "1.2.0",
-  "description": "Routes UI, UX, design-review, motion, design-to-code, and interface-copy work through a researched skill catalog and the capabilities actually installed.",
+  "name": "ui-router",
+  "version": "1.3.0",
+  "description": "Route Claude Code UI and frontend work through canonical and available skill chains, with Natural Writing as a verified companion rather than an assumed install. Last updated: 2026-08-22.",
   "author": {
     "name": "rl0ve"
   },
   "homepage": "https://github.com/rl0ve/agent-skills",
   "license": "MIT",
   "keywords": [
+    "claude-code",
     "ui",
-    "ux",
     "design",
-    "routing",
+    "frontend",
     "skills",
-    "frontend"
+    "routing",
+    "copy",
+    "writing",
+    "anti-slop"
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Design Router",
+    "displayName": "UI Router",
     "shortDescription": "Route UI work to a focused skill chain",
     "developerName": "rl0ve",
     "category": "Developer Tools",

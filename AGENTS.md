@@ -44,18 +44,19 @@ Codex reads `.agents/plugins/marketplace.json`, so this repo is a Codex marketpl
 ```bash
 codex plugin marketplace add rl0ve/agent-skills
 codex plugin add natural-writing@rl0ve-agent-skills
-codex plugin add design-router@rl0ve-agent-skills
+codex plugin add ui-router@rl0ve-agent-skills
+codex plugin add ai-work-router@rl0ve-agent-skills
 ```
 
-`design-router` routes UI, UX, design-review, motion, design-to-code and interface-copy work
-through a researched skill catalog and whatever is actually installed. `codex/install.sh`
-copies it straight into `~/.codex/skills` if you would rather not add a marketplace, and
-`codex/guide/index.html` is a standalone field guide.
+`ui-router` is one plugin shared with Claude Code, not a Codex port: same folder, same
+`skills/route-ui-work/`, a `.codex-plugin/` and a `.claude-plugin/` beside each other. The
+two forked on 2026-08-16 and were reconciled before the merge — most importantly the writing
+route, which used to chain three humanizers in sequence and now uses `natural-writing` as
+the single context-holding editor. Where an install command genuinely differs by agent, the
+catalog carries both (`installer` and `installer_codex`) rather than forking the file.
 
-**Reconciled with the Claude port.** The two forked on 2026-08-16. Content the Claude side
-learned since has been brought across - most importantly the writing route, which used to
-chain three humanizers in sequence and now uses `natural-writing` as the single
-context-holding editor. Platform specifics stay different on purpose.
+`plugins/ui-router/scripts/install-into-codex-skills.sh` is the no-marketplace path, and
+`plugins/ui-router/docs/field-guide.html` is a standalone field guide.
 
 ## For Claude Code
 
@@ -66,7 +67,7 @@ claude plugin marketplace add rl0ve/agent-skills
 claude plugin install natural-writing@rl0ve-agent-skills
 ```
 
-`claude-ai-work-router` and `claude-ui-router` route Claude models and subagents, so
+`claude-ai-work-router` and `ui-router` route Claude models and subagents, so
 they are Claude-specific by nature. `natural-writing` is not, and stands alone.
 
 ## Conventions

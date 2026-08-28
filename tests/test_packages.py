@@ -20,13 +20,13 @@ def load_module(name: str, path: Path):
 
 root_installer = load_module("root_installer", ROOT / "install.py")
 ui_installer = load_module(
-    "ui_installer", ROOT / "plugins" / "claude-ui-router" / "scripts" / "install_optional_skills.py"
+    "ui_installer", ROOT / "plugins" / "ui-router" / "scripts" / "install_optional_skills.py"
 )
 ai_hook = load_module(
     "ai_hook", ROOT / "plugins" / "claude-ai-work-router" / "scripts" / "block_sudo.py"
 )
 ui_hook = load_module(
-    "ui_hook", ROOT / "plugins" / "claude-ui-router" / "scripts" / "block_sudo.py"
+    "ui_hook", ROOT / "plugins" / "ui-router" / "scripts" / "block_sudo.py"
 )
 
 
@@ -42,9 +42,9 @@ class RootInstallerTests(unittest.TestCase):
         commands = root_installer.build_plan(plugins, "user")
         rendered = [" ".join(command) for command in commands]
         self.assertEqual(len(commands), 4)
-        self.assertTrue(any("claude-ai-work-router@rlove-claude-routers" in line for line in rendered))
-        self.assertTrue(any("claude-ui-router@rlove-claude-routers" in line for line in rendered))
-        self.assertTrue(any("natural-writing@rlove-claude-routers" in line for line in rendered))
+        self.assertTrue(any("claude-ai-work-router@rl0ve-agent-skills" in line for line in rendered))
+        self.assertTrue(any("ui-router@rl0ve-agent-skills" in line for line in rendered))
+        self.assertTrue(any("natural-writing@rl0ve-agent-skills" in line for line in rendered))
         self.assertFalse(any("sudo" in command for line in rendered for command in line.split()))
 
 
@@ -111,20 +111,41 @@ class UiInstallerTests(unittest.TestCase):
 
 
 class PackageParityTests(unittest.TestCase):
-    def test_ui_router_and_marketplace_versions_match(self):
-        plugin_manifest = json.loads(
-            (ROOT / "plugins" / "claude-ui-router" / ".claude-plugin" / "plugin.json").read_text()
-        )
+    def test_every_plugin_version_matches_its_marketplace_entry(self):
+        """Derived, not hardcoded: a pinned literal here went stale the first time
+        a plugin was bumped, and the test failed for the wrong reason."""
         marketplace = json.loads((ROOT / ".claude-plugin" / "marketplace.json").read_text())
-        listed = next(item for item in marketplace["plugins"] if item["name"] == "claude-ui-router")
-        self.assertEqual(plugin_manifest["version"], "1.2.0")
-        self.assertEqual(listed["version"], "1.2.0")
+        for listed in marketplace["plugins"]:
+            src = ROOT / listed["source"].lstrip("./")
+            manifest = json.loads((src / ".claude-plugin" / "plugin.json").read_text())
+            self.assertEqual(
+                manifest["version"], listed["version"],
+                f"{listed['name']}: plugin.json says {manifest['version']}, "
+                f"marketplace.json says {listed['version']}",
+            )
+
+    def test_dual_agent_plugins_agree_across_both_manifests(self):
+        """A plugin installable by both agents must present the same name, version
+        and skills root to each, or the two installs quietly diverge."""
+        for plugin_dir in sorted((ROOT / "plugins").iterdir()):
+            claude = plugin_dir / ".claude-plugin" / "plugin.json"
+            codex = plugin_dir / ".codex-plugin" / "plugin.json"
+            if not (claude.exists() and codex.exists()):
+                continue
+            c, x = json.loads(claude.read_text()), json.loads(codex.read_text())
+            self.assertEqual(c["name"], x["name"], plugin_dir.name)
+            self.assertEqual(c["version"], x["version"], plugin_dir.name)
+            self.assertEqual(
+                c.get("skills", "./skills/").rstrip("/"),
+                x.get("skills", "./skills/").rstrip("/"),
+                plugin_dir.name,
+            )
 
     def test_natural_writing_is_a_verified_companion(self):
         catalog = (
             ROOT
             / "plugins"
-            / "claude-ui-router"
+            / "ui-router"
             / "skills"
             / "route-ui-work"
             / "references"

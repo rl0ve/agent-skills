@@ -15,10 +15,10 @@ from typing import Iterable
 
 
 ROOT = Path(__file__).resolve().parent
-MARKETPLACE_NAME = "rlove-claude-routers"
+MARKETPLACE_NAME = "rl0ve-agent-skills"
 PLUGIN_NAMES = {
     "ai": "claude-ai-work-router",
-    "ui": "claude-ui-router",
+    "ui": "ui-router",
     "writing": "natural-writing",
 }
 

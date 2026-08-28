@@ -12,7 +12,7 @@ These sources are a stack, not a single winner. Start from the question being an
 4. **Look up or install a known skill:** [skills.sh](https://skills.sh/) and [claudeskills.info](https://claudeskills.info/) are useful once the target family or repository is already known. Use the current upstream install syntax, not a command copied from a stale directory page.
 5. **Verify upstream:** open the exact GitHub repository and inspect the complete `SKILL.md`, scripts, recent activity, issues, license, scope, and install path before recommending or executing an install.
 
-For a Codex-first workflow, the companion installer in this package turns the verified catalog into a transparent plan and can execute only the skills the user explicitly selects. It never treats discovery rank as install approval.
+The companion installer in this package turns the verified catalog into a transparent plan and can execute only the skills the user explicitly selects. It never treats discovery rank as install approval.
 
 ## Pre-install checklist
 

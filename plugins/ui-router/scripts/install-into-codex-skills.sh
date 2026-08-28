@@ -2,7 +2,7 @@
 set -euo pipefail
 
 package_dir="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
-source_dir="$package_dir/../plugins/design-router/skills/design-router"
+source_dir="$package_dir/../skills/route-ui-work"
 target_kind="codex"
 dry_run="false"
 
@@ -10,7 +10,7 @@ usage() {
   printf '%s\n' \
     'Usage: ./install.sh [--target codex|agents|PATH] [--dry-run]' \
     '' \
-    'Copies this local design-router skill only. No network access or third-party installs.'
+    'Copies this local route-ui-work skill only. No network access or third-party installs.'
 }
 
 while [ "$#" -gt 0 ]; do
@@ -48,9 +48,9 @@ case "$target_kind" in
     ;;
 esac
 
-destination="$target_root/design-router"
+destination="$target_root/route-ui-work"
 timestamp="$(date '+%Y%m%d-%H%M%S')"
-backup="$target_root/design-router.backup-$timestamp"
+backup="$target_root/route-ui-work.backup-$timestamp"
 
 printf 'Source:      %s\n' "$source_dir"
 printf 'Destination: %s\n' "$destination"
@@ -70,5 +70,5 @@ if [ -e "$destination" ]; then
 fi
 
 cp -R "$source_dir" "$destination"
-printf 'Installed design-router at: %s\n' "$destination"
+printf 'Installed route-ui-work at: %s\n' "$destination"
 printf '%s\n' 'Restart Codex so the new skill is discovered.'
