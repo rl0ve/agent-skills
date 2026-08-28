@@ -20,7 +20,7 @@ Primary sources:
 - [Build skills](https://learn.chatgpt.com/docs/build-skills)
 - [Plugins](https://learn.chatgpt.com/docs/plugins)
 
-## Evidence retained from AI Work Router 2.1
+## Evidence retained from Work Router 2.1
 
 The source pack's August 1, 2026 benchmark synthesis supports a latency-first default while separating native-harness measurements from fixed-harness measurements:
 

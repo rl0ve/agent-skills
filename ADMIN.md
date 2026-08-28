@@ -17,7 +17,7 @@ After your organization hosts this marketplace in an approved repository, an adm
     }
   },
   "enabledPlugins": {
-    "claude-ai-work-router@rl0ve-agent-skills": true,
+    "work-router@rl0ve-agent-skills": true,
     "ui-router@rl0ve-agent-skills": true,
     "natural-writing@rl0ve-agent-skills": true
   }

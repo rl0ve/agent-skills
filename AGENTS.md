@@ -45,15 +45,14 @@ Codex reads `.agents/plugins/marketplace.json`, so this repo is a Codex marketpl
 codex plugin marketplace add rl0ve/agent-skills
 codex plugin add natural-writing@rl0ve-agent-skills
 codex plugin add ui-router@rl0ve-agent-skills
-codex plugin add ai-work-router@rl0ve-agent-skills
+codex plugin add work-router@rl0ve-agent-skills
 ```
 
-`ui-router` is one plugin shared with Claude Code, not a Codex port: same folder, same
-`skills/route-ui-work/`, a `.codex-plugin/` and a `.claude-plugin/` beside each other. The
-two forked on 2026-08-16 and were reconciled before the merge — most importantly the writing
-route, which used to chain three humanizers in sequence and now uses `natural-writing` as
-the single context-holding editor. Where an install command genuinely differs by agent, the
-catalog carries both (`installer` and `installer_codex`) rather than forking the file.
+All three are shared plugins rather than Codex ports: one folder, one `skills/` directory,
+a `.codex-plugin` and a `.claude-plugin` side by side. `work-router` carries a route table
+for each agent under `## Default routes` - read the one matching the agent you are running
+as. `ui-router`'s optional-skill catalog carries `installer_codex` where the install command
+differs.
 
 `plugins/ui-router/scripts/install-into-codex-skills.sh` is the no-marketplace path, and
 `plugins/ui-router/docs/field-guide.html` is a standalone field guide.
@@ -67,7 +66,7 @@ claude plugin marketplace add rl0ve/agent-skills
 claude plugin install natural-writing@rl0ve-agent-skills
 ```
 
-`claude-ai-work-router` and `ui-router` route Claude models and subagents, so
+`work-router` and `ui-router` route Claude models and subagents, so
 they are Claude-specific by nature. `natural-writing` is not, and stands alone.
 
 ## Conventions

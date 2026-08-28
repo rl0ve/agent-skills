@@ -10,20 +10,6 @@
   },
   "plugins": [
     {
-      "name": "claude-ai-work-router",
-      "source": "./plugins/claude-ai-work-router",
-      "description": "Routes Claude Code work across the parent session and Haiku, Sonnet, Opus, or Fable subagents while controlling latency and token use.",
-      "version": "1.0.0",
-      "category": "Productivity",
-      "tags": [
-        "routing",
-        "models",
-        "effort",
-        "tokens",
-        "latency"
-      ]
-    },
-    {
       "name": "ui-router",
       "source": "./plugins/ui-router",
       "description": "Route Claude Code UI and frontend work through canonical and available skill chains, with Natural Writing as a verified companion rather than an assumed install. Last updated: 2026-08-22.",
@@ -49,6 +35,20 @@
         "voice",
         "reader-ready",
         "natural-prose"
+      ]
+    },
+    {
+      "name": "work-router",
+      "source": "./plugins/work-router",
+      "description": "Routes substantial agent work to the leanest reliable parent or subagent configuration on task shape, ambiguity, risk, latency, and token use. Carries a route table for Claude Code and one for Codex.",
+      "version": "1.1.0",
+      "category": "Productivity",
+      "tags": [
+        "routing",
+        "models",
+        "effort",
+        "tokens",
+        "latency"
       ]
     }
   ]

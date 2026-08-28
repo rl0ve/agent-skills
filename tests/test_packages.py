@@ -23,7 +23,7 @@ ui_installer = load_module(
     "ui_installer", ROOT / "plugins" / "ui-router" / "scripts" / "install_optional_skills.py"
 )
 ai_hook = load_module(
-    "ai_hook", ROOT / "plugins" / "claude-ai-work-router" / "scripts" / "block_sudo.py"
+    "ai_hook", ROOT / "plugins" / "work-router" / "scripts" / "block_sudo.py"
 )
 ui_hook = load_module(
     "ui_hook", ROOT / "plugins" / "ui-router" / "scripts" / "block_sudo.py"
@@ -42,7 +42,7 @@ class RootInstallerTests(unittest.TestCase):
         commands = root_installer.build_plan(plugins, "user")
         rendered = [" ".join(command) for command in commands]
         self.assertEqual(len(commands), 4)
-        self.assertTrue(any("claude-ai-work-router@rl0ve-agent-skills" in line for line in rendered))
+        self.assertTrue(any("work-router@rl0ve-agent-skills" in line for line in rendered))
         self.assertTrue(any("ui-router@rl0ve-agent-skills" in line for line in rendered))
         self.assertTrue(any("natural-writing@rl0ve-agent-skills" in line for line in rendered))
         self.assertFalse(any("sudo" in command for line in rendered for command in line.split()))

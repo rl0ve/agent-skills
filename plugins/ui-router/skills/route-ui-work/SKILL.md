@@ -27,7 +27,7 @@ Select one design lead, add only focused layers that own distinct concerns, and 
 
 ## Claude execution routes
 
-When the Claude AI Work Router is installed, apply its work route after composing the UI skill chain. Otherwise use these defaults:
+When the Work Router is installed, apply its work route after composing the UI skill chain. Otherwise use these defaults:
 
 | UI work | Agent | Model | Effort |
 |---|---|---|---|

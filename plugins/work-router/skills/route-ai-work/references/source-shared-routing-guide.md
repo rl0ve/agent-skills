@@ -1,4 +1,4 @@
-# AI Work Router 2.1
+# Work Router 2.1
 
 Updated August 1, 2026. Choose a timeliness mode before the task route. Optimize for measured wall-clock time, not steps, tokens, time to first token, or output speed.
 

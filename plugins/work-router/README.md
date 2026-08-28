@@ -1,11 +1,11 @@
-# Claude AI Work Router
+# Work Router
 
 Claude Code-native routing for lower latency and lower token use without sacrificing the quality floor a task actually needs.
 
 The plugin contributes:
 
-- `/claude-ai-work-router:route-ai-work`, an auto-invocable routing policy;
-- `/claude-ai-work-router:check-routing-setup`, a manual environment check;
+- `/work-router:route-ai-work`, an auto-invocable routing policy;
+- `/work-router:check-routing-setup`, a manual environment check;
 - five bounded subagents spanning Haiku, Sonnet, Opus, and Fable;
 - a `PreToolUse` safety hook that blocks `sudo`.
 

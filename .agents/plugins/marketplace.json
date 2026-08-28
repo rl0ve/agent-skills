@@ -16,10 +16,10 @@
       "category": "Productivity"
     },
     {
-      "name": "ai-work-router",
+      "name": "ui-router",
       "source": {
         "source": "local",
-        "path": "./plugins/ai-work-router"
+        "path": "./plugins/ui-router"
       },
       "policy": {
         "installation": "AVAILABLE"
@@ -27,10 +27,10 @@
       "category": "Developer Tools"
     },
     {
-      "name": "ui-router",
+      "name": "work-router",
       "source": {
         "source": "local",
-        "path": "./plugins/ui-router"
+        "path": "./plugins/work-router"
       },
       "policy": {
         "installation": "AVAILABLE"

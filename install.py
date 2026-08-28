@@ -17,7 +17,7 @@ from typing import Iterable
 ROOT = Path(__file__).resolve().parent
 MARKETPLACE_NAME = "rl0ve-agent-skills"
 PLUGIN_NAMES = {
-    "ai": "claude-ai-work-router",
+    "ai": "work-router",
     "ui": "ui-router",
     "writing": "natural-writing",
 }

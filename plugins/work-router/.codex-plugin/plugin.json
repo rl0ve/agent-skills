@@ -1,0 +1,30 @@
+{
+  "name": "work-router",
+  "version": "1.1.0",
+  "description": "Routes substantial agent work to the leanest reliable parent or subagent configuration on task shape, ambiguity, risk, latency, and token use. Carries a route table for Claude Code and one for Codex.",
+  "author": {
+    "name": "rl0ve"
+  },
+  "homepage": "https://github.com/rl0ve/agent-skills",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "routing",
+    "models",
+    "effort",
+    "tokens",
+    "latency"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Work Router",
+    "shortDescription": "Route work to the leanest reliable agent",
+    "developerName": "rl0ve",
+    "category": "Developer Tools",
+    "defaultPrompt": [
+      "Route this task and pick the leanest reliable configuration",
+      "Should this be delegated, or does it belong in the parent session?",
+      "Which agent and effort level does this work actually need?"
+    ]
+  }
+}

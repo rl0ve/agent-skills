@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Preview or install the AI Work Router's custom Codex agent profiles."""
+"""Preview or install the Work Router's custom Codex agent profiles."""
 
 from __future__ import annotations
 
@@ -122,7 +122,7 @@ def main() -> int:
         return 0
 
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    backup_dir = destination / "backups" / f"ai-work-router-{timestamp}"
+    backup_dir = destination / "backups" / f"work-router-{timestamp}"
     updated_targets = [target for _, target, status in changes if status == "update"]
     backup_targets = updated_targets + legacy_targets
     if backup_targets:
