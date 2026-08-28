@@ -25,6 +25,17 @@
         "installation": "AVAILABLE"
       },
       "category": "Developer Tools"
+    },
+    {
+      "name": "ai-work-router",
+      "source": {
+        "source": "local",
+        "path": "./plugins/ai-work-router"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Developer Tools"
     }
   ]
 }

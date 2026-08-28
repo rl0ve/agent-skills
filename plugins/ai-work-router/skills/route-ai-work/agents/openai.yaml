@@ -1,0 +1,4 @@
+interface:
+  display_name: "Automatic AI Work Router"
+  short_description: "Route Codex work by latency, quality, and risk"
+  default_prompt: "Use $route-ai-work to choose and execute the best agent route for this task."
