@@ -1,0 +1,30 @@
+{
+  "name": "rl0ve-agent-skills",
+  "interface": {
+    "displayName": "rl0ve agent-skills"
+  },
+  "plugins": [
+    {
+      "name": "natural-writing",
+      "source": {
+        "source": "local",
+        "path": "./plugins/natural-writing"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "design-router",
+      "source": {
+        "source": "local",
+        "path": "./plugins/design-router"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

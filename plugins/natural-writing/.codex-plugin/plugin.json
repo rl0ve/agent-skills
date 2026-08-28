@@ -1,0 +1,32 @@
+{
+  "name": "natural-writing",
+  "version": "1.8.0",
+  "description": "Diagnose, edit, rewrite, or draft natural prose while preserving facts, formatting, intent, register, and author voice.",
+  "author": {
+    "name": "rl0ve"
+  },
+  "homepage": "https://github.com/rl0ve/agent-skills",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "editing",
+    "natural-prose",
+    "reader-ready",
+    "voice",
+    "claude-code",
+    "product-copy",
+    "executive-writing"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Natural Writing",
+    "shortDescription": "Edit prose without flattening the author's voice",
+    "developerName": "rl0ve",
+    "category": "Productivity",
+    "defaultPrompt": [
+      "Edit this draft and keep my voice",
+      "Why does this paragraph read as machine-written?",
+      "Tighten this for the reader without losing any fact"
+    ]
+  }
+}

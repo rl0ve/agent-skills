@@ -2,7 +2,7 @@
 set -euo pipefail
 
 package_dir="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
-source_dir="$package_dir/design-router"
+source_dir="$package_dir/../plugins/design-router/skills/design-router"
 target_kind="codex"
 dry_run="false"
 

@@ -12,18 +12,25 @@ and subagents, and those are Claude-specific by nature.
 
 ## Layout
 
-Three top-level folders, because the two agents consume the same work differently.
+Two manifests over **one** plugin tree — not two trees. The two agents discover plugins
+differently but the plugins themselves are nearly the same shape, so duplicating them would
+only guarantee they drift apart.
 
 ```
-.claude-plugin/     marketplace.json — how Claude Code discovers this repo. Nothing else reads it.
-plugins/            the three Claude Code plugins. natural-writing sits here because that is
-                    where the marketplace expects to find it, not because it needs Claude.
-codex/              the Codex-native design-router, its installer, and a standalone field guide.
+.claude-plugin/marketplace.json    Claude Code discovery
+.agents/plugins/marketplace.json   Codex discovery
+plugins/
+  natural-writing/       .claude-plugin/ + .codex-plugin/   both agents
+  design-router/         .codex-plugin/                     Codex
+  claude-ui-router/      .claude-plugin/                    Claude Code
+  claude-ai-work-router/ .claude-plugin/                    Claude Code
+codex/install.sh                   copy design-router straight into ~/.codex/skills,
+                                   for when you do not want a marketplace at all
 ```
 
-`plugins/` and `codex/` are packaging, not capability. `natural-writing` under `plugins/`
-has no Claude dependency — it is Markdown, a Python linter, and 47 tests, and Codex reads it
-straight from that path.
+A plugin is installable by an agent when it carries that agent's manifest. `natural-writing`
+carries both because nothing in it is Claude- or Codex-specific; the two routers carry one
+each because they genuinely do route their own platform's models and subagents.
 
 ## What is in it
 

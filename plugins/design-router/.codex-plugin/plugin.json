@@ -1,0 +1,30 @@
+{
+  "name": "design-router",
+  "version": "1.2.0",
+  "description": "Routes UI, UX, design-review, motion, design-to-code, and interface-copy work through a researched skill catalog and the capabilities actually installed.",
+  "author": {
+    "name": "rl0ve"
+  },
+  "homepage": "https://github.com/rl0ve/agent-skills",
+  "license": "MIT",
+  "keywords": [
+    "ui",
+    "ux",
+    "design",
+    "routing",
+    "skills",
+    "frontend"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Design Router",
+    "shortDescription": "Route UI work to a focused skill chain",
+    "developerName": "rl0ve",
+    "category": "Developer Tools",
+    "defaultPrompt": [
+      "Classify this UI task and select the smallest compatible skill chain",
+      "Compare the canonical chain against what is actually installed",
+      "Which design skills should lead this landing page, and which layers do I skip?"
+    ]
+  }
+}
