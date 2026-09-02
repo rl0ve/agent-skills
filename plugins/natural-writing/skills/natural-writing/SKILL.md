@@ -41,6 +41,14 @@ Read the full input. Internally note:
 
 When the piece is a script meant to be spoken (a talk track, demo script, or narration), read the **Scripts meant to be spoken** register in [references/voice-and-register.md](references/voice-and-register.md) first: gloss screen labels, never talk about the talk, keep the screen's own word for each thing, treat bold anchors as navigation the speaker needs rather than decoration, make every clause stand up without the one before it, round numbers aloud rather than stacking exact ones, and let the line breathe - spoken prose keeps the connective tissue written prose edits out, so a mechanism gets walked through in full rather than compressed into a noun-phrase list.
 
+### Ask before a substantial pass
+
+A handful of answers change every line, and guessing them costs a whole cycle. Ask them together, in one message, each with the default you would otherwise assume, so the author can wave it through. Never more than four, and never one you can infer from the piece itself.
+
+For a spoken piece: who is saying this and to whom; what is on screen behind them while they say it; which figures the audience can read for themselves; how long the beat is; and whether any line is dictated, protected, or already agreed with someone else. For a written piece: the reader, the decision they have to make, the register, and the length.
+
+One question earns its place above the others because its answer is invisible in the draft: **how precise should the numbers be out loud.** A paragraph that quantifies is written one way for a reader and another way for a listener.
+
 When a writing sample is provided, match its tendencies rather than isolated quirks. Do not copy memorable phrases from unrelated samples. For detailed calibration, read [references/voice-and-register.md](references/voice-and-register.md).
 
 ## Edit in layers
@@ -58,10 +66,22 @@ Work from meaning to surface. Do not patch watched words one at a time.
 5. **Words:** Prefer concrete nouns, direct verbs, and ordinary language. Retain technical terms that are precise for the audience.
 6. **Voice:** Restore edge, uncertainty, humor, asymmetry, or understatement that an overly tidy edit removed.
 7. **Integrity:** Compare the result with the source claim by claim.
+8. **Say it out loud** (spoken pieces only): deliver every sentence at presentation speed. Any sentence you have to slow down for, re-run, or take a breath inside is compressed, and the fix is to walk the mechanism through rather than list its parts. No linter finds this one; see the catalog's **Telegraphic speech**.
 
 Use [references/pattern-catalog.md](references/pattern-catalog.md) when the draft has repeated stock phrasing, generic structure, promotional tone, or suspiciously uniform cadence. Patterns are evidence only in clusters. Do not ban a word or punctuation mark merely because it appears once.
 
 When the job covers a set rather than one piece, read the catalog's **Editing a set** before starting and measure again after. A standard applied across many items becomes the next pattern, and each fix tends to install a substitute for what it removed.
+
+## Offer options when the call is taste
+
+Correctness has one answer. Cadence, how much to compress, how many numbers to say aloud, how formal to be, which of two true framings to lead with: these have several, and the author owns the choice. Return options rather than your favourite.
+
+- Three to five, and they must differ in **approach**, not phrasing. A different opening move, a different spine, a different shape. Five rewordings of one sentence is not a choice, and the author will feel handled.
+- Name what each one trades away. An option presented without a cost has not been thought about.
+- Recommend one and say why, so the author can accept without reading all five.
+- Every option states the same facts. Options are about how it sounds, never about what is true.
+- When the author picks one "stylistically", they have chosen the **approach and not the words**. Fix the flaw they named in the option they chose. Handing the same text back with the flaw still in it reads as not listening.
+- Offer options before a large pass, not after. Rewriting forty pieces to a taste that turns out to be wrong is the expensive version of this mistake.
 
 ## Diagnose mode
 
@@ -113,4 +133,5 @@ When the Claude UI Router supplies product semantics, UX labels, states, marketi
 - Run `scripts/lint_natural_writing.py` for a deterministic first-pass scan of longer English drafts. Treat its matches as review prompts, not verdicts.
 - The per-document scan also reports `flat-declarative-run` (three or more consecutive sentences of the same length that none of them turns) and `stacked-precision` (three or more consecutive sentences each landing an exact figure). Both are review prompts: a deliberate staccato beat and a paragraph whose whole job is quantification can be right as they are.
 - Add `--set` when the job is many pieces rather than one: it measures the set against itself and flags an opening word, closing pair, or connective shared by more than a fifth of it. This is the check that catches what your own edit installed.
+- Some patterns are judgment only and are marked that way in the catalog. When a check cannot be made reliable, say so with the evidence and hand over the manual test instead. A noisy check is worse than no check: it trains the next reader to skip the output. Measure any new check against a real corpus and report its false-positive rate before shipping it.
 - Use [tests/cases.md](tests/cases.md) to forward-test behavior after changing this skill.

@@ -1,3 +1,34 @@
+## 1.10.0
+
+Process, not patterns. 1.9.2 named the over-compression defect but left the skill
+with no way to catch it, because a detector was prototyped and rejected: keyed on
+a noun-phrase series with a subordinate clause it produced 19 candidates across 40
+talk tracks, nearly all deliberate rhetoric, and missed the canonical case, which
+carries only one comma. What prevents this going forward is a step in the workflow
+and a gate in the eval, not a regex.
+
+- **Say it out loud** is now step 8 of the layered edit, for spoken pieces. Deliver
+  every sentence at presentation speed; any sentence you slow down for, re-run, or
+  breathe inside is compressed. Enforced as eval check 23.
+- **Ask before a substantial pass.** Up to four questions whose answers change
+  every line, asked together, each with the default you would otherwise assume.
+  For spoken work: who is speaking to whom, what is on screen behind them, which
+  figures the audience can already read, how long the beat is, and whether any line
+  is dictated or already agreed elsewhere. One earns its place above the rest
+  because it is invisible in the draft: how precise should the numbers be out loud.
+- **Offer options when the call is taste.** Three to five differing in approach
+  rather than phrasing, each naming what it trades away, one recommended, all
+  factually identical, offered before a large pass rather than after. And the
+  lesson that produced this section: when the author picks an option
+  "stylistically" they have chosen the approach and not the words, so fix the flaw
+  they named in it rather than handing the same text back. Eval checks 25 and 26.
+- **Unlintable patterns are declared, with evidence.** When a check cannot be made
+  reliable, say so and hand over the manual test. A noisy check is worse than none:
+  it trains the next reader to skip the output. Any new check gets measured against
+  a real corpus and its false-positive rate reported before it ships.
+
+Eval goes from 22 checks to 26.
+
 ## 1.9.2
 
 A correction to the direction of travel. 1.9.0 and 1.9.1 both push toward tighter

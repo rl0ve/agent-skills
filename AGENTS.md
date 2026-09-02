@@ -14,7 +14,7 @@ Read in this order when a task is "make this prose better":
 | File | Read it when |
 |---|---|
 | `plugins/natural-writing/skills/natural-writing/SKILL.md` | Always first. Routing, the layered edit, output discipline. |
-| `.../eval.md` | Before returning any edit. 22 checks; fix every failure you can without new facts. |
+| `.../eval.md` | Before returning any edit. 26 checks; fix every failure you can without new facts. The last four cover spoken delivery and taste calls. |
 | `.../references/pattern-catalog.md` | Repeated stock phrasing, generic structure, uniform cadence. Read **Editing a set** before editing many pieces to one standard. |
 | `.../references/voice-and-register.md` | Voice matching, and the register sections. Read **Scripts meant to be spoken** before any talk track, demo script, or narration. |
 | `.../references/claude-patterns.md` | Assistant-like residue, fiction, creative prose. |
