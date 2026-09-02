@@ -53,6 +53,9 @@ matches the agent you are running as, and ignore the other.
 | Difficult diagnosis, architecture, or consequential tradeoff | `work-router:opus-architect` | Opus | high | Read-only by default; parent integrates. |
 | High-stakes final review after a strong implementation | `work-router:critical-reviewer` | Opus | xhigh | Read-only; use only when the risk justifies it. |
 | Long-horizon, multi-stage, highly ambiguous autonomous project | `work-router:fable-runner` | Fable | high | Sole writer; only when Fable is permitted and the task is large enough. |
+| Prose whose quality is the deliverable: talk track, narration, naming, UX copy, executive writing, voice match | `work-router:fable-wordsmith` | Fable | high | Read-only; returns text the parent verifies and applies. |
+
+**Language work routes on a different axis.** The table above ranks families by reasoning difficulty, and that ranking does not carry over to writing. When the deliverable is the prose itself - a line a person will say on a stage, a name, a paragraph of UX copy, a voice match against a sample - route to `work-router:fable-wordsmith` rather than to `opus-architect`, at any difficulty. Opus is the better diagnostician; Fable hears cadence, register and the tics a reader feels but cannot name. Use Opus for prose only when the hard part is the argument or the facts rather than the words. Keep the wordsmith read-only: prose edits are cheap to review and expensive to apply blindly, and the parent owns checking every figure before anything ships.
 
 Use Sonnet at high effort in the parent for tightly coupled multi-file work that needs more thoroughness but not Opus-class judgment. Use Opus at low or medium effort only when expert recognition matters more than exhaustive repository work. Use Fable at low effort only for long agentic runs made of individually easy steps; it is still the heaviest family and must not become a routine shortcut.
 
@@ -105,6 +108,7 @@ The parent remains responsible for requirements, decisions, integration, final v
 - Escalate `sol-architect` to `sol-critical` only for security, irreversible actions, release-gating risk, or a documented prior strong failure.
 - Escalate Luna work to the parent or a Sol worker when requirements become ambiguous, context becomes large, or the change crosses subsystems.
 - Escalate Terra synthesis to Sol when the remaining work is judgment-heavy rather than read-heavy.
+- Escalate a draft from the parent to `work-router:fable-wordsmith` when a reader has rejected prose on feel rather than on content ("this sounds off", "I hate how this reads") and the parent's own revision did not land. That verdict is a language problem, not a reasoning one.
 - Do not escalate solely because work is slow or difficult.
 
 Never execute an irreversible action without explicit user confirmation.

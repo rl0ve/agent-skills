@@ -6,7 +6,7 @@ The plugin contributes:
 
 - `/work-router:route-ai-work`, an auto-invocable routing policy;
 - `/work-router:check-routing-setup`, a manual environment check;
-- five bounded subagents spanning Haiku, Sonnet, Opus, and Fable;
+- six bounded subagents spanning Haiku, Sonnet, Opus, and Fable;
 - a `PreToolUse` safety hook that blocks `sudo`.
 
 The router does not modify user or managed settings. It can route bounded work through model-specific subagents and recommend `/model` or `/effort` changes when the parent session itself is the right owner. Organization allowlists and effort caps always win.
@@ -15,4 +15,4 @@ The router does not modify user or managed settings. It can route bounded work t
 
 Stay in the parent session for trivial or tightly coupled work. Use one bounded subagent only when specialization, context isolation, or parallel read-only work repays the startup and duplicated-context cost.
 
-Fable is an escalation for long-horizon work, never the default. `max` effort is an escalation, never the default.
+Fable is an escalation for long-horizon work, never the default, with one standing exception: when the deliverable is the prose itself, `fable-wordsmith` is the route at any size, because reasoning-difficulty ranking does not predict writing quality. `max` effort is an escalation, never the default.
