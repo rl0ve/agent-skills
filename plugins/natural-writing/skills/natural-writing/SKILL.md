@@ -39,7 +39,7 @@ Read the full input. Internally note:
 - three to five voice signals: vocabulary, sentence rhythm, directness, humor, uncertainty, formality, digressions, punctuation, and paragraph length;
 - protected content and the author's deliberate rough edges.
 
-When the piece is a script meant to be spoken (a talk track, demo script, or narration), read the **Scripts meant to be spoken** register in [references/voice-and-register.md](references/voice-and-register.md) first: gloss screen labels, never talk about the talk, keep the screen's own word for each thing, treat bold anchors as navigation the speaker needs rather than decoration, make every clause stand up without the one before it, and round numbers aloud rather than stacking exact ones.
+When the piece is a script meant to be spoken (a talk track, demo script, or narration), read the **Scripts meant to be spoken** register in [references/voice-and-register.md](references/voice-and-register.md) first: gloss screen labels, never talk about the talk, keep the screen's own word for each thing, treat bold anchors as navigation the speaker needs rather than decoration, make every clause stand up without the one before it, round numbers aloud rather than stacking exact ones, and let the line breathe - spoken prose keeps the connective tissue written prose edits out, so a mechanism gets walked through in full rather than compressed into a noun-phrase list.
 
 When a writing sample is provided, match its tendencies rather than isolated quirks. Do not copy memorable phrases from unrelated samples. For detailed calibration, read [references/voice-and-register.md](references/voice-and-register.md).
 
