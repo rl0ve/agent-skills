@@ -6,7 +6,7 @@ Run these checks before returning a diagnosis, edit, or draft. Fix every failed 
 
 1. Every factual claim, name, number, date, quotation, citation, ranking, and material qualifier is supported by the source or the user.
 2. The result preserves the original point, stance, uncertainty, and requested action.
-3. Protected literals and formatting remain intact.
+3. Protected literals and formatting remain intact. When the piece round-tripped through another agent, another format, or a scratch file, inventory **every** inline markup token before and after - bold, italics, code, links, entities - and compare the counts. Checking only the one you happened to be thinking about is how a `<i>` returns as a literal `_is_`.
 4. No invented anecdote, source, mechanism, opinion, or numerical specificity appears.
 
 ## Voice

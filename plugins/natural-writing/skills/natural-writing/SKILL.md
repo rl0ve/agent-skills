@@ -118,6 +118,7 @@ After drafting, apply the same layered edit and evaluation. If the brief lacks a
 - Keep headings and lists only when they help navigation or comparison.
 - Do not append a generic summary, uplift, call to action, or offer to continue.
 - Do not narrate the editing process unless the user asks.
+- Round-tripping prose through another agent or a plain-text scratch file converts inline markup to whatever carrier you chose (`<b>` to `**`, `<i>` to `_`). Convert every one of them back, and verify by counting each token type in the source and the result. A count that matches on bold and silently drops italics ships a literal underscore into the artifact.
 - When another task embeds this skill, return only the finished artifact unless a change note is useful to that workflow.
 
 When the Claude UI Router supplies product semantics, UX labels, states, marketing claims, or brand constraints, treat them as protected inputs. Natural Writing is the final prose editor; it must not redesign the interface or invent product behavior.

@@ -1,3 +1,17 @@
+## 1.10.2
+
+A markup round-trip rule, earned by shipping a literal `_is_` into a keynote board.
+
+Handing prose to another agent means converting inline markup to a plain-text
+carrier (`<b>` to `**`, `<i>` to `_`) and converting it back on the way in. The
+write-back verified bold anchors and figures, did not verify italics, and put the
+underscores on screen.
+
+- Eval check 3 now requires an inventory of **every** inline markup token before
+  and after a round trip - bold, italics, code, links, entities - with the counts
+  compared. Checking only the token you were thinking about is the failure mode.
+- Output discipline says the same thing at the point of writing back.
+
 ## 1.10.1
 
 1.10.0 said the compression pattern was unlintable. That was true of the pattern as
