@@ -37,6 +37,12 @@ PATTERNS = {
         r"\b(?:experts (?:say|agree|argue)|studies show|industry reports suggest|many observers believe)\b",
         re.IGNORECASE,
     ),
+    "nominated-significance": re.compile(
+        r"\b(?:is|are) the point\b|\bthat is the point\b|\bwhich is the point\b|\bthe point is\b"
+        r"|\bis what matters\b|\bwhat matters is\b|\bthe thing to notice\b"
+        r"|\bthe real (?:story|question|answer) is\b|\bis the interesting (?:bit|part|thing)\b",
+        re.IGNORECASE,
+    ),
     "backwards-facing-clause": re.compile(
         r"\b(?:(?:built|designed|made|meant) for (?:exactly )?that\b"
         r"|exactly that\b"

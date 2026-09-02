@@ -1,3 +1,19 @@
+## 1.11.0
+
+New pattern: **Nominated significance**. The line names what matters instead of
+delivering it. "The owner column is the point." "The re-render is the point."
+"What matters is how faithful it is."
+
+It survives edits that catch **Announced virtue** because it does not sound
+boastful, it sounds structural, and it is doing the reader's noticing for them.
+The repair is to state the finding: "the owner column is the point" becomes "work
+that runs every day has no owner." If the finding cannot be stated, the line has
+nothing to nominate and the problem is the content, not the phrasing.
+
+Shipped as a lint pattern rather than judgment, because it measured clean:
+0 hits across a 205-field corpus of already-edited keynote copy, and it catches
+the flagged control. Four new tests, 75 pass.
+
 ## 1.10.2
 
 A markup round-trip rule, earned by shipping a literal `_is_` into a keynote board.
