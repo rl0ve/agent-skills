@@ -1,3 +1,26 @@
+## 1.9.2
+
+A correction to the direction of travel. 1.9.0 and 1.9.1 both push toward tighter
+sentences, and applied to a talk track that produces spec lines nobody can say
+out loud.
+
+- New catalog entry **Telegraphic speech**: a spoken line that compresses a
+  mechanism into a noun-phrase list. "Each main stage carries a clock, a warning
+  when it is at risk and an escalation when it breaches" reads fine and cannot be
+  delivered. The repair is longer on purpose: an opener that buys the room a beat
+  ("Now,"), the subject named rather than pronouned, and the mechanism walked
+  through - "when that SLA is at risk of being breached, Maestro Case will
+  escalate it to the right person automatically."
+- The spoken register gains the same rule, plus a guard on the sentence-variety
+  rule so it cannot be read as "shorten everything": cutting every sentence to its
+  shortest form produces the flattest run of the lot, and in a spoken piece the
+  long flowing sentence is usually the one carrying the listener.
+- Say the product's own word rather than a friendly paraphrase. If the thing is an
+  SLA, say SLA. Glossing is for column headings and jargon the room cannot parse,
+  not for terms the audience came to hear.
+
+Source: the board owner, on a line this skill's own advice had over-compressed.
+
 ## 1.9.1
 
 Tuning, measured against the corpus that produced 1.9.0. Swept across 40 keynote
