@@ -7,8 +7,11 @@ they recur across a piece, or across a set being edited to one standard, and rea
 the catalog's "Editing a set" before acting on them.
 
 Two whole-piece checks live outside scan(): em-dash-overuse (density, not a
-single instance) and sentence-shape-run (four or more consecutive sentences in
-one paragraph sharing the same compound/hedged-or-simple shape).
+single instance), sentence-shape-run (four or more consecutive sentences in one
+paragraph sharing the same compound/hedged-or-simple shape), flat-declarative-run
+(three or more consecutive sentences of near-identical length that none of them
+turns) and stacked-precision (three or more consecutive sentences each landing an
+exact figure).
 """
 
 from __future__ import annotations
@@ -32,6 +35,14 @@ PATTERNS = {
     ),
     "vague-attribution": re.compile(
         r"\b(?:experts (?:say|agree|argue)|studies show|industry reports suggest|many observers believe)\b",
+        re.IGNORECASE,
+    ),
+    "backwards-facing-clause": re.compile(
+        r"\b(?:(?:built|designed|made|meant) for (?:exactly )?that\b"
+        r"|exactly that\b"
+        r"|the way (?:it|they|he|she|the \w+) (?:said|described|promised)\b"
+        r"|where nothing (?:\w+ )?them\b"
+        r"|which is what (?:it|they|this|that) (?:does|did|means?)\b)",
         re.IGNORECASE,
     ),
     "binary-template": re.compile(
@@ -207,6 +218,118 @@ def scan_sentence_shape(text: str, *, run_threshold: int = 4) -> list[dict[str, 
     return findings
 
 
+NUMBER_TOKEN = re.compile(
+    r"\b(?:\d[\d,.]*%?|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|"
+    r"fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|"
+    r"eighty|ninety|hundred|thousand|million)\b",
+    re.IGNORECASE,
+)
+
+TURN_MARKERS = re.compile(
+    r"\b(?:but|though|instead|yet|except|until|unless|because|so that|which|who|that is|and then)\b|[:;]",
+    re.IGNORECASE,
+)
+
+
+def scan_flat_declarative_run(
+    text: str, *, run_threshold: int = 3, spread: int = 4
+) -> list[dict[str, object]]:
+    """Flag consecutive sentences of near-identical length that none of them turns.
+
+    The catalog's "Clause-shape monotony" covers the hedged run; this covers the
+    one writers miss, where every sentence is short, correct and the same size,
+    so the paragraph reads as a list being recited. Sentences that carry a turn
+    (a contrast, a subordinate move, a colon) break the run, because that is the
+    fix the catalog asks for.
+    """
+    findings: list[dict[str, object]] = []
+    for para_index, paragraph in enumerate(re.split(r"\n\s*\n", text), start=1):
+        sentences = _split_sentences(paragraph)
+        if len(sentences) < run_threshold:
+            continue
+        run: list[str] = []
+
+        def flush(run: list[str]) -> None:
+            if len(run) < run_threshold:
+                return
+            counts = [len(s.split()) for s in run]
+            if max(counts) - min(counts) > spread:
+                return
+            findings.append(
+                {
+                    "pattern": "flat-declarative-run",
+                    "paragraph": para_index,
+                    "run_length": len(run),
+                    "word_counts": counts,
+                    "excerpt": " ".join(run)[:160],
+                }
+            )
+
+        for sentence in sentences:
+            if TURN_MARKERS.search(sentence):
+                flush(run)
+                run = []
+                continue
+            run.append(sentence)
+        flush(run)
+    return findings
+
+
+ROUNDING_CUE = re.compile(
+    r"(?:call it|close to|about|around|roughly|nearly|almost|some|over|under|"
+    r"more than|less than|getting on for|the better part of|a dozen|dozens)\s+(?:a|an|the)?\s*$",
+    re.IGNORECASE,
+)
+
+
+def _has_exact_figure(sentence: str) -> bool:
+    """A figure counts as exact unless the speaker audibly rounded it.
+
+    "call it forty" and "close to a hundred" are the catalog's prescribed fix,
+    so counting them as precision would flag the repair as the defect.
+    """
+    for match in NUMBER_TOKEN.finditer(sentence):
+        before = sentence[: match.start()]
+        if ROUNDING_CUE.search(before):
+            continue
+        if sentence[match.end() : match.end() + 7].lower().startswith(" or so"):
+            continue
+        return True
+    return False
+
+
+def scan_stacked_precision(
+    text: str, *, run_threshold: int = 3
+) -> list[dict[str, object]]:
+    """Flag a run of consecutive sentences that each land an exact figure.
+
+    Any one of them is fine. Three in a row cannot be heard, which is what makes
+    this a spoken-register problem before it is a prose problem. Audibly rounded
+    figures do not count, because rounding is the fix.
+    """
+    findings: list[dict[str, object]] = []
+    for para_index, paragraph in enumerate(re.split(r"\n\s*\n", text), start=1):
+        sentences = _split_sentences(paragraph)
+        run, run_start = 0, 0
+        for i, sentence in enumerate(sentences + [""]):
+            if sentence and _has_exact_figure(sentence):
+                if run == 0:
+                    run_start = i
+                run += 1
+                continue
+            if run >= run_threshold:
+                findings.append(
+                    {
+                        "pattern": "stacked-precision",
+                        "paragraph": para_index,
+                        "run_length": run,
+                        "excerpt": " ".join(sentences[run_start : run_start + run])[:160],
+                    }
+                )
+            run = 0
+    return findings
+
+
 def scan_em_dash(text: str, *, max_per_100_words: float = 1.0) -> list[dict[str, object]]:
     """Flag em dash overuse by density across the whole piece, never a single instance.
 
@@ -302,7 +425,12 @@ def main() -> int:
 
     text = args.path.read_text(encoding="utf-8")
     findings = scan(text)
-    whole_piece_findings = scan_em_dash(text) + scan_sentence_shape(text)
+    whole_piece_findings = (
+        scan_em_dash(text)
+        + scan_sentence_shape(text)
+        + scan_flat_declarative_run(text)
+        + scan_stacked_precision(text)
+    )
     if args.as_set:
         whole_piece_findings += scan_set(text)
     if args.as_json:

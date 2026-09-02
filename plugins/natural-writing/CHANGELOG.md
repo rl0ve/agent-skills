@@ -1,3 +1,27 @@
+## 1.9.0
+
+Three checks earned by a keynote talk track whose author could hear the problem
+but could not name it: "you're still have a backwards facing kind of syntax...
+it's hard to describe" and "I hate the flat declaratives."
+
+- **Backwards-facing clause** (catalog + spoken register + lint). A clause finished
+  by an earlier one instead of standing on its own: "built for exactly that," "runs
+  the way the map said it could," "where nothing made them wait." Pointer words carry
+  the structure, so the listener has to hold the previous clause to parse this one.
+  Costly in prose, unaffordable in speech, where nobody can look back.
+- **Flat-declarative run** (lint: `flat-declarative-run`). The monotony check the old
+  `sentence-shape-run` missed. Three or more consecutive sentences of near-identical
+  length that none of them turns, where each sentence is individually good and the run
+  reads as a list being recited. A sentence carrying a turn - a contrast, a colon, a
+  subordinate move - breaks the run, because that is the prescribed fix.
+- **Stacked precision** (lint: `stacked-precision`). Three or more consecutive
+  sentences each landing an exact figure. Rounding aloud is the repair, so audibly
+  rounded figures ("call it forty", "close to a hundred") do not count against it. One
+  hard rule added to the spoken register: never say an approximation that contradicts
+  an exact number the audience can read on the screen behind you.
+
+Nine new unit tests, 56 in total.
+
 # Changelog
 
 ## 1.8.0 - 2026-08-28

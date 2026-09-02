@@ -39,7 +39,7 @@ Read the full input. Internally note:
 - three to five voice signals: vocabulary, sentence rhythm, directness, humor, uncertainty, formality, digressions, punctuation, and paragraph length;
 - protected content and the author's deliberate rough edges.
 
-When the piece is a script meant to be spoken (a talk track, demo script, or narration), read the **Scripts meant to be spoken** register in [references/voice-and-register.md](references/voice-and-register.md) first: gloss screen labels, never talk about the talk, keep the screen's own word for each thing, and treat bold anchors as navigation the speaker needs rather than decoration.
+When the piece is a script meant to be spoken (a talk track, demo script, or narration), read the **Scripts meant to be spoken** register in [references/voice-and-register.md](references/voice-and-register.md) first: gloss screen labels, never talk about the talk, keep the screen's own word for each thing, treat bold anchors as navigation the speaker needs rather than decoration, make every clause stand up without the one before it, and round numbers aloud rather than stacking exact ones.
 
 When a writing sample is provided, match its tendencies rather than isolated quirks. Do not copy memorable phrases from unrelated samples. For detailed calibration, read [references/voice-and-register.md](references/voice-and-register.md).
 
@@ -111,5 +111,6 @@ When the Claude UI Router supplies product semantics, UX labels, states, marketi
 - Read [references/examples.md](references/examples.md) when a before/after model would help.
 - Read [references/sources.md](references/sources.md) when maintaining or extending the skill's guidance.
 - Run `scripts/lint_natural_writing.py` for a deterministic first-pass scan of longer English drafts. Treat its matches as review prompts, not verdicts.
+- The per-document scan also reports `flat-declarative-run` (three or more consecutive sentences of the same length that none of them turns) and `stacked-precision` (three or more consecutive sentences each landing an exact figure). Both are review prompts: a deliberate staccato beat and a paragraph whose whole job is quantification can be right as they are.
 - Add `--set` when the job is many pieces rather than one: it measures the set against itself and flags an opening word, closing pair, or connective shared by more than a fifth of it. This is the check that catches what your own edit installed.
 - Use [tests/cases.md](tests/cases.md) to forward-test behavior after changing this skill.
