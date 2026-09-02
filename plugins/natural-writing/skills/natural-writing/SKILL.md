@@ -63,6 +63,7 @@ Work from meaning to surface. Do not patch watched words one at a time.
    - Read each paragraph's sentences in sequence and name each one's shape: compound/hedged (subordinate clauses, qualifiers like "although," "which," "may," "arguably") or simple/direct. Break up a run of four or more sentences in the same shape; a paragraph should alternate stretches of hedge and directness, not commit to one for its whole length. See [references/pattern-catalog.md](references/pattern-catalog.md)'s **Clause-shape monotony**.
    - Do not let a screen, app, map or record perform a human verb, and do not let a vague "it" or "each one" carry the sentence. Say what is on screen, or name the person reading it. See the catalog's **Interface as narrator**.
    - Do not rate the subject in place of showing it ("and it is honest", "the useful thing about it is"). Cut the rating; the evidence carries the judgment. See the catalog's **Announced virtue**.
+   - Do not nominate what matters in place of stating it ("the owner column is the point", "the re-render is the point"). Say the finding instead: "work that runs every day has no owner." See the catalog's **Nominated significance**.
 5. **Words:** Prefer concrete nouns, direct verbs, and ordinary language. Retain technical terms that are precise for the audience.
 6. **Voice:** Restore edge, uncertainty, humor, asymmetry, or understatement that an overly tidy edit removed.
 7. **Integrity:** Compare the result with the source claim by claim.

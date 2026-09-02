@@ -429,3 +429,21 @@ class SpokenChecksTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class NominatedSignificanceTests(unittest.TestCase):
+    def test_flags_is_the_point(self):
+        names = {f["pattern"] for f in MODULE.scan("Same survey as a table, and the owner column is the point.")}
+        self.assertIn("nominated-significance", names)
+
+    def test_flags_what_matters_is(self):
+        names = {f["pattern"] for f in MODULE.scan("Here is what came back, and what matters is how faithful it is.")}
+        self.assertIn("nominated-significance", names)
+
+    def test_stating_the_finding_is_clean(self):
+        names = {f["pattern"] for f in MODULE.scan("The same survey as a table, and work that runs every day has no owner.")}
+        self.assertNotIn("nominated-significance", names)
+
+    def test_ordinary_use_of_point_is_left_alone(self):
+        names = {f["pattern"] for f in MODULE.scan("She can point at exactly which claims moved and why.")}
+        self.assertNotIn("nominated-significance", names)
