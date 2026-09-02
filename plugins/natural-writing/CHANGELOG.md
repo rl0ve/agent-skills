@@ -1,3 +1,30 @@
+## 1.9.1
+
+Tuning, measured against the corpus that produced 1.9.0. Swept across 40 keynote
+talk tracks, 1.9.0's new checks fired 12 times on 11 tracks and a Fable review
+judged 10 of the 11 to be false positives. A check that misfires that often gets
+ignored, so the checks were narrowed against those cases rather than the rules
+relaxed.
+
+- `stacked-precision` no longer counts three things that are not figures:
+  pronominal "one" ("each one", "not one of them", "the one at the top"),
+  alphanumeric identifiers (SR-440, WR-2026-0417, IMP-0005), and elapsed-time
+  markers ("six months on", "three months later").
+- `flat-declarative-run` now knows that a fragment or an imperative is a pointing
+  beat rather than a flat declarative, so short-short-short-long tempo stops
+  reading as a recited list. A verbless label is detected by shape (a comma and no
+  auxiliary or copula anywhere) rather than by verb lookup, after a curated verb
+  list produced a false negative on "Somebody approves the containment."
+  `TURN_MARKERS` also gained "now", "no longer" and "used to", which carry a
+  then/now contrast.
+- The catalog's **Stacked precision** entry now names its remaining known false
+  positive: a chain of figures that derive from one another and are all on the
+  frame behind the speaker. The check cannot tell a derived chain from an
+  unrelated stack, and pretending otherwise would be worse than saying so.
+
+Result on the same corpus: 12 findings down to 6, all four flat-declarative false
+positives cleared, and the one true positive still fires. Eight new tests, 64 pass.
+
 ## 1.9.0
 
 Three checks earned by a keynote talk track whose author could hear the problem

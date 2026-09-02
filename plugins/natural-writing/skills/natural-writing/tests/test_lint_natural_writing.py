@@ -347,5 +347,48 @@ class StackedPrecisionTests(unittest.TestCase):
         self.assertFalse(MODULE.scan_stacked_precision(text))
 
 
+class StackedPrecisionTuningTests(unittest.TestCase):
+    def test_pronominal_one_is_not_a_figure(self):
+        text = ("Each one carries its evidence count. Not one of them was disagreed with. "
+                "The one at the top is the rule.")
+        self.assertFalse(MODULE.scan_stacked_precision(text))
+
+    def test_identifier_is_not_a_figure(self):
+        text = ("The rule is SR-440. The claim is WR-2026-0417. The iteration is IMP-0005.")
+        self.assertFalse(MODULE.scan_stacked_precision(text))
+
+    def test_elapsed_time_marker_is_not_a_figure(self):
+        text = ("Six months on. Three months later the queue looks different. "
+                "Two weeks ago nobody had seen it.")
+        self.assertFalse(MODULE.scan_stacked_precision(text))
+
+    def test_a_real_stack_still_fires(self):
+        text = ("Thirteen stages sit here. Thirty-nine tasks sit under them. "
+                "Eighty-nine rules decide the path.")
+        self.assertTrue(MODULE.scan_stacked_precision(text))
+
+
+class FlatDeclarativeTuningTests(unittest.TestCase):
+    def test_a_fragment_breaks_the_run(self):
+        text = ("The map draws itself. Two departments, stitched into one flow. "
+                "The gap stays drawn as a gap.")
+        self.assertFalse(MODULE.scan_flat_declarative_run(text))
+
+    def test_an_imperative_breaks_the_run(self):
+        text = ("The map draws itself. And look at substitution. It is drawn as a gap.")
+        self.assertFalse(MODULE.scan_flat_declarative_run(text))
+
+    def test_a_now_contrast_breaks_the_run(self):
+        text = ("That loop ran on one process. Now it is running on all of them. "
+                "The feed is the same feed.")
+        self.assertFalse(MODULE.scan_flat_declarative_run(text))
+
+    def test_three_calm_declaratives_still_fire(self):
+        text = ("Here is what the VP of service opens on a Monday every week. "
+                "Four things are ranked by what each is worth to the business. "
+                "The one at the top is an ownership decision here.")
+        self.assertTrue(MODULE.scan_flat_declarative_run(text))
+
+
 if __name__ == "__main__":
     unittest.main()
