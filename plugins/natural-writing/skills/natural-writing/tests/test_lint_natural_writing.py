@@ -390,5 +390,42 @@ class FlatDeclarativeTuningTests(unittest.TestCase):
         self.assertTrue(MODULE.scan_flat_declarative_run(text))
 
 
+class SpokenChecksTests(unittest.TestCase):
+    def test_compressed_mechanism_fires(self):
+        text = ("Each main stage carries a clock, a warning when it is at risk and an "
+                "escalation when it breaches.")
+        names = {f["pattern"] for f in MODULE.scan_spoken(text)}
+        self.assertIn("compressed-mechanism", names)
+
+    def test_walked_mechanism_is_clean(self):
+        text = ("Now, each main stage has an SLA, and when that SLA is at risk of being "
+                "breached, it escalates to the right person automatically.")
+        names = {f["pattern"] for f in MODULE.scan_spoken(text)}
+        self.assertNotIn("compressed-mechanism", names)
+
+    def test_stacked_object_pronouns_fire(self):
+        names = {f["pattern"] for f in MODULE.scan_spoken("So hand it that.")}
+        self.assertIn("stacked-object-pronouns", names)
+
+    def test_named_object_is_clean(self):
+        names = {f["pattern"] for f in MODULE.scan_spoken("So hand the coding agent the document.")}
+        self.assertNotIn("stacked-object-pronouns", names)
+
+    def test_paragraph_opening_on_pronoun_fires(self):
+        text = "The case agent picks that up.\n\nIt checks the photos against the finding."
+        names = {f["pattern"] for f in MODULE.scan_spoken(text)}
+        self.assertIn("paragraph-opens-on-pronoun", names)
+
+    def test_first_paragraph_may_open_however_it_likes(self):
+        text = "It starts here.\n\nThe case agent picks that up."
+        names = {f["pattern"] for f in MODULE.scan_spoken(text)}
+        self.assertNotIn("paragraph-opens-on-pronoun", names)
+
+    def test_spoken_checks_are_opt_in(self):
+        # scan() must not carry them: they are wrong for written prose
+        names = {f["pattern"] for f in MODULE.scan("So hand it that.")}
+        self.assertNotIn("stacked-object-pronouns", names)
+
+
 if __name__ == "__main__":
     unittest.main()

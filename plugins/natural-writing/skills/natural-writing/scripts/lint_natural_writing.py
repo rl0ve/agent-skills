@@ -386,6 +386,57 @@ def scan_stacked_precision(
     return findings
 
 
+SPOKEN_PATTERNS = {
+    # "a clock, a warning when it is at risk and an escalation when it breaches"
+    "compressed-mechanism": re.compile(
+        r"\ba\s+\w+(?:\s+\w+){0,2},\s+(?:a|an)\s+\w+(?:\s+\w+){0,3}\s+when\b[^.]{0,60}?\band\s+(?:a|an)\s+\w+",
+        re.IGNORECASE,
+    ),
+    # "hand it that", "give them that one" - two object pronouns nobody can say
+    "stacked-object-pronouns": re.compile(
+        r"\b(?:hand|give|send|show|pass|tell)\s+(?:it|them|him|her|us)\s+(?:that|this|those|these|it|one)\b",
+        re.IGNORECASE,
+    ),
+}
+
+PARAGRAPH_OPENER = re.compile(
+    r"^(?:It|They|That one|Those|This one)\b(?!\s+(?:is|was|are|were)\s+(?:the|a|an)\b)",
+)
+
+
+def scan_spoken(text: str) -> list[dict[str, object]]:
+    """Checks that only make sense for a piece someone will say out loud.
+
+    Narrow on purpose. Each of these was measured against a 40-piece talk-track
+    set before shipping: the three here fired only on true positives, and a
+    fourth candidate (a verbless comma inventory) fired three times, all false,
+    because that is also the shape of a legitimate pointing beat. The wider
+    "compressed mechanism" judgment stays unlinted - see the catalog's
+    **Telegraphic speech**, which explains why.
+    """
+    findings: list[dict[str, object]] = []
+    for name, pattern in SPOKEN_PATTERNS.items():
+        for match in pattern.finditer(text):
+            findings.append(
+                {
+                    "pattern": name,
+                    "line": text[: match.start()].count("\n") + 1,
+                    "excerpt": match.group(0)[:120],
+                }
+            )
+    for para_index, paragraph in enumerate(re.split(r"\n\s*\n", text), start=1):
+        first = paragraph.strip()
+        if para_index > 1 and PARAGRAPH_OPENER.match(first):
+            findings.append(
+                {
+                    "pattern": "paragraph-opens-on-pronoun",
+                    "paragraph": para_index,
+                    "excerpt": first[:120],
+                }
+            )
+    return findings
+
+
 def scan_em_dash(text: str, *, max_per_100_words: float = 1.0) -> list[dict[str, object]]:
     """Flag em dash overuse by density across the whole piece, never a single instance.
 
@@ -471,6 +522,14 @@ def main() -> int:
     parser.add_argument("path", type=Path)
     parser.add_argument("--json", action="store_true", dest="as_json")
     parser.add_argument(
+        "--spoken",
+        action="store_true",
+        dest="as_spoken",
+        help="add the checks that only apply to a piece meant to be said out "
+             "loud: compressed mechanisms, stacked object pronouns, and a "
+             "paragraph opening on a pronoun the listener must resolve",
+    )
+    parser.add_argument(
         "--set",
         action="store_true",
         dest="as_set",
@@ -487,6 +546,8 @@ def main() -> int:
         + scan_flat_declarative_run(text)
         + scan_stacked_precision(text)
     )
+    if args.as_spoken:
+        whole_piece_findings += scan_spoken(text)
     if args.as_set:
         whole_piece_findings += scan_set(text)
     if args.as_json:

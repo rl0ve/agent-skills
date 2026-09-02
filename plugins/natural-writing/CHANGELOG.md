@@ -1,3 +1,23 @@
+## 1.10.1
+
+1.10.0 said the compression pattern was unlintable. That was true of the pattern as
+a whole and wrong about its parts. Four candidate heuristics were measured against
+the same 40-piece talk-track corpus; three fired only on true positives and ship
+here behind `--spoken`, and the fourth was rejected for firing three times, all
+false.
+
+- `--spoken` adds `compressed-mechanism` (a noun-plus-temporal-clause series: "a
+  clock, a warning when it is at risk and an escalation when it breaches"),
+  `stacked-object-pronouns` ("hand it that"), and `paragraph-opens-on-pronoun`.
+  Opt-in, because all three are wrong for written prose.
+- Rejected and recorded: a verbless comma inventory, which is also the shape of a
+  legitimate pointing beat.
+- The catalog entry now says partly linted rather than unlinted, and keeps the
+  reason the general call cannot be automated: no regex can know that "a stage
+  that is meant to take four" is an SLA said the friendly way.
+
+Seven new tests, 71 pass.
+
 ## 1.10.0
 
 Process, not patterns. 1.9.2 named the over-compression defect but left the skill
