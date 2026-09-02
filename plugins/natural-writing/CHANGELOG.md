@@ -1,3 +1,24 @@
+## 1.12.0
+
+New check: `interface-acts-on-itself`. "Pick a few processes and the map seeds
+itself." "The map draws itself." An interface doing something to itself, with no
+actor named.
+
+The catalog has described this since **Interface as narrator** shipped, and its own
+example is "the app keeps score on itself" - but there was no check, so the pattern
+was only catchable by a human reading the catalog closely. It got past a writing
+pass and into a published keynote board.
+
+- Catches the reflexive slice, which is the part a regex can hold. The general case
+  stays judgment: the noun and verb lists are open-ended.
+- "itself" emphasising a different noun is excluded by refusing a determiner between
+  the verb and the pronoun, so "the frame shows the record itself" stays clean.
+- "process" is deliberately not in the noun list. A process genuinely runs, and "the
+  process improved itself" is a claim authors make on purpose.
+
+Measured before shipping: fires on all four controls, zero hits across a 694-field
+corpus of already-edited board copy. Five new tests, 80 pass.
+
 ## 1.11.0
 
 New pattern: **Nominated significance**. The line names what matters instead of

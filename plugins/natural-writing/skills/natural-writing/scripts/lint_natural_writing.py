@@ -37,6 +37,18 @@ PATTERNS = {
         r"\b(?:experts (?:say|agree|argue)|studies show|industry reports suggest|many observers believe)\b",
         re.IGNORECASE,
     ),
+    # The reflexive slice of the catalog's Interface as narrator, which is the part a
+    # regex can hold: an interface doing something to itself, with no actor named.
+    # "itself" emphasising some other noun ("shows the record itself") is excluded by
+    # refusing a determiner between the verb and the pronoun. "process" is deliberately
+    # not in the noun list: a process genuinely runs, and "the process improved itself"
+    # is a claim authors make on purpose.
+    "interface-acts-on-itself": re.compile(
+        r"\b(?:map|screen|analysis|app|page|board|record|ledger|list|survey|estate|dashboard|"
+        r"report|document|diagram|canvas|queue|trail|frame|table|panel|view)\s+"
+        r"(?:\w+s)(?:\s+(?!the\b|a\b|an\b|its\b|this\b|that\b|their\b)\w+){0,2}\s+itself\b",
+        re.IGNORECASE,
+    ),
     "nominated-significance": re.compile(
         r"\b(?:is|are) the point\b|\bthat is the point\b|\bwhich is the point\b|\bthe point is\b"
         r"|\bis what matters\b|\bwhat matters is\b|\bthe thing to notice\b"
