@@ -18,6 +18,7 @@
 3. Sonnet medium is the routine implementation route; high is the thorough parent route.
 4. Opus high is for expert judgment and hard diagnosis, not every code change.
 5. Fable is for projects larger than a normal sitting and should not be a default merely because it is available.
+5a. Fable is also the route for prose whose quality is the deliverable, at any size. Family ranking by reasoning difficulty does not predict writing quality, so a short talk track can be correct work for the heaviest family while a large refactor is not. Basis: observed on a keynote talk-track set in Sep 2026, where a Fable pass found key-point echo, stage directions in spoken lines and unsayable written constructions that two prior Opus passes had walked past, and correctly declined to edit 11 of 40 pieces. That is one session, not a benchmark.
 6. Parallel subagents multiply context and output tokens. Use them only for independent questions.
 7. One writer avoids conflict, duplicated verification, and expensive integration repair.
 

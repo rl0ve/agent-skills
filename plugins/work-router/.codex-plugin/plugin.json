@@ -1,6 +1,6 @@
 {
   "name": "work-router",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Routes substantial agent work to the leanest reliable parent or subagent configuration on task shape, ambiguity, risk, latency, and token use. Carries a route table for Claude Code and one for Codex.",
   "author": {
     "name": "rl0ve"
