@@ -35,3 +35,10 @@ Run these checks before returning a diagnosis, edit, or draft. Fix every failed 
 20. Draft mode stays within the brief and marks or asks for essential missing facts.
 21. The response follows the requested format, audience, channel, and length.
 22. The ending stops on the last useful point or requested action, without a generic flourish or offer to continue.
+
+## Spoken pieces and taste calls
+
+23. Every sentence of a spoken piece was delivered out loud at presentation speed, and none of them had to be slowed down, re-run, or breathed inside. A mechanism is walked through, not compressed into a noun-phrase list.
+24. The piece says the product's own word for each thing rather than a friendlier paraphrase, and glosses only what the room genuinely cannot parse.
+25. Where the remaining choice was taste rather than correctness, options were offered before the pass rather than one answer after it, each differing in approach and each naming what it trades away.
+26. Where the author chose an option "stylistically", the flaw they named in it was fixed rather than returned intact.
