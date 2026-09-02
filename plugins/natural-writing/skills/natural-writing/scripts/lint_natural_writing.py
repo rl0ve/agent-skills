@@ -226,9 +226,38 @@ NUMBER_TOKEN = re.compile(
 )
 
 TURN_MARKERS = re.compile(
-    r"\b(?:but|though|instead|yet|except|until|unless|because|so that|which|who|that is|and then)\b|[:;]",
+    r"\b(?:but|though|instead|yet|except|until|unless|because|so that|which|who|that is|"
+    r"and then|now|no longer|used to)\b|[:;]",
     re.IGNORECASE,
 )
+
+IMPERATIVE_START = re.compile(
+    r"^(?:and\s+|so\s+|then\s+)?(?:look|notice|watch|see|take|point|open|click|say|read|"
+    r"imagine|picture|consider|remember|start|keep)\b",
+    re.IGNORECASE,
+)
+
+AUXILIARY = re.compile(
+    r"\b(?:is|are|was|were|be|been|being|am|has|have|had|does|do|did|"
+    r"can|could|will|would|shall|should|must|may|might)\b",
+    re.IGNORECASE,
+)
+
+
+def _is_beat(sentence: str) -> bool:
+    """A fragment or an imperative is a pointing beat, not a flat declarative.
+
+    Short-short-short-long is what the spoken register asks for, so a run broken
+    by a label fragment ("Two departments, stitched into one flow.") or an
+    imperative ("And look at substitution.") is tempo rather than a recited list.
+    """
+    if IMPERATIVE_START.match(sentence.strip()):
+        return True
+    # A verbless label reads as a beat. Detecting "no verb" without a parser is
+    # unreliable, so use the shape these actually take: a noun phrase, a comma,
+    # and no auxiliary or copula anywhere ("Two departments, stitched into one
+    # flow."). A plain declarative carries no comma or carries an auxiliary.
+    return "," in sentence and not AUXILIARY.search(sentence)
 
 
 def scan_flat_declarative_run(
@@ -266,7 +295,7 @@ def scan_flat_declarative_run(
             )
 
         for sentence in sentences:
-            if TURN_MARKERS.search(sentence):
+            if TURN_MARKERS.search(sentence) or _is_beat(sentence):
                 flush(run)
                 run = []
                 continue
@@ -282,6 +311,21 @@ ROUNDING_CUE = re.compile(
 )
 
 
+PRONOMINAL_ONE = re.compile(
+    r"(?:\b(?:each|every|not|any|no|the|this|that|another|which|only)\s+one\b"
+    r"|\bone\s+of\b)",
+    re.IGNORECASE,
+)
+
+IDENTIFIER = re.compile(r"[A-Za-z]-?\d|\d-?[A-Za-z]")
+
+ELAPSED_MARKER = re.compile(
+    r"\b\w+\s+(?:seconds?|minutes?|hours?|days?|weeks?|months?|years?)\s+"
+    r"(?:on|later|ago|in|before|after)\b",
+    re.IGNORECASE,
+)
+
+
 def _has_exact_figure(sentence: str) -> bool:
     """A figure counts as exact unless the speaker audibly rounded it.
 
@@ -289,10 +333,22 @@ def _has_exact_figure(sentence: str) -> bool:
     so counting them as precision would flag the repair as the defect.
     """
     for match in NUMBER_TOKEN.finditer(sentence):
+        token = match.group(0)
         before = sentence[: match.start()]
+        after = sentence[match.end() :]
         if ROUNDING_CUE.search(before):
             continue
-        if sentence[match.end() : match.end() + 7].lower().startswith(" or so"):
+        if after.lower().startswith(" or so"):
+            continue
+        # "each one", "one of them": the pronoun, not a count
+        window = (before[-12:] + token + after[:6])
+        if token.lower() == "one" and PRONOMINAL_ONE.search(window):
+            continue
+        # SR-440, WR-2026-0417: an identifier the room reads, not a quantity
+        if IDENTIFIER.search(sentence[max(0, match.start() - 2) : match.end() + 2]):
+            continue
+        # "six months on", "three months later": a time marker, not data
+        if ELAPSED_MARKER.match(sentence[match.start() :]):
             continue
         return True
     return False
