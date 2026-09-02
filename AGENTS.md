@@ -23,7 +23,8 @@ Read in this order when a task is "make this prose better":
 Two things worth running rather than reading:
 
 ```bash
-# per-document scan: named patterns, em-dash density, sentence-shape runs
+# per-document scan: named patterns, em-dash density, sentence-shape runs,
+# flat-declarative runs, stacked precision
 python3 plugins/natural-writing/skills/natural-writing/scripts/lint_natural_writing.py DRAFT.md
 
 # set-level scan: blank-line separated pieces measured against EACH OTHER.

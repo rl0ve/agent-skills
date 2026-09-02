@@ -300,5 +300,52 @@ class ScanSetTests(unittest.TestCase):
         self.assertNotIn("set-uniform-length", self.names("\n\n".join(pieces)))
 
 
+class BackwardsFacingClauseTests(unittest.TestCase):
+    def test_flags_built_for_exactly_that(self):
+        findings = MODULE.scan("A Maestro case is built for exactly that.")
+        self.assertTrue(any(f["pattern"] == "backwards-facing-clause" for f in findings))
+
+    def test_flags_the_way_the_map_said(self):
+        findings = MODULE.scan("It runs the way the map said it could.")
+        self.assertTrue(any(f["pattern"] == "backwards-facing-clause" for f in findings))
+
+    def test_leaves_a_self_standing_clause_alone(self):
+        findings = MODULE.scan("A Maestro case is built for messy work.")
+        self.assertFalse(any(f["pattern"] == "backwards-facing-clause" for f in findings))
+
+
+class FlatDeclarativeRunTests(unittest.TestCase):
+    def test_flags_three_same_length_untuned_sentences(self):
+        text = ("Somebody sends the evidence. Somebody approves the containment. "
+                "Somebody authorizes the outcome.")
+        self.assertTrue(MODULE.scan_flat_declarative_run(text))
+
+    def test_a_turn_breaks_the_run(self):
+        text = ("Somebody sends the evidence. Somebody approves the containment, but the "
+                "outcome waits. Somebody authorizes the outcome.")
+        self.assertFalse(MODULE.scan_flat_declarative_run(text))
+
+    def test_varied_lengths_are_left_alone(self):
+        text = ("A warranty claim waits on people. In four of the six main stages somebody "
+                "has to say yes before anything moves at all in the case. It branches.")
+        self.assertFalse(MODULE.scan_flat_declarative_run(text))
+
+
+class StackedPrecisionTests(unittest.TestCase):
+    def test_flags_three_exact_figures_in_a_row(self):
+        text = ("Thirteen stages sit here. Thirty-nine tasks sit under them. "
+                "Eighty-nine rules decide the path.")
+        self.assertTrue(MODULE.scan_stacked_precision(text))
+
+    def test_audible_rounding_is_the_fix_not_the_defect(self):
+        text = ("Thirteen stages sit here. Call it forty tasks under them. "
+                "Close to a hundred rules decide the path.")
+        self.assertFalse(MODULE.scan_stacked_precision(text))
+
+    def test_one_figure_alone_is_ordinary(self):
+        text = "Thirteen stages sit here. The rest is detail. Nobody typed any of it."
+        self.assertFalse(MODULE.scan_stacked_precision(text))
+
+
 if __name__ == "__main__":
     unittest.main()

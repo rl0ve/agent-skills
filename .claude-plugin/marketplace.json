@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Portable agent skills and Claude Code routing plugins: natural-writing (tool-neutral), plus model and UI routers.",
-    "version": "1.3.0"
+    "version": "1.4.0"
   },
   "plugins": [
     {
@@ -27,7 +27,7 @@
       "name": "natural-writing",
       "source": "./plugins/natural-writing",
       "description": "Diagnose, edit, rewrite, or draft natural prose while preserving facts, formatting, intent, register, and author voice.",
-      "version": "1.8.0",
+      "version": "1.9.0",
       "category": "Productivity",
       "tags": [
         "writing",
