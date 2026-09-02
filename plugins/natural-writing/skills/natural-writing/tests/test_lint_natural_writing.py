@@ -447,3 +447,25 @@ class NominatedSignificanceTests(unittest.TestCase):
     def test_ordinary_use_of_point_is_left_alone(self):
         names = {f["pattern"] for f in MODULE.scan("She can point at exactly which claims moved and why.")}
         self.assertNotIn("nominated-significance", names)
+
+
+class InterfaceActsOnItselfTests(unittest.TestCase):
+    def test_flags_the_map_seeds_itself(self):
+        names = {f["pattern"] for f in MODULE.scan("Pick a few processes and the map seeds itself.")}
+        self.assertIn("interface-acts-on-itself", names)
+
+    def test_flags_a_gapped_reflexive(self):
+        names = {f["pattern"] for f in MODULE.scan("The app keeps score on itself.")}
+        self.assertIn("interface-acts-on-itself", names)
+
+    def test_emphatic_itself_is_left_alone(self):
+        names = {f["pattern"] for f in MODULE.scan("The frame shows the record itself.")}
+        self.assertNotIn("interface-acts-on-itself", names)
+
+    def test_naming_the_actor_is_clean(self):
+        names = {f["pattern"] for f in MODULE.scan("Nobody drew this. Cartographer did.")}
+        self.assertNotIn("interface-acts-on-itself", names)
+
+    def test_a_process_may_improve_itself(self):
+        names = {f["pattern"] for f in MODULE.scan("The map made the process, and the process improved itself.")}
+        self.assertNotIn("interface-acts-on-itself", names)
