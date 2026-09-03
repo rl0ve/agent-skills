@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.13.1 - 2026-09-03
+
+Naming. The catalog names patterns; examples.md headed each example by its
+editorial move and named the pattern only sometimes, and not always with the
+catalog's word. Every example heading is now the exact catalog row name (or the
+SKILL.md or eval section it demonstrates), every bold reference in an example
+resolves to a row, and the forward cases that target a row use its name too.
+"Abstract praise" in the diagnose example becomes **Sales varnish**, which is
+the row it was describing.
+
 ## 1.13.0 - 2026-09-03
 
 A structure release. Twelve versions of pattern accretion, most of them from one
