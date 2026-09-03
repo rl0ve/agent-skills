@@ -4,7 +4,9 @@ These examples model the decision, not phrases to reuse. Each one shows the befo
 
 Every fact in an "after" is present in its "before." That is the constraint that makes the examples testable, and it is the constraint the skill works under.
 
-## Cut importance framing, keep the fact
+Each heading is the catalog row's exact name (or, for the workflow examples, the SKILL.md or eval section it demonstrates), so the row and its example are found by the same words. Where a heading names two rows, the example shows them together because they arrive together.
+
+## Importance inflation
 
 Before:
 
@@ -16,7 +18,7 @@ After:
 
 Why: the available fact carries the significance. If “first release” or the export feature were not in the source, the editor must not invent them.
 
-## Keep uncertainty that belongs to the author
+## Unsupported certainty
 
 Before:
 
@@ -32,7 +34,7 @@ Better edit:
 
 Why: the hedge and emotion are part of the claim and the voice.
 
-## Replace vague authority
+## Vague authority
 
 Before:
 
@@ -44,7 +46,7 @@ After when no source exists:
 
 Why: a natural rewrite cannot manufacture a source or result.
 
-## Prefer a real mechanism
+## Abstract business language
 
 Before:
 
@@ -56,7 +58,7 @@ After:
 
 Why: use this repair only when those features appear in the source.
 
-## Preserve technical repetition
+## Synonym cycling
 
 Before:
 
@@ -68,7 +70,7 @@ After:
 
 Why: one stable term is clearer than three decorative synonyms.
 
-## Diagnose without pretending to detect authorship
+## Diagnose mode: Manufactured insight, Binary template, Sales varnish
 
 Text:
 
@@ -78,9 +80,9 @@ Report:
 
 - **Manufactured insight:** “Here's what nobody tells you” claims exclusivity without evidence. Start with the onboarding claim.
 - **Binary template:** “isn't just documentation” delays the actual comparison. Name what onboarding includes.
-- **Abstract praise:** “journey that empowers every user” gives no mechanism or outcome. Add supported specifics or cut it.
+- **Sales varnish:** “journey that empowers every user” gives no mechanism or outcome. Add supported specifics or cut it.
 
-## Default to a typed dash
+## Em dash default
 
 Before:
 
@@ -92,7 +94,7 @@ After:
 
 Why: neither aside earns an em dash. Commas carry both without loss. Keep the em dash only for the rare case where a comma or parenthesis would blur the break the writer intends.
 
-## Break a run of the same sentence shape
+## Clause-shape monotony
 
 Before:
 
@@ -104,7 +106,7 @@ After:
 
 Why: four hedged, subordinate-clause sentences in a row read as one long qualification instead of four separate points. Recasting two of them as direct statements lets the real hedges (“might,” “may still”) carry their own weight.
 
-## Keep a deliberate fragment
+## Dramatic fragments (kept)
 
 Before:
 
@@ -116,7 +118,7 @@ After:
 
 Why: the fragment creates pressure and fits the story. Remove only the decorative conjunction.
 
-## Lead with the point, then the condition
+## Deferred point and Mechanism-speak
 
 Before:
 
@@ -128,7 +130,7 @@ After:
 
 Why: **deferred point** and **mechanism-speak** together. The reader wanted the consequence; the sentence made them wait through where the data lives to get it. The mechanism survives, one sentence later, said as what a person now sees.
 
-## Say what it is, not what it is not
+## Contrastive definition
 
 Before:
 
@@ -140,7 +142,7 @@ After:
 
 Why: **contrastive definition** three times in two sentences, and no positive statement until the third clause. The second "after" sentence is drawn from what a queue of decisions is, not invented; if the source had not said what a row holds, the edit would stop after the first sentence.
 
-## Cut the spec-sheet coda
+## Spec-sheet coda
 
 Before:
 
@@ -152,7 +154,7 @@ After:
 
 Why: **spec-sheet coda**. Three verbless qualities read as a product blurb. One of them, turned into a consequence for the reader, does the work of all three. "Forward it without editing" is what "ready to use" meant; no new claim.
 
-## Name the people, not the department
+## Org-chart actor
 
 Before:
 
@@ -164,7 +166,7 @@ After:
 
 Why: **org-chart actor**. A function can own or approve; it cannot hear or learn. The reader pictures nobody until a person appears. "Engineers" and "officer" are the roles the source named for those functions; do not invent a title the source does not have.
 
-## Say what happens in the reader's world
+## Insider jargon
 
 Before:
 
@@ -176,7 +178,7 @@ After:
 
 Why: **insider jargon**. "Read-only," "system of record," and "human-in-the-loop" describe the system to its builders. The reader is a plant manager; each term becomes what they would see. Keep the terms if the audience owns them.
 
-## Give the screen's verb back to a person
+## Interface as narrator
 
 Before:
 
@@ -188,7 +190,7 @@ After:
 
 Why: **interface as narrator**. Screens show, list and mark; they do not admit or keep score. The tell is attitude. The after says what is on screen. "Month by month" and "names an owner" were in the source's surrounding text; the edit borrows from the piece, not from imagination.
 
-## Cut the rating, keep the evidence
+## Announced virtue
 
 Before:
 
@@ -200,7 +202,7 @@ After:
 
 Why: **announced virtue**. "It is honest" and "the useful thing about it" rate the subject. The second sentence of the after is the evidence the rating was standing in for; it was in the source. If it had not been, the rating was the only claim and the paragraph had nothing to say.
 
-## Deliver the finding instead of nominating it
+## Nominated significance
 
 Before:
 
@@ -212,7 +214,7 @@ After:
 
 Why: **nominated significance**. "That is the point" and "what matters is" tell the reader something matters without saying what. The after states the finding. It sounds less confident and says more. If the finding cannot be stated, the sentence has nothing to nominate.
 
-## Let each clause stand on its own
+## Backwards-facing clause
 
 Before:
 
@@ -224,7 +226,7 @@ After:
 
 Why: **backwards-facing clause**. "Exactly that," "the way the map said it could," and "where nothing made them wait" each point at an earlier sentence the reader must hold in memory. The after names the subject in the sentence that needs it. In speech this is the difference between following and losing the thread. The specifics ("missing policy number," "no approval pending") come from the source paragraph.
 
-## Walk a mechanism through when it will be said aloud
+## Telegraphic speech, Stacked precision, Label read cold (spoken)
 
 Before (a talk track):
 
@@ -236,7 +238,7 @@ After:
 
 Why: three spoken-only patterns in three sentences. **Telegraphic speech**: the first sentence is a spec line nobody can say at speed; the after is longer on purpose and uses the product's own word, SLA. **Stacked precision**: three exact figures in a row cannot be heard; the point rests on thirteen, so that stays exact and eighty-nine is rounded audibly. **Label read cold**: "recurrence confirmed, gates closure" is a screen cell; the after says what it means and who acts on it. Applied to written prose, every one of these edits would be wrong. See [spoken-register.md](spoken-register.md).
 
-## Measure what the fix installed
+## Editing a set
 
 A set of forty one-line captions each opened with a verb, and the note said to vary them. The pass varied the verbs. The linter's `--set` mode then reported that sixteen of forty now opened on "The", and twelve ended on the same two-word shape, "at once."
 
@@ -244,7 +246,7 @@ The second pass fixed what the first one installed: openings moved to the subjec
 
 Why: **Editing a set**. A standard applied across many items becomes the next pattern, and the writer of the set is the last person able to see it. Measure after every pass, not only after the first.
 
-## Offer approaches, not rewordings
+## Offer options when the call is taste
 
 The author asked for a stronger opening paragraph on a memo. Correctness had one answer; the opening had several. The response offered three, each stating the same facts:
 
@@ -256,7 +258,7 @@ The recommendation was the first, because the reader was a single decision-maker
 
 Why: **options when the call is taste**, and what "stylistically" means. Three approaches, not three phrasings of one; each with its cost; one recommended; and the flaw the author named was fixed in the option they chose.
 
-## Return a draft that already passes
+## Exit check 27: a passing draft is returned unchanged
 
 Before:
 
@@ -268,7 +270,7 @@ After:
 
 Why: eval check 27. A pass that finds nothing is a result. Swapping a word to prove the pass happened is the failure the minimum-edit rule exists to prevent.
 
-## State both facts instead of staging a contrast
+## Binary template and Correction-first argument
 
 Before:
 
@@ -280,7 +282,7 @@ After:
 
 Why: **binary template** and **correction-first argument**, the most complained-about shape in every 2026 survey of AI prose. "Not X but Y" fakes an insight by rejecting a claim nobody made. The after states both facts and gives the trust claim its mechanism. Every number is from the source; if the source had none, the after would say "faster and cheaper" and stop.
 
-## Keep the number of items the subject has
+## Forced completeness
 
 Before:
 
@@ -292,7 +294,7 @@ After:
 
 Why: **forced completeness**. Two triplets in two sentences, six qualities, one fact. The source had two facts, so the after has two. One adjective with proof beats three without.
 
-## Keep the one qualifier that matches the evidence
+## Qualification pileup
 
 Before:
 
@@ -304,7 +306,7 @@ After:
 
 Why: **qualification pileup**. Six hedges cover one tentative claim and hide the evidence that would let the reader judge it. The after keeps one qualifier ("should") and gives the number the hedging was standing in for. If the pilot count were not in the source, the after would end after the first sentence.
 
-## Turn the bold-term list back into prose
+## Decorative emphasis and List reflex
 
 Before:
 
@@ -318,7 +320,7 @@ After:
 
 Why: **decorative emphasis** and **list reflex**. Three bullets with bold labels present three thin sentences as a framework. They belong together, so they are one sentence, and the consequence at the end is the reason the reader cared. Keep bullets for sequence or comparison.
 
-## Cut the announcement of candor
+## Candor announcement
 
 Before:
 
@@ -330,7 +332,7 @@ After:
 
 Why: **candor announcement**. Three phrases announce frankness before any frank thing is said, and the reader now wonders what the rest of the memo was. The two facts carry the bluntness by themselves.
 
-## Name the relation
+## Vague connection
 
 Before:
 
@@ -342,7 +344,7 @@ After:
 
 Why: **vague connection**. "Associated with" and "linked to" refuse to say what the relation is when the source says it. If the source only said "associated," the vagueness is the source's and must stay.
 
-## Cut the intensifiers and see what is left
+## Intensifier padding
 
 Before:
 
@@ -354,7 +356,7 @@ After:
 
 Why: **intensifier padding**. Four intensifiers promise a sincerity the sentences never earn; strip them and the before says almost nothing. The after replaces the promise with the evidence the source had. The skill does not ban adverbs; one "genuinely" in a paragraph is a word.
 
-## Use the quantity the evidence supports
+## Universal quantifier
 
 Before:
 
@@ -366,7 +368,7 @@ After:
 
 Why: **universal quantifier**. "Everyone," "nobody" and "always" are claims about every case. The source was a survey of six teams, so the after says so. If the source supported the universal, it would stay.
 
-## Let the paragraph end where the content ends
+## Quotable closer
 
 Before:
 
