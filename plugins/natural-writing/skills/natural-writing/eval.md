@@ -42,3 +42,7 @@ Run these checks before returning a diagnosis, edit, or draft. Fix every failed 
 24. The piece says the product's own word for each thing rather than a friendlier paraphrase, and glosses only what the room genuinely cannot parse.
 25. Where the remaining choice was taste rather than correctness, options were offered before the pass rather than one answer after it, each differing in approach and each naming what it trades away.
 26. Where the author chose an option "stylistically", the flaw they named in it was fixed rather than returned intact.
+
+## Exit
+
+27. If every check above passed on the draft as supplied, the draft is returned unchanged with a one-line note saying so. Nothing was edited to justify the pass, and no watched word was swapped for a synonym.

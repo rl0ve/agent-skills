@@ -7,10 +7,46 @@ The plugin contributes `/natural-writing:natural-writing`, an auto-invocable ski
 Its operating rules are intentionally conservative:
 
 - preserve supported facts, qualifications, terminology, identifiers, formatting, and author voice;
-- make the minimum effective edit;
+- make the minimum effective edit, and return the draft unchanged when it already passes;
 - revise meaning and structure before surface wording;
 - never optimize for detector evasion;
 - use one context-holding writer, with an optional read-only reviewer for consequential work.
+
+## Layout
+
+```
+skills/natural-writing/
+  SKILL.md                         routing, the layered edit, output discipline
+  eval.md                          27 checks to run before returning anything
+  references/pattern-catalog.md    every written-prose pattern, by family
+  references/spoken-register.md    talk tracks and narration: rules, patterns, checks
+  references/voice-and-register.md voice matching and the written registers
+  references/examples.md           worked before/after decisions
+  references/model-routing.md      who writes, who reviews
+  references/sources.md            provenance and maintenance rules
+  scripts/lint_natural_writing.py  deterministic first pass; --spoken, --set
+  tests/                           unit tests for the linter, forward-test cases, trigger cases
+```
+
+Each reference has one job; SKILL.md's reference map says which to read when.
+
+## Running the checks
+
+```bash
+# one draft
+python3 skills/natural-writing/scripts/lint_natural_writing.py DRAFT.md
+
+# a talk track or demo script
+python3 skills/natural-writing/scripts/lint_natural_writing.py --spoken SCRIPT.md
+
+# many pieces edited to one standard, blank-line separated
+python3 skills/natural-writing/scripts/lint_natural_writing.py --set PIECES.md
+
+# unit tests
+cd skills/natural-writing && python3 -m unittest discover -s tests
+```
+
+Every match is a review prompt, not a verdict.
 
 The bundled icon is at `assets/natural-writing-icon.png`.
 
@@ -23,5 +59,5 @@ claude --plugin-dir .
 Then try:
 
 ```text
-Humanize this executive email, remove the AI slop, and keep my voice: ...
+Tighten this note for the CFO. Keep every number and qualification, and keep it sounding like me: ...
 ```

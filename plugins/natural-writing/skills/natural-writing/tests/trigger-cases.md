@@ -15,7 +15,10 @@ Run each prompt in a fresh authenticated Claude Code session with the plugin ena
 9. “The content is accurate, but it reads like a template. Fix that without adding personality I don't have.”
 10. “Can you make the ending land without adding a motivational wrap-up?”
 
-Pass if Claude loads `natural-writing:natural-writing` even though none of these prompts uses the phrases “humanize,” “AI slop,” or “less robotic.”
+11. “Here is the talk track for Thursday's demo. Make it something I can actually say on stage.”
+12. “These 40 captions all read the same. Fix that without making them all read the same in a different way.”
+
+Pass if Claude loads `natural-writing:natural-writing` even though none of these prompts uses the phrases “humanize,” “AI slop,” or “less robotic.” For 11 the skill must also read `references/spoken-register.md`; for 12 it must read **Editing a set** in the catalog.
 
 ## Should not route to Natural Writing
 

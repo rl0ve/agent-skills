@@ -39,15 +39,13 @@ Read the full input. Internally note:
 - three to five voice signals: vocabulary, sentence rhythm, directness, humor, uncertainty, formality, digressions, punctuation, and paragraph length;
 - protected content and the author's deliberate rough edges.
 
-When the piece is a script meant to be spoken (a talk track, demo script, or narration), read the **Scripts meant to be spoken** register in [references/voice-and-register.md](references/voice-and-register.md) first: gloss screen labels, never talk about the talk, keep the screen's own word for each thing, treat bold anchors as navigation the speaker needs rather than decoration, make every clause stand up without the one before it, round numbers aloud rather than stacking exact ones, and let the line breathe - spoken prose keeps the connective tissue written prose edits out, so a mechanism gets walked through in full rather than compressed into a noun-phrase list.
+When the piece is a script meant to be spoken (a talk track, demo script, or narration), read [references/spoken-register.md](references/spoken-register.md) first. It holds the register rules, the patterns that only fail out loud, and the questions to ask before the pass; the rest of this skill is written for a reader, and several of its habits are wrong for a listener.
 
 ### Ask before a substantial pass
 
 A handful of answers change every line, and guessing them costs a whole cycle. Ask them together, in one message, each with the default you would otherwise assume, so the author can wave it through. Never more than four, and never one you can infer from the piece itself.
 
-For a spoken piece: who is saying this and to whom; what is on screen behind them while they say it; which figures the audience can read for themselves; how long the beat is; and whether any line is dictated, protected, or already agreed with someone else. For a written piece: the reader, the decision they have to make, the register, and the length.
-
-One question earns its place above the others because its answer is invisible in the draft: **how precise should the numbers be out loud.** A paragraph that quantifies is written one way for a reader and another way for a listener.
+For a written piece: the reader, the decision they have to make, the register, and the length. For a spoken piece the list is in [references/spoken-register.md](references/spoken-register.md), and one question there earns its place above the others because its answer is invisible in the draft: **how precise should the numbers be out loud.** A paragraph that quantifies is written one way for a reader and another way for a listener.
 
 When a writing sample is provided, match its tendencies rather than isolated quirks. Do not copy memorable phrases from unrelated samples. For detailed calibration, read [references/voice-and-register.md](references/voice-and-register.md).
 
@@ -58,16 +56,11 @@ Work from meaning to surface. Do not patch watched words one at a time.
 1. **Purpose:** Remove material that does not help the piece do its job.
 2. **Structure:** Put the useful point where the reader needs it. Keep setup, detours, and suspense when they add context, tension, or character.
 3. **Paragraphs:** Give each paragraph a real function. Merge tiny sections and split dense ones only when readability improves.
-4. **Sentences:** Clarify actors and actions, untangle syntax, and vary cadence without manufacturing random “burstiness.”
-   - Default to a typed dash - a hyphen, or a hyphen with spaces around it - over an em dash. Use an em dash rarely, only where it earns its place; never as the reflexive connector for an aside. See [references/pattern-catalog.md](references/pattern-catalog.md)'s **Em dash default**.
-   - Read each paragraph's sentences in sequence and name each one's shape: compound/hedged (subordinate clauses, qualifiers like "although," "which," "may," "arguably") or simple/direct. Break up a run of four or more sentences in the same shape; a paragraph should alternate stretches of hedge and directness, not commit to one for its whole length. See [references/pattern-catalog.md](references/pattern-catalog.md)'s **Clause-shape monotony**.
-   - Do not let a screen, app, map or record perform a human verb, and do not let a vague "it" or "each one" carry the sentence. Say what is on screen, or name the person reading it. See the catalog's **Interface as narrator**.
-   - Do not rate the subject in place of showing it ("and it is honest", "the useful thing about it is"). Cut the rating; the evidence carries the judgment. See the catalog's **Announced virtue**.
-   - Do not nominate what matters in place of stating it ("the owner column is the point", "the re-render is the point"). Say the finding instead: "work that runs every day has no owner." See the catalog's **Nominated significance**.
+4. **Sentences:** Clarify actors and actions, untangle syntax, and vary cadence without manufacturing random “burstiness.” Read each paragraph's sentences in sequence and name each one's shape, hedged or direct; a run of the same shape is a finding whatever the quality of each sentence. Give every verb a real actor: a person or organisation, not a screen, a department, or a vague "it." Deliver a finding instead of rating it or nominating it ("it is honest," "the owner column is the point"). Default to a typed dash over an em dash unless a writing sample says otherwise. Each of these has a row in [references/pattern-catalog.md](references/pattern-catalog.md) with the signal and the repair; consult the row when a sentence resists.
 5. **Words:** Prefer concrete nouns, direct verbs, and ordinary language. Retain technical terms that are precise for the audience.
 6. **Voice:** Restore edge, uncertainty, humor, asymmetry, or understatement that an overly tidy edit removed.
 7. **Integrity:** Compare the result with the source claim by claim.
-8. **Say it out loud** (spoken pieces only): deliver every sentence at presentation speed. Any sentence you have to slow down for, re-run, or take a breath inside is compressed, and the fix is to walk the mechanism through rather than list its parts. No linter finds this one; see the catalog's **Telegraphic speech**.
+8. **Say it out loud** (spoken pieces only): deliver every sentence at presentation speed. Any sentence you have to slow down for, re-run, or take a breath inside is compressed, and the fix is to walk the mechanism through rather than list its parts. No linter finds this one; see **Telegraphic speech** in [references/spoken-register.md](references/spoken-register.md).
 
 Use [references/pattern-catalog.md](references/pattern-catalog.md) when the draft has repeated stock phrasing, generic structure, promotional tone, or suspiciously uniform cadence. Patterns are evidence only in clusters. Do not ban a word or punctuation mark merely because it appears once.
 
@@ -97,7 +90,7 @@ Separate high-confidence problems from optional style choices. Do not score the 
 
 ## Edit mode
 
-Rewrite the whole passage coherently, then run [eval.md](eval.md). If a local phrase still feels artificial, revise the sentence or paragraph around its actual point instead of swapping synonyms.
+Rewrite the whole passage coherently, then run [eval.md](eval.md). If a local phrase still feels artificial, revise the sentence or paragraph around its actual point instead of swapping synonyms. If the eval passes on the draft as supplied, return it unchanged and say so; a pass that finds nothing is a result, not a failure to try.
 
 Return:
 
@@ -126,15 +119,22 @@ When the Claude UI Router supplies product semantics, UX labels, states, marketi
 
 ## Supporting resources
 
-- Read [references/model-routing.md](references/model-routing.md) when the user asks which Codex or Claude model/agent should write or review the piece, or when consequential writing may justify an independent editorial audit.
-- Read [references/pattern-catalog.md](references/pattern-catalog.md) for anti-patterns, exceptions, and rewrite heuristics.
-- Read [references/claude-patterns.md](references/claude-patterns.md) when the user names Claude, complains about assistant-like dialogue residue, or asks for fiction/creative prose cleanup.
-- Read [references/voice-and-register.md](references/voice-and-register.md) for voice matching and channel-specific decisions.
-- Read [references/examples.md](references/examples.md) when a before/after model would help.
-- Read [references/sources.md](references/sources.md) when maintaining or extending the skill's guidance.
-- Run `scripts/lint_natural_writing.py` for a deterministic first-pass scan of longer English drafts. Treat its matches as review prompts, not verdicts.
+Each reference has one job. Read the one the situation names and skip the rest.
+
+| File | Its job | Read it when |
+|---|---|---|
+| [references/pattern-catalog.md](references/pattern-catalog.md) | Every written-prose pattern, by family: content, structure, sentence, formatting, assistant residue, creative prose. Signal, repair, and the lint name where one exists. Also **Editing a set** and the false-positive guardrails. | The draft has repeated stock phrasing, generic structure, promotional tone, uniform cadence, or assistant-like residue; before editing many pieces to one standard. |
+| [references/spoken-register.md](references/spoken-register.md) | The spoken register in full: rules, the patterns that only fail out loud, the pre-pass questions, and the `--spoken` checks. | The piece is a talk track, demo script, presenter note, or narration. |
+| [references/voice-and-register.md](references/voice-and-register.md) | Building a voice model from samples, the written registers, and the order in which conflicting instructions resolve. | Voice matching, or a channel-specific call. |
+| [references/examples.md](references/examples.md) | Worked before/after decisions, including the bad edit to avoid, one per editorial move. Models the decision, not phrases to reuse. | A pattern row is not enough to see the repair. |
+| [references/model-routing.md](references/model-routing.md) | Who writes and who reviews: parent writes, read-only reviewer audits. | The user asks which model or agent should write or review, or consequential writing may justify an independent audit. |
+| [references/sources.md](references/sources.md) | Where the guidance came from and the rules for extending it. | Maintaining the skill. |
+
+Things to run rather than read:
+
+- `scripts/lint_natural_writing.py DRAFT.md` for a deterministic first pass over a longer English draft. Treat its matches as review prompts, not verdicts. Frequency rules (`contrastive-definition`, `deferred-point`, `mechanism-speak`) report once with a count and only past a threshold; headings, lists, tables and code are skipped by the sentence-level checks.
 - The per-document scan also reports `flat-declarative-run` (three or more consecutive sentences of the same length that none of them turns) and `stacked-precision` (three or more consecutive sentences each landing an exact figure). Both are review prompts: a deliberate staccato beat and a paragraph whose whole job is quantification can be right as they are.
-- Add `--spoken` for a talk track, narration or demo script. It adds three narrow checks that only make sense out loud: `compressed-mechanism` (a mechanism flattened into "a clock, a warning when…, and an escalation when…"), `stacked-object-pronouns` ("hand it that"), and `paragraph-opens-on-pronoun`. All three were measured against a 40-piece corpus before shipping and fired only on true positives. They cover the narrow shapes, not the judgment: the wider compression call stays with your ear and step 8.
+- Add `--spoken` for a talk track, narration or demo script. It adds three narrow checks that only make sense out loud: `compressed-mechanism`, `stacked-object-pronouns`, and `paragraph-opens-on-pronoun`. All three were measured against a 40-piece corpus before shipping and fired only on true positives. They cover the narrow shapes, not the judgment: the wider compression call stays with your ear and step 8.
 - Add `--set` when the job is many pieces rather than one: it measures the set against itself and flags an opening word, closing pair, or connective shared by more than a fifth of it. This is the check that catches what your own edit installed.
 - Some patterns are judgment only and are marked that way in the catalog. When a check cannot be made reliable, say so with the evidence and hand over the manual test instead. A noisy check is worse than no check: it trains the next reader to skip the output. Measure any new check against a real corpus and report its false-positive rate before shipping it.
 - Use [tests/cases.md](tests/cases.md) to forward-test behavior after changing this skill.
