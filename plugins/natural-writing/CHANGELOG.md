@@ -1,4 +1,115 @@
-## 1.12.0
+# Changelog
+
+## 1.13.0 - 2026-09-03
+
+A structure release. Twelve versions of pattern accretion, most of them from one
+corpus of keynote talk tracks, had left the general-purpose layers carrying
+spoken-register weight and three files with overlapping jobs. Nothing the skill
+teaches has changed; where it lives has.
+
+**Layout**
+
+- New `references/spoken-register.md`. Everything spoken in one place: the
+  register rules (moved from voice-and-register.md), the five patterns that only
+  fail out loud (label read cold, speaker meta, trailer cadence, telegraphic
+  speech, stacked precision, moved out of the general catalog), the pre-pass
+  questions, and the `--spoken` checks. Each of those patterns is harmless in a
+  caption or a spec sheet, so an email editor no longer reads them.
+- `references/claude-patterns.md` is gone. Seven of its patterns were already
+  rows in the catalog, so the file was a second catalog with a different shape.
+  Its unique content moved into the catalog as two new tables, **Assistant
+  residue** (the seven existing rows plus balanced-by-default stance,
+  correction-first argument, local recap, uniform helpfulness, abstract
+  personification) and **Creative and narrative prose** (six rows). The catalog
+  is now the one list of written-prose patterns; SKILL.md carries a reference
+  map saying what each file is for.
+- SKILL.md's layered edit step 4 no longer names the last five patterns that
+  were added; it states the method and points at the catalog. The Calibrate
+  section points at spoken-register.md instead of restating it.
+- sources.md gains two maintenance rules: a new catalog row ships with a worked
+  example and a forward test, and every rule has one home.
+
+**Examples and tests**
+
+- examples.md goes from 9 worked examples to 22 in the structure pass, 31 after the source check. Every rule family shipped since
+  1.1 now has a before/after with the reason, plus a spoken example, a set-level
+  example, an options-before-pass example, and a draft that is returned
+  unchanged.
+- tests/cases.md goes from 22 forward cases to 39, covering eval checks 23 to 27,
+  `--set`, the markup round-trip, and the two most recent lint patterns. Two
+  trigger cases added for spoken and set-level work.
+
+**Eval**
+
+- Check 27: a draft that passes is returned unchanged and said so. The minimum-
+  edit rule had no exit; a 26-item checklist will always find something to do.
+
+**Linter**
+
+- `interface-as-narrator` no longer matches the bare pronoun "it" or the verb
+  "says". "The report says the queue is empty" and "she told me it decides" are
+  ordinary English; both fired.
+- The three frequency rules (`contrastive-definition`, `deferred-point`,
+  `mechanism-speak`) report once per document with a count and the line numbers,
+  and only from three occurrences. They had printed one line per match, which
+  buried the real findings; the skill's own SKILL.md produced eleven.
+- Sentence-level checks (`sentence-shape-run`, `flat-declarative-run`,
+  `stacked-precision`, the spoken paragraph opener) skip headings, list items,
+  table rows, fenced code and frontmatter. A numbered list is not a run of flat
+  declaratives. The per-line scan skips fenced code and frontmatter.
+- Twenty-one new tests, 101 pass.
+
+**From the sources, checked 2026-09-03**
+
+- New row **Candor announcement**: "Honestly?", "the honest answer is," "here's
+  where I'd push back." The reader-side complaint about 2026 Claude prose that
+  the catalog had no row for; **Announced virtue** rates the subject, this rates
+  the speaker. Linted on high-precision phrases only; five tests.
+- New row **Vague connection** (Wikipedia, 2026-08-19): "associated with,"
+  "linked to" in place of the actual role. Judgment only.
+- **Nominated significance** widened to interpretive metadiscourse ("as you can
+  see," "this distinction matters," "the key insight is"), after no-ai-slop
+  shipped the broader form. Three tests.
+- **Dash dependency** now covers parenthetical asides, which one audit ranked
+  the stronger tell. **Em dash default** notes that by mid-2026 it had become a
+  Claude-leaning tell rather than a generic one. "full stop" joins the stock
+  vocabulary list.
+- The Assistant residue table carries a note on lexical tells and why the fix
+  is never the word.
+- Six more examples, for the six most complained-about patterns that had none:
+  not-X-but-Y, the triplet, hedge stacking, bold-term lists, candor
+  announcement, vague connection. 31 examples in all. Six forward cases, 39.
+- From hardikpandya/stop-slop (2026-01-13), three rows the catalog lacked:
+  **Intensifier padding** (twin of Qualification pileup; judgment only, no adverb
+  ban), **Universal quantifier** ("everyone," "never" where the source says
+  "most"), and **Quotable closer** (every paragraph ends on a pull-quote; sibling
+  of Recap ending). Four existing rows widen their signal: Nominated significance
+  takes the emphasis crutches ("let that sink in," "make no mistake," both
+  linted) and the pseudo-cleft opener; Question-answer pivot takes "What if I
+  told you"; Negative tail becomes Negative tail and runway; Importance inflation
+  takes the bare declaration of weight ("the stakes are high"). Three of
+  stop-slop's rules were read and declined, and sources.md says which and why.
+- sources.md gains a field-reports section, a last-checked date per repo, and
+  the stop-slop entry.
+
+**Forward test before release**
+
+Seven sloppy passages (executive update, product copy, memo, bio, talk track,
+a clean control, an assistant-shaped analysis) were edited by a fresh agent
+holding only this skill. All seven passed the eval with every source fact
+intact; the control came back unchanged under check 27. One weak line: a
+screen label glossed from its own words when the source gave nothing else.
+**Label read cold** now says to ask in that case.
+
+**Hygiene**
+
+- The Telegraphic speech entry had a run-on left by a bulk edit. Lint docstring
+  said two whole-piece checks and listed four. This changelog's header was
+  below eight undated entries. README now shows the layout and the three ways
+  to run the linter, and its quick-test prompt no longer keys on "humanize" and
+  "AI slop", which the skill says not to trigger on.
+
+## 1.12.0 - 2026-09-01
 
 New check: `interface-acts-on-itself`. "Pick a few processes and the map seeds
 itself." "The map draws itself." An interface doing something to itself, with no
@@ -19,7 +130,7 @@ pass and into a published keynote board.
 Measured before shipping: fires on all four controls, zero hits across a 694-field
 corpus of already-edited board copy. Five new tests, 80 pass.
 
-## 1.11.0
+## 1.11.0 - 2026-09-01
 
 New pattern: **Nominated significance**. The line names what matters instead of
 delivering it. "The owner column is the point." "The re-render is the point."
@@ -35,7 +146,7 @@ Shipped as a lint pattern rather than judgment, because it measured clean:
 0 hits across a 205-field corpus of already-edited keynote copy, and it catches
 the flagged control. Four new tests, 75 pass.
 
-## 1.10.2
+## 1.10.2 - 2026-09-01
 
 A markup round-trip rule, earned by shipping a literal `_is_` into a keynote board.
 
@@ -49,7 +160,7 @@ underscores on screen.
   compared. Checking only the token you were thinking about is the failure mode.
 - Output discipline says the same thing at the point of writing back.
 
-## 1.10.1
+## 1.10.1 - 2026-09-01
 
 1.10.0 said the compression pattern was unlintable. That was true of the pattern as
 a whole and wrong about its parts. Four candidate heuristics were measured against
@@ -69,7 +180,7 @@ false.
 
 Seven new tests, 71 pass.
 
-## 1.10.0
+## 1.10.0 - 2026-09-01
 
 Process, not patterns. 1.9.2 named the over-compression defect but left the skill
 with no way to catch it, because a detector was prototyped and rejected: keyed on
@@ -100,7 +211,7 @@ and a gate in the eval, not a regex.
 
 Eval goes from 22 checks to 26.
 
-## 1.9.2
+## 1.9.2 - 2026-09-01
 
 A correction to the direction of travel. 1.9.0 and 1.9.1 both push toward tighter
 sentences, and applied to a talk track that produces spec lines nobody can say
@@ -123,7 +234,7 @@ out loud.
 
 Source: the board owner, on a line this skill's own advice had over-compressed.
 
-## 1.9.1
+## 1.9.1 - 2026-09-01
 
 Tuning, measured against the corpus that produced 1.9.0. Swept across 40 keynote
 talk tracks, 1.9.0's new checks fired 12 times on 11 tracks and a Fable review
@@ -150,7 +261,7 @@ relaxed.
 Result on the same corpus: 12 findings down to 6, all four flat-declarative false
 positives cleared, and the one true positive still fires. Eight new tests, 64 pass.
 
-## 1.9.0
+## 1.9.0 - 2026-09-01
 
 Three checks earned by a keynote talk track whose author could hear the problem
 but could not name it: "you're still have a backwards facing kind of syntax...
@@ -173,8 +284,6 @@ it's hard to describe" and "I hate the flat declaratives."
   an exact number the audience can read on the screen behind you.
 
 Nine new unit tests, 56 in total.
-
-# Changelog
 
 ## 1.8.0 - 2026-08-28
 

@@ -2,16 +2,19 @@
 """Flag high-signal writing patterns for human review; never infer authorship.
 
 Three rules -- contrastive-definition, deferred-point and mechanism-speak -- are
-frequency findings. A single hit is ordinary prose. Treat them as a problem when
-they recur across a piece, or across a set being edited to one standard, and read
+frequency findings. A single hit is ordinary prose. scan() still returns every
+match so callers can inspect them, but the report aggregates each into one line
+with a count and only prints it once the count reaches FREQUENCY_THRESHOLD. Read
 the catalog's "Editing a set" before acting on them.
 
-Two whole-piece checks live outside scan(): em-dash-overuse (density, not a
+Four whole-piece checks live outside scan(): em-dash-overuse (density, not a
 single instance), sentence-shape-run (four or more consecutive sentences in one
 paragraph sharing the same compound/hedged-or-simple shape), flat-declarative-run
 (three or more consecutive sentences of near-identical length that none of them
 turns) and stacked-precision (three or more consecutive sentences each landing an
-exact figure).
+exact figure). All four look only at prose paragraphs: headings, list items,
+table rows, fenced code and frontmatter are skipped, because a numbered list is
+not a run of flat declaratives and a table cell is not a sentence.
 """
 
 from __future__ import annotations
@@ -52,7 +55,17 @@ PATTERNS = {
     "nominated-significance": re.compile(
         r"\b(?:is|are) the point\b|\bthat is the point\b|\bwhich is the point\b|\bthe point is\b"
         r"|\bis what matters\b|\bwhat matters is\b|\bthe thing to notice\b"
+        r"|\bas you can see\b|\bthis distinction matters\b|\bthe key (?:point|insight|takeaway) (?:is|here)\b"
+        r"|\blet that sink in\b|\bmake no mistake\b"
         r"|\bthe real (?:story|question|answer) is\b|\bis the interesting (?:bit|part|thing)\b",
+        re.IGNORECASE,
+    ),
+    # The prose announces its own frankness. High-precision phrases only;
+    # "honestly" as an adverb mid-sentence is ordinary and is not matched.
+    "candor-announcement": re.compile(
+        r"(?:^|[.!?]\s+|:\s+)(?:honestly\?|the honest (?:answer|truth|caveat) is|"
+        r"(?:it(?:'s| is) )?worth (?:stating|saying) plainly|i(?:'ll| will) be (?:direct|blunt|honest)|"
+        r"here(?:'s| is) where i(?:'d| would) push back|let me be (?:direct|blunt|honest))(?=\W|$)",
         re.IGNORECASE,
     ),
     "backwards-facing-clause": re.compile(
@@ -72,7 +85,7 @@ PATTERNS = {
         re.IGNORECASE,
     ),
     "stock-ai-vocabulary": re.compile(
-        r"\b(?:delve|ever-evolving|tapestry|multifaceted|paramount|supercharge|game[- ]changer)\b",
+        r"\b(?:delve|ever-evolving|tapestry|multifaceted|paramount|supercharge|game[- ]changer|full stop)\b",
         re.IGNORECASE,
     ),
     "chatbot-residue": re.compile(
@@ -121,11 +134,14 @@ PATTERNS = {
         re.IGNORECASE,
     ),
     # A screen, app, map or row doing a human verb with attitude. "show",
-    # "list" and "mark" are deliberately absent: those are what screens do.
+    # "list", "mark" and "say" are deliberately absent: those are what screens
+    # and documents do ("the report says the queue is empty" is ordinary
+    # English). The bare pronoun "it" is also absent: "it decides" fired on
+    # every sentence whose subject was a person named one clause earlier.
     "interface-as-narrator": re.compile(
         r"\b(?:the\s+(?:app|map|screen|page|record|ledger|dashboard|diagram|report|row|table|tool|system|estate"
-        r"|recommendation|finding|proposal|rationale|brief)|it)\s+"
-        r"(?:says|admits?|keeps\s+score|refuses?|tells\s+us|insists?|announces?|wants|knows\s+best|reads\s+itself"
+        r"|recommendation|finding|proposal|rationale|brief))\s+"
+        r"(?:admits?|keeps\s+score|refuses?|tells\s+us|insists?|announces?|wants|knows\s+best|reads\s+itself"
         r"|splits?|decides?)\b",
         re.IGNORECASE,
     ),
@@ -165,8 +181,22 @@ PATTERNS = {
 
 
 def scan(text: str) -> list[dict[str, object]]:
+    """Per-line pattern scan. Fenced code and YAML frontmatter are skipped;
+    everything else, list items included, is prose someone will read."""
     findings: list[dict[str, object]] = []
+    in_fence = False
+    in_frontmatter = text.startswith("---\n")
     for line_number, line in enumerate(text.splitlines(), start=1):
+        stripped = line.strip()
+        if in_frontmatter:
+            if line_number > 1 and stripped == "---":
+                in_frontmatter = False
+            continue
+        if stripped.startswith("```") or stripped.startswith("~~~"):
+            in_fence = not in_fence
+            continue
+        if in_fence:
+            continue
         for name, pattern in PATTERNS.items():
             matches = list(pattern.finditer(line))
             if name == "dash-cluster" and len(matches) < 2:
@@ -180,6 +210,85 @@ def scan(text: str) -> list[dict[str, object]]:
                     }
                 )
     return findings
+
+
+FREQUENCY_PATTERNS = ("contrastive-definition", "deferred-point", "mechanism-speak")
+FREQUENCY_THRESHOLD = 3
+
+
+def summarize_frequency(findings: list[dict[str, object]], text: str) -> list[dict[str, object]]:
+    """Collapse each frequency rule into one finding with a count.
+
+    One "rather than" is a sentence. Ten across a memo is a habit. Printing each
+    one on its own line buried the real findings under the ordinary ones, so the
+    report shows a single line per rule, and only once the count reaches
+    FREQUENCY_THRESHOLD.
+    """
+    words = len(re.findall(r"\S+", text))
+    counts = Counter(f["pattern"] for f in findings if f["pattern"] in FREQUENCY_PATTERNS)
+    summary: list[dict[str, object]] = []
+    for name in FREQUENCY_PATTERNS:
+        n = counts.get(name, 0)
+        if n < FREQUENCY_THRESHOLD:
+            continue
+        lines = sorted({f["line"] for f in findings if f["pattern"] == name})
+        summary.append(
+            {
+                "pattern": name,
+                "count": n,
+                "words": words,
+                "lines": lines,
+                "excerpt": (f"{n} occurrences across {words} words "
+                            f"(threshold {FREQUENCY_THRESHOLD}); lines "
+                            + ", ".join(str(x) for x in lines[:12])
+                            + (", ..." if len(lines) > 12 else "")),
+            }
+        )
+    return summary
+
+
+STRUCTURE_LINE = re.compile(
+    r"^\s*(?:#{1,6}\s|[-*+]\s|\d+[.)]\s|\||```|~~~|---\s*$)"
+)
+
+
+def prose_paragraphs(text: str) -> list[tuple[int, str]]:
+    """Split text into paragraphs and keep only the ones made of prose.
+
+    Returns (paragraph_index, paragraph_text) with the index counted over the
+    raw blank-line split, so a reported paragraph number still points at the
+    right place in the document. Skips YAML frontmatter, fenced code, headings,
+    list items and table rows. Blockquote markers are stripped and the quoted
+    prose is kept, because the quoted text is what the writer is asking about.
+    """
+    body = text
+    if body.startswith("---\n"):
+        end = body.find("\n---", 4)
+        if end != -1:
+            body = body[end + 4 :]
+    kept: list[tuple[int, str]] = []
+    in_fence = False
+    for index, paragraph in enumerate(re.split(r"\n\s*\n", body), start=1):
+        lines: list[str] = []
+        prose = True
+        for line in paragraph.splitlines():
+            stripped = line.strip()
+            if stripped.startswith("```") or stripped.startswith("~~~"):
+                in_fence = not in_fence
+                prose = False
+                continue
+            if in_fence:
+                prose = False
+                continue
+            if not stripped:
+                continue
+            if STRUCTURE_LINE.match(line):
+                prose = False
+                break
+            lines.append(re.sub(r"^\s*>\s?", "", line))
+        if prose and lines:
+            kept.append((index, " ".join(lines)))
+    return kept
 
 
 HEDGE_MARKERS = re.compile(
@@ -211,7 +320,7 @@ def scan_sentence_shape(text: str, *, run_threshold: int = 4) -> list[dict[str, 
     on a run, matching the catalog's "Clause-shape monotony" entry.
     """
     findings: list[dict[str, object]] = []
-    for para_index, paragraph in enumerate(re.split(r"\n\s*\n", text), start=1):
+    for para_index, paragraph in prose_paragraphs(text):
         sentences = _split_sentences(paragraph)
         if len(sentences) < run_threshold:
             continue
@@ -290,7 +399,7 @@ def scan_flat_declarative_run(
     fix the catalog asks for.
     """
     findings: list[dict[str, object]] = []
-    for para_index, paragraph in enumerate(re.split(r"\n\s*\n", text), start=1):
+    for para_index, paragraph in prose_paragraphs(text):
         sentences = _split_sentences(paragraph)
         if len(sentences) < run_threshold:
             continue
@@ -382,7 +491,7 @@ def scan_stacked_precision(
     figures do not count, because rounding is the fix.
     """
     findings: list[dict[str, object]] = []
-    for para_index, paragraph in enumerate(re.split(r"\n\s*\n", text), start=1):
+    for para_index, paragraph in prose_paragraphs(text):
         sentences = _split_sentences(paragraph)
         run, run_start = 0, 0
         for i, sentence in enumerate(sentences + [""]):
@@ -442,7 +551,7 @@ def scan_spoken(text: str) -> list[dict[str, object]]:
                     "excerpt": match.group(0)[:120],
                 }
             )
-    for para_index, paragraph in enumerate(re.split(r"\n\s*\n", text), start=1):
+    for para_index, paragraph in prose_paragraphs(text):
         first = paragraph.strip()
         if para_index > 1 and PARAGRAPH_OPENER.match(first):
             findings.append(
@@ -557,8 +666,11 @@ def main() -> int:
     args = parser.parse_args()
 
     text = args.path.read_text(encoding="utf-8")
-    findings = scan(text)
+    all_findings = scan(text)
+    findings = [f for f in all_findings if f["pattern"] not in FREQUENCY_PATTERNS]
     whole_piece_findings = (
+        summarize_frequency(all_findings, text)
+        + 
         scan_em_dash(text)
         + scan_sentence_shape(text)
         + scan_flat_declarative_run(text)

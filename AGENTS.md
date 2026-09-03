@@ -15,17 +15,21 @@ Read in this order when a task is "make this prose better":
 |---|---|
 | `plugins/natural-writing/skills/natural-writing/SKILL.md` | Always first. Routing, the layered edit, output discipline. |
 | `.../eval.md` | Before returning any edit. 26 checks; fix every failure you can without new facts. The last four cover spoken delivery and taste calls. |
-| `.../references/pattern-catalog.md` | Repeated stock phrasing, generic structure, uniform cadence. Read **Editing a set** before editing many pieces to one standard. |
-| `.../references/voice-and-register.md` | Voice matching, and the register sections. Read **Scripts meant to be spoken** before any talk track, demo script, or narration. |
-| `.../references/claude-patterns.md` | Assistant-like residue, fiction, creative prose. |
-| `.../references/examples.md` | A before/after model would help. |
+| `.../references/pattern-catalog.md` | Every written-prose pattern by family, assistant residue and creative prose included. Read **Editing a set** before editing many pieces to one standard. |
+| `.../references/spoken-register.md` | Any talk track, demo script, presenter note or narration. The spoken register, its own patterns, and the `--spoken` checks. |
+| `.../references/voice-and-register.md` | Voice matching, the written registers, and the order conflicting instructions resolve in. |
+| `.../references/examples.md` | A worked before/after decision would help, including the bad edit to avoid. |
 
 Two things worth running rather than reading:
 
 ```bash
 # per-document scan: named patterns, em-dash density, sentence-shape runs,
-# flat-declarative runs, stacked precision
+# flat-declarative runs, stacked precision. Frequency rules report once with a
+# count; headings, lists, tables and code are skipped by the sentence checks.
 python3 plugins/natural-writing/skills/natural-writing/scripts/lint_natural_writing.py DRAFT.md
+
+# spoken scan: adds the three checks that only make sense out loud
+python3 .../scripts/lint_natural_writing.py --spoken SCRIPT.md
 
 # set-level scan: blank-line separated pieces measured against EACH OTHER.
 # Flags any opening word, closing pair, or connective shared by more than a fifth

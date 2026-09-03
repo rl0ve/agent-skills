@@ -469,3 +469,106 @@ class InterfaceActsOnItselfTests(unittest.TestCase):
     def test_a_process_may_improve_itself(self):
         names = {f["pattern"] for f in MODULE.scan("The map made the process, and the process improved itself.")}
         self.assertNotIn("interface-acts-on-itself", names)
+
+
+class NarratorNoiseTests(unittest.TestCase):
+    """1.13.0: the narrator rule stopped firing on ordinary English."""
+
+    def names(self, text):
+        return {f["pattern"] for f in MODULE.scan(text)}
+
+    def test_a_report_may_say_something(self):
+        self.assertNotIn("interface-as-narrator", self.names("The report says the queue is empty."))
+
+    def test_a_bare_pronoun_is_not_an_interface(self):
+        self.assertNotIn("interface-as-narrator", self.names("She told me it decides who goes first."))
+
+    def test_attitude_still_fires(self):
+        self.assertIn("interface-as-narrator", self.names("The map admits what it does not know."))
+
+
+class FrequencyAggregationTests(unittest.TestCase):
+    def test_below_threshold_is_silent(self):
+        text = "We chose Postgres rather than MySQL. The rest of the stack is unchanged."
+        self.assertEqual([], MODULE.summarize_frequency(MODULE.scan(text), text))
+
+    def test_at_threshold_reports_one_line_with_a_count(self):
+        text = ("We chose Postgres rather than MySQL.\nWe cache in Redis instead of Memcached.\n"
+                "We deploy nightly rather than weekly.")
+        summary = MODULE.summarize_frequency(MODULE.scan(text), text)
+        self.assertEqual(1, len(summary))
+        self.assertEqual("contrastive-definition", summary[0]["pattern"])
+        self.assertEqual(3, summary[0]["count"])
+        self.assertEqual([1, 2, 3], summary[0]["lines"])
+
+    def test_scan_still_returns_every_match(self):
+        text = "A rather than B. C instead of D."
+        self.assertEqual(2, len([f for f in MODULE.scan(text) if f["pattern"] == "contrastive-definition"]))
+
+
+class ProseParagraphTests(unittest.TestCase):
+    def test_lists_headings_tables_and_fences_are_skipped(self):
+        text = ("---\ntitle: x\n---\n\n# Heading\n\n1. one item;\n2. two items;\n3. three items.\n\n"
+                "| a | b |\n|---|---|\n| c | d |\n\n```\ncode = 1\n```\n\n"
+                "This paragraph is prose. It stays in.")
+        kept = MODULE.prose_paragraphs(text)
+        self.assertEqual(1, len(kept))
+        self.assertTrue(kept[0][1].startswith("This paragraph is prose."))
+
+    def test_blockquote_prose_is_kept_without_the_marker(self):
+        kept = MODULE.prose_paragraphs("> Quoted prose here.\n> Second line.")
+        self.assertEqual([(1, "Quoted prose here. Second line.")], kept)
+
+    def test_paragraph_index_counts_the_raw_split(self):
+        kept = MODULE.prose_paragraphs("# Title\n\n- item\n\nThird block is prose.")
+        self.assertEqual(3, kept[0][0])
+
+    def test_numbered_list_is_not_a_flat_declarative_run(self):
+        text = "1. The first step is short.\n2. The second step is short.\n3. The third step is short."
+        self.assertEqual([], MODULE.scan_flat_declarative_run(text))
+
+    def test_line_scan_skips_fenced_code(self):
+        text = "```\nhere's the thing: code\n```\nHere's the thing: prose."
+        findings = [f for f in MODULE.scan(text) if f["pattern"] == "throat-clearing"]
+        self.assertEqual([4], [f["line"] for f in findings])
+
+
+class CandorAnnouncementTests(unittest.TestCase):
+    def names(self, text):
+        return {f["pattern"] for f in MODULE.scan(text)}
+
+    def test_flags_honestly_question(self):
+        self.assertIn("candor-announcement", self.names("Honestly? The pilot is not ready."))
+
+    def test_flags_the_honest_answer(self):
+        self.assertIn("candor-announcement", self.names("Two teams asked. The honest answer is that nobody owns it."))
+
+    def test_flags_push_back(self):
+        self.assertIn("candor-announcement", self.names("Here's where I'd push back: the number is stale."))
+
+    def test_adverb_mid_sentence_is_ordinary(self):
+        self.assertNotIn("candor-announcement", self.names("She honestly thought the export had shipped."))
+
+    def test_direct_speech_about_a_person_is_ordinary(self):
+        self.assertNotIn("candor-announcement", self.names("The reviewer was direct with the team."))
+
+
+class InterpretiveMetadiscourseTests(unittest.TestCase):
+    def names(self, text):
+        return {f["pattern"] for f in MODULE.scan(text)}
+
+    def test_as_you_can_see_is_nominated_significance(self):
+        self.assertIn("nominated-significance", self.names("As you can see, the queue drains by noon."))
+
+    def test_the_key_insight_is(self):
+        self.assertIn("nominated-significance", self.names("The key insight is that nobody owns the nightly run."))
+
+    def test_stating_the_finding_is_clean(self):
+        self.assertNotIn("nominated-significance", self.names("Nobody owns the nightly run."))
+
+    def test_emphasis_crutches_are_nominated_significance(self):
+        self.assertIn("nominated-significance", self.names("Half of them have no owner. Let that sink in."))
+        self.assertIn("nominated-significance", self.names("Make no mistake, the queue is growing."))
+
+    def test_a_mistake_is_still_a_word(self):
+        self.assertNotIn("nominated-significance", self.names("The team made no mistake in the rollout."))

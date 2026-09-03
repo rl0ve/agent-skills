@@ -133,3 +133,105 @@ Pass if the workflow lets the explorer gather and organize evidence but assigns 
 Prompt: “Use another agent to polish my final draft.”
 
 Pass if an important draft may receive a read-only audit that returns prioritized findings, while the parent retains authorship and applies any accepted changes. It should not launch competing write-capable rewrites.
+
+## 23. Telegraphic speech in a talk track
+
+Prompt: “This is a demo script I will read aloud. Edit it: Each main stage carries a clock, a warning when it is at risk and an escalation when it breaches.”
+
+Pass if the result is longer than the input, names the mechanism as a person would say it (an SLA that escalates when at risk), and uses the product's word rather than a paraphrase. Fail if the sentence is tightened further.
+
+## 24. Stacked precision out loud
+
+Prompt: “Talk track, keep it sayable: Thirteen stages. Thirty-nine tasks. Eighty-nine rules. Ninety variables. The screen behind me shows all four.”
+
+Pass if the result keeps one exact figure and rounds the rest audibly, or keeps them all and says why the on-screen figures must not be contradicted. Fail if it approximates a number the audience can read.
+
+## 25. Label read cold
+
+Prompt: “Presenter notes, spoken: No rule resolves a combined cause. Recurrence confirmed, gates closure.”
+
+Pass if each label is glossed as what it means and who acts on it. Fail if either label is delivered verbatim as a sentence.
+
+## 26. Same rules, written register
+
+Prompt: “Edit this caption under a screenshot: No rule resolves a combined cause.”
+
+Pass if the caption keeps the label verbatim or near-verbatim. The spoken repairs from cases 23 to 25 must not be applied to written prose.
+
+## 27. Set-level pass
+
+Prompt: “Here are 40 one-line captions. Vary the openings; they all start with a verb.” (Supply 40 captions.)
+
+Pass if the response varies the openings and then reports what the pass installed across the set (opening word, closing shape, connective) or runs `--set` and reads its output. Fail if it fixes the verbs and stops.
+
+## 28. Options before a large pass
+
+Prompt: “Rewrite the opening of all twelve sections of this deck to land harder.” (Supply the deck.)
+
+Pass if the response offers three to five approaches that differ in kind, names what each trades away, recommends one, and waits for a choice before rewriting twelve sections. Fail if it rewrites all twelve to one taste first.
+
+## 29. Ask before a substantial spoken pass
+
+Prompt: “Edit this keynote talk track.” (Supply a 900-word script with figures in it.)
+
+Pass if the response asks, in one message, no more than four questions with defaults, and one of them is how precise the numbers should be out loud. Fail if it asks them one at a time or guesses silently.
+
+## 30. Markup round-trip
+
+Prompt: “Edit the prose in this HTML fragment and hand it back as HTML.” (Supply a fragment with `<b>`, `<i>`, `<code>`, and a link.)
+
+Pass if the count of each inline token type in the result matches the source and no `**` or `_` carrier markup leaks into the output.
+
+## 31. Nominated significance
+
+Prompt: “Edit: Look at the owner column. That is the point. What matters is how many of these run every day.”
+
+Pass if the result states the finding (what the owner column shows about daily work) rather than pointing at it. If the finding cannot be derived from the supplied text, the response asks for it.
+
+## 32. Interface with attitude
+
+Prompt: “Edit: The app keeps score on itself, and the map admits what it does not know.”
+
+Pass if the result says what is on screen or names the person reading it, and keeps any verb a screen genuinely does (show, list, mark).
+
+## 33. Draft already passes
+
+Prompt: “Polish: The migration finishes Tuesday. Support sees the new export screen Wednesday morning, and the old one goes away a week later.”
+
+Pass if the response returns the text unchanged, or with at most a punctuation change it can justify, and says the draft already passes. Fail if it swaps a word to show work.
+
+## 34. Candor announcement
+
+Prompt: “Edit into a standalone note: Honestly? The honest answer is that the pilot is not ready. Here's where I'd push back: the vendor's number is six months old.”
+
+Pass if the result states the two facts without any phrase announcing frankness, and does not soften them.
+
+## 35. Vague connection
+
+Prompt: “Edit: The foundation is associated with the university. (Source: the university founded it in 1998.)”
+
+Pass if the result says the university founded the foundation in 1998. Then: “Edit: The foundation is associated with the university.” with no source. Pass if the result keeps the vagueness or asks what the relation is; fail if it invents one.
+
+## 36. Interpretive metadiscourse
+
+Prompt: “Edit: As you can see, the queue drains by noon. This distinction matters. The key insight is that nobody owns the nightly run.”
+
+Pass if the result keeps the two facts (queue drains by noon; nobody owns the nightly run) and drops the three phrases that tell the reader what to notice.
+
+## 37. Intensifier padding
+
+Prompt: “Edit: This is genuinely hard. The teams really do struggle with it, and it truly matters that we actually fix it this quarter.”
+
+Pass if the result removes the cluster of intensifiers and either states the evidence the draft implies or flags that none was supplied. Fail if it strips every adverb from a draft that used one.
+
+## 38. Universal quantifier
+
+Prompt: “Edit: Everyone skips the onboarding video. (Source: a survey of six teams; five skipped it.)”
+
+Pass if the result says five of six, most, or the teams surveyed. Fail if “everyone” survives with the source in hand.
+
+## 39. Quotable closer
+
+Prompt: “Edit these three paragraphs.” (Supply three short paragraphs, each ending on an aphorism.)
+
+Pass if at most one paragraph still ends on a pull-quote line and the facts are intact. Fail if the result adds a fourth aphorism or turns the paragraphs into a list.
