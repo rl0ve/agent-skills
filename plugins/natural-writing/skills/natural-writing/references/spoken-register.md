@@ -36,6 +36,44 @@ These sit here rather than in the general catalog because each one is correct, o
 
 Four general-catalog patterns bite hardest here and are worth re-reading before a spoken pass: **Backwards-facing clause**, **Clause-shape monotony**, **Interface as narrator**, and **Furniture inventory**.
 
+Worked examples for the rows above, headed by row name:
+
+### Telegraphic speech, Stacked precision, Label read cold
+
+Before (a talk track; the screen behind the speaker labels the clock "SLA", and the speaker's note says "recurrence confirmed" means an engineer has ruled the fault will recur, and the case cannot close until then):
+
+> Each main stage carries a clock, a warning when it is at risk and an escalation when it breaches. Thirteen stages, thirty-nine tasks, eighty-nine rules. Recurrence confirmed, gates closure.
+
+After:
+
+> Now, each main stage has an SLA, and when that SLA is at risk of being breached, it escalates automatically. There are thirteen stages in this case and, call it, forty tasks and ninety rules behind them. And this line here, **recurrence confirmed**, means an engineer has ruled that the fault will come back, and the case cannot close until they have.
+
+Why: three spoken-only patterns in three sentences. **Telegraphic speech**: the first sentence is a spec line nobody can say at speed; the after is longer on purpose and uses the screen's own word, SLA, which the note supplies. **Stacked precision**: three exact figures in a row cannot be heard; the point rests on thirteen, so that stays exact and the other two are rounded audibly rather than dropped. **Label read cold**: "recurrence confirmed, gates closure" is a screen cell; the after says what the speaker's note says it means and who acts on it. Without that note the right move is to ask, not to gloss the label from its own words. Applied to written prose, every one of these edits would be wrong. See [spoken-register.md](spoken-register.md).
+
+### Speaker meta
+
+Before:
+
+> As we saw in Act I, these two are easy to mix up. Hold that pattern, because this is the one this whole story is about.
+
+After:
+
+> The blue line is the estimate and the black line is what the customer was actually paid. On this case they were 9,000 apart.
+
+Why: Section numbers, a narrated audience, a stage direction and a trailer line, and no content. The after says the distinction the before called confusing. The two lines and the gap are from the screen the speaker is standing in front of.
+
+### Trailer cadence
+
+Before:
+
+> One glance and Sarah has the case. One click and it ships. Instant clarity.
+
+After:
+
+> Sarah opens the case, and the estimate, the photos and the adjuster's note are all on one screen. She approves it here, and it goes to payment.
+
+Why: Ad-copy beats standing in for a spoken walkthrough. The after lets a person do it at normal speed with a subject and a verb. The three things on screen are from the demo, not invented.
+
 ## Say it out loud
 
 The last step of a spoken edit, and the one no linter replaces: deliver every sentence at presentation speed. Any sentence you have to slow down for, re-run, or take a breath inside is compressed, and the fix is to walk the mechanism through rather than list its parts.

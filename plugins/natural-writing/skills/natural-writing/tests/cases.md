@@ -2,7 +2,7 @@
 
 Run these as fresh tasks with only the skill and the prompt. Judge the output against `../eval.md`.
 
-Where a case targets a catalog row, its heading is that row's exact name, matching `../references/pattern-catalog.md` and the corresponding example in `../references/examples.md`.
+Where a case targets a catalog row, its heading is that row's exact name, matching the row and its worked example in `../references/pattern-catalog.md` (or `../references/spoken-register.md`). `test_catalog_structure.py` checks this.
 
 ## 1. Minimal edit
 

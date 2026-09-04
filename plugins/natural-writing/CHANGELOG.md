@@ -1,5 +1,44 @@
 # Changelog
 
+## 1.14.0 - 2026-09-03
+
+Every row has an example, in the same file as its table, and tests keep it so.
+
+- examples.md is gone. Each family table in pattern-catalog.md is followed by a
+  worked before/after for every row in it, headed by the row's exact name; the
+  spoken-only rows have theirs in spoken-register.md. 42 examples written for
+  rows that had none (73 in all), including the six creative-prose rows and
+  every assistant-residue row. The three workflow examples (diagnose mode,
+  options when the call is taste, exit check 27) sit in a Workflow examples
+  section at the end of the catalog.
+- New row **Stock vocabulary**. The linter had checked for "delve" and
+  "tapestry" since 1.0 and no row said why; readers rank the words third among
+  the tells they complain about.
+- Linter: `ROW_FOR` maps every check to the catalog row it serves. Three slugs
+  renamed to match their rows: `superficial-interpretation`, `vague-authority`,
+  `stock-vocabulary`. Sixteen rows gain the **Linted:** marker they were missing.
+- New `tests/test_catalog_structure.py`: every row has an example headed by its
+  name; every example heading names a real row; every lint check maps to a row
+  that exists and every check is mapped; linted rows carry the marker; forward
+  cases that name a row name a real one. The naming drift found by hand in
+  1.13.1 now fails a test.
+- The Unsupported certainty example had split a short sentence and dropped
+  "probably" in the name of preserving hedges. Its better edit is now the
+  sentence unchanged, with the note that tightening it is an option to offer.
+- SKILL.md: when no writing sample exists and a small voice choice will recur
+  (a short sentence kept whole or split, contractions, dash style), show the
+  author one sentence both ways and ask. One probe settles the pass.
+- Every After block was linted, and a fresh Opus reviewer read all 72 against
+  the eval and every other row. It found 24 problems in 21 examples: eleven
+  invented details (a vendor, a customer, a log, a hand-print), seven dropped
+  hedges or facts, four examples that installed another row's pattern, two
+  Whys that misdescribed the edit. All fixed before release. An example that
+  breaks the rules it sits beside teaches the break.
+- Forward test, nine passages, fresh agent holding only this skill: nine pass
+  with every source fact intact. The talk track refused to gloss a screen
+  label from its own words and asked instead, which is the 1.13.0 lesson
+  holding. One weak spot, two quotable closers kept in one memo paragraph.
+
 ## 1.13.1 - 2026-09-03
 
 Naming. The catalog names patterns; examples.md headed each example by its

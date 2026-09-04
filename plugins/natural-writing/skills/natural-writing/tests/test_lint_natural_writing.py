@@ -19,7 +19,7 @@ class ScanTests(unittest.TestCase):
         names = {finding["pattern"] for finding in MODULE.scan(text)}
         self.assertIn("throat-clearing", names)
         self.assertIn("importance-inflation", names)
-        self.assertIn("superficial-analysis", names)
+        self.assertIn("superficial-interpretation", names)
 
     def test_one_dash_is_not_a_cluster(self):
         self.assertEqual([], MODULE.scan("One useful aside — then the point."))

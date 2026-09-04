@@ -37,7 +37,7 @@ Source repos were last checked 2026-09-03. blader/humanizer (v2.11.2, 2026-08-19
 
 1. Prefer principles supported across sources over a growing blacklist of fashionable words.
 2. Add a pattern only when it identifies a repeatable editing failure and includes a false-positive guardrail.
-   A new catalog row ships with a worked example in `examples.md` and a forward test in `tests/cases.md`, the same way a new lint check ships with a measured false-positive rate. A row without either is a note, not a rule.
+   A new catalog row ships with a worked example under its table, headed by the row's exact name, and a forward test in `tests/cases.md`, the same way a new lint check ships with a measured false-positive rate and an entry in the linter's `ROW_FOR` map. `tests/test_catalog_structure.py` fails on a row without an example, a check without a row, or a case that names a row that does not exist.
 3. Keep authorship detection outside the skill's claims. The goal is better prose.
 6. One home per rule. A pattern lives in one catalog table (or in `spoken-register.md` if it only fails out loud); SKILL.md and the register files point at it rather than restating it. Duplicated guidance drifts.
 4. Write original examples whose facts make the editorial decision testable.

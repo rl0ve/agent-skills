@@ -18,14 +18,13 @@ Its operating rules are intentionally conservative:
 skills/natural-writing/
   SKILL.md                         routing, the layered edit, output discipline
   eval.md                          27 checks to run before returning anything
-  references/pattern-catalog.md    every written-prose pattern, by family
-  references/spoken-register.md    talk tracks and narration: rules, patterns, checks
+  references/pattern-catalog.md    every written-prose pattern by family, a worked example per row
+  references/spoken-register.md    talk tracks and narration: rules, patterns with examples, checks
   references/voice-and-register.md voice matching and the written registers
-  references/examples.md           worked before/after decisions
   references/model-routing.md      who writes, who reviews
   references/sources.md            provenance and maintenance rules
-  scripts/lint_natural_writing.py  deterministic first pass; --spoken, --set
-  tests/                           unit tests for the linter, forward-test cases, trigger cases
+  scripts/lint_natural_writing.py  deterministic first pass; --spoken, --set; ROW_FOR maps checks to rows
+  tests/                           linter tests, structure tests, forward-test cases, trigger cases
 ```
 
 Each reference has one job; SKILL.md's reference map says which to read when.
