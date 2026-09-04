@@ -77,7 +77,7 @@ class EveryRowHasAnExample(unittest.TestCase):
         known = known_rows()
         for path in (CATALOG, SPOKEN):
             for h in example_headings(path):
-                if h.startswith(("Diagnose mode", "Exit check", "Offer options")):
+                if h.startswith(("Diagnose mode", "Exit check", "Offer options", "Ask before")):
                     continue  # workflow examples name a SKILL.md or eval section
                 unknown = names_in(h, known) - known
                 self.assertEqual(set(), unknown, f"{path.name}: example heading names no row: {h}")

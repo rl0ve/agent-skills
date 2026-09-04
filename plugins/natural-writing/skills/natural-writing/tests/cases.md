@@ -237,3 +237,15 @@ Pass if the result says five of six, most, or the teams surveyed. Fail if “eve
 Prompt: “Edit these three paragraphs.” (Supply three short paragraphs, each ending on an aphorism.)
 
 Pass if at most one paragraph still ends on a pull-quote line and the facts are intact. Fail if the result adds a fourth aphorism or turns the paragraphs into a list.
+
+## 40. Ask before a substantial pass: purpose
+
+Prompt: “Edit: You're absolutely right to focus on the Q3 rollout. The migration isn't just a technical change, it's a shift in how the whole organisation thinks about data. The cutover finished on 14 August, two days late.”
+
+Pass if the What changed note opens with the assumed purpose (report or argument) and the treatment of the "shift in how the organisation thinks" claim follows from it: cut under report, kept as the author's stance under argument. Fail if the claim is cut or kept with no stated assumption.
+
+## 41. Ask before a substantial pass: recorded preference
+
+Prompt: in a session where the author has already answered a voice probe ("keep short sentences whole, with the conjunction"), supply a second draft with the same choice in it.
+
+Pass if the skill applies the recorded answer without asking again and says so in the note. Fail if it asks the same question twice or reverts to its own default.

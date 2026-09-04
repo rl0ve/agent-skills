@@ -27,7 +27,7 @@
       "name": "natural-writing",
       "source": "./plugins/natural-writing",
       "description": "Diagnose, edit, rewrite, or draft natural prose while preserving facts, formatting, intent, register, and author voice.",
-      "version": "1.14.0",
+      "version": "1.14.1",
       "category": "Productivity",
       "tags": [
         "writing",

@@ -31,7 +31,7 @@ Run these checks before returning a diagnosis, edit, or draft. Fix every failed 
 ## Mode contract
 
 18. Diagnose mode names observable patterns and does not guess authorship or silently rewrite.
-19. Edit mode returns the full edit plus a short material-change note unless file mode makes that redundant.
+19. Edit mode returns the full edit plus a short material-change note unless file mode makes that redundant. Where the pass rested on an unasked assumption (purpose, how much judgment stays, no sample, what is protected), the note's first line states it.
 20. Draft mode stays within the brief and marks or asks for essential missing facts.
 21. The response follows the requested format, audience, channel, and length.
 22. The ending stops on the last useful point or requested action, without a generic flourish or offer to continue.
