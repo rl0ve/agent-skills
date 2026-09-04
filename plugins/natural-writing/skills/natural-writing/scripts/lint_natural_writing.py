@@ -36,7 +36,7 @@ PATTERNS = {
         r"\b(?:pivotal moment|transformative milestone|plays? a vital role|stands? as a testament|underscores? (?:its|the) significance)\b",
         re.IGNORECASE,
     ),
-    "vague-attribution": re.compile(
+    "vague-authority": re.compile(
         r"\b(?:experts (?:say|agree|argue)|studies show|industry reports suggest|many observers believe)\b",
         re.IGNORECASE,
     ),
@@ -80,11 +80,11 @@ PATTERNS = {
         r"\b(?:it(?:'s| is) not (?:just|only)|not only\b.{0,80}\bbut also|the (?:question|issue) (?:isn't|is not)\b.{0,80}\bit(?:'s| is))",
         re.IGNORECASE,
     ),
-    "superficial-analysis": re.compile(
+    "superficial-interpretation": re.compile(
         r",\s+(?:highlighting|underscoring|showcasing|reflecting|demonstrating)\b",
         re.IGNORECASE,
     ),
-    "stock-ai-vocabulary": re.compile(
+    "stock-vocabulary": re.compile(
         r"\b(?:delve|ever-evolving|tapestry|multifaceted|paramount|supercharge|game[- ]changer|full stop)\b",
         re.IGNORECASE,
     ),
@@ -177,6 +177,51 @@ PATTERNS = {
         r"\b(?:sits?|stays?|lives?|accumulates?)\s+(?:on|in)\s+(?:one|the same)\s+\w+",
         re.IGNORECASE,
     ),
+}
+
+
+# Every check maps to the catalog row it serves, by the row's exact name. The
+# structure test reads the catalog and fails if a row here does not exist, so
+# a renamed row or a renamed check cannot drift apart silently.
+ROW_FOR = {
+    "throat-clearing": "Throat clearing",
+    "importance-inflation": "Importance inflation",
+    "vague-authority": "Vague authority",
+    "interface-acts-on-itself": "Interface as narrator",
+    "nominated-significance": "Nominated significance",
+    "candor-announcement": "Candor announcement",
+    "backwards-facing-clause": "Backwards-facing clause",
+    "binary-template": "Binary template",
+    "superficial-interpretation": "Superficial interpretation",
+    "stock-vocabulary": "Stock vocabulary",
+    "chatbot-residue": "Chatbot residue",
+    "validation-preamble": "Validation preamble",
+    "collaboration-theater": "Collaboration theater",
+    "question-answer-pivot": "Question-answer pivot",
+    "dash-cluster": "Dash and parenthesis dependency",
+    "contrastive-definition": "Contrastive definition",
+    "deferred-point": "Deferred point",
+    "spec-sheet-coda": "Spec-sheet coda",
+    "org-chart-actor": "Org-chart actor",
+    "insider-jargon": "Insider jargon",
+    "interface-as-narrator": "Interface as narrator",
+    "circular-assertion": "Circular assertion",
+    "furniture-inventory": "Furniture inventory",
+    "speaker-meta": "Speaker meta",
+    "trailer-cadence": "Trailer cadence",
+    "announced-virtue": "Announced virtue",
+    "mechanism-speak": "Mechanism-speak",
+    # whole-piece, spoken and set checks
+    "em-dash-overuse": "Em dash default",
+    "sentence-shape-run": "Clause-shape monotony",
+    "flat-declarative-run": "Clause-shape monotony",
+    "stacked-precision": "Stacked precision",
+    "compressed-mechanism": "Telegraphic speech",
+    "stacked-object-pronouns": "Telegraphic speech",
+    "paragraph-opens-on-pronoun": "Telegraphic speech",
+    "set-uniform-opening": "Editing a set",
+    "set-uniform-closing": "Editing a set",
+    "set-uniform-connective": "Editing a set",
 }
 
 

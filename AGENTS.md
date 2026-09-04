@@ -15,10 +15,9 @@ Read in this order when a task is "make this prose better":
 |---|---|
 | `plugins/natural-writing/skills/natural-writing/SKILL.md` | Always first. Routing, the layered edit, output discipline. |
 | `.../eval.md` | Before returning any edit. 26 checks; fix every failure you can without new facts. The last four cover spoken delivery and taste calls. |
-| `.../references/pattern-catalog.md` | Every written-prose pattern by family, assistant residue and creative prose included. Read **Editing a set** before editing many pieces to one standard. |
+| `.../references/pattern-catalog.md` | Every written-prose pattern by family, each table followed by a worked example per row. Read **Editing a set** before editing many pieces to one standard. |
 | `.../references/spoken-register.md` | Any talk track, demo script, presenter note or narration. The spoken register, its own patterns, and the `--spoken` checks. |
 | `.../references/voice-and-register.md` | Voice matching, the written registers, and the order conflicting instructions resolve in. |
-| `.../references/examples.md` | A worked before/after decision would help, including the bad edit to avoid. |
 
 Two things worth running rather than reading:
 
@@ -40,7 +39,7 @@ python3 .../scripts/lint_natural_writing.py --set PIECES.md
 
 Treat every match as a review prompt, not a verdict. Patterns are evidence in clusters.
 
-Tests: `cd plugins/natural-writing/skills/natural-writing && python3 -m unittest discover -s tests`
+Tests: `cd plugins/natural-writing/skills/natural-writing && python3 -m unittest discover -s tests` (linter behaviour, plus structure tests that keep the catalog, examples, lint map and forward cases naming the same rows)
 
 ## Install from this repo
 

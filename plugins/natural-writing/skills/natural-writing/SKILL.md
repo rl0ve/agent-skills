@@ -47,6 +47,8 @@ A handful of answers change every line, and guessing them costs a whole cycle. A
 
 For a written piece: the reader, the decision they have to make, the register, and the length. For a spoken piece the list is in [references/spoken-register.md](references/spoken-register.md), and one question there earns its place above the others because its answer is invisible in the draft: **how precise should the numbers be out loud.** A paragraph that quantifies is written one way for a reader and another way for a listener.
 
+When no sample is provided and a small voice choice will recur through the piece (a short sentence kept whole with its conjunction or split in two, contractions or none, a typed dash or a comma), show the author one sentence both ways and ask which. One probe settles the pass; guessing installs your taste as theirs.
+
 When a writing sample is provided, match its tendencies rather than isolated quirks. Do not copy memorable phrases from unrelated samples. For detailed calibration, read [references/voice-and-register.md](references/voice-and-register.md).
 
 ## Edit in layers
@@ -123,10 +125,9 @@ Each reference has one job. Read the one the situation names and skip the rest.
 
 | File | Its job | Read it when |
 |---|---|---|
-| [references/pattern-catalog.md](references/pattern-catalog.md) | Every written-prose pattern, by family: content, structure, sentence, formatting, assistant residue, creative prose. Signal, repair, and the lint name where one exists. Also **Editing a set** and the false-positive guardrails. | The draft has repeated stock phrasing, generic structure, promotional tone, uniform cadence, or assistant-like residue; before editing many pieces to one standard. |
-| [references/spoken-register.md](references/spoken-register.md) | The spoken register in full: rules, the patterns that only fail out loud, the pre-pass questions, and the `--spoken` checks. | The piece is a talk track, demo script, presenter note, or narration. |
+| [references/pattern-catalog.md](references/pattern-catalog.md) | Every written-prose pattern, by family: content, structure, sentence, formatting, assistant residue, creative prose. Each table is followed by a worked before/after for every row in it, headed by the row's exact name. Also **Editing a set**, the false-positive guardrails, and the workflow examples. | The draft has repeated stock phrasing, generic structure, promotional tone, uniform cadence, or assistant-like residue; before editing many pieces to one standard; when a row's one-line repair is not enough to see the move. |
+| [references/spoken-register.md](references/spoken-register.md) | The spoken register in full: rules, the patterns that only fail out loud with a worked example for each, the pre-pass questions, and the `--spoken` checks. | The piece is a talk track, demo script, presenter note, or narration. |
 | [references/voice-and-register.md](references/voice-and-register.md) | Building a voice model from samples, the written registers, and the order in which conflicting instructions resolve. | Voice matching, or a channel-specific call. |
-| [references/examples.md](references/examples.md) | Worked before/after decisions, including the bad edit to avoid, one per editorial move. Models the decision, not phrases to reuse. | A pattern row is not enough to see the repair. |
 | [references/model-routing.md](references/model-routing.md) | Who writes and who reviews: parent writes, read-only reviewer audits. | The user asks which model or agent should write or review, or consequential writing may justify an independent audit. |
 | [references/sources.md](references/sources.md) | Where the guidance came from and the rules for extending it. | Maintaining the skill. |
 
