@@ -36,6 +36,36 @@
         "installation": "AVAILABLE"
       },
       "category": "Developer Tools"
+    },
+    {
+      "name": "capability-storyboard",
+      "source": "./plugins/capability-storyboard",
+      "description": "Build a capability-first, multi-tool HTML storyboard for a keynote, demo walkthrough, or narrative product doc. Ships a working template and a finished nine-scene example board to lift components from.",
+      "version": "1.0.0",
+      "category": "Productivity",
+      "tags": [
+        "storyboard",
+        "keynote",
+        "demo",
+        "mockup",
+        "talk-track",
+        "presentation"
+      ]
+    },
+    {
+      "name": "deck-builder",
+      "source": "./plugins/deck-builder",
+      "description": "Build and quality-check PowerPoint decks on top of any corporate template. Reads the template and generates a brand pack, so the palette, grid, layouts, and logo zone are configuration rather than code.",
+      "version": "1.0.0",
+      "category": "Productivity",
+      "tags": [
+        "powerpoint",
+        "pptx",
+        "slides",
+        "presentation",
+        "template",
+        "brand"
+      ]
     }
   ]
 }

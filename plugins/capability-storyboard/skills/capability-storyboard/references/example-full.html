@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irregular operations — capability storyboard</title>
+<style>
+  /*
+    A COMPLETE WORKED EXAMPLE of the capability-storyboard format.
+
+    The scenario (an airline recovering from a weather cancellation) is invented,
+    and so are the three products in it. Nothing here is a real system. It exists
+    so you can lift components out of it: the stats strip, the modal dialog, the
+    stage canvas, the closing thumbnail wall, the three view modes, the computed
+    masthead line, and the @scene: cross-reference resolver.
+
+    Read SKILL.md first. Start a real board from template.html, then come here for
+    whichever component you need.
+  */
+  :root{
+    --bg:#f6f7f9; --ink:#1c2530; --muted:#6b7684; --line:#e4e8ee;
+    --accent:#0b7285; --accent-soft:#e6f4f6; --accent-line:#bfdde3;
+    --done:#1d9d64; --amber:#b7791f; --danger:#e35b5b;
+    --serif:Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.45}
+  .page{max-width:1720px;margin:0 auto;padding:0 26px 90px;display:flex;gap:28px;align-items:flex-start}
+
+  /* ---------- sticky left TOC with per-scene status dots ---------- */
+  .toc{position:sticky;top:18px;width:240px;flex:none;background:#fff;border:1px solid var(--line);border-radius:12px;
+       padding:14px 10px 16px;box-shadow:0 10px 24px rgba(18,28,40,.06);max-height:calc(100vh - 36px);overflow:auto}
+  .toc h2{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px 8px}
+  .tgroup{margin-bottom:4px;border-radius:8px;padding:2px 0}
+  .tgroup>a{display:flex;gap:8px;align-items:baseline;text-decoration:none;color:var(--ink);padding:5px 8px;border-radius:7px}
+  .tgroup>a:hover{background:#f3f5f8}
+  .tt-name{flex:1;font-size:12.5px;font-weight:700}
+  .tframes{margin:0 0 7px 22px;border-left:1px solid var(--line);padding-left:9px}
+  .tframes a{display:flex;gap:6px;align-items:center;text-decoration:none;color:#4a5461;font-size:10.5px;padding:2.5px 4px;border-radius:5px}
+  .tframes a:hover{background:#f3f5f8;color:var(--ink)}
+  .fd{width:6px;height:6px;border-radius:50%;flex:none}
+  .fd.built{background:var(--done)} .fd.partial{background:var(--amber)} .fd.build{background:var(--danger)}
+  .toc .leg{margin:10px 8px 0;font-size:9px;color:var(--muted);display:flex;gap:9px;flex-wrap:wrap}
+  .toc .leg span{display:flex;gap:4px;align-items:center}
+
+  /* ---------- view-mode switch (Lesson 10: three reading modes, one dataset) ---------- */
+  .modes{display:flex;gap:2px;background:#eef1f5;border-radius:8px;padding:2px;margin:0 8px 12px}
+  .modes button{flex:1;border:0;background:transparent;font-family:var(--mono);font-size:9px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--muted);padding:6px 2px;border-radius:6px;cursor:pointer}
+  .modes button[aria-pressed="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(18,28,40,.14)}
+
+  /* ---------- masthead ---------- */
+  .content{flex:1;min-width:0}
+  .mast{padding:34px 0 14px;border-bottom:2px solid var(--ink);margin-bottom:10px}
+  .mast h1{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1.15;margin:8px 0 10px}
+  .mast .dek{font-size:14px;color:#3d4754;max-width:840px;margin-bottom:12px}
+  .statline{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.04em;margin-top:14px}
+  .capbox{background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:12px;padding:14px 18px;margin-top:12px;max-width:860px}
+  .capbox>p{font-size:13.5px;color:var(--ink);margin-bottom:10px}
+  .capbox ol{margin:0;padding-left:20px;display:grid;gap:6px}
+  .capbox li{font-size:13px;color:#333c46}
+
+  /* ---------- narrative mode: a standalone plain-language walkthrough ---------- */
+  .narrative{display:none;max-width:760px;padding:8px 0 20px}
+  .narrative h2{font-family:var(--serif);font-size:19px;margin:26px 0 8px}
+  .narrative p{font-size:14px;color:#333c46;margin-bottom:12px}
+  body[data-mode="narrative"] .narrative{display:block}
+  body[data-mode="narrative"] #story{display:none}
+
+  /* ---------- acts & scenes ---------- */
+  .act{margin:34px 0 12px;display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--ink);padding-bottom:6px;flex-wrap:wrap}
+  .act h2{font-family:var(--serif);font-size:20px;font-weight:600}
+  .act .rt{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--muted)}
+  .act .goal{font-size:11px;color:var(--muted);flex:1 1 100%}
+  .actrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(470px,1fr));gap:22px;align-items:start}
+  .scene{min-width:0}
+  .scene.wide{grid-column:1 / -1}
+  .sc-head{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+  .sc-num{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--accent)}
+  .actor{font-size:9px;font-weight:800;letter-spacing:.06em;border-radius:4px;padding:2.5px 7px;background:#eef1f5;color:#5b6572}
+  .status{font-size:9px;color:var(--muted);display:flex;gap:4px;align-items:center;margin-left:auto}
+  .scene h3{font-family:var(--serif);font-size:16px;font-weight:600;margin-bottom:8px}
+  /* Lesson 9: the caption rides under the frame, visible in every mode, never clamped. */
+  .caption{font-size:11.5px;line-height:1.5;color:#4a5461;margin-top:9px;max-width:1100px}
+
+  /* ---------- talk-track + demo-notes side column ---------- */
+  .scenebody{display:flex;gap:16px;align-items:flex-start}
+  .scenebody .framewrap{flex:1;min-width:0}
+  .sidecol{flex:0 0 200px;display:flex;flex-direction:column;gap:10px}
+  .talktrack,.demonotes{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 12px}
+  .demonotes{background:#f8f9fb}
+  .lbl2{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:6px}
+  .talktrack .lbl2{color:var(--accent)} .demonotes .lbl2{color:var(--muted)}
+  .talktrack p{font-family:var(--serif);font-size:11.5px;font-style:italic;line-height:1.5;color:#333c46}
+  .demonotes ul{padding-left:15px;margin:0}
+  .demonotes li{font-size:11px;line-height:1.45;color:#3d4754;margin-bottom:5px}
+  .demonotes li.dont{color:#c2542e}
+  .framelabel{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;
+    text-transform:uppercase;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:4px 10px;margin-bottom:8px}
+  .framelabel.mock{color:#8a6d3b;background:#fbf3e2}
+
+  /* strip mode: thumbnails only, no side column */
+  body[data-mode="strip"] .sidecol{display:none}
+  /* auto-FILL, not auto-fit: auto-fit collapses unused tracks, so a 2-scene act
+     would get fat thumbnails and a 3-scene act thin ones. Keep them all equal. */
+  body[data-mode="strip"] .actrow{grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+  body[data-mode="strip"] .caption{display:none}
+  /* flow mode: side column above the frame, full width, for reading talk track end to end */
+  /* column flex + align-items:flex-start would shrink-wrap the frame, and each
+     scene would settle at a different width once fitFrames() ran. Stretch it. */
+  body[data-mode="flow"] .scenebody{flex-direction:column;align-items:stretch}
+  body[data-mode="flow"] .sidecol{flex:1 1 auto;width:100%;flex-direction:row}
+  body[data-mode="flow"] .sidecol>*{flex:1}
+  body[data-mode="flow"] .actrow{grid-template-columns:1fr}
+
+  /* ---------- CHROME VARIANT 1: generic light browser ---------- */
+  .frame{position:relative;width:100%;max-width:1100px;aspect-ratio:1280/800;overflow:hidden;
+         background:#fff;border:1px solid #cbd3dc;border-radius:12px;box-shadow:0 22px 44px -18px rgba(18,28,40,.32)}
+  .win{position:absolute;top:0;left:0;width:1280px;height:800px;transform-origin:0 0;transform:scale(var(--s,1));
+       display:flex;flex-direction:column;background:var(--bg);font-family:var(--sans)}
+  .chrome{flex:none;height:36px;display:flex;align-items:center;gap:8px;padding:0 12px;background:#eef0f3;border-bottom:1px solid #d7dce2}
+  .dots{display:flex;gap:7px}
+  .dots i{width:10px;height:10px;border-radius:50%}
+  .dots i.r{background:#f2635b} .dots i.y{background:#f2bd4c} .dots i.g{background:#4cc35f}
+  .tabstrip{display:flex;gap:6px;margin-left:10px}
+  .tabstrip span{font-size:10.5px;color:#5b6572;background:#fff;border:1px solid #d7dce2;border-bottom:0;
+    border-radius:6px 6px 0 0;padding:4px 10px}
+  .omni{flex:none;height:34px;display:flex;align-items:center;padding:0 12px;background:#f7f8fa;border-bottom:1px solid var(--line)}
+  .omni .url{font-family:var(--mono);font-size:10.5px;color:#7c8792}
+  .screen{flex:1;min-height:0;overflow:hidden;padding:18px 20px;background:#fff}
+
+  /* --- SkyOps design tokens: the web ops console --- */
+  .skyops{--so:#0f766e;--so-soft:#ecfdf5;--so-line:#a7f3d0;--so-ink:#0f2f2b}
+  .skyops .screen{background:#f8fafb}
+  .so-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .so-mark{width:26px;height:26px;border-radius:7px;background:var(--so);display:grid;place-items:center;color:#fff;font-size:13px;font-weight:800}
+  .so-title{font-size:16px;font-weight:700;color:var(--so-ink)}
+  .so-crumb{font-size:11px;color:#6b7684;margin-left:auto}
+  /* stats strip — lift this component */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+  .stat{background:#fff;border:1px solid #e2e8e6;border-radius:10px;padding:12px 14px}
+  .stat .k{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#7c8792}
+  .stat .v{font-size:26px;font-weight:700;color:var(--so-ink);line-height:1.1;margin-top:5px}
+  .stat .d{font-size:10.5px;color:#6b7684;margin-top:3px}
+  .stat.hot .v{color:#b42318}
+  table.grid{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e2e8e6;border-radius:10px;overflow:hidden}
+  table.grid th{font-family:var(--mono);font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:#7c8792;
+    text-align:left;padding:9px 12px;background:#f4f7f6;border-bottom:1px solid #e2e8e6}
+  table.grid td{font-size:12px;padding:10px 12px;border-bottom:1px solid #eef2f1;color:#33413e}
+  table.grid tr:last-child td{border-bottom:0}
+  .pill{display:inline-block;font-size:10px;font-weight:700;border-radius:999px;padding:2px 9px}
+  .pill.red{background:#fee4e2;color:#b42318}
+  .pill.amber{background:#fef0c7;color:#93601a}
+  .pill.green{background:#d1fadf;color:#05603a}
+  .pill.grey{background:#eef1f5;color:#5b6572}
+
+  /* modal dialog — lift this component */
+  .modal-scrim{position:absolute;inset:0;background:rgba(15,23,32,.42);display:grid;place-items:center}
+  .modal{width:560px;background:#fff;border-radius:14px;box-shadow:0 30px 60px -12px rgba(15,23,32,.5);overflow:hidden}
+  .modal-head{padding:16px 20px 12px;border-bottom:1px solid var(--line)}
+  .modal-head h4{font-size:15px;font-weight:700;color:var(--ink)}
+  .modal-head p{font-size:11.5px;color:var(--muted);margin-top:3px}
+  .modal-body{padding:16px 20px;display:grid;gap:10px}
+  .mrow{display:flex;align-items:center;gap:10px;font-size:12px;color:#33413e;
+    border:1px solid var(--line);border-radius:8px;padding:9px 11px}
+  .mrow .who{font-weight:600;flex:1}
+  .modal-foot{padding:12px 20px 16px;display:flex;gap:8px;justify-content:flex-end;background:#fafbfc;border-top:1px solid var(--line)}
+  .btn{font-size:12px;font-weight:600;border-radius:8px;padding:8px 15px;border:1px solid var(--line);background:#fff;color:#33413e}
+  .btn.primary{background:#0f766e;border-color:#0f766e;color:#fff}
+
+  /* seat-supply bars, and the recovery log — both exist to fill a frame honestly */
+  .supply{margin-top:16px;background:#fff;border:1px solid #e2e8e6;border-radius:10px;padding:14px 16px}
+  .supply h4{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#7c8792;margin-bottom:11px}
+  .srow{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+  .srow .fl{font-size:11.5px;font-weight:600;color:#33413e;width:120px;flex:none}
+  .srow .track{flex:1;height:14px;border-radius:4px;background:#eef2f1;overflow:hidden}
+  .srow .track i{display:block;height:100%;border-radius:4px;background:#0f766e}
+  .srow .track i.tight{background:#f0a75c}
+  .srow .cnt{font-family:var(--mono);font-size:11px;color:#5b6572;width:78px;text-align:right;flex:none}
+  .log{margin-top:16px;background:#fff;border:1px solid #e2e8e6;border-radius:10px;padding:14px 16px}
+  .log h4{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#7c8792;margin-bottom:11px}
+  .lrow{display:flex;gap:14px;align-items:baseline;padding:6px 0;border-bottom:1px solid #f1f5f4;font-size:11.5px;color:#33413e}
+  .lrow:last-child{border-bottom:0}
+  .lrow .t{font-family:var(--mono);font-size:11px;color:#7c8792;width:52px;flex:none}
+  .lrow .w{margin-left:auto;color:#7c8792;font-size:10.5px}
+
+  /* stage canvas — lift this component */
+  .canvas{background:#fff;border:1px solid #e2e8e6;border-radius:10px;padding:22px 18px;display:flex;align-items:center;gap:0}
+  .cnode{flex:1;text-align:center}
+  .cnode .box{border:2px solid #cbd5d2;border-radius:12px;padding:14px 8px;background:#f8fafb}
+  .cnode.on .box{border-color:#0f766e;background:#ecfdf5}
+  .cnode .nm{font-size:12px;font-weight:700;color:#33413e}
+  .cnode .sub{font-size:10px;color:#7c8792;margin-top:3px}
+  .cedge{flex:0 0 34px;height:2px;background:#cbd5d2;position:relative}
+  .cedge::after{content:"";position:absolute;right:0;top:-3px;border:4px solid transparent;border-left-color:#cbd5d2}
+
+  /* ---------- CHROME VARIANT 2: native dark developer tool ---------- */
+  .win.native-dark{background:#1b1b1b}
+  .native-dark .titlebar{height:38px;display:flex;align-items:center;padding:0 12px;background:#262626;border-bottom:1px solid #333330}
+  .native-dark .titlebar .tt{margin:0 auto;font-size:11.5px;color:#a7a7a3}
+  .native-dark .body{flex:1;min-height:0;padding:16px 20px;color:#e8e8e5;font-family:var(--mono);font-size:12.5px;line-height:1.8;overflow:hidden}
+  .native-dark .body .dim{color:#7d7d78}
+  .native-dark .body .ok{color:#6ee7a8}
+  .native-dark .body .warn{color:#fbbf5c}
+  .native-dark .body .bad{color:#f8837a}
+
+  /* ---------- CHROME VARIANT 2b: native LIGHT business app (reads very differently) ---------- */
+  .win.native-light{background:#fbfcfd}
+  .native-light .titlebar{height:38px;display:flex;align-items:center;gap:10px;padding:0 12px;background:#eef2f7;border-bottom:1px solid #dbe2ea}
+  .native-light .titlebar .tt{font-size:11.5px;color:#4a5461;font-weight:600}
+  .native-light .shell{flex:1;min-height:0;display:flex}
+  .native-light .rail{flex:none;width:172px;background:#f4f7fa;border-right:1px solid #dbe2ea;padding:14px 10px}
+  .native-light .rail h5{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:#8a95a3;margin:0 0 8px 6px}
+  .native-light .rail a{display:block;font-size:12px;color:#4a5461;padding:6px 8px;border-radius:6px;text-decoration:none}
+  .native-light .rail a.on{background:#dbe9fb;color:#1d4ed8;font-weight:600}
+  .native-light .main{flex:1;min-width:0;padding:18px 20px;overflow:hidden}
+  .roster{width:100%;border-collapse:collapse}
+  .roster th{font-family:var(--mono);font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:#8a95a3;text-align:left;padding:8px 10px;border-bottom:1px solid #dbe2ea}
+  .roster td{font-size:12px;padding:9px 10px;border-bottom:1px solid #eef2f7;color:#33413e}
+  .bar{height:16px;border-radius:4px;background:#e8edf3;position:relative;overflow:hidden;min-width:120px}
+  .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:4px}
+  .bar i.ok{background:#7dd3a8} .bar i.warn{background:#fbbf5c} .bar i.bad{background:#f4a3a3}
+
+  /* ---------- CHROME VARIANT 4: a phone, for a passenger-facing surface ---------- */
+  .phone-stage{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(160deg,#eef3f8,#dde6ef)}
+  .phone{width:330px;height:670px;background:#fff;border-radius:38px;border:10px solid #10151b;
+    box-shadow:0 30px 60px -18px rgba(15,23,32,.45);overflow:hidden;display:flex;flex-direction:column}
+  .phone .notch{height:26px;background:#10151b;border-radius:0 0 14px 14px;width:130px;margin:0 auto;flex:none}
+  .phone .pbody{flex:1;min-height:0;padding:16px 16px 0;overflow:hidden}
+  .pcard{border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin-bottom:11px}
+  .pcard.hero{background:#0f766e;border-color:#0f766e;color:#fff}
+  .pcard .lab{font-family:var(--mono);font-size:8.5px;letter-spacing:.11em;text-transform:uppercase;opacity:.75}
+  .pcard .big{font-size:19px;font-weight:700;margin-top:4px}
+  .pcard .sm{font-size:11.5px;margin-top:4px;opacity:.9}
+
+  /* ---------- CHROME VARIANT 3: bare full-bleed slide ---------- */
+  .slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;
+         background:radial-gradient(120% 100% at 50% 0%,#232b36 0%,#12161c 100%);padding:0 70px}
+  .slide h2{font-family:var(--serif);font-size:40px;font-weight:500;color:#fff;text-align:center;line-height:1.2}
+  .slide .kick{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#7f8b9a}
+  /* closing thumbnail wall — lift this component */
+  .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;width:100%;margin-top:8px}
+  .thumb{background:#1b222c;border:1px solid #2c3641;border-radius:9px;padding:10px;min-height:96px;display:flex;flex-direction:column;gap:6px}
+  .thumb .tl{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#6f7c8b}
+  .thumb .th{font-size:12px;color:#dce3ea;font-weight:600;line-height:1.3}
+  .thumb .sk{height:5px;border-radius:3px;background:#2c3641}
+  .thumb .sk.w70{width:70%} .thumb .sk.w45{width:45%}
+
+  a.xref{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent-line)}
+
+  @media(max-width:1150px){.page{flex-direction:column}.toc{position:static;width:100%;max-height:none}.actrow{grid-template-columns:1fr}.scenebody{flex-wrap:wrap}.sidecol{flex:1 1 100%}}
+</style>
+</head>
+<body data-mode="flow">
+<div class="page">
+<nav class="toc" id="toc">
+  <h2>Storyboard</h2>
+  <div class="modes" role="group" aria-label="Reading mode">
+    <button data-mode="narrative" aria-pressed="false">Narrative</button>
+    <button data-mode="strip" aria-pressed="false">Strip</button>
+    <button data-mode="flow" aria-pressed="true">Flow</button>
+  </div>
+  <div id="tocBody"></div>
+  <div class="leg"><span><i class="fd built" style="display:inline-block"></i>Built</span><span><i class="fd partial" style="display:inline-block"></i>Partial</span><span><i class="fd build" style="display:inline-block"></i>To build</span></div>
+</nav>
+
+<div class="content">
+  <div class="mast">
+    <span style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Worked example &middot; invented scenario</span>
+    <h1>A storm cancels four flights, and the recovery is finished before the gate agent is asked a single question.</h1>
+    <p class="dek">At 7:14pm a line of thunderstorms closes the field. Four departures cancel, and 612 people who expected to sleep at home are now standing in a concourse. The old version of this evening is three teams working from three different screens, and a queue that stops moving.</p>
+    <p class="dek">This board follows one of those passengers, Dana, through the evening: the cancellation lands, seats are found on other flights, a crew is checked for legal duty hours and reassigned, and Dana gets a new boarding pass on her phone before she reaches the front of the line.</p>
+    <div class="capbox">
+      <p>What's on screen, in order:</p>
+      <ol>
+        <li><b>SkyOps</b> &mdash; the web console where the duty manager sees the disruption and runs the rebooking.</li>
+        <li><b>CrewDesk</b> &mdash; the desktop tool that checks duty-hour legality and reassigns crew.</li>
+        <li><b>The passenger app</b> &mdash; where Dana gets the new flight, the seat, and the meal voucher.</li>
+      </ol>
+    </div>
+    <p class="statline" id="statline"></p>
+  </div>
+
+  <!-- Lesson 10: Narrative is a real section, not a collapsible duplicate of the scenes. -->
+  <div class="narrative">
+    <h2>What happens, in plain words</h2>
+    <p>A weather cell parks itself over the airport at 7:14pm. Four flights that were supposed to leave that evening will not leave. About 612 people are affected, and roughly a third of them are connecting to somewhere else, which means the problem is bigger than four flights.</p>
+    <p>The duty manager opens one screen and sees the whole shape of it: which flights, how many people, how many are connections, and how many seats exist on later flights tonight. She does not assemble that picture from four systems. It is the first thing she sees.</p>
+    <p>She starts the rebooking. The system proposes seats for everyone it can place, ranked by who is most stuck: unaccompanied minors and passengers with tight connections first, then everyone else. She reviews the exceptions rather than the whole list, because the ones that worked do not need her.</p>
+    <p>Rebooking passengers creates a second problem. Two of the later flights now need crew who were not scheduled to work them, and duty-hour rules are not negotiable. CrewDesk checks legality for every candidate and returns the ones who can actually fly, with the reason the others cannot.</p>
+    <p>Dana, meanwhile, has been standing in a line. Her phone buzzes. She has a seat on the 9:40, a gate, a meal voucher, and a hotel offer if she wants it. She leaves the line.</p>
+    <p>The recovery finishes at 8:02pm. The measure of success is not that a system did something clever. It is that the queue never formed.</p>
+  </div>
+
+  <div id="story"></div>
+  <footer style="font-size:10px;color:var(--muted);padding:20px 0 0">Invented scenario and invented products, built to demonstrate the storyboard format. Any resemblance to a real airline system is coincidental.</footer>
+</div>
+</div>
+
+<script>
+// ============================================================================
+// One render function per DISTINCT SCREEN. Each returns the full frame markup.
+// ============================================================================
+
+/* ---- Scene: opening slide ---- */
+function openingSlide(){
+  return `<div class="frame"><div class="win"><div class="slide">
+    <span class="kick">19:14 &middot; Field closed</span>
+    <h2>Four flights just cancelled.<br>612 people need somewhere to be.</h2>
+  </div></div></div>`;
+}
+
+/* ---- Scene: the SkyOps disruption board (stats strip + grid) ---- */
+function opsBoard(){
+  return `<div class="frame"><div class="win skyops">
+    <div class="chrome"><span class="dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+      <span class="tabstrip"><span>SkyOps &middot; Disruption</span></span></div>
+    <div class="omni"><span class="url">skyops.example-air.com/irops/2026-03-14/evening</span></div>
+    <div class="screen">
+      <div class="so-head"><div class="so-mark">S</div><div class="so-title">Evening disruption</div>
+        <div class="so-crumb">Field closed 19:14 &middot; reopened 20:35 (forecast)</div></div>
+      <div class="stats">
+        <div class="stat hot"><div class="k">Flights cancelled</div><div class="v">4</div><div class="d">of 31 scheduled</div></div>
+        <div class="stat hot"><div class="k">Passengers affected</div><div class="v">612</div><div class="d">204 connecting onward</div></div>
+        <div class="stat"><div class="k">Seats available tonight</div><div class="v">418</div><div class="d">across 9 later departures</div></div>
+        <div class="stat"><div class="k">Crew at duty limit</div><div class="v">11</div><div class="d">cannot be extended</div></div>
+      </div>
+      <table class="grid">
+        <thead><tr><th>Flight</th><th>Route</th><th>Scheduled</th><th>Passengers</th><th>Connecting</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>EA 418</td><td>Portland</td><td>19:40</td><td>168</td><td>52</td><td><span class="pill red">Cancelled</span></td></tr>
+          <tr><td>EA 622</td><td>Denver</td><td>20:05</td><td>174</td><td>71</td><td><span class="pill red">Cancelled</span></td></tr>
+          <tr><td>EA 103</td><td>Chicago</td><td>20:20</td><td>142</td><td>48</td><td><span class="pill red">Cancelled</span></td></tr>
+          <tr><td>EA 877</td><td>Phoenix</td><td>21:15</td><td>128</td><td>33</td><td><span class="pill red">Cancelled</span></td></tr>
+          <tr><td>EA 940</td><td>Seattle</td><td>21:50</td><td>151</td><td>29</td><td><span class="pill amber">Delayed 55m</span></td></tr>
+        </tbody>
+      </table>
+      <div class="supply">
+        <h4>Where the seats are &middot; later departures tonight</h4>
+        <div class="srow"><span class="fl">EA 940 &middot; 21:50</span><span class="track"><i style="width:74%"></i></span><span class="cnt">96 seats</span></div>
+        <div class="srow"><span class="fl">EA 205 &middot; 06:10</span><span class="track"><i style="width:88%"></i></span><span class="cnt">114 seats</span></div>
+        <div class="srow"><span class="fl">EA 311 &middot; 06:45</span><span class="track"><i style="width:61%"></i></span><span class="cnt">79 seats</span></div>
+        <div class="srow"><span class="fl">EA 508 &middot; 07:20</span><span class="track"><i class="tight" style="width:23%"></i></span><span class="cnt">30 seats</span></div>
+        <div class="srow"><span class="fl">Partner carriers</span><span class="track"><i style="width:76%"></i></span><span class="cnt">99 seats</span></div>
+      </div>
+    </div>
+  </div></div>`;
+}
+
+/* ---- Scene: the rebooking run, mid-flight, with a modal ---- */
+function rebookModal(){
+  return `<div class="frame"><div class="win skyops">
+    <div class="chrome"><span class="dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+      <span class="tabstrip"><span>SkyOps &middot; Rebooking</span></span></div>
+    <div class="omni"><span class="url">skyops.example-air.com/irops/2026-03-14/rebook</span></div>
+    <div class="screen">
+      <div class="so-head"><div class="so-mark">S</div><div class="so-title">Rebooking run</div>
+        <div class="so-crumb">571 of 612 placed &middot; 41 need a decision</div></div>
+      <table class="grid">
+        <thead><tr><th>Passenger</th><th>Was on</th><th>Proposed</th><th>Priority</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>D. Okafor</td><td>EA 622</td><td>EA 940 &middot; 21:50 &middot; 14C</td><td><span class="pill amber">Tight connection</span></td><td><span class="pill green">Placed</span></td></tr>
+          <tr><td>M. Silva</td><td>EA 418</td><td>EA 205 &middot; 06:10 &middot; 8A</td><td><span class="pill grey">Standard</span></td><td><span class="pill green">Placed</span></td></tr>
+          <tr><td>R. Adeyemi +2</td><td>EA 103</td><td>&mdash;</td><td><span class="pill red">Family of 3</span></td><td><span class="pill amber">No adjacent seats</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="modal-scrim"><div class="modal">
+      <div class="modal-head"><h4>Three seats, not together</h4>
+        <p>EA 205 has 3 seats left. None are adjacent, and one is a middle in the last row.</p></div>
+      <div class="modal-body">
+        <div class="mrow"><span class="who">R. Adeyemi</span><span class="pill grey">28B middle</span></div>
+        <div class="mrow"><span class="who">T. Adeyemi &middot; age 9</span><span class="pill grey">12F window</span></div>
+        <div class="mrow"><span class="who">K. Adeyemi &middot; age 6</span><span class="pill grey">31A window</span></div>
+      </div>
+      <div class="modal-foot"><button class="btn">Hold for 06:55 flight</button><button class="btn primary">Offer both, let them choose</button></div>
+    </div></div>
+  </div></div>`;
+}
+
+/* ---- Scene: CrewDesk legality check, dark tool ---- */
+function crewLegality(){
+  return `<div class="frame"><div class="win native-dark">
+    <div class="titlebar"><span class="dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+      <span class="tt">CrewDesk &mdash; duty legality &middot; EA 940</span></div>
+    <div class="body">
+<span class="dim">$</span> crewdesk check --flight EA940 --report 21:05<br>
+<span class="dim">Reading duty records for 34 candidates at base PDX…</span><br><br>
+<span class="ok">&#10003;</span> HOLT, A. &nbsp;&nbsp;&nbsp;rest 11h 40m &nbsp;&nbsp;duty today 3h 05m &nbsp;&nbsp;<span class="ok">legal to 02:15</span><br>
+<span class="ok">&#10003;</span> NDIAYE, F. &nbsp;rest 14h 02m &nbsp;&nbsp;duty today 0h 00m &nbsp;&nbsp;<span class="ok">legal to 04:40</span><br>
+<span class="ok">&#10003;</span> BRENNAN, T. rest 10h 15m &nbsp;&nbsp;duty today 2h 30m &nbsp;&nbsp;<span class="ok">legal to 01:50</span><br>
+<span class="bad">&#10007;</span> VOSS, M. &nbsp;&nbsp;&nbsp;rest 08h 55m &nbsp;&nbsp;<span class="bad">below 10h minimum</span><br>
+<span class="bad">&#10007;</span> IWU, C. &nbsp;&nbsp;&nbsp;&nbsp;duty today 12h 20m &nbsp;<span class="bad">would exceed 14h at report</span><br>
+<span class="warn">!</span> PARK, S. &nbsp;&nbsp;&nbsp;legal, but <span class="warn">deadheads from SEA, arrives 20:55</span><br><br>
+<span class="dim">3 legal &middot; 2 blocked &middot; 1 conditional. Minimum crew for EA940 is 2.</span><br>
+<span class="dim">$</span> <span style="border-bottom:1px solid #e8e8e5">&nbsp;</span>
+    </div>
+  </div></div>`;
+}
+
+/* ---- Scene: CrewDesk roster, light business-app variant ---- */
+function crewRoster(){
+  return `<div class="frame"><div class="win native-light">
+    <div class="titlebar"><span class="dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+      <span class="tt">CrewDesk &mdash; Roster</span></div>
+    <div class="shell">
+      <div class="rail">
+        <h5>Tonight</h5>
+        <a href="#">Open flights</a>
+        <a href="#" class="on">Reassignments</a>
+        <a href="#">Duty limits</a>
+        <a href="#">Hotels</a>
+        <h5 style="margin-top:16px">Bases</h5>
+        <a href="#">PDX</a><a href="#">SEA</a><a href="#">DEN</a>
+      </div>
+      <div class="main">
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:14px">
+          <div style="font-size:15px;font-weight:700">Reassignments &middot; 2 flights need crew</div>
+          <div style="font-size:11px;color:#8a95a3;margin-left:auto">Duty clock as of 20:12</div>
+        </div>
+        <table class="roster">
+          <thead><tr><th>Crew</th><th>Assigned</th><th>Duty used tonight</th><th>Headroom</th></tr></thead>
+          <tbody>
+            <tr><td>HOLT, A.</td><td>EA 940 &middot; 21:50</td><td><div class="bar"><i class="ok" style="width:34%"></i></div></td><td>5h 10m</td></tr>
+            <tr><td>NDIAYE, F.</td><td>EA 940 &middot; 21:50</td><td><div class="bar"><i class="ok" style="width:12%"></i></div></td><td>7h 35m</td></tr>
+            <tr><td>BRENNAN, T.</td><td>EA 205 &middot; 06:10</td><td><div class="bar"><i class="warn" style="width:62%"></i></div></td><td>2h 20m</td></tr>
+            <tr><td>VOSS, M.</td><td><span class="pill grey">Rest until 07:30</span></td><td><div class="bar"><i class="bad" style="width:88%"></i></div></td><td>&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div></div>`;
+}
+
+/* ---- Scene: the passenger's phone ---- */
+function passengerPhone(){
+  return `<div class="frame"><div class="win"><div class="phone-stage"><div class="phone">
+    <div class="notch"></div>
+    <div class="pbody">
+      <div class="pcard hero">
+        <div class="lab">New flight confirmed</div>
+        <div class="big">EA 940 &middot; 21:50</div>
+        <div class="sm">Gate C14 &middot; Seat 14C &middot; boarding 21:15</div>
+      </div>
+      <div class="pcard">
+        <div class="lab" style="color:#6b7684">Your original flight</div>
+        <div class="sm" style="color:#6b7684">EA 622 to Denver, 20:05 &mdash; cancelled for weather. You have been moved automatically.</div>
+      </div>
+      <div class="pcard">
+        <div class="lab" style="color:#6b7684">While you wait</div>
+        <div class="sm">$18 meal credit, added to your account. Usable at any terminal restaurant.</div>
+      </div>
+      <div class="pcard">
+        <div class="lab" style="color:#6b7684">If you would rather not fly tonight</div>
+        <div class="sm">A hotel room and the 06:55 departure are held for you until 21:00.</div>
+      </div>
+    </div>
+  </div></div></div></div>`;
+}
+
+/* ---- Scene: the stage canvas, showing the whole recovery as one path ---- */
+function recoveryCanvas(){
+  const step = (nm,sub,on)=>`<div class="cnode${on?" on":""}"><div class="box"><div class="nm">${nm}</div><div class="sub">${sub}</div></div></div>`;
+  const edge = `<div class="cedge"></div>`;
+  return `<div class="frame"><div class="win skyops">
+    <div class="chrome"><span class="dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+      <span class="tabstrip"><span>SkyOps &middot; Recovery</span></span></div>
+    <div class="omni"><span class="url">skyops.example-air.com/irops/2026-03-14/summary</span></div>
+    <div class="screen">
+      <div class="so-head"><div class="so-mark">S</div><div class="so-title">Recovery, end to end</div>
+        <div class="so-crumb">19:14 &rarr; 20:02 &middot; 48 minutes</div></div>
+      <div class="canvas">
+        ${step("Detect","field closed 19:14",true)}${edge}
+        ${step("Assess","612 affected",true)}${edge}
+        ${step("Rebook","571 auto-placed",true)}${edge}
+        ${step("Crew","3 legal, 2 blocked",true)}${edge}
+        ${step("Notify","612 messages",true)}${edge}
+        ${step("Settle","41 exceptions",false)}
+      </div>
+      <div class="stats" style="margin-top:18px">
+        <div class="stat"><div class="k">Time to first offer</div><div class="v">4m</div><div class="d">from cancellation</div></div>
+        <div class="stat"><div class="k">Placed without a human</div><div class="v">93%</div><div class="d">571 of 612</div></div>
+        <div class="stat"><div class="k">Gate queue peak</div><div class="v">9</div><div class="d">down from 140 last event</div></div>
+        <div class="stat"><div class="k">Exceptions worked</div><div class="v">41</div><div class="d">by 2 agents</div></div>
+      </div>
+      <div class="log">
+        <h4>What happened, minute by minute</h4>
+        <div class="lrow"><span class="t">19:14</span><span>Field closed. Four departures cancelled automatically.</span><span class="w">weather feed</span></div>
+        <div class="lrow"><span class="t">19:18</span><span>First rebooking offers sent to 168 passengers on EA 418.</span><span class="w">SkyOps</span></div>
+        <div class="lrow"><span class="t">19:31</span><span>Crew legality checked for two open flights, 3 of 34 candidates cleared.</span><span class="w">CrewDesk</span></div>
+        <div class="lrow"><span class="t">19:46</span><span>571 passengers placed. 41 held for a human decision.</span><span class="w">SkyOps</span></div>
+        <div class="lrow"><span class="t">20:02</span><span>Hotel and meal offers issued. Gate queue peaked at 9 people.</span><span class="w">passenger app</span></div>
+      </div>
+    </div>
+  </div></div>`;
+}
+
+/* ---- Scene: closing slide with the thumbnail wall ---- */
+function closingSlide(){
+  const t = (lab,head)=>`<div class="thumb"><div class="tl">${lab}</div><div class="th">${head}</div>
+    <div class="sk w70"></div><div class="sk"></div><div class="sk w45"></div></div>`;
+  return `<div class="frame"><div class="win"><div class="slide">
+    <span class="kick">20:02 &middot; Recovery complete</span>
+    <h2>The queue never formed.</h2>
+    <div class="thumbs">
+      ${t("SkyOps","One picture of the disruption")}
+      ${t("SkyOps","571 placed automatically")}
+      ${t("CrewDesk","Legality checked, not assumed")}
+      ${t("Passenger app","A seat before the question")}
+    </div>
+  </div></div></div>`;
+}
+
+/* ----------------------------------------------------------------------------
+   PARKED VIEWS — one re-add away (Lesson 12). Do not delete; scenes get cut and
+   un-cut constantly, and a deleted view function has to be rebuilt from scratch.
+
+   function baggageReroute(){ ... }   // cut after review 3: slowed the middle
+   function weatherRadar(){ ... }     // cut: pretty, but proved nothing
+---------------------------------------------------------------------------- */
+
+// ============================================================================
+// ACTS. Acts are capabilities. Scenes are one mockup + talk track + demo notes.
+// `@scene:viewkey` in any copy resolves to that scene's number at render time.
+// ============================================================================
+const ACTS = [
+  {t:"Act I &middot; See the whole disruption at once", rt:"~2 MIN",
+   goal:"Capability: one screen holds the entire event, so nobody assembles the picture by hand.", scenes:[
+    {actor:"Cold open", view:"openingSlide", status:"built",
+     title:"A line of storms closes the field",
+     caption:"Open on the fact, not on the product. The audience should feel the size of the problem before they see a single screen.",
+     tt:"At 7:14 tonight, weather closed the field. Four flights cancelled. Six hundred and twelve people are now standing in a concourse expecting an answer.",
+     demo:["Hold on this slide for a beat before advancing.","Say the number out loud. Six hundred and twelve.","Don't put a product logo on this slide."]},
+
+    {actor:"Duty manager", view:"opsBoard", status:"built",
+     title:"The duty manager opens one screen and sees all of it",
+     caption:"Four cancellations, 612 passengers, 204 of them connecting, and the seat supply on later flights. Every number here came from a different system before tonight.",
+     tt:"This is the first screen she opens. Not four screens. The cancellations, the passenger count, how many are connecting, and how many seats actually exist on later flights tonight.",
+     demo:["Point at the connecting count, 204. That is the number that makes this hard.","Point at 418 seats available. The math is tight but not impossible.","Don't scroll the table. The first five rows are the whole story."]}
+  ]},
+
+  {t:"Act II &middot; Rebook everyone the system can place", rt:"~3 MIN",
+   goal:"Capability: the routine placements happen automatically, and a person only sees what genuinely needs a decision.", scenes:[
+    {actor:"System", view:"rebookModal", status:"partial",
+     title:"571 people get a seat, and 41 get a person",
+     caption:"The run places everyone it can and stops on the cases a rule cannot settle. Here, a family of three where the only remaining seats are scattered and one child is six years old.",
+     tt:"The system places five hundred and seventy-one people on its own. It stops on forty-one. This one stopped because there are three seats left and a six-year-old would be sitting alone, thirty rows from her father.",
+     demo:["Let the modal sit on screen while you read the three seat assignments.","Point at the age on the third row. That is why the system refused to decide.","Don't click either button live. Explain the choice, then advance."]},
+
+    {actor:"Duty manager", view:"opsBoard", status:"built",
+     title:"She works the exceptions, not the list",
+     caption:"Same board as scene @scene:opsBoard, later in the evening. The work that remains is the work that needed judgment.",
+     tt:"She is not reviewing five hundred and seventy-one successful rebookings. She is working forty-one exceptions, and each one is on her screen because a rule refused to guess.",
+     demo:["Call back to the earlier board explicitly, so the audience knows this is the same surface.","Don't re-explain the columns. They saw them in Act I."]}
+  ]},
+
+  {t:"Act III &middot; Keep the crew legal", rt:"~3 MIN",
+   goal:"Capability: duty-hour rules are checked against real records, and the ones that fail come back with the reason.", scenes:[
+    {actor:"Crew scheduler", view:"crewLegality", status:"build",
+     title:"Every candidate is checked against the duty record",
+     caption:"Thirty-four candidates, three legal, two blocked, one conditional. The blocked ones come back with the rule they failed, not just a refusal.",
+     tt:"Moving passengers onto later flights creates a second problem. Those flights now need crew. This checks every candidate against their actual duty record, and it tells you why the two who cannot fly cannot fly.",
+     demo:["Read one blocked line out loud, including the reason.","Point out that PARK is legal but deadheading. That is a judgment call the tool surfaces rather than makes.","Don't type the command live. It is already on screen."]},
+
+    {actor:"Crew scheduler", view:"crewRoster", status:"build",
+     title:"The reassignment lands on the roster with headroom visible",
+     caption:"The same tool, its business-app face rather than its terminal face. Duty headroom is a bar, because a number alone does not show how close someone is to the limit.",
+     tt:"Two crew are assigned to the nine-forty. You can see how much duty time each of them has left, which matters if the weather moves again and this evening gets longer.",
+     demo:["Point at the red bar on VOSS. That is a person who is done for the night.","Don't call the bars a risk score. They are hours."]}
+  ]},
+
+  {t:"Act IV &middot; Tell the passenger before they ask", rt:"~2 MIN",
+   goal:"Capability: the person affected finds out first, with everything they need in one message.", scenes:[
+    {actor:"Passenger", view:"passengerPhone", status:"partial",
+     title:"Dana's phone buzzes while she is still in line",
+     caption:"New flight, gate, seat, boarding time, a meal credit, and an alternative if she would rather go in the morning. She has not spoken to anyone.",
+     tt:"Dana has been in this line for eleven minutes. Her phone buzzes. New flight, gate, seat, a meal credit, and a held hotel room if she would rather fly in the morning. She leaves the line.",
+     demo:["Let the audience read the whole phone screen. Don't narrate over it.","Point at the last card. Giving her a way out is what stops her rejoining the queue.","Don't scroll the phone. Everything that matters is above the fold."]},
+
+    {actor:"System", view:"recoveryCanvas", status:"build",
+     title:"Forty-eight minutes from field closure to settled",
+     caption:"The whole recovery as one path, with the numbers computed from the evening rather than typed into a slide.",
+     tt:"Forty-eight minutes from the field closing to a settled evening. Ninety-three percent placed without a person touching them, and the gate queue peaked at nine.",
+     demo:["Trace the canvas left to right with a finger or cursor.","Point at the last node. Settle is still open, because forty-one people are still being worked.","Don't claim the last node is finished. It isn't, and the audience can see it isn't."]},
+
+    {actor:"Close", view:"closingSlide", status:"built",
+     title:"The queue never formed",
+     caption:"Close on the outcome the audience actually cares about, with a thumbnail of each capability they just saw.",
+     tt:"The measure here is not that something clever happened. It is that six hundred and twelve people got where they were going, and the line at the gate peaked at nine.",
+     demo:["End on this slide. Do not advance past it.","Don't add a thank-you slide."]}
+  ]}
+];
+
+// ============================================================================
+// Render. Nothing below is content — it is all computed from ACTS.
+// ============================================================================
+const VIEWFN = { openingSlide, opsBoard, rebookModal, crewLegality, crewRoster, passengerPhone, recoveryCanvas, closingSlide };
+const STATUS = {built:["built","Exists today"], partial:["partial","Partially exists"], build:["build","To build"]};
+
+// Lesson 11: resolve @scene:viewkey to a real scene number. Never hardcode "scene 12".
+const SCENE_NUM = {};
+let n = 0;
+ACTS.forEach(a => a.scenes.forEach(sc => { n++; if(!(sc.view in SCENE_NUM)) SCENE_NUM[sc.view] = n; }));
+function xref(s){
+  return String(s).replace(/@scene:([A-Za-z0-9_]+)/g, (m,key)=>{
+    const num = SCENE_NUM[key];
+    if(!num){ console.error("Unresolved scene reference:", m); return m; }
+    return `<a class="xref" href="#scene${num}">scene ${String(num).padStart(2,"0")}</a>`;
+  });
+}
+
+let num = 0, tocHtml = "", storyHtml = "";
+const tally = {built:0, partial:0, build:0};
+ACTS.forEach((act,ai)=>{
+  const first = num+1, last = num+act.scenes.length;
+  let frameLinks = "";
+  storyHtml += `<div class="act" id="act${ai}"><h2>${act.t}</h2><span class="rt">${act.rt} &middot; SCENES ${String(first).padStart(2,"0")}-${String(last).padStart(2,"0")}</span><div class="goal">${act.goal}</div></div><div class="actrow">`;
+  act.scenes.forEach(sc=>{
+    num++;
+    tally[sc.status]++;
+    const stl = STATUS[sc.status];
+    frameLinks += `<a href="#scene${num}"><span class="fd ${stl[0]}"></span><span>${sc.title}</span></a>`;
+    storyHtml += `<div class="scene" id="scene${num}">
+      <div class="sc-head">
+        <span class="sc-num">${String(num).padStart(2,"0")}</span>
+        <span class="actor">${sc.actor.toUpperCase()}</span>
+        <span class="status"><span class="fd ${stl[0]}"></span>${stl[1]}</span>
+      </div>
+      <h3>${xref(sc.title)}</h3>
+      <div class="scenebody">
+        <div class="sidecol">
+          <aside class="talktrack"><span class="lbl2">Talk track</span><p>&ldquo;${xref(sc.tt)}&rdquo;</p></aside>
+          <aside class="demonotes"><span class="lbl2">Demo</span><ul>${sc.demo.map(d=>`<li class="${/^Don'?t /.test(d)?"dont":""}">${xref(d)}</li>`).join("")}</ul></aside>
+        </div>
+        <div class="framewrap">${VIEWFN[sc.view](sc)}
+          <p class="caption">${xref(sc.caption)}</p>
+        </div>
+      </div>
+    </div>`;
+  });
+  storyHtml += `</div>`;
+  tocHtml += `<div class="tgroup"><a href="#act${ai}"><span class="tt-name">${act.t.replace(/^Act [IVX]+ &middot; /,"")}</span></a><div class="tframes">${frameLinks}</div></div>`;
+});
+document.getElementById("tocBody").innerHTML = tocHtml;
+document.getElementById("story").innerHTML = storyHtml;
+
+// Lesson 10: the stat line is computed, never typed.
+document.getElementById("statline").textContent =
+  `${num} scenes · ${tally.built} exist today · ${tally.partial} partially exist · ${tally.build} to build`;
+
+// ---------- view modes ----------
+document.querySelectorAll(".modes button").forEach(b=>{
+  b.addEventListener("click", ()=>{
+    document.body.dataset.mode = b.dataset.mode;
+    document.querySelectorAll(".modes button").forEach(x=>x.setAttribute("aria-pressed", String(x===b)));
+    requestAnimationFrame(fitFrames);
+  });
+});
+
+// Lesson 13: the srcdoc trap. Intercept in-page anchors so a hosting iframe
+// doesn't navigate to the parent app instead of scrolling.
+document.addEventListener("click", e=>{
+  const a = e.target.closest('a[href^="#"]');
+  if(!a) return;
+  const el = document.getElementById(a.getAttribute("href").slice(1));
+  if(!el) return;
+  e.preventDefault();
+  el.scrollIntoView({behavior:"smooth", block:"start"});
+  history.replaceState(null, "", a.getAttribute("href"));
+});
+
+// ---------- scale each 1280x800 mockup to its actual column width ----------
+let frames = [];
+function fitFrames(){
+  frames.forEach(f=>{ const w = f.clientWidth; if(w) f.style.setProperty("--s", (w/1280).toFixed(5)); });
+}
+(function(){
+  frames = [...document.querySelectorAll(".frame")];
+  fitFrames();
+  if("ResizeObserver" in window){ new ResizeObserver(fitFrames).observe(document.body); }
+  window.addEventListener("resize", fitFrames);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "name": "deck-builder",
+  "version": "1.0.0",
+  "description": "Build and quality-check PowerPoint decks on top of any corporate template, with the brand supplied as configuration rather than baked into the skill.",
+  "author": {
+    "name": "rl0ve"
+  },
+  "homepage": "https://github.com/rl0ve/agent-skills",
+  "license": "MIT",
+  "keywords": [
+    "powerpoint",
+    "pptx",
+    "python-pptx",
+    "slides",
+    "presentation",
+    "template",
+    "brand",
+    "ooxml"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Deck Builder",
+    "shortDescription": "On-brand .pptx from any corporate template",
+    "developerName": "rl0ve",
+    "category": "Productivity",
+    "defaultPrompt": [
+      "Build a deck from this narrative using our corporate template",
+      "Why does my generated deck open with a repair dialog?",
+      "Condense this deck without losing the proof points"
+    ]
+  }
+}

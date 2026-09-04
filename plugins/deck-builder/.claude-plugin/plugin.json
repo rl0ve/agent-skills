@@ -1,0 +1,18 @@
+{
+  "name": "deck-builder",
+  "version": "1.0.0",
+  "description": "Build and quality-check PowerPoint decks on top of any corporate template, with the brand supplied as configuration rather than baked into the skill.",
+  "author": {
+    "name": "Robert Love"
+  },
+  "keywords": [
+    "powerpoint",
+    "pptx",
+    "python-pptx",
+    "slides",
+    "presentation",
+    "template",
+    "brand",
+    "ooxml"
+  ]
+}

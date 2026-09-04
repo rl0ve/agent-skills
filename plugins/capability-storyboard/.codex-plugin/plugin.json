@@ -1,0 +1,32 @@
+{
+  "name": "capability-storyboard",
+  "version": "1.0.0",
+  "description": "Build a capability-first, multi-tool HTML storyboard for a keynote, demo walkthrough, or narrative product doc.",
+  "author": {
+    "name": "rl0ve"
+  },
+  "homepage": "https://github.com/rl0ve/agent-skills",
+  "license": "MIT",
+  "keywords": [
+    "storyboard",
+    "keynote",
+    "demo",
+    "mockup",
+    "talk-track",
+    "product-narrative",
+    "html",
+    "presentation"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Capability Storyboard",
+    "shortDescription": "Turn a demo into a board an audience can follow",
+    "developerName": "rl0ve",
+    "category": "Productivity",
+    "defaultPrompt": [
+      "Build a keynote storyboard for this demo script",
+      "Mock up what the presenter sees, scene by scene",
+      "Make this walkthrough legible to a mixed audience"
+    ]
+  }
+}
