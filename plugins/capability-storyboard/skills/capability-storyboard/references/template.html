@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[TITLE] — capability storyboard template</title>
+<style>
+  /*
+    HOW TO USE THIS FILE
+    1. Read SKILL.md first — this is the "reusable pattern" referenced there.
+    2. Replace every [BRACKETED] placeholder.
+    3. Pull real design tokens (font-family, accent color, background, radius)
+       from the actual product(s) you're mocking up wherever you can reach them —
+       inspect computed styles on the live app rather than guessing a palette.
+    4. Fill in the ACTS array near the bottom of the <script>. Each scene needs a
+       `views` entry naming a render function (see the three examples below —
+       one per chrome variant) and `tt` (talk track) + `demo` (director notes).
+    5. Open in a real browser after every change and check the console — several
+       real bugs in the original build only showed up by looking, not by reading
+       the markup (see SKILL.md point 7).
+    6. Delete this comment block once you've adapted the file.
+  */
+  :root{
+    --bg:#f6f7f9; --ink:#1c2530; --muted:#6b7684; --line:#e4e8ee;
+    --accent:#0b7285; --accent-soft:#e6f4f6; --accent-line:#bfdde3;
+    --done:#1d9d64; --amber:#b7791f; --danger:#e35b5b;
+    --serif:Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.45}
+  .page{max-width:1720px;margin:0 auto;padding:0 26px 90px;display:flex;gap:28px;align-items:flex-start}
+
+  /* ---------- sticky left TOC with per-scene status dots ---------- */
+  .toc{position:sticky;top:18px;width:240px;flex:none;background:#fff;border:1px solid var(--line);border-radius:12px;
+       padding:14px 10px 16px;box-shadow:0 10px 24px rgba(18,28,40,.06);max-height:calc(100vh - 36px);overflow:auto}
+  .toc h2{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px 8px}
+  .tgroup{margin-bottom:4px;border-radius:8px;padding:2px 0}
+  .tgroup>a{display:flex;gap:8px;align-items:baseline;text-decoration:none;color:var(--ink);padding:5px 8px;border-radius:7px}
+  .tt-name{flex:1;font-size:12.5px;font-weight:700}
+  .tframes{margin:0 0 7px 22px;border-left:1px solid var(--line);padding-left:9px}
+  .tframes a{display:flex;gap:6px;align-items:center;text-decoration:none;color:#4a5461;font-size:10.5px;padding:2.5px 4px;border-radius:5px}
+  .fd{width:6px;height:6px;border-radius:50%;flex:none}
+  .fd.built{background:var(--done)} .fd.partial{background:var(--amber)} .fd.build{background:var(--danger)}
+  .toc .leg{margin:10px 8px 0;font-size:9px;color:var(--muted);display:flex;gap:9px;flex-wrap:wrap}
+  .toc .leg span{display:flex;gap:4px;align-items:center}
+
+  /* ---------- masthead: plain-language orientation, then a capbox list ---------- */
+  .content{flex:1;min-width:0}
+  .mast{padding:34px 0 14px;border-bottom:2px solid var(--ink);margin-bottom:10px}
+  .mast h1{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1.15;margin:8px 0 10px}
+  .mast .dek{font-size:14px;color:#3d4754;max-width:840px;margin-bottom:12px}
+  .capbox{background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:12px;padding:14px 18px;margin-top:12px;max-width:860px}
+  .capbox>p{font-size:13.5px;color:var(--ink);margin-bottom:10px}
+  .capbox ol{margin:0;padding-left:20px;display:grid;gap:6px}
+  .capbox li{font-size:13px;color:#333c46}
+
+  /* ---------- acts & scenes ---------- */
+  .act{margin:34px 0 12px;display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--ink);padding-bottom:6px;flex-wrap:wrap}
+  .act h2{font-family:var(--serif);font-size:20px;font-weight:600}
+  .act .rt{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--muted)}
+  .act .goal{font-size:11px;color:var(--muted);flex:1 1 100%}
+  .actrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(470px,1fr));gap:22px;align-items:start}
+  .scene{min-width:0}
+  .scene.wide{grid-column:1 / -1}
+  .sc-head{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+  .sc-num{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--accent)}
+  .actor{font-size:9px;font-weight:800;letter-spacing:.06em;border-radius:4px;padding:2.5px 7px;background:#eef1f5;color:#5b6572}
+  .status{font-size:9px;color:var(--muted);display:flex;gap:4px;align-items:center;margin-left:auto}
+  .scene h3{font-family:var(--serif);font-size:16px;font-weight:600;margin-bottom:8px}
+
+  /* ---------- the talk-track + demo-notes side column (see SKILL.md point 1) ---------- */
+  .scenebody{display:flex;gap:16px;align-items:flex-start}
+  .scenebody .framewrap{flex:1;min-width:0}
+  .sidecol{flex:0 0 200px;display:flex;flex-direction:column;gap:10px}
+  .talktrack,.demonotes{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 12px}
+  .demonotes{background:#f8f9fb}
+  .lbl2{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:6px}
+  .talktrack .lbl2{color:var(--accent)} .demonotes .lbl2{color:var(--muted)}
+  .talktrack p{font-family:var(--serif);font-size:11.5px;font-style:italic;line-height:1.5;color:#333c46}
+  .demonotes ul{padding-left:15px;margin:0}
+  .demonotes li{font-size:11px;line-height:1.45;color:#3d4754;margin-bottom:5px}
+  .demonotes li.dont{color:#c2542e}
+  .framelabel{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;
+    text-transform:uppercase;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:4px 10px;margin-bottom:8px}
+
+  /* ---------- CHROME VARIANT 1: generic light browser (for any web product) ---------- */
+  .frame{position:relative;width:100%;max-width:1100px;aspect-ratio:1280/800;overflow:hidden;
+         background:#fff;border:1px solid #cbd3dc;border-radius:12px;box-shadow:0 22px 44px -18px rgba(18,28,40,.32)}
+  .win{position:absolute;top:0;left:0;width:1280px;height:800px;transform-origin:0 0;transform:scale(var(--s,1));
+       display:flex;flex-direction:column;background:var(--bg);font-family:var(--sans)}
+  .chrome{flex:none;height:36px;display:flex;align-items:center;gap:8px;padding:0 12px;background:#eef0f3;border-bottom:1px solid #d7dce2}
+  .dots{display:flex;gap:7px}
+  .dots i{width:10px;height:10px;border-radius:50%}
+  .dots i.r{background:#f2635b} .dots i.y{background:#f2bd4c} .dots i.g{background:#4cc35f}
+  .omni{flex:none;height:34px;display:flex;align-items:center;padding:0 12px;background:#f7f8fa;border-bottom:1px solid var(--line)}
+  .omni .url{font-family:var(--mono);font-size:10.5px;color:#7c8792}
+  .screen{flex:1;min-height:0;overflow:hidden;padding:18px 20px;background:#fff}
+
+  /* ---------- CHROME VARIANT 2: native dark developer-tool app (e.g. a CLI/agent tool) ---------- */
+  .win.native-dark{background:#1b1b1b}
+  .native-dark .titlebar{height:38px;display:flex;align-items:center;padding:0 12px;background:#262626;border-bottom:1px solid #333330}
+  .native-dark .titlebar .tt{margin:0 auto;font-size:11.5px;color:#a7a7a3}
+  .native-dark .body{flex:1;min-height:0;padding:16px 20px;color:#e8e8e5;font-family:var(--mono);font-size:12.5px;line-height:1.8}
+
+  /* ---------- CHROME VARIANT 3: bare full-bleed slide, zero product chrome ---------- */
+  .slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;
+         background:radial-gradient(120% 100% at 50% 0%,#232b36 0%,#12161c 100%)}
+  .slide h2{font-family:var(--serif);font-size:40px;font-weight:500;color:#fff;text-align:center}
+
+  @media(max-width:1150px){.page{flex-direction:column}.toc{position:static;width:100%;max-height:none}.actrow{grid-template-columns:1fr}.scenebody{flex-wrap:wrap}.sidecol{flex:1 1 100%}}
+</style>
+</head>
+<body>
+<div class="page">
+<nav class="toc" id="toc"><h2>Storyboard</h2><div id="tocBody"></div>
+  <div class="leg"><span><i class="fd built" style="display:inline-block"></i>Built</span><span><i class="fd partial" style="display:inline-block"></i>Partial</span><span><i class="fd build" style="display:inline-block"></i>To build</span></div>
+</nav>
+
+<div class="content">
+  <div class="mast">
+    <span style="font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">[EVENT/CONTEXT LABEL]</span>
+    <h1>[HEADLINE — what the audience should walk away believing]</h1>
+    <p class="dek">[Plain-language sentence: what concretely happens in the example scenario — the trigger, in words a non-expert would follow.]</p>
+    <p class="dek">[Plain-language sentence: the stages/steps it moves through, named in plain words, not internal jargon.]</p>
+    <div class="capbox">
+      <p>What's on screen, in order:</p>
+      <ol>
+        <li><b>[Tool 1 name]</b> &mdash; [what it does in this story].</li>
+        <li><b>[Tool 2 name]</b> &mdash; [what it does in this story].</li>
+        <li><b>[Tool 3 name]</b> &mdash; [what it does in this story].</li>
+      </ol>
+    </div>
+  </div>
+
+  <div id="story"></div>
+  <footer style="font-size:10px;color:var(--muted);padding:20px 0 0">[Concept / placeholder disclaimer if needed.]</footer>
+</div>
+</div>
+
+<script>
+// ---------- one render function per DISTINCT SCREEN this storyboard needs ----------
+// Keep these small; each one returns the inner HTML for one mockup's content area.
+
+function browserScreenView(sc){
+  // CHROME VARIANT 1 example — a generic web product screen.
+  return `<div class="frame"><div class="win">
+    <div class="chrome"><span class="dots"><i class="r"></i><i class="y"></i><i class="g"></i></span></div>
+    <div class="omni"><span class="url">cloud.example.com/[product]/[path]</span></div>
+    <div class="screen">
+      <h2 style="font-family:var(--serif);margin-bottom:8px">[Screen title]</h2>
+      <p style="font-size:13px;color:var(--muted)">[Replace with the actual mockup content — cards, tables, whatever this screen shows.]</p>
+    </div>
+  </div></div>`;
+}
+
+function nativeDarkScreenView(sc){
+  // CHROME VARIANT 2 example — a native dev-tool/agent app.
+  return `<div class="frame"><div class="win native-dark">
+    <div class="titlebar"><span class="dots"><i class="r"></i><i class="y"></i><i class="g"></i></span><span class="tt">[tool] &mdash; [session/context]</span></div>
+    <div class="body">&#10095; [prompt text the presenter types or the agent's response, terminal-style]</div>
+  </div></div>`;
+}
+
+function closingSlideView(sc){
+  // CHROME VARIANT 3 example — bare slide, no product chrome at all.
+  return `<div class="frame"><div class="slide">
+    <h2>[Closing line]</h2>
+  </div></div>`;
+}
+
+// ---------- ACTS: fill this in. Acts = capabilities. Scenes = one mockup + talk track + demo notes each. ----------
+const ACTS = [
+  {t:"Act I &middot; [capability one]", goal:"Capability: [one sentence — what this act proves about the product].", rt:"~N MIN", scenes:[
+    {actor:"System", view:"browserScreenView", status:"build",
+     title:"[Plain-language scene title, not a colon-label]",
+     tt:"[The literal words a presenter says. If adapting an existing script, keep its sentence rhythm — swap only nouns/numbers.]",
+     demo:["[What to show on screen.]","[What to point at / highlight.]","Don't [thing to avoid doing live]."]},
+    {actor:"Agent", view:"nativeDarkScreenView", status:"build",
+     title:"[Next scene title]",
+     tt:"[Talk track for this scene.]",
+     demo:["[Demo note.]"]}
+  ]},
+  {t:"Act II &middot; [capability two]", goal:"Capability: [...]", rt:"~N MIN", scenes:[
+    {actor:"System", view:"closingSlideView", status:"build",
+     title:"Close",
+     tt:"[Closing talk track.]",
+     demo:["End on [the closing visual]."]}
+  ]}
+];
+
+const VIEWFN = { browserScreenView, nativeDarkScreenView, closingSlideView };
+const STATUS = {built:["built","Built"], partial:["partial","Partial"], build:["build","To build"]};
+let num = 0, tocHtml = "", storyHtml = "";
+ACTS.forEach((act,ai)=>{
+  const first = num+1, last = num+act.scenes.length;
+  let frameLinks = "";
+  storyHtml += `<div class="act" id="act${ai}"><h2>${act.t}</h2><span class="rt">${act.rt} &middot; SCENES ${String(first).padStart(2,"0")}-${String(last).padStart(2,"0")}</span><div class="goal">${act.goal}</div></div><div class="actrow">`;
+  act.scenes.forEach(sc=>{
+    num++;
+    const stl = STATUS[sc.status];
+    frameLinks += `<a href="#scene${num}"><span class="fd ${stl[0]}"></span><span>${sc.title}</span></a>`;
+    storyHtml += `<div class="scene" id="scene${num}">
+      <div class="sc-head">
+        <span class="sc-num">${String(num).padStart(2,"0")}</span>
+        <span class="actor">${sc.actor.toUpperCase()}</span>
+        <span class="status"><span class="fd ${stl[0]}"></span>${stl[1]}</span>
+      </div>
+      <h3>${sc.title}</h3>
+      <div class="scenebody">
+        <div class="sidecol">
+          <aside class="talktrack"><span class="lbl2">Talk track</span><p>&ldquo;${sc.tt}&rdquo;</p></aside>
+          <aside class="demonotes"><span class="lbl2">Demo</span><ul>${sc.demo.map(d=>`<li class="${/^Don'?t /.test(d)?"dont":""}">${d}</li>`).join("")}</ul></aside>
+        </div>
+        <div class="framewrap">${VIEWFN[sc.view](sc)}</div>
+      </div>
+    </div>`;
+  });
+  storyHtml += `</div>`;
+  tocHtml += `<div class="tgroup"><a href="#act${ai}"><span class="tt-name">${act.t.replace(/^Act [IVX]+ &middot; /,"")}</span></a><div class="tframes">${frameLinks}</div></div>`;
+});
+document.getElementById("tocBody").innerHTML = tocHtml;
+document.getElementById("story").innerHTML = storyHtml;
+
+// ---------- scale each 1280x800 mockup to its actual column width ----------
+(function(){
+  const frames = [...document.querySelectorAll(".frame")];
+  const fit = () => frames.forEach(f=>{ const w = f.clientWidth; if(w) f.style.setProperty("--s", (w/1280).toFixed(5)); });
+  fit();
+  if("ResizeObserver" in window){ new ResizeObserver(fit).observe(document.body); }
+  window.addEventListener("resize", fit);
+})();
+</script>
+</body>
+</html>

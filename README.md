@@ -1,8 +1,8 @@
 # agent-skills
 
-Agent skills and routers. One of them is tool-neutral and one folder is Codex-native, so
-this is not a Claude-only repository — but two of the four pieces do route Claude models
-and subagents, and those are Claude-specific by nature.
+Agent skills and routers. Most of them are tool-neutral and one folder is Codex-native, so
+this is not a Claude-only repository — but the two routers do route Claude models and
+subagents, and those are Claude-specific by nature.
 
 | Start here | If you are |
 |---|---|
@@ -21,9 +21,11 @@ after an agent, because none of them belongs to one.
 .claude-plugin/marketplace.json    Claude Code discovery
 .agents/plugins/marketplace.json   Codex discovery
 plugins/
-  natural-writing/   .claude-plugin/ + .codex-plugin/
-  ui-router/         .claude-plugin/ + .codex-plugin/
-  work-router/       .claude-plugin/ + .codex-plugin/
+  natural-writing/         .claude-plugin/ + .codex-plugin/
+  ui-router/               .claude-plugin/ + .codex-plugin/
+  work-router/             .claude-plugin/ + .codex-plugin/
+  capability-storyboard/   .claude-plugin/ + .codex-plugin/
+  deck-builder/            .claude-plugin/ + .codex-plugin/
 ```
 
 Where the two agents genuinely differ, the difference is carried inside the shared file
@@ -38,8 +40,10 @@ not the same on both.
 | **Natural Writing** | Diagnoses, edits, rewrites, voice-matches, or drafts prose while preserving facts, formatting, terminology, register, and the author's voice. Ships a linter with a per-document mode and a set-level mode. |
 | **UI Router** | Routes UI, UX, design-review, motion, design-to-code, and interface-copy work through a researched skill catalog and what is actually installed. Uses Natural Writing as its sole final editor for copy. |
 | **Work Router** | Chooses whether work stays in the parent session or moves to a bounded subagent, on task shape, ambiguity, risk, latency and token use rather than defaulting to the largest model. One method, with a route table for each agent. |
+| **Capability Storyboard** | Builds a capability-first HTML storyboard for a keynote or demo: Acts as capabilities, one running example, a talk track and director's notes per scene. Ships a template and a finished nine-scene example board to lift components from. |
+| **Deck Builder** | Builds `.pptx` on top of any corporate template and verifies by rendering slides to images. The brand is configuration: a generator reads your template and writes the palette, grid, layouts, and logo zone for you. |
 
-All three install in Claude Code and Codex. The routers ship a deterministic hook that blocks
+All five install in Claude Code and Codex. The routers ship a deterministic hook that blocks
 Bash commands containing `sudo`; the installers refuse root or `sudo` execution and never
 evaluate a shell string.
 
