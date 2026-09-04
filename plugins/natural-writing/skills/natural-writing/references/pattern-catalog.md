@@ -1003,6 +1003,20 @@ Preserve these when they work:
 
 The mode and workflow rules in SKILL.md and eval.md, shown once each.
 
+### Ask before a substantial pass: stated assumptions
+
+Draft (an executive update):
+
+> You're absolutely right to focus on the Q3 rollout. The migration isn't just a technical change, it's a shift in how the whole organisation thinks about data. The cutover finished on 14 August, two days late.
+
+Two correct edits, depending on a question the draft cannot answer:
+
+> Edited as a status report to the VP. The cutover finished on 14 August, two days late.
+
+> Edited as the case for the migration, your judgments kept. The cutover finished on 14 August, two days late, and the change is bigger than the engineering: it moves the whole organisation onto one view of its data.
+
+Why: the framing claim is a fact to cut in a report and a stance to keep in an argument, and nothing in the draft says which the author meant. Two editors following this skill produced one each. The repair is not a better guess; it is the first line of the note, which names the assumption so the author can correct it before reading on. When the pass is large enough, ask instead, with the default attached.
+
 ### Diagnose mode: Manufactured insight, Binary template, Sales varnish
 
 Text:

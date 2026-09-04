@@ -45,7 +45,18 @@ When the piece is a script meant to be spoken (a talk track, demo script, or nar
 
 A handful of answers change every line, and guessing them costs a whole cycle. Ask them together, in one message, each with the default you would otherwise assume, so the author can wave it through. Never more than four, and never one you can infer from the piece itself.
 
-For a written piece: the reader, the decision they have to make, the register, and the length. For a spoken piece the list is in [references/spoken-register.md](references/spoken-register.md), and one question there earns its place above the others because its answer is invisible in the draft: **how precise should the numbers be out loud.** A paragraph that quantifies is written one way for a reader and another way for a listener.
+The reader, the register and the length are usually visible in the draft or the request; infer them and say what you inferred. Four things are not visible, and an editor who guesses them does not notice the guess. For a written piece, these are the pre-pass questions, each with its default:
+
+- **Purpose.** Report, persuade, or decide? Default: report. This decides whether an author's framing claim ("this changes how the organisation thinks about data") is a fact to check and cut, or a stance to keep.
+- **How much of your judgment stays.** Facts only, or the argument with its verdict lines? Default: keep the author's judgments, cut only the unsupported ones.
+- **Is there a writing sample?** Default: none, so voice is inferred conservatively from the draft. Ask for one rather than infer from a draft the author already thinks is wrong.
+- **What is protected.** Agreed lines, brand terms, someone else's words, figures the reader can see elsewhere. Default: quotations, code, identifiers and interface labels only.
+
+For a spoken piece the list is in [references/spoken-register.md](references/spoken-register.md), and one question there earns its place above the others because its answer is invisible in the draft: **how precise should the numbers be out loud.** A paragraph that quantifies is written one way for a reader and another way for a listener.
+
+When the pass is not substantial enough to ask, still state the defaults you took: the **What changed** note opens with one line of assumptions ("edited as a status report to a VP, your judgments kept"), so the author corrects before reading the edit rather than after.
+
+When the author answers a pre-pass question or a voice probe, record the answer as a standing preference wherever the harness keeps them (a memory, a CLAUDE.md, a project note), so it is asked once and not per piece.
 
 When no sample is provided and a small voice choice will recur through the piece (a short sentence kept whole with its conjunction or split in two, contractions or none, a typed dash or a comma), show the author one sentence both ways and ask which. One probe settles the pass; guessing installs your taste as theirs.
 
@@ -97,7 +108,7 @@ Rewrite the whole passage coherently, then run [eval.md](eval.md). If a local ph
 Return:
 
 1. the complete edited text;
-2. a short **What changed** note covering only material edits;
+2. a short **What changed** note, opening with one line of the assumptions the pass rested on (purpose, judgment kept, sample used or not) and then covering only material edits;
 3. any unresolved factual or audience question that prevented a safe fix.
 
 For file edits, change only the requested prose and preserve the file's syntax and non-prose content. Summarize the result instead of pasting the whole file unless the user asks.

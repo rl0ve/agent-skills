@@ -1,5 +1,31 @@
 # Changelog
 
+## 1.14.1 - 2026-09-03
+
+The questions an editor cannot see it is guessing at.
+
+Two forward runs of the same executive update, both following the skill
+correctly, disagreed on one line: the first cut "a shift in how the whole
+organisation thinks about data" as unsupported, the second kept it as the
+author's stance. The draft does not say whether it is a report or an argument,
+so neither editor noticed it was choosing, and neither asked.
+
+- SKILL.md's pre-pass now names the four questions whose answers are invisible
+  in a written draft, each with its default: purpose (report, persuade, decide);
+  how much of the author's judgment stays; whether a writing sample exists; what
+  is protected. Reader, register and length stay inferred.
+- When the pass is too small to ask, the What changed note opens with one line
+  of the assumptions it rested on, so the author corrects before reading the
+  edit rather than after. Eval check 19 now requires it.
+- An answered pre-pass question or voice probe is recorded as a standing
+  preference wherever the harness keeps them, so it is asked once.
+- Workflow example added showing the two correct edits and why the first line of
+  the note is the repair. Forward cases 40 and 41.
+- Forward test on the same executive update: the note opened "Edited as a
+  status report to a VP, your judgments kept where the draft supports them, no
+  writing sample," named the framing line as the one cut resting on that
+  assumption, and said what happens to it under the other purpose.
+
 ## 1.14.0 - 2026-09-03
 
 Every row has an example, in the same file as its table, and tests keep it so.
