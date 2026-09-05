@@ -70,3 +70,10 @@ route table and six Claude agent definitions are unchanged by the Astra update.
 
 The router does not modify user or managed settings. Organization model allowlists,
 effort caps, and explicit user choices always win.
+
+## Skill and plugin discovery
+
+Use `work-router:discover-capabilities` to find missing skills, plugins or integrations
+across domains. It checks installed capabilities, searches a conditional shortlist,
+and verifies upstream fit and overlap. UI Router adds design-specific checks when
+available; neither router requires the other.

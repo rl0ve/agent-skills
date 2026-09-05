@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "UI Router",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "reviewed": "2026-09-05",
     "objective": "Route by surface and audience while showing the named canonical research chain separately from the installed executable chain."
   },
@@ -26,9 +26,9 @@
       ],
       "guardrail": "Use specific proof and real media. Do not invent claims, logos, urgency, or testimonials.",
       "canonical": [
-        "Taste · design-taste-frontend",
+        "Taste \u00b7 design-taste-frontend",
         "Hallmark",
-        "Impeccable · Persuade",
+        "Impeccable \u00b7 Persuade",
         "Corey Haines marketing-skills"
       ],
       "available": [
@@ -64,7 +64,7 @@
       "guardrail": "Design states, keyboard behavior, responsive structure, and error recovery before decorative polish.",
       "canonical": [
         "interface-design",
-        "Impeccable · Operate",
+        "Impeccable \u00b7 Operate",
         "shadcn official",
         "Jakub better-*"
       ],
@@ -103,9 +103,9 @@
       "guardrail": "Confirm audience fit. Budget performance, reduced motion, readability, and a clear fallback.",
       "canonical": [
         "Meng / ClaudeDesign / Awwwards",
-        "Impeccable · Experience",
+        "Impeccable \u00b7 Experience",
         "Emil motion",
-        "GSAP · ScrollTrigger"
+        "GSAP \u00b7 ScrollTrigger"
       ],
       "available": [
         "frontend-design",
@@ -138,8 +138,8 @@
       ],
       "guardrail": "Typography, semantics, navigation, citation, and a 60 to 75 character measure come before decoration.",
       "canonical": [
-        "Taste · docs mode",
-        "Impeccable · Read",
+        "Taste \u00b7 docs mode",
+        "Impeccable \u00b7 Read",
         "Jakub typography/layout",
         "Addy web quality"
       ],
@@ -351,7 +351,7 @@
       "guardrail": "Cover variants, states, tokens, keyboard behavior, responsive behavior, and usage documentation.",
       "canonical": [
         "shadcn official",
-        "Impeccable · Operate",
+        "Impeccable \u00b7 Operate",
         "Jakub better-*",
         "Addy accessibility"
       ],
@@ -750,42 +750,42 @@
   "discovery": [
     {
       "step": 1,
-      "name": "Skillselion",
-      "role": "Discover categories",
-      "best": "Compare skill families, GitHub metadata, and history",
-      "signal": "Broad discovery, not install approval",
-      "url": "https://skillselion.com/"
+      "name": "skills.sh",
+      "role": "Find a specific skill",
+      "best": "Targeted skill search after checking installed capabilities",
+      "signal": "Verify the original source",
+      "url": "https://skills.sh/"
     },
     {
       "step": 2,
-      "name": "Skill Leaderboard",
-      "role": "Scan momentum",
-      "best": "A quick weekly view of fast-rising repositories",
-      "signal": "Star velocity only",
-      "url": "https://skillleaderboard.com/"
+      "name": "Official plugin catalogs",
+      "role": "Find plugins and integrations",
+      "best": "Start with the current host catalog",
+      "signal": "Host compatibility and authentication matter",
+      "url": "https://learn.chatgpt.com/docs/plugins"
     },
     {
       "step": 3,
-      "name": "Curated sources",
-      "role": "Vet the domain",
-      "best": "awesomeskills.dev, mastering-claude.com, design-agent-skills",
-      "signal": "Editorial pointers, not automatic endorsement",
-      "url": "https://github.com/podo/design-agent-skills"
+      "name": "Skillselion / SkillsMP",
+      "role": "Explore or expand",
+      "best": "Skillselion for categories; SkillsMP for broader examples",
+      "signal": "Optional expansion, not mandatory searches",
+      "url": "https://skillselion.com/"
     },
     {
       "step": 4,
-      "name": "skills.sh / claudeskills.info",
-      "role": "Look up a known target",
-      "best": "Compatibility and current install syntax after choosing a family",
-      "signal": "Directory metadata can drift",
-      "url": "https://skills.sh/"
+      "name": "Domain references / trends",
+      "role": "Explore design or momentum",
+      "best": "Design curators; Skill Leaderboard only when trends matter",
+      "signal": "Popularity is not quality",
+      "url": "https://github.com/podo/design-agent-skills"
     },
     {
       "step": 5,
       "name": "GitHub upstream",
-      "role": "Verify",
-      "best": "Final source, scope, and safety check",
-      "signal": "SKILL.md, scripts, activity, issues, license",
+      "role": "Verify and evaluate",
+      "best": "Inspect instructions, scripts, license, cost and overlap",
+      "signal": "Recommend at most three candidates",
       "url": "https://github.com/"
     }
   ]

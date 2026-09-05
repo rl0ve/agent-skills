@@ -21,6 +21,14 @@ different order.
 6. Prefer a one-step effort increase before moving to a larger model when the model understood the problem but did not inspect, verify, or persist enough.
 7. Prefer a larger model when the full relevant context was available, the model genuinely tried, and capability or judgment was still insufficient.
 
+## Missing skills, plugins or integrations
+
+When the user asks to find new capabilities or an actual capability gap blocks the
+work, use the bundled [discover-capabilities](../discover-capabilities/SKILL.md) skill.
+It owns general discovery and overlap checks across domains. Use existing capabilities
+first; do not search for new packages on every routed task. UI Router owns design
+selection when available; Work Router continues to own execution and model decisions.
+
 ## Resolve timing without nagging
 
 Infer the mode when the user's language is clear:
