@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.5.0 - 2026-09-05
+
+- Add conditional product-decision diagnosis informed by the reviewed Layers intro
+  and orientation skills; keep defined visual edits direct and assumptions explicit.
+- Add HyperFrames as a free local-video resource, with separate hosted-service costs
+  and export validation. Do not install overlapping animation packs by default.
+- Strengthen source-advice evaluation and phase completion evidence without adding
+  another broad design lead or treating a source demo as a verified implementation.
+
+## 1.4.0 - 2026-09-05
+
+- Added task-specific free visual resources and reference workflows, with public-source attribution and separate paid/unverified candidates.
+- Routed ThreeUI Community, Toolcraft and Canvas UI by output; documented asset licenses, browser support and project-local installation boundaries.
+- Added Component Gallery, 60fps public examples, UNCUT and website galleries to reference selection.
+- Made host inventory guidance explicit for Codex and Claude Code; distinguish skill files, application installs and live MCP access.
+
 ## 1.2.0 - 2026-08-22
 
 - Mirrored Codex Design Router 1.3.1's active Natural Writing route.

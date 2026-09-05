@@ -130,6 +130,13 @@ python3 plugins/ui-router/scripts/install_optional_skills.py --profile product -
 
 The same flow is available inside Claude Code through `/ui-router:install-ui-stack`.
 
+## Skill maintenance
+
+Skill updates are maintained in this canonical repository and published with ordinary
+Git commits. Publication does not itself refresh installed plugin caches or reload
+active tasks. See [skill maintenance](docs/skill-maintenance.md) for the release workflow
+and [the source review](docs/research-review-2026-09-05.md) for recent adoption decisions.
+
 ## Version boundary
 
 The packages use the documented Claude Code plugin layout and validate with `claude plugin validate`. Model and effort aliases are intentionally policy-aware: company allowlists win. Fable requires Claude Code 2.1.170 or later and organizational access. Newer conveniences may require a newer client, but the core skills, agents, hook, and marketplace layout remain conventional.

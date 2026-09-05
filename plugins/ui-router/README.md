@@ -1,11 +1,11 @@
 # UI Router
 
-Claude Code-native companion to the Codex Design Router.
+Shared UI routing plugin for Codex and Claude Code.
 
 It preserves the original named skill universe—including Taste, Hallmark, Interface Design, Impeccable, Emil, Jakub, Meng, Addy, ibelick, shadcn, systems extraction, image-to-code, writing, and marketing skills—while keeping two truths separate:
 
 1. the canonical researched chain;
-2. the chain actually available in the current Claude Code environment.
+2. the chain actually available in the current host environment.
 
 The plugin contributes:
 
@@ -24,6 +24,10 @@ Claude Code's official `frontend-design` plugin is a strong installed fallback, 
 For copy, the router does not stack humanizers. It selects one product/UX or marketing semantics owner only when needed, then uses the companion `natural-writing` plugin as the sole final editor. Verify that companion separately; package presence is not installation evidence. If it is unavailable, select exactly one documented fallback.
 
 
-## Package parity
+## Free visual resources
 
-Version 1.2.0 mirrors Codex Design Router 1.3.1's active Natural Writing route. Install or enable the companion Natural Writing 1.0.1 plugin separately, reload Claude Code, then test both an expected writing trigger and explicit invocation.
+Version 1.5.0 includes a [resource map](skills/route-ui-work/references/visual-resources.md) for ThreeUI Community, Toolcraft, Canvas UI, HyperFrames, reference galleries, motion examples, and fonts. Resources are chosen by the task; adding the map does not install every library or grant access to paid MCPs.
+
+For broad redesigns or unexplained usability problems, [product-decision routing](skills/route-ui-work/references/product-decisions.md) helps distinguish missing user evidence, unclear product objects, flow problems and surface polish. Defined visual edits stay direct. Completion checks distinguish an attractive preview from working behavior and a verified export.
+
+The routing skill checks current host capabilities and reads this map for relevant creative, reference, or component work. Restart or reload the host after installing an update, then verify the expected skill is listed. Local source updates are not automatically published to the marketplace.

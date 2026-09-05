@@ -83,3 +83,17 @@ override it. `natural-writing` also stands alone.
   Keep all three aligned and add a `CHANGELOG.md` entry.
 - The routing plugins ship a deterministic `PreToolUse` hook that blocks Bash
   commands containing `sudo`. Installers refuse root and never evaluate a shell string.
+
+## Maintaining skills and marketplace releases
+
+The maintainer expects authorized skill updates to reach this canonical repository,
+`https://github.com/rl0ve/agent-skills`, including a normal commit and push unless the
+request is explicitly local-only or draft-only. Edit the source tree, not an installed
+plugin cache. Preserve unrelated changes and check remote divergence before publishing;
+do not force-push. Report a concrete blocker if publication cannot finish.
+
+Use [docs/skill-maintenance.md](docs/skill-maintenance.md) when evaluating outside advice
+or releasing skill changes. Keep versions and discovery metadata aligned, run the
+relevant checks, verify the remote commit, and refresh the requested local installs.
+Source edited, published, installed, and loaded are separate outcomes. Do not assume
+automatic sync between them or invent a background sync job.

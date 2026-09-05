@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.4.0 - 2026-09-05
+
+- Add conditional long-task phases with explicit outcomes, ownership, acceptance
+  evidence, stall diagnosis and compact handoffs. Keep routine work in the parent.
+- Distinguish useful source methods from anecdotal agent counts, stale model routes,
+  unexplained settings and untested context-reset suggestions.
+- Preserve required scope when progress slows; phase completion is not whole-task
+  completion. Extend routing review cases without claiming comparative benchmarks.
+
 ## 1.3.0 - 2026-09-05
 
 - Make Codex routing Astra-aware: keep demanding work and loaded context in an

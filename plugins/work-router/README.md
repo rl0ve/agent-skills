@@ -38,6 +38,14 @@ See the [policy](skills/route-ai-work/SKILL.md),
 [evidence basis](skills/route-ai-work/references/routing-basis.md), and
 [routing cases](skills/route-ai-work/references/routing-scenarios.md).
 
+## Long-running work
+
+Use [bounded phases](skills/route-ai-work/references/long-running-work.md) for substantial
+multi-stage work or repeated polishing stalls. Completion requires evidence for the
+phase's outcome, and the parent preserves the full task scope. A manager/implementer
+split is conditional; no agent-limit changes, goals, or background schedules are
+created by installing the skill. Social recommendations remain dated evidence.
+
 ## Codex profile setup
 
 The shared skill works without installing custom profiles. If requested, preview the

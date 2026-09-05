@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Design Router",
-    "version": "1.3.0-final",
-    "reviewed": "2026-08-16",
+    "title": "UI Router",
+    "version": "1.5.0",
+    "reviewed": "2026-09-05",
     "objective": "Route by surface and audience while showing the named canonical research chain separately from the installed executable chain."
   },
   "surfaces": [

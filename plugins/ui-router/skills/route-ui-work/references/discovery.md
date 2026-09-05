@@ -1,6 +1,14 @@
 # Skill discovery and verification
 
+For visual inspiration and free implementation resources rather than new agent skills, use [visual-resources.md](visual-resources.md). It includes source attribution, free/paid boundaries, and task-specific selection; directories and templates are not automatically plugins.
+
 Use this only when the user asks for newer skills or the required capability is not installed.
+
+When reviewing bookmarks or outside advice, separate reusable methods from products,
+model rankings and promotional claims. Check the original date, follow-up and current
+upstream evidence. A useful principle may already belong to an installed skill; update
+that owner narrowly rather than installing another broad design lead. Preserve the
+difference between adopted guidance, an optional experiment and an unreviewed lead.
 
 ## Recommended stack
 

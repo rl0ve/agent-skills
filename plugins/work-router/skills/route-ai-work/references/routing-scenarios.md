@@ -24,3 +24,10 @@ keep one write-capable owner per working tree.
 | User says “quickly” | Fast routing with Standard service | Urgency does not authorize Codex Fast. |
 | User forbids delegation and asks for deepest reasoning | Keep single-agent execution; verify ultra behavior and recommend a compatible supported effort | Ultra may trigger automatic delegation. |
 | An executive deck reaches its rendering step | Use the current capable parent, render and inspect the artifact | An audience or file format is not a max-effort trigger. |
+| A one-file edit arrives with a link to a 96-agent workflow | Complete it in the parent | A source's setup is not the task's required setup. |
+| A long build keeps polishing the same region while required features remain | Define phase acceptance, inspect the last verified outcome, then address the next requirement | Bounded progress prevents optional polish from displacing scope. |
+| An implementer checks every box but the main user flow fails | Leave the phase incomplete and return the observed failure | A checklist is not verification. |
+| A required dependency is taking longer than expected | Diagnose or work on an independent requirement; retain the dependency | A timeout does not make required work optional. |
+| A new discovery invalidates a planned implementation step | Revise the plan while preserving the requested outcome | The plan supports the task; it is not immutable evidence. |
+| The user shares self-written goal advice but asks only for a review | Evaluate the advice without creating a goal or task | Discussing a capability does not authorize invoking it. |
+| A July model ranking conflicts with the current host catalog | Retain the dated evidence; verify present support and task fit before rerouting | Benchmarks and availability have distinct scopes. |
