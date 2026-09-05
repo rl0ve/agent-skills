@@ -152,6 +152,20 @@ Parallelize independent read-heavy exploration, tests, triage, and summarization
 
 The parent remains responsible for requirements, decisions, integration, final validation, and the user-facing answer.
 
+## Long tasks and outside advice
+
+For work spanning several dependent phases or losing time to repeated polishing, read
+[references/long-running-work.md](references/long-running-work.md). Use bounded phase
+outcomes and evidence of completion; add a manager/implementer split only when it earns
+its coordination cost. This does not create a goal, schedule background work, or change
+agent limits. Follow the host's authorization rules for those actions.
+
+Treat social recommendations as dated, task-specific evidence. A saved post, impressive
+demo, or benchmark rank does not override the user's model choices or prove a cheaper
+end-to-end route. Check the original source, current host support and comparable task
+conditions before changing routing. Preserve useful methods without copying old model
+assignments, unexplained settings, claimed savings, or mandatory agent counts.
+
 ## Escalate deliberately
 
 - Fix missing context or a faulty tool/validation path before increasing model capability.

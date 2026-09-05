@@ -1,4 +1,4 @@
 interface:
-  display_name: "Design Router"
+  display_name: "UI Router"
   short_description: "Route UI work to a focused skill chain"
-  default_prompt: "Use $design-router to classify this UI task and select the smallest compatible skill chain."
+  default_prompt: "Use $route-ui-work to classify this UI task and select the smallest compatible skill chain."

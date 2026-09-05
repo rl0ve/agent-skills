@@ -1,5 +1,7 @@
 # Canonical design-skill catalog
 
+For the separately verified 2026-09-05 map of free visual resources, ThreeUI Community, Toolcraft, and Canvas UI, see [visual-resources.md](visual-resources.md). This supplements the historical catalog without claiming those resources are installed skills.
+
 This catalog preserves the named skill universe researched in the original Perplexity task. It is a **research snapshot dated 2026-08-15**, not an assertion that every entry is installed, safe, current, or still available. Inspect the live catalog first and verify upstream before recommending an installation.
 
 Status language:

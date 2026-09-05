@@ -1,12 +1,12 @@
 ---
 name: route-ui-work
-description: Route UI, UX, frontend, design review, motion, design-to-code, component-library, and interface-copy work through the researched named skill catalog and the capabilities actually installed in Claude Code. Use when choosing or combining Taste, Hallmark, Interface Design, Impeccable, Emil, Jakub, Meng, Addy, ibelick, shadcn, frontend-design, or related UI skills. Honor explicitly named skills and avoid unnecessary stacking.
-compatibility: Claude Code with Agent Skills and plugin support.
+description: Route UI, UX, frontend, design review, motion, design-to-code, component-library, and interface-copy work through the researched skill catalog and live installed capabilities. Includes free visual references, ThreeUI, Toolcraft, and Canvas UI selection. Honor explicitly named skills and avoid unnecessary stacking.
+compatibility: Codex and Claude Code with Agent Skills and plugin support.
 ---
 
 # Route UI Work
 
-Select one design lead, add only focused layers that own distinct concerns, and apply audience constraints before implementation. Preserve the canonical researched chain even when the executable Claude Code chain uses a substitute.
+Select one design lead, add only focused layers that own distinct concerns, and apply audience constraints before implementation. Preserve the canonical researched chain even when the executable chain uses a substitute.
 
 ## Route the request
 
@@ -14,16 +14,34 @@ Select one design lead, add only focused layers that own distinct concerns, and 
 2. Read [references/taxonomy.md](references/taxonomy.md) and classify one primary surface plus one audience.
 3. Ask one short question only when two plausible classifications produce materially different work.
 4. Read only the matching surface in [references/chains.md](references/chains.md). Choose one named lead and zero to three focused layers. If prose is being created or rewritten, use one semantic or brand owner followed by one final editor; never stack multiple humanizers.
-5. Inspect the live Claude Code environment:
-   - installed plugins from `claude plugin list --json` when useful;
-   - project skills under `.claude/skills/`;
-   - user skills under `~/.claude/skills/` when access is permitted;
-   - plugin skills already listed in the current session.
+5. Inspect capabilities in the current host, starting with skills and tools listed in this session. In Codex inspect project/user `.agents/skills`, `.codex/skills`, and enabled plugins as needed. In Claude Code inspect `.claude/skills` and `claude plugin list --json`. File presence does not prove an executable, MCP connection, or current-session skill is available.
 6. Read matching entries in [references/catalog.md](references/catalog.md). Mark each canonical entry as `installed`, `equivalent available`, or `missing candidate`.
 7. Substitute transparently. Never rename Anthropic `frontend-design` or another fallback as Taste, Hallmark, Interface Design, or Impeccable.
 8. Read only the selected section in [references/audiences.md](references/audiences.md).
 9. Load the complete selected skill instructions before using them. Do not load the whole catalog into context.
 10. Apply [references/quality-gates.md](references/quality-gates.md) before declaring completion.
+
+## Product decisions before polish
+
+For a broad redesign or unexplained usability problem, read
+[references/product-decisions.md](references/product-decisions.md). Identify whether
+the unresolved decision concerns user evidence, product objects and states, interaction
+flow, or visual presentation. Address the relevant layer with the existing lead;
+use a focused specialist only when needed. Do not impose a discovery workshop on a
+defined visual edit or invent user research to fill gaps.
+
+## Visual resources and free tools
+
+For inspiration, expressive web work, creative editors, or component sourcing, read only the matching section of [references/visual-resources.md](references/visual-resources.md). It maps named sources to a concrete job, cost boundary, and current upstream documentation.
+
+- Start from the user's reference; otherwise choose one or two relevant references. Record what each contributes before implementing.
+- Use ThreeUI Community for procedural 3D examples, Toolcraft for a canvas with creative controls, and Canvas UI for a specific GPU effect. They are implementation resources, not additional aesthetic directors.
+- For an exported product video or animated explainer, consider HyperFrames' free local renderer. A website animation and a rendered video need different validation; select the output route first.
+- For product components start with Component Gallery; for motion references use public 60fps examples; for expressive websites use Recent.design or Landing.love; for typography consider UNCUT.
+- Keep dependencies project-local and add only what the chosen output needs. A resource catalog entry is not an installed plugin. A Blender workflow skill is not the Blender application.
+- Honor an explicit free-only constraint: public browsing and verified free code are eligible; paid MCPs, trials that require billing, and metered services are not. Existing user authorization covers the agreed install scope; do not ask again solely because an installer is plan-first.
+
+In Codex, use Work Router's Codex table or stay in the parent. The Claude agent names and model defaults below apply only in Claude Code.
 
 ## Claude execution routes
 

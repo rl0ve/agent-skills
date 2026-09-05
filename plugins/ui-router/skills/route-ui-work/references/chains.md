@@ -24,6 +24,8 @@ Use exactly one broad lead and no more than three focused layers. Optional entri
 
 ## Creative / expressive
 
+When selecting examples or dependencies, read [visual-resources.md](visual-resources.md): ThreeUI Community for procedural scenes, Toolcraft for creative editors, and Canvas UI for a bounded effect. These support the lead below; they do not replace it or require all three installations.
+
 Choose one lead by medium:
 
 - WebGL/cinematic: `meng-webgl-stack`;
@@ -81,6 +83,8 @@ Use one context-holding editor. Multiple humanizer passes tend to flatten voice,
 When `natural-writing` is unavailable, select exactly one fallback editor from `no-ai-slop`, `blader-humanizer`, or `humanizer-local` based on the request. Preserve facts, qualifications, product terminology, identifiers, and formatting. Do not run all three sequentially.
 
 ## Component library
+
+Use [Component Gallery and the resource map](visual-resources.md) for source-system examples before adding a library. For a creative canvas tool, evaluate Toolcraft under the prosumer audience rather than applying a cinematic website route to the whole app.
 
 **Canonical:** `shadcn-official` → `impeccable Operate` → `jakub-better-stack` → `addy-web-quality`
 

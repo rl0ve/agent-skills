@@ -28,6 +28,11 @@ Apply every relevant gate before declaring the routed task complete.
 - Run the narrowest relevant tests or browser checks.
 - Report what was checked and what could not be checked.
 - Distinguish observed results from recommendations or hypotheses.
+- In a multi-phase build, completion evidence must match the required outcome: a
+  screenshot demonstrates appearance, an exercised flow demonstrates behavior, and an
+  inspected export demonstrates the deliverable. A source demo or checked task list
+  does not substitute for those observations. Reopen accepted work only for a relevant
+  regression, new requirement or observed defect.
 
 ## Writing and interface copy
 
