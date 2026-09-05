@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.7.0 - 2026-09-05
+
+- Add conditional design steering: infer the brief, show concrete alternatives when
+  direction is uncertain, translate plain-language reactions, and establish a
+  representative slice before expansion. Retain decisions in project notes.
+- Keep small edits and clear references direct; preserve delegated taste and avoid
+  mandatory questionnaires, repeated approval rounds, or global preference writes.
+
+
 ## 1.6.0 - 2026-09-05
 
 - Delegate general discovery to Work Router when available; retain UI-specific checks and a standalone fallback. Align the field guide and preserve existing install authorization.

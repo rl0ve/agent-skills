@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Portable agent skills and Claude Code routing plugins: natural-writing (tool-neutral), plus model and UI routers.",
-    "version": "1.9.0"
+    "version": "1.10.0"
   },
   "plugins": [
     {
       "name": "ui-router",
       "source": "./plugins/ui-router",
-      "description": "Route UI work in Codex and Claude Code through focused skill chains, free visual resources, and verified live capabilities. Updated 2026-09-05.",
-      "version": "1.6.0",
+      "description": "Route UI work in Codex and Claude Code through design-direction steering, focused skill chains, free visual resources, and verified live capabilities. Updated 2026-09-05.",
+      "version": "1.7.0",
       "category": "Development",
       "tags": [
         "ui",
