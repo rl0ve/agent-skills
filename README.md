@@ -1,8 +1,8 @@
 # agent-skills
 
-Agent skills and routers. Most of them are tool-neutral and one folder is Codex-native, so
-this is not a Claude-only repository — but the two routers do route Claude models and
-subagents, and those are Claude-specific by nature.
+Agent skills and routers for Codex and Claude Code. Shared skills carry host-specific
+routing where needed. Work Router supports Astra alongside Sol, Terra, and Luna in
+Codex, and Haiku, Sonnet, Opus, and Fable in Claude Code.
 
 | Start here | If you are |
 |---|---|

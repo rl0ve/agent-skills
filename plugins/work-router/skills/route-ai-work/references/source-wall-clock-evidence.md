@@ -1,5 +1,9 @@
 # Coding-agent wall-clock, cost, steps and token evidence — as of August 1, 2026
 
+> Historical source pack from August 2026; predates Astra. For current routes and
+> escalation, follow [SKILL.md](../SKILL.md) and [routing-basis.md](routing-basis.md).
+> The model rankings below are retained as dated evidence, not current defaults.
+
 All values below were read from pages fetched in this session. Two independent measurement systems cover the requested configurations:
 
 1. **Artificial Analysis Coding Agent Index v1.3** — runs the *native harnesses* (Codex, Claude Code, Cursor CLI, etc.) over DeepSWE + Terminal-Bench v2 + SWE-Atlas-QnA (321 tasks), and reports **average agent wall time per task**, average API cost per task, steps and tokens ([Artificial Analysis coding agents](https://artificialanalysis.ai/agents/coding-agents)). AA defines this metric explicitly: "This chart uses agent wall time: how long the agent process was actively running on each task. It does not include environment startup, verifier or judge time, or other harness overhead" and "Execution time on this page refers to average wall-clock task runtime per task, not just raw model latency" ([Artificial Analysis coding agents](https://artificialanalysis.ai/agents/coding-agents)).
