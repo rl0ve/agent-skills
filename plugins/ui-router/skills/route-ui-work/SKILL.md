@@ -1,6 +1,6 @@
 ---
 name: route-ui-work
-description: Route UI, UX, frontend, design review, motion, design-to-code, component-library, and interface-copy work through the researched skill catalog and live installed capabilities. Includes free visual references, ThreeUI, Toolcraft, and Canvas UI selection. Honor explicitly named skills and avoid unnecessary stacking.
+description: Route UI, UX, frontend, design review, motion, design-to-code, component-library, and interface-copy work through the researched skill catalog and live installed capabilities. Includes visual-direction steering, free references, ThreeUI, Toolcraft, and Canvas UI selection. Honor explicitly named skills and avoid unnecessary stacking.
 compatibility: Codex and Claude Code with Agent Skills and plugin support.
 ---
 
@@ -20,6 +20,15 @@ Select one design lead, add only focused layers that own distinct concerns, and 
 8. Read only the selected section in [references/audiences.md](references/audiences.md).
 9. Load the complete selected skill instructions before using them. Do not load the whole catalog into context.
 10. Apply [references/quality-gates.md](references/quality-gates.md) before declaring completion.
+
+## Help the user establish design direction
+
+For a substantial new design or redesign with unresolved visual direction, read
+[references/design-steering.md](references/design-steering.md). Infer a short brief,
+make meaningful alternatives concrete when needed, translate plain-language feedback,
+and establish a representative slice before costly expansion. Keep chosen direction
+in project notes. Clear references, established systems and small defined edits stay
+direct; do not require a prompting method, questionnaire or repeated approval rounds.
 
 ## Product decisions before polish
 

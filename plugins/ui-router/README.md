@@ -31,3 +31,11 @@ Version 1.5.0 includes a [resource map](skills/route-ui-work/references/visual-r
 For broad redesigns or unexplained usability problems, [product-decision routing](skills/route-ui-work/references/product-decisions.md) helps distinguish missing user evidence, unclear product objects, flow problems and surface polish. Defined visual edits stay direct. Completion checks distinguish an attractive preview from working behavior and a verified export.
 
 The routing skill checks current host capabilities and reads this map for relevant creative, reference, or component work. Restart or reload the host after installing an update, then verify the expected skill is listed. Local source updates are not automatically published to the marketplace.
+
+## Design direction without a prompting course
+
+[Design steering](skills/route-ui-work/references/design-steering.md) helps users choose
+a direction for substantial new designs: infer the brief, show meaningful visual
+alternatives only when needed, translate ordinary feedback, and establish a
+representative slice before expanding. Keep choices in project notes. Clear references
+and small edits stay direct; specialist skills own the craft and implementation.
