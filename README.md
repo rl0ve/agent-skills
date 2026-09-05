@@ -144,3 +144,14 @@ The packages use the documented Claude Code plugin layout and validate with `cla
 ## Icons
 
 Each plugin bundles a square PNG icon for the website and portable package. Claude Code's current plugin manifest does not expose a rendered icon field, so the files are metadata/assets rather than a promise that `/plugin` will display artwork.
+
+## UI Walkthrough Video
+
+[UI Walkthrough Video](plugins/ui-walkthrough-video/README.md) records real interface
+flows as scene clips and screenshots, then creates narrated MP4s, captions and silent
+revoice copies. It prompts for voice quality or a quality range and supports local
+draft speech, OpenAI, ElevenLabs and supplied audio. Browser/media runtimes are
+required for this plugin; see its skill for setup and the synthetic smoke test.
+
+Install: `codex plugin add ui-walkthrough-video@rl0ve-agent-skills` or
+`claude plugin install ui-walkthrough-video@rl0ve-agent-skills`.

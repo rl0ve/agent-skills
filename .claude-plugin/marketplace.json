@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Portable agent skills and Claude Code routing plugins: natural-writing (tool-neutral), plus model and UI routers.",
-    "version": "1.10.0"
+    "version": "1.11.0"
   },
   "plugins": [
     {
@@ -79,6 +79,19 @@
         "presentation",
         "template",
         "brand"
+      ]
+    },
+    {
+      "name": "ui-walkthrough-video",
+      "source": "./plugins/ui-walkthrough-video",
+      "description": "Record real UI flows with snapshots, configurable voiceover, captions and silent revoice exports.",
+      "version": "1.0.0",
+      "category": "Productivity",
+      "tags": [
+        "video",
+        "walkthrough",
+        "voiceover",
+        "playwright"
       ]
     }
   ]

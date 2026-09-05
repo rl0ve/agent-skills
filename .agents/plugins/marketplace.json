@@ -66,6 +66,17 @@
         "template",
         "brand"
       ]
+    },
+    {
+      "name": "ui-walkthrough-video",
+      "source": {
+        "source": "local",
+        "path": "./plugins/ui-walkthrough-video"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
     }
   ]
 }
