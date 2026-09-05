@@ -2,7 +2,29 @@
 
 Use this reference when explaining or revising the routing policy. Treat benchmark figures as dated evidence, not timeless product facts.
 
-## Current product guidance
+## Verified host facts: September 5, 2026
+
+The local Codex model catalog (`~/.codex/models_cache.json`) and host tool metadata
+identify `gpt-6-astra` as the most capable model for complex, demanding work. The
+catalog default is medium; supported effort levels are low, medium, high, xhigh,
+max, and ultra. Ultra is described as maximum reasoning with automatic delegation.
+The host also lists Sol as an everyday agentic workhorse, Terra as a balanced coding
+model, and Luna as fast and affordable for simpler work.
+
+These facts establish availability, supported settings, and product positioning on
+this host. They do not establish account-wide availability, exact cost, or relative
+end-to-end latency. No Astra comparative benchmark was run for this release.
+
+The policy inference is to keep demanding, context-heavy work in an active Astra
+parent, use Astra high when selecting a route for new demanding work, and retain
+Sol, Terra, and Luna for bounded tasks where a handoff has a concrete benefit. Do not
+interpret the historical timing figures below as measurements of Astra.
+
+Fast routing concerns total completion time. Codex Fast is a separate service-tier
+choice requiring explicit user selection and current account/workspace support;
+Standard remains the default. Verify effective model and effort on every handoff.
+
+## Historical product guidance (predates Astra)
 
 As checked on August 1, 2026, OpenAI's Codex subagent documentation recommends:
 
@@ -39,21 +61,28 @@ Evidence sources:
 - [Artificial Analysis coding agents](https://artificialanalysis.ai/agents/coding-agents)
 - [DeepSWE](https://deepswe.datacurve.ai/)
 
-## Policy implications
+## Current policy implications
 
-1. Optimize measured user-visible wall-clock time, not token count, step count, time to first token, or output speed.
-2. Keep Sol medium as the fast judgment route and Sol high as the consequential reasoning route.
-3. Keep Luna high narrow. Luna max is an economy/background route, not the fastest route.
-4. Add Terra for read-heavy work because current product guidance distinguishes that workload from Luna's narrow, repeatable work.
-5. Keep `sol-critical` rare; max effort is a risk boundary, not a generic quality upgrade.
-6. Prefer a single parent and one bounded specialist. Add parallel agents only for genuinely independent workstreams.
+1. Optimize total user-visible elapsed time, including duplicated context, retries,
+   review, and integration. Neither a smaller model nor a handoff inherently saves time.
+2. Astra owns demanding judgment and broad integration when already active. Sol
+   medium/high remains useful for bounded advice and defined implementation.
+3. Terra collects independent evidence; the parent owns consequential synthesis.
+4. Keep Luna high narrow and Luna max explicitly cost-first. Old economy results do
+   not prove it is cheaper than Astra for a new workload.
+5. Escalate effort for missing depth, capability for insufficient judgment, and fix
+   missing inputs before either. Max and ultra are not artifact or audience defaults.
+6. Prefer one parent and one useful specialist. Preserve explicit model constraints,
+   permit only one writer per working tree, and verify the actual child configuration.
 
-## Migration from the earlier profiles
+## Profile compatibility
 
-- Retain `sol-advisor`, `sol-architect`, and `sol-critical`; their medium, high, and max escalation boundaries remain useful.
-- Retain but narrow `luna-builder` to clear, repeatable implementation. Broad or consequential implementation stays with the parent or a Sol-backed worker.
-- Add `terra-explorer` for read-heavy exploration and supporting-document work.
-- Add `luna-economy-worker` for bounded, cost-first background work. Keep the Luna prefix visible because the route deliberately uses GPT-5.6 Luna at max effort.
-- Remove duplicate self-announcements and elapsed-time claims from child profiles. The parent announces the route, and elapsed time is reported only when actually measured.
-- Do not create a separate `sol-builder` merely as another effort label. Use the built-in `worker` or parent Sol for defined work that exceeds Luna's scope.
-- Infer obvious timing intent and default ordinary interactive requests to Fast. Ask one short timing question only when the choice is genuinely ambiguous and materially consequential.
+The bundled Sol, Terra, and Luna TOML profiles retain their model IDs. Installing the
+plugin does not install those standalone Codex profiles or convert them to Astra.
+Use the included sync script when a profile installation is requested, then start a
+new task to load them. Existing names remain compatible; no Astra profile is required
+because the parent or a supported built-in agent can supply that model explicitly.
+
+Sol reviewer profiles now return demanding escalation decisions to the parent instead
+of unconditionally selecting another Sol profile. Historical source packs and images
+remain dated evidence; the active SKILL.md takes precedence over their model rankings.

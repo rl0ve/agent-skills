@@ -1,5 +1,9 @@
 # AI Work Routing
 
+> Historical source pack from August 2026; predates Astra. For current routes and
+> escalation, follow [SKILL.md](../SKILL.md) and [routing-basis.md](routing-basis.md).
+> The model rankings below are retained as dated evidence, not current defaults.
+
 Choose the task, then the harness, then the model and reasoning effort.
 
 ## Choose a Timeliness Mode First

@@ -1,6 +1,6 @@
 # agent-skills
 
-Portable agent skills, plus two Claude Code routing plugins. Everything here is plain
+Portable agent skills, plus shared Codex and Claude Code routing plugins. Everything here is plain
 Markdown and Python: no build step, no runtime, nothing to install.
 
 ## For Codex (and any agent that reads AGENTS.md)
@@ -70,13 +70,16 @@ claude plugin marketplace add rl0ve/agent-skills
 claude plugin install natural-writing@rl0ve-agent-skills
 ```
 
-`work-router` and `ui-router` route Claude models and subagents, so
-they are Claude-specific by nature. `natural-writing` is not, and stands alone.
+`work-router` and `ui-router` are shared plugins with host-specific guidance.
+For Codex model decisions, use the Astra-aware Codex table in
+`plugins/work-router/skills/route-ai-work/SKILL.md`; historical source packs do not
+override it. `natural-writing` also stands alone.
 
 ## Conventions
 
 - Skills are `plugins/<plugin>/skills/<skill>/SKILL.md` with frontmatter.
-- Versions live in `plugins/<plugin>/.claude-plugin/plugin.json` **and** in
-  `.claude-plugin/marketplace.json`. Bump both, and add a `CHANGELOG.md` entry.
+- Versions live in both `plugins/<plugin>/.claude-plugin/plugin.json` and
+  `plugins/<plugin>/.codex-plugin/plugin.json`, plus `.claude-plugin/marketplace.json`.
+  Keep all three aligned and add a `CHANGELOG.md` entry.
 - The routing plugins ship a deterministic `PreToolUse` hook that blocks Bash
   commands containing `sudo`. Installers refuse root and never evaluate a shell string.

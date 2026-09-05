@@ -1,5 +1,9 @@
 # Work Router 2.1
 
+> Historical source pack from August 2026; predates Astra. For current routes and
+> escalation, follow [SKILL.md](../SKILL.md) and [routing-basis.md](routing-basis.md).
+> The model rankings below are retained as dated evidence, not current defaults.
+
 Updated August 1, 2026. Choose a timeliness mode before the task route. Optimize for measured wall-clock time, not steps, tokens, time to first token, or output speed.
 
 ## Timeliness Modes

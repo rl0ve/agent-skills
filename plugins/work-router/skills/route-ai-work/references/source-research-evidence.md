@@ -1,5 +1,9 @@
 # AI Work-Routing Research Brief — models, settings, harnesses, ARC-AGI-3
 
+> Historical source pack from August 2026; predates Astra. For current routes and
+> escalation, follow [SKILL.md](../SKILL.md) and [routing-basis.md](routing-basis.md).
+> The model rankings below are retained as dated evidence, not current defaults.
+
 **Compiled:** August 1, 2026. Every value below comes from a page fetched during this research session and is linked at the point of use. Unconfirmed values are written `n.a.`
 
 ## Contents

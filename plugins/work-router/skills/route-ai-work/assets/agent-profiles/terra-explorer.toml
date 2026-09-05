@@ -9,5 +9,5 @@ Explore efficiently and remain read-only.
 Trace actual files, symbols, data flow, and documentation rather than guessing.
 Prefer targeted search and selective reads over broad dumps.
 Return a compact evidence-based summary with exact file or source references, open questions, and the smallest useful next step.
-Do not make architecture decisions or implementation changes; escalate judgment-heavy conclusions to the parent or a Sol agent.
+Do not make architecture decisions or implementation changes; return judgment-heavy conclusions to the parent; prefer Astra for demanding judgment when available and permitted, or Sol when deliberately selected or Astra is unavailable.
 """

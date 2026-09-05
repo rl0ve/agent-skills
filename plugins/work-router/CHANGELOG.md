@@ -1,3 +1,17 @@
+# Changelog
+
+## 1.3.0 - 2026-09-05
+
+- Make Codex routing Astra-aware: keep demanding work and loaded context in an
+  active Astra parent; retain Sol, Terra, and Luna as deliberate bounded specialists.
+- Separate effort escalation from model selection, and Fast routing from Codex Fast
+  service. Preserve Standard service by default and explicit user model constraints.
+- Verify child model/effort rather than assuming a built-in worker or a named Sol
+  profile inherits Astra. No new custom profile or global settings change is required.
+- Update bundled profile escalation, shared setup checks, documentation, and scenario
+  guidance. Mark pre-Astra source packs as historical evidence.
+- Basis: current host model catalog and routing judgment; no Astra speed/cost benchmark.
+
 ## 1.2.0
 
 Adds `fable-wordsmith` and the rule that puts work there.
@@ -19,7 +33,6 @@ Adds `fable-wordsmith` and the rule that puts work there.
 Basis is one observed session, recorded as such in `references/routing-policy.md`, not a
 benchmark.
 
-# Changelog
 
 ## 1.0.0 - 2026-08-18
 
