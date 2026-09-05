@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.0 - 2026-09-05
+
+- Delegate general discovery to Work Router when available; retain UI-specific checks and a standalone fallback. Align the field guide and preserve existing install authorization.
+
 ## 1.5.0 - 2026-09-05
 
 - Add conditional product-decision diagnosis informed by the reviewed Layers intro

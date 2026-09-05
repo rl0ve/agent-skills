@@ -35,6 +35,14 @@ or full model-cache records; extract only relevant model and effort metadata.
 4. Ask the user to open `/model` or `/effort` only when model visibility cannot be
    verified another way.
 
+## Capability and plugin overlap
+
+When the user asks about conflicting skills or plugins, also inspect enabled router
+copies and matching installed skill names/paths. Compare instructions and provenance,
+not just names. Report legacy duplicate routers, competing broad leads, duplicate
+editors and complementary integrations separately. Recommend one canonical owner per
+concern; do not disable anything during this read-only check.
+
 ## Report
 
 Separate facts into `verified`, `organization-controlled`, and `not yet verified`.

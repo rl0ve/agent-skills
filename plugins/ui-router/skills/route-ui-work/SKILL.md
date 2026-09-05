@@ -61,7 +61,7 @@ Keep trivial UI adjustments in the parent. Use Fable only for a connected, long-
 2. Canonical role and chain from the research catalog.
 3. Exact canonical skill when installed.
 4. Installed official, vendor, bundled, or focused community equivalent, with the substitution stated.
-5. Verified external candidate, recommended but not installed automatically.
+5. Verified external candidate; install only within explicit current or prior user authorization.
 
 Do not stack two broad aesthetic directors. A broad lead can pair with focused accessibility, motion, copy, system, performance, or review layers.
 
@@ -71,11 +71,18 @@ Do not stack two broad aesthetic directors. A broad lead can pair with focused a
 - **Review stays read-only:** review or audit produces findings unless the user also requests fixes.
 - **Motion stays scoped:** motion-only work must not restyle layout, color, typography, or copy.
 - **Reference fidelity wins:** image-to-code follows extraction, capture, bounded implementation, and comparison.
-- **No silent installs:** present the source and exact plan; execute only after explicit user direction.
+- **No silent installs:** present the source and exact plan; execute within explicit current or prior user authorization. Do not request the same permission again.
 - **No catalog erasure:** a locally available fallback does not remove the original named research entry.
 - **One final editor:** verify the companion Natural Writing plugin before routing to it. When available, it is the sole anti-slop and voice-preserving editor. If unavailable, select exactly one documented fallback; never run sequential humanizer passes.
 - **Copy boundaries:** the UX, product, or marketing layer owns labels, states, claims, requirements, and terminology. Natural Writing improves the prose without inventing behavior or altering supported meaning.
 - **No `sudo`:** both plugin hook and installer reject privileged execution.
+
+## Discover a missing capability
+
+Read [references/discovery.md](references/discovery.md) when a capability is missing
+or the user asks for newer skills. Use Work Router's `discover-capabilities` when
+available for the general search, then apply the UI-specific checks. The reference
+also provides a standalone fallback; neither plugin requires the other to be installed.
 
 ## Optional skill installs
 
@@ -100,7 +107,7 @@ Detected: <surface> x <audience> | Canonical: <lead> -> <layers> | Available: <l
 If a capability is missing, add:
 
 ```text
-Missing: <capability> | Candidate: <verified source> | Install requires approval: yes
+Missing: <capability> | Candidate: <verified source> | Authorization: <already granted within scope / needed>
 ```
 
 ## Visual references

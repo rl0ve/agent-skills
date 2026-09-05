@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.0 - 2026-09-05
+
+- Add cross-domain capability discovery with a conditional source shortlist, installed-first checks, and explicit ownership of overlapping skills/plugins.
+
 ## 1.4.0 - 2026-09-05
 
 - Add conditional long-task phases with explicit outcomes, ownership, acceptance
