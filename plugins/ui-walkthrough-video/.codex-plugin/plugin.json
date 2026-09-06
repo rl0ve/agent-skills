@@ -1,6 +1,6 @@
 {
   "name": "ui-walkthrough-video",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Record real UI flows with snapshots, configurable narration, captions, and reusable revoice exports.",
   "author": {
     "name": "rl0ve"
