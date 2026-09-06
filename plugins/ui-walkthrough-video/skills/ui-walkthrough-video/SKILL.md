@@ -16,17 +16,38 @@ and project. Ask only for consequential missing choices. Default to a concise de
 of one complete task with readable UI at 1440×900 or 1920×1080. Respect the user's
 browser preference; the example uses Edge in a fresh automation profile.
 
-Offer this voice prompt when no preference is known:
+The quality target is natural narration and deliberate, polished screen-demo motion.
+Robotic delivery is a failed result, regardless of price or benchmark rank. Do not
+fall back to macOS/browser system speech when a key is missing. Use a silent technical
+proof while awaiting a voice choice or credentials.
 
-> What voice quality should I target: a free local draft, a polished natural voice,
-> or a premium voice audition? You can give a range such as “polished to premium,
-> up to $2,” or name a provider, model, voice, language, accent and speaking style.
+Offer this prompt when preferences are unknown:
 
-Treat these as subjective targets, not guaranteed model rankings. For a range,
-select within the budget and audition the same 10–15 second excerpt before a full
-paid generation. Existing user choices persist. If awaiting a choice, continue
-storyboarding and capture; use a clearly labeled local draft only for testing.
-Read [voice.md](references/voice.md) for provider choices and secure key setup.
+> Should I start with your preferred natural voice, or audition two or three current
+> candidates? You can specify a provider/model/voice, or a range such as “natural to
+> studio-quality, under $2,” plus language and delivery style.
+
+Honor known voice choices. Include Google Gemini TTS when Google is preferred;
+Kore is a useful explicit example, not proof of naturalness or a universal best voice.
+Audition the same 10–20 second passage, including a product name, number and transition.
+Reject flat prosody, metallic artifacts, exaggerated acting/accent, and audible joins.
+Never call an unheard sample natural. Read [voice.md](references/voice.md) and, when
+selecting current models, [benchmarks.md](references/benchmarks.md).
+
+## Choose the production route
+
+Read [polish.md](references/polish.md) when the target resembles Recordly, Clueso,
+Dreamcut or Screen Studio. Prefer an available, authorized specialist that can meet
+the requested visual quality. Clueso's official skills/MCP are a close documented
+fit. Recordly is an editor/capture route; do not rely on its internal smoke-export
+hook as a supported headless API. Remotion is a programmable composition option.
+
+The included Playwright/FFmpeg helpers provide **basic capture and assembly**. They
+do not implement automatic zooms, smoothed cursor telemetry or word-level forced
+alignment. A successful basic fixture is not evidence of polished-demo parity.
+If specialist tools are unavailable, preserve footage and a concrete edit plan,
+report the missing capability, and continue only the portions the available tools
+can perform. Do not quietly downgrade a requested polished final into raw footage.
 
 ## Build and capture
 
@@ -58,12 +79,15 @@ Read [voice.md](references/voice.md) for provider choices and secure key setup.
 
 Requirements: Node with Playwright, Python 3.10+, FFmpeg/ffprobe on PATH, and the
 chosen installed browser. Use project dependencies when present; do not silently
-install large browser/runtime packages. No paid API is needed for the local test.
+install large browser/runtime packages. No paid API is needed for a silent capture test.
 
 ```sh
 # Run in a fresh output directory. Paths may be absolute.
 node /path/to/skill/scripts/capture.mjs ./flow.mjs ./capture
-python3 /path/to/skill/scripts/render.py voice ./capture/manifest.json ./audio
+# Silent technical proof: no robotic placeholder narration.
+python3 /path/to/skill/scripts/render.py silent ./capture/manifest.json ./silent-proof
+# After voice selection, audition and budget authorization:
+python3 /path/to/skill/scripts/render.py voice ./capture/manifest.json ./audio --allow-paid
 python3 /path/to/skill/scripts/render.py assemble ./capture/manifest.json ./audio ./render
 ```
 
@@ -96,7 +120,7 @@ burned captions, inspect FFmpeg filter support first; if libass is absent, use
 transparent browser-rendered text overlays or an available composition tool.
 
 Report tested providers and capture backend, technical checks, human/agent playback
-review and remaining limitations separately. Label local drafts, synthetic fixtures,
+review and remaining limitations separately. Label silent technical proofs, synthetic fixtures,
 AI-generated narration and estimated captions. Do not call paid voice quality tested
 when only API mocks or local speech ran. Publishing is a separate requested action.
 

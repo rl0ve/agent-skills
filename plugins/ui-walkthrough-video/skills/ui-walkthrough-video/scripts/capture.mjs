@@ -23,7 +23,7 @@ const out = path.resolve(outPath);
 if (fs.existsSync(out)) throw Error('Output exists; choose a new take');
 const browser = await chromium.launch({channel: settings.channel ?? 'msedge', headless: settings.headless ?? true});
 fs.mkdirSync(out, {recursive:true});
-const manifest = {version:1, width, height, fps:30, voice:settings.voice ?? {provider:'local',quality:'draft'}, beats:[]};
+const manifest = {version:1, width, height, fps:30, voice:settings.voice ?? {provider:'provided',quality:'natural; audition required'}, beats:[]};
 fs.writeFileSync(path.join(out,'manifest.partial.json'),JSON.stringify(manifest,null,2));
 try {
   for (const beat of beats) {

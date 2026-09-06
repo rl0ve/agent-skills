@@ -1,7 +1,7 @@
 // Synthetic fixture: replace with your actual observed interface and assertions.
 export const settings = {
   channel: 'msedge', width: 1440, height: 900,
-  voice: {provider: 'local', voice: 'Samantha', quality: 'draft', rate: 165},
+  voice: {provider: 'gemini', model: 'gemini-3.1-flash-tts-preview', voice: 'Kore', quality: 'natural; audition required', instructions: 'Conversational and restrained. Natural variation in pacing. No announcer delivery or exaggerated accent.'},
 };
 const html = `<!doctype html><html><style>
 body{margin:0;background:#eef2f6;font:24px system-ui;color:#14243b}
