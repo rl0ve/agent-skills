@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Dependency-light narration and assembly. No keys in files or subprocess arguments."""
 import argparse
+import base64
+import binascii
+import wave
 import json
 import math
 import os
@@ -18,7 +21,7 @@ FFPROBE = os.environ.get('FFPROBE', 'ffprobe')
 
 
 def run(args):
-    env = {k:v for k,v in os.environ.items() if k not in ('OPENAI_API_KEY','ELEVENLABS_API_KEY')}
+    env = {k:v for k,v in os.environ.items() if k not in ('OPENAI_API_KEY','ELEVENLABS_API_KEY','GEMINI_API_KEY','GOOGLE_API_KEY')}
     return subprocess.run([str(a) for a in args], check=True, capture_output=True, env=env).stdout
 
 
@@ -86,20 +89,61 @@ def request_config(voice, text):
             payload['voice_settings'] = voice['voice_settings']
         return ('https://api.elevenlabs.io/v1/text-to-speech/' + urllib.parse.quote(voice['voice'],safe='') + '?output_format=mp3_44100_128',
                 'ELEVENLABS_API_KEY', payload)
+    if provider == 'gemini':
+        if not re.fullmatch(r'[a-zA-Z0-9._-]+', voice['model']):
+            raise ValueError('Invalid Gemini model identifier')
+        prompt = text
+        if voice.get('instructions'):
+            prompt = voice['instructions'] + '\nRead only the following transcript, without adding words:\n' + text
+        payload = {'contents':[{'parts':[{'text':prompt}]}],
+                   'generationConfig':{'responseModalities':['AUDIO'],
+                     'speechConfig':{'voiceConfig':{'prebuiltVoiceConfig':{'voiceName':voice['voice']}}}}}
+        return ('https://generativelanguage.googleapis.com/v1beta/models/' + voice['model'] + ':generateContent',
+                'GEMINI_API_KEY', payload)
     raise ValueError('Unknown network provider')
+
+
+def write_gemini_wav(response_data, source):
+    # generateContent's documented output is PCM16 little-endian mono, 24 kHz.
+    try:
+        response = json.loads(response_data)
+        candidates = response.get('candidates', [])
+        candidate = candidates[0] if candidates else {}
+        if candidate.get('finishReason') != 'STOP':
+            raise ValueError('Gemini returned incomplete/blocked speech; no automatic retry')
+        parts = candidate.get('content', {}).get('parts', [])
+        clips = [p['inlineData'] for p in parts if p.get('inlineData',{}).get('mimeType','').startswith('audio/')]
+        if len(clips) != 1:
+            raise ValueError('Gemini returned no single audio payload; no automatic retry')
+        clip = clips[0]
+        mime = clip['mimeType']
+        if not mime.startswith('audio/L16') or 'rate=24000' not in mime:
+            raise ValueError('Unexpected Gemini audio format; verify current API docs before conversion')
+        pcm = base64.b64decode(clip['data'], validate=True)
+        if not pcm or len(pcm) % 2:
+            raise ValueError('Gemini returned empty or invalid PCM audio')
+    except (json.JSONDecodeError, KeyError, TypeError, AttributeError, binascii.Error):
+        raise ValueError('Invalid Gemini response; provider payload not logged') from None
+    with wave.open(str(source),'wb') as wav:
+        wav.setnchannels(1); wav.setsampwidth(2); wav.setframerate(24000)
+        wav.writeframes(pcm)
 
 
 def voice_command(args):
     spec = load(args.manifest)
-    voice = spec.get('voice', {'provider':'local'})
+    voice = spec.get('voice')
+    if not voice:
+        raise ValueError('Choose and audition a voice provider first; there is no automatic speech fallback')
     provider = voice['provider']
-    if provider not in ('local','openai','elevenlabs','provided'):
-        raise ValueError('Use local, openai, elevenlabs, or provided audio')
+    if provider not in ('local','openai','elevenlabs','gemini','provided'):
+        raise ValueError('Use gemini, openai, elevenlabs, provided, or explicitly authorized local test audio')
     if provider == 'provided':
         raise ValueError('Put ID.wav files in an audio directory and use assemble directly')
+    if provider == 'local' and not args.allow_local_test:
+        raise ValueError('System speech is test-only and may sound robotic; use silent for technical tests or explicitly pass --allow-local-test')
     if provider == 'local' and not shutil.which('say'):
         raise ValueError('Local speech needs macOS say; supply WAV audio on other systems')
-    if provider in ('openai','elevenlabs'):
+    if provider in ('openai','elevenlabs','gemini'):
         if not args.allow_paid:
             raise ValueError('Paid voice requires prior budget/provider authorization and --allow-paid')
         _, env, _ = request_config(voice, spec['beats'][0]['narration'])
@@ -120,12 +164,17 @@ def voice_command(args):
             url, env, payload = request_config(voice,b['narration'])
             key = os.environ[env]
             headers = {'Content-Type':'application/json'}
-            headers['Authorization' if provider == 'openai' else 'xi-api-key'] = 'Bearer '+key if provider == 'openai' else key
+            header = {'openai':'Authorization','elevenlabs':'xi-api-key','gemini':'x-goog-api-key'}[provider]
+            headers[header] = 'Bearer '+key if provider == 'openai' else key
             request = urllib.request.Request(url, data=json.dumps(payload).encode(), headers=headers, method='POST')
-            source = out / (b['id']+'.mp3')
+            source = out / (b['id']+('.source.wav' if provider == 'gemini' else '.mp3'))
             try:
                 with urllib.request.urlopen(request,timeout=120) as response:
-                    source.write_bytes(response.read())
+                    response_data = response.read()
+                    if provider == 'gemini':
+                        write_gemini_wav(response_data,source)
+                    else:
+                        source.write_bytes(response_data)
             except urllib.error.HTTPError as e:
                 # Never print provider response bodies, headers, request objects or keys.
                 raise ValueError(f'{b["id"]}: provider returned HTTP {e.code}; no automatic retry') from None
@@ -229,16 +278,44 @@ def assemble(args):
     print(json.dumps(report,indent=2))
 
 
+def silent(args):
+    """Technical capture proof with no generated speech or audio track."""
+    manifest = Path(args.manifest).resolve()
+    spec = load(manifest)
+    inputs = [(manifest.parent / b['video']).resolve() for b in spec['beats']]
+    for video in inputs:
+        duration(video)
+        if not any(x['codec_type']=='video' for x in probe(video)['streams']):
+            raise ValueError('Capture has no video stream')
+    out = fresh(args.out)
+    width,height,fps = spec.get('width',1440),spec.get('height',900),spec.get('fps',30)
+    norm = f'scale={width}:{height}:force_original_aspect_ratio=decrease,pad={width}:{height}:(ow-iw)/2:(oh-ih)/2:color=white,setsar=1,fps={fps}'
+    for i,video in enumerate(inputs):
+        run([FFMPEG,'-v','error','-i',video,'-map','0:v:0','-vf',norm,'-c:v','libx264',
+             '-preset','fast','-crf','18','-pix_fmt','yuv420p','-an',out/f'{i:03}.mp4'])
+    (out/'concat.txt').write_text(''.join(f"file '{i:03}.mp4'\n" for i in range(len(inputs))))
+    run([FFMPEG,'-v','error','-f','concat','-safe','1','-i',out/'concat.txt','-c','copy',
+         '-an','-movflags','+faststart',out/'silent.mp4'])
+    if any(x['codec_type']=='audio' for x in probe(out/'silent.mp4')['streams']):
+        raise ValueError('Silent proof unexpectedly has audio')
+    (out/'review.json').write_text(json.dumps({'mode':'silent-technical-proof','duration':duration(out/'silent.mp4'),
+        'quality':'Basic capture assembly; no narration audition or polished camera/cursor treatment'},indent=2))
+    print(str(out/'silent.mp4'))
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='command',required=True)
     v = sub.add_parser('voice')
     v.add_argument('manifest'); v.add_argument('out'); v.add_argument('--allow-paid',action='store_true')
+    v.add_argument('--allow-local-test',action='store_true')
     a = sub.add_parser('assemble')
     a.add_argument('manifest'); a.add_argument('audio'); a.add_argument('out')
+    t = sub.add_parser('silent')
+    t.add_argument('manifest'); t.add_argument('out')
     args = parser.parse_args()
     try:
-        (voice_command if args.command == 'voice' else assemble)(args)
+        {'voice':voice_command,'assemble':assemble,'silent':silent}[args.command](args)
     except subprocess.CalledProcessError as e:
         print(f'Media command failed ({e.returncode}); verify installed tools and input files',file=sys.stderr)
         sys.exit(1)

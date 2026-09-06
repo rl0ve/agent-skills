@@ -23,3 +23,22 @@ Provider contracts: [OpenAI speech API](https://platform.openai.com/docs/api-ref
 Capture lifecycle: [Playwright videos](https://playwright.dev/docs/videos).
 Composition licensing: [Remotion license](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
 Model lists, price and account voice access must be rechecked at use time.
+
+## Expanded review after the quality target was clarified
+
+[Clueso official skills](https://github.com/clueso-ai/skills) were missed in the initial
+comparison. Its `polish-screen-demo`, `revoice-video`, and `screenshots-to-walkthrough`
+are substantially closer to polished walkthrough production. Skills: Apache-2.0;
+service/MCP remains proprietary and plan-dependent. [MCP docs](https://help.clueso.io/mcp-setup).
+
+[Recordly](https://recordly.dev/) links to [canonical upstream](https://github.com/webadderallorg/Recordly).
+Verified real cursor telemetry and editor export; no documented supported CLI found.
+The smoke-export hook is internal testing infrastructure. License: AGPL-3.0.
+[Dreamcut](https://dreamcut.ai/) is an editor/reference, not a tested adapter here.
+
+Additional narrow discovery queries combined `clueso`, `polish-screen-demo` and
+`screen demo` with skills.sh, Skillselion, SkillsMP and Skill Leaderboard domains.
+No indexed matches from those queries; that does not establish absence. Homepages
+of Skillselion, SkillsMP and Skill Leaderboard were opened; this was not an exhaustive
+internal catalog search. Exact Clueso upstream/MCP docs yielded the actionable result.
+No additional plugin was installed. Read polish.md and benchmarks.md for decisions.

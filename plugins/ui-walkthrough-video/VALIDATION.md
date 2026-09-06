@@ -11,3 +11,12 @@
 - Environment observations: the source project's old Playwright installation was incomplete; bundled Playwright worked. Sandboxed macOS say produced empty audio, caught by duration validation; authorized execution outside the sandbox succeeded.
 
 Independent review fixes: preserved supplied subtitle cues through capture (then recaptured and assembled); failed takes retain diagnosis manifests; media child processes do not inherit provider keys; unknown voice fields are rejected before export; capture assertions are explicitly the flow author's responsibility.
+
+## Version 1.1.0
+
+- Thirteen offline tests passed: Gemini request construction, PCM-to-WAV sample layout, invalid/empty/odd/truncated-response rejection, no implicit or unauthorized speech generation, provider-key isolation, and the existing caption/output tests.
+- Silent render executed against the previously verified two-beat Edge capture: H.264 output produced with no audio stream. No system speech or paid provider was called for this revision.
+- Google Gemini connectivity and perceptual voice quality remain untested. OpenAI, Gemini and ElevenLabs require a real listening audition before a quality claim.
+- Current provider documentation and dated Artificial Analysis native-voice rankings informed selection guidance; no comparative audio benchmark was run.
+- Clueso/Recordly/Remotion routing is documentation-based, not an executed integration or proof of visual parity. The included helpers remain basic capture/assembly.
+- The v1.0 local-speech result above is historical engineering evidence, not an accepted narration choice. The new default is silent technical testing.
