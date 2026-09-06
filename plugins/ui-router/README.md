@@ -41,3 +41,7 @@ a direction for substantial new designs: infer the brief, show meaningful visual
 alternatives only when needed, translate ordinary feedback, and establish a
 representative slice before expanding. Keep choices in project notes. Clear references
 and small edits stay direct; specialist skills own the craft and implementation.
+
+## Art direction and skill variants
+
+The router records the selected design lead’s provider and path, because same-named skills may apply different aesthetic rules. For expressive work, it preserves the product’s purpose separately from its old appearance and checks that the chosen palette and reference interactions appear in the result. See [the focused art-direction guidance](skills/route-ui-work/references/art-direction.md). This is not a universal ban on any palette or effect.

@@ -43,6 +43,12 @@ Use `huashu-design`, `garden-skills`, or `industrial-brutalist-ui` only when the
 
 The lead owns hierarchy and reading composition. Copy/voice layers remain separate and run only when rewriting was requested.
 
+Editorial is a content requirement, not a fixed visual style. For an explicitly
+expressive publication or dynamic atlas, retain readable articles while selecting one
+compatible expressive lead and the relevant Read/Experience concerns. Do not let the
+editorial label silently restore an old paper palette or exclude the requested motion.
+Apply [art-direction.md](art-direction.md) when purpose and appearance could diverge.
+
 ## Motion only
 
 **Canonical:** `emil-motion` → `jakub-feel-better` → `transitions-dev`

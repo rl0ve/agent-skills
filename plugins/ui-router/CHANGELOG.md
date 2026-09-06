@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.9.0 - 2026-09-06
+
+- Resolve same-named design skills by provider and exact path; do not silently equate originals with opinionated derivatives.
+- Add a focused art-direction check for aesthetic-rule conflicts, repeated palettes, and purpose-versus-styling preservation.
+- Keep expressive editorial work eligible for a compatible expressive lead, with separate checks for useful content and requested visual character.
+- Require reference traits to appear in the implemented experience; verify meaningful motion rather than accepting a reference list or working controls as sufficient.
+- Preserve explicit muted/earthy designs and small accepted-system edits; add policy review cases without claiming automated behavioral evaluation.
+
 ## 1.8.0 - 2026-09-06
 
 - Make Mobbin a primary inspiration source and check exposed reference tools before
