@@ -48,3 +48,10 @@ alone does not polish a recording. Verify runtime licensing for the user's conte
 Dreamcut: a relevant visual/editor reference; no tested integration is bundled here.
 The fallback FFmpeg assembler is explicitly basic. Do not represent any of these
 external routes as installed, exercised or benchmarked unless actually verified.
+
+## Implemented local route
+
+Version 1.2 implements an explicit capture/composition path with cursor motion, click
+pulses, camera easing, a rounded frame and external captions. See
+[the reproducible example](polished-example.md). This supplements the specialist
+routes above; it is not a Clueso or Recordly integration.

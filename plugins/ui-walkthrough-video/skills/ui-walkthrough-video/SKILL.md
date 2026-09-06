@@ -42,9 +42,13 @@ the requested visual quality. Clueso's official skills/MCP are a close documente
 fit. Recordly is an editor/capture route; do not rely on its internal smoke-export
 hook as a supported headless API. Remotion is a programmable composition option.
 
-The included Playwright/FFmpeg helpers provide **basic capture and assembly**. They
-do not implement automatic zooms, smoothed cursor telemetry or word-level forced
-alignment. A successful basic fixture is not evidence of polished-demo parity.
+The basic `capture.mjs` / `render.py` route remains available. Version 1.2 adds a
+working polished route: `capture-polished.mjs` records eased pointer movement, clicks
+and scroll events; `polish.py` renders explicit camera keyframes, a presentation
+frame and captions outside the UI. Read [polished-example.md](references/polished-example.md)
+for the tested existing-site recipe. Camera direction and action timing still need
+editorial choices; neither route performs word-level forced alignment or proves
+parity with an editing product.
 If specialist tools are unavailable, preserve footage and a concrete edit plan,
 report the missing capability, and continue only the portions the available tools
 can perform. Do not quietly downgrade a requested polished final into raw footage.
@@ -78,8 +82,12 @@ can perform. Do not quietly downgrade a requested polished final into raw footag
 ## Render
 
 Requirements: Node with Playwright, Python 3.10+, FFmpeg/ffprobe on PATH, and the
-chosen installed browser. Use project dependencies when present; do not silently
-install large browser/runtime packages. No paid API is needed for a silent capture test.
+chosen installed browser. The optional polished compositor also needs Pillow. Use project dependencies when present; do not silently
+install large browser/runtime packages. No paid API is needed for a silent capture test. Before asking for a key, follow any
+existing global credential-helper or secret-manager instructions. On a configured
+host, `ai-credentials status` reports availability without exposing values; use
+`ai-credentials run <provider> -- ...` for the synthesis process. Stored is not the
+same as authenticated or authorized for generation.
 
 ```sh
 # Run in a fresh output directory. Paths may be absolute.
@@ -98,7 +106,7 @@ Read [manifest.md](references/manifest.md) for supplied audio, explicit subtitle
 and custom capture backends. Change only narration/voice and reuse capture when
 revoicing; changed UI actions require recapture.
 
-The renderer retains the complete clip and narration, padding whichever is shorter.
+The basic renderer retains the complete clip and narration, padding whichever is shorter.
 It never silently truncates an action or speeds up speech. Large mismatches are QA
 warnings: shorten the copy, remove dead time with explicit cuts, split the beat or
 recapture. This preserves evidence but is not automatic semantic synchronization.
@@ -114,10 +122,16 @@ placement, narration timing, pauses, voice consistency and absence of private da
 Use natural-writing's spoken guidance if available, without making it a dependency.
 
 Deliver `walkthrough.mp4`, `silent.mp4`, `captions.srt`, `timeline.json`, individual
-clips, screenshots, narration audio and the editable manifest/flow. The MP4 has
-selectable captions; the SRT can also accompany the silent revoice version. For
+clips, screenshots, narration audio and the editable manifest/flow. The basic MP4 has
+selectable captions; the polished MP4 burns captions into the presentation canvas.
+The polished silent version retains those visible captions; edit the cues and rerender
+when revoicing with changed wording. The SRT is also exported separately. For
 burned captions, inspect FFmpeg filter support first; if libass is absent, use
 transparent browser-rendered text overlays or an available composition tool.
+
+Show a playable short example when asked for quality proof, using a real existing
+site if the target app is unavailable. State which visible effects were actually
+rendered, and which capabilities remain guidance or future work.
 
 Report tested providers and capture backend, technical checks, human/agent playback
 review and remaining limitations separately. Label silent technical proofs, synthetic fixtures,

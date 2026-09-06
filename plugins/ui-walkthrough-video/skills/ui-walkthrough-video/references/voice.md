@@ -71,3 +71,26 @@ Live as GPT-Live-1/mini; this is not the Speech endpoint. The
 [Realtime API](https://developers.openai.com/api/docs/models/gpt-realtime-2.1)
 is a separate conversational route and is not implemented by this helper.
 Do not infer mini-TTS quality from rankings for tts-1 or tts-1-hd.
+
+## Shared credentials and OpenRouter
+
+First consult global instructions for an existing Keychain/secret-manager helper.
+Check presence without revealing values, then run only synthesis under the selected
+provider's environment. Do not re-search old chats or copy a key into the project
+when a configured helper already supplies it. Credentials available on one Mac are
+not automatically available to a cloud worker. Never disable TLS validation to fix
+an environment issue; select a runtime with a valid CA store.
+
+`provider: "openrouter"` uses `OPENROUTER_API_KEY` and an explicit live catalog slug.
+The demonstrated route is `google/gemini-3.1-flash-tts-preview` with `Kore`. Gemini
+requires `response_format: pcm` through this endpoint; the adapter wraps its 24 kHz
+mono PCM16 output in WAV. Other models request MP3 and validate the content type
+and signature. General OpenRouter MP3 examples do not override a model-specific
+format requirement. Delivery instructions are mapped only for documented OpenAI
+provider options; unsupported instructions fail explicitly rather than being dropped.
+
+OpenRouter model availability differs from direct provider access. Its live speech
+catalog did not list OpenAI or ElevenLabs in this review despite documentation
+examples; do not promise availability based on a snippet. Verify model/voice access
+before generation. Metadata is saved before synthesis so partial takes retain their
+provider/model/voice settings. No automatic paid retries occur.

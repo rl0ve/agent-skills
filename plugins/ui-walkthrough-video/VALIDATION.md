@@ -20,3 +20,29 @@ Independent review fixes: preserved supplied subtitle cues through capture (then
 - Current provider documentation and dated Artificial Analysis native-voice rankings informed selection guidance; no comparative audio benchmark was run.
 - Clueso/Recordly/Remotion routing is documentation-based, not an executed integration or proof of visual parity. The included helpers remain basic capture/assembly.
 - The v1.0 local-speech result above is historical engineering evidence, not an accepted narration choice. The new default is silent technical testing.
+
+## Version 1.2.0
+
+- Executed three real Edge beats against the existing Design Router field guide:
+  changed Surface, changed Audience, then scrolled through the resulting route.
+  Each changed value and resulting page text was asserted; screenshots and actual
+  footage were reviewed. Native selects used a real click followed by selectOption.
+- Generated three narration clips with Google Gemini 3.1 Flash TTS, Kore, through
+  OpenRouter. The user approved the opening audition. This is not a provider
+  comparison or a claim that the complete soundtrack received a listening review.
+  Audio durations: 7.200s, 9.240s and 10.000s; measured peaks below clipping.
+- Rendered eased cursor movement, actual click pulses, explicit camera zooms, a
+  framed 1600×1000 canvas, chapter labels, progress, and scene-level captions below
+  the UI. The 30fps edit is planned at 30.033s (MP4 duration 30.055s), with 0.5s narration lead-in per beat and space
+  after speech. Exported narrated/silent MP4s, SRT and measured source offsets.
+- Capture used a 2880×1800 viewport with temporary 2× CSS zoom. Device scale factor
+  alone produced padded output on this backend and was rejected. Encoder startup
+  and tail buffers were added after a cold recording failed duration validation.
+- Nineteen focused offline tests and twelve repository tests passed. JavaScript
+  syntax and skill-frontmatter checks passed. Full final FFmpeg decode passed.
+- Actual frame review checked opening/ending states, selector zooms, cursor targets,
+  scroll result, caption placement and framing. The example demonstrates the
+  implemented effects, not Clueso/Recordly parity. Automatic camera decisions,
+  word alignment, semantic action retiming and an editing GUI remain unavailable.
+- A portable narration plan and capture recipe ship with the skill. Credentials,
+  private browser state, failed takes and personal paths are not packaged.

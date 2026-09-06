@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "width": 1440,
+  "height": 900,
+  "voice": {
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "quality": "natural; audition"
+  },
+  "beats": [
+    {
+      "id": "surface",
+      "title": "Choose the interface",
+      "narration": "Start with the kind of interface you're building. Here, we'll switch from a product app to a creative experience."
+    },
+    {
+      "id": "audience",
+      "title": "Make it fit the audience",
+      "narration": "Now choose the audience. A personal portfolio calls for a more expressive approach, and the recommended route changes with it."
+    },
+    {
+      "id": "route",
+      "title": "See what the route requires",
+      "narration": "The guide puts the recommended skills beside the tools it lists as available, with substitutions shown underneath. You can see what the route still needs."
+    }
+  ]
+}
