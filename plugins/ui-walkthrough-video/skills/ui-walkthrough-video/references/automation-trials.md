@@ -181,3 +181,30 @@ Sources: [Cap agent interface](https://cap.so/docs/agents),
 [Recordly source](https://github.com/webadderallorg/Recordly),
 [HyperFrames](https://github.com/heygen-com/hyperframes),
 [Remotion rendering](https://www.remotion.dev/docs/render).
+
+## Subsequent correction: wrong-window Cap take and missing narration
+
+The take published with the visible-arrow correction was not valid throughout:
+Cap began on the field guide, then captured an occluding Edge window. Early pointer
+frames did not reveal the later failure. Recordly’s simultaneous isolated-window
+recording remained correct. The earlier Cap verification claim was insufficient.
+
+A fresh simultaneous take kept the dedicated Edge page foregrounded throughout.
+Cursor journeys were shortened to about 0.4 seconds and scrolling to 0.6 seconds.
+A temporary startup marker aligned both source timelines; it was trimmed out.
+Cap’s project timeline and native export preserved the trim and presentation frame.
+Approved Kore audio was then added with FFmpeg to both native videos. This is
+external audio assembly, not native editor narration automation. Final exports:
+Cap 1460×1000, 30.100s; Recordly 1282×880, about 30.099s; both H.264/AAC at 60fps.
+
+Content checks compared 1,805 page samples at 60Hz between Cap and the isolated
+Recordly source. Forty-four scrolling samples exceeded the same-time difference
+threshold; matching within 0.25 seconds and inspecting the actual frames resolved
+those flags as capture-timing differences. Full decoding and final frame review
+covered opening, both result states, scrolling and ending. The soundtrack’s AAC
+packets matched the approved reference exactly. These checks do not establish
+universal window isolation or subjective playback acceptance.
+
+When only product-demo routes are requested, keep Custom, Cap and Recordly on that
+page and move framework showcases elsewhere. Do not compare narrated authored
+examples against unlabeled silent native takes as if they were equally finished.

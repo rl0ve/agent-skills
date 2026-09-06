@@ -7,12 +7,18 @@ upstream documentation. It is not a controlled quality benchmark.
 
 ## Recommendation
 
-Use **Cap for agent-controlled recording of real UI**, keep its native export when
+For a controlled foreground session, use **Cap for agent-controlled recording of real UI**, keep its native export when
 that meets the brief, and add **HyperFrames only when custom composition is useful**.
 Use **Gemini Kore through OpenRouter for narration when the approved voice and
 hosted generation are appropriate**. Reuse approved audio across visual revisions.
 
-This is the preferred production direction, with a remaining integration boundary:
+The tested Cap window selection did not isolate it from other foreground windows.
+A later review rejected the earlier take for capturing another Edge window. A fresh
+foreground-controlled take passed broader content checks. If the desktop must remain
+available for other work during recording, prefer an already verified isolated
+browser-capture path; do not assume Cap’s window ID makes that safe.
+
+This is a conditional production direction, with a remaining integration boundary:
 Cap recording/export and HyperFrames composition were tested separately. The
 HyperFrames trial used browser-captured source clips; a Cap-to-HyperFrames narrated
 pipeline has not yet been exercised as one complete workflow. The bundled custom
@@ -34,17 +40,19 @@ render or 60fps export does not establish viewer approval.
 
 | Approach | Fit rating and best use | Quality demonstrated here | Main advantage | Main drawback / evidence limit |
 |---|---|---|---|---|
-| Cap | **Strong** for agent-controlled native capture | Basic framed native export with a visible moving arrow; full decode and action/result frame review passed | Supported CLI produced an editable recording project and export | Native zoom/cursor editing was not demonstrated. The repaired arrow is baked into footage. Raw capture is not a finished narrated demo. |
+| Cap | **Good** for controlled foreground native capture | Corrected framed export with visible arrow and approved narration added in FFmpeg; decode, content comparison and frame review passed | Supported CLI produced an editable recording project and export | Another foreground window contaminated the earlier take. Keep the target unobscured and review the whole timeline. Native zoom/cursor editing was not demonstrated; arrow is baked in. |
 | HyperFrames | **Strong** for a custom explainer or authored composition | Framed narrated walkthrough with cursor/camera/captions; separate animated explainer also rendered | Flexible HTML/CSS/JavaScript composition and local rendering | Motion and layout still need direction. It is not a recorder or automatic editor. An initial render timed out before a working configuration was found. |
 | Remotion | **Strong** for reusable videos driven by data; **Good** for a single walkthrough | Narrated walkthrough plus two audience editions rendered from one React composition | Reusable React logic, parameterized content and predictable variants | More setup for a single recording. An initial render timed out; the FFmpeg-backed media component and sequential rendering succeeded. |
-| Recordly bundled capture engine | **Limited** for unattended production; **Good** as capture evidence | Native raw recording with moving arrow and real UI changes | Real desktop capture worked | Trial used an internal helper, not a supported editor automation interface. No finished editor export or editable native cursor layer was proven. |
+| Recordly bundled capture engine | **Limited** for unattended production; **Good** as capture evidence | Correct native window recording with arrow and real UI changes; approved narration added in FFmpeg | The tested engine isolated the selected window, including when Cap’s take was contaminated | Trial used an internal helper, not a supported editor automation interface. No native editor voiceover export or editable native cursor layer was proven. |
 | Bundled Playwright + Pillow/FFmpeg helper | **Good** as a reproducible fallback | Complete narrated 1600×1000 demo with composed 60fps cursor/camera | Explicit timing and editable source; works with the existing recipe | Source UI remains 25fps. Custom maintenance and editorial work; earlier motion was too slow and needed correction. |
 | Screen Studio | **Unrated** in these trials; candidate for a manually finished Mac demo | No local trial | Documented automatic zoom/cursor presentation tools | No executed comparison or verified general agent editing interface here; cannot call it the quality winner. |
 
-Cap is preferred for the supported automation path, not because the trial proved
-that it makes prettier videos than Recordly or Screen Studio. The native examples
-and authored framework examples differed in narration and editing scope, so their
-finish must not be treated as a fair product quality comparison.
+Cap is conditionally preferred for its supported automation path, not because the trial proved
+that it makes prettier videos than Recordly or Screen Studio. The first native examples
+were silent and differed in editing scope. The corrected product-demo page now
+contains only Custom, Cap and Recordly, all with the same approved narration;
+framework examples remain separate. Their native/editor/compositor boundaries
+still differ, so this is not a controlled product quality benchmark.
 
 ## Narration on a Mac
 

@@ -108,6 +108,9 @@ Independent review fixes: preserved supplied subtitle cues through capture (then
 
 ## Version 1.4.1
 
+**Superseded Cap result:** later review found another Edge window in this take.
+The early pointer checks below missed that contamination; see version 1.5.1.
+
 - Corrected the cursorless native examples after user review. Both Cap and Recordly
   recorded a standard visible arrow driven by actual browser pointer events. Four
   paced movements led to the two selects and route headings; state changes and
@@ -157,3 +160,20 @@ Independent review fixes: preserved supplied subtitle cues through capture (then
 - Twenty-nine focused offline tests passed, including eight new MiniMax tests and
   the existing renderer/compositor tests. Both skill frontmatter checks and relative
   documentation-link checks passed.
+
+## Version 1.5.1
+
+- Rejected the wrong-window Cap take and rerecorded Cap/Recordly with a dedicated
+  foreground window. Actual source comparison and final opening/action/scroll/ending
+  frames now show the intended field guide. See the automation-trial correction for
+  the 1,805 sampled-frame comparison and 44 resolved scroll-timing flags.
+- Added the approved Kore soundtrack to both native exports with FFmpeg. Final
+  H.264/AAC videos fully decoded and their audio packets matched the approved
+  reference. This is not native editor voiceover automation.
+- Simplified the local product-demo page to Custom, Cap and Recordly; framework
+  showcases remain separate. Replaced the Cap project download with the correct take.
+- Downgraded the Cap recommendation to conditional on controlled foreground
+  recording, and strengthened whole-timeline content and narration checks.
+- Edge playback verification passed for all three examples: playback advanced,
+  AAC decoded, player was unmuted at nonzero volume, and three caption cues were
+  available. Download paths resolved and the page fit a 390px viewport.
