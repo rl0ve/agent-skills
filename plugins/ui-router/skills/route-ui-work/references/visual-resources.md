@@ -1,6 +1,6 @@
 # Inspiration sources and implementation references
 
-Source map updated 2026-09-06; retained resource details were reviewed 2026-09-05. This map guides selection, not a mandatory browsing checklist. Check current tool availability and access in the host; recheck upstream terms before adding code or purchasing access. Public reference access does not grant rights to redistribute pictured assets.
+Source map updated 2026-09-06; new agent-access and component sources were checked against their official pages on that date; retained resource details were reviewed 2026-09-05. This map guides selection, not a mandatory browsing checklist. Check current tool availability and access in the host; recheck upstream terms before adding code or purchasing access. Public reference access does not grant rights to redistribute pictured assets.
 
 ## Choose by the work
 
@@ -10,9 +10,20 @@ that answer the actual design question. Expand only if they leave a gap. A defin
 small edit does not need a gallery search. Keep inspiration distinct from implementation
 examples: a library demo can explain a technique without supplying a product direction.
 
+Route by this project's purpose, audience and desired character. Research for an
+AI-assisted build is broader than research for an interface that exposes AI. Preserve
+consumer, editorial, creative, commerce, educational and experimental directions when
+they serve the work. A useful reference from another domain may supply typography,
+navigation or interaction without changing the project's audience. For decisions the
+user should see, follow [design-steering.md](design-steering.md)'s sample workflow.
+
 | Need | Start here | What to extract / when to expand |
 |---|---|---|
 | Real product screens and task flows | [Mobbin](https://mobbin.com/), including its available search tools | Screens for hierarchy and states; flows for onboarding, checkout, navigation and recovery; sections for website regions. Use the host's relevant tool when available. Still images alone do not establish animation timing or gesture behavior. |
+| Curated product direction, styles and journeys | [Refero](https://refero.design/), [official MCP documentation](https://doc.refero.design/mcp/getting-started) | Search sites/apps, styles, screens or flows for the specific question. Structured metadata helps selection; inspect the visual evidence before making visual claims. Use Refero or Mobbin first according to access and fit; do not require both. |
+| Component, section or theme samples with implementation candidates | [21st.dev](https://21st.dev/), [plans and agent access](https://21st.dev/plans) | Compare the relevant component or region, then inspect selected code and dependencies. Many authors and styles are represented; adapt one candidate to the project's system. See the implementation section below. |
+| AI activity, context, approvals and intervention | [Beautiful UI](https://www.beautifului.dev/); [AI Elements](https://elements.ai-sdk.dev/); [Agent Elements](https://agent-elements.21st.dev/docs) | Beautiful UI supplies concrete interface examples. AI Elements and Agent Elements supply implementation candidates. Select only when users encounter AI behavior, including creative or consumer AI experiences; do not make every AI-assisted build a chatbot. |
+| AI trust, control and failure behavior | [Google PAIR Guidebook](https://pair.withgoogle.com/guidebook-v2/) | Use relevant guidance for mental models, explanation, feedback, control and recovery. This is behavioral guidance, not a visual style or a requirement to run a workshop. |
 | Expressive website direction | [Recent.design](https://recent.design), [Landing.love](https://www.landing.love/) | Layout, type, art direction and recorded page behavior; Landing.love includes Three.js/WebGL categories. Follow the selected example to the live site. |
 | General interface exploration | [Collect UI](https://collectui.com), [Curations Supply](https://curations.supply/) | Alternative compositions and treatments; verify the original creator and whether the example is a concept or shipped product. |
 | SaaS marketing | [Saaspo](https://saaspo.com/), Mobbin website sections when available | Hierarchy, proof placement and section structure. A featured page is not evidence that its conversion approach works. |
@@ -32,6 +43,7 @@ one another; do not load them all or introduce their dependencies just to browse
 | How should a page unfold through scroll or navigation? | [Landing.love](https://www.landing.love/), [GSAP Showcase](https://gsap.com/showcase/); [Awwwards Animation](https://www.awwwards.com/websites/animation/) as an expansion | Scroll choreography, transitions, text reveals and pacing. Visit the original site; gallery recognition does not establish accessibility or suitability for a dense product UI. |
 | What unusual interaction could give this experience character? | [HOVERSTAT.ES](https://www.hoverstat.es/), [Codrops](https://tympanus.net/codrops/) | Experimental navigation, cursor response, image transitions and spatial effects. Codrops demos/tutorials can bridge reference and technique; inspect each demo and license before reuse. |
 | How can a small interaction feel precise and responsive? | [Rauno's Craft](https://rauno.me/craft), [Motion examples](https://motion.dev/examples) | Direct creator prototypes, layout changes, gesture response and transitions between states. Motion examples are also technical studies; some content is paid, so select an accessible example and verify its terms. |
+| Which transition should this component use? | [Transitions.dev](https://transitions.dev/), [optional skill documentation](https://transitions.dev/skill.html) | Replay focused state changes and compare candidates in context. The site offers CSS/React examples and an agent skill, with separate Pro content. Use existing motion skills first; verify scope and overlap before installing another. |
 | How should camera, objects and light respond in 3D? | [ThreeUI Community](https://threeui.com/), [Three.js examples](https://threejs.org/examples/); Recent.design / Awwwards for experience-level direction | Camera framing, picking, material response, scene transitions and how controls remain usable. Technical examples demonstrate mechanisms; adapt them to the product's task. |
 
 For motion, capture trigger, start state, movement, finish, interruption/reversal,
@@ -47,6 +59,14 @@ For Mobbin, select screen search, flow search or website-section search to match
 question. Inspect returned images and follow useful source links; metadata alone is
 not visual evidence. Query the behavior and audience, such as “desktop onboarding with
 an optional integration step,” rather than only a vague style word.
+
+For Refero, use sites/apps for discovery, styles for visual direction, screens for a
+concrete pattern, and flows for journey logic. For 21st.dev, use supported MCP/CLI
+access when available; do not replace an unavailable integration with bulk scraping.
+Official docs currently place Mobbin and Refero MCP behind eligible paid plans;
+21st.dev distinguishes public browsing and limited free copies from membership
+features including MCP/CLI search. Verify current entitlement and limits from the
+service instead of treating any of these as universally free or inaccessible.
 
 A paid catalog label does not mean a connected tool is unavailable. Use an already
 available tool within the user's authorized task and budget; confirm access from its
@@ -69,6 +89,49 @@ The 2026-09-06 additions (HOVERSTAT.ES, Codrops, Awwwards, GSAP Showcase, Rauno'
 Motion examples and Three.js examples) are independently selected references from
 their own sites, not attributed to either curator. Preserve source and creator credit;
 an attribution paragraph supplements the selection map rather than replacing it.
+
+Refero, 21st.dev, Beautiful UI, AI Elements, Agent Elements, Google PAIR and
+Transitions.dev were independently reviewed on 2026-09-06. These additions are not
+attributed to Meng or another curator without direct evidence. Godly redirected to
+Recent.design on that date; use the current destination rather than listing both as
+independent sources. A vendor capability claim does not prove comparative design
+quality, production readiness, conversion performance or use by a specific designer.
+
+## Component selection and adoption
+
+### 21st.dev: samples and selected component code
+
+- Sources: [catalog](https://21st.dev/), [plans](https://21st.dev/plans), [terms](https://21st.dev/terms).
+- Use the official live preview or supported tool to examine a candidate. Select a
+  component because it serves the project, not its popularity or a decorative demo.
+  Show a small comparison when a prominent choice is unresolved.
+- Inspect the selected component's license, authorship, dependencies, framework,
+  accessibility and responsive behavior before adoption. Keep required notices.
+  Marketplace preview media and metadata have separate restrictions from code;
+  source-code reuse does not authorize redistributing demo screenshots or videos.
+- Adapt the selected code to project tokens, typography, density, interaction states
+  and existing primitives. Do not add a second component system or change frameworks
+  just to reproduce a sample. Use the technique or an existing equivalent when that
+  better fits the project. Verify the result in its destination with realistic content.
+
+### AI-interface examples and implementation candidates
+
+- [Beautiful UI](https://www.beautifului.dev/) is a source of concrete examples for
+  activity, context, approvals, diffs and other interface regions. Treat it as visual
+  reference unless reusable code and its applicable license have been verified.
+- [AI Elements](https://elements.ai-sdk.dev/) documents a shadcn-based component
+  library with AI SDK integration. [Agent Elements](https://agent-elements.21st.dev/docs)
+  documents composable agent UI and shadcn registry installation. Inspect the chosen
+  component and current requirements; neither is a mandatory architecture or chat shell.
+- Choose the interaction according to the user's task: assistance inside an editor,
+  voice, generated media, a workflow canvas or a focused action may fit better than
+  chat. Keep these resources available across consumer, creative and business work.
+- Display actual application status, supported evidence and available controls. Do
+  not copy simulated demo progress, confidence scores or reasoning text into a working
+  product as if they were real. Cover cancellation, errors, recovery and intervention
+  where relevant; a styled approval component does not implement authorization.
+- Consult the relevant [PAIR guidance](https://pair.withgoogle.com/guidebook-v2/)
+  when trust, control or failure behavior is unresolved; keep that decision scoped.
 
 ## Free implementation choices
 

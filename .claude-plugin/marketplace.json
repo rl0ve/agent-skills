@@ -12,8 +12,8 @@
     {
       "name": "ui-router",
       "source": "./plugins/ui-router",
-      "description": "Route UI work through focused skill chains, design steering, connected inspiration sources, and motion references selected by behavior. Updated 2026-09-06.",
-      "version": "1.9.0",
+      "description": "Route UI work through focused skills, project-specific references, visual and component samples, iteration steering, and in-context verification. Updated 2026-09-06.",
+      "version": "1.10.0",
       "category": "Development",
       "tags": [
         "ui",

@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.10.0 - 2026-09-06
+
+- Show concrete references and component samples at useful decision points, including
+  focused comparisons during iterations and a working slice before costly expansion.
+- Infer audience and expression from each project; remove audience-only creative
+  mismatch gates and distinguish AI-assisted builds from AI-facing experiences.
+- Add Refero, 21st.dev, Beautiful UI, AI Elements, Agent Elements, PAIR and
+  Transitions.dev to the conditional resource map with access and reuse boundaries.
+- Check selected component code, adapt it to the existing system, and verify it in
+  context. Preserve accepted decisions and distinguish samples from working results.
+- Align the field guide, discovery descriptions and manifests; preserve the 1.9.0
+  art-direction and skill-identity improvements.
+
 ## 1.9.0 - 2026-09-06
 
 - Resolve same-named design skills by provider and exact path; do not silently equate originals with opinionated derivatives.

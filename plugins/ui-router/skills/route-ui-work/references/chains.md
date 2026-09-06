@@ -35,7 +35,7 @@ Choose one lead by medium:
 
 **Canonical layers:** chosen lead → `impeccable Experience` → `emil-motion` → `gsap-scrolltrigger`
 
-Use `huashu-design`, `garden-skills`, or `industrial-brutalist-ui` only when their specific output or aesthetic is requested. For `b2b-saas` or `internal-tool`, stop at the mismatch gate before choosing this chain.
+Use `huashu-design`, `garden-skills`, or `industrial-brutalist-ui` only when their specific output or aesthetic is requested. For business and internal tools, preserve throughput, legibility and task completion while honoring requested expression. Question a concrete conflict with those requirements; the audience label alone does not block this chain or require approval.
 
 ## Content / editorial
 

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "UI Router",
-    "version": "1.9.0",
+    "version": "1.10.0",
     "reviewed": "2026-09-06",
     "objective": "Route by surface and audience while showing the named canonical research chain separately from the installed executable chain."
   },
@@ -100,7 +100,7 @@
         "Nutlope/hallmark",
         "greensock/gsap-skills"
       ],
-      "guardrail": "Verify the selected skill variant, deliver the chosen palette and observed reference behaviors, and preserve performance, reduced motion and content access.",
+      "guardrail": "Verify the selected skill variant and deliver the chosen palette and reference behaviors. Preserve task completion, legibility, performance and reduced motion; audience alone does not block expression.",
       "canonical": [
         "Meng / ClaudeDesign / Awwwards",
         "Impeccable \u00b7 Experience",
@@ -535,9 +535,9 @@
           "note": "Density, tables, shortcuts, complete states."
         },
         "creative-expressive": {
-          "lead": "Mismatch gate",
-          "mode": "Ask first",
-          "note": "Offer restrained distinction before full expression."
+          "lead": "Expressive lead with task constraints",
+          "mode": "Experience + Operate",
+          "note": "Honor explicit expression; question only concrete conflicts with usability, performance or task completion."
         },
         "content-editorial": {
           "lead": "Read lead",
@@ -610,9 +610,9 @@
           "note": "Use only for a real portal or product workflow."
         },
         "creative-expressive": {
-          "lead": "Mismatch gate",
-          "mode": "Ask first",
-          "note": "Reserve for design or developer products."
+          "lead": "Expressive lead with task constraints",
+          "mode": "Experience + Persuade",
+          "note": "Honor explicit expression; question only concrete conflicts with usability, performance or task completion."
         },
         "content-editorial": {
           "lead": "Read lead",
@@ -685,9 +685,9 @@
           "note": "Throughput, predictability, density, no effects budget."
         },
         "creative-expressive": {
-          "lead": "Hard mismatch",
-          "mode": "Push back",
-          "note": "Recommend function-first restrained treatment."
+          "lead": "Expressive lead with task constraints",
+          "mode": "Experience + Operate",
+          "note": "Honor explicit expression; question only concrete conflicts with usability, performance or task completion."
         },
         "content-editorial": {
           "lead": "Read lead",
