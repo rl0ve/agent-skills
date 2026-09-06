@@ -48,9 +48,14 @@ finish must not be treated as a fair product quality comparison.
 
 ## Narration on a Mac
 
+Use [voice-narration](../../voice-narration/SKILL.md) for audio production and the
+current evidence-qualified provider comparison. [MiniMax routing](minimax.md) covers
+its desktop workspace versus API and its role in this pipeline.
+
 | Option | Current standing | Benefit | Cost / limitation | What was actually tested |
 |---|---|---|---|---|
 | Gemini Kore through OpenRouter | **Preferred established voice for this example** | Opening audition was approved and the same voice was used for the demo | Hosted generation requires an authorized account/budget; subjective acceptance is script-specific | Three clips generated. Opening audition approved; no cross-provider listening benchmark or complete soundtrack listening review established. |
+| MiniMax Speech | **Unrated; hosted audition candidate** | Speech can be generated within the existing workflow | API account/budget required; Desktop Design access is separate | Adapter and real media conversion tested offline; no live call or listening comparison. |
 | Chatterbox full model | **Unrated; first expressive local audition candidate** | Official Mac example selects MPS or CPU; reference-guided generation | Model/runtime setup and a suitable authorized voice reference; speed and naturalness on this machine unknown | Documentation reviewed only. No installed adapter, generated sample or listening comparison in this plugin. The Turbo CUDA example is a different path. |
 | Kokoro-82M | **Unrated; first lightweight local audition candidate** | Small model, preset voices and documented Apple Silicon guidance | Dependency/phonemizer setup; delivery and product-name pronunciation need listening review | Documentation reviewed only. No installed adapter, generated sample or listening comparison in this plugin. |
 | Qwen3-TTS CUDA deployment | **Excluded from this Mac default** | May suit a different hardware environment | NVIDIA/CUDA instructions do not apply to this setup; any Mac port requires a separate check | No local trial or adapter. This does not assert that every possible Mac implementation is unsupported. |

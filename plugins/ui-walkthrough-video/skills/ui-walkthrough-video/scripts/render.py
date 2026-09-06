@@ -21,7 +21,7 @@ FFPROBE = os.environ.get('FFPROBE', 'ffprobe')
 
 
 def run(args):
-    env = {k:v for k,v in os.environ.items() if k not in ('OPENAI_API_KEY','ELEVENLABS_API_KEY','GEMINI_API_KEY','GOOGLE_API_KEY','OPENROUTER_API_KEY')}
+    env = {k:v for k,v in os.environ.items() if k not in ('OPENAI_API_KEY','ELEVENLABS_API_KEY','GEMINI_API_KEY','GOOGLE_API_KEY','OPENROUTER_API_KEY','MINIMAX_API_KEY')}
     return subprocess.run([str(a) for a in args], check=True, capture_output=True, env=env).stdout
 
 
@@ -74,6 +74,20 @@ def fresh(out):
 
 def request_config(voice, text):
     provider = voice['provider']
+    if provider == 'minimax':
+        if set(voice) - {'provider','model','voice','quality','speed'}:
+            raise ValueError('MiniMax adapter supports model, voice and speed; other delivery controls are not mapped')
+        if not isinstance(voice.get('model'), str) or not voice['model'].strip() or not isinstance(voice.get('voice'), str) or not voice['voice'].strip():
+            raise ValueError('MiniMax needs an explicit model and voice ID')
+        if not isinstance(text, str) or not text.strip() or len(text) >= 10000:
+            raise ValueError('MiniMax synchronous speech needs nonempty text under 10000 characters per beat')
+        speed = voice.get('speed', 1)
+        if type(speed) not in (int, float) or not math.isfinite(speed) or not .5 <= speed <= 2:
+            raise ValueError('MiniMax speed must be a number from 0.5 to 2')
+        payload = {'model':voice['model'], 'text':text, 'stream':False, 'output_format':'hex',
+                   'voice_setting':{'voice_id':voice['voice'], 'speed':speed, 'vol':1, 'pitch':0},
+                   'audio_setting':{'sample_rate':32000, 'bitrate':128000, 'format':'mp3', 'channel':1}}
+        return 'https://api.minimax.io/v1/t2a_v2', 'MINIMAX_API_KEY', payload
     if provider == 'openai':
         payload = {'model':voice['model'], 'voice':voice['voice'], 'input':text, 'response_format':'mp3'}
         if voice.get('instructions'):
@@ -115,6 +129,26 @@ def request_config(voice, text):
     raise ValueError('Unknown network provider')
 
 
+def write_minimax_mp3(response_data, source):
+    """Decode completed non-streaming hex audio; never log provider payloads."""
+    try:
+        response = json.loads(response_data)
+        code = response['base_resp']['status_code']
+        data = response['data']
+        if type(code) is not int or code != 0 or not isinstance(data, dict) or data.get('status') != 2:
+            raise ValueError('MiniMax did not return completed speech; check usage before retrying')
+        encoded = data.get('audio')
+        if not isinstance(encoded, str) or not re.fullmatch(r'(?:[0-9a-fA-F]{2})+', encoded):
+            raise ValueError('MiniMax returned empty or invalid hex audio')
+        audio = bytes.fromhex(encoded)
+        mp3 = audio.startswith(b'ID3') or (len(audio)>2 and audio[0]==255 and audio[1]&224==224)
+        if not mp3 or response.get('extra_info', {}).get('audio_format', 'mp3') != 'mp3':
+            raise ValueError('MiniMax returned an unexpected audio format')
+    except (json.JSONDecodeError, KeyError, TypeError, AttributeError, UnicodeDecodeError):
+        raise ValueError('Invalid MiniMax response; provider payload not logged') from None
+    Path(source).write_bytes(audio)
+
+
 def write_gemini_wav(response_data, source):
     # generateContent's documented output is PCM16 little-endian mono, 24 kHz.
     try:
@@ -147,20 +181,22 @@ def voice_command(args):
     if not voice:
         raise ValueError('Choose and audition a voice provider first; there is no automatic speech fallback')
     provider = voice['provider']
-    if provider not in ('local','openai','elevenlabs','gemini','openrouter','provided'):
-        raise ValueError('Use gemini, openai, elevenlabs, openrouter, provided, or explicitly authorized local test audio')
+    if provider not in ('local','openai','elevenlabs','gemini','openrouter','minimax','provided'):
+        raise ValueError('Use gemini, openai, elevenlabs, openrouter, minimax, provided, or explicitly authorized local test audio')
     if provider == 'provided':
         raise ValueError('Put ID.wav files in an audio directory and use assemble directly')
     if provider == 'local' and not args.allow_local_test:
         raise ValueError('System speech is test-only and may sound robotic; use silent for technical tests or explicitly pass --allow-local-test')
     if provider == 'local' and not shutil.which('say'):
         raise ValueError('Local speech needs macOS say; supply WAV audio on other systems')
-    if provider in ('openai','elevenlabs','gemini','openrouter'):
+    if provider in ('openai','elevenlabs','gemini','openrouter','minimax'):
         if not args.allow_paid:
             raise ValueError('Paid voice requires prior budget/provider authorization and --allow-paid')
         _, env, _ = request_config(voice, spec['beats'][0]['narration'])
         if not os.environ.get(env):
             raise ValueError(f'Set {env} securely in the environment; never paste the key into chat')
+        for beat in spec['beats']:
+            request_config(voice, beat['narration'])
     out = fresh(args.out)
     (out/'voice.json').write_text(json.dumps(voice,indent=2))
     for b in spec['beats']:
@@ -177,15 +213,17 @@ def voice_command(args):
             url, env, payload = request_config(voice,b['narration'])
             key = os.environ[env]
             headers = {'Content-Type':'application/json'}
-            header = {'openai':'Authorization','elevenlabs':'xi-api-key','gemini':'x-goog-api-key','openrouter':'Authorization'}[provider]
-            headers[header] = 'Bearer '+key if provider in ('openai','openrouter') else key
+            header = {'openai':'Authorization','elevenlabs':'xi-api-key','gemini':'x-goog-api-key','openrouter':'Authorization','minimax':'Authorization'}[provider]
+            headers[header] = 'Bearer '+key if provider in ('openai','openrouter','minimax') else key
             request = urllib.request.Request(url, data=json.dumps(payload).encode(), headers=headers, method='POST')
             router_pcm = provider == 'openrouter' and payload.get('response_format') == 'pcm'
             source = out / (b['id']+('.source.wav' if provider == 'gemini' or router_pcm else '.mp3'))
             try:
                 with urllib.request.urlopen(request,timeout=120) as response:
                     response_data = response.read()
-                    if provider == 'gemini':
+                    if provider == 'minimax':
+                        write_minimax_mp3(response_data,source)
+                    elif provider == 'gemini':
                         write_gemini_wav(response_data,source)
                     elif router_pcm:
                         if response.headers.get_content_type().lower() not in ('audio/pcm','audio/l16','audio/x-pcm','application/octet-stream'):
