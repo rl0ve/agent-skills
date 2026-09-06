@@ -11,3 +11,7 @@ Source and fixture checks are in `VALIDATION.md`. Paid provider quality was not 
 Version 1.2 includes a working polished capture/composition route and an existing-site
 [example recipe](skills/ui-walkthrough-video/references/polished-example.md), with
 Google Kore narration through OpenRouter. Camera planning remains explicit.
+
+Version 1.3 separates cursor/camera animation at 60fps from source footage, adds
+conservative auto-framing and loudness normalization, and documents effect priorities
+and local/no-hosted-API routes. See the skill references for capability boundaries.

@@ -15,7 +15,7 @@ import sys
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import render as media
 
-FPS=30
+FPS=60
 CANVAS=(1600,1000)
 CARD=(144,88,1312,820)
 SAFE_ENV={k:v for k,v in os.environ.items() if k not in ('OPENAI_API_KEY','GEMINI_API_KEY','GOOGLE_API_KEY','OPENROUTER_API_KEY','ELEVENLABS_API_KEY')}
@@ -35,6 +35,59 @@ def camera_at(keys,time,width,height):
     x=max(0,min(width-cw,state['cx']-cw/2))
     y=max(0,min(height-ch,state['cy']-ch/2))
     return x,y,cw,ch
+
+def auto_camera(events,width,height,duration):
+    overview={'time':0,'zoom':1,'cx':width/2,'cy':height/2}
+    moves=[e for e in events if e['type']=='pointer']
+    # Early actions, scrolling and dispersed targets retain context. Avoid an
+    # automatic camera move competing with pointer movement or UI scrolling.
+    if not moves or moves[0]['start']<1.8 or any(e['type']=='scroll' for e in events):return [overview]
+    boxes=[e['bounds'] for e in moves]
+    left=min(b['x'] for b in boxes);right=max(b['x']+b['width'] for b in boxes)
+    top=min(b['y'] for b in boxes);bottom=max(b['y']+b['height'] for b in boxes)
+    if right-left>width*.55 or bottom-top>height*.55:return [overview]
+    finish=moves[0]['start']-.2
+    return [overview,dict(overview,time=max(.1,finish-1.6)),
+            {'time':finish,'zoom':1.15,'cx':(left+right)/2,'cy':(top+bottom)/2}]
+
+
+def pointer_at(events,time):
+    moves=[e for e in events if e['type']=='pointer']
+    if not moves:return None
+    position=moves[0]['from']
+    for event in moves:
+        if time<event['start']:break
+        if time>=event['end']:position=event['to'];continue
+        u=ease((time-event['start'])/(event['end']-event['start']))
+        position={k:event['from'][k]+(event['to'][k]-event['from'][k])*u for k in ('x','y')}
+        break
+    return position
+
+def draw_pointer(result,events,time,crop):
+    p=pointer_at(events,time)
+    if p is None:return
+    moves=[e for e in events if e['type']=='pointer']
+    first=moves[0]['start'];last=max([e['end'] for e in moves]+[e['time'] for e in events if e['type']=='click'])
+    opacity=min(1,max(0,(time-first+.15)/.2),max(0,(last+1.25-time)/.25))
+    if opacity<=0:return
+    x,y,cw,ch=crop
+    px=(p['x']-x)*CARD[2]/cw;py=(p['y']-y)*CARD[3]/ch
+    # Draw inside the card, so the cursor cannot float over captions or chrome.
+    layer=Image.new('RGBA',(CARD[2],CARD[3]));draw=ImageDraw.Draw(layer)
+    for event in events:
+        if event['type']!='click':continue
+        age=time-event['time']
+        if 0<=age<.45:
+            q=event['point'];cx=(q['x']-x)*CARD[2]/cw;cy=(q['y']-y)*CARD[3]/ch
+            r=9+23*ease(age/.45);alpha=round(190*(1-age/.45))
+            draw.ellipse((cx-r,cy-r,cx+r,cy+r),outline=(239,138,86,alpha),width=3)
+    shape=[(0,0),(0,25),(7,18),(13,30),(18,28),(12,16),(23,16)]
+    draw.polygon([(px+dx+1,py+dy+2) for dx,dy in shape],fill=(0,0,0,75))
+    points=[(px+dx,py+dy) for dx,dy in shape]
+    draw.polygon(points,fill='#fffef9');draw.line(points+[points[0]],fill='#152330',width=2,joint='curve')
+    if opacity<1:layer.putalpha(layer.getchannel('A').point(lambda a:round(a*opacity)))
+    result.paste(layer,(CARD[0],CARD[1]),layer)
+
 
 def validate_camera(keys,width,height,duration):
     if not keys or keys[0]['time']!=0:raise ValueError('Camera must begin at time 0')
@@ -113,7 +166,9 @@ def build(args):
         adur=media.duration(wav);duration=b['duration'];offset=b.get('audioOffset',.5)
         if duration<adur+offset:raise ValueError('Beat would truncate narration; extend capture duration')
         frames=round(duration*FPS);duration=frames/FPS
-        keys=b['camera'];validate_camera(keys,width,height,duration)
+        keys=b.get('camera') or auto_camera(b['events'],width,height,duration)
+        b['camera']=keys
+        validate_camera(keys,width,height,duration)
         start_frame=marker_end(source)
         if media.duration(source)+.05<start_frame/FPS+duration:raise ValueError('Capture shorter than planned visible beat')
         captions=b.get('captions') or [{'start':offset,'end':offset+adur,'text':b['narration']}]
@@ -151,8 +206,8 @@ def build(args):
         decoder=subprocess.Popen([media.FFMPEG,'-v','error','-i',str(source),'-vf',f'fps={FPS},trim=start_frame={start_frame},setpts=PTS-STARTPTS','-frames:v',str(frames),'-pix_fmt','rgb24','-f','rawvideo','-'],stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,env=SAFE_ENV)
         offset=b.get('audioOffset',.5)
         encoder=subprocess.Popen([media.FFMPEG,'-v','error','-f','rawvideo','-pix_fmt','rgb24','-s',f'{CANVAS[0]}x{CANVAS[1]}','-r',str(FPS),'-i','-',
-            '-i',str(wav),'-map','0:v:0','-map','1:a:0','-af',f'adelay={round(offset*1000)}:all=1,apad',
-            '-t',str(duration),'-c:v','libx264','-preset','fast','-crf','18','-pix_fmt','yuv420p','-c:a','aac','-b:a','192k','-ar','48000','-ac','2',str(clip)],stdin=subprocess.PIPE,stderr=subprocess.DEVNULL,env=SAFE_ENV)
+            '-i',str(wav),'-map','0:v:0','-map','1:a:0','-af',f'loudnorm=I=-16:TP=-1.5:LRA=11,adelay={round(offset*1000)}:all=1,apad',
+            '-t',str(duration),'-c:v','libx264','-preset','veryfast','-crf','18','-pix_fmt','yuv420p','-c:a','aac','-b:a','192k','-ar','48000','-ac','2',str(clip)],stdin=subprocess.PIPE,stderr=subprocess.DEVNULL,env=SAFE_ENV)
         try:
             for frame in range(frames):
                 data=read_frame(decoder.stdout,raw_width*raw_height*3)
@@ -161,6 +216,8 @@ def build(args):
                 raw=Image.frombytes('RGB',(raw_width,raw_height),data)
                 view=raw.transform((CARD[2],CARD[3]),Image.Transform.AFFINE,(cw*ratio/CARD[2],0,x*ratio,0,ch*ratio/CARD[3],y*ratio),resample=Image.Resampling.BICUBIC)
                 result=base.copy();result.paste(view,(CARD[0],CARD[1]),mask)
+                if spec.get('cursorRendering')=='compositor' and b.get('cursor',True):
+                    draw_pointer(result,b['events'],t,(x,y,cw,ch))
                 draw=ImageDraw.Draw(result)
                 draw.text((CARD[0],35),'UI WALKTHROUGH' if args.brand is None else args.brand,font=small,fill='#b4c4d0')
                 draw.text((CARD[0]+CARD[2],35),label,font=small,fill='#edf4f8',anchor='ra')
@@ -176,13 +233,13 @@ def build(args):
         if dcode or ecode:raise ValueError('Video decode/encode failed; inspect dependencies and input media')
         for cue in captions:
             srt.append(f'{cue_id}\n{media.tc(cursor+cue["start"])} --> {media.tc(cursor+cue["end"])}\n{cue["text"]}\n');cue_id+=1
-        timeline.append({'id':b['id'],'start':cursor,'duration':duration,'sourceTrimFrames':start_frame,'syncToleranceSeconds':1/FPS,'audioOffset':offset,'audioDuration':adur,'camera':b['camera'],'events':b['events'],'captionTiming':'scene-level; not word aligned'})
+        timeline.append({'id':b['id'],'start':cursor,'duration':duration,'sourceTrimFrames':start_frame,'syncToleranceSeconds':max(1/FPS,1/25),'audioOffset':offset,'audioDuration':adur,'camera':b['camera'],'events':b['events'],'captionTiming':'scene-level; not word aligned'})
         cursor+=duration
     (out/'concat.txt').write_text(''.join(f"file '{i:03}.mp4'\n" for i in range(len(prepared))))
     media.run([media.FFMPEG,'-v','error','-f','concat','-safe','1','-i',out/'concat.txt','-c','copy','-movflags','+faststart',out/'walkthrough.mp4'])
     media.run([media.FFMPEG,'-v','error','-i',out/'walkthrough.mp4','-map','0:v','-an','-c','copy','-movflags','+faststart',out/'silent.mp4'])
     (out/'captions.srt').write_text('\n'.join(srt))
-    result={'mode':'polished-demo','voice':spec.get('voice'),'beats':timeline,'expectedDuration':cursor,'actualDuration':media.duration(out/'walkthrough.mp4'),'dimensions':list(CANVAS),'fps':FPS,'review':'Technical render; inspect actual frames and listen before accepting quality'}
+    result={'mode':'polished-demo','voice':spec.get('voice'),'beats':timeline,'expectedDuration':cursor,'actualDuration':media.duration(out/'walkthrough.mp4'),'dimensions':list(CANVAS),'fps':FPS,'audioProcessing':'FFmpeg loudnorm -16 LUFS / -1.5 dBTP; no denoising or speech speed change','review':'Technical render; inspect actual frames and listen before accepting quality'}
     (out/'timeline.json').write_text(json.dumps(result,indent=2))
     media.run([media.FFMPEG,'-v','error','-i',out/'walkthrough.mp4','-f','null','-'])
     if abs(result['actualDuration']-cursor)>.1:raise ValueError('Final duration differs from plan')

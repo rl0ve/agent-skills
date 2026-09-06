@@ -55,3 +55,7 @@ Version 1.2 implements an explicit capture/composition path with cursor motion, 
 pulses, camera easing, a rounded frame and external captions. See
 [the reproducible example](polished-example.md). This supplements the specialist
 routes above; it is not a Clueso or Recordly integration.
+
+For the detailed product effect map, defaults and implementation gaps, read
+[effects.md](effects.md). For offline/local alternatives, including HyperFrames,
+Cap, Recordly and local speech models, read [local-tools.md](local-tools.md).
