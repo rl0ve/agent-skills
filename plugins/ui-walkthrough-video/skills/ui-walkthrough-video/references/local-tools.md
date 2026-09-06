@@ -2,7 +2,9 @@
 
 Reviewed 2026-09-05. These are task-fit recommendations from current official
 capabilities, not a measured head-to-head quality leaderboard. Run the same short
-capture and narration through finalists before declaring a winner.
+capture and narration through finalists before declaring a winner. A subsequent
+[executed automation trial](automation-trials.md) records native capture and framework
+composition results; it does not establish a general quality ranking.
 
 “No API” can mean no separate media API bill, or completely offline execution.
 Codex/Claude Code can orchestrate local programs through a CLI or local MCP; that

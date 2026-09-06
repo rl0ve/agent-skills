@@ -71,3 +71,37 @@ Independent review fixes: preserved supplied subtitle cues through capture (then
   Reviewed actual frames from all three scenes. Final measured true peak -2.12 dBTP.
   Twelve repository tests also passed (33 tests total). Perceptual motion acceptance
   remains the user's decision; no native-editor head-to-head trial was completed.
+
+## Version 1.4.0
+
+- Automatically recorded the same real Edge window with Cap 0.5.9 (bundled CLI
+  0.1.0) and Recordly 1.3.3's bundled ScreenCaptureKit helper. Final native flow
+  used focus/selectOption for two actual form values, asserted the results, and
+  visibly scrolled the route. No microphone, camera, system audio or upload.
+- Cap's supported CLI produced a valid editable project and a native framed export:
+  H.264 1460×1000 at 60fps, 31.583s. Its requested 1600×1000 bounding box preserved
+  capture aspect ratio. Export includes a silent AAC track. No native zoom/cursor
+  editing was demonstrated.
+- Recordly native raw MP4: H.264 2564×1760, 30.457s, variable cadence averaging
+  about 57.03fps. This is internal-engine recording, not Recordly editor automation.
+  All 1,738 source packet DTS values were ordered without duplicates. Full decoding
+  passed with the demuxer time base; initial null-muxer timestamp warnings were
+  output rounding rather than a demonstrated source defect.
+- Rejected Cap take 1 because an occluding Codex window appeared despite a correct
+  target ID. Foregrounding the dedicated Edge window fixed the capture. Rejected
+  take 2 because a native select popup remained visible despite passing page-value
+  assertions. Final take 3 avoided opening that popup. Reviewed action/result
+  frames and fully decoded both final native outputs.
+- HyperFrames 0.8.29 and Remotion 4.0.521 both produced actual narrated 1600×1000
+  60fps H.264/AAC exports from the same real clips and approved Kore audio. Measured
+  durations: 30.067s and 30.123s. Normal cursor, click pulses, camera, frame and
+  scene captions were authored in each framework. Full decode and actual frame
+  review passed. These are capability trials, not a general visual-quality benchmark.
+- HyperFrames final check: zero lint/runtime/layout/motion findings, 15/15 text
+  contrast checks passed. Single hardware-GPU worker completed in reported 39.2s;
+  an initial concurrent/software-fallback render timed out. Remotion TypeScript
+  check passed; an initial media-component render timed out, then the documented
+  FFmpeg-backed component completed when run without the other renderer.
+- Twelve repository release tests and skill frontmatter validation passed. No
+  implementation code changed in this release; tested recipes and failure-based
+  quality gates were the necessary plugin correction.
