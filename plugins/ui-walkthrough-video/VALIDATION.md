@@ -117,3 +117,20 @@ Independent review fixes: preserved supplied subtitle cues through capture (then
   intended selection/result targets. The arrow is baked into footage, not a native
   editor cursor layer. No additional narration or media API call.
 - Added a visible-pointer quality gate and documented the corrected capture recipe.
+
+## Version 1.4.2
+
+- Documentation release: preferred Mac workflow, evidence-qualified ratings and
+  explicit narration integration/audition status. No new speech model was installed
+  or generated; no runtime implementation changed.
+- Additional local examples: HyperFrames rendered an 18-second animated explainer;
+  Remotion rendered two 16-second audience editions from one React composition and
+  different input props. Actual frames, full decoding and browser playback were
+  checked. These demonstrate workflow fit, not comparative quality superiority.
+- The existing narrated helper example was rerendered with 0.4-second cursor moves
+  and 0.6-second camera transitions after feedback that movement was too slow.
+  Full decode and sampled frame checks passed; final MP4 is 30.088s, H.264
+  1600×1000 at 60fps. Click/result telemetry was preserved and AAC packets matched
+  the prior soundtrack. Revised viewer acceptance remains unverified.
+- Cap-to-HyperFrames narration is a recommendation assembled from separate tested
+  components, not a newly executed end-to-end pipeline.

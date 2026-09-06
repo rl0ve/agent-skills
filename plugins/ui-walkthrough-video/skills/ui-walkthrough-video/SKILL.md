@@ -36,6 +36,10 @@ selecting current models, [benchmarks.md](references/benchmarks.md).
 
 ## Choose the production route
 
+For a Mac workflow, read the [preferred approach and ratings](references/preferred-approach.md).
+Honor the actual host: do not recommend a CUDA/NVIDIA setup for a Mac. Keep local
+narration candidates explicitly untested until generated and auditioned.
+
 Read [effects.md](references/effects.md) for ranked automatic effects and conditional
 treatments. Read [local-tools.md](references/local-tools.md) when hosted media APIs
 are unwanted or agent-operated local tools are preferred. For automatic capture,

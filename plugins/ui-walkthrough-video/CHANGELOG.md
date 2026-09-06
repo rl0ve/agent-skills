@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.2 — 2026-09-06
+
+- Add the preferred Mac workflow, qualitative fit/quality assessment, pros/cons and explicit trial boundaries.
+- Separate established Kore narration from unintegrated, unauditioned Chatterbox/Kokoro candidates; exclude the NVIDIA route from the Mac default.
+- Document shorter cursor/camera timing and the remaining viewer-acceptance and combined-pipeline checks.
+
 ## 1.4.1 — 2026-09-06
 
 - Require a visible standard pointer for mouse-driven demos unless cursorless output is requested.

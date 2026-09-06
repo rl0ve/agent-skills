@@ -44,11 +44,17 @@ do not rank it above mature editors merely because it is already implemented.
 
 ## Local narration: separate audition ranking
 
+For the Mac workflow, use the [preferred approach](preferred-approach.md#narration-on-a-mac):
+Kore is the established auditioned example; Chatterbox and Kokoro remain untested
+local candidates. The table below includes another hardware environment for
+reference; its NVIDIA route is not part of the Mac recommendation. No Chatterbox,
+Kokoro or Qwen generation adapter is bundled.
+
 | Trial priority | Model | Best starting environment | Tradeoff |
 |---|---|---|---|
 | 1 on Apple Silicon | Chatterbox full model | Official MPS/CPU Mac example; local Python; MIT | Reference-guided voice and expressive controls; approve the reference and audition. Turbo's documented CUDA path is not the same Mac support claim. |
-| 1 on Windows with NVIDIA; 2 overall | Qwen3-TTS | Official CUDA deployment, 0.6B/1.7B downloadable models; Apache-2.0 | Voice design/cloning and custom voices. Official repository does not establish Mac/MPS support; community ports need separate validation. |
-| 3; first for minimum footprint | Kokoro-82M | Small local Python model, optional community ONNX/MLX runtimes; Apache | Fast preset-voice baseline. Small/fast does not mean the most natural delivery. |
+| Conditional: Windows with NVIDIA only | Qwen3-TTS | Official CUDA deployment, 0.6B/1.7B downloadable models; Apache-2.0 | Voice design/cloning and custom voices. Official repository does not establish Mac/MPS support; community ports need separate validation. |
+| First local audition for minimum footprint | Kokoro-82M | Small local Python model, optional community ONNX/MLX runtimes; Apache | Fast preset-voice baseline. Small/fast does not mean the most natural delivery. |
 
 All need initial model assets; none needs a hosted TTS call for local inference.
 Codex/Claude Code can invoke a script producing WAV, then measure its duration.
