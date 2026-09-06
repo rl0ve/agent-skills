@@ -66,9 +66,25 @@ validation alone does not prove correct content. Inspect a short test before a l
 keep the intended window unobscured, and stop/retry if another app contaminates footage.
 
 Playwright's browser pointer is not necessarily the OS cursor tracked by native capture.
-The trial hid the cursor rather than showing unrelated desktop pointer motion. Do not
-claim automatic cursor smoothing or click zooms from this trial. Use a real supported
-OS pointer route or separately verified pointer telemetry if those effects are needed.
+The initial cursorless recordings were rejected because their state changes were hard
+to follow. The corrected native takes captured a standard black arrow with a white
+outline, rendered in the page and updated by its real `pointermove` events. Playwright
+mouse movements were paced along eased paths; the controls were then focused and
+changed with `selectOption`. The arrow was visible in both native recordings.
+
+For this route, inject a fixed, `pointer-events:none` SVG layer into the dedicated
+demo page, update its transform from `event.clientX/clientY`, and drive the actual
+browser pointer through intermediate positions. Preserve those event timestamps.
+Check target visibility and viewport bounds before each move; a tall container's
+center may be offscreen, so prefer a specific visible control or heading. Hide the
+separate native OS cursor to avoid a duplicate. Never call a selection pulse an OS
+click when the operation was programmatic.
+
+This repairs the viewer's visible pointer, but bakes that pointer into native footage.
+It does not demonstrate Cap/Recordly's own cursor smoothing, zoom suggestions or
+editable cursor layers. Use separately verified native telemetry when those editing
+features are the goal. Inspect frames during movement, at selection, and after scroll;
+a visible pointer in one screenshot does not prove it moves in the recording.
 Native selects also exposed a second failure: page value assertions passed while an
 OS popup remained visible. The final trial focused each real select and used Playwright
 `selectOption` to change it without opening a native popup. This is programmatic control

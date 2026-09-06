@@ -105,3 +105,15 @@ Independent review fixes: preserved supplied subtitle cues through capture (then
 - Twelve repository release tests and skill frontmatter validation passed. No
   implementation code changed in this release; tested recipes and failure-based
   quality gates were the necessary plugin correction.
+
+## Version 1.4.1
+
+- Corrected the cursorless native examples after user review. Both Cap and Recordly
+  recorded a standard visible arrow driven by actual browser pointer events. Four
+  paced movements led to the two selects and route headings; state changes and
+  final scroll result were still asserted.
+- Recorded 307 trusted pointer events with 302 distinct positions. Actual native
+  frames showed different arrow positions during travel and the arrow at the
+  intended selection/result targets. The arrow is baked into footage, not a native
+  editor cursor layer. No additional narration or media API call.
+- Added a visible-pointer quality gate and documented the corrected capture recipe.
