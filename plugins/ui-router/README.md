@@ -26,7 +26,7 @@ For copy, the router does not stack humanizers. It selects one product/UX or mar
 
 ## Inspiration sources and visual resources
 
-The [resource map](skills/route-ui-work/references/visual-resources.md) selects inspiration by design question. Mobbin is a primary source for product screens, flows and website sections; the router checks exposed tools before assuming access is missing. Motion references cover product feedback, page/scroll choreography, experimental interactions, small details and spatial 3D. Sources include 60fps, Landing.love, Codrops, HOVERSTAT.ES, Awwwards, GSAP Showcase, Rauno’s Craft, Motion examples and Three.js examples.
+The [resource map](skills/route-ui-work/references/visual-resources.md) selects inspiration by design question. Mobbin and Refero cover product screens, styles and flows; 21st.dev adds component and section samples with selected implementation candidates. Beautiful UI, AI Elements, Agent Elements and PAIR apply when users encounter AI behavior. Motion references include Transitions.dev and the existing product, experimental and spatial sources. Inspect exposed tools and actual access before assuming a service is available or missing.
 
 Choose one or two relevant sources, inspect the actual visual or interaction evidence, and preserve creator credit. Clear references and small edits stay direct. ThreeUI Community, Toolcraft, Canvas UI and HyperFrames remain implementation choices; adding the map neither installs them nor grants paid access.
 
@@ -36,11 +36,19 @@ The routing skill checks current host capabilities and reads this map for releva
 
 ## Design direction without a prompting course
 
-[Design steering](skills/route-ui-work/references/design-steering.md) helps users choose
-a direction for substantial new designs: infer the brief, show meaningful visual
-alternatives only when needed, translate ordinary feedback, and establish a
-representative slice before expanding. Keep choices in project notes. Clear references
-and small edits stay direct; specialist skills own the craft and implementation.
+[Design steering](skills/route-ui-work/references/design-steering.md) makes unresolved
+choices visible: show two or three references at the start, component samples for a
+prominent choice, a working slice before expansion, or a focused comparison during a
+meaningful iteration. Label source examples and adaptations, recommend a direction,
+and use comparable content and playable motion where relevant. Clear references and
+small edits stay direct; these are useful decision points, not routine approval gates.
+
+Infer audience and character from each project. The user's profession and use of AI
+to build do not prescribe business software or an AI interface. Consumer, creative,
+editorial and experimental work retain their own direction; an audience label does
+not impose an aesthetic ceiling. Keep settled choices and selected component sources
+in project notes. Verify adapted components in context rather than treating a gallery
+demo as evidence that the finished product works.
 
 ## Art direction and skill variants
 

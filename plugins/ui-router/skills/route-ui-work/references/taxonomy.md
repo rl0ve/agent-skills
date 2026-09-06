@@ -2,6 +2,14 @@
 
 Classify the work itself first, then the people and purpose it serves.
 
+Infer these axes from the current project, not the user's profession, prior work or
+the tools used to build it. An AI-assisted build may be a publication, consumer tool,
+shop, game, artwork or business application; AI-interface patterns apply only when
+users encounter AI behavior. Treat the labels below as routing aids, not limits on
+the user's interests. For mixed projects, name the primary task and the secondary
+constraint; use the closest audience with a short qualification when none fits exactly.
+Expression and density are separate choices, and neither is fixed by an audience label.
+
 ## Surface axis
 
 | Surface | Use when | Do not confuse with |

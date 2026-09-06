@@ -2,6 +2,11 @@
 
 Read only the selected section.
 
+These are starting defaults for the current surface, not permanent user preferences
+or aesthetic ceilings. Explicit direction and actual task requirements take priority.
+Before questioning an expressive treatment, name the concrete usability conflict;
+do not infer one solely from an industry or audience label.
+
 ## b2b-saas
 
 - Preserve useful density; premium does not mean inflated whitespace.

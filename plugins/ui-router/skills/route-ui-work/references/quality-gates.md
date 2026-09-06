@@ -23,9 +23,23 @@ Apply every relevant gate before declaring the routed task complete.
 
 ## Reference fidelity
 
+- Apply exact visual matching only when fidelity is the specification. For inspiration,
+  check the selected traits and the project's constraints rather than copying the whole source.
 - Reference and render use the same viewport for comparison.
 - Colors, typography, spacing, radius, shadows, copy, and imagery are compared.
 - Every intentional deviation has a stated reason.
+
+## Samples and adopted components
+
+- When a consequential visual choice remained open, show a useful comparison or
+  report why evidence could not be displayed. Do not require samples for small edits.
+- Distinguish inspected source examples, proposed adaptations and working implementation.
+- Preserve accepted content, density and unrelated design decisions during iterations.
+- Check selected code's source, license, dependencies and framework compatibility.
+  A catalog's popularity or polished demo does not establish accessibility or fitness.
+- Inspect the adapted component with realistic content in its destination, including
+  relevant long-text, empty, loading and error states. Verify behavior and responsive
+  fit; a successful import or isolated demo is not completion evidence.
 
 ## Evidence
 

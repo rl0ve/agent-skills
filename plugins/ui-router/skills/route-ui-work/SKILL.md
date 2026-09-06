@@ -1,6 +1,6 @@
 ---
 name: route-ui-work
-description: Route UI, UX, frontend, design review, motion, design-to-code, component-library, and interface-copy work through the researched skill catalog and live installed capabilities. Includes visual-direction steering, connected inspiration sources, motion references, and implementation-resource selection. Honor explicitly named skills and avoid unnecessary stacking.
+description: Route UI, UX, frontend, design review, motion, design-to-code, component-library, and interface-copy work through the researched skill catalog and live installed capabilities. Includes project-specific reference research, visual and component samples at useful decision points, iteration steering, and implementation-resource selection. Honor explicitly named skills and avoid unnecessary stacking.
 compatibility: Codex and Claude Code with Agent Skills and plugin support.
 ---
 
@@ -11,7 +11,7 @@ Select one design lead, add only focused layers that own distinct concerns, and 
 ## Route the request
 
 1. Honor explicit skill, model, framework, aesthetic, reference, fidelity, and scope choices.
-2. Read [references/taxonomy.md](references/taxonomy.md) and classify one primary surface plus one audience.
+2. Read [references/taxonomy.md](references/taxonomy.md) and classify one primary surface plus one audience from this project's purpose. Do not inherit an audience or aesthetic from the user's profession, previous projects, or use of AI to build.
 3. Ask one short question only when two plausible classifications produce materially different work.
 4. Read only the matching surface in [references/chains.md](references/chains.md). Choose one named lead and zero to three focused layers. If prose is being created or rewritten, use one semantic or brand owner followed by one final editor; never stack multiple humanizers.
 5. Inspect capabilities in the current host, starting with skills and tools listed in this session. In Codex inspect project/user `.agents/skills`, `.codex/skills`, and enabled plugins as needed. In Claude Code inspect `.claude/skills` and `claude plugin list --json`. Record the chosen lead's provider and exact skill path, not only its display name: same-named originals and derivatives can contain different aesthetic rules. File presence does not prove an executable, MCP connection, or current-session skill is available.
@@ -23,9 +23,10 @@ Select one design lead, add only focused layers that own distinct concerns, and 
 
 ## Help the user establish design direction
 
-For a substantial new design or redesign with unresolved visual direction, read
+For a substantial new design or redesign with unresolved visual direction, a consequential
+component choice, or an iteration with materially different interpretations, read
 [references/design-steering.md](references/design-steering.md). Infer a short brief,
-make meaningful alternatives concrete when needed, translate plain-language feedback,
+show actual references or comparable previews when useful, translate plain-language feedback,
 and establish a representative slice before costly expansion. Keep chosen direction
 in project notes. Clear references, established systems and small defined edits stay
 direct; do not require a prompting method, questionnaire or repeated approval rounds.
@@ -57,7 +58,7 @@ For inspiration, substantial new visual work with unresolved direction, motion r
 - Start from the user's reference; otherwise choose one or two relevant references. Record what each contributes before implementing.
 - Use ThreeUI Community for procedural 3D examples, Toolcraft for a canvas with creative controls, and Canvas UI for a specific GPU effect. They are implementation resources, not additional aesthetic directors.
 - For an exported product video or animated explainer, consider HyperFrames' free local renderer. A website animation and a rendered video need different validation; select the output route first.
-- For product screens and flows consider Mobbin and inspect available connector tools before assuming paid access is missing. Use Component Gallery for component conventions; Recent.design, Landing.love or Collect UI for visual exploration; UNCUT for typography.
+- For product screens and flows consider Mobbin or Refero; inspect available connector tools before assuming access is missing. Consider 21st.dev for component samples and selected code, Component Gallery for conventions, and the resource map for expressive and editorial references. Select AI-interface examples only when the product exposes AI behavior.
 - Choose motion references by behavior: product feedback, page/scroll choreography, experimental interaction, small interaction details, or spatial 3D. Use the matching resource-map row and inspect actual motion; screenshots alone do not establish timing or gestures.
 - Keep dependencies project-local and add only what the chosen output needs. A resource catalog entry is not an installed plugin. A Blender workflow skill is not the Blender application.
 - Honor an explicit free-only constraint: public browsing and verified free code are eligible; paid MCPs, trials that require billing, and metered services are not. Existing user authorization covers the agreed install scope; do not ask again solely because an installer is plan-first.
@@ -88,7 +89,7 @@ Do not stack two broad aesthetic directors. A broad lead can pair with focused a
 
 ## Guardrails
 
-- **B2B/internal creative mismatch:** pause when a full creative-expressive route conflicts with a B2B SaaS or internal-tool audience.
+- **Audience fit:** identify a concrete conflict with task completion, legibility, performance or user intent before challenging expression. A B2B/internal label alone is not a mismatch; honor explicitly requested creative direction while preserving the task's requirements.
 - **Review stays read-only:** review or audit produces findings unless the user also requests fixes.
 - **Motion stays scoped:** motion-only work must not restyle layout, color, typography, or copy.
 - **Reference fidelity wins:** image-to-code follows extraction, capture, bounded implementation, and comparison.
