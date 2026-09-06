@@ -14,7 +14,7 @@ Select one design lead, add only focused layers that own distinct concerns, and 
 2. Read [references/taxonomy.md](references/taxonomy.md) and classify one primary surface plus one audience.
 3. Ask one short question only when two plausible classifications produce materially different work.
 4. Read only the matching surface in [references/chains.md](references/chains.md). Choose one named lead and zero to three focused layers. If prose is being created or rewritten, use one semantic or brand owner followed by one final editor; never stack multiple humanizers.
-5. Inspect capabilities in the current host, starting with skills and tools listed in this session. In Codex inspect project/user `.agents/skills`, `.codex/skills`, and enabled plugins as needed. In Claude Code inspect `.claude/skills` and `claude plugin list --json`. File presence does not prove an executable, MCP connection, or current-session skill is available.
+5. Inspect capabilities in the current host, starting with skills and tools listed in this session. In Codex inspect project/user `.agents/skills`, `.codex/skills`, and enabled plugins as needed. In Claude Code inspect `.claude/skills` and `claude plugin list --json`. Record the chosen lead's provider and exact skill path, not only its display name: same-named originals and derivatives can contain different aesthetic rules. File presence does not prove an executable, MCP connection, or current-session skill is available.
 6. Read matching entries in [references/catalog.md](references/catalog.md). Mark each canonical entry as `installed`, `equivalent available`, or `missing candidate`.
 7. Substitute transparently. Never rename Anthropic `frontend-design` or another fallback as Taste, Hallmark, Interface Design, or Impeccable.
 8. Read only the selected section in [references/audiences.md](references/audiences.md).
@@ -38,6 +38,17 @@ the unresolved decision concerns user evidence, product objects and states, inte
 flow, or visual presentation. Address the relevant layer with the existing lead;
 use a focused specialist only when needed. Do not impose a discovery workshop on a
 defined visual edit or invent user research to fill gaps.
+
+## Preserve the requested art direction
+
+For a named visual reference, expressive redesign, or feedback that the result feels
+generic, dull, too muted, or repeatedly uses the same palette, read
+[references/art-direction.md](references/art-direction.md). Resolve skill identity and
+conflicting aesthetic heuristics before implementation. Preserve product purpose
+separately from old styling, make the palette and motion choices explicit, and compare
+the implemented experience with the requested traits. An editorial audience does not
+imply a conservative newspaper aesthetic. A working flow and a list of references do
+not by themselves establish that the requested visual direction was delivered.
 
 ## Inspiration sources and visual resources
 
@@ -81,6 +92,7 @@ Do not stack two broad aesthetic directors. A broad lead can pair with focused a
 - **Review stays read-only:** review or audit produces findings unless the user also requests fixes.
 - **Motion stays scoped:** motion-only work must not restyle layout, color, typography, or copy.
 - **Reference fidelity wins:** image-to-code follows extraction, capture, bounded implementation, and comparison.
+- **Aesthetic heuristics are not user requirements:** generic anti-pattern advice must not veto the user's chosen colors, effects, or references. Resolve an incompatible lead or layer instead of silently substituting a safer house style.
 - **No silent installs:** present the source and exact plan; execute within explicit current or prior user authorization. Do not request the same permission again.
 - **No catalog erasure:** a locally available fallback does not remove the original named research entry.
 - **One final editor:** verify the companion Natural Writing plugin before routing to it. When available, it is the sole anti-slop and voice-preserving editor. If unavailable, select exactly one documented fallback; never run sequential humanizer passes.

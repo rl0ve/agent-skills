@@ -6,6 +6,10 @@ follow the existing direction and do the work. Do not add a questionnaire or opt
 round to every UI task. If the uncertainty is about users, objects or behavior,
 use [product-decisions.md](product-decisions.md) for that decision first.
 
+For a rejected palette, visual sameness, or a requested expressive reference that was
+lost in implementation, use [art-direction.md](art-direction.md) to diagnose lead
+identity, aesthetic-rule conflicts, and the distinction between purpose and styling.
+
 ## Turn context into a short brief
 
 Read the conversation, existing interface, project design notes and supplied references.

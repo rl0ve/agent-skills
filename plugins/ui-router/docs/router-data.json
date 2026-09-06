@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "UI Router",
-    "version": "1.8.0",
-    "reviewed": "2026-09-05",
+    "version": "1.9.0",
+    "reviewed": "2026-09-06",
     "objective": "Route by surface and audience while showing the named canonical research chain separately from the installed executable chain."
   },
   "surfaces": [
@@ -100,7 +100,7 @@
         "Nutlope/hallmark",
         "greensock/gsap-skills"
       ],
-      "guardrail": "Confirm audience fit. Budget performance, reduced motion, readability, and a clear fallback.",
+      "guardrail": "Verify the selected skill variant, deliver the chosen palette and observed reference behaviors, and preserve performance, reduced motion and content access.",
       "canonical": [
         "Meng / ClaudeDesign / Awwwards",
         "Impeccable \u00b7 Experience",
@@ -136,7 +136,7 @@
       "external": [
         "jakubkrehel/skills"
       ],
-      "guardrail": "Typography, semantics, navigation, citation, and a 60 to 75 character measure come before decoration.",
+      "guardrail": "Preserve reading, content and navigation. Editorial does not imply muted paper styling; honor an explicit expressive direction.",
       "canonical": [
         "Taste \u00b7 docs mode",
         "Impeccable \u00b7 Read",

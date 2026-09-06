@@ -14,6 +14,12 @@ Apply every relevant gate before declaring the routed task complete.
 - Text is legible, content does not overflow, and focus states are visible.
 - Keyboard, touch, loading, empty, error, disabled, success, and reduced-motion states are covered when relevant.
 - Responsive behavior adapts rather than hiding critical functionality.
+- The palette and overall visual character match the chosen direction. A repeated
+  house palette has a brief-based reason, rather than being the residue of generic
+  anti-pattern exclusions or an unrelated parent page's theme.
+- For expressive or reference-led work, check purpose and expression separately using
+  [art-direction.md](art-direction.md). Exercise the promised dynamic interaction;
+  correct behavior alone does not establish that the visual request was satisfied.
 
 ## Reference fidelity
 

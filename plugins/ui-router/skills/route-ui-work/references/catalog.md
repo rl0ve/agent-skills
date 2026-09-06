@@ -22,6 +22,11 @@ Status language:
 | `paperclip` | `getpaperclipai/paperclip` · `design-guide` | Opinionated product design guide | Alternative product/app lead | lower confidence |
 | `frontend-design` | `anthropics/skills`, or the equivalent plugin for your agent | General aesthetic frontend baseline | Installed fallback when a canonical specialist is unavailable | compatibility fallback |
 
+The `frontend-design` row identifies the original family, not every same-named local
+skill. Verify the selected provider and full instructions. Impeccable-derived and
+other variants may contain materially different palette or motion restrictions;
+record the actual variant and check it against [art-direction.md](art-direction.md).
+
 ## Persistent operating layer
 
 | Key | Upstream | Role | Use | Research status |
