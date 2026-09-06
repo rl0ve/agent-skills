@@ -50,6 +50,13 @@ not impose an aesthetic ceiling. Keep settled choices and selected component sou
 in project notes. Verify adapted components in context rather than treating a gallery
 demo as evidence that the finished product works.
 
+For substantial work, make composition and type decisions concrete, refine a few
+variables at a time, and inspect the whole requested surface. Custom motion and spatial
+work use [focused quality checks](skills/route-ui-work/references/motion-quality.md)
+for input alternatives, semantic text, animation ownership, lifecycle and observed
+performance. These practices come from a [dated repository review](docs/meng-ui-review-2026-09-06.md);
+they do not mandate a visual style, graphics stack or extra checks for static edits.
+
 ## Art direction and skill variants
 
 The router records the selected design lead’s provider and path, because same-named skills may apply different aesthetic rules. For expressive work, it preserves the product’s purpose separately from its old appearance and checks that the chosen palette and reference interactions appear in the result. See [the focused art-direction guidance](skills/route-ui-work/references/art-direction.md). This is not a universal ban on any palette or effect.

@@ -72,6 +72,19 @@ provide character; a lone model viewer, indiscriminate entrance fades or changin
 colors may not satisfy the brief. The right mechanism depends on the user's intent.
 Do not make text continuously move while someone is reading it.
 
+## Make the composition coherent
+
+Carry the chosen type, spacing, material and motion language through the requested
+surface. Let section rhythm follow content; consistency does not require repeating
+the hero or wrapping every region in the same card. Establish hierarchy and grouping
+through type and proximity before adding containers or labels to repair confusion.
+
+When a treatment feels arbitrary, name the element and its contribution to meaning,
+state, action or the chosen expression. Try removing it: if clarity improves without
+losing that contribution, leave it out instead of replacing it with another effect.
+Preserve purposeful ornament and personality; this is a diagnosis, not a minimalism
+rule or a ban on any technique.
+
 ## Verify purpose and expression separately
 
 Check the representative page and its meaningful interactions against both records:

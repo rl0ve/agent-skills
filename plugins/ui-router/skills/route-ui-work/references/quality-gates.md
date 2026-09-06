@@ -20,6 +20,12 @@ Apply every relevant gate before declaring the routed task complete.
 - For expressive or reference-led work, check purpose and expression separately using
   [art-direction.md](art-direction.md). Exercise the promised dynamic interaction;
   correct behavior alone does not establish that the visual request was satisfied.
+- Inspect the whole requested page or journey, including lower sections and the final
+  action or state. A polished hero does not establish completion of the rest. Compare
+  hierarchy, section rhythm and content quality across the surface; keep checks scoped
+  to the actual request for a small edit.
+- For substantial custom motion, scroll choreography, canvas or WebGL, apply
+  [motion-quality.md](motion-quality.md). Ordinary static edits do not need profiling.
 
 ## Reference fidelity
 

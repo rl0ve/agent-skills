@@ -13,7 +13,7 @@
       "name": "ui-router",
       "source": "./plugins/ui-router",
       "description": "Route UI work through focused skills, project-specific references, visual and component samples, iteration steering, and in-context verification. Updated 2026-09-06.",
-      "version": "1.10.0",
+      "version": "1.11.0",
       "category": "Development",
       "tags": [
         "ui",
