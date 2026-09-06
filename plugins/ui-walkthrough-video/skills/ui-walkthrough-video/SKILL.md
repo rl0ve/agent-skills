@@ -16,25 +16,20 @@ and project. Ask only for consequential missing choices. Default to a concise de
 of one complete task with readable UI at 1440×900 or 1920×1080. Respect the user's
 browser preference; the example uses Edge in a fresh automation profile.
 
-The quality target is natural narration and deliberate, polished screen-demo motion.
-Robotic delivery is a failed result, regardless of price or benchmark rank. Do not
-fall back to macOS/browser system speech when a key is missing. Use a silent technical
-proof while awaiting a voice choice or credentials.
-
-Offer this prompt when preferences are unknown:
-
-> Should I start with your preferred natural voice, or audition two or three current
-> candidates? You can specify a provider/model/voice, or a range such as “natural to
-> studio-quality, under $2,” plus language and delivery style.
-
-Honor known voice choices. Include Google Gemini TTS when Google is preferred;
-Kore is a useful explicit example, not proof of naturalness or a universal best voice.
-Audition the same 10–20 second passage, including a product name, number and transition.
-Reject flat prosody, metallic artifacts, exaggerated acting/accent, and audible joins.
-Never call an unheard sample natural. Read [voice.md](references/voice.md) and, when
-selecting current models, [benchmarks.md](references/benchmarks.md).
+The sibling [voice-narration skill](../voice-narration/SKILL.md) owns voice selection,
+auditions, generation and pronunciation. Use it when this task needs speech; reuse
+an already accepted voice and audio where appropriate. For audio-only requests,
+finish with that skill without starting capture. Technical video tests can remain
+silent. Preserve a natural narration target; do not substitute system speech when
+a preferred provider is unavailable.
 
 ## Choose the production route
+
+For MiniMax, read [where it fits](references/minimax.md). Its speech API may supply
+narration, and its generative models may supply illustrative assets. MiniMax Code
+and Desktop Design are separate workspaces; a named desktop-app request is not an
+API request. Generated media does not replace evidence of real UI interactions.
+
 
 For a Mac workflow, read the [preferred approach and ratings](references/preferred-approach.md).
 Honor the actual host: do not recommend a CUDA/NVIDIA setup for a Mac. Keep local

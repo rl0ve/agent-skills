@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.5.0 — 2026-09-06
+
+- Add a separate voice-narration skill for provider selection, auditions, audio-only output and revoicing, sharing the existing audio helper.
+- Add MiniMax synchronous speech support with explicit model/voice, validated hex MP3 responses, prior paid-call authorization and no automatic retries.
+- Distinguish MiniMax Desktop Design, coding, generated assets and speech API routes; retain real capture evidence and untested quality labels.
+- Move provider guidance under the narration skill, preserve existing links, and document complementary OpenAI speech and natural-writing skills.
+
 ## 1.4.2 — 2026-09-06
 
 - Add the preferred Mac workflow, qualitative fit/quality assessment, pros/cons and explicit trial boundaries.

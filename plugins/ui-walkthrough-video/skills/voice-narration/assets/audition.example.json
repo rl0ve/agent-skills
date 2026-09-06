@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "voice": {
+    "provider": "minimax",
+    "model": "speech-2.8-hd",
+    "voice": "English_expressive_narrator",
+    "quality": "audition; not yet rated",
+    "speed": 1
+  },
+  "beats": [
+    {
+      "id": "audition",
+      "narration": "Start with the kind of interface you are building. Design Router shows 3 choices. Next, choose your audience and review how the recommendation changes."
+    }
+  ]
+}

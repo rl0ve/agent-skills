@@ -35,6 +35,8 @@ Use provider `gemini` with explicit `model`, `voice` (e.g. Kore), and optional
 `instructions`. Its key is GEMINI_API_KEY. Use provider `elevenlabs` with explicit `model`, `voice` (voice ID), and optional
 `voice_settings` object. Use `local` with optional installed `voice` and words-per-
 minute `rate` (default 165). Use `provided` for another provider or human narration.
+Use provider `minimax` with explicit `model`, `voice` (voice ID), optional `speed`
+and securely supplied `MINIMAX_API_KEY`. See the [shared provider guidance](../../voice-narration/references/providers.md#minimax-speech-adapter) for controls and validation.
 The included adapter does not interpret `quality` as an API parameter; it records
 the target. It supports OpenAI `instructions` and `speed`, or ElevenLabs
 `voice_settings`, without claiming these are interchangeable.

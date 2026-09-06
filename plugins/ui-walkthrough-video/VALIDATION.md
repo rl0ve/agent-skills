@@ -134,3 +134,26 @@ Independent review fixes: preserved supplied subtitle cues through capture (then
   the prior soundtrack. Revised viewer acceptance remains unverified.
 - Cap-to-HyperFrames narration is a recommendation assembled from separate tested
   components, not a newly executed end-to-end pipeline.
+
+## Version 1.5.0
+
+- New voice-narration skill works with audio-only manifests and the shared helper;
+  browser/video fields are not required. Existing video commands remain in place.
+- MiniMax offline tests cover explicit request fields, unsupported options, text and
+  speed limits, complete-response validation, malformed/error/empty audio rejection,
+  preflight of the entire batch, missing credentials, paid-call authorization,
+  metadata preservation after errors, no automatic retry and media-child key isolation.
+- A mocked MiniMax HTTP response carried a locally generated MP3 tone through the
+  complete voice command and real FFmpeg/ffprobe conversion into measured 48kHz
+  stereo WAV. No speech model, paid API, voice clone or local model download was used.
+- MiniMax voice quality and live-account access remain untested. Desktop Design,
+  MiniMax Code, generated assets and official MCP integration are documentation-only
+  routes; no installation or app automation was performed.
+- Manual routing review: audio-only MiniMax uses the narration path; a silent UI proof
+  does not generate speech; a Mac/offline request does not select CUDA or a hosted
+  provider; named Desktop Design work does not imply API credentials; an existing
+  OpenAI speech specialist remains usable. These are instruction reviews, not live
+  trials of those applications or speech providers.
+- Twenty-nine focused offline tests passed, including eight new MiniMax tests and
+  the existing renderer/compositor tests. Both skill frontmatter checks and relative
+  documentation-link checks passed.

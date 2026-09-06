@@ -44,6 +44,10 @@ do not rank it above mature editors merely because it is already implemented.
 
 ## Local narration: separate audition ranking
 
+The [voice-narration skill](../../voice-narration/SKILL.md) owns the complete audio
+workflow. Its [provider comparison](../../voice-narration/references/choices.md)
+separates local candidates from hosted MiniMax and the existing voice providers.
+
 For the Mac workflow, use the [preferred approach](preferred-approach.md#narration-on-a-mac):
 Kore is the established auditioned example; Chatterbox and Kokoro remain untested
 local candidates. The table below includes another hardware environment for

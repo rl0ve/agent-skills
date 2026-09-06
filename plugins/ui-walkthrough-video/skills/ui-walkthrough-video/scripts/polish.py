@@ -18,7 +18,7 @@ import render as media
 FPS=60
 CANVAS=(1600,1000)
 CARD=(144,88,1312,820)
-SAFE_ENV={k:v for k,v in os.environ.items() if k not in ('OPENAI_API_KEY','GEMINI_API_KEY','GOOGLE_API_KEY','OPENROUTER_API_KEY','ELEVENLABS_API_KEY')}
+SAFE_ENV={k:v for k,v in os.environ.items() if k not in ('OPENAI_API_KEY','GEMINI_API_KEY','GOOGLE_API_KEY','OPENROUTER_API_KEY','ELEVENLABS_API_KEY','MINIMAX_API_KEY')}
 
 def ease(u):
     u=max(0,min(1,u))
