@@ -24,9 +24,11 @@ Claude Code's official `frontend-design` plugin is a strong installed fallback, 
 For copy, the router does not stack humanizers. It selects one product/UX or marketing semantics owner only when needed, then uses the companion `natural-writing` plugin as the sole final editor. Verify that companion separately; package presence is not installation evidence. If it is unavailable, select exactly one documented fallback.
 
 
-## Free visual resources
+## Inspiration sources and visual resources
 
-Version 1.5.0 includes a [resource map](skills/route-ui-work/references/visual-resources.md) for ThreeUI Community, Toolcraft, Canvas UI, HyperFrames, reference galleries, motion examples, and fonts. Resources are chosen by the task; adding the map does not install every library or grant access to paid MCPs.
+The [resource map](skills/route-ui-work/references/visual-resources.md) selects inspiration by design question. Mobbin is a primary source for product screens, flows and website sections; the router checks exposed tools before assuming access is missing. Motion references cover product feedback, page/scroll choreography, experimental interactions, small details and spatial 3D. Sources include 60fps, Landing.love, Codrops, HOVERSTAT.ES, Awwwards, GSAP Showcase, Rauno’s Craft, Motion examples and Three.js examples.
+
+Choose one or two relevant sources, inspect the actual visual or interaction evidence, and preserve creator credit. Clear references and small edits stay direct. ThreeUI Community, Toolcraft, Canvas UI and HyperFrames remain implementation choices; adding the map neither installs them nor grants paid access.
 
 For broad redesigns or unexplained usability problems, [product-decision routing](skills/route-ui-work/references/product-decisions.md) helps distinguish missing user evidence, unclear product objects, flow problems and surface polish. Defined visual edits stay direct. Completion checks distinguish an attractive preview from working behavior and a verified export.
 
