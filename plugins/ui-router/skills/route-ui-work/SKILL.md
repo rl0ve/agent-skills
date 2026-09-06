@@ -1,6 +1,6 @@
 ---
 name: route-ui-work
-description: Route UI, UX, frontend, design review, motion, design-to-code, component-library, and interface-copy work through the researched skill catalog and live installed capabilities. Includes visual-direction steering, free references, ThreeUI, Toolcraft, and Canvas UI selection. Honor explicitly named skills and avoid unnecessary stacking.
+description: Route UI, UX, frontend, design review, motion, design-to-code, component-library, and interface-copy work through the researched skill catalog and live installed capabilities. Includes visual-direction steering, connected inspiration sources, motion references, and implementation-resource selection. Honor explicitly named skills and avoid unnecessary stacking.
 compatibility: Codex and Claude Code with Agent Skills and plugin support.
 ---
 
@@ -39,14 +39,15 @@ flow, or visual presentation. Address the relevant layer with the existing lead;
 use a focused specialist only when needed. Do not impose a discovery workshop on a
 defined visual edit or invent user research to fill gaps.
 
-## Visual resources and free tools
+## Inspiration sources and visual resources
 
-For inspiration, expressive web work, creative editors, or component sourcing, read only the matching section of [references/visual-resources.md](references/visual-resources.md). It maps named sources to a concrete job, cost boundary, and current upstream documentation.
+For inspiration, substantial new visual work with unresolved direction, motion references, creative editors, or component sourcing, read only the matching section of [references/visual-resources.md](references/visual-resources.md). It maps sources to design questions, access boundaries and upstream documentation. Clear references, settled direction and small defined edits do not require a broad search.
 
 - Start from the user's reference; otherwise choose one or two relevant references. Record what each contributes before implementing.
 - Use ThreeUI Community for procedural 3D examples, Toolcraft for a canvas with creative controls, and Canvas UI for a specific GPU effect. They are implementation resources, not additional aesthetic directors.
 - For an exported product video or animated explainer, consider HyperFrames' free local renderer. A website animation and a rendered video need different validation; select the output route first.
-- For product components start with Component Gallery; for motion references use public 60fps examples; for expressive websites use Recent.design or Landing.love; for typography consider UNCUT.
+- For product screens and flows consider Mobbin and inspect available connector tools before assuming paid access is missing. Use Component Gallery for component conventions; Recent.design, Landing.love or Collect UI for visual exploration; UNCUT for typography.
+- Choose motion references by behavior: product feedback, page/scroll choreography, experimental interaction, small interaction details, or spatial 3D. Use the matching resource-map row and inspect actual motion; screenshots alone do not establish timing or gestures.
 - Keep dependencies project-local and add only what the chosen output needs. A resource catalog entry is not an installed plugin. A Blender workflow skill is not the Blender application.
 - Honor an explicit free-only constraint: public browsing and verified free code are eligible; paid MCPs, trials that require billing, and metered services are not. Existing user authorization covers the agreed install scope; do not ask again solely because an installer is plan-first.
 

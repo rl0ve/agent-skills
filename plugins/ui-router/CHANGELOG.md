@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.8.0 - 2026-09-06
+
+- Make Mobbin a primary inspiration source and check exposed reference tools before
+  assuming access is missing. Distinguish tool availability from successful retrieval.
+- Expand motion inspiration by behavior with direct creator work, experimental web
+  galleries, showcases and technical examples; retain separate curator attributions.
+- Require observed motion evidence for timing claims; keep research proportional and
+  preserve free-only constraints without treating every paid tool as unconnected.
+
+
 ## 1.7.0 - 2026-09-05
 
 - Add conditional design steering: infer the brief, show concrete alternatives when
