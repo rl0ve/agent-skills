@@ -7,6 +7,8 @@ The plugin contributes:
 
 - `/work-router:route-ai-work`, an auto-invocable policy with a table for each host;
 - `/work-router:check-routing-setup`, a manual, read-only environment check;
+- `/work-router:discover-capabilities`, focused discovery for missing capabilities;
+- `/work-router:deduplicate-skills`, installed-skill auditing and scoped consolidation;
 - six Claude subagents spanning Haiku, Sonnet, Opus, and Fable;
 - six separately installable Codex profiles spanning Sol, Terra, and Luna;
 - a Claude `PreToolUse` hook that blocks Bash commands containing `sudo`.
@@ -77,3 +79,17 @@ Use `work-router:discover-capabilities` to find missing skills, plugins or integ
 across domains. It checks installed capabilities, searches a conditional shortlist,
 and verifies upstream fit and overlap. UI Router adds design-specific checks when
 available; neither router requires the other.
+
+## Skill deduplication
+
+Use [deduplicate-skills](skills/deduplicate-skills/SKILL.md) for duplicate copies,
+same-name variants or competing broad owners across Codex. Its read-only inventory
+helper resolves aliases, checks supporting-file fingerprints and reads exact listed
+plugin versions. It separates disabled remnants from possible active conflicts and
+keeps prompt-time visibility unverified until checked in a fresh session.
+
+The skill produces a concrete keep/inspect/disable/archive plan. Authorized cleanup
+uses the smallest reversible control, with private backups and checks that retained
+skills and sibling tools still work. It does not automatically delete skills, remove
+a whole plugin because one skill overlaps, or turn a broad lead into a replacement
+for every specialist. No global audit runs during ordinary routed work.
