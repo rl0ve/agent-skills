@@ -24,6 +24,8 @@ because its video renderer is local.
 | 2 for an agent compositor; 1 in an existing React video stack | Remotion | Local CLI rendering, React compositions, reusable timelines and official agent skills | More engineering than a screen editor. Commercial licensing depends on use and organization. Not universally free or permissively licensed. |
 | 1 for flexible capture infrastructure | OBS + FFmpeg | Cross-platform local recording and programmatic control via bundled obs-websocket | Requires separate cursor telemetry and editing for Screen Studio-style results. Recording infrastructure, not an automatic polish engine. |
 
+For editable native delivery, follow [native-projects.md](native-projects.md): offer project + assets + MP4, rank Cap Studio first by documented editing breadth, and verify the actual layers in the saved project.
+
 For the smallest path to a polished screen recording, trial a dedicated native
 recorder before extending the bundled Playwright compositor. For repeatable branded
 variants or integration into a build workflow, trial HyperFrames/Remotion with real

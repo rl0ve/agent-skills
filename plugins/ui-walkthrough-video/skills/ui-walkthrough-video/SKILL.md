@@ -1,6 +1,6 @@
 ---
 name: ui-walkthrough-video
-description: Produce narrated UI walkthrough videos by navigating a real interface, recording scene clips and screenshots, and assembling synchronized voiceover, captions, and a silent revoice version. Use for product demos, tutorials, and portfolio walkthroughs.
+description: Produce narrated UI walkthroughs with real capture, synchronized voiceover and captions. Offer an editable Cap Studio or Recordly native project with source assets and an MP4, or rendered-only output. Use for product demos, tutorials, portfolio walkthroughs, and editable video handoffs.
 ---
 
 # UI walkthrough video
@@ -15,6 +15,16 @@ Infer audience, flow, approximate length, aspect ratio and browser from the requ
 and project. Ask only for consequential missing choices. Default to a concise demo
 of one complete task with readable UI at 1440×900 or 1920×1080. Respect the user's
 browser preference; the example uses Edge in a fresh automation profile.
+
+Resolve delivery before capture: offer **editable native project + source assets + MP4**
+alongside **MP4 only** when the preference is unknown. Reuse a known preference;
+when the user prefers an editable project, make that the default without asking again.
+For an editable Mac handoff, recommend Cap Studio first based on editing breadth,
+then Recordly for a preferred feature/workflow. Use Custom for code-level flexibility
+when it fits the delivery requirement, not merely because a helper already exists.
+Read [native-projects.md](references/native-projects.md) for the feature comparison,
+layer requirements and reopening checks. Keep native editor capability separate
+from the subset the available automation has actually verified.
 
 The sibling [voice-narration skill](../voice-narration/SKILL.md) owns voice selection,
 auditions, generation and pronunciation. Use it when this task needs speech; reuse
@@ -72,7 +82,7 @@ can perform. Do not quietly downgrade a requested polished final into raw footag
    alone does not authorize production approvals, sends, resets or submissions.
    Record authentication state only in ignored local files. Use synthetic data or
    mask private fields **throughout the recording**, not just in screenshots.
-3. Copy [the example flow](assets/flow.example.mjs) into the project and replace
+3. For the bundled browser-capture route, copy [the example flow](assets/flow.example.mjs) into the project and replace
    its fixture steps with observed selectors. Split long scenes into short beats.
    Each beat declares an ID and narration and implements `run(page)` with assertions
    on the observable result. The runner trusts these assertions; it cannot infer
@@ -83,15 +93,20 @@ can perform. Do not quietly downgrade a requested polished final into raw footag
    local app or fixture where direct Playwright automation is allowed, use the
    included capture runner. Do not bypass host browser restrictions. If capture
    tooling exposes snapshots only, label the output as a snapshot walkthrough.
-5. Record each beat separately and save evidence screenshots. Flush video by
+5. For the bundled browser-capture route, record each beat separately and save evidence screenshots. Flush video by
    closing its context before obtaining the file. Reuse a context between beats
    only by adapting the runner deliberately; the included runner isolates them,
    so each beat establishes its own starting state. Never reset shared data as an
    implicit setup step.
 
+For native delivery, use the selected recorder’s project workflow and preserve
+required cursor/click metadata; do not automatically substitute browser video or a
+baked-in arrow. Follow the same observed action plan and assertions. Store zooms,
+narration and other requested effects as native editor objects before exporting.
+
 ## Render
 
-Requirements: Node with Playwright, Python 3.10+, FFmpeg/ffprobe on PATH, and the
+Bundled-route requirements: Node with Playwright, Python 3.10+, FFmpeg/ffprobe on PATH, and the
 chosen installed browser. The optional polished compositor also needs Pillow. Use project dependencies when present; do not silently
 install large browser/runtime packages. No paid API is needed for a silent capture test. Before asking for a key, follow any
 existing global credential-helper or secret-manager instructions. On a configured
@@ -142,7 +157,14 @@ and verify non-silent decoded audio plus an unmuted player; label any intentiona
 silent technical take clearly. Keep unrelated framework showcases on their own page.
 Use natural-writing's spoken guidance if available, without making it a dependency.
 
-Deliver `walkthrough.mp4`, `silent.mp4`, `captions.srt`, `timeline.json`, individual
+For native delivery, package the project and every required source asset with the
+MP4. Reopen the packaged copy in the target editor, verify its media and representative
+zoom/audio edits, and test a short export. Report each requested layer as editable,
+baked into video, not included, or not verified. A project containing only raw footage
+is not a complete edited-project handoff. External FFmpeg finishing must be disclosed
+and must not be mistaken for native editable tracks. See [native-projects.md](references/native-projects.md).
+
+For the code-based route, deliver `walkthrough.mp4`, `silent.mp4`, `captions.srt`, `timeline.json`, individual
 clips, screenshots, narration audio and the editable manifest/flow. The basic MP4 has
 selectable captions; the polished MP4 burns captions into the presentation canvas.
 The polished silent version retains those visible captions; edit the cues and rerender

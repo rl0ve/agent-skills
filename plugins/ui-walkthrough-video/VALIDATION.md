@@ -177,3 +177,19 @@ The early pointer checks below missed that contamination; see version 1.5.1.
 - Edge playback verification passed for all three examples: playback advanced,
   AAC decoded, player was unmuted at nonzero volume, and three caption cues were
   available. Download paths resolved and the page fit a 390px viewport.
+
+## Version 1.5.2
+
+- Guidance-only update: native project + assets + MP4 is offered before capture and
+  a known editable-delivery preference is reused. No native editor integration,
+  new recording or migration of existing samples was executed for this release.
+- Cap Studio and Recordly editor features were checked against official product
+  documentation/source README on 2026-09-06. Cap ranks first by documented editing
+  breadth; this is not a measured visual-quality or full-automation result.
+- Manual instruction review: a known editable Mac request routes to Cap project
+  delivery without another format question; an explicit Recordly preference wins;
+  an MP4-only request permits the existing renderer. Baked cursor/external narration
+  are disclosed as non-native layers. Missing editor reopening cannot pass handoff QA.
+- Current example boundaries are preserved: Cap project has framing and trimming,
+  an empty zoom track, a baked arrow and externally added narration; no native
+  Recordly project was delivered. The new requirements do not relabel these as complete.
