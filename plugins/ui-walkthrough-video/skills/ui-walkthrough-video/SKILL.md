@@ -38,7 +38,12 @@ selecting current models, [benchmarks.md](references/benchmarks.md).
 
 Read [effects.md](references/effects.md) for ranked automatic effects and conditional
 treatments. Read [local-tools.md](references/local-tools.md) when hosted media APIs
-are unwanted or agent-operated local tools are preferred.
+are unwanted or agent-operated local tools are preferred. For automatic capture,
+framework composition, or refinement of an existing video, read the executed
+[automation trials](references/automation-trials.md). Cap has a tested supported CLI
+record/project/export path; Recordly's tested bundled engine is experimental and
+does not establish editor automation. Keep browser navigation, capture, composition
+and editor control as separate capabilities.
 
 Read [polish.md](references/polish.md) when the target resembles Recordly, Clueso,
 Dreamcut or Screen Studio. Prefer an available, authorized specialist that can meet

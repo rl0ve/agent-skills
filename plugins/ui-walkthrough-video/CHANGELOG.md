@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.0 — 2026-09-06
+
+- Record actual HyperFrames and Remotion composition trials, including working configurations, timed-out attempts, camera bounds and reuse limits.
+- Document executed Cap CLI capture/config/export and Recordly bundled-engine recording, keeping supported interfaces distinct from experimental internals.
+- Add automatic-work routing across browser navigation, native capture, composition, and refinement of existing videos; preserve editable sources and a normal cursor option.
+- Require recorded-pixel checks for window occlusion, persistent native menus and real pointer telemetry; successful page assertions or a valid capture project alone are insufficient.
+
 ## 1.3.0 — 2026-09-05
 
 - Separate cursor rendering from 25fps browser capture and animate cursor/camera at 60fps; fade idle pointers and retain real click timestamps.
