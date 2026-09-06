@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.1 — 2026-09-06
+
+- Require a visible standard pointer for mouse-driven demos unless cursorless output is requested.
+- Record the tested browser-pointer overlay repair for Cap/Recordly and distinguish baked footage from editable native cursor layers.
+
 ## 1.4.0 — 2026-09-06
 
 - Record actual HyperFrames and Remotion composition trials, including working configurations, timed-out attempts, camera bounds and reuse limits.

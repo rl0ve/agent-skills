@@ -130,6 +130,11 @@ Run a 2–3 beat proof before a long recording. Inspect screenshots and actual v
 at scene boundaries; listen to the audition and at least the opening, names, numbers
 and transitions. Check readable UI, unclipped text, correct state, cursor/callout
 placement, narration timing, pauses, voice consistency and absence of private data.
+For mouse-driven walkthroughs, show one clear standard pointer unless the user asks
+for a cursorless result. Hiding an untracked native cursor is not a complete repair:
+use verified cursor telemetry or a browser-rendered arrow following real automated
+pointer events, then inspect its motion in the actual recording. State when the arrow
+is baked into footage rather than editable as the recorder's native cursor layer.
 Use natural-writing's spoken guidance if available, without making it a dependency.
 
 Deliver `walkthrough.mp4`, `silent.mp4`, `captions.srt`, `timeline.json`, individual
