@@ -12,11 +12,18 @@ Source and fixture checks are in `VALIDATION.md`. The approved Kore audition was
 
 ## Preferred approach and ratings — Mac, no NVIDIA
 
-For a repeatable browser demo, **Custom + the approved Kore narration** is the most
-fully reproduced end-to-end route here. Choose **Cap + Kore** when an editable native
-recording project matters and the target window can stay in front. Use **Recordly**
-as an experimental native capture option. Add a composition framework only when
-custom motion or reusable video generation warrants the extra work.
+For a walkthrough you want to keep editing, prefer **Cap Studio project + source
+assets + MP4**, with the approved narration retained as an editable audio track.
+Offer native-project delivery when the preference is unknown; honor a known choice
+without asking again. **Recordly is the second native-editor candidate.** Custom
+is useful for bespoke code-driven effects and remains the most reproduced rendered
+example here, but it does not provide a Cap/Recordly editing timeline.
+
+Cap is first because its documented editing workflow is broader, including masks,
+multiple text/audio tracks, captions, scene layouts and presets. Recordly offers
+strong zoom/cursor styling, annotations and extensions. This is a capability-based
+recommendation, not a measured visual-quality ranking or proof of complete editor
+automation. Keep the capture/foreground limitations below in view.
 
 These are **workflow-fit ratings**, not a measured visual-quality leaderboard.
 “Strong” means preferred for the stated job, “Good” means useful with a clear
@@ -25,9 +32,9 @@ A working export does not establish viewer approval.
 
 | Approach | Preference / fit | Quality demonstrated | Pros | Cons / limits |
 |---|---|---|---|---|
-| Custom + Kore | **Good — preferred proven complete browser-demo recipe** | Narrated real-UI demo with visible cursor, click cues, camera framing and captions; motion shortened after feedback | Reproducible source, explicit timing, easy revisions | Source UI is 25fps despite 60fps cursor/camera composition; requires authored motion and maintenance |
-| Cap + Kore | **Good — preferred native editable project, conditional on foreground control** | Corrected native framed demo with visible arrow; approved narration added with FFmpeg | Supported recording/config/export CLI; editable Cap project | Earlier take captured another Edge window. Keep the target unobscured and verify the whole timeline. Native zoom/cursor/voiceover editing was not demonstrated |
-| Recordly + Kore | **Limited for unattended production; good native capture evidence** | Correct isolated-window capture with visible arrow; approved narration added with FFmpeg | Recorded the intended window when the earlier Cap take was contaminated | Uses an internal capture helper; no supported editor automation or native editor voiceover export was proven |
+| Custom + Kore | **Good — code-based fallback or bespoke effects** | Narrated real-UI demo with visible cursor, click cues, camera framing and captions; motion shortened after feedback | Reproducible source, explicit timing, easy revisions | Source UI is 25fps despite 60fps cursor/camera composition; requires authored motion and maintenance |
+| Cap + Kore | **First native-editor choice; conditional on capture and edit verification** | Corrected native framed demo with visible arrow; approved narration added with FFmpeg | Supported recording/config/export CLI; editable Cap project | Earlier take captured another Edge window. Keep the target unobscured and verify the whole timeline. Native zoom/cursor/voiceover editing was not demonstrated |
+| Recordly + Kore | **Second native-editor choice; editor automation still unverified** | Correct isolated-window capture with visible arrow; approved narration added with FFmpeg | Recorded the intended window when the earlier Cap take was contaminated | Uses an internal capture helper; no supported editor automation or native editor voiceover export was proven |
 | HyperFrames | **Strong — custom explainer or authored composition** | Actual animated explainer and narrated walkthrough exports | HTML/CSS/JavaScript motion authoring; local rendering | Does not operate or record the product; design work remains. Initial render configuration timed out |
 | Remotion | **Strong — reusable videos driven by data** | Actual walkthrough plus two audience editions from one React composition | Reusable components, structured inputs and application logic | More engineering for a single demo; initial render needed a media-component/configuration correction |
 | Screen Studio | **Unrated — candidate for a manually finished Mac demo** | No local trial | Documented screen-demo presentation features | No executed comparison or verified agent editing interface here |
@@ -36,6 +43,21 @@ HyperFrames and Remotion can produce the same visual result. Prefer HyperFrames
 for a custom motion piece; prefer Remotion when maintaining a video-generating
 application or using existing React components. Both can generate variants.
 Their showcases are separate from the product-demo comparison page.
+
+### Native editing comparison
+
+| Editing need | Cap Studio | Recordly | Preference |
+|---|---|---|---|
+| Zooms, cursor polish and basic timeline edits | Documented | Documented | Both are candidates |
+| Layered overlays, masks, captions and scene layouts | Broader documented track/layout tools | Annotations, styling and webcam controls; equivalent advanced tracks not established here | Cap first |
+| Specialized cursor effects and extensions | Cursor controls | Cursor effects and an extension system | Recordly when a specific feature fits |
+| Editable handoff | `.cap` plus assets | `.recordly` plus all referenced assets | Verify reopening and actual editability in either editor |
+
+The project must retain the promised zoom points, narration and other edits—not
+just the raw recording. The existing Cap example has framing/trimming only; its
+zoom track is empty and its narration/cursor are not native editable layers. The
+Recordly example has no native project. See the [native-project handoff requirements](skills/ui-walkthrough-video/references/native-projects.md)
+for the sourced feature comparison and the checks needed for a complete handoff.
 
 ### Narration preference
 

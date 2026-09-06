@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.2 — 2026-09-06
+
+- Offer native project + source assets + MP4 before capture; reuse an established editable-project preference.
+- Rank Cap Studio first for documented editing breadth and Recordly second, with an editing matrix directly in the README.
+- Require native zoom/audio/layer preservation, packaged-project reopening and edit checks; distinguish this target from the limited existing trials.
+
 ## 1.5.1 — 2026-09-06
 
 - Put the preference, quality evidence and pros/cons matrices directly in the README, including Mac narration status.

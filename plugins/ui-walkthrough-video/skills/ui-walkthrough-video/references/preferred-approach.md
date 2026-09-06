@@ -7,6 +7,14 @@ upstream documentation. It is not a controlled quality benchmark.
 
 ## Recommendation
 
+When later editing in a desktop editor matters, offer **native project + source
+assets + MP4** and honor that preference by default once known. Recommend **Cap
+Studio first for its broader documented editing workflow**, **Recordly second for
+a preferred feature or workflow**, and **Custom for code-based requirements**.
+See [the native editing comparison and handoff checks](native-projects.md). The
+project must preserve the actual zoom/audio/overlay edits; a raw capture project
+or a finished MP4 alone does not fulfill that requirement.
+
 For a controlled foreground session, use **Cap for agent-controlled recording of real UI**, keep its native export when
 that meets the brief, and add **HyperFrames only when custom composition is useful**.
 Use **Gemini Kore through OpenRouter for narration when the approved voice and

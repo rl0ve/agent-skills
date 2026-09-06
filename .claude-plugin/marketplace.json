@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Portable agent skills and Claude Code routing plugins: natural-writing (tool-neutral), plus model and UI routers.",
-    "version": "1.17.1"
+    "version": "1.17.2"
   },
   "plugins": [
     {
@@ -84,8 +84,8 @@
     {
       "name": "ui-walkthrough-video",
       "source": "./plugins/ui-walkthrough-video",
-      "description": "Record real UI walkthroughs or produce standalone voice narration; audition providers including MiniMax with explicit quality checks.",
-      "version": "1.5.1",
+      "description": "Create real UI walkthroughs with editable Cap/Recordly project handoffs, or standalone voice narration with explicit quality checks.",
+      "version": "1.5.2",
       "category": "Productivity",
       "tags": [
         "video",

@@ -9,8 +9,11 @@ These are executed capability trials, not a general visual-quality benchmark.
 - **A fresh browser walkthrough:** automate observed, asserted actions in a dedicated
   browser context. Capture and compose are separate steps; a renderer does not operate
   the product merely because it can animate a video of it.
-- **Native recording with an editable project:** prefer Cap's supported CLI when the
-  installed contract meets the task. Validate actual pixels before trusting a window ID.
+- **Native recording with an editable project:** prefer Cap Studio when its installed
+  editing features meet the brief; Recordly is the second candidate. Follow
+  [native-projects.md](native-projects.md). Capture/config/export alone does not prove
+  editable zooms, narration or cursor layers. Validate actual pixels and reopen the
+  complete packaged project before claiming an editable handoff.
 - **Repeatable authored edits:** use HyperFrames for HTML/CSS/GSAP composition or
   Remotion for a React timeline. Preserve real footage, narration, timed action evidence,
   captions and source. Prompt-driven changes still require code/render verification.

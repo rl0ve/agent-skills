@@ -1,7 +1,7 @@
 {
   "name": "ui-walkthrough-video",
-  "version": "1.5.1",
-  "description": "Record real UI walkthroughs and produce standalone narration with provider auditions, captions, and reusable revoice exports.",
+  "version": "1.5.2",
+  "description": "Record real UI walkthroughs with editable native-project handoffs, or produce standalone narration with provider auditions and reusable revoice exports.",
   "author": {
     "name": "rl0ve"
   },
