@@ -61,12 +61,11 @@ The upstream [Skills CLI](https://github.com/vercel-labs/skills) supports
 
 ## Resolve overlaps without blanket disabling
 
-Check actual enablement and loaded instructions; a stale config entry or a matching
-name alone is insufficient. Distinguish duplicate copies of the same skill, competing
-broad workflow owners, and complementary specialist skills or authenticated tools.
-Recommend keeping one maintained canonical router per concern. Do not disable a
-useful specialist merely because another plugin covers a related domain. A request
-to inspect conflicts is read-only; change enablement only within authorized scope.
+For a candidate install, compare its scope with existing owners and retain useful
+specialists. If the task is to consolidate installed skills or resolve competing
+owners, use [deduplicate-skills](../deduplicate-skills/SKILL.md) for the inventory,
+state checks and scoped cleanup. A matching name or stale config entry alone is
+insufficient; a request to inspect conflicts does not authorize disabling them.
 
 Treat outside advice as dated evidence. Verify the original source and current
 support before adopting a reusable method, and do not import promotional claims,

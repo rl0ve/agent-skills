@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.6.0 - 2026-09-06
+
+- Add `deduplicate-skills` as the owner for installed-skill consolidation across Codex,
+  separate from capability discovery and domain-specific routing.
+- Include a read-only inventory helper for explicit roots, exact listed plugin
+  versions, symlink aliases, entrypoint/bundle fingerprints and disable-rule evidence.
+- Distinguish copies, variants, competing owners, useful specialists and inactive
+  remnants. Require scoped cleanup decisions, private backups and state verification;
+  do not infer permission to remove skills from an audit request.
+- Route overlap cleanup from Work Router and capability discovery without adding a
+  global audit to ordinary tasks. Add regression checks for inventory safety and scope.
+
 ## 1.5.0 - 2026-09-05
 
 - Add cross-domain capability discovery with a conditional source shortlist, installed-first checks, and explicit ownership of overlapping skills/plugins.

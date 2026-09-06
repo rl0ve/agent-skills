@@ -29,6 +29,11 @@ It owns general discovery and overlap checks across domains. Use existing capabi
 first; do not search for new packages on every routed task. UI Router owns design
 selection when available; Work Router continues to own execution and model decisions.
 
+For existing skill duplication, competing workflow owners or a requested cleanup,
+use [deduplicate-skills](../deduplicate-skills/SKILL.md). It owns the cross-domain
+inventory, overlap decisions and scoped consolidation. Do not run a global audit on
+ordinary tasks or treat discovery of a duplicate as permission to remove it.
+
 ## Resolve timing without nagging
 
 Infer the mode when the user's language is clear:
