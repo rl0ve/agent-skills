@@ -179,6 +179,17 @@ Blender is an optional free application for custom models, renders or trailers. 
 4. Record concrete traits in the project's design notes: type scale, layout, color, materials, camera, lighting, spacing, and motion timing. Preserve source URLs and creator credit.
 5. Implement one bounded region or interaction and compare in the same viewport. Iterate on observed differences rather than claiming a single prompt ensures quality.
 
+For a full-page task, inspect lower sections as well as the hero. If a native full-page
+capture misses lazy content or scroll-triggered states, scroll through the page, let
+the relevant states settle, and recapture. Use stitched viewport slices only when
+needed; verify the result against the actual sections for gaps or duplicate fixed
+elements. A stitched image is appearance evidence, not proof of continuous motion.
+
+When adapting an outside reference, check that unrelated source branding, copy, claims,
+numbers, assets and hidden accessible labels have not leaked into the result. Preserve
+intentional credit and authorized fidelity. Shared design conventions alone do not
+establish copying; this check does not replace source and license review.
+
 Examples: Meng credits [Matthew Yu's sketchbook concept](https://x.com/MengTo/status/2085252340643430629) and recommends [Matthew's site](https://matthewyu.dev/). He describes [URL-based iteration](https://x.com/MengTo/status/2086025236009590900) and [video references for Three.js/Blender](https://x.com/MengTo/status/2092275643623109037). These are reference methods, not dependencies.
 
 ## Access boundaries and other candidates

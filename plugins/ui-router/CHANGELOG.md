@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.11.0 - 2026-09-06
+
+- Make concrete composition decisions and bounded visual refinement part of design
+  steering, preserving accepted direction and purposeful expression.
+- Check coherence across the requested surface and use a contextual removal test
+  instead of blanket bans on visual techniques.
+- Add conditional custom-motion checks for input alternatives, semantic text,
+  property ownership, lifecycle, quality budgets and observed performance.
+- Strengthen full-page capture and reference-adaptation checks when relevant.
+- Record selected practices from Meng To's Skills, threeui, kage and sketchbook
+  repositories, with pinned sources and manual applicability cases. No external
+  skill pack, code or preferred graphics stack is installed by this update.
+
 ## 1.10.0 - 2026-09-06
 
 - Show concrete references and component samples at useful decision points, including

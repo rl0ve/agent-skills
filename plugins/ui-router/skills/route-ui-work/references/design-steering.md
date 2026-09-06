@@ -25,6 +25,14 @@ implementation, accessibility) from choices that need the user's intent or taste
 (what matters most, recognizable brand traits, desired feeling, unacceptable changes).
 Explain a tradeoff in terms of what the user will see or be able to do.
 
+For substantial visual work, turn the direction into a few concrete decisions before
+polishing: the focal point and hierarchy, type roles and scale, spacing relationships,
+palette roles, imagery or material treatment, and the purpose of motion when present.
+Use real copy where available. Reuse the existing system and project notes; this is
+the agent's design work, not a template the user must fill out. For text-bearing
+generated art, verify the lettering; use separately typeset text when generation
+cannot preserve the required copy.
+
 ## Show samples at useful decision points
 
 Choose the smallest comparison that resolves the actual decision. Offer visual
@@ -93,6 +101,11 @@ If an iteration changes direction or repeated corrections show that the current
 interpretation is failing, return to a small comparison of the disputed region.
 Keep the accepted baseline visible and explain the intended difference. Do not
 restart research across the whole product or reopen unrelated settled choices.
+
+Refine one or two consequential variables at a time when diagnosing visual feedback,
+so the comparison reveals what helped. For a material or motion study, a few temporary
+preview controls can make alternatives easier to judge; keep them out of the finished
+interface unless adjusting those properties is itself part of the user's task.
 
 When several interpretations would lead to materially different work, offer the most
 likely interpretation with a focused question or small comparison. Otherwise make
