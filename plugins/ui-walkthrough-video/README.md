@@ -7,3 +7,7 @@ Install from the rl0ve-agent-skills marketplace with `codex plugin add ui-walkth
 The standalone skill is `skills/ui-walkthrough-video`. Read its SKILL.md for the flow, voice prompt and test commands. Runtime requirements: Node + Playwright, an installed browser, Python 3.10+, FFmpeg and ffprobe. Google Gemini, OpenAI and ElevenLabs need their respective API keys. Technical tests default to silent output; local system speech requires explicit test opt-in. Other providers may supply WAV files.
 
 Source and fixture checks are in `VALIDATION.md`. Paid provider quality was not auditioned for this release.
+
+Version 1.2 includes a working polished capture/composition route and an existing-site
+[example recipe](skills/ui-walkthrough-video/references/polished-example.md), with
+Google Kore narration through OpenRouter. Camera planning remains explicit.

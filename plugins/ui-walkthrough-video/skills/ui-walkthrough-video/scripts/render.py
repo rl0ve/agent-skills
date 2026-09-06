@@ -21,7 +21,7 @@ FFPROBE = os.environ.get('FFPROBE', 'ffprobe')
 
 
 def run(args):
-    env = {k:v for k,v in os.environ.items() if k not in ('OPENAI_API_KEY','ELEVENLABS_API_KEY','GEMINI_API_KEY','GOOGLE_API_KEY')}
+    env = {k:v for k,v in os.environ.items() if k not in ('OPENAI_API_KEY','ELEVENLABS_API_KEY','GEMINI_API_KEY','GOOGLE_API_KEY','OPENROUTER_API_KEY')}
     return subprocess.run([str(a) for a in args], check=True, capture_output=True, env=env).stdout
 
 
@@ -89,6 +89,18 @@ def request_config(voice, text):
             payload['voice_settings'] = voice['voice_settings']
         return ('https://api.elevenlabs.io/v1/text-to-speech/' + urllib.parse.quote(voice['voice'],safe='') + '?output_format=mp3_44100_128',
                 'ELEVENLABS_API_KEY', payload)
+    if provider == 'openrouter':
+        if not re.fullmatch(r'[a-zA-Z0-9._:-]+/[a-zA-Z0-9._:-]+', voice['model']):
+            raise ValueError('OpenRouter needs an explicit provider/model slug from its live speech catalog')
+        payload = {'model':voice['model'], 'voice':voice['voice'], 'input':text,
+                   'response_format':'pcm' if voice['model'].startswith('google/gemini-') else 'mp3'}
+        if 'speed' in voice:
+            payload['speed'] = voice['speed']
+        if voice.get('instructions'):
+            if not voice['model'].startswith('openai/'):
+                raise ValueError('This adapter only maps OpenRouter delivery instructions for OpenAI; use documented provider options or a direct adapter for other models')
+            payload['provider'] = {'options':{'openai':{'instructions':voice['instructions']}}}
+        return 'https://openrouter.ai/api/v1/audio/speech', 'OPENROUTER_API_KEY', payload
     if provider == 'gemini':
         if not re.fullmatch(r'[a-zA-Z0-9._-]+', voice['model']):
             raise ValueError('Invalid Gemini model identifier')
@@ -135,21 +147,22 @@ def voice_command(args):
     if not voice:
         raise ValueError('Choose and audition a voice provider first; there is no automatic speech fallback')
     provider = voice['provider']
-    if provider not in ('local','openai','elevenlabs','gemini','provided'):
-        raise ValueError('Use gemini, openai, elevenlabs, provided, or explicitly authorized local test audio')
+    if provider not in ('local','openai','elevenlabs','gemini','openrouter','provided'):
+        raise ValueError('Use gemini, openai, elevenlabs, openrouter, provided, or explicitly authorized local test audio')
     if provider == 'provided':
         raise ValueError('Put ID.wav files in an audio directory and use assemble directly')
     if provider == 'local' and not args.allow_local_test:
         raise ValueError('System speech is test-only and may sound robotic; use silent for technical tests or explicitly pass --allow-local-test')
     if provider == 'local' and not shutil.which('say'):
         raise ValueError('Local speech needs macOS say; supply WAV audio on other systems')
-    if provider in ('openai','elevenlabs','gemini'):
+    if provider in ('openai','elevenlabs','gemini','openrouter'):
         if not args.allow_paid:
             raise ValueError('Paid voice requires prior budget/provider authorization and --allow-paid')
         _, env, _ = request_config(voice, spec['beats'][0]['narration'])
         if not os.environ.get(env):
             raise ValueError(f'Set {env} securely in the environment; never paste the key into chat')
     out = fresh(args.out)
+    (out/'voice.json').write_text(json.dumps(voice,indent=2))
     for b in spec['beats']:
         target = out / (b['id'] + '.wav')
         if provider == 'local':
@@ -164,16 +177,29 @@ def voice_command(args):
             url, env, payload = request_config(voice,b['narration'])
             key = os.environ[env]
             headers = {'Content-Type':'application/json'}
-            header = {'openai':'Authorization','elevenlabs':'xi-api-key','gemini':'x-goog-api-key'}[provider]
-            headers[header] = 'Bearer '+key if provider == 'openai' else key
+            header = {'openai':'Authorization','elevenlabs':'xi-api-key','gemini':'x-goog-api-key','openrouter':'Authorization'}[provider]
+            headers[header] = 'Bearer '+key if provider in ('openai','openrouter') else key
             request = urllib.request.Request(url, data=json.dumps(payload).encode(), headers=headers, method='POST')
-            source = out / (b['id']+('.source.wav' if provider == 'gemini' else '.mp3'))
+            router_pcm = provider == 'openrouter' and payload.get('response_format') == 'pcm'
+            source = out / (b['id']+('.source.wav' if provider == 'gemini' or router_pcm else '.mp3'))
             try:
                 with urllib.request.urlopen(request,timeout=120) as response:
                     response_data = response.read()
                     if provider == 'gemini':
                         write_gemini_wav(response_data,source)
+                    elif router_pcm:
+                        if response.headers.get_content_type().lower() not in ('audio/pcm','audio/l16','audio/x-pcm','application/octet-stream'):
+                            raise ValueError('OpenRouter returned a non-PCM content type')
+                        if not response_data or len(response_data) % 2:
+                            raise ValueError('OpenRouter returned invalid PCM audio')
+                        with wave.open(str(source),'wb') as wav:
+                            wav.setnchannels(1); wav.setsampwidth(2); wav.setframerate(24000)
+                            wav.writeframes(response_data)
                     else:
+                        mime = response.headers.get_content_type().lower()
+                        mp3 = response_data.startswith(b'ID3') or (len(response_data)>2 and response_data[0]==255 and response_data[1]&224==224)
+                        if mime not in ('audio/mpeg','audio/mp3','application/octet-stream') or not mp3:
+                            raise ValueError('Provider returned unexpected audio format; inspect usage before retrying')
                         source.write_bytes(response_data)
             except urllib.error.HTTPError as e:
                 # Never print provider response bodies, headers, request objects or keys.
