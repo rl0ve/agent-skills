@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.5.1 — 2026-09-06
+
+- Put the preference, quality evidence and pros/cons matrices directly in the README, including Mac narration status.
+- Correct the Cap trial record: later frames showed an occluding Edge window, missed by earlier review.
+- Document the fresh foreground-controlled take, matched narration in both native examples, and stronger content/audio verification.
+- Make the Cap recommendation conditional on foreground control and keep framework showcases separate from the product-demo page.
+
 ## 1.5.0 — 2026-09-06
 
 - Add a separate voice-narration skill for provider selection, auditions, audio-only output and revoicing, sharing the existing audio helper.

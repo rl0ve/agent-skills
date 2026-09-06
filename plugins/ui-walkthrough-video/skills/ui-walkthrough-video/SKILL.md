@@ -134,6 +134,12 @@ for a cursorless result. Hiding an untracked native cursor is not a complete rep
 use verified cursor telemetry or a browser-rendered arrow following real automated
 pointer events, then inspect its motion in the actual recording. State when the arrow
 is baked into footage rather than editable as the recorder's native cursor layer.
+A selected native window can still capture an occluding window. Review the full
+timeline, including idle intervals and foreground changes; early correct frames
+and passing page assertions are insufficient. Keep the target unobscured or stop
+and retake. For a narrated comparison, give every example its promised soundtrack
+and verify non-silent decoded audio plus an unmuted player; label any intentionally
+silent technical take clearly. Keep unrelated framework showcases on their own page.
 Use natural-writing's spoken guidance if available, without making it a dependency.
 
 Deliver `walkthrough.mp4`, `silent.mp4`, `captions.srt`, `timeline.json`, individual
