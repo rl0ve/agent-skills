@@ -36,18 +36,24 @@ selecting current models, [benchmarks.md](references/benchmarks.md).
 
 ## Choose the production route
 
+Read [effects.md](references/effects.md) for ranked automatic effects and conditional
+treatments. Read [local-tools.md](references/local-tools.md) when hosted media APIs
+are unwanted or agent-operated local tools are preferred.
+
 Read [polish.md](references/polish.md) when the target resembles Recordly, Clueso,
 Dreamcut or Screen Studio. Prefer an available, authorized specialist that can meet
 the requested visual quality. Clueso's official skills/MCP are a close documented
 fit. Recordly is an editor/capture route; do not rely on its internal smoke-export
 hook as a supported headless API. Remotion is a programmable composition option.
 
-The basic `capture.mjs` / `render.py` route remains available. Version 1.2 adds a
-working polished route: `capture-polished.mjs` records eased pointer movement, clicks
-and scroll events; `polish.py` renders explicit camera keyframes, a presentation
+The basic `capture.mjs` / `render.py` route remains available. Version 1.3 provides a
+working polished route: `capture-polished.mjs` records clean footage, pointer endpoints,
+clicks and scroll events; `polish.py` renders the cursor/camera at 60fps, a presentation
 frame and captions outside the UI. Read [polished-example.md](references/polished-example.md)
-for the tested existing-site recipe. Camera direction and action timing still need
-editorial choices; neither route performs word-level forced alignment or proves
+for the tested existing-site recipe. A conservative automatic zoom is available when keyframes are omitted;
+camera direction and action timing still need editorial review. Native source footage
+may remain 25fps; 60fps composition smooths the cursor/camera, not app animation.
+Neither route performs word-level forced alignment or proves
 parity with an editing product.
 If specialist tools are unavailable, preserve footage and a concrete edit plan,
 report the missing capability, and continue only the portions the available tools

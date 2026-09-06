@@ -1,6 +1,6 @@
 # A tested polished capture path
 
-Version 1.2 adds working motion and composition helpers. This is an explicit,
+Version 1.3 improves working motion and composition helpers. This is an explicit,
 editable route toward Recordly/Clueso-style presentation, not an integration with
 those products or a claim of feature parity.
 
@@ -9,7 +9,7 @@ those products or a claim of feature parity.
 - Record real Edge/browser interactions at 2880×1800 using a 1440×900 logical
   layout with 2× CSS zoom. Set `captureScale: 1` for sites incompatible with this
   temporary scaling. Device scale factor alone padded the tested recorder output.
-- Render one eased cursor with an actual mousedown pulse. Pointer movement, click
+- Render one eased cursor at 60fps, with a pulse at the actual recorded click. Pointer movement, click
   positions, target rectangles, scrolls and verification times are recorded.
 - Insert a small pre-roll marker; locate its first stable exit in decoded video
   and trim setup footage. Preserve source-frame offsets in the edit timeline.
@@ -19,17 +19,23 @@ those products or a claim of feature parity.
   and balanced captions outside the UI. Narration starts after an explicit offset.
 - Export the narrated MP4, silent revoice MP4, SRT, clips and measured timeline.
 
-The compositor uses Pillow and FFmpeg, not Remotion. Capture and audio generation
+The compositor uses Pillow and FFmpeg, not Remotion. Cursor movement is rendered
+from timed endpoints; the real browser mouse moves to the destination at arrival.
+This does not reproduce intermediate hover effects. Use native capture when hover
+paths, dragging or continuous app animation matter. The source recorder remains
+25fps; output-frame cursor/camera interpolation does not change that source cadence.
+Narration is level-normalized with peak headroom; clean TTS is not denoised. Capture and audio generation
 remain separate, so revoice can reuse footage when the duration and action timings
-still fit. It does not infer the best camera path, align individual words, retime
+still fit. When keyframes are omitted, a conservative target-bounds heuristic may add one small
+zoom. It does not infer the semantically best camera path, align individual words, retime
 actions semantically, remove arbitrary dead time, or supply an editing GUI.
 
 ## Reproduce the field-guide demonstration
 
 Use the existing `plugins/ui-router/docs/field-guide.html` from the agent-skills
 repository. The recording starts at its working Route a task section. No website
-content or application logic is changed; temporary CSS scaling and cursor/marker
-overlays are applied only to the recording session. The example is a real existing site, not a generated UI fixture.
+content or application logic is changed; temporary CSS scaling and a synchronization
+marker are applied only to the recording session. The example is a real existing site, not a generated UI fixture.
 
 1. Copy `assets/field-guide-narration.example.json` to a work directory. Choose and
    audition a voice first. Check the current speech model/voice catalog and existing
@@ -76,7 +82,8 @@ the resulting value and page text. It does not fabricate a dropdown animation.
 ## Adapt it to another interface
 
 Each beat supplies `setup(page)`, `perform({page, at, point, scroll, events})`, a
-duration measured from narration, and camera keyframes `{time, zoom, cx, cy}`.
+duration measured from narration, and optional camera keyframes `{time, zoom, cx, cy}`. Omit them for conservative
+auto-framing; use `cursor: false` for a reading-only beat.
 Camera centers use the logical viewport; capture converts them to source pixels.
 Locator bounds, pointer telemetry and scroll offsets use the actual scaled viewport;
 the example scales its scroll distances accordingly. `point`
@@ -92,3 +99,8 @@ The current canvas is 1600×1000 with a 1312×820 UI card. It expects a 16:10 ca
 Other aspect ratios require an explicit canvas/layout change, not a stretched UI.
 This helper is for pages where direct automation is permitted. Use the host's
 approved browser tools or a supported specialist for existing authenticated sessions.
+
+The revised example holds its camera across the first join, uses gentler zooms,
+and cuts to an already-scrolled detail shot for the final explanation. The final
+scroll occurs during setup; it is not shown as an on-screen action. The narration
+and two real selector changes are retained.

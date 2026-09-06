@@ -46,3 +46,28 @@ Independent review fixes: preserved supplied subtitle cues through capture (then
   word alignment, semantic action retiming and an editing GUI remain unavailable.
 - A portable narration plan and capture recipe ship with the skill. Credentials,
   private browser state, failed takes and personal paths are not packaged.
+
+## Version 1.3.0
+
+- Reused the previously approved Gemini Kore audio; no new TTS API call. This sample
+  is locally recaptured/composited but is not a demonstration of local TTS generation.
+- Recaptured the two real selector changes without a baked-in cursor. The reading
+  scene is established after scrolling during setup, then recorded; the edit does
+  not show or imply an on-screen scroll action in that beat.
+- Browser source cadence is 25fps. Cursor/camera composition is independently 60fps;
+  continuous app animation remains limited by the source. Actual browser hover is
+  updated on pointer arrival; the smooth path is composited from timed endpoints.
+- A 0.7s constant-camera cursor traverse produced 42 video frames and 42 unique frame
+  hashes, confirming output-frame motion rather than repeated 25fps pointer frames.
+- Twenty-one focused tests passed, including continuous cursor interpolation and
+  conservative camera fallback. JavaScript syntax/frontmatter checks passed.
+- Gentler camera paths replace repeated zoom resets. Idle pointers fade. Narration
+  uses loudness normalization with peak headroom; no denoising or speech retiming.
+- Product/local-tool assessment is based on official documentation and source, not
+  comparative rendered output. Local TTS candidates have not been auditioned here.
+  Native Recordly capture was not tested because Screen Recording permission was
+  missing; no permission setting was changed.
+- Final MP4: 30.088s, H.264 1600×1000 at 60fps, AAC; full decode passed.
+  Reviewed actual frames from all three scenes. Final measured true peak -2.12 dBTP.
+  Twelve repository tests also passed (33 tests total). Perceptual motion acceptance
+  remains the user's decision; no native-editor head-to-head trial was completed.
