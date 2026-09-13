@@ -22,6 +22,14 @@ legacy generateContent endpoint, validates returned PCM and wraps it in WAV. It
 is separate from Google Cloud Chirp/Studio/WaveNet and from Gemini Live. Do not infer
 a model from the voice name alone. Preview models may change or have rate limits.
 
+Gemini prebuilt voice names belong to the model rather than the access route. When
+OpenRouter exposes the same Gemini TTS model, names such as Algieba, Sulafat and Kore
+can be available through either route. Verify the live catalog and make a short
+request before promising parity. Direct Gemini exposes native prompt steering and
+up-to-two-speaker configuration. This package's `gemini` and `openrouter` adapters
+currently synthesize one configured voice per beat; use a supported direct Gemini
+tool for native two-speaker generation rather than implying the helper implements it.
+
 Verified API examples on 2026-09-05, not permanent defaults or quality guarantees:
 OpenAI `gpt-4o-mini-tts` supports delivery instructions; legacy `tts-1` / `tts-1-hd`
 do not support that control. ElevenLabs uses a voice ID and `model_id`; options
@@ -94,6 +102,22 @@ catalog did not list OpenAI or ElevenLabs in this review despite documentation
 examples; do not promise availability based on a snippet. Verify model/voice access
 before generation. Metadata is saved before synthesis so partial takes retain their
 provider/model/voice settings. No automatic paid retries occur.
+
+Observed voice profiles, reviewed 2026-09-13:
+
+- **Algieba** — accepted as a smooth, male-presenting analytical lead in a direct
+  Gemini two-speaker interview-preparation series.
+- **Sulafat** — used as the warmer, male-presenting conversational co-host in that
+  same direct Gemini production.
+- **Kore** — accepted through OpenRouter for a firm, female-presenting narration with
+  a Southern-inflected product-demo delivery.
+
+These are user-specific listening results from different briefs, not official gender
+labels or general quality rankings. Preserve the route and performance direction with
+the voice name. For long two-speaker output, split at natural exchanges of roughly
+one to three minutes and check speaker continuity; longer direct-Gemini sections in
+the accepted production sometimes blended voices and were regenerated in shorter
+sections.
 
 
 ## MiniMax speech adapter

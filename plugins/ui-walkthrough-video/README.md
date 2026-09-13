@@ -8,7 +8,7 @@ Use [ui-walkthrough-video](skills/ui-walkthrough-video/SKILL.md) for capture and
 
 Start with the [preferred Mac approach and ratings](skills/ui-walkthrough-video/references/preferred-approach.md) for the recommendation, pros/cons, narration status and evidence limits.
 
-Source and fixture checks are in `VALIDATION.md`. The approved Kore audition was reused; these trials did not compare speech providers.
+Source and fixture checks are in `VALIDATION.md`. The approved Kore audition was reused; these trials did not compare speech providers. A separate direct-Gemini production established Algieba + Sulafat as a useful two-host profile, with the long-section limitation recorded below.
 
 ## Preferred approach and ratings — Mac, no NVIDIA
 
@@ -63,6 +63,7 @@ for the sourced feature comparison and the checks needed for a complete handoff.
 
 | Voice option | Preference / quality status | Pros | Cons / actual test status |
 |---|---|---|---|
+| Direct Gemini Algieba + Sulafat | **Accepted two-host profile** for conversational business/interview material | Smooth male-presenting analytical lead plus warmer male-presenting co-host; native Gemini supports two-speaker direction | The bundled helper remains single-voice-per-beat. Long production sections sometimes blended speakers and needed regeneration in shorter one-to-three-minute sections |
 | Gemini Kore through OpenRouter | **Established baseline for this demo**; opening audition approved | Working generation path; approved audio reused consistently | Hosted generation requires authorization; no comparative listening benchmark or full soundtrack listening review established |
 | OpenAI / ElevenLabs / MiniMax | **Unrated in this comparison**; available hosted audition routes | Generation adapters available | No comparable listening test here; MiniMax integration was tested offline, not against a live voice account |
 | Chatterbox full model | **Unrated**; first expressive local audition candidate | Official Mac MPS/CPU example; reference-guided voice | Not integrated or auditioned here; runtime setup and an authorized reference need checking |
@@ -72,6 +73,11 @@ for the sourced feature comparison and the checks needed for a complete handoff.
 See the [full recommendation and evidence](skills/ui-walkthrough-video/references/preferred-approach.md)
 and [executed trials](skills/ui-walkthrough-video/references/automation-trials.md)
 for version details and remaining gaps. No local TTS quality winner has been established.
+
+Algieba, Sulafat and Kore are Gemini voice names rather than provider-exclusive
+catalogs. Direct Gemini and OpenRouter may both expose them when they carry the same
+model, but direct Gemini was used for the two-speaker production and OpenRouter for
+the Kore demo. Preserve that route evidence and verify current feature parity.
 
 Version 1.2 includes a working polished capture/composition route and an existing-site
 [example recipe](skills/ui-walkthrough-video/references/polished-example.md), with

@@ -85,7 +85,7 @@
       "name": "ui-walkthrough-video",
       "source": "./plugins/ui-walkthrough-video",
       "description": "Create real UI walkthroughs with editable Cap/Recordly project handoffs, or standalone voice narration with explicit quality checks.",
-      "version": "1.5.2",
+      "version": "1.5.3",
       "category": "Productivity",
       "tags": [
         "video",

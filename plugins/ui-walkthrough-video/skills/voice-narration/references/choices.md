@@ -1,11 +1,12 @@
 # Narration choices and evidence
 
-Reviewed 2026-09-06. These are routes to audition, not a naturalness leaderboard.
+Reviewed 2026-09-13. These are routes to audition, not a naturalness leaderboard.
 The package's [validation record](../../../VALIDATION.md) owns executed test claims.
 
 | Choice | Useful when | Main tradeoff | Evidence in this package |
 |---|---|---|---|
-| Gemini Kore through OpenRouter | Continue the accepted example voice | Hosted generation and provider-specific response format | Three clips generated; opening audition approved. This does not establish a universal winner or complete soundtrack listening review. |
+| Direct Gemini with Algieba + Sulafat | Continue an accepted two-host, male-presenting conversational profile | Native multi-speaker prompting is richer than the package's single-voice-per-beat helper; long sections can lose speaker separation | Four interview-preparation episodes used this pair. Algieba was the smooth analytical lead and Sulafat the warmer co-host. Episodes 3 and 4 were repaired with shorter sections after muddled speaker output. |
+| Gemini Kore through OpenRouter | Continue the accepted female-presenting, Southern-inflected product-demo profile | Hosted generation and provider-specific PCM response format; package adapter is single-speaker | Three clips generated; opening audition approved and reused across walkthrough variants. This does not establish a universal winner or complete soundtrack listening review. |
 | MiniMax Speech | Audition another hosted narrator; optional native voice-design tooling | Account/voice access and paid inference; adapter maps a narrow control set | MiniMax request/response and media conversion tested offline. Live generation and naturalness remain **Unrated**. |
 | Direct Gemini / OpenAI / ElevenLabs | A named provider, voice or supported delivery control fits the brief | Different controls and catalogs; access is not interchangeable | Request construction tests are not live-account or listening tests. Check the dated validation record for actual use. |
 | Chatterbox full model | An expressive local candidate on an appropriate Mac | Runtime/model setup and a suitable authorized reference | Official Mac example reviewed; not integrated or auditioned here. **Unrated**. |
@@ -15,6 +16,11 @@ The package's [validation record](../../../VALIDATION.md) owns executed test cla
 No NVIDIA hardware is assumed for a Mac workflow. Qwen CUDA deployment is excluded
 from that default; any compatible Mac port would be a distinct, untested route.
 Creating this skill did not install local weights or enable an MCP server.
+
+Algieba, Sulafat and Kore are Gemini prebuilt voices. Either direct Gemini or
+OpenRouter can expose them when the same Gemini TTS model and voice catalog are live.
+Do not treat that shared catalog as feature parity: verify model access, voice access,
+prompt controls, multi-speaker support and output format for the chosen route.
 
 ## Choosing the next audition
 
