@@ -22,6 +22,11 @@ legacy generateContent endpoint, validates returned PCM and wraps it in WAV. It
 is separate from Google Cloud Chirp/Studio/WaveNet and from Gemini Live. Do not infer
 a model from the voice name alone. Preview models may change or have rate limits.
 
+`gemini-3.5-transcribe` is a distinct, opposite-direction model: audio-to-text
+(speech recognition with diarization/timestamps), not text-to-speech. Its similar
+name and release timing next to `gemini-3.1-flash-tts-preview` invites confusion;
+it cannot generate narration and is irrelevant to this skill. Confirmed 2026-09-13.
+
 Gemini prebuilt voice names belong to the model rather than the access route. When
 OpenRouter exposes the same Gemini TTS model, names such as Algieba, Sulafat and Kore
 can be available through either route. Verify the live catalog and make a short
@@ -118,6 +123,13 @@ the voice name. For long two-speaker output, split at natural exchanges of rough
 one to three minutes and check speaker continuity; longer direct-Gemini sections in
 the accepted production sometimes blended voices and were regenerated in shorter
 sections.
+
+Google's own voice list (checked 2026-09-13) describes Algieba as male ("smooth and
+pleasant") and Sulafat as female ("warm and welcoming"), and none of the 30 prebuilt
+voices carry a quality tier — they differ only by style/character description, all on
+the same underlying model. Neither published description overrides an accepted
+production's listening result above; note both when a brief cares about a consistent
+apparent gender rather than only the delivery style.
 
 
 ## MiniMax speech adapter

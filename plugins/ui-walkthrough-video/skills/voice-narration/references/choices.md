@@ -12,10 +12,20 @@ The package's [validation record](../../../VALIDATION.md) owns executed test cla
 | Chatterbox full model | An expressive local candidate on an appropriate Mac | Runtime/model setup and a suitable authorized reference | Official Mac example reviewed; not integrated or auditioned here. **Unrated**. |
 | Kokoro-82M | A lightweight local preset-voice candidate | Dependencies, pronunciation and prosody still need a real trial | Official Mac guidance reviewed; not integrated or auditioned here. **Unrated**. |
 | Human/provided WAV | Use an existing approved recording or a provider outside the helper | Caller supplies accurate origin/settings and clip mapping | Video assembler accepts `ID.wav`; this does not imply any additional generator is implemented. |
+| macOS Siri system voices (Voice 1–5, any accent) | Ruling out a free built-in narrator before hosted generation | Not reachable by any local synthesis API, regardless of download state | Checked 2026-09-13 on one Mac: Voice 1 and Voice 4 downloaded and selected as System Voice/Live Speech voice, machine restarted. Still absent from both `say -v '?'` (legacy NSSpeechSynthesizer) and `AVSpeechSynthesisVoice.speechVoices()` (current AVFoundation). Only "Voice 3" and one India-accent entry surface in `say`, and neither the Siri sample greeting nor a "siri" identifier appears anywhere in the AVFoundation list. Treat as a closed API, not a caching bug — do not spend another session re-downloading or restarting to chase this. |
 
 No NVIDIA hardware is assumed for a Mac workflow. Qwen CUDA deployment is excluded
 from that default; any compatible Mac port would be a distinct, untested route.
 Creating this skill did not install local weights or enable an MCP server.
+
+For the non-Siri macOS system voices that *are* reachable (Samantha, Alex, Zoe, Daniel,
+etc.), `AVSpeechSynthesisVoice.speechVoices()` reports a `quality` field (1 = default/
+compact, 2 = enhanced, 3 = premium) that is a faster ground-truth than the tier label
+shown in System Settings. Checked 2026-09-13: on one Mac, "Zoe (Premium)" was the only
+installed en-US voice at quality 3; the classic "Alex" voice (885 MB) and "Daniel"
+(en-GB) were both quality 2 and, after listening, the user rejected both as a default —
+size and legacy reputation did not predict a preferred outcome here. This is one
+listener's result on one script, not a general ranking of Apple's voices.
 
 Algieba, Sulafat and Kore are Gemini prebuilt voices. Either direct Gemini or
 OpenRouter can expose them when the same Gemini TTS model and voice catalog are live.
