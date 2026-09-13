@@ -193,3 +193,21 @@ The early pointer checks below missed that contamination; see version 1.5.1.
 - Current example boundaries are preserved: Cap project has framing and trimming,
   an empty zoom track, a baked arrow and externally added narration; no native
   Recordly project was delivered. The new requirements do not relabel these as complete.
+
+## Version 1.5.3
+
+- Documentation release based on prior generated and user-reviewed audio; no new
+  synthesis, credential access or paid request was made for this update.
+- Direct Gemini production used Algieba as a smooth male-presenting analytical lead
+  and Sulafat as a warmer male-presenting co-host across four conversational
+  interview-preparation episodes. This establishes a reusable user preference, not
+  official gender metadata or a universal quality ranking.
+- Longer two-speaker sections in Episodes 3 and 4 produced muddled/blended delivery.
+  Both episodes were regenerated in shorter sections and their ordered MP3 assemblies
+  passed decoding checks. The skill now preserves that production limitation.
+- Separately, the existing walkthrough evidence remains Gemini Kore through
+  OpenRouter: three clips generated, opening audition approved, and audio reused.
+  The accepted delivery was female-presenting and Southern-inflected.
+- Manual route review confirms that the same Gemini model may expose Algieba,
+  Sulafat and Kore through direct Gemini or OpenRouter. The package still must verify
+  the live model/voice catalog and does not equate shared voices with feature parity.

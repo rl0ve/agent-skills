@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.3 — 2026-09-13
+
+- Record Algieba + Sulafat as an accepted direct-Gemini, male-presenting two-host profile and Kore as an accepted female-presenting Southern-style product-demo voice through OpenRouter.
+- Separate Gemini voice availability from provider-route capabilities: shared voice names do not prove matching prompt, multi-speaker, format, quota or catalog behavior.
+- Add the observed long-form limitation: split two-speaker production at natural one-to-three-minute exchanges and verify speaker continuity.
+
 ## 1.5.2 — 2026-09-06
 
 - Offer native project + source assets + MP4 before capture; reuse an established editable-project preference.

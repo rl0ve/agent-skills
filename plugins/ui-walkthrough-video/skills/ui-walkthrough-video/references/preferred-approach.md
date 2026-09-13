@@ -17,8 +17,10 @@ or a finished MP4 alone does not fulfill that requirement.
 
 For a controlled foreground session, use **Cap for agent-controlled recording of real UI**, keep its native export when
 that meets the brief, and add **HyperFrames only when custom composition is useful**.
-Use **Gemini Kore through OpenRouter for narration when the approved voice and
-hosted generation are appropriate**. Reuse approved audio across visual revisions.
+Use **Gemini Kore through OpenRouter when the accepted female-presenting,
+Southern-inflected product-demo delivery fits**. For conversational business or
+interview material, direct Gemini with **Algieba + Sulafat** is an accepted two-host
+profile. Reuse approved audio across visual revisions.
 
 The tested Cap window selection did not isolate it from other foreground windows.
 A later review rejected the earlier take for capturing another Edge window. A fresh
@@ -70,6 +72,7 @@ its desktop workspace versus API and its role in this pipeline.
 
 | Option | Current standing | Benefit | Cost / limitation | What was actually tested |
 |---|---|---|---|---|
+| Direct Gemini Algieba + Sulafat | **Accepted two-host profile** | Smooth male-presenting analytical lead and warmer male-presenting co-host; native two-speaker direction | The bundled helper is single-voice-per-beat. Long sections sometimes blended speakers and required shorter one-to-three-minute regeneration | Four conversational interview-preparation episodes used the pair; repaired Episodes 3 and 4 passed decoding and ordered-join checks. |
 | Gemini Kore through OpenRouter | **Preferred established voice for this example** | Opening audition was approved and the same voice was used for the demo | Hosted generation requires an authorized account/budget; subjective acceptance is script-specific | Three clips generated. Opening audition approved; no cross-provider listening benchmark or complete soundtrack listening review established. |
 | MiniMax Speech | **Unrated; hosted audition candidate** | Speech can be generated within the existing workflow | API account/budget required; Desktop Design access is separate | Adapter and real media conversion tested offline; no live call or listening comparison. |
 | Chatterbox full model | **Unrated; first expressive local audition candidate** | Official Mac example selects MPS or CPU; reference-guided generation | Model/runtime setup and a suitable authorized voice reference; speed and naturalness on this machine unknown | Documentation reviewed only. No installed adapter, generated sample or listening comparison in this plugin. The Turbo CUDA example is a different path. |
@@ -80,6 +83,11 @@ Chatterbox and Kokoro are documented options, not integrated providers. The exis
 `provided` WAV route can assemble audio generated elsewhere, but it does not generate
 speech from either model. Do not label them installed, working or better than Kore
 until a real local run and listening comparison establish that status.
+
+Algieba, Sulafat and Kore are Gemini prebuilt voices, so direct Gemini and OpenRouter
+may both expose them when they carry the same model. That is catalog overlap, not
+control parity. Verify the live voice list, prompt steering, multi-speaker behavior
+and output format for the chosen route.
 
 A useful future audition uses the same 10–20 second passage with a product name,
 number and transition. Record hardware/runtime, startup and synthesis time, compare

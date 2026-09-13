@@ -35,6 +35,12 @@ Read [provider guidance](references/providers.md) for the selected provider and
 Speech is a candidate alongside Gemini, OpenAI and ElevenLabs; a social endorsement
 or a provider benchmark does not establish this script's quality.
 
+Track **voice identity** separately from **provider route**. A Gemini prebuilt voice
+may be available through both direct Gemini and OpenRouter when both expose the same
+model, but that does not establish identical prompting, multi-speaker controls,
+formats, quotas or availability. The dated accepted profiles in `choices.md` are
+starting points for a matching brief, not universal defaults.
+
 For a comparison, use the same 10–20 second passage with a name, a number and a
 transition. Generate only the authorized candidates. Preserve the source audio;
 compare copies at similar perceived loudness so volume does not bias the choice.
