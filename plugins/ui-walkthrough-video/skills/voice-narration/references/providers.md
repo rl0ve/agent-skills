@@ -16,11 +16,14 @@ requested engineering tests via `--allow-local-test`; it is not a quality tier t
 recommend. A high-ranked model can still produce a voice the user dislikes.
 
 Google Gemini adapter: `provider: "gemini"`, explicit `model` and `voice`, optional
-`instructions`, and `GEMINI_API_KEY`. Example model checked 2026-09-05:
-`gemini-3.1-flash-tts-preview`, voice `Kore`. The adapter uses Google's documented
-legacy generateContent endpoint, validates returned PCM and wraps it in WAV. It
-is separate from Google Cloud Chirp/Studio/WaveNet and from Gemini Live. Do not infer
-a model from the voice name alone. Preview models may change or have rate limits.
+`instructions`, and `GEMINI_API_KEY`. Model checked 2026-09-05:
+`gemini-3.1-flash-tts-preview`. Any of the model's prebuilt voice names is valid in
+`voice`; the names appearing anywhere in this package are dated listening results,
+not a supported subset, and none is a default. Ask for or carry forward the voice the
+brief already uses. The adapter uses Google's documented legacy generateContent
+endpoint, validates returned PCM and wraps it in WAV. It is separate from Google
+Cloud Chirp/Studio/WaveNet and from Gemini Live. Do not infer a model from the voice
+name alone. Preview models may change or have rate limits.
 
 `gemini-3.5-transcribe` is a distinct, opposite-direction model: audio-to-text
 (speech recognition with diarization/timestamps), not text-to-speech. Its similar
@@ -108,8 +111,15 @@ examples; do not promise availability based on a snippet. Verify model/voice acc
 before generation. Metadata is saved before synthesis so partial takes retain their
 provider/model/voice settings. No automatic paid retries occur.
 
-Observed voice profiles, reviewed 2026-09-13:
+Observed voice profiles, reviewed 2026-09-14. Every one of the model's prebuilt
+voices is selectable; these are only the ones someone has listened to and accepted
+for a specific brief:
 
+- **Algenib** — accepted over four passes of edits as the single narrator of a
+  product walkthrough cut from real screen capture, direct Gemini, calm and even at
+  roughly 2.5 to 3 words per second with the delivery instruction held constant
+  across every beat so re-synthesised lines splice against earlier ones without an
+  audible seam.
 - **Algieba** — accepted as a smooth, male-presenting analytical lead in a direct
   Gemini two-speaker interview-preparation series.
 - **Sulafat** — used as the warmer, male-presenting conversational co-host in that

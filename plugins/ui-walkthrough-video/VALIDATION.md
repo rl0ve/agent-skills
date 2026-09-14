@@ -194,6 +194,67 @@ The early pointer checks below missed that contamination; see version 1.5.1.
   an empty zoom track, a baked arrow and externally added narration; no native
   Recordly project was delivered. The new requirements do not relabel these as complete.
 
+## Version 1.5.4
+
+- Documentation release. The evidence is a real production run on 2026-09-14: six
+  narrated beats cut from macOS screen capture of VS Code and a deployed web app,
+  assembled to 3m12s, with four rounds of user edits applied to both the footage and
+  the script.
+- Direct Gemini `gemini-3.1-flash-tts-preview` with voice **Algenib** narrated every
+  beat. The delivery instruction was held identical across beats, which let two
+  regenerated lines and one spliced sentence sit against earlier audio with no
+  audible seam. Measured pace ran 2.5 to 3.0 words per second; assembled audio
+  measured -22.0 dB mean and -1.8 dB peak with no gap over 2.5 seconds.
+- One beat's audio was produced by splicing two ranges out of an already accepted
+  take rather than resynthesising, cutting 17 seconds without changing voice or
+  delivery. Cutting inside the existing pauses is what made the join inaudible.
+- Algenib was chosen by the user, not by this package. The record of Kore, Algieba
+  and Sulafat is unchanged; none of the four is a default, and the whole prebuilt
+  catalogue stays selectable.
+- The same production exercised a capture route this package had not covered: an
+  installed desktop editor and a deployed web application on the user's machine,
+  recorded with `screencapture -v`, rather than a browser under Playwright.
+  Findings, all executed rather than read:
+  - Accessibility clicks returned the correct element path and actuated nothing, on
+    both an embedded web panel and a browser page, and never moved the OS cursor.
+    CGEvents through `.cghidEventTap` actuated both on the first attempt and are the
+    only reason a cursor appears in the footage.
+  - `screencapture -v` ignored `SIGINT`; the following `SIGTERM` killed it before it
+    finalised and no file was written. Two takes were lost before switching to `-V`
+    with a fixed duration, which was then verified with a 5 second capture.
+  - A capture script spawned as a detached child of a short-lived wrapper was killed
+    with the wrapper.
+  - Three takes were ruined by focus rather than framing: twice the operator typed
+    into a chat window mid-take, once an unrelated automation consent dialog opened
+    over the subject.
+  - Frame scanning against a confirmed reference frame located a 2.5 second foreign
+    window inside a 60 second take that eye review had missed, and returned nothing
+    on the repaired clip.
+  - A browser connector was attached to a second Chromium browser with the same page
+    open under a different profile; it reported navigation while the recorded window
+    did not move, and the signed-out profile rendered a banner the signed-in one did
+    not.
+  - Fitting picture to accepted audio held up to roughly 1.3x of slowdown on
+    cursor-only motion. After cutting the intrusion, 25 seconds of usable footage had
+    to cover 34 seconds of speech, which consumed the entire margin.
+  - Reviewer feedback moved the pointer from a timer to the script: moves that visit
+    regions the narration never names read as nervous. Re-planning against
+    silence-detected phrase times removed two of nine moves in one beat outright and
+    replaced a two-region circling pass in post with one sweep on the words that
+    earned it.
+  - A slow `zoompan` over a captured still was called glitchy on review. Measured on
+    the same source, the zoom produced 0.2362 mean frame-to-frame luma change with
+    spikes to 1.67 against 0.0007 and 0.1150 held static. The shot ships static.
+  - The re-timed take was then discarded: `activate` fronted a second window of the
+    same browser on a signed-out profile, whose page carried a notice the accepted
+    footage did not have. The cue-timed path is recorded as a method rather than as
+    delivered footage; the shipped beat still uses timer-driven moves.
+  - The frame scan flagged three seconds of that take on the script's own hover
+    tooltip. Flags are a prompt to inspect a frame, not a verdict.
+  - These are one host's results on Apple Silicon macOS with mirrored displays at 1x.
+    Nothing was tested on Windows or Linux, and no editable native project was
+    produced by this route.
+
 ## Version 1.5.3
 
 - Documentation release based on prior generated and user-reviewed audio; no new

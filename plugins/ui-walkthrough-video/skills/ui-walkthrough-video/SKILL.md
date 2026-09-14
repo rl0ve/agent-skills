@@ -54,6 +54,13 @@ record/project/export path; Recordly's tested bundled engine is experimental and
 does not establish editor automation. Keep browser navigation, capture, composition
 and editor control as separate capabilities.
 
+When the subject is an installed desktop application on the user's own machine rather
+than a browser you drive, read
+[native-desktop-capture.md](references/native-desktop-capture.md) first. Accessibility
+clicks report success without actuating embedded web content or moving the OS cursor,
+the screen recorder loses the file if you signal it instead of giving it a duration,
+and the person watching is the most common cause of a ruined take.
+
 Read [polish.md](references/polish.md) when the target resembles Recordly, Clueso,
 Dreamcut or Screen Studio. Prefer an available, authorized specialist that can meet
 the requested visual quality. Clueso's official skills/MCP are a close documented

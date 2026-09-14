@@ -1,5 +1,9 @@
 # Automatic capture and composition trials
 
+These trials drive a browser or a recorder's own CLI. For an installed desktop
+application in the user's hands, read
+[native-desktop-capture.md](native-desktop-capture.md).
+
 Tested September 5–6, 2026 on Apple Silicon macOS, using the same Design Router
 field-guide task: choose a Surface, choose an Audience, and read the resulting route.
 These are executed capability trials, not a general visual-quality benchmark.
