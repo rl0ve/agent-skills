@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.5.4 — 2026-09-14
+
+- Add a route for capturing an installed desktop application on the user's own machine, with the executed mechanics: accessibility clicks report success without actuating embedded web content or moving the OS cursor, real HID events do both, and a compilable pointer program ships as an asset.
+- Record the recorder contract: `screencapture -v` writes only when it ends on its own, so pass `-V seconds`; two takes were destroyed by signalling it. A capture script must be the tracked process, not a detached child.
+- Require every pointer move to sit on a phrase that names what it points at: schedule the path from silence-detected narration timings against a monotonic clock, and treat stillness as a choice. A move with no verbal cue reads as nervous and pulls attention to the pointer.
+- Do not pan or zoom a captured still. `zoompan` resolves its crop to whole pixels, so a gentle ramp pumps: measured 0.2362 mean frame-to-frame luma change against 0.0007 for the same shot held static.
+- Record that `activate` is not a window selector: with two windows of one browser on different profiles, the app fronted the signed-out one and its page carried a notice the accepted footage did not. Verify the expected state in a still before recording.
+- Add programmatic take review: diff a downscaled crop of every frame against a confirmed reference frame to locate foreign windows, and scan the assembled cut for unintended jumps. A two-and-a-half-second intrusion that eye review missed was found this way.
+- Record the operator as the main hazard to a take, with the mitigations: activate the target immediately before the recorder starts, state the hands-off window, and clear permission prompts beforehand.
+- Document fitting the picture to accepted narration with a `setpts` ratio, the roughly 1.3x slowdown ceiling for cursor-only motion, and the resulting capture headroom.
+- Record Algenib as an accepted single-narrator direct-Gemini profile, with the pace and the constant delivery instruction that let re-synthesised lines splice against earlier takes.
+- State plainly that every prebuilt voice on the model is selectable: the voice names in this package are dated listening results, not a supported subset, and none of them is a default.
+
 ## 1.5.3 — 2026-09-13
 
 - Record Algieba + Sulafat as an accepted direct-Gemini, male-presenting two-host profile and Kore as an accepted female-presenting Southern-style product-demo voice through OpenRouter.
