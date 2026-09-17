@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.13.0 - 2026-09-17
+
+- Move `ui-router:ui-builder` from Sonnet high to Opus low. Sonnet high is off the
+  efficient frontier; Opus low reaches higher quality for comparable burn.
+- Escalate a stalling builder to Opus medium rather than raising Sonnet effort, and
+  keep Sonnet low/medium for the mechanical tail.
+- Warn that Opus low keeps replies long and delegates readily, so the builder needs an
+  exact file map and the sole-writer rule held.
+
 ## 1.12.0 - 2026-09-17
 
 - Add conditional Neuform and Aura routes for visual-direction exploration, HTML

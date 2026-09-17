@@ -75,10 +75,23 @@ When the Work Router is installed, apply its work route after composing the UI s
 | UI work | Agent | Model | Effort |
 |---|---|---|---|
 | Route discovery, inventory, and reference mapping | `ui-router:ui-scout` | Sonnet | medium |
-| Defined UI implementation | `ui-router:ui-builder` | Sonnet | high |
+| Defined UI implementation | `ui-router:ui-builder` | Opus | low |
 | Consequential visual, accessibility, or system review | `ui-router:ui-critic` | Opus | high |
 
-Keep trivial UI adjustments in the parent. Use Fable only for a connected, long-horizon multi-surface or design-system transformation that truly benefits from sustained autonomy.
+Keep trivial UI adjustments in the parent. Use Fable only for a connected, long-horizon
+multi-surface or design-system transformation that truly benefits from sustained autonomy.
+
+**Do not raise Sonnet above medium to get a better UI build.** Opus at low effort is the
+implementation route because the Sonnet effort rungs above medium cost more than Opus low
+without matching it. Use Sonnet low or medium for the mechanical tail: token renames,
+copy swaps, class cleanups, test and story files, and any surface where a plan already
+exists and latency matters more than judgment. When `ui-builder` stalls or thrashes,
+raise it to Opus medium rather than reaching for a different family.
+
+Watch two things on Opus low: replies stay long, and it delegates to subagents readily.
+Give `ui-builder` an exact file map and hold it to sole-writer scope so that eagerness
+does not turn into a second writer in the tree. See Work Router's
+`references/routing-policy.md` for the basis and its limits.
 
 ## Selection order
 

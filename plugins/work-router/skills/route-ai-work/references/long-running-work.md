@@ -52,6 +52,38 @@ it works; a fresh agent for every phase is an experiment, not a default. Verify 
 project state before the replacement continues. Stop when the requested outcome and
 required checks are complete, or report the actual blocking condition under host rules.
 
+## Handoff and context at a phase boundary
+
+Carrying a large transcript forward is not the lossless option people assume it is. The
+realistic choice is between a summary you wrote and a summary you did not. Auto-compaction
+fires after the degradation, not before it, so decisions made in the crowded window are
+already made and cannot be undone by compacting afterwards. Successive compactions
+summarize summaries.
+
+- **Write the handoff as a state spec, not a conversation recap.** Current contracts and
+  interfaces as they now stand; architectural decisions; naming conventions and constraints
+  found by trial; done, in progress, next; known traps and dead ends.
+- **Include the rejected alternatives and why they were rejected.** This is the part that
+  exists only in the transcript and the part a lossy summary drops first, and losing it is
+  what makes a replacement re-walk work you already ruled out.
+- **Write it to a file, not a message.** Files survive whatever a summary keeps.
+- **Expect the replacement to re-read files, and treat that as correct.** The repository is
+  the source of truth; a long transcript contains superseded decisions. Re-reads land at the
+  front of a clean window where recall is strongest. A small deliberate primer outperforms a
+  large history on any model.
+- **Time a family switch to this boundary.** The cache is being rebuilt anyway, so the
+  cache-write cost of changing model disappears.
+
+Prefer aimed compaction over a handoff when the task is unfinished, the reasoning chain
+still matters and you can state explicitly what to keep. Prefer a clean restart when the
+phase is separable, when the model has anchored on a wrong assumption that condensing would
+carry forward, or when you have corrected the same mistake more than twice.
+
+Context degradation is directional evidence, not a threshold to enforce. Reported ranges
+vary widely by task and model, and the "lost in the middle" effect is measured on retrieval
+benchmarks rather than on agentic coding. Use observed symptoms - instructions missed,
+decisions contradicted, files re-read wrongly - ahead of any token count.
+
 ## Evidence and limits
 
 Reviewed September 5, 2026. This is routing judgment, not a measured performance claim.
