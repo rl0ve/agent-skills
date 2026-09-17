@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.7.1 - 2026-09-17
+
+- Correct the basis recorded for retiring Sonnet above medium. The direction now cites
+  this repository's own harness evidence in `source-wall-clock-evidence.md` and
+  `source-research-evidence.md` rather than a secondary score table.
+- Record that the triggering synthesis quoted Intelligence Index scores for Sonnet 5 at
+  medium and high, two settings for which this repository already verified that
+  Artificial Analysis publishes no index. Those figures are unsourced.
+- Note that Sonnet 5 high is the product's default effort, so narrowing Sonnet to low
+  and medium is a deliberate departure from a default.
+
 ## 1.7.0 - 2026-09-17
 
 - Retire Sonnet high, xhigh and max as routes. Sonnet medium is now the top of that

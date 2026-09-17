@@ -24,31 +24,44 @@
 
 ## The Sonnet-above-medium dominance claim
 
-**Reviewed 2026-09-17.** This is routing judgment from a secondary synthesis, not a
-measurement this plugin made.
+**Reviewed 2026-09-17.** The direction rests on this repository's own harness evidence.
+The prompt that triggered the change was a secondary synthesis whose numbers do not
+survive checking; keep the conclusion and discard its table.
 
-The ordering came from a comparison built on Artificial Analysis Intelligence Index v4.3
-scores against estimated per-task burn. On that data Opus low scored well above Sonnet
-medium for roughly a tenth more burn, and above Sonnet max while consuming far less.
-Every Sonnet setting above medium fell off the efficient frontier, as did every `max`
-setting in all three families: Sonnet max scored below Opus low at several times the
-burn, Opus max showed no gain over Opus xhigh, and Fable max tied Fable xhigh for about
-a quarter more. Six of fifteen settings were strictly dominated, collapsing the usable
-ladder to Sonnet low/medium, Opus low, Opus medium, and the Fable medium-to-high band,
-with Opus high/xhigh preferred over Fable medium for long autonomous runs because Fable
-bills separately.
+The load-bearing evidence is already in
+[source-wall-clock-evidence.md](source-wall-clock-evidence.md): on the DeepSWE
+leaderboard's fixed harness, Sonnet 5 at high effort is both slow and weak (48.2% pass@1,
+28.8 mean minutes, 146.6 steps), and Sonnet 5 at max degenerates to 80.1 mean minutes,
+268.5 steps and $26.40 per task for 53.8%. Artificial Analysis's coding-agent figures put
+Fable 5 (max) at $11.71 per task for a 0.659 index, worse on both axes than Opus 5 (xhigh)
+at $8.24 for 0.667. [source-research-evidence.md](source-research-evidence.md) reaches the
+same verdict on Sonnet 5 max independently: avoid it unless cost-pinned to Sonnet and
+latency is irrelevant, given a 188-second measured TTFT.
 
-Four limits keep this a heuristic rather than a fact:
+That is enough to retire Sonnet above medium and to treat `max` as off the frontier in
+every family. It does not by itself establish the Opus-low-versus-Sonnet-medium margin,
+which remains a judgment.
 
-- Intelligence Index v4.3 is a composite of math, science, coding and reasoning. It is
-  not an agentic-coding measurement, which is what this router actually routes.
-- The burn figures are benchmark-harness API dollars. Anthropic publishes no conversion
-  to Pro/Max allowance depletion, so the ratios do not transfer to a plan.
-- Retry count is absent from the comparison and often dominates real cost per task.
-  Hence policy rule 8: count retries.
-- Opus low reportedly does not shorten its output and delegates eagerly, so its real
-  burn can exceed the estimate. Corroborating reports here are practitioner posts, not
-  controlled runs.
+**What was discarded, and why it matters.** The synthesis that prompted this revision
+presented an Intelligence Index v4.3 score-versus-burn table covering all fifteen
+settings, including 28 for Sonnet 5 medium and 32 for Sonnet 5 high. Those two numbers
+cannot be what they claim: this repository's own check, recorded at the end of
+[source-research-evidence.md](source-research-evidence.md), found that Artificial Analysis
+shows N/A for the Sonnet 5 Intelligence Index at medium and high, and that Sonnet 5 has no
+row at all in the Coding Agent Index v1.3. Treat the rest of that table's figures as
+unsourced. Its per-task burn column was also benchmark-harness API dollars, with no
+published conversion to Pro/Max allowance depletion, and it carried no retry column -
+hence policy rule 8: count retries, because a first-attempt success usually beats a
+nominally cheaper route corrected twice.
+
+One caveat on Opus low survives from the practitioner reports rather than from
+measurement: low effort is said not to shorten its output, and it delegates to subagents
+readily, so real burn can exceed a per-task estimate. Treat that as a thing to watch on a
+long run, not an established figure.
+
+**This policy steers away from a product default.** Sonnet 5 high is the default effort on
+the Claude API and in Claude Code. Narrowing Sonnet to low and medium is therefore a
+deliberate departure, and worth restating to anyone who inherits this router.
 
 Anthropic's own guidance still names Sonnet the everyday interactive default and Opus
 the escalation for hard diagnosis and multi-file scope, and separate guidance argues
@@ -56,8 +69,9 @@ xhigh is the floor for demanding long-horizon agentic runs. This policy does not
 contradict either: it narrows Sonnet to low and medium rather than demoting the family,
 and it keeps high and xhigh Opus for long autonomous runs where low effort stalls.
 
-Treat the ordering as falsifiable. If a Sonnet high route is landing work you keep on
-the first attempt, that evidence outranks this note.
+Treat the ordering as falsifiable. If a Sonnet high route is landing work you keep on the
+first attempt, that evidence outranks this note. Prefer a measured run in your own harness
+over any leaderboard row, and over this paragraph.
 
 ## Primary sources
 
