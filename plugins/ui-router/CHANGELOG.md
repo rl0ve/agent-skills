@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.12.0 - 2026-09-17
+
+- Add conditional Neuform and Aura routes for visual-direction exploration, HTML
+  prototypes and reusable handoff material; distinguish those outputs from CMS or
+  page-builder integration.
+- Add ThreeUI Pro's entitled-source route alongside Community, with compatibility,
+  fallback and destination-runtime checks for spatial enhancements.
+- Keep vendor capability, current entitlement, successful retrieval or export,
+  destination integration and observed behavior as separate evidence states. Retry a
+  relevant authorized connected service when prior access results may be stale.
+- Align UI Router manifests, marketplace metadata and field-guide version data.
+
 ## 1.11.0 - 2026-09-06
 
 - Make concrete composition decisions and bounded visual refinement part of design

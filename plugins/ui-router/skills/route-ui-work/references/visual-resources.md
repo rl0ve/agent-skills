@@ -1,6 +1,6 @@
 # Inspiration sources and implementation references
 
-Source map updated 2026-09-06; new agent-access and component sources were checked against their official pages on that date; retained resource details were reviewed 2026-09-05. This map guides selection, not a mandatory browsing checklist. Check current tool availability and access in the host; recheck upstream terms before adding code or purchasing access. Public reference access does not grant rights to redistribute pictured assets.
+Source map updated 2026-09-17; retained resource details were reviewed 2026-09-05 and the paid design/prototype routes below were checked against official documentation on 2026-09-17. This map guides selection, not a mandatory browsing checklist. Check current tool availability and access in the host; recheck upstream terms before adding code or purchasing access. Public reference access does not grant rights to redistribute pictured assets.
 
 ## Choose by the work
 
@@ -133,6 +133,21 @@ quality, production readiness, conversion performance or use by a specific desig
 - Consult the relevant [PAIR guidance](https://pair.withgoogle.com/guidebook-v2/)
   when trust, control or failure behavior is unresolved; keep that decision scoped.
 
+### Neuform and Aura: visual directions, prototypes and handoff
+
+- [Neuform](https://neuform.ai/) turns prompts and remix templates into AI HTML landing-page directions and reusable `DESIGN.md` files. Its Pro plan is a private-work and export route; use it to compare a few directions, retain the selected system rules, and hand off a bounded HTML reference. Its public [Architecture & Design template](https://neuform.ai/template/architecture-design) is an appropriate starting point for architecture-led marketing work.
+- [Aura](https://www.aura.build/learn) supplies visual editing, referenceable templates and components, multi-page prototypes, and export of HTML, Tailwind CSS and vanilla JavaScript. Use it when an interactive alternate needs to be explored or demonstrated before destination implementation. Its official [FAQ](https://www.aura.build/learn/faq) says Design Mode and export depend on eligible paid plans.
+- [Aura MCP](https://www.aura.build/mcp) is a remote Streamable HTTP route for authenticated Canvas/project work. It can read, create and update Canvases; import explicitly supplied HTML or React projects and assets; and publish a specific validated revision. Connect only after the user authorizes the account scope. Its availability does not prove that a Canvas was imported, a revision was published or a destination site changed.
+- Neither output format establishes a CMS import path, page-builder editability, performance in the destination, or an accessible production result. For WordPress/Elementor and other CMS work, translate the selected layout, tokens and behavior into native sections/widgets where possible; isolate custom code only where it provides a material benefit. Verify that rendering, responsive behavior, forms and updates work in the actual destination.
+- Keep the stages distinct in project notes: a vendor capability, current account entitlement, a successful export/source retrieval, destination integration, and observed destination behavior are separate outcomes. Do not infer one from another.
+
+### ThreeUI Pro: entitled spatial-code source
+
+- Sources: [ThreeUI](https://threeui.com/), [official Community repository and install instructions](https://github.com/MengTo/threeui), [MCP](https://threeui.com/mcp), and [pricing](https://threeui.com/pricing).
+- ThreeUI Community is the free React/Three.js implementation route below. Pro source is not published to npm: the official repository says an active Pro member authenticates in the browser and retrieves an entitled source bundle through its CLI. Its authenticated MCP supplies templates, components, prompts and source files. Verify membership and the retrieved component in the current session before treating a Pro component as available.
+- ThreeUI is not an Elementor or other page-builder widget library. Use a Pro component only in a compatible, project-local code surface or as a reference for a native recreation. Do not add React or a graphics runtime to a CMS page solely to reproduce a decorative demo.
+- Treat a spatial scene as one bounded enhancement with a static/reduced-motion fallback. Measure the selected implementation on target mobile hardware and test its lifecycle, asset paths and cleanup after destination integration.
+
 ## Free implementation choices
 
 ### ThreeUI Community: procedural 3D sites and hero sections
@@ -196,7 +211,7 @@ Examples: Meng credits [Matthew Yu's sketchbook concept](https://x.com/MengTo/st
 
 - [Mobbin MCP](https://mobbin.com/mcp): the vendor advertises paid-plan access. Mobbin remains a primary product-reference source above; check exposed tools and actual access before proposing setup. Do not assume a plan or promise permanently unmetered access.
 - [60fps MCP](https://60fps.design/mcp): check current plan requirements and existing connection. Use public examples when sufficient; do not install paid access under a strict free-only instruction.
-- ThreeUI Pro, DesignCode, Higgsfield, MiniMax Code, Aura and image-generation services: optional; free installation or trial access does not establish free ongoing use. Verify terms and user authorization separately.
+- ThreeUI Pro, Neuform, DesignCode, Higgsfield, MiniMax Code, Aura and image-generation services: optional; free installation or trial access does not establish free ongoing use. Verify terms and user authorization separately.
 - [Orbs](https://orbs.jakubantalik.com/) now points to [Libraries.dev](https://libraries.dev/orbs). [Origin Kit](https://originkit.dev/) remains a discovery candidate. Verify the exact component's source and license before code reuse.
 - [Layers](https://layers.jamiemill.com/) is an MIT skill pack linked from [George's design-agent resource post](https://x.com/nurijanian/status/2058231994329497922). Its intro and orientation skills informed [product-decision routing](product-decisions.md); the whole pack is not installed or fully reviewed. Consider selected skills for unresolved conceptual models or interaction flows, not another visual lead.
 - Awesome Design MD and other brand-system packs are research leads until their upstream source, license and fidelity are checked. Do not treat unofficial brand reconstructions as official design systems.

@@ -57,11 +57,14 @@ For inspiration, substantial new visual work with unresolved direction, motion r
 
 - Start from the user's reference; otherwise choose one or two relevant references. Record what each contributes before implementing.
 - Use ThreeUI Community for procedural 3D examples, Toolcraft for a canvas with creative controls, and Canvas UI for a specific GPU effect. They are implementation resources, not additional aesthetic directors.
+- Treat Neuform and Aura as exploration, prototype and handoff tools. Their generated or exported HTML can provide a visual direction and implementation reference, but does not establish a clean import into a CMS or a maintainable page-builder edit. Recreate the selected structure in the destination and verify it there.
+- Treat ThreeUI Pro as an entitled source-delivery route for a compatible code project, not a native CMS component library. Keep any selected spatial scene bounded, preserve a readable fallback, and test the destination's actual runtime.
 - For an exported product video or animated explainer, consider HyperFrames' free local renderer. A website animation and a rendered video need different validation; select the output route first.
 - For product screens and flows consider Mobbin or Refero; inspect available connector tools before assuming access is missing. Consider 21st.dev for component samples and selected code, Component Gallery for conventions, and the resource map for expressive and editorial references. Select AI-interface examples only when the product exposes AI behavior.
 - Choose motion references by behavior: product feedback, page/scroll choreography, experimental interaction, small interaction details, or spatial 3D. Use the matching resource-map row and inspect actual motion; screenshots alone do not establish timing or gestures.
 - Keep dependencies project-local and add only what the chosen output needs. A resource catalog entry is not an installed plugin. A Blender workflow skill is not the Blender application.
 - Honor an explicit free-only constraint: public browsing and verified free code are eligible; paid MCPs, trials that require billing, and metered services are not. Existing user authorization covers the agreed install scope; do not ask again solely because an installer is plan-first.
+- A previous tool failure does not establish continuing unavailability. Retry an already configured and authorized connected service when it is relevant, then record the current result. Keep account status session-scoped.
 
 In Codex, use Work Router's Codex table or stay in the parent. The Claude agent names and model defaults below apply only in Claude Code.
 
