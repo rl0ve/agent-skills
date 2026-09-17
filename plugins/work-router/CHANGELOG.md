@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.7.0 - 2026-09-17
+
+- Retire Sonnet high, xhigh and max as routes. Sonnet medium is now the top of that
+  family; the step above it is Opus low, not more Sonnet effort.
+- Make Opus low the primary route for reasoning-dense implementation, in the parent,
+  with Opus medium as the first escalation when it stalls or thrashes.
+- Rank the Fable band explicitly and prefer Opus high/xhigh over Fable medium for long
+  autonomous runs, since Fable bills separately.
+- Declare `max` off the efficient frontier in every family.
+- Add a retry-count rule: cost per completed task, not token price, decides the route.
+- Record the caveats on Opus low: low effort does not shorten output and it delegates
+  to subagents readily, so real burn can exceed a per-task estimate.
+- Time a family switch to a phase or compaction boundary, because the prompt cache is
+  per-model.
+- Add phase-boundary handoff guidance: write a state spec rather than a conversation
+  recap, keep the rejected alternatives with reasons, write to a file, and treat the
+  replacement's re-reads as correct behavior.
+- Document the basis for the dominance ordering and its four limits in
+  `references/routing-policy.md`. It is a secondary synthesis over a composite
+  benchmark, not an agentic-coding measurement.
+
 ## 1.6.0 - 2026-09-06
 
 - Add `deduplicate-skills` as the owner for installed-skill consolidation across Codex,

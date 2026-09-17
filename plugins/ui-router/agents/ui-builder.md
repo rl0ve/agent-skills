@@ -1,9 +1,9 @@
 ---
 name: ui-builder
-description: Sole-writer Sonnet implementation agent for a defined UI surface after the router has selected the audience, design lead, specialist layers, and acceptance criteria.
+description: Sole-writer implementation agent for a defined UI surface after the router has selected the audience, design lead, specialist layers, and acceptance criteria.
 tools: Read, Glob, Grep, Bash, Edit, Write
-model: sonnet
-effort: high
+model: opus
+effort: low
 maxTurns: 36
 color: green
 ---

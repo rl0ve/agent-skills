@@ -11,7 +11,7 @@ The plugin contributes:
 
 - `/ui-router:route-ui-work`, an auto-invocable UI routing skill;
 - `/ui-router:install-ui-stack`, a manual, plan-first optional installer;
-- read-only scout and critic agents plus one Sonnet UI builder;
+- read-only scout and critic agents plus one sole-writer UI builder;
 - the complete routing catalog and quality references;
 - the two polished UI reference cards;
 - a one-editor writing route that hands product or brand constraints to Natural Writing for the final prose pass;

@@ -18,8 +18,9 @@ different order.
 3. Keep trivial, tightly coupled, or already-contained work in the parent session.
 4. Delegate only when a bounded specialist, context isolation, or independent read-only work repays startup and duplicated-context cost.
 5. Use one write-capable owner per working tree. Never run the parent and a writing subagent against overlapping files at the same time.
-6. Prefer a one-step effort increase before moving to a larger model when the model understood the problem but did not inspect, verify, or persist enough.
+6. Prefer a one-step effort increase before moving to a larger model when the model understood the problem but did not inspect, verify, or persist enough - except above Sonnet medium, where the next family is the cheaper step (see the dominance note below the Claude Code table).
 7. Prefer a larger model when the full relevant context was available, the model genuinely tried, and capability or judgment was still insufficient.
+8. Count retries, not token price. A route that lands on the first attempt is usually cheaper than a nominally cheaper route you correct twice. If you are re-prompting a model on the same problem, you are already past the point where the larger family was the economical choice.
 
 ## Missing skills, plugins or integrations
 
@@ -70,6 +71,7 @@ matches the agent you are running as, and ignore the other.
 | One-step, tightly coupled, or conversational | Parent | active model | active effort | Delegation overhead would dominate. |
 | Narrow lookup, classification, repository map, or evidence collection | `work-router:fast-scout` | Haiku | low | Read-only; return compact evidence. |
 | Defined implementation with clear acceptance criteria | `work-router:sonnet-builder` | Sonnet | medium | Sole writer; verify proportionately. |
+| Reasoning-dense implementation: a feature, a multi-file change, or work where the plan is not yet settled | Parent | Opus | low | Primary default for real implementation. No subagent; the parent already holds the context. |
 | Difficult diagnosis, architecture, or consequential tradeoff | `work-router:opus-architect` | Opus | high | Read-only by default; parent integrates. |
 | High-stakes final review after a strong implementation | `work-router:critical-reviewer` | Opus | xhigh | Read-only; use only when the risk justifies it. |
 | Long-horizon, multi-stage, highly ambiguous autonomous project | `work-router:fable-runner` | Fable | high | Sole writer; only when Fable is permitted and the task is large enough. |
@@ -77,7 +79,9 @@ matches the agent you are running as, and ignore the other.
 
 **Language work routes on a different axis.** The table above ranks families by reasoning difficulty, and that ranking does not carry over to writing. When the deliverable is the prose itself - a line a person will say on a stage, a name, a paragraph of UX copy, a voice match against a sample - route to `work-router:fable-wordsmith` rather than to `opus-architect`, at any difficulty. Opus is the better diagnostician; Fable hears cadence, register and the tics a reader feels but cannot name. Use Opus for prose only when the hard part is the argument or the facts rather than the words. Keep the wordsmith read-only: prose edits are cheap to review and expensive to apply blindly, and the parent owns checking every figure before anything ships.
 
-Use Sonnet at high effort in the parent for tightly coupled multi-file work that needs more thoroughness but not Opus-class judgment. Use Opus at low or medium effort only when expert recognition matters more than exhaustive repository work. Use Fable at low effort only for long agentic runs made of individually easy steps; it is still the heaviest family and must not become a routine shortcut.
+**Sonnet above medium is a dead rung.** Sonnet high, xhigh and max cost more per completed task than Opus low without matching its quality, so treat Sonnet medium as the top of that family and step to Opus low rather than raising Sonnet effort. Reserve Sonnet low and medium for what they are genuinely best at: mechanical edits, tests, boilerplate, config, and fast interactive work where a plan already exists and latency is the binding constraint. Opus low is the route for anything with real reasoning content, and Opus medium is the first escalation when Opus low stalls or thrashes. In the frontier band, Fable medium is the value rung and Fable high is the route for the hardest repo-wide and architectural work; Fable xhigh is a ceiling for genuinely frontier tasks. Fable low is situational rather than cheap - it edges past Opus medium on quality but costs more, so reach for it only on long agentic runs made of individually easy steps, and never as a routine shortcut. For a long autonomous run, prefer Opus high or xhigh over Fable medium: same band, and Fable bills separately.
+
+Two caveats on Opus low, both of which cut against the arithmetic. Low effort does not shorten its replies, and output is the expensive half of the meter, so a run can cost more than a per-task estimate predicts. It also delegates to subagents readily, which multiplies context. Give it an exact file map, hold the one-writer rule, and check actual burn on a long run instead of assuming the low setting is thrifty. The basis for this ordering, and its limits, are in [references/routing-policy.md](references/routing-policy.md).
 
 ### If you are Codex
 
@@ -145,7 +149,8 @@ service tier without application confirmation.
 - Parallelize independent read-only questions; serialize dependent work.
 - Do not ask a writing agent to re-discover context the parent already has. Give it the precise file map.
 - Stop escalation once the acceptance criteria are satisfied.
-- Do not use `max` merely because a task is important. Outside the explicitly cost-first Luna economy route, use it only after a strong route failed or for a critical one-shot decision.
+- Switch families at a phase or compaction boundary, not mid-turn. The prompt cache is per-model, so changing family rewrites the whole cached prefix at the cache-write premium. That cost is real but small; it is a reason to time the switch, never a reason to finish substantial work on a route you have already judged wrong.
+- Do not use `max` merely because a task is important. `max` is off the efficient frontier in every Claude family: Sonnet max scores below Opus low at several times the burn, Opus max adds nothing over xhigh, and Fable max ties Fable xhigh while costing a quarter more. Outside the explicitly cost-first Luna economy route, use it only after a strong route failed or for a critical one-shot decision.
 
 ## Delegate safely
 
