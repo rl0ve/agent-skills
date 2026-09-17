@@ -41,7 +41,7 @@
       "name": "work-router",
       "source": "./plugins/work-router",
       "description": "Routes substantial agent work to the leanest reliable parent or subagent configuration on task shape, ambiguity, risk, latency, and token use. Carries a route table for Claude Code and one for Codex. Includes capability discovery and scoped deduplication of installed skills.",
-      "version": "1.7.0",
+      "version": "1.7.1",
       "category": "Productivity",
       "tags": [
         "routing",
