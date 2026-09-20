@@ -7,6 +7,10 @@ Apply every relevant gate before declaring the routed task complete.
 - Only requested surfaces and files changed.
 - The chosen chain has one lead and no redundant layer.
 - Any assumption that affected the design is reported.
+- For improvements to an existing experience, apply
+  [existing-site-improvements.md](existing-site-improvements.md): preserve useful
+  content, message meaning, prominence and accepted interactions; account for any
+  losses before claiming that the candidate is better.
 
 ## Visual and interaction quality
 

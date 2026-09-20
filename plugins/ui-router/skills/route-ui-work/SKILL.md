@@ -10,6 +10,12 @@ Select one design lead, add only focused layers that own distinct concerns, and 
 
 ## Route the request
 
+For a small defined change within an established design, use the existing owner and
+read only the guidance needed for the affected region. Do not run the full classification,
+capability-inventory or sample-selection sequence for a mechanical typo, token or
+contrast correction. Creating or rewriting prose needs the copy ownership below; a
+mechanical correction does not require a new semantic-owner/editor handoff.
+
 1. Honor explicit skill, model, framework, aesthetic, reference, fidelity, and scope choices.
 2. Read [references/taxonomy.md](references/taxonomy.md) and classify one primary surface plus one audience from this project's purpose. Do not inherit an audience or aesthetic from the user's profession, previous projects, or use of AI to build.
 3. Ask one short question only when two plausible classifications produce materially different work.
@@ -30,6 +36,15 @@ show actual references or comparable previews when useful, translate plain-langu
 and establish a representative slice before costly expansion. Keep chosen direction
 in project notes. Clear references, established systems and small defined edits stay
 direct; do not require a prompting method, questionnaire or repeated approval rounds.
+
+## Improve an existing experience
+
+For improvements to an existing site/app or feedback that a redesign lost useful
+content, brand, messaging or interactions, read
+[references/existing-site-improvements.md](references/existing-site-improvements.md).
+Start from what works, prioritize the largest observed obstacle, and compare the
+candidate with the original visitor journey. Keep small defined edits scoped; an
+explicit rebrand can justify a broader change.
 
 ## Product decisions before polish
 
