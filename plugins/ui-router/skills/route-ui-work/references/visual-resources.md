@@ -21,6 +21,7 @@ user should see, follow [design-steering.md](design-steering.md)'s sample workfl
 |---|---|---|
 | Real product screens and task flows | [Mobbin](https://mobbin.com/), including its available search tools | Screens for hierarchy and states; flows for onboarding, checkout, navigation and recovery; sections for website regions. Use the host's relevant tool when available. Still images alone do not establish animation timing or gesture behavior. |
 | Spatial entrances that lead into a working experience | The user's live reference and its creator's original demo/source; selected examples in the [September 20 review](../../../docs/experiential-sites-review-2026-09-20.md) | Inspect entry, object selection, direct navigation and return to the scene. Separate the public-page presentation from the task people complete. A social clip can establish a visible treatment, not a verified live flow. |
+| Photoreal 3D materials, hero assets and explorable spaces | [Meng's 3D rendering skills](https://github.com/MengTo/Skills/tree/main/agent-skills/3d): [high-resolution textures](https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-high-resolution-textures/SKILL.md), [high-poly models](https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-high-poly-models/SKILL.md), [virtual tour](https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-virtual-tour/SKILL.md), and [Retina resolution](https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-retina-resolution/SKILL.md) | Choose the specialist from actual camera freedom: composed image/2.5D, free object manipulation, guided tour, free walking or XR. Study silhouette, bevel and normal detail, texture scale and PBR maps, static versus moving light/shadow, and target-device evidence. A screenshot or clip proves appearance only; an explorable world needs exercised geometry and controls. |
 | Learning, listening and other media-led experiences | A relevant live player or lesson, plus its visible controls; use [sound and media checks](motion-quality.md#sound-and-media-when-the-task-uses-them) | Inspect intentional playback, pause/continue, muted use, captions or text, synchronization and interruption. Identify whether a source is recorded media, an instructional visualization or a simulation; do not infer content accuracy from polish. |
 | Curated product direction, styles and journeys | [Refero](https://refero.design/), [official MCP documentation](https://doc.refero.design/mcp/getting-started) | Search sites/apps, styles, screens or flows for the specific question. Structured metadata helps selection; inspect the visual evidence before making visual claims. Use Refero or Mobbin first according to access and fit; do not require both. |
 | Component, section or theme samples with implementation candidates | [21st.dev](https://21st.dev/), [plans and agent access](https://21st.dev/plans) | Compare the relevant component or region, then inspect selected code and dependencies. Many authors and styles are represented; adapt one candidate to the project's system. See the implementation section below. |
@@ -54,6 +55,14 @@ or exposed by source code; otherwise label it an estimate. Watch the sequence an
 try the interaction where possible. If only stills or metadata are available, state
 that limit and do not describe unseen motion as observed.
 
+### Realism evidence for 3D work
+
+Follow the selected specialist and the [spatial-scene evidence guidance](upstream-skills.md#photoreal-interactive-worlds-and-spatial-scenes)
+for camera freedom, asset provenance, geometry, PBR materials, lighting and measured
+runtime behavior. Evaluate a reference at the viewing distance and interaction mode
+the project needs. A still or clip can establish appearance; inspect the live controls
+and geometry before treating it as evidence of an explorable, free-walking or XR world.
+
 ### Use connected reference tools before assuming access is missing
 
 Inspect the tools exposed in the current session, including searchable connectors.
@@ -86,6 +95,10 @@ status in the session, never hardcode it into this shared skill.
 Meng explicitly lists Recent.design, Collect UI and Mobbin in his
 [2026-08-12 favorites](https://x.com/MengTo/status/2087494338909741113), endorses
 Design Engineer Tools, and credits [Matthew Yu's sketchbook concept](https://x.com/MengTo/status/2085252340643430629).
+A [related Meng post](https://x.com/MengTo/status/2101672390694674565) prompted the
+September 20 spatial review. The implementation routes above rely on the verified
+upstream 3D skills; the post was not independently retrievable during this release
+review and does not establish a tested free-walking or XR experience.
 The earlier map also drew on [Abraham John's public resource list](https://x.com/Abmankendrick/status/2093990028011556918).
 The 2026-09-06 additions (HOVERSTAT.ES, Codrops, Awwwards, GSAP Showcase, Rauno's Craft,
 Motion examples and Three.js examples) are independently selected references from

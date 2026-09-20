@@ -44,10 +44,45 @@ The Meng catalog aliases name concerns or bundles, not a single universal skill.
 | Extract selected HTML interactions for reuse | [html-to-interaction-prompts](https://github.com/MengTo/Skills/blob/main/agent-skills/codex/html-to-interaction-prompts/SKILL.md) |
 | High graphical fidelity through target/build/critique iteration | [Dream Loop](https://github.com/achimala/dream-loop/blob/main/SKILL.md) and the selected workflow's required references |
 
-The existing optional installer groups Meng's first three and last three skills into
-explicit bundles; installing a bundle does not require loading all three for a task.
-Other Meng skills remain discoverable when a new need appears. These selected routes
-do not assert that the whole repository was reviewed or must be installed.
+### Photoreal interactive worlds and spatial scenes
+
+The current Meng 3D bundle is under `agent-skills/3d/`. Select by the camera freedom
+the experience actually needs, then load the complete selected `SKILL.md` and its
+required references before implementation:
+
+| Camera or output need | Exact upstream entrypoint | Route boundary |
+|---|---|---|
+| Close-up surfaces with physically coherent detail | [3d-high-resolution-textures](https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-high-resolution-textures/SKILL.md) | Choose texel density and map resolution from projected coverage, PBR roles and delivery cost. Do not assign 4K or 8K to every map by default. |
+| Hero assets whose silhouette and edges must hold up close | [3d-high-poly-models](https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-high-poly-models/SKILL.md) | Spend geometry on visible silhouette, bevels and surface form, then prepare runtime LODs. A high triangle count alone does not establish realism. |
+| Guided tours, room navigation, orbit inspection or requested free walking | [3d-virtual-tour](https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-virtual-tour/SKILL.md) | Orbit inspection is not free walking. Add first-person collision and walkable-surface checks only when free walking is requested or required. |
+| Crisp WebGL output on HiDPI displays | [3d-retina-resolution](https://github.com/MengTo/Skills/blob/main/agent-skills/3d/3d-retina-resolution/SKILL.md) | Treat fixed 200% rendering as a display-quality choice with a measured fallback; it does not make coarse geometry or low-resolution textures realistic. |
+
+For a composed image or 2.5D image-layer presentation, use the project's image,
+canvas or camera-composition workflow. A realistic screenshot or clip is appearance
+evidence, not proof of explorable geometry. Match the controls to the brief: a fixed
+camera, object inspection, guided navigation, free walking or XR/head tracking.
+A fixed-camera real-time scene can still need material and geometry specialists;
+do not add navigation to satisfy the route. Do not force the scroll-world specialist
+onto a single free scene; it owns a persistent scroll-authored journey through several
+compositions.
+
+Before calling a spatial scene photoreal, record an asset and material plan with a
+provenance ledger: source, license or ownership, attribution, procedural/generated
+status, intended camera distance and target devices. Record the geometry plan for
+silhouette, bevels, normals and close-up surface form; the texture plan for texel
+density and PBR maps; and the lighting plan, including which light and shadow work is
+static or baked versus moving at runtime. Verify the result with screenshots or a
+short clip from the actual working scene and relevant frame-time, draw-call,
+triangle, texture-memory and load evidence. Name the tested device and runtime;
+mark estimates, unavailable measurements and untested target devices explicitly.
+Primitives are appropriate for structure and blockout, but they cannot alone
+substantiate photorealism; the rendered result decides.
+
+The existing optional installer groups the six web-design and capture/translation
+skills above into two bundles; installing a bundle does not require loading every
+member for a task. The 3D specialists remain separate selections, alongside other
+Meng skills discoverable when a new need appears. These selected routes do not
+assert that the whole repository was reviewed or must be installed.
 
 ## Dream Loop and the router fallback
 
