@@ -41,6 +41,20 @@ Expression and density are separate choices, and neither is fixed by an audience
 
 Use `audience-agnostic` only for a non-user-facing artifact such as a raw token extraction. If the result will be seen or used by people, choose an audience.
 
+## Pages that are also the experience
+
+A public URL or cinematic entrance does not make the whole task marketing. If people
+can listen, learn, create or explore on the page, classify that working experience as
+`product-app` or `creative-expressive`, with `marketing-landing` as a secondary concern
+when relevant. Keep one design lead; an expressive entrance and a usable session do
+not require competing leads or a new surface category. Preserve the real task as the
+scene opens, a selection is made and the user enters or returns from the working view.
+
+Infer the scene's role from the brief: atmosphere, optional exploration, or essential
+navigation. Keep a direct route to the main task when exploration is optional. Do not
+turn every landing page into an app, or replace an existing product with a promotional
+hero because the references happen to be landing pages.
+
 ## Consequential ambiguity tests
 
 Ask before acting when any of these are unresolved:
@@ -49,5 +63,8 @@ Ask before acting when any of these are unresolved:
 - “Website” could mean `marketing-landing`, `content-editorial`, or `portfolio-personal`.
 - “Make it impressive” could mean restrained craft or `creative-expressive`.
 - A reference could be inspiration or a fidelity specification.
+- A public interactive page could be the working experience or a preview leading to a
+  separate product. Ask only if this changes the requested structure and context has
+  not already settled it.
 
 Do not ask when surrounding context makes the answer clear. State the inferred axes and proceed.

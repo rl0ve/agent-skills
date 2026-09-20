@@ -17,6 +17,20 @@ checks, not executed agent trials or evidence of improved design outcomes.
 | User delegates taste and asks for autonomous execution | Recommend and proceed on reversible assumptions; no repeated approval gates. Silence does not authorize dependent actions requiring permission. | Covered by existing steering authorization rules |
 | Attractive component needs another framework and fails long-text state | Prefer adapting the technique or an existing equivalent; verify the destination with realistic content. Demo quality does not justify a framework switch. | Covered by adoption and quality gates |
 
+## September 20 additions — 1.15.0
+
+Manual policy review only; these are not automated agent trials or device tests.
+
+| Case | Expected route and evidence | Review |
+|---|---|---|
+| Public listening room is explicitly the learning app | Consumer product/expressive primary; landing secondary. Preserve entry → song selection → learning and return. No “app or preview?” question because intent is settled. | Taxonomy hybrid case |
+| “Build a landing page like this interactive room,” with no task brief | Ask whether people use the experience there or preview a separate product, because the answer changes the structure. One lead and a representative slice. | Steering question table |
+| Expressive learning site, uncertain entry sound | Ask whether Enter intentionally starts sound or opens quietly with separate Play. Show a small entry comparison if useful. No automatic microphone request. | Steering and media checks |
+| User specifies quiet entry, an iPad on a stand and optional hands | Implement those constraints directly; retain hands-off and large reachable transport. Do not repeat resolved device/sound/style questions. Real-device speech remains a separate check. | Steering exclusions and media checks |
+| User delegates taste for an ordinary static portfolio | Choose a reversible direction and proceed. No sound system, spatial scene or mandatory approval question. | Nearby non-trigger case |
+| Attractive lesson demo shows notes over an artist recording | Verify source identity and note provenance separately. Do not present invented exercise notes as a verified score. Check shared playback/mute/seek state in the destination. | Media evidence boundary |
+| X post links a public repository without a reuse license | Inspect as reference; do not copy the design/assets or assume “open-sourced” grants reuse. No automatic library or paid service install. | Existing source/license checks |
+
 ## Evidence decisions
 
 - **Adopt:** the sample checkpoints and task-specific resource selection; extend the

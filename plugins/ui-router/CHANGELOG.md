@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.15.0 - 2026-09-20
+
+- Clarify routing for public pages that are also the working experience.
+- Add conditional audio/video control, synchronization and recovery evidence.
+- Add focused question examples for unresolved purpose, navigation, sound entry and
+  physical use; retain settled preferences and avoid routine approval rounds.
+- Record selected X references with observed-versus-claimed limits and manual policy
+  cases. No external code, assets, paid service or additional skill installed.
+
 ## 1.14.0 - 2026-09-19
 
 - Add a conditional visual-target/build/critique method informed by Dream Loop, with

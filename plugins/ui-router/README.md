@@ -34,6 +34,15 @@ For broad redesigns or unexplained usability problems, [product-decision routing
 
 The routing skill checks current host capabilities and reads this map for relevant creative, reference, or component work. Restart or reload the host after installing an update, then verify the expected skill is listed. Local source updates are not automatically published to the marketplace.
 
+## Immersive entrances and media experiences
+
+A public landing page can also be the usable product. The router now distinguishes
+that case, preserves the route from an expressive scene into the real task, and checks
+sound/video controls, shared playback time, visible words and interruption/recovery
+when media is part of the work. Its focused question examples cover unresolved page
+purpose, navigation, sound entry and physical use. They do not create routine approval
+rounds or reopen settled preferences. See the [September 20 source review](docs/experiential-sites-review-2026-09-20.md).
+
 ## Graphical apps and visual refinement
 
 The [visual build loop](skills/route-ui-work/references/visual-build-loop.md) uses a
