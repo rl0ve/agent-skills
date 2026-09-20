@@ -51,6 +51,14 @@ the implemented experience with the requested traits. An editorial audience does
 imply a conservative newspaper aesthetic. A working flow and a list of references do
 not by themselves establish that the requested visual direction was delivered.
 
+## Graphical and interactive builds
+
+For substantial graphical apps, scenes, creative tools or expressive sites, use
+[references/visual-build-loop.md](references/visual-build-loop.md) when a concrete
+visual target and bounded comparison would improve the result. Pair appearance with
+an exercised user action, keep generated targets distinct from working output, and
+verify assets in the destination. Small edits and settled designs stay direct.
+
 ## Inspiration sources and visual resources
 
 For inspiration, substantial new visual work with unresolved direction, motion references, creative editors, or component sourcing, read only the matching section of [references/visual-resources.md](references/visual-resources.md). It maps sources to design questions, access boundaries and upstream documentation. Clear references, settled direction and small defined edits do not require a broad search.
@@ -78,8 +86,11 @@ When the Work Router is installed, apply its work route after composing the UI s
 | Defined UI implementation | `ui-router:ui-builder` | Opus | low |
 | Consequential visual, accessibility, or system review | `ui-router:ui-critic` | Opus | high |
 
-Keep trivial UI adjustments in the parent. Use Fable only for a connected, long-horizon
-multi-surface or design-system transformation that truly benefits from sustained autonomy.
+Keep trivial UI adjustments in the parent. Honor an explicitly selected Astra or Fable
+model and delegate model/effort decisions to current Work Router guidance; UI Router
+does not impose a separate family restriction for graphical work. A newer model or an
+impressive demo is a reason to evaluate a method, not proof that every UI needs 3D,
+image generation or subagents. These Claude fallback profiles do not switch the parent.
 
 **Do not raise Sonnet above medium to get a better UI build.** Opus at low effort is the
 implementation route because the Sonnet effort rungs above medium cost more than Opus low

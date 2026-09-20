@@ -34,6 +34,15 @@ For broad redesigns or unexplained usability problems, [product-decision routing
 
 The routing skill checks current host capabilities and reads this map for relevant creative, reference, or component work. Restart or reload the host after installing an update, then verify the expected skill is listed. Local source updates are not automatically published to the marketplace.
 
+## Graphical apps and visual refinement
+
+The [visual build loop](skills/route-ui-work/references/visual-build-loop.md) uses a
+reference or optional generated target, a working slice and bounded visual comparison.
+It also tests the main user action and any requested data or export outcome. Dream Loop
+informed this method; its subscription-based orchestration and paid asset defaults are
+not adopted. See the [source review](docs/interactive-workflows-review-2026-09-19.md).
+Model selection remains with Work Router and the user's explicit choice.
+
 ## Design direction without a prompting course
 
 [Design steering](skills/route-ui-work/references/design-steering.md) makes unresolved

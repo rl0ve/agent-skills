@@ -1,7 +1,7 @@
 {
   "name": "ui-router",
-  "version": "1.13.0",
-  "description": "Route UI work through focused skills, project-specific references, visual and component samples, iteration steering, and in-context verification. Updated 2026-09-17.",
+  "version": "1.14.0",
+  "description": "Route UI work through focused skills, visual resources, bounded visual refinement, and verified interactions. Updated 2026-09-19.",
   "author": {
     "name": "Robert Love"
   },

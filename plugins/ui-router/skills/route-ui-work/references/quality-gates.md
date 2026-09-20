@@ -27,6 +27,15 @@ Apply every relevant gate before declaring the routed task complete.
 - For substantial custom motion, scroll choreography, canvas or WebGL, apply
   [motion-quality.md](motion-quality.md). Ordinary static edits do not need profiling.
 
+## Interactive application outcomes
+
+- For a graphical app, editor, game or simulation, exercise a representative user action
+  through its visible result. Cover reversal, reset, cancellation or recovery when relevant.
+- Check requested persistence, data changes and exported output directly; label fixtures
+  and simulated states. Do not infer working behavior from screenshots or decorative controls.
+- When using a generated target, distinguish proposed appearance, actual running capture
+  and observed behavior. Apply [visual-build-loop.md](visual-build-loop.md) when relevant.
+
 ## Reference fidelity
 
 - Apply exact visual matching only when fidelity is the specification. For inspiration,

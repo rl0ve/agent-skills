@@ -24,6 +24,10 @@ Use exactly one broad lead and no more than three focused layers. Optional entri
 
 ## Creative / expressive
 
+For substantial graphical builds with a visual target, apply
+[visual-build-loop.md](visual-build-loop.md) under the chosen lead. It pairs visual
+comparison with an exercised interaction; it does not add a second aesthetic director.
+
 When selecting examples or dependencies, read [visual-resources.md](visual-resources.md): ThreeUI Community for procedural scenes, Toolcraft for creative editors, and Canvas UI for a bounded effect. These support the lead below; they do not replace it or require all three installations.
 
 Choose one lead by medium:
