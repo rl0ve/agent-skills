@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.16.1 - 2026-09-20
+
+- Diagnose embedded media with the same source across the relevant browser/origin;
+  avoid treating a single error or successful direct link as universal embed evidence.
+- Check player readiness separately from API loading, with timeout recovery and late
+  callback protection. Verify paused seeks, return state, completion and replay.
+- Preserve origin-scoped preview data and verify the loaded entrypoint/dependencies.
+- Add applicable and nearby non-trigger policy cases. No new runtime, external
+  service, model rule or third-party skill is introduced.
+
 ## 1.16.0 - 2026-09-20
 
 - Prefer the complete selected upstream specialist over a shortened router summary

@@ -43,6 +43,20 @@ Manual policy review only; no new CMS execution is claimed by this release.
 | Only the live production editor is available, with live edits forbidden | Do not edit it to satisfy the gate; report native editability as unverified until a permitted environment exists. | Authorization boundary |
 | Existing static site needs one spacing fix | Use the narrow existing browser checks; no CMS editor ceremony or full-site reassessment. | Nearby non-trigger case |
 
+## Media runtime additions — 1.16.1
+
+Manual policy consistency review informed by observed application failures. These
+cases do not constitute a new browser trial or a universal provider compatibility rule.
+
+| Case | Expected route and evidence | Review |
+|---|---|---|
+| Several real recordings fail under one local origin, while a tutorial plays | Compare the same recording under a relevant alternative origin/browser before more source swaps. Keep the real parent identity; report the result only for the tested environment. | Media diagnosis |
+| A source plays in a regular browser but its frame never becomes ready in an in-app browser | Distinguish environments; bound player readiness separately from API loading, offer recovery and suppress late callbacks. | Media lifecycle |
+| Returning from a related lesson recreates a paused recording | Verify settled position, pause state, rate and loop against actual media; seeking a cued player may start it. | Shared playback state |
+| A local preview hostname changes after preferences and markers exist | Preserve origin-scoped data, keep existing destination settings, and verify migration rather than silently resetting it. | Preview-origin migration |
+| A shared audio API was fixed but the browser still uses an old imported module | Check the loaded entrypoint/dependency revision before changing the implementation again. | Runtime evidence |
+| Existing static page needs a small spacing correction | Check the affected view; do not introduce a media/browser matrix or migration workflow. | Nearby non-trigger case |
+
 ## Evidence decisions
 
 - **Adopt:** the sample checkpoints and task-specific resource selection; extend the
