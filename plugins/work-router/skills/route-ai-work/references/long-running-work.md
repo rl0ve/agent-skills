@@ -42,6 +42,16 @@ Once acceptance is met, move on. Reopen a completed phase for new evidence or a 
 requirement, not an unlimited request for perfection. A phase boundary is a checkpoint,
 not a reason to stop before the user's full task is complete.
 
+At a checkpoint, compare progress against the user's highest-priority unmet condition,
+not only the easiest things to count. More content, tests, assets or minor refinements
+do not compensate for an unresolved core requirement such as visual fidelity,
+interactive behavior or deployment. When that condition survives repeated passes,
+identify the limiting cause and make the next useful phase test a materially different
+approach or resolve its prerequisite. Expand breadth when it advances the outcome;
+do not use it to avoid the difficult acceptance decision. Keep implementation scores,
+verified coverage and measured user outcomes separate. Preserve optional opportunities
+as such instead of continually promoting them into new completion requirements.
+
 Adapt the implementation plan when new facts invalidate it, recording the reason and
 preserving the user's requested outcome. Ask only for a material decision that cannot
 be inferred within the authorized scope.

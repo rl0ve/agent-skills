@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.16.3 - 2026-09-20
+
+- Add conditional task/asset contracts for interactive scenes: visible meaning,
+  category versus instance, complete actions and settled placement/reset evidence.
+- Check shared input ownership across activity switches and prevent stale media
+  completion from advancing or crediting a different activity.
+- Separate catalog size, assisted performance and design rubrics from measured
+  outcomes. Retain the existing spatial specialist and fidelity requirements.
+- Align the stale Codex marketplace version pin and cover it with a parity test.
+  No third-party installation or application runtime is changed by this release.
+
 ## 1.16.2 - 2026-09-20
 
 - Add exact Meng specialists for detailed 3D materials, geometry, virtual tours and

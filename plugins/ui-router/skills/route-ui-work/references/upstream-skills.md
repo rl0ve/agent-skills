@@ -78,6 +78,10 @@ mark estimates, unavailable measurements and untested target devices explicitly.
 Primitives are appropriate for structure and blockout, but they cannot alone
 substantiate photorealism; the rendered result decides.
 
+When the scene includes object tasks, apply [interaction-contracts.md](interaction-contracts.md)
+alongside the selected specialist. Detailed assets must preserve the task's meaning,
+selection, placement and recovery; visual fidelity alone does not verify those behaviors.
+
 The existing optional installer groups the six web-design and capture/translation
 skills above into two bundles; installing a bundle does not require loading every
 member for a task. The 3D specialists remain separate selections, alongside other

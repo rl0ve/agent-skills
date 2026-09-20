@@ -1,6 +1,6 @@
 ---
 name: voice-narration
-description: Select, audition, generate and revise spoken narration across speech providers, including audio-only delivery and revoicing existing media. Use for voiceover quality comparisons, pronunciation, consistent delivery and Mac-compatible local narration choices. Does not record screens or build conversational voice agents.
+description: Select, audition, generate and revise spoken narration across speech providers, including reusable application clips, audio-only delivery and revoicing existing media. Use for voiceover quality comparisons, pronunciation, consistent delivery and Mac-compatible local narration choices. Does not record screens or build conversational voice agents.
 ---
 
 # Voice narration
@@ -16,6 +16,9 @@ input, Playwright or a screen recorder.
 - For a narrated walkthrough, produce audio by beat ID, then hand the files and
   measured durations to `ui-walkthrough-video` for video assembly. Reuse existing
   footage when only the voice changes.
+- For reusable application narration, read [reusable clips](references/reusable-clips.md)
+  for budget enforcement, recording identity, transcript checks and runtime delivery.
+  A single voiceover does not need an application audio pipeline.
 - For a simple request that already names OpenAI, an available OpenAI `speech`
   specialist may handle generation. Preserve its supported CLI and the chosen
   voice; do not run a second provider-selection workflow unnecessarily.

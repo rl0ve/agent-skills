@@ -111,6 +111,19 @@ class UiInstallerTests(unittest.TestCase):
 
 
 class PackageParityTests(unittest.TestCase):
+    def test_codex_marketplace_pins_match_plugin_manifests(self):
+        """Optional discovery pins must not advertise an older installed version."""
+        marketplace = json.loads((ROOT / ".agents/plugins/marketplace.json").read_text())
+        for listed in marketplace["plugins"]:
+            if "version" not in listed:
+                continue
+            source = listed["source"]
+            path = source["path"] if isinstance(source, dict) else source
+            manifest = json.loads(
+                (ROOT / path / ".codex-plugin/plugin.json").read_text()
+            )
+            self.assertEqual(manifest["version"], listed["version"], listed["name"])
+
     def test_every_plugin_version_matches_its_marketplace_entry(self):
         """Derived, not hardcoded: a pinned literal here went stale the first time
         a plugin was bumped, and the test failed for the wrong reason."""

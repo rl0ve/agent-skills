@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.5.6 — 2026-09-20
+
+- Add a conditional application-narration route covering whole-operation budgets,
+  uncertain charges, reusable clip identity, transcript review and manifest delivery.
+- Distinguish cached playback from local inference, and technical/transcript checks
+  from heard voice quality. Preserve the ordinary single-voiceover route.
+- State that this is destination-pipeline guidance; the bundled helper does not gain
+  budget enforcement, caching, transcription or a runtime player in this release.
+
 ## 1.5.5 — 2026-09-20
 
 - Add a lightweight route for quick screenshots or recordings, with capture access
