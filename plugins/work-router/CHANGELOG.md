@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.7.2 - 2026-09-20
+
+- At long-task checkpoints, prioritize the highest-priority unmet requirement over
+  easier growth in content, tests or assets. Repeated misses require cause diagnosis
+  and a phase that changes the approach or resolves its prerequisite.
+- Keep implementation scores and verified coverage separate from measured outcomes;
+  preserve optional improvements without continually expanding completion scope.
+- No model, effort, delegation or service-tier defaults change.
+
 ## 1.7.1 - 2026-09-17
 
 - Correct the basis recorded for retiring Sonnet above medium. The direction now cites

@@ -17,6 +17,10 @@ transition change, check the affected behavior and relevant reduced-motion state
 - Give each animated property one owner at a time. Avoid competing CSS, animation
   library and render-loop writes; deliberate handoffs should release the previous
   owner. Add a smooth-scroll engine only when needed and avoid competing scroll owners.
+- When activities share a canvas, input handler or controller, test direct A → B → A
+  transitions. Outgoing cleanup must release only the registration it owns, not clear
+  a newly installed handler. Exercise an action after each switch; checking each
+  activity from a fresh page can miss this failure.
 - For transformed scenes with tools such as a loupe or selection overlay, decide which
   coordinate space owns each layer. Check pointer alignment under the actual transforms
   before choosing a scene child or an independent overlay. Ordinary layouts do not
@@ -59,6 +63,10 @@ or video is part of the task. A silent decorative page does not need an audio sy
   Bound both API loading and player readiness: an API script can load while its frame
   never connects. Provide recoverable failure, and ignore late ready events after
   timeout or replacement instead of remaining in an indefinite connecting state.
+- If playback completion advances an activity or records evidence, bind the completion
+  to the original request and activity identity. Stop, replacement, navigation or a
+  failed clip must not credit the current selection through an old callback. Check
+  an interrupted clip followed immediately by a different item, not just clean playback.
 - Keep essential spoken guidance available as text, and captions/transcripts when
   applicable. Label their availability and source; do not fabricate missing lyrics,
   transcripts, scores or synchronized note data under an authentic recording's title.
