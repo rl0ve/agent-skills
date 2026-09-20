@@ -33,6 +33,32 @@ the agent's design work, not a template the user must fill out. For text-bearing
 generated art, verify the lettering; use separately typeset text when generation
 cannot preserve the required copy.
 
+## Ask about consequential gaps, not routine craft
+
+Use a focused question only when the answer would change the route, core interaction
+or substantial implementation. First check the conversation, current product and
+accepted samples. A useful question names the decision and its consequence; it is not
+permission to keep doing already authorized work. These are examples, not a checklist:
+
+| Unresolved choice | Focused question | Proceed without asking when |
+|---|---|---|
+| Public page is a usable experience or a preview | “Should visitors use the experience here, or preview it and open a separate app?” | The brief or current flow already defines where the task happens |
+| Spatial scene is the route or optional exploration | “Should people explore the room to choose something, or also have a direct list?” | Existing navigation or accessibility needs supply the direct path; preserve it |
+| Sound starts with the entry action or a separate control | “Should Enter start the audio, or open quietly with a separate Play button?” | The user requested silent entry, an existing convention is accepted, or sound behavior is already specified |
+| Physical use changes the controls | “Will this mainly be used at a desk, or from a tablet while your hands are occupied?” | The target device and setting are stated; translate them into reach, legibility and input checks |
+
+Recommend a supported option and explain the visible tradeoff. For unresolved taste,
+pair the question with the smallest useful sample from the workflow below. Continue
+independent work while waiting. If the user delegates the choice, use a reversible
+assumption and state it; do not invent a mandatory approval round. If their answer is
+necessary for the dependent work, wait for it. Silence is not a decision or permission.
+
+Use settled preferences to constrain the change: retain accepted colors, controls,
+content and optional views unless the request changes them. “More immersive” alone
+does not remove a simplified view, a mute control, readable text, direct navigation
+or another useful alternative. Browser permission prompts, spending and publication
+follow the host's authorization policy, not this design-question table.
+
 ## Show samples at useful decision points
 
 Choose the smallest comparison that resolves the actual decision. Offer visual

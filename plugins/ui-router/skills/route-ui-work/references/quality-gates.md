@@ -35,6 +35,11 @@ Apply every relevant gate before declaring the routed task complete.
   and simulated states. Do not infer working behavior from screenshots or decorative controls.
 - When using a generated target, distinguish proposed appearance, actual running capture
   and observed behavior. Apply [visual-build-loop.md](visual-build-loop.md) when relevant.
+- For a spatial entrance leading into a product, verify entry, direct navigation when
+  applicable, selection and return without losing the chosen item or useful controls.
+- For sound/media tasks, apply [the sound and media checks](motion-quality.md#sound-and-media-when-the-task-uses-them).
+  Verify playback, mute/restore, shared time, readable words and interruption/recovery;
+  distinguish tested device behavior from simulated APIs and source metadata.
 
 ## Reference fidelity
 

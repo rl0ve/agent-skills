@@ -1,7 +1,7 @@
 # Verify an interactive experience
 
-Use for substantial custom motion, scroll choreography, canvas or WebGL, or a reported
-motion/performance defect. The selected specialist owns implementation; this reference
+Use for substantial custom motion, scroll choreography, canvas, WebGL, sound/media
+interactions, or a reported motion/performance defect. The selected specialist owns implementation; this reference
 adds completion evidence, not another lead or a mandatory animation stack. For a small
 transition change, check the affected behavior and relevant reduced-motion state.
 
@@ -33,6 +33,42 @@ transition change, check the affected behavior and relevant reduced-motion state
   the target device and viewport. Use a simpler treatment where needed while preserving
   the chosen character and task. Do not copy a demo's quality constants as universal
   budgets or assume coarse pointer alone measures device capability.
+
+## Sound and media when the task uses them
+
+Apply this section to a player, lesson, soundscape or other experience in which audio
+or video is part of the task. A silent decorative page does not need an audio system.
+
+- Establish the sound-starting gesture and the intended quiet state. Keep Play, Pause,
+  Continue, Stop and Mute behavior distinct where those actions are offered. Do not
+  assume that opening a page authorizes autoplay or microphone capture.
+- Keep the relevant controls reachable during the main activity. For use away from a
+  desk or with occupied hands, test readable controls in the intended orientation and
+  provide a usable touch/keyboard path alongside optional voice or gesture controls.
+- When several views represent the same media, agree on one playback clock. Verify
+  position, rate, looping and synchronized highlights/captions through seeks and view
+  changes. Muting should preserve position unless the product specifies otherwise.
+  Check that independent sound layers mute and restore according to their labels.
+- Exercise loading, repeated Play, cancellation, blocked playback, permission denial,
+  media replacement, leaving and returning. Prevent late loads or recognition results
+  from restarting a session after Stop or navigation. State whether resume is manual
+  or automatic rather than leaving different controls to decide independently.
+- Keep essential spoken guidance available as text, and captions/transcripts when
+  applicable. Label their availability and source; do not fabricate missing lyrics,
+  transcripts, scores or synchronized note data under an authentic recording's title.
+- Voice input is optional when offered: explain activation and browser/service use,
+  show when it is listening, provide an immediate off control and define its lifecycle.
+  Feature detection or a simulated recognizer does not prove recognition on a device
+  while music is playing. Separate command recognition from performance assessment.
+- Inspect the actual source and permitted use of selected media. A working embed,
+  embeddability metadata, source identity and instructional accuracy are different
+  claims. If the source is blocked, expose recovery without substituting unrelated
+  content or silently switching versions, arrangements or clocks.
+
+Choose a representative journey such as entry → intentional playback → change view
+or passage → mute and restore → leave and return. Inspect appearance and audible/state
+behavior separately. Record device, browser, input method and the limits of observation;
+a captured promo or desktop viewport test does not establish real-tablet audio or voice.
 
 ## Observe the relevant states
 

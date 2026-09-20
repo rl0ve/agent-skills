@@ -57,7 +57,12 @@ For substantial graphical apps, scenes, creative tools or expressive sites, use
 [references/visual-build-loop.md](references/visual-build-loop.md) when a concrete
 visual target and bounded comparison would improve the result. Pair appearance with
 an exercised user action, keep generated targets distinct from working output, and
-verify assets in the destination. Small edits and settled designs stay direct.
+verify assets in the destination. For spatial entrances and sound/media experiences,
+preserve the route into the real task and apply the relevant
+[motion and media checks](references/motion-quality.md). A public page can also be
+the working product; use the hybrid case in the taxonomy and the focused question
+examples in design steering when intent remains consequentially unclear. Small edits
+and settled designs stay direct.
 
 ## Inspiration sources and visual resources
 
