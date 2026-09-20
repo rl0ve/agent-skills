@@ -45,12 +45,17 @@ rounds or reopen settled preferences. See the [September 20 source review](docs/
 
 ## Graphical apps and visual refinement
 
-The [visual build loop](skills/route-ui-work/references/visual-build-loop.md) uses a
-reference or optional generated target, a working slice and bounded visual comparison.
-It also tests the main user action and any requested data or export outcome. Dream Loop
-informed this method; its subscription-based orchestration and paid asset defaults are
-not adopted. See the [source review](docs/interactive-workflows-review-2026-09-19.md).
-Model selection remains with Work Router and the user's explicit choice.
+UI Router selects and coordinates; upstream specialists supply their detailed craft.
+The [upstream routes](skills/route-ui-work/references/upstream-skills.md) point to exact
+Meng skill entrypoints and Dream Loop. Load the complete selected procedure and required
+references; install selected complete folders for repeated use within authorization.
+Keep shared principles in the router and preserve source/version information.
+
+Dream Loop is an optional specialist for high graphical fidelity. The
+[visual build loop](skills/route-ui-work/references/visual-build-loop.md) remains a lighter,
+explicitly labeled adaptation whose comparative effectiveness is untested. It does not
+override a selected upstream workflow. User and host constraints still govern model,
+delegation and spending choices. See the [review](docs/upstream-skills-review-2026-09-20.md).
 
 ## Design direction without a prompting course
 
