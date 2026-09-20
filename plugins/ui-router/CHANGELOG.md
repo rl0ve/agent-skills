@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.16.8 - 2026-09-20
+
+- Check rendered baseline/candidate isolation when CMS variants share templates or caches.
+- Distinguish preserved source data from preserved navigation after alternating visits.
+- Add an applicable cache-contamination case and a nearby single-edit non-trigger.
+
 ## 1.16.7 - 2026-09-20
 
 - Add conditional Rive and DiffUI routes with explicit project-fit, access and
