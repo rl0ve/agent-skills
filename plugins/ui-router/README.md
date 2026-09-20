@@ -34,6 +34,12 @@ For broad redesigns or unexplained usability problems, [product-decision routing
 
 The routing skill checks current host capabilities and reads this map for relevant creative, reference, or component work. Restart or reload the host after installing an update, then verify the expected skill is listed. Local source updates are not automatically published to the marketplace.
 
+Resource recommendations distinguish free source, account-free tools, free account
+allowances and paid upgrades. Motion's official specialist and free documentation
+MCP complement the existing motion guidance; 21st's free search and limited code
+retrieval can be used through its supported CLI. Live tool and entitlement checks
+govern the available features. See the [access review](docs/resource-access-review-2026-09-20.md).
+
 ## Immersive entrances and media experiences
 
 For playback failures, compare the same source in the actual browser and page origin
