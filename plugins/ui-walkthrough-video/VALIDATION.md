@@ -272,3 +272,18 @@ The early pointer checks below missed that contamination; see version 1.5.1.
 - Manual route review confirms that the same Gemini model may expose Algieba,
   Sulafat and Kore through direct Gemini or OpenRouter. The package still must verify
   the live model/voice catalog and does not equate shared voices with feature parity.
+
+## Version 1.5.5
+
+- Documentation and metadata release, reviewed 2026-09-20. The generic capture
+  observations and applicable/non-trigger cases are in
+  [quick-capture.md](skills/ui-walkthrough-video/references/quick-capture.md).
+- The manual cases preserve explicit video and editable-project requirements, accept
+  screenshots when either format was requested, distinguish JPEG from PNG, and
+  preserve unsaved page state. They establish policy consistency, not recorder success.
+- Repository package/inventory tests: 21 passed. Existing walkthrough/render tests:
+  29 passed. Changed JSON parsed; local Markdown links, UI Router field-guide data
+  parity and `git diff --check` passed. The UI Router 1.15.1 release adds separate CMS
+  save/reload and assessment-version cases in its existing policy review document.
+- No new recording, permissions repair, live-site edit, CMS trial, paid generation
+  or plugin installation was performed for this release.

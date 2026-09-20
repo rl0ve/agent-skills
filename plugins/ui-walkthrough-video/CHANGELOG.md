@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.5.5 — 2026-09-20
+
+- Add a lightweight route for quick screenshots or recordings, with capture access
+  checked before promising video and a truthful fallback when either format is accepted.
+- Verify fresh local-page loading and detected screenshot formats; preserve unsaved
+  state, output dimensions and existing host authorization boundaries.
+- Record empty-window-list evidence without inferring its cause; add manual policy
+  cases and align the previously stale Claude marketplace version.
+
 ## 1.5.4 — 2026-09-14
 
 - Add a route for capturing an installed desktop application on the user's own machine, with the executed mechanics: accessibility clicks report success without actuating embedded web content or moving the OS cursor, real HID events do both, and a compilable pointer program ships as an asset.

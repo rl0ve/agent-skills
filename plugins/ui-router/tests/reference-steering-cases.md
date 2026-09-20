@@ -31,6 +31,18 @@ Manual policy review only; these are not automated agent trials or device tests.
 | Attractive lesson demo shows notes over an artist recording | Verify source identity and note provenance separately. Do not present invented exercise notes as a verified score. Check shared playback/mute/seek state in the destination. | Media evidence boundary |
 | X post links a public repository without a reuse license | Inspect as reference; do not copy the design/assets or assume “open-sourced” grants reuse. No automatic library or paid service install. | Existing source/license checks |
 
+## CMS acceptance additions — 1.15.1
+
+Manual policy review only; no new CMS execution is claimed by this release.
+
+| Case | Expected route and evidence | Review |
+|---|---|---|
+| Strong HTML prototype is recreated in WordPress/Elementor | Assess the saved destination pages and interactions; keep prototype scores preliminary. | CMS acceptance gate |
+| User requires native editor maintenance | On the authorized test copy, edit/save/reload/reopen a representative widget; restore temporary content and identify the reviewed revision and custom dependencies. | CMS acceptance gate |
+| Captions or video controls change after a visual review | Recheck affected playback, captions, transcripts and responsive behavior; update that assessment and retain valid evidence for unaffected flows. | CMS acceptance gate |
+| Only the live production editor is available, with live edits forbidden | Do not edit it to satisfy the gate; report native editability as unverified until a permitted environment exists. | Authorization boundary |
+| Existing static site needs one spacing fix | Use the narrow existing browser checks; no CMS editor ceremony or full-site reassessment. | Nearby non-trigger case |
+
 ## Evidence decisions
 
 - **Adopt:** the sample checkpoints and task-specific resource selection; extend the
