@@ -40,6 +40,7 @@ Impeccable modes are part of routing: **Persuade** for marketing, **Operate** fo
 | Key | Upstream | Role | Use | Research status |
 |---|---|---|---|---|
 | `emil-motion` | `emilkowalski/skills` | Motion decision framework and animation review | Motion-only primary; focused layer elsewhere | canonical |
+| `motion-official` | `motiondivision/ai-kit` | Current Motion API guidance and documentation tools; premium features depend on live access | Focused implementation layer; use the exact [upstream entrypoint](upstream-skills.md) and [access guidance](visual-resources.md#motion-current-implementation-guidance-and-optional-premium-tools) | conditional |
 | `jakub-feel-better` | `jakubkrehel/make-interfaces-feel-better` | Tactile details, optical alignment, interruptible motion, number and icon behavior | Micro-polish layer | canonical |
 | `transitions-dev` | `Jakubantalik/transitions.dev` | Copy-ready CSS transition patterns | Common application transitions | canonical |
 | `gsap-scrolltrigger` | `freshtechbro/claudedesignskills` | GSAP and ScrollTrigger implementation guidance | Expressive motion layer | canonical |

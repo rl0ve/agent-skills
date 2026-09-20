@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.16.6 - 2026-09-20
+
+- Distinguish free source, account-free tools, free account allowances, paid upgrades
+  and separate execution costs when recommending UI resources.
+- Correct 21st's free MCP/CLI search boundary and separate component retrieval from
+  hosted AI access; recognize the supported authenticated CLI as a usable route.
+- Add the official Motion specialist and account-free documentation MCP route,
+  with live capability checks for premium source, generation and audit tools.
+- Record focused access checks and applicable/non-trigger policy cases. Router
+  updates and third-party installations remain separate operations.
+
 ## 1.16.5 - 2026-09-20
 
 - Reconcile accumulated design feedback before broad revisions; distinguish optional

@@ -39,6 +39,7 @@ The Meng catalog aliases name concerns or bundles, not a single universal skill.
 | Scroll-driven Three.js world | [build-threejs-scroll-worlds](https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/build-threejs-scroll-worlds/SKILL.md) |
 | Cinematic GSAP/Lenis composition | [cinematic-gsap-lenis-motion-system](https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/cinematic-gsap-lenis-motion-system/SKILL.md) |
 | Animation-system implementation | [animation-systems](https://github.com/MengTo/Skills/blob/main/agent-skills/web-design/animation-systems/SKILL.md) |
+| Motion API implementation, documentation and available animation tools | [Official Motion skill](https://github.com/motiondivision/ai-kit/blob/main/plugins/motion/skills/motion/SKILL.md); use the [resource map](visual-resources.md#motion-current-implementation-guidance-and-optional-premium-tools) to distinguish free access from premium capabilities |
 | Full-page capture misses content | [stitched-full-page-capture](https://github.com/MengTo/Skills/blob/main/agent-skills/codex/stitched-full-page-capture/SKILL.md) |
 | Translate a recorded visual reference into implementation guidance | [video-to-superprompt](https://github.com/MengTo/Skills/blob/main/agent-skills/codex/video-to-superprompt/SKILL.md) |
 | Extract selected HTML interactions for reuse | [html-to-interaction-prompts](https://github.com/MengTo/Skills/blob/main/agent-skills/codex/html-to-interaction-prompts/SKILL.md) |

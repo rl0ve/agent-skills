@@ -1,6 +1,6 @@
 # Inspiration sources and implementation references
 
-Source map updated 2026-09-20; retained resource details were reviewed 2026-09-05 and the paid design/prototype routes below were checked against official documentation on 2026-09-17. This map guides selection, not a mandatory browsing checklist. Check current tool availability and access in the host; recheck upstream terms before adding code or purchasing access. Public reference access does not grant rights to redistribute pictured assets.
+Source map updated 2026-09-20; retained resource details were reviewed 2026-09-05, the paid design/prototype routes on 2026-09-17, and 21st/Motion access on 2026-09-20. This map guides selection, not a mandatory browsing checklist. Check current tool availability and access in the host; recheck upstream terms before adding code or purchasing access. Public reference access does not grant rights to redistribute pictured assets.
 
 ## Choose by the work
 
@@ -46,6 +46,7 @@ one another; do not load them all or introduce their dependencies just to browse
 | How should a page unfold through scroll or navigation? | [Landing.love](https://www.landing.love/), [GSAP Showcase](https://gsap.com/showcase/); [Awwwards Animation](https://www.awwwards.com/websites/animation/) as an expansion | Scroll choreography, transitions, text reveals and pacing. Visit the original site; gallery recognition does not establish accessibility or suitability for a dense product UI. |
 | What unusual interaction could give this experience character? | [HOVERSTAT.ES](https://www.hoverstat.es/), [Codrops](https://tympanus.net/codrops/) | Experimental navigation, cursor response, image transitions and spatial effects. Codrops demos/tutorials can bridge reference and technique; inspect each demo and license before reuse. |
 | How can a small interaction feel precise and responsive? | [Rauno's Craft](https://rauno.me/craft), [Motion examples](https://motion.dev/examples) | Direct creator prototypes, layout changes, gesture response and transitions between states. Motion examples are also technical studies; some content is paid, so select an accessible example and verify its terms. |
+| How should a Motion interaction be implemented with current APIs? | [Official Motion skill](https://github.com/motiondivision/ai-kit/blob/main/plugins/motion/skills/motion/SKILL.md), [AI Kit](https://motion.dev/docs/ai-kit) | Use the focused implementation specialist and available documentation tools. Read returned documentation resources; example metadata and public demos do not supply premium source. See the access distinctions below. |
 | Which transition should this component use? | [Transitions.dev](https://transitions.dev/), [optional skill documentation](https://transitions.dev/skill.html) | Replay focused state changes and compare candidates in context. The site offers CSS/React examples and an agent skill, with separate Pro content. Use existing motion skills first; verify scope and overlap before installing another. |
 | How should camera, objects and light respond in 3D? | [ThreeUI Community](https://threeui.com/), [Three.js examples](https://threejs.org/examples/); Recent.design / Awwwards for experience-level direction | Camera framing, picking, material response, scene transitions and how controls remain usable. Technical examples demonstrate mechanisms; adapt them to the product's task. |
 
@@ -75,9 +76,11 @@ For Refero, use sites/apps for discovery, styles for visual direction, screens f
 concrete pattern, and flows for journey logic. For 21st.dev, use supported MCP/CLI
 access when available; do not replace an unavailable integration with bulk scraping.
 Official docs currently place Mobbin and Refero MCP behind eligible paid plans;
-21st.dev distinguishes public browsing and limited free copies from membership
-features including MCP/CLI search. Verify current entitlement and limits from the
-service instead of treating any of these as universally free or inaccessible.
+21st.dev includes component search through MCP/CLI in its free access; code retrieval
+has a limited free allowance, while unlimited retrieval and hosted AI have separate
+entitlements. Motion's documentation search works without an account. Verify current
+entitlement and limits from the service instead of treating any of these as universally
+free or inaccessible.
 
 A paid catalog label does not mean a connected tool is unavailable. Use an already
 available tool within the user's authorized task and budget; confirm access from its
@@ -89,6 +92,19 @@ Honor free-only wording as given: an existing authorized subscription may cover 
 “no new spend” request, but does not override a strict free-resources-only request.
 Check metered cost before incurring new charges. Keep account-specific connection
 status in the session, never hardcode it into this shared skill.
+
+When recommending additions, label what the usable capability costs: free source or
+public reference, account-free tool, free account allowance, paid upgrade, or an
+unverified boundary. Separate skill/library cost from model, generated asset, hosting
+and export costs. Start a trial through adequate free or existing access; create an
+account only when the selected path needs one and setup is authorized. A paid product
+can contain a useful free tool, while an open-source skill can call a paid service.
+
+For a new connection, verify one representative operation and its result. A live
+tool list or account response can differ from an installer or skill's advertised
+features. Report the available capability and remaining limit; do not promise a
+missing tool or repeatedly retry a denied paid feature. A supported authenticated
+CLI is a valid access path when a separate MCP connection adds no benefit.
 
 ### Source attribution
 
@@ -117,6 +133,16 @@ quality, production readiness, conversion performance or use by a specific desig
 ### 21st.dev: samples and selected component code
 
 - Sources: [catalog](https://21st.dev/), [plans](https://21st.dev/plans), [terms](https://21st.dev/terms).
+- Free access includes browsing and component search; the September 20 review found
+  two component-code retrievals per day on a free account. Builder removes that
+  retrieval limit; hosted 21st AI requires a separate entitlement and credits.
+  Verify current limits with `21st usage --json`; `aiGenerationEnabled` establishes
+  hosted AI access, not the remaining AI credit balance. Search results can also
+  include separately priced templates; inspect the selected item's terms.
+- Use the current [official CLI/MCP guide](https://21st.dev/mcp). The unified
+  `@21st-dev/cli` supports browser login, search and selected code retrieval. A browser
+  account does not sign every client in; verify the chosen client. Prefer its normal
+  login flow and supported secret storage over copying tokens into prompts or source.
 - Use the official live preview or supported tool to examine a candidate. Select a
   component because it serves the project, not its popularity or a decorative demo.
   Show a small comparison when a prominent choice is unresolved.
@@ -128,6 +154,29 @@ quality, production readiness, conversion performance or use by a specific desig
   and existing primitives. Do not add a second component system or change frameworks
   just to reproduce a sample. Use the technique or an existing equivalent when that
   better fits the project. Verify the result in its destination with realistic content.
+
+### Motion: current implementation guidance and optional premium tools
+
+- Sources: [AI Kit](https://motion.dev/docs/ai-kit), [installation](https://motion.dev/docs/ai-kit-install),
+  [complete official skill](https://github.com/motiondivision/ai-kit/blob/main/plugins/motion/skills/motion/SKILL.md),
+  and [Motion+](https://motion.dev/plus).
+- The core library and public documentation are free. The hosted documentation MCP
+  at `https://mcp.motion.dev` works without an account; search and read its relevant
+  documentation resources before implementing a non-trivial Motion interaction.
+  Local best-practice references can be used when the server is unavailable.
+- Treat the official `motion` skill as a focused implementation layer under the
+  chosen design lead. Install the complete selected folder within authorization;
+  an installer may also configure a separate Motion+ server, whose authentication
+  and entitlement are independent of the free server.
+- Free search can describe premium examples and link public live demos without
+  delivering their source. Motion+ supplies premium source and additional tools such
+  as performance audits and transition editing. Verify the live tool list and access
+  before offering CSS generation or other features; the reviewed package's free-tool
+  description differed from the live server. See the [dated evidence](../../../docs/resource-access-review-2026-09-20.md).
+- Explain a relevant source/access gap, then use available public docs or an existing
+  compatible implementation. Do not label an approximation as retrieved premium code
+  or an ordinary review as a MotionScore audit. Buying Motion+ is a separate decision;
+  it is not a prerequisite for learning or using the free Motion library.
 
 ### AI-interface examples and implementation candidates
 
