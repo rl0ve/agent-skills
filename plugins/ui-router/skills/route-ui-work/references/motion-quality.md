@@ -49,10 +49,16 @@ or video is part of the task. A silent decorative page does not need an audio sy
   position, rate, looping and synchronized highlights/captions through seeks and view
   changes. Muting should preserve position unless the product specifies otherwise.
   Check that independent sound layers mute and restore according to their labels.
+  A seek or source recreation can start a previously paused player; verify settled
+  pause/resume state and position after returning from a related view, not only the
+  immediate control label. Check completion and replay against the real media too.
 - Exercise loading, repeated Play, cancellation, blocked playback, permission denial,
   media replacement, leaving and returning. Prevent late loads or recognition results
   from restarting a session after Stop or navigation. State whether resume is manual
   or automatic rather than leaving different controls to decide independently.
+  Bound both API loading and player readiness: an API script can load while its frame
+  never connects. Provide recoverable failure, and ignore late ready events after
+  timeout or replacement instead of remaining in an indefinite connecting state.
 - Keep essential spoken guidance available as text, and captions/transcripts when
   applicable. Label their availability and source; do not fabricate missing lyrics,
   transcripts, scores or synchronized note data under an authentic recording's title.
@@ -64,6 +70,17 @@ or video is part of the task. A silent decorative page does not need an audio sy
   embeddability metadata, source identity and instructional accuracy are different
   claims. If the source is blocked, expose recovery without substituting unrelated
   content or silently switching versions, arrangements or clocks.
+- Diagnose an embed failure in the actual browser and parent-page origin before
+  declaring the source unavailable everywhere or replacing it. Compare the same
+  source while changing one relevant variable: origin, regular browser versus in-app
+  browser, or player configuration. Keep client identity/Referer accurate; do not
+  spoof an origin or bypass a source restriction. Direct-watch success and metadata
+  do not establish embedded playback. Avoid repeated source swaps when the same
+  failure suggests a shared environment cause. A local hostname fix is observed
+  evidence for that environment, not a universal platform rule or production proof.
+- If a preview-address change is necessary, account for origin-scoped preferences,
+  progress and markers. Preserve existing data and verify any migration; test the
+  eventual deployed origin separately when it is in scope.
 
 Choose a representative journey such as entry → intentional playback → change view
 or passage → mute and restore → leave and return. Inspect appearance and audible/state

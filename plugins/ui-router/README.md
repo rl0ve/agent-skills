@@ -36,6 +36,11 @@ The routing skill checks current host capabilities and reads this map for releva
 
 ## Immersive entrances and media experiences
 
+For playback failures, compare the same source in the actual browser and page origin
+before making a platform-wide claim. Check player-readiness timeouts, settled pause
+state after seeks/returns, preview-data preservation and the loaded code revision.
+These are conditional media checks, not a required matrix for ordinary static edits.
+
 A public landing page can also be the usable product. The router now distinguishes
 that case, preserves the route from an expressive scene into the real task, and checks
 sound/video controls, shared playback time, visible words and interruption/recovery

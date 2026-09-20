@@ -87,6 +87,9 @@ Apply every relevant gate before declaring the routed task complete.
 - When the writing route is selected, verify the Natural Writing skill is available. Package presence alone is not installation evidence.
 
 - Run the narrowest relevant tests or browser checks.
+- Verify the browser is running the changed entrypoint and dependencies before
+  interpreting a regression. Use the project's cache/version strategy consistently;
+  stale mixed modules can make a correct source edit fail in the live preview.
 - Report what was checked and what could not be checked.
 - Distinguish observed results from recommendations or hypotheses.
 - In a multi-phase build, completion evidence must match the required outcome: a
