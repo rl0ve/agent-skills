@@ -116,6 +116,11 @@ assumption, and keep it easy to revise. Do not add an approval gate for routine 
 
 ## Translate reactions into bounded changes
 
+For an existing-site correction, first reconcile the accumulated brief using
+[existing-site-improvements.md](existing-site-improvements.md#reconcile-the-brief-before-changing-direction).
+Resolve which dimension changed; do not reinterpret the entire goal from the latest
+criticism or ask the user to restate choices already settled.
+
 Plain-language feedback is sufficient. Translate it into a proposed visual change
 while preserving existing scope and constraints. For example, “too corporate” might
 suggest less generic imagery or a more distinctive type treatment; it does not by

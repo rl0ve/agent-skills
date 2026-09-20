@@ -6,6 +6,39 @@ rebrand or replacement can justify broader changes; establish what that request
 changes rather than imposing preservation of every old decision. A small defined edit
 needs only a check of the affected region, not a site-wide inventory.
 
+## Reconcile the brief before changing direction
+
+Read the accumulated guidance before a substantial revision or a recovery pass. Identify
+which artifact is the baseline, which is the current proposal, and which earlier ideas
+were only experiments. Permission to depart from an experiment does not automatically
+apply to the established brand, content or working site. Resolve a consequential
+ambiguous reference before treating it as permission for a broad change.
+
+Treat later feedback as a correction to the affected dimension unless the user clearly
+replaces the goal. “Clearer” and “more distinctive” can both remain requirements.
+Disliking poetic captions does not request generic copy; shortening a homepage does
+not request shorter detail pages; preserving the brand does not freeze every button
+or spacing choice. Do not swing between decorative excess and a stripped-down site
+in response to successive comments.
+
+Before editing a substantial revision, briefly state the observed obstacle, what must
+survive, the proposed change and how its main tradeoff will be checked. Reuse the
+project's existing notes; distinguish user decisions from agent assumptions. Include
+the active preview or page identifier when several variants could be confused. A
+small, specified correction needs only the affected-region check.
+
+Ask one focused question when two unresolved interpretations would change the brand,
+content scope, navigation or dominant visual treatment. For example: “Should this keep
+the current brand and structure, or explore a broader rebrand?” Do not ask it when the
+history already answers it. For an unresolved visual tradeoff, show a small comparison
+of the same region with the same content; do not build another whole site to discover
+the user's preference. Continue independent work while a necessary answer is pending.
+
+Diagnose the brief, reference choice, implementation and assessment before attributing
+failure to the model or adding more skills. Verify the actual route before claiming
+that a weaker model caused the result. Work Router owns model selection; the
+context-holding parent still owns reconciling the requirements and accepting the work.
+
 ## Establish the baseline and the real improvement
 
 Inspect the existing experience before judging the candidate. Use the actual page,
@@ -45,6 +78,14 @@ unless an observed problem, user direction or implementation constraint justifie
 change. When broader style choices remain open, verify a representative slice before
 expanding. Stop optional cosmetic iterations once the agreed improvements pass.
 
+A local fix must not defeat another accepted requirement. Check what a readability
+panel covers, what a new crop removes, and what extra copy or spacing pushes below the
+initial viewport. When photography is evidence or a focal point, inspect the visible
+image as well as text contrast. Perfect contrast on a panel covering the work is not
+sufficient. Compare desktop and mobile prominence; rearranging text may preserve all
+words while burying the photographs or call to action. Choose a treatment that meets
+the combined brief, or explain the unresolved tradeoff before expanding it.
+
 ## Preserve visual energy as well as utility
 
 When expression or motion is part of the desired improvement, compare it with the
@@ -76,6 +117,16 @@ about the project. Preserve authentic testimonial wording and attribution; label
 excerpts rather than presenting paraphrases as direct quotations. Existing business
 claims are source content, not facts independently verified by a design review.
 
+When summarizing an entry page, keep the useful detail reachable at its destination.
+Check the actual linked page for the promised story, qualifications, service scope or
+project evidence; a “Learn more” label is not proof that more remains. Preserve original
+meaning and relevant depth there rather than repeating the short teaser everywhere.
+
+Treat approval of a media item separately from its placement and role. A professional
+introduction can be approved for an About page while remaining excluded from the
+homepage. Do not infer that an accepted asset licenses other clips or a new placement.
+Keep these as project-specific choices, not universal rules about people or video.
+
 Use the selected semantic or brand owner and one final prose editor when writing is
 needed. This reference does not replace their copy workflow or add a second editor.
 
@@ -86,8 +137,11 @@ relevant viewport/states. Record what was retained, improved, deliberately chang
 left unresolved. Explicitly account for prominence, understandable language and the
 shortest useful path to the action, as well as appearance and accessibility.
 
-If using a rubric, apply its anchors to evidence. Do not award full credit merely
-because a feature exists, or let visual polish average away a missing requirement.
+A failed agreed requirement blocks a claim that the candidate is an overall
+improvement. Repair it or report the candidate as incomplete; do not let a composite
+score make that decision. If using a rubric, apply its anchors to evidence. Do not award
+full credit merely because a feature exists, or let visual polish average away a
+missing requirement.
 Keep a comparable scoring method; label any rubric change instead of treating scores
 under different definitions as an improvement. If user feedback exposes a mistaken
 assumption, withdraw the unsupported conclusion and reassess the affected criteria.

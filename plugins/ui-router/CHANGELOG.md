@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.16.5 - 2026-09-20
+
+- Reconcile accumulated design feedback before broad revisions; distinguish optional
+  experiments from an established brand and treat later corrections as scoped changes.
+- Add a brief before-editing check and focused clarification for consequential gaps,
+  without imposing questions or reference searches on routine edits.
+- Check what contrast fixes obscure or displace, preserve detail behind summaries,
+  and separate media approval from placement.
+- Block overall-improvement claims when agreed requirements fail; diagnose context
+  and implementation before blaming models. Existing Work Router policy is unchanged.
+- Add ten applicable and nearby non-trigger policy cases.
+
 ## 1.16.4 - 2026-09-20
 
 - Add conditional guidance for improving existing sites and apps: preserve useful
