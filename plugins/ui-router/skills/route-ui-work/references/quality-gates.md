@@ -10,7 +10,10 @@ Apply every relevant gate before declaring the routed task complete.
 - For improvements to an existing experience, apply
   [existing-site-improvements.md](existing-site-improvements.md): preserve useful
   content, message meaning, prominence and accepted interactions; account for any
-  losses before claiming that the candidate is better.
+  losses before claiming that the candidate is better. For a substantial revision,
+  confirm the reconciled brief against the actual candidate: an improved metric does
+  not compensate for obscured focal content, displaced actions or a promised detail
+  page whose substantive content was removed.
 
 ## Visual and interaction quality
 

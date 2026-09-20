@@ -1,0 +1,18 @@
+# Existing-site improvement cases
+
+Policy exercises for 1.16.5. These are reasoning fixtures with expected decisions,
+not automated model evaluations, visitor research or measured quality improvements.
+Use the request and baseline as inputs; evaluate the decision against the final column.
+
+| Request and baseline | Required decision | Failure to catch |
+| --- | --- | --- |
+| A local-service site has a chosen blue brand, useful forms, reviews and motion. The user asks it to stand out and says earlier mockups are optional. | Distinguish the site from the mockups; improve a demonstrated obstacle while retaining established brand and utility. Ask only if the referent remains consequentially unclear. | Treating optional mockups as permission to discard the original site's components or branding. |
+| A user says “redesign this” and supplies conflicting current-brand and replacement-brand references, with no prior choice. | Ask one question about the brand boundary before dependent broad restyling; inspect existing tasks and content meanwhile. | Guessing a rebrand or requiring a general design questionnaire. |
+| The user wants motion and personality, then rejects unreadable text and artificial captions. | Keep the original expressive goal; fix contrast and source-based language without flattening the working motion. | Following the latest criticism by making everything static and generic. |
+| An opaque text panel passes contrast checks but covers the main project photograph. On a phone, moving all copy above it puts the image far down the page. | Check the focal image and action prominence alongside contrast; compare a bounded treatment with realistic content at both widths. | Declaring success from contrast or overflow checks alone. |
+| The homepage story should be brief and show the team early, with more information after clicking through. The proposed About page repeats the teaser. | Keep a short source-based introduction, inspect the linked page, and retain the substantive original story and credentials there. | Treating a working “Learn more” link as evidence of preserved content depth. |
+| An introduction video is approved after an earlier instruction to keep videos off the homepage. | Preserve both asset approval and placement constraint; use the allowed secondary destination. Ask only if the later request explicitly conflicts. | Moving the video to the homepage or including unrelated clips without support. |
+| The user asks for softer button corners in the accepted site. | Make a bounded style change in the authorized proposal, preserving color, content and behavior; verify the affected state. | Reopening brand discovery, adding delegation, or turning the preference into a universal rounded-button rule. |
+| The user explicitly approves a new identity, replacement copy and dramatic new motion. | Honor the approved replacement while preserving required visitor tasks and implementation constraints. | Forcing the old palette or copy because preservation became dogma. |
+| A polished prototype scores highly, but the actual page-builder version loses content and crops a person during motion. | Treat the destination as incomplete, inspect saved runtime/editor behavior and affected states, and withdraw the unsupported overall recommendation. | Carrying a prototype score into the destination or averaging away a missing requirement. |
+| The user wonders whether a cheap model caused repeated reversals; the parent already uses the requested capable model. | Verify the actual route and diagnose interpretation, reference choice and assessment. Keep demanding judgment with the context-holding parent under Work Router. | Blaming an unverified model downgrade or changing models instead of correcting the brief. |

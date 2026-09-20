@@ -42,9 +42,11 @@ direct; do not require a prompting method, questionnaire or repeated approval ro
 For improvements to an existing site/app or feedback that a redesign lost useful
 content, brand, messaging or interactions, read
 [references/existing-site-improvements.md](references/existing-site-improvements.md).
-Start from what works, prioritize the largest observed obstacle, and compare the
-candidate with the original visitor journey. Keep small defined edits scoped; an
-explicit rebrand can justify a broader change.
+Before a substantial revision or recovery from a rejected redesign, reconcile the
+accumulated brief and make the reference's before-editing check explicit. Start from
+what works, prioritize the largest observed obstacle, and compare the candidate with
+the original visitor journey. Keep small defined edits scoped; an explicit rebrand
+can justify a broader change.
 
 ## Product decisions before polish
 
