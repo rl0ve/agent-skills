@@ -18,7 +18,7 @@ Select one design lead, add only focused layers that own distinct concerns, and 
 6. Read matching entries in [references/catalog.md](references/catalog.md). Mark each canonical entry as `installed`, `equivalent available`, or `missing candidate`.
 7. Substitute transparently. Never rename Anthropic `frontend-design` or another fallback as Taste, Hallmark, Interface Design, or Impeccable.
 8. Read only the selected section in [references/audiences.md](references/audiences.md).
-9. Load the complete selected skill instructions before using them. Do not load the whole catalog into context.
+9. Load the complete selected skill instructions and the supporting files required for the chosen workflow. For external specialists, apply [references/upstream-skills.md](references/upstream-skills.md); a catalog link or router summary is not a loaded skill. Do not load the whole catalog into context.
 10. Apply [references/quality-gates.md](references/quality-gates.md) before declaring completion.
 
 ## Help the user establish design direction
@@ -51,13 +51,22 @@ the implemented experience with the requested traits. An editorial audience does
 imply a conservative newspaper aesthetic. A working flow and a list of references do
 not by themselves establish that the requested visual direction was delivered.
 
+## Upstream specialist workflows
+
+Prefer the complete selected upstream workflow when its distinctive method fits.
+UI Router owns selection and shared checks; specialists own detailed execution.
+Use [references/upstream-skills.md](references/upstream-skills.md) for exact Meng and
+Dream Loop entrypoints, selective loading/installation, and clearly labeled adaptations.
+
 ## Graphical and interactive builds
 
-For substantial graphical apps, scenes, creative tools or expressive sites, use
-[references/visual-build-loop.md](references/visual-build-loop.md) when a concrete
-visual target and bounded comparison would improve the result. Pair appearance with
-an exercised user action, keep generated targets distinct from working output, and
-verify assets in the destination. For spatial entrances and sound/media experiences,
+For substantial graphical apps, scenes, creative tools or expressive sites, select a
+suitable [upstream specialist](references/upstream-skills.md), including Dream Loop when
+high graphical fidelity calls for its target/build/critique method. The lighter
+[visual build loop](references/visual-build-loop.md) is an adaptation for proportionate
+work or a stated fallback, not an equivalent replacement for a selected specialist.
+Pair appearance with an exercised user action, keep generated targets distinct from
+working output, and verify assets in the destination. For spatial entrances and sound/media experiences,
 preserve the route into the real task and apply the relevant
 [motion and media checks](references/motion-quality.md). A public page can also be
 the working product; use the hybrid case in the taxonomy and the focused question
@@ -113,9 +122,12 @@ does not turn into a second writer in the tree. See Work Router's
 
 1. Explicit user choice.
 2. Canonical role and chain from the research catalog.
-3. Exact canonical skill when installed.
-4. Installed official, vendor, bundled, or focused community equivalent, with the substitution stated.
-5. Verified external candidate; install only within explicit current or prior user authorization.
+3. Exact selected skill when installed, or its verified complete upstream workflow
+   loaded as task context when appropriate. Preserve a distinctive method that fits.
+4. A compatible installed substitute or scoped adaptation when warranted; state why
+   and do not imply equivalent results without evidence.
+5. Install a selected verified skill for repeated use only within explicit current
+   or prior user authorization; preserve its required supporting files.
 
 Do not stack two broad aesthetic directors. A broad lead can pair with focused accessibility, motion, copy, system, performance, or review layers.
 

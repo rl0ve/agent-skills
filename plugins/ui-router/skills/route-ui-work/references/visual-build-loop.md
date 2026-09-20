@@ -1,9 +1,11 @@
-# Visual targets and working interactions
+# UI Router adaptation: visual targets and working interactions
 
-Use for a substantial graphical app, scene, game, creative tool or expressive website
-whose appearance needs iterative refinement. This is a focused method under the
-selected design lead, not another lead or a mandatory step for every UI task. A small
-edit, settled component or ordinary form stays on its existing route.
+This is UI Router's lighter method, informed by Dream Loop but not equivalent to its
+full workflow. Choose the route using [upstream-skills.md](upstream-skills.md) first.
+Use this adaptation when proportionate, explicitly chosen, or as a stated fallback;
+do not layer its pass limits or parent-only option over a selected upstream procedure.
+It applies to substantial graphical work needing refinement under the design lead.
+Small edits, settled components and ordinary forms stay on their existing route.
 
 ## Choose the evidence before building
 

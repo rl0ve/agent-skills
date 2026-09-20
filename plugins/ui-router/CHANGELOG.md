@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.16.0 - 2026-09-20
+
+- Prefer the complete selected upstream specialist over a shortened router summary
+  when its distinctive workflow fits; add exact Meng and Dream Loop entrypoints.
+- Distinguish loading a workflow, installing selected complete folders and adapting
+  shared principles; preserve required dependencies and source/version provenance.
+- Make Dream Loop an explicit optional specialist and label the lighter visual loop
+  as an unbenchmarked adaptation, without imposing its pass limits on the original.
+- Preserve existing selective Meng bundles, user constraints and current host rules;
+  no new third-party skills installed by this release.
+
 ## 1.15.1 - 2026-09-20
 
 - Add final acceptance on saved CMS/page-builder pages, including representative

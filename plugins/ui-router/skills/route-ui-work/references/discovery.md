@@ -18,6 +18,14 @@ Popularity does not establish quality. Honor existing install authorization; oth
 recommend the candidate without executing the install. Verify installed, enabled and
 loaded state separately.
 
+## Load, install or adapt
+
+After choosing a candidate, follow [upstream-skills.md](upstream-skills.md). Prefer
+its complete procedure for distinctive specialist work, selective installation for
+repeated use, and small attributed adaptations for shared principles. Preserve required
+references/scripts and record the source revision. Do not treat a link, installed folder
+or rewritten summary as proof that the original workflow was loaded or matched.
+
 ## Design-specific evidence
 
 - For inspiration and implementation resources, use [visual-resources.md](visual-resources.md).

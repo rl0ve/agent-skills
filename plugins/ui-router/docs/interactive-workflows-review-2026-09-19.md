@@ -1,5 +1,9 @@
 # Interactive workflow review — 2026-09-19
 
+Update in 1.16.0: the router adaptation is not established as equivalent to Dream Loop.
+The original remains an optional specialist; see the [upstream routing review](upstream-skills-review-2026-09-20.md).
+The decisions below describe the earlier review.
+
 ## Evidence and decisions
 
 Reviewed Dream Loop at commit

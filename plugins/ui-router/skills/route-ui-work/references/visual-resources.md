@@ -182,14 +182,16 @@ quality, production readiness, conversion performance or use by a specific desig
 - Keep the chosen CLI and assets project-local. Verify current Node.js/FFmpeg requirements and the selected skills before installation. Do not bulk-install its animation skills over existing GSAP, Three.js or Anime.js guidance.
 - Validate a short representative render, timeline seeking, text readability and audio synchronization when applicable. A working browser preview does not prove the exported video is correct. No Blender or Unreal requirement for this route.
 
-### Dream Loop: optional graphical refinement method
+### Dream Loop: optional upstream graphical workflow
 
 - [Dream Loop](https://github.com/achimala/dream-loop) combines a visual target with
   implementation and critique. Consider it for graphical scenes or apps where visual
   fidelity is a substantial part of the task; ordinary UI edits do not need it.
-- Prefer the adapted [visual build loop](visual-build-loop.md) under the current lead.
-  It adds working-interaction checks, finite refinement and parent-only operation.
-  The upstream README reports Astra testing and only suggests Fable compatibility;
+- When selected, load the [original skill and required workflow files](upstream-skills.md)
+  under the current lead. Preserve its detailed procedure where compatible with the
+  user's constraints. The [visual build loop](visual-build-loop.md) is a lighter,
+  explicitly labeled adaptation; its comparative effectiveness is untested.
+- The upstream README reports Astra testing and only suggests Fable compatibility;
   it does not establish a cross-model quality or speed comparison.
 - Do not import upstream subscription-tier orchestration, mandatory child agents,
   subjective score thresholds or paid asset defaults as global UI Router policy.

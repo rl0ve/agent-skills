@@ -48,7 +48,8 @@ Impeccable modes are part of routing: **Persuade** for marketing, **Operate** fo
 
 | Key | Upstream | Role | Use | Research status |
 |---|---|---|---|---|
-| `meng-webgl-stack` | `MengTo/Skills` | Large specialist library for cinematic motion, Three.js, capture, reference workflows, and reusable techniques | Creative/WebGL specialist library, not one universal lead | canonical |
+| `meng-webgl-stack` | `MengTo/Skills` | Specialist library for cinematic motion, Three.js, capture and reference workflows | Select the exact matching [upstream skill](upstream-skills.md); this is a bundle alias, not one universal lead | canonical |
+| `dream-loop` | [achimala/dream-loop](https://github.com/achimala/dream-loop) | Target/build/critique workflow for high graphical fidelity | Optional specialist under the chosen lead; load the [original workflow](upstream-skills.md), label adaptations | optional; source reviewed, comparative quality untested |
 | `claudedesignskills` | `freshtechbro/claudedesignskills` | Three.js, GSAP, R3F, Framer Motion, Babylon.js, Spline, and Rive pack | Creative-expressive lead option | canonical |
 | `awwwards-3d` | `tsogjavklann/awwwards-3d` | Scroll-driven 3D visual language | Portfolio and Awwwards-style experiences | canonical |
 | `industrial-brutalist-ui` | `code-yeongyu/lazycodex` · `industrial-brutalist-ui` | Swiss-modernist and military-terminal aesthetic | Explicitly requested data-heavy aesthetic | canonical |
