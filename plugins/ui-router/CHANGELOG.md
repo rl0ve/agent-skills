@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.16.9 - 2026-09-20
+
+- Distinguish recognizing design language from naming a direction without examples.
+- Calibrate terminology and explanations to the conversation; pair precise labels
+  with visual choices without assuming novice status or requiring an expertise quiz.
+
 ## 1.16.8 - 2026-09-20
 
 - Check rendered baseline/candidate isolation when CMS variants share templates or caches.

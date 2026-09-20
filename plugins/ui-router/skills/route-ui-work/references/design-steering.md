@@ -17,8 +17,18 @@ identity, aesthetic-rule conflicts, and the distinction between purpose and styl
 Read the conversation, existing interface, project design notes and supplied references.
 Infer the intended audience, main task, content priorities, constraints and things to
 preserve. State only consequential assumptions and ask about gaps that materially
-change the result. Do not ask the user to repeat known information or supply design
-terminology. Keep implementation vocabulary in the agent's work, not the user's brief.
+change the result. Do not ask the user to repeat known information or invent a design
+vocabulary from a blank page. Difficulty naming a direction does not imply difficulty
+recognizing design terminology or judging visual quality.
+
+Calibrate language to the conversation and demonstrated familiarity, without assuming
+either novice or expert status. Use precise design terms when they help distinguish
+visible choices, paired with actual examples: for instance, label the relevant type
+treatment, hierarchy or material effect in each sample. Let the user recognize, compare
+and combine those traits instead of requiring an unaided style specification. Offer
+brief explanations when needed; skip unsolicited definitions when the user already
+uses or recognizes the terms. Keep implementation details out unless they inform a
+meaningful choice. Do not require an expertise questionnaire.
 
 Separate decisions the agent should make through craft (type scale, spacing, motion
 implementation, accessibility) from choices that need the user's intent or taste
