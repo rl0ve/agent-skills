@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "UI Router",
-    "version": "1.12.0",
-    "reviewed": "2026-09-17",
+    "version": "1.14.0",
+    "reviewed": "2026-09-19",
     "objective": "Route by surface and audience while showing the named canonical research chain separately from the installed executable chain."
   },
   "surfaces": [
@@ -100,7 +100,7 @@
         "Nutlope/hallmark",
         "greensock/gsap-skills"
       ],
-      "guardrail": "Verify the selected skill variant and deliver the chosen palette and reference behaviors. Preserve task completion, legibility, performance and reduced motion; audience alone does not block expression.",
+      "guardrail": "Verify the selected skill variant and deliver the chosen palette and reference behaviors. Preserve task completion, legibility, performance and reduced motion; audience alone does not block expression. For substantial graphical builds, use a bounded visual comparison and exercise the main interaction; a generated target is not working output.",
       "canonical": [
         "Meng / ClaudeDesign / Awwwards",
         "Impeccable \u00b7 Experience",
@@ -130,7 +130,7 @@
       ],
       "layers": [
         "design:ux-copy",
-        "humanizer:humanizer",
+        "natural-writing",
         "design:accessibility-review"
       ],
       "external": [
@@ -301,7 +301,7 @@
       "leadRole": "UX writing or voice",
       "installed": [
         "design:ux-copy",
-        "humanizer:humanizer",
+        "natural-writing",
         "marketing:brand-voice"
       ],
       "layers": [
@@ -313,21 +313,18 @@
       ],
       "guardrail": "Preserve meaning, terminology, and risk level. Do not rewrite adjacent product logic.",
       "canonical": [
-        "no-ai-slop",
-        "blader humanizer",
-        "humanizer-local",
-        "write-like-me"
+        "Product/UX or brand semantics when needed",
+        "Natural Writing final editor"
       ],
       "available": [
         "design:ux-copy",
-        "humanizer:humanizer",
+        "natural-writing",
         "marketing:brand-voice",
         "clarify"
       ],
       "substitutions": [
-        "Installed Humanizer provides the final pass",
-        "UX copy and brand voice cover interface wording",
-        "No durable write-like-me profile assumed"
+        "Verify Natural Writing is available; otherwise use one documented fallback",
+        "Do not stack humanizer passes"
       ]
     },
     {

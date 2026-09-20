@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.14.0 - 2026-09-19
+
+- Add a conditional visual-target/build/critique method informed by Dream Loop, with
+  bounded refinement, optional independent review and working-interaction evidence.
+- Keep image generation, Blender and paid asset services conditional; retain user
+  constraints and Work Router ownership of models, effort and delegation.
+- Remove the separate Fable-only-for-long-transformations restriction.
+- Strengthen interactive app checks for real state changes and requested exports.
+- Align field-guide versions and stale writing-route data with the current skill.
+- Record source review and manual applicability cases; no external package installed.
+
 ## 1.13.0 - 2026-09-17
 
 - Move `ui-router:ui-builder` from Sonnet high to Opus low. Sonnet high is off the

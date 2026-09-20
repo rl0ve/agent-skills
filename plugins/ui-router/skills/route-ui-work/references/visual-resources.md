@@ -1,6 +1,6 @@
 # Inspiration sources and implementation references
 
-Source map updated 2026-09-17; retained resource details were reviewed 2026-09-05 and the paid design/prototype routes below were checked against official documentation on 2026-09-17. This map guides selection, not a mandatory browsing checklist. Check current tool availability and access in the host; recheck upstream terms before adding code or purchasing access. Public reference access does not grant rights to redistribute pictured assets.
+Source map updated 2026-09-19; retained resource details were reviewed 2026-09-05 and the paid design/prototype routes below were checked against official documentation on 2026-09-17. This map guides selection, not a mandatory browsing checklist. Check current tool availability and access in the host; recheck upstream terms before adding code or purchasing access. Public reference access does not grant rights to redistribute pictured assets.
 
 ## Choose by the work
 
@@ -179,6 +179,19 @@ quality, production readiness, conversion performance or use by a specific desig
 - Use for HTML/CSS compositions exported as video: product walkthroughs, animated explainers and data stories. The local renderer is free; hosted rendering, generated media and other services have separate costs and access requirements.
 - Keep the chosen CLI and assets project-local. Verify current Node.js/FFmpeg requirements and the selected skills before installation. Do not bulk-install its animation skills over existing GSAP, Three.js or Anime.js guidance.
 - Validate a short representative render, timeline seeking, text readability and audio synchronization when applicable. A working browser preview does not prove the exported video is correct. No Blender or Unreal requirement for this route.
+
+### Dream Loop: optional graphical refinement method
+
+- [Dream Loop](https://github.com/achimala/dream-loop) combines a visual target with
+  implementation and critique. Consider it for graphical scenes or apps where visual
+  fidelity is a substantial part of the task; ordinary UI edits do not need it.
+- Prefer the adapted [visual build loop](visual-build-loop.md) under the current lead.
+  It adds working-interaction checks, finite refinement and parent-only operation.
+  The upstream README reports Astra testing and only suggests Fable compatibility;
+  it does not establish a cross-model quality or speed comparison.
+- Do not import upstream subscription-tier orchestration, mandatory child agents,
+  subjective score thresholds or paid asset defaults as global UI Router policy.
+  No package, application or paid generation is installed or triggered by this entry.
 
 ## Existing skill coverage before installing anything
 
