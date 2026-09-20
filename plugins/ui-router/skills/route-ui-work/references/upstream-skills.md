@@ -44,6 +44,7 @@ The Meng catalog aliases name concerns or bundles, not a single universal skill.
 | Translate a recorded visual reference into implementation guidance | [video-to-superprompt](https://github.com/MengTo/Skills/blob/main/agent-skills/codex/video-to-superprompt/SKILL.md) |
 | Extract selected HTML interactions for reuse | [html-to-interaction-prompts](https://github.com/MengTo/Skills/blob/main/agent-skills/codex/html-to-interaction-prompts/SKILL.md) |
 | High graphical fidelity through target/build/critique iteration | [Dream Loop](https://github.com/achimala/dream-loop/blob/main/SKILL.md) and the selected workflow's required references |
+| Playable browser-game controls, progression, save/retry and device regression checks | [test-playable-web-games](https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/test-playable-web-games/SKILL.md); use deterministic review states and the host-approved browser surface. A build or screenshot alone does not establish playability. |
 
 ### Photoreal interactive worlds and spatial scenes
 

@@ -18,3 +18,26 @@ capability reporting. They do not establish that all account tiers, paid feature
 future upstream versions behave identically. Recheck the selected path when used.
 
 Manual policy cases are in [resource-access-cases.md](../tests/resource-access-cases.md).
+
+## Conditional shortlist follow-up
+
+The resource map already covers Dream Loop, Codrops, Layers, AI Elements, Toolcraft
+and HyperFrames; the catalog includes Addy Osmani's Web Quality Skills. These remain
+selected task resources, not mandatory installations or subscriptions.
+
+The [Rive state-machine guide](https://rive.app/docs/editor/state-machine/state-machine)
+and [plan guide](https://rive.app/docs/account-admin/pricing) support a route for
+app-driven animated assets, with free editor work distinct from runtime export.
+[DiffUI's site](https://diffui.ai/) and [pricing](https://diffui.ai/pricing) support
+an optional visual-direction comparison, with paid generation distinct from beta
+code conversion. Neither product was behaviorally or comparatively tested here.
+
+The complete Meng playable-testing skill at upstream revision
+`5f47e389dac337a1bca5cddf376419248b3010f6` was reviewed alongside the four 3D
+specialists. Its precise entrypoint now complements the existing spatial routes.
+
+Manual selection checks: an event-driven learning character can select Rive; a
+settled button transition does not. An unresolved visual direction can justify a
+bounded DiffUI comparison; a specified spacing fix does not. Playable save/retry
+regressions can select Meng's testing workflow; a static scene does not require a
+gameplay matrix. These are policy checks, not independent agent or runtime trials.

@@ -178,6 +178,33 @@ quality, production readiness, conversion performance or use by a specific desig
   or an ordinary review as a MotionScore audit. Buying Motion+ is a separate decision;
   it is not a prerequisite for learning or using the free Motion library.
 
+### Rive: app-driven animated assets
+
+- Use [Rive state machines](https://rive.app/docs/editor/state-machine/state-machine)
+  when a character, learning response, illustration or control needs authored animation
+  states driven by actual app events. Ordinary DOM transitions can stay with the
+  project's existing CSS or motion implementation.
+- The [current plan guide](https://rive.app/docs/account-admin/pricing) separates free
+  editor prototyping from paid runtime exports. Verify the required export and asset
+  rights before committing to delivery; an editor preview does not prove integration.
+- Prototype one representative interaction, then verify state synchronization,
+  keyboard/touch alternatives, reduced motion, loading and target-device performance
+  in the destination. Set up an account or runtime only when this route is selected.
+
+### DiffUI: optional comparison of visual directions
+
+- [DiffUI](https://diffui.ai/) advertises multiple design directions, screenshot-based
+  style extraction and code handoff. Consider it when unresolved visual direction or
+  reference matching is the actual obstacle; compare it with existing exploration
+  tools on the same brief, assets and revision requests before adopting it.
+- Its [pricing](https://diffui.ai/pricing) is usage-based: Individual generation is
+  priced per image without a subscription; design-to-code is advertised as free during
+  beta. Verify current charges and authorization before generation. Free beta code
+  conversion does not make image generation free.
+- Vendor speed and quality claims are not comparative evidence. Inspect any exported
+  code, dependencies, accessibility and destination behavior; a generated design image
+  does not demonstrate a working interface. Do not require DiffUI for settled designs.
+
 ### AI-interface examples and implementation candidates
 
 - [Beautiful UI](https://www.beautifului.dev/) is a source of concrete examples for

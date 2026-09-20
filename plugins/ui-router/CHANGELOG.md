@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.16.7 - 2026-09-20
+
+- Add conditional Rive and DiffUI routes with explicit project-fit, access and
+  validation boundaries; neither requires proactive account setup or purchase.
+- Link Meng's complete playable-game testing workflow alongside the 3D specialists.
+- Reconcile the field guide's visible version with its discovery metadata and record
+  applicable and nearby non-trigger selection checks.
+
 ## 1.16.6 - 2026-09-20
 
 - Distinguish free source, account-free tools, free account allowances, paid upgrades
