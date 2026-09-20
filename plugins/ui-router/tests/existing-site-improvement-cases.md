@@ -1,6 +1,6 @@
 # Existing-site improvement cases
 
-Policy exercises for 1.16.5. These are reasoning fixtures with expected decisions,
+Policy exercises through 1.16.8. These are reasoning fixtures with expected decisions,
 not automated model evaluations, visitor research or measured quality improvements.
 Use the request and baseline as inputs; evaluate the decision against the final column.
 
@@ -16,3 +16,5 @@ Use the request and baseline as inputs; evaluate the decision against the final 
 | The user explicitly approves a new identity, replacement copy and dramatic new motion. | Honor the approved replacement while preserving required visitor tasks and implementation constraints. | Forcing the old palette or copy because preservation became dogma. |
 | A polished prototype scores highly, but the actual page-builder version loses content and crops a person during motion. | Treat the destination as incomplete, inspect saved runtime/editor behavior and affected states, and withdraw the unsupported overall recommendation. | Carrying a prototype score into the destination or averaging away a missing requirement. |
 | The user wonders whether a cheap model caused repeated reversals; the parent already uses the requested capable model. | Verify the actual route and diagnose interpretation, reference choice and assessment. Keep demanding judgment with the context-holding parent under Work Router. | Blaming an unverified model downgrade or changing models instead of correcting the brief. |
+| Two local CMS variants share a footer and rendered-element cache. The source baseline is unchanged, but opening the candidate first changes baseline destinations. | Alternate visits and inspect each variant after cache reuse; move contextual transforms outside the shared cache or scope its key. Recheck both directions. | Treating source hashes as proof of a preserved rendered baseline. |
+| An accepted single-page site needs a spelling correction and has no comparison variants. | Fix and check the affected text only. | Creating variant infrastructure or running an unrelated cache audit. |

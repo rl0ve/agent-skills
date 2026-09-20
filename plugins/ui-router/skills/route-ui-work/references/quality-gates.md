@@ -66,6 +66,12 @@ Apply every relevant gate before declaring the routed task complete.
 - Identify what was reviewed with page/template IDs and a saved revision, export hash,
   commit or equivalent project record. Include custom styling, scripts and media
   dependencies when they affect the result; template JSON alone may omit them.
+- When baseline and candidate variants share CMS templates, navigation or rendered
+  caches, visit both in alternating order. Verify that each retains its intended
+  destinations and selected state after cache reuse; unchanged source files alone do
+  not prove an unchanged baseline. Apply contextual link or label changes outside a
+  shared cache, or key that cache by the relevant variant. This is conditional on
+  shared rendering, not a requirement to create comparison infrastructure for a small edit.
 - After material changes to layout, content, media, controls or implementation, repeat
   the affected browser checks and update the assessment for that version. Do not carry
   prototype scores or an earlier review forward as final evidence. Retain evidence for
