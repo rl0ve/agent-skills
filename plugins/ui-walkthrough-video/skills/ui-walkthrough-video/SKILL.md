@@ -1,6 +1,6 @@
 ---
 name: ui-walkthrough-video
-description: Produce narrated UI walkthroughs with real capture, synchronized voiceover and captions. Offer an editable Cap Studio or Recordly native project with source assets and an MP4, or rendered-only output. Use for product demos, tutorials, portfolio walkthroughs, and editable video handoffs.
+description: Produce narrated UI walkthroughs with real capture, synchronized voiceover and captions. Offer an editable Cap Studio or Recordly native project with source assets and an MP4, or rendered-only output. Use for quick site screenshots or recordings, product demos, tutorials, portfolio walkthroughs, and editable video handoffs.
 ---
 
 # UI walkthrough video
@@ -12,11 +12,19 @@ Do not substitute a slideshow or simulated UI for real navigation without saying
 ## Choose the result
 
 Infer audience, flow, approximate length, aspect ratio and browser from the request
-and project. Ask only for consequential missing choices. Default to a concise demo
-of one complete task with readable UI at 1440×900 or 1920×1080. Respect the user's
+and project. Ask only for consequential missing choices. For a produced walkthrough,
+default to a concise demo of one complete task with readable UI at 1440×900 or
+1920×1080. Respect the user's
 browser preference; the example uses Edge in a fresh automation profile.
 
-Resolve delivery before capture: offer **editable native project + source assets + MP4**
+For a quick screenshot or recording request, use [quick capture](references/quick-capture.md):
+verify a fresh page load, check recording access before promising video, and save images
+with their actual format. When the user accepts either medium, screenshots can complete
+the request. Do not turn it into a narrated production or native-editor handoff unless
+requested. For screenshot-only delivery, finish with that reference's checks. A
+video-only request still requires video or a clear blocker.
+
+For a produced walkthrough, resolve delivery before capture: offer **editable native project + source assets + MP4**
 alongside **MP4 only** when the preference is unknown. Reuse a known preference;
 when the user prefers an editable project, make that the default without asking again.
 For an editable Mac handoff, recommend Cap Studio first based on editing breadth,

@@ -6,7 +6,9 @@ Install from the rl0ve-agent-skills marketplace with `codex plugin add ui-walkth
 
 Use [ui-walkthrough-video](skills/ui-walkthrough-video/SKILL.md) for capture and video assembly, or [voice-narration](skills/voice-narration/SKILL.md) for audio-only work, provider auditions and revoicing. Both share one audio helper; the narration skill does not require a browser or video input. Copy the complete plugin if using the scripts outside the marketplace. Audio requires Python 3.10+, FFmpeg and ffprobe. Browser capture additionally requires Node + Playwright and an installed browser. Google Gemini, OpenAI, ElevenLabs, OpenRouter and MiniMax use their respective API credentials. Technical tests default to silent output; local system speech requires explicit test opt-in. Other providers may supply WAV files.
 
-Start with the [preferred Mac approach and ratings](skills/ui-walkthrough-video/references/preferred-approach.md) for the recommendation, pros/cons, narration status and evidence limits.
+For a quick site snapshot, start with [quick capture](skills/ui-walkthrough-video/references/quick-capture.md); it covers fresh page loading, recorder access and screenshot formats without requiring a production workflow.
+
+For a produced walkthrough, start with the [preferred Mac approach and ratings](skills/ui-walkthrough-video/references/preferred-approach.md) for the recommendation, pros/cons, narration status and evidence limits.
 
 Source and fixture checks are in `VALIDATION.md`. The approved Kore audition was reused; these trials did not compare speech providers. A separate direct-Gemini production established Algieba + Sulafat as a useful two-host profile, with the long-section limitation recorded below.
 

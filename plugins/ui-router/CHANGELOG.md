@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.15.1 - 2026-09-20
+
+- Add final acceptance on saved CMS/page-builder pages, including representative
+  editor save/reload persistence when native editability is required.
+- Tie review evidence to the saved version and relevant dependencies; reassess only
+  affected flows after material changes. Preserve live-site authorization boundaries.
+- Add applicable and nearby non-trigger policy cases; no new CMS runtime trial claimed.
+
 ## 1.15.0 - 2026-09-20
 
 - Clarify routing for public pages that are also the working experience.

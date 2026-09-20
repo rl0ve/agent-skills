@@ -41,6 +41,26 @@ Apply every relevant gate before declaring the routed task complete.
   Verify playback, mute/restore, shared time, readable words and interruption/recovery;
   distinguish tested device behavior from simulated APIs and source metadata.
 
+## CMS and page-builder acceptance
+
+- When the deliverable is a CMS or page-builder implementation, run final visual and
+  interaction checks on its saved pages in the destination runtime. Prototype or
+  exported-HTML reviews remain preliminary; they do not establish the final result.
+- When native editability is part of the brief, verify a representative content or
+  control change through the editor, save, reload the public page and reopen the editor.
+  Confirm persistence. Use an authorized local, staging or fixture environment and
+  restore original content after temporary edits; do not edit a live site merely to prove
+  the gate.
+  If the permitted environment is unavailable, report the unverified requirement.
+- Identify what was reviewed with page/template IDs and a saved revision, export hash,
+  commit or equivalent project record. Include custom styling, scripts and media
+  dependencies when they affect the result; template JSON alone may omit them.
+- After material changes to layout, content, media, controls or implementation, repeat
+  the affected browser checks and update the assessment for that version. Do not carry
+  prototype scores or an earlier review forward as final evidence. Retain evidence for
+  unaffected flows; a small change does not require a full-site audit. Label subjective
+  ratings as reviewer judgments, not certification or measured customer outcomes.
+
 ## Reference fidelity
 
 - Apply exact visual matching only when fidelity is the specification. For inspiration,
