@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.16.4 - 2026-09-20
+
+- Add conditional guidance for improving existing sites and apps: preserve useful
+  components, original messaging, brand and successful interactions while addressing
+  the largest observed visitor obstacle first.
+- Preserve visual energy alongside utility; inspect image subjects across widths and
+  motion, and exempt mechanical edits from the full routing workflow.
+- Compare prominence and complete journeys, not just feature presence; apply scoring
+  anchors to evidence and correct unsupported recommendations.
+- Reuse existing CMS/editor validation and Astra-routing guidance rather than adding
+  duplicate workflows. No new third-party skill or runtime dependency is installed.
+
 ## 1.16.3 - 2026-09-20
 
 - Add conditional task/asset contracts for interactive scenes: visible meaning,
