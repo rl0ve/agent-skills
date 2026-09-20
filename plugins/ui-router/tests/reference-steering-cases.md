@@ -57,6 +57,21 @@ cases do not constitute a new browser trial or a universal provider compatibilit
 | A shared audio API was fixed but the browser still uses an old imported module | Check the loaded entrypoint/dependency revision before changing the implementation again. | Runtime evidence |
 | Existing static page needs a small spacing correction | Check the affected view; do not introduce a media/browser matrix or migration workflow. | Nearby non-trigger case |
 
+## Spatial specialist additions — 1.16.2
+
+Manual policy consistency review against the selected upstream skill files; no new
+scene build, asset generation, device test or behavioral benchmark is claimed.
+
+| Case | Expected route and evidence | Review |
+|---|---|---|
+| Close-up architectural room with requested free walking | Select material, geometry and tour guidance as needed; verify the requested first-person controls, openings/collision, rendered detail and available runtime measurements. | Applicable spatial case |
+| Fixed-camera real-time 3D scene with changing light | Use material/geometry guidance without inventing navigation, walking or XR requirements. | Camera-mode boundary |
+| Photoreal still or layered 2.5D presentation | Use the image/composition route; do not describe the result as tested explorable geometry. | Output evidence boundary |
+| Single scene with object inspection | Use the matching scene/orbit controls; do not impose the multi-composition scroll-world workflow. | Specialist scope |
+| Desktop preview exists but requested headset is unavailable | Report desktop evidence and mark headset/tracking/performance checks unverified; do not infer XR validation from screenshots. | Device evidence boundary |
+| Runtime does not expose texture memory | Identify the missing measurement or a labeled estimate; do not invent observed GPU memory. | Measurement boundary |
+| Existing static form needs a spacing correction | Apply the small edit directly; no 3D specialist, asset ledger or scene-performance workflow. | Nearby non-trigger case |
+
 ## Evidence decisions
 
 - **Adopt:** the sample checkpoints and task-specific resource selection; extend the

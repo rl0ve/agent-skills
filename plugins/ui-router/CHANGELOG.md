@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.16.2 - 2026-09-20
+
+- Add exact Meng specialists for detailed 3D materials, geometry, virtual tours and
+  HiDPI rendering; choose camera and control behavior from the requested experience.
+- Distinguish composed imagery, fixed-camera scenes, object inspection, guided tours,
+  free walking and XR without imposing a scroll-world workflow on a single scene.
+- Require relevant asset, lighting, rendered-result and runtime evidence for realism;
+  label estimates, unavailable measurements and untested devices explicitly.
+- Consolidate the spatial guidance and add applicable/non-trigger policy cases.
+  No third-party skill, runtime or paid service is installed by this release.
+
 ## 1.16.1 - 2026-09-20
 
 - Diagnose embedded media with the same source across the relevant browser/origin;
