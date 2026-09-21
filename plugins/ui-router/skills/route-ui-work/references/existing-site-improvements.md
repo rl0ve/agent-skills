@@ -153,3 +153,22 @@ implementation, not only in a prototype. Recheck the parts affected by a materia
 change, and retain valid evidence for unaffected behavior. If original detail pages
 remain alongside revised pages, describe that mixed journey accurately instead of
 claiming a uniform redesign.
+
+## Enforce feedback across the experience
+
+Record an explicit rejection as an exclusion in the project's current decision record,
+with its scope and any superseding decision. Removing a rejected control does not mean
+moving or renaming it. If removal conflicts with a functional or accessibility
+requirement, explain the concrete tradeoff and find an alternative rather than silently
+reintroducing it. Keep project-specific taste out of universal skill rules.
+
+For a site-wide refinement, compare shared navigation, service/category names, order,
+destinations, action labels, form fields and confirmation behavior across header,
+footer, mobile menu and relevant detail pages. Use one maintained source for shared
+content where practical. Footer navigation may intentionally include secondary links;
+consistency does not mean every menu must be identical. Explain deliberate differences.
+
+Match labels to actual outcomes: an inquiry form must not promise a confirmed booking.
+Distinguish primary conversion actions from secondary exploration visually. Inspect
+stacked container padding and section transitions before shrinking useful content.
+Treat these as cross-page relationships, not a collection of individually passing widgets.

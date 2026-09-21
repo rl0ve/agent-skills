@@ -124,6 +124,26 @@ If an answer is required, do not treat silence as approval. If the choice is opt
 or the user delegates taste, proceed with the recommended direction, label the
 assumption, and keep it easy to revise. Do not add an approval gate for routine craft.
 
+## When a generated visual target helps
+
+Consider imagegen-to-code when the visual direction remains unsettled after concrete
+feedback, competing compositions would change a prominent region, or repeated code
+iterations are failing to establish a shared target. Do this before expanding another
+whole design. Using a capable model alone is not a reason to generate images.
+
+Choose the cheapest faithful comparison: an existing reference, a small working
+prototype, or two generated treatments of the same region. Keep brand, actual copy,
+required components, source imagery and viewport comparable. Label generated images
+as proposals; do not present generated faces, projects, testimonials or distorted text
+as authentic business content. Use authorized image tools and spending limits.
+
+Translate the selected treatment into the destination's real components. In a CMS,
+recreate it with native editable widgets where required; a screenshot, flattened page
+image or exported HTML is not a completed implementation. Verify real content,
+responsive layouts, navigation, forms and motion in the saved runtime. A still image
+cannot validate an interaction or motion timing. Skip this workflow for clear small
+corrections and settled designs; do not impose a new approval round on routine craft.
+
 ## Translate reactions into bounded changes
 
 For an existing-site correction, first reconcile the accumulated brief using
