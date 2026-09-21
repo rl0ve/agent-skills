@@ -13,7 +13,7 @@
       "name": "ui-router",
       "source": "./plugins/ui-router",
       "description": "Route UI work through focused skills, project-specific references, purposeful questions, and verified visual/media interactions. Updated 2026-09-20.",
-      "version": "1.16.9",
+      "version": "1.16.10",
       "category": "Development",
       "tags": [
         "ui",

@@ -1,6 +1,6 @@
 # Existing-site improvement cases
 
-Policy exercises through 1.16.8. These are reasoning fixtures with expected decisions,
+Policy exercises through 1.16.10. These are reasoning fixtures with expected decisions,
 not automated model evaluations, visitor research or measured quality improvements.
 Use the request and baseline as inputs; evaluate the decision against the final column.
 
@@ -18,3 +18,10 @@ Use the request and baseline as inputs; evaluate the decision against the final 
 | The user wonders whether a cheap model caused repeated reversals; the parent already uses the requested capable model. | Verify the actual route and diagnose interpretation, reference choice and assessment. Keep demanding judgment with the context-holding parent under Work Router. | Blaming an unverified model downgrade or changing models instead of correcting the brief. |
 | Two local CMS variants share a footer and rendered-element cache. The source baseline is unchanged, but opening the candidate first changes baseline destinations. | Alternate visits and inspect each variant after cache reuse; move contextual transforms outside the shared cache or scope its key. Recheck both directions. | Treating source hashes as proof of a preserved rendered baseline. |
 | An accepted single-page site needs a spelling correction and has no comparison variants. | Fix and check the affected text only. | Creating variant infrastructure or running an unrelated cache audit. |
+
+| Repeated hero redesigns miss the desired composition although content is settled. | Compare two bounded visual targets with the same real content; generated proposals are optional, and the chosen result must be implemented and reviewed in the actual CMS. | Generating another whole site or calling a flattened mockup finished. |
+| A user asks to center an accepted photo caption. | Make the small edit and inspect it directly. | Requiring image generation or renewed design approval because Astra is available. |
+| A user rejects a slideshow toolbar, then rejects the relocated pause link. | Record the broader exclusion; do not move it again. Resolve any concrete accessibility conflict explicitly. | Claiming compliance while retaining the same rejected behavior elsewhere. |
+| Header, mobile menu and footer use different labels for the same inquiry and services. | Reconcile shared vocabulary and destinations; verify primary versus secondary action hierarchy and both form entry points. | Passing each widget separately while the journey stays inconsistent. |
+| A footer adds privacy and legal links absent from the main menu. | Preserve this deliberate secondary navigation unless the brief says otherwise. | Forcing identical menus everywhere. |
+| A generated answer assigns taste scores and recommends a fixed three-model pipeline. | Separate estimates from primary benchmark evidence and task fit; preserve user model constraints and test a critic only when useful and permitted. | Installing unverified score-based defaults or treating coding success as visual acceptance. |

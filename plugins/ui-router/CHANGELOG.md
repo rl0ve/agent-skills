@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.16.10 - 2026-09-20
+
+- Add conditional generated visual comparisons before costly implementation, with authentic-content and native-CMS validation boundaries.
+- Check cross-page vocabulary, navigation, action hierarchy and shared forms; preserve intentional differences.
+- Enforce explicit rejections without relocating them; separate acceptance dimensions and benchmark evidence from model-ranking assumptions.
+- Add applicable and nearby non-trigger policy exercises.
+
+
 ## 1.16.9 - 2026-09-20
 
 - Distinguish recognizing design language from naming a direction without examples.

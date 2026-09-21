@@ -123,3 +123,20 @@ Apply every relevant gate before declaring the routed task complete.
 - The edit makes the minimum effective change and leaves strong sentences alone.
 - No unsupported claim, invented objection, ritual validation, prompt echo, coaching theater, taxonomy reflex, fake contrast, excessive heading, or generic ending remains.
 - Natural Writing does not redesign product behavior, legal meaning, or information architecture unless the user requested that broader change.
+
+## Acceptance after repeated design feedback
+
+When prior review passed a result the user rejected, reassess the failed dimension
+instead of adding skills or increasing effort by default. Separate brief fidelity,
+visual character, usability, cross-page consistency and functional behavior. Mark each
+as verified, unresolved or intentionally changed with evidence; do not average a failed
+requirement into a high overall score. Confirm explicit exclusions against the rendered
+result, and revisit earlier completion claims when new evidence contradicts them.
+
+A model's own aesthetic score is not user acceptance. Website preference, screenshot
+grounding, presentation quality and functional coding benchmarks measure different
+things; do not convert them into a universal UI-judgment ranking or mandatory model
+pipeline. Work Router owns model selection. A complementary critic is a conditional
+option when permitted and useful; compare the same brief and artifacts before changing
+policy. Keep the current context owner and user-selected model unless there is a
+supported reason and authorization to change them.

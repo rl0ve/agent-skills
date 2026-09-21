@@ -33,7 +33,8 @@ For a substantial new design or redesign with unresolved visual direction, a con
 component choice, or an iteration with materially different interpretations, read
 [references/design-steering.md](references/design-steering.md). Infer a short brief,
 show actual references or comparable previews when useful, translate plain-language feedback,
-and establish a representative slice before costly expansion. Keep chosen direction
+and establish a representative slice before costly expansion. That reference also
+covers conditional imagegen-to-code comparisons when visual direction remains unsettled. Keep chosen direction
 in project notes. Clear references, established systems and small defined edits stay
 direct; do not require a prompting method, questionnaire or repeated approval rounds.
 
