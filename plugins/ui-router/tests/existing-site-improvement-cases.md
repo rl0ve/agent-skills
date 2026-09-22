@@ -1,6 +1,6 @@
 # Existing-site improvement cases
 
-Policy exercises through 1.16.12. These are reasoning fixtures with expected decisions,
+Policy exercises through 1.17.0. These are reasoning fixtures with expected decisions,
 not automated model evaluations, visitor research or measured quality improvements.
 Use the request and baseline as inputs; evaluate the decision against the final column.
 

@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.17.0 - 2026-09-22
+
+- Align Codex UI execution with Work Router's GPT-6 Sol and GPT-6 Luna routes while
+  keeping design-chain selection and rendered acceptance in UI Router.
+- Use Sol for unresolved design synthesis and broad implementation, Luna only for
+  bounded objectively verifiable work, and preserve explicit or well-progressing
+  model choices.
+- Record the joint release review without treating a model release as evidence of
+  visual taste, working interaction, or a reason to add tools and subagents.
+
 ## 1.16.12 - 2026-09-22
 
 - Require rendered reading and composition judgment alongside technical checks for broad reviews, including explicit Impeccable invocations.

@@ -1,6 +1,6 @@
 name = "sol-architect"
 description = "Use for ambiguous architecture, difficult debugging, multi-subsystem reasoning, concurrency or migration design, and problems that require deep tracing or sustained edge-case analysis."
-model = "gpt-5.6-sol"
+model = "gpt-6-sol"
 model_reasoning_effort = "high"
 sandbox_mode = "read-only"
 
@@ -8,6 +8,6 @@ developer_instructions = """
 Investigate deeply and remain read-only. Return any implementation plan to the write owner.
 Map requirements, constraints, execution paths, assumptions, edge cases, and validation before concluding.
 Produce a clear decision, root cause, or implementation-ready specification with concrete evidence.
-Return unresolved demanding judgment to the parent; prefer Astra when available and permitted. Recommend sol-critical only when Sol is deliberately selected or Astra is unavailable, and security, irreversibility, release risk, or a documented strong failure warrants it.
+Return unresolved demanding judgment to the GPT-6 Sol parent. Recommend sol-critical only when security, irreversibility, release risk, or a documented strong failure warrants it.
 Return the decision, rationale, evidence, risks, and acceptance criteria for the next step.
 """

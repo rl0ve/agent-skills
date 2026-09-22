@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.8.0 - 2026-09-22
+
+- Make GPT-6 Sol the default for new demanding Codex work and GPT-6 Luna the
+  bounded implementation and economy worker; update the stable profile names to the
+  new model IDs.
+- Preserve a well-progressing Astra parent, conditional Terra exploration, explicit
+  model constraints, and the separation between routing speed and Codex Fast service.
+- Keep GPT-5.6 measurements historical rather than presenting them as GPT-6 evidence;
+  add current scenarios and an evidence-bound release review.
+
 ## 1.7.3 - 2026-09-22
 
 - Recover interrupted processes and external jobs from current artifacts and original
