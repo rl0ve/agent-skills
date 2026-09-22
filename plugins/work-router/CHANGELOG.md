@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.8.1 - 2026-09-22
+
+- Assess all current Codex routes: Luna 6 for bounded objective work, Sol 6 for
+  substantial everyday work, Astra 6 for the hardest judgment or quality-first
+  direction, and Terra 5.6 as a conditional reading specialist.
+- Add direct Astra selection and capability escalation without a mandatory Sol max
+  attempt; preserve useful context, explicit constraints and Standard service.
+- Record current benchmark settings, API-price limits, historical version boundaries,
+  and the absence of a verified four-model visual-quality or elapsed-time comparison.
+- Align specialist instructions and review scenarios; no new custom agent is required.
+
 ## 1.8.0 - 2026-09-22
 
 - Make GPT-6 Sol the default for new demanding Codex work and GPT-6 Luna the

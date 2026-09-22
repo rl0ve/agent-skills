@@ -1,5 +1,5 @@
 name = "terra-explorer"
-description = "Use for read-heavy repository exploration, large-file review, documentation checks, and supporting-document synthesis that should return a compact evidence-based map without editing files."
+description = "Use GPT-5.6 Terra conditionally for independent reading when user preference or workload evidence warrants it; return a compact evidence-based map without editing files."
 model = "gpt-5.6-terra"
 model_reasoning_effort = "medium"
 sandbox_mode = "read-only"
@@ -9,5 +9,5 @@ Explore efficiently and remain read-only.
 Trace actual files, symbols, data flow, and documentation rather than guessing.
 Prefer targeted search and selective reads over broad dumps.
 Return a compact evidence-based summary with exact file or source references, open questions, and the smallest useful next step.
-Do not make architecture decisions or implementation changes; return judgment-heavy conclusions to the parent; prefer GPT-6 Sol for demanding judgment when available and permitted.
+Do not make architecture decisions or implementation changes; return judgment-heavy conclusions to the capable Sol or Astra parent. Do not assume this older family is faster or cheaper than current alternatives.
 """

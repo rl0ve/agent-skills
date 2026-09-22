@@ -85,59 +85,69 @@ Two caveats on Opus low, both of which cut against the arithmetic. Low effort do
 
 ### If you are Codex
 
-Resolve the active model, supported effort levels, available agents, and user constraints
-against the current host catalog before routing. The September 22, 2026 GPT-6 Sol and
-GPT-6 Luna release changes the default Codex family choices; it does not make a model
-handoff free or invalidate work already progressing well on Astra, Terra, or another
-explicitly selected model.
+Resolve the active model, supported efforts, available agents, and user constraints
+against the current host catalog. As reviewed September 22, 2026, the current family
+contains GPT-6 Astra, Sol, and Luna; Terra remains GPT-5.6 Terra where offered. Do not
+invent GPT-6 Terra, declare Terra retired, or silently change a selected model.
 
-**GPT-6 Sol is the default for new demanding Codex work.** Keep ambiguous requirements,
-consequential decisions, difficult diagnosis, synthesis across documents, broad
-implementation, integration, and final verification in a Sol parent. Use GPT-6 Luna
-for narrow, clear, repeatable work whose result has objective acceptance criteria.
-Neither release description establishes that a model is best for every UI, fastest for
-every task, or cheaper end to end after retries and review.
+**Use Sol for substantial everyday work, and Astra when the task needs the highest
+available capability.** Sol remains a strong default for demanding implementation,
+diagnosis, synthesis, and integration. Select Astra directly for unusually difficult
+cross-system reasoning, unresolved creative or spatial direction where maximum quality
+matters, or a demonstrated Sol judgment limit. Do not require a failed Sol attempt
+before an obviously harder quality-first task. Preserve a progressing capable parent;
+a new release alone does not justify a handoff.
+
+Use Luna for stable, narrow, repeatable work with objective checks. Terra is a
+conditional reading specialist, not the automatic scout: use it when the user prefers
+it or representative workload evidence supports it. For a straightforward inventory or
+extraction, consider Luna; use Sol when interpreting the evidence requires substantial
+judgment. Neither token prices nor older benchmark rows establish a current speed or
+quality ranking across these tasks. See [the evidence basis](references/routing-basis.md).
 
 | Route | Use it for | Default configuration | Write policy |
 |---|---|---|---|
-| Current parent | Trivial or tightly coupled work, orchestration, integration, final verification | Active model and effort | May write |
-| GPT-6 Sol parent or bounded built-in Sol agent | Ambiguous architecture, difficult debugging, consequential judgment, complex synthesis, or broad implementation | GPT-6 Sol; medium for ordinary work, high for complex work | Parent writes; delegate read-only unless assigned sole ownership |
-| `sol-advisor` | A bounded sanity check, quick review, UX opinion, or first-pass diagnosis that repays a handoff | GPT-6 Sol, medium | Read-only |
-| Built-in Sol `worker` or parent Sol | Defined multi-file implementation beyond Luna's scope, with clear requirements and sufficient context | GPT-6 Sol, normally high; explicitly verify effective model | Sole writer |
-| `terra-explorer` | Independent repository exploration, large-file reading, documentation checks, evidence extraction | GPT-5.6 Terra, medium | Read-only; parent owns consequential synthesis |
-| `luna-builder` | Narrow, clear, repeatable implementation with objective acceptance criteria | GPT-6 Luna, high | Sole writer |
-| `luna-economy-worker` | Stable, bounded, cost-first background work | GPT-6 Luna, max | Sole writer; economy exception to rare max use |
-| `sol-architect` | Complex bounded specialist work when a handoff is useful | GPT-6 Sol, high | Read-only |
-| `sol-critical` | Critical independent review after a strong attempt | GPT-6 Sol, max | Read-only; not a mandatory rung |
-| Existing Astra parent | Work already progressing with loaded Astra context, or an explicit Astra constraint | Active Astra setting | Preserve ownership; do not switch merely because Sol is newer |
+| Current capable parent | Trivial or tightly coupled work, orchestration, integration, final verification | Active model and effort | May write |
+| GPT-6 Astra parent or explicitly configured built-in agent | Hardest diagnosis or synthesis; unresolved creative/spatial direction with a quality-first requirement; demonstrated Sol capability limit | GPT-6 Astra; high for new demanding work, preserve active setting when progressing | Parent owns decisions; child read-only unless sole writer |
+| GPT-6 Sol parent or bounded built-in agent | Substantial everyday reasoning, complex implementation, architecture, diagnosis, synthesis, integration | GPT-6 Sol; medium ordinarily, high for complex work | Parent writes; child read-only unless sole writer |
+| `sol-advisor` | Bounded judgment, quick review, UX opinion, or first-pass diagnosis | GPT-6 Sol, medium | Read-only |
+| Built-in Sol `worker` or parent Sol | Defined multi-file implementation beyond Luna's scope | GPT-6 Sol, normally high; verify effective model | Sole writer |
+| `terra-explorer` | Independent reading or evidence extraction when user preference or workload evidence warrants this route | GPT-5.6 Terra, medium; only if currently available | Read-only; capable parent owns consequential synthesis |
+| Built-in Luna reader or `luna-builder` | Small inventories, extraction, narrow clear implementation, mechanical changes with objective checks | GPT-6 Luna, normally high; use a read-only role for reading | Sole writer only when implementation is assigned |
+| `luna-economy-worker` | Stable bounded background work with explicit cost-first preference and acceptable validation cost | GPT-6 Luna, max; conditional named profile, not proof of lowest cost | Sole writer |
+| `sol-architect` | Complex bounded specialist work when Sol is sufficient and a handoff helps | GPT-6 Sol, high | Read-only |
+| `sol-critical` | Critical independent review within the deliberately selected Sol family | GPT-6 Sol, max; not a required step before Astra | Read-only |
 
-For new demanding work when model choice is open, prefer GPT-6 Sol high. Use Luna for
-narrow repeatable work and Terra for read-only evidence collection when it remains
-available and a handoff pays. In a Sol parent, delegate only with a concrete benefit:
-an independent question can run alongside useful parent work, a small isolated task
-avoids loading irrelevant context, or the user explicitly prefers cost over latency.
+Keep delegation bounded and useful alongside parent work. A smaller model or a cheaper
+token rate need not shorten completion after context loading, retries, review, and
+integration. Do not launch a model tournament for ordinary work. When routing itself
+is disputed, compare a representative task at the same acceptance criteria, tool access
+and service tier; record accepted quality, elapsed time, retries and review effort.
 
-**Effort:** keep the active setting unless there is a reason to change it. Recommend
-Sol medium for ordinary work, high for complex reasoning, and xhigh for unresolved
-reasoning or a consequential final review needing more depth. Reserve max for a
-justified hardest-case escalation; do not choose it merely for an executive audience,
-a rendered artifact, or a long task. Ultra is not a routine next rung: check current
-behavior and delegation permission before recommending it, especially under a
-single-agent constraint.
+**Effort:** preserve an effective active setting. Sol medium fits ordinary work; high
+fits complex reasoning. Astra medium is an ordinary-work setting when already active;
+high is a starting point for new unusually demanding work. Consider xhigh for unresolved
+reasoning on either capable family. Increase effort when depth is missing; consider
+Astra when adequate context and a serious Sol attempt still leave judgment insufficient.
+Do not automatically max out Sol before considering Astra. Max and ultra need a specific
+justification, not merely an executive audience, visual artifact, or long task. Check
+ultra's current delegation behavior, especially under a single-agent constraint. Luna
+economy's configured max is a conditional exception, not a general cost benchmark.
 
-**Model constraints and inheritance:** an explicit family choice applies to the parent
-and delegated work. Do not silently substitute Luna, Astra, Terra, or Sol. A `worker`
-or `explorer` name does not select a model; named profiles retain their configured
-models. Follow host restrictions on overrides and context inheritance, and verify the
-actual configuration. If no compatible child can be created, stay in the compatible
-parent; if neither is available, explain the limit without changing the requested
-model. GPT-5.6 Sol/Luna profiles already installed outside this repository are not
-updated by a plugin checkout alone; use the profile sync workflow when authorized.
+**Model constraints and inheritance:** an explicit family choice applies to parent and
+children. Do not silently substitute Luna, Terra, Sol, or Astra. A `worker` or `explorer`
+name does not select a model; named profiles retain their configured models. Follow host
+restrictions on overrides and context inheritance, and verify the actual configuration.
+If no compatible child exists, stay in the compatible parent; if neither is available,
+explain the limit. A plugin update does not update standalone profiles already copied
+into user/project directories or models already loaded in a task. Use the supported
+profile sync workflow when authorized.
 
-When a named profile is missing, use a compatible built-in `explorer` for reading or
-`worker` for implementation, or keep the work in the parent. State the fallback and its
-effective model and effort. Never claim to change a running parent's model, effort, or
-service tier without application confirmation.
+No custom Astra profile is required: use the Astra parent or a supported built-in agent
+explicitly configured for Astra. For unavailable optional routes, choose a permitted
+capable parent or compatible built-in agent and state the substitution. Never claim to
+switch a running parent's model, effort, or service tier without application confirmation.
+
 
 ## Token and latency controls
 
@@ -185,12 +195,12 @@ assignments, unexplained settings, claimed savings, or mandatory agent counts.
 ## Escalate deliberately
 
 - Fix missing context or a faulty tool/validation path before increasing model capability.
-- In a GPT-6 Sol parent, keep demanding work there; recommend medium to high when
-  more depth is needed, then high to xhigh for unresolved reasoning.
-- Preserve a well-progressing Astra parent and its loaded context. For new work with
-  an open model choice, use GPT-6 Sol rather than routing through an obsolete ladder.
-- Return ambiguous Luna work or judgment-heavy Terra findings to the Sol parent.
-  Do not ask Luna to make the consequential synthesis.
+- In Sol, use medium to high when depth is missing; consider xhigh for unresolved
+  reasoning, or Astra for a demonstrated capability limit. No mandatory max-first ladder.
+- Select Astra directly for the hardest quality-first work; preserve a progressing
+  Astra parent and its loaded context. Do not equate Sol's release with superior design.
+- Return ambiguous Luna work and judgment-heavy Terra findings to the capable Sol or
+  Astra owner. Do not ask a bounded reader to make the consequential synthesis.
 - When staying in the Sol family, escalate `sol-advisor` to `sol-architect` for deep
   tracing or system design, and to `sol-critical` only for critical review or a
   documented strong failure. Critical work does not automatically require max if a

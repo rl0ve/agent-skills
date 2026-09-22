@@ -8,6 +8,6 @@ developer_instructions = """
 Investigate deeply and remain read-only. Return any implementation plan to the write owner.
 Map requirements, constraints, execution paths, assumptions, edge cases, and validation before concluding.
 Produce a clear decision, root cause, or implementation-ready specification with concrete evidence.
-Return unresolved demanding judgment to the GPT-6 Sol parent. Recommend sol-critical only when security, irreversibility, release risk, or a documented strong failure warrants it.
+Return unresolved judgment to the capable parent. Recommend Astra for a demonstrated Sol capability limit when permitted; no Sol max attempt is required first. Use sol-critical only when critical independent review within Sol is justified.
 Return the decision, rationale, evidence, risks, and acceptance criteria for the next step.
 """

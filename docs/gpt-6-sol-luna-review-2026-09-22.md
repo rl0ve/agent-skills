@@ -1,5 +1,9 @@
 # GPT-6 Sol and GPT-6 Luna routing review
 
+Historical release review. Its Sol-default direction is refined by the
+[current four-model assessment](gpt-6-family-routing-review-2026-09-22.md) and active
+Work Router policy; retain this file as the record of the earlier release.
+
 Reviewed September 22, 2026 for Work Router 1.8.0 and UI Router 1.17.0. In this
 repository, **UI Router is the design router**; there is no separate `design-router`
 plugin. Work Router owns model, effort, delegation, and service-tier choices. UI Router
