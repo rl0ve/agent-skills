@@ -2,29 +2,31 @@
 
 Use this reference when explaining or revising the routing policy. Treat benchmark figures as dated evidence, not timeless product facts.
 
-## Verified host facts: September 5, 2026
+## Current product guidance: September 22, 2026
 
-The local Codex model catalog (`~/.codex/models_cache.json`) and host tool metadata
-identify `gpt-6-astra` as the most capable model for complex, demanding work. The
-catalog default is medium; supported effort levels are low, medium, high, xhigh,
-max, and ultra. Ultra is described as maximum reasoning with automatic delegation.
-The host also lists Sol as an everyday agentic workhorse, Terra as a balanced coding
-model, and Luna as fast and affordable for simpler work.
+OpenAI's current model guidance names GPT-6 Sol (`gpt-6-sol`) for demanding agentic
+work and GPT-6 Luna (`gpt-6-luna`) for faster, lower-cost, well-defined work. The
+release makes both valid Codex routes; exact availability, effort support, pricing,
+service tier, and child-model overrides remain host- and workspace-dependent.
 
-These facts establish availability, supported settings, and product positioning on
-this host. They do not establish account-wide availability, exact cost, or relative
-end-to-end latency. No Astra comparative benchmark was run for this release.
-
-The policy inference is to keep demanding, context-heavy work in an active Astra
-parent, use Astra high when selecting a route for new demanding work, and retain
-Sol, Terra, and Luna for bounded tasks where a handoff has a concrete benefit. Do not
-interpret the historical timing figures below as measurements of Astra.
+The policy inference is to use GPT-6 Sol for new demanding work and consequential
+synthesis, and GPT-6 Luna for narrow tasks with objective checks. Preserve a
+well-progressing Astra parent rather than paying an unnecessary family switch and
+context reload. Retain Terra only as a conditional read-only route when the current
+host still offers it. Release positioning is not a comparative UI-quality benchmark,
+a latency measurement, or proof of lower total cost after retries and review.
 
 Fast routing concerns total completion time. Codex Fast is a separate service-tier
 choice requiring explicit user selection and current account/workspace support;
 Standard remains the default. Verify effective model and effort on every handoff.
 
-## Historical product guidance (predates Astra)
+Primary current sources:
+
+- [Latest model guidance](https://developers.openai.com/api/docs/guides/latest-model)
+- [GPT-6 Sol model page](https://developers.openai.com/api/docs/models/gpt-6-sol)
+- [GPT-6 Luna model page](https://developers.openai.com/api/docs/models/gpt-6-luna)
+
+## Historical product guidance (predates GPT-6 Sol and Luna)
 
 As checked on August 1, 2026, OpenAI's Codex subagent documentation recommends:
 
@@ -65,11 +67,11 @@ Evidence sources:
 
 1. Optimize total user-visible elapsed time, including duplicated context, retries,
    review, and integration. Neither a smaller model nor a handoff inherently saves time.
-2. Astra owns demanding judgment and broad integration when already active. Sol
-   medium/high remains useful for bounded advice and defined implementation.
+2. GPT-6 Sol owns new demanding judgment and broad integration. Preserve an active
+   Astra parent when its loaded context and progress make switching wasteful.
 3. Terra collects independent evidence; the parent owns consequential synthesis.
 4. Keep Luna high narrow and Luna max explicitly cost-first. Old economy results do
-   not prove it is cheaper than Astra for a new workload.
+   not prove GPT-6 Luna is cheaper end to end for a new workload.
 5. Escalate effort for missing depth, capability for insufficient judgment, and fix
    missing inputs before either. Max and ultra are not artifact or audience defaults.
 6. Prefer one parent and one useful specialist. Preserve explicit model constraints,
@@ -77,12 +79,10 @@ Evidence sources:
 
 ## Profile compatibility
 
-The bundled Sol, Terra, and Luna TOML profiles retain their model IDs. Installing the
-plugin does not install those standalone Codex profiles or convert them to Astra.
-Use the included sync script when a profile installation is requested, then start a
-new task to load them. Existing names remain compatible; no Astra profile is required
-because the parent or a supported built-in agent can supply that model explicitly.
+The bundled Sol and Luna profiles now target `gpt-6-sol` and `gpt-6-luna`; profile
+names stay stable. Terra remains on its existing ID. Installing the plugin does not
+refresh standalone profiles already copied into user or project configuration. Use
+the included sync script when authorized, then start a new task to load them.
 
-Sol reviewer profiles now return demanding escalation decisions to the parent instead
-of unconditionally selecting another Sol profile. Historical source packs and images
-remain dated evidence; the active SKILL.md takes precedence over their model rankings.
+Historical source packs, images, and GPT-5.6 benchmark rows remain dated evidence;
+the active SKILL.md takes precedence over their model rankings.

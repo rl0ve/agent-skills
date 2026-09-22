@@ -71,7 +71,7 @@ claude plugin install natural-writing@rl0ve-agent-skills
 ```
 
 `work-router` and `ui-router` are shared plugins with host-specific guidance.
-For Codex model decisions, use the Astra-aware Codex table in
+For Codex model decisions, use the current GPT-6 Sol/Luna Codex table in
 `plugins/work-router/skills/route-ai-work/SKILL.md`; historical source packs do not
 override it. `natural-writing` also stands alone.
 

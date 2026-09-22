@@ -1,6 +1,6 @@
 name = "luna-builder"
 description = "Use for narrow, clear, repeatable implementation with objective acceptance criteria, such as a small feature matching an established pattern, focused tests, mechanical refactoring, or a schema-defined endpoint."
-model = "gpt-5.6-luna"
+model = "gpt-6-luna"
 model_reasoning_effort = "high"
 
 developer_instructions = """

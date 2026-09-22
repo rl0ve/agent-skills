@@ -15,13 +15,12 @@ or full model-cache records; extract only relevant model and effort metadata.
 1. Use the current host's tools or CLI to identify client version and enabled Work
    Router version. Verify supported commands with that client's help before using them.
 2. Inspect the host's model/agent metadata (or selected fields from
-   `~/.codex/models_cache.json` when present) for the active model, Astra availability,
+   `~/.codex/models_cache.json` when present) for the active model, GPT-6 Sol/Luna availability,
    supported reasoning levels, and custom profiles actually exposed in this task.
 3. Distinguish bundled profiles, files installed in `~/.codex/agents/` or project
    `.codex/agents/`, and agents actually loaded/callable. A plugin install does not
    establish the latter two. The profile sync script's dry run only compares files.
-4. Check explicit model and delegation constraints. A named Sol profile stays Sol
-   under an Astra parent; a built-in worker may inherit or accept overrides according
+4. Check explicit model and delegation constraints. A named profile retains its configured family under a different parent; a built-in worker may inherit or accept overrides according
    to the host. Verify effective model and effort before recommending that route.
 5. Separate Fast routing from service-tier state. Treat unknown service status as
    unverified, and require an explicit user choice for any move from Standard to Fast.

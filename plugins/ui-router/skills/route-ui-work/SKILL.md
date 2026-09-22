@@ -121,11 +121,13 @@ When the Work Router is installed, apply its work route after composing the UI s
 | Defined UI implementation | `ui-router:ui-builder` | Opus | low |
 | Consequential visual, accessibility, or system review | `ui-router:ui-critic` | Opus | high |
 
-Keep trivial UI adjustments in the parent. Honor an explicitly selected Astra or Fable
-model and delegate model/effort decisions to current Work Router guidance; UI Router
-does not impose a separate family restriction for graphical work. A newer model or an
-impressive demo is a reason to evaluate a method, not proof that every UI needs 3D,
-image generation or subagents. These Claude fallback profiles do not switch the parent.
+Keep trivial UI adjustments in the parent. In Codex, current Work Router guidance uses
+GPT-6 Sol for new demanding design synthesis and broad implementation, and GPT-6 Luna
+for narrow, objectively verifiable UI work. Preserve an explicitly selected model and
+a well-progressing parent. UI Router still owns the design chain and acceptance evidence:
+a newer model does not prove superior taste, remove the need to inspect rendered output,
+or justify 3D, image generation, or subagents. These Claude fallback profiles do not
+switch the parent.
 
 **Do not raise Sonnet above medium to get a better UI build.** Opus at low effort is the
 implementation route because the Sonnet effort rungs above medium cost more than Opus low
