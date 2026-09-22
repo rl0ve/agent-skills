@@ -250,7 +250,7 @@ Prompt: in a session where the author has already answered a voice probe ("keep 
 
 Pass if the skill applies the recorded answer without asking again and says so in the note. Fail if it asks the same question twice or reverts to its own default.
 
-## 42. Speaker notes: buried lead and caption segue
+## 42. Eval check: speaker notes, buried lead and caption segue
 
 Prompt: "Edit these speaker notes for slide 9 (spoken)." Supply notes whose first line is "Before the canvas, thirty seconds on what Case is for", whose strongest sentence sits last, and which read the slide's four fields in order beginning "The primary artifact is".
 
