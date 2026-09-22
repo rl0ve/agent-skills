@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Portable agent skills and Claude Code routing plugins: natural-writing (tool-neutral), plus model and UI routers.",
-    "version": "1.18.2"
+    "version": "1.18.3"
   },
   "plugins": [
     {
       "name": "ui-router",
       "source": "./plugins/ui-router",
       "description": "Route UI work through focused skills, project-specific references, purposeful questions, and verified visual/media interactions. Updated 2026-09-22.",
-      "version": "1.17.0",
+      "version": "1.17.1",
       "category": "Development",
       "tags": [
         "ui",
@@ -41,7 +41,7 @@
       "name": "work-router",
       "source": "./plugins/work-router",
       "description": "Routes substantial agent work to the leanest reliable parent or subagent configuration on task shape, ambiguity, risk, latency, and token use. Carries a route table for Claude Code and one for Codex. Includes capability discovery and scoped deduplication of installed skills.",
-      "version": "1.8.0",
+      "version": "1.8.1",
       "category": "Productivity",
       "tags": [
         "routing",

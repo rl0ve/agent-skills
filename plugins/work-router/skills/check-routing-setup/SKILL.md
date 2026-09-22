@@ -15,7 +15,7 @@ or full model-cache records; extract only relevant model and effort metadata.
 1. Use the current host's tools or CLI to identify client version and enabled Work
    Router version. Verify supported commands with that client's help before using them.
 2. Inspect the host's model/agent metadata (or selected fields from
-   `~/.codex/models_cache.json` when present) for the active model, GPT-6 Sol/Luna availability,
+   `~/.codex/models_cache.json` when present) for the active model, GPT-6 Astra/Sol/Luna and GPT-5.6 Terra availability,
    supported reasoning levels, and custom profiles actually exposed in this task.
 3. Distinguish bundled profiles, files installed in `~/.codex/agents/` or project
    `.codex/agents/`, and agents actually loaded/callable. A plugin install does not

@@ -8,14 +8,14 @@ keep one write-capable owner per working tree.
 |---|---|---|
 | Sol or Astra parent, a one-file correction with context loaded | Finish in the parent at its active setting | A handoff adds work. |
 | GPT-6 Sol parent, ambiguous requirements across several documents | Keep synthesis and decisions in Sol; recommend high if more depth is needed | Preserve context and demanding judgment. |
-| Sol parent, independent repository inventory while it designs a change | Terra medium when still available, or a bounded read-only Sol agent | Evidence collection can be isolated; verify the effective model. |
+| Sol parent, independent repository inventory while it designs a change | Luna for bounded objective extraction; Terra 5.6 medium when workload evidence or user preference warrants it; Sol for interpretive reading | Reading does not automatically imply Terra. Verify the effective model. |
 | Existing Astra parent, defined broad implementation with all context already loaded | Keep in Astra unless a phase boundary and concrete benefit repay a switch | A new release does not erase loaded context. |
 | New defined multi-file feature without architectural uncertainty | Sol worker, normally high, if a handoff is useful | Sol remains an implementation workhorse. |
-| New unusually difficult cross-system diagnosis | GPT-6 Sol high if available and permitted | Start on the capable current route rather than an obsolete escalation ladder. |
+| New unusually difficult cross-system diagnosis with a quality-first requirement | GPT-6 Astra high if available and permitted | Do not require an avoidable failed Sol attempt. |
 | Small repetitive implementation with objective checks | Luna high as sole writer if delegation pays | Narrow work has a bounded verification cost. |
 | Stable background work with an explicit cost-first preference | Luna economy at max when that route fits | This is the named economy exception, not the interactive default. |
 | Sol diagnosis omitted a relevant file or test | Supply missing context and verify; consider one effort increase for insufficient depth | Missing evidence is not a capability failure. |
-| GPT-6 Sol high used the evidence but cannot resolve the reasoning | Consider Sol xhigh or a focused independent review | Escalate the unresolved dimension, not the release name. |
+| GPT-6 Sol high used the evidence and tried seriously, but judgment remains insufficient | Consider Astra high with the evidence; keep explicit family constraints | A capability limit need not pass through Sol max first. |
 | GPT-6 Sol high has unresolved consequential reasoning | Consider xhigh or a focused independent review | Risk alone does not require max. |
 | User says “Astra throughout,” but only named Sol/Terra/Luna profiles are available | Use a supported built-in Astra agent or remain in Astra parent | Explicit model choice still applies after a newer release. |
 | GPT-6 Sol unavailable and the user has no Sol-only constraint | Preserve the capable active parent or use a verified permitted fallback | Availability and user intent outrank the default. |
@@ -30,4 +30,11 @@ keep one write-capable owner per working tree.
 | A required dependency is taking longer than expected | Diagnose or work on an independent requirement; retain the dependency | A timeout does not make required work optional. |
 | A new discovery invalidates a planned implementation step | Revise the plan while preserving the requested outcome | The plan supports the task; it is not immutable evidence. |
 | The user shares self-written goal advice but asks only for a review | Evaluate the advice without creating a goal or task | Discussing a capability does not authorize invoking it. |
+| New complex but well-specified feature | Sol high when delegation pays | Astra is available but not mandatory for all substantial work. |
+| Unresolved realistic 3D art direction, maximum quality requested | Astra owns direction; Sol may implement a bounded approved approach | This is a policy inference, not a proven aesthetic ranking. |
+| Tiny CSS alignment fix under an Astra parent | Stay in the parent | The existence of a Luna route does not repay a trivial handoff. |
+| Terra 5.6 exists but no Terra 6 is listed | Retain the actual conditional 5.6 route; do not claim retirement | Tiers can advance on different release schedules. |
+| Someone claims Terra is the cheapest scout from an old table | Check present rates, supported models, task quality and total time | Current Sol rates do not establish a Terra cost advantage. |
+| User requests Terra explicitly for a supported task | Honor Terra 5.6 and its boundary | The new default does not override explicit preference. |
+| A design ranking cites Astra versus Sol 5.6 as evidence about Sol 6 | Correct the version and retain uncertainty | Older design comparisons cannot rank the new model. |
 | A July model ranking conflicts with the current host catalog | Retain the dated evidence; verify present support and task fit before rerouting | Benchmarks and availability have distinct scopes. |

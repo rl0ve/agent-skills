@@ -13,15 +13,18 @@ The plugin contributes:
 - six separately installable Codex profiles spanning Sol, Terra, and Luna;
 - a Claude `PreToolUse` hook that blocks Bash commands containing `sudo`.
 
-## Codex with GPT-6 Sol and Luna
+## Codex with Astra, Sol, Luna, and Terra
 
-Use GPT-6 Sol for new demanding Codex work: ambiguous decisions, difficult debugging,
-complex synthesis, broad implementation, integration, and final verification. Medium
-is the ordinary-work default; use high for complex reasoning and xhigh only when a
-material question remains unresolved. GPT-6 Luna is the narrow worker for clear,
-repeatable tasks with objective checks, including an explicitly cost-first background
-route. Preserve a well-progressing Astra parent rather than switching families solely
-because Sol is newer.
+Use GPT-6 Sol for substantial everyday reasoning and implementation; choose GPT-6
+Astra directly for the hardest judgment, unresolved creative/spatial direction where
+maximum quality matters, or a demonstrated Sol capability limit. GPT-6 Luna handles
+bounded repeatable work with objective checks. GPT-5.6 Terra remains a conditional
+read-only specialist when user preference or workload evidence warrants it; no GPT-6
+Terra or retirement is inferred. Preserve a progressing capable parent.
+
+Medium/high are ordinary/complex effort starting points for Sol and Astra; xhigh is
+conditional on unresolved reasoning. Neither max nor ultra is automatic. The named
+Luna economy max route is conditional, not a proven cheapest route for every workload.
 
 A handoff must repay context, startup, and review cost. Model release positioning is
 not proof of comparative UI quality, wall-clock speed, or lower end-to-end cost. A

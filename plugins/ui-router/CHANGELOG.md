@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.17.1 - 2026-09-22
+
+- Follow Work Router's four-model assessment, including Astra for the hardest
+  creative/spatial judgment and quality-first direction, Sol for substantial builds,
+  Luna for objective bounded work, and conditional Terra 5.6 evidence collection.
+- Require rendered acceptance regardless of model; coding scores, prices and release
+  demos do not establish superior visual taste or fastest accepted designs.
+
 ## 1.17.0 - 2026-09-22
 
 - Align Codex UI execution with Work Router's GPT-6 Sol and GPT-6 Luna routes while
