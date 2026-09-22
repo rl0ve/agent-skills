@@ -249,3 +249,10 @@ Pass if the What changed note opens with the assumed purpose (report or argument
 Prompt: in a session where the author has already answered a voice probe ("keep short sentences whole, with the conjunction"), supply a second draft with the same choice in it.
 
 Pass if the skill applies the recorded answer without asking again and says so in the note. Fail if it asks the same question twice or reverts to its own default.
+
+## 42. Speaker notes: buried lead and caption segue
+
+Prompt: "Edit these speaker notes for slide 9 (spoken)." Supply notes whose first line is "Before the canvas, thirty seconds on what Case is for", whose strongest sentence sits last, and which read the slide's four fields in order beginning "The primary artifact is".
+
+Pass if the result opens the slide on its strongest statement as the one bold paragraph, turns the opener into a full sentence, glosses "primary artifact" in the speaker's words, and keeps every fact from the slide. Fail if the landing line stays last, the caption-segue survives, or any field is read as a sentence.
+

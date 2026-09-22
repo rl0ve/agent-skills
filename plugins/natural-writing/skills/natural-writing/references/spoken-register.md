@@ -74,6 +74,20 @@ After:
 
 Why: Ad-copy beats standing in for a spoken walkthrough. The after lets a person do it at normal speed with a subject and a verb. The three things on screen are from the demo, not invented.
 
+## Speaker notes in a slide deck
+
+Presenter notes are the spoken register with two extra constraints: the speaker reads them at a glance while a room waits, and the slide behind them already says half of it. Learned on a customer-council deck, 22 Sep 2026, where every rule below came from a correction.
+
+- **Lead with the strongest line.** The first paragraph of each slide's notes is the one statement the room should leave with, and it is the one bold paragraph. Everything else is support. A landing line saved for the end is a lead buried where the speaker will not reach it when time is short.
+- **The next slide carries the segue.** A slide's notes open with the sentence that connects it to the one before ("So that's what's shipped. Here's where it's going."), never a closing "and next we'll see" on the previous slide. The segue is a full sentence with a subject and a verb; "Before the product, thirty seconds on where it sits" is a caption, not speech.
+- **Anchor to the slide, do not read it in order.** Gloss the labels and fields on screen in the speaker's own words ("what you build is the visual process model", not "the primary artifact is"), and group by idea rather than walking the fields top to bottom. Never invent a narration the slide does not support, and never read a field name as if it were a sentence.
+- **Plain statements, not aphorisms.** "Case is for the work BPMN cannot draw" sounds written; "Case is for work where the path isn't known up front" is what a person says. Superlatives about the deck itself ("the biggest change since we last met") come out.
+- **Short beats.** One or two sentences per paragraph, a blank line between beats, bullets for any list of three or more. A simple slide runs 30 to 45 seconds of speech; a dense slide the speaker will read from (a roadmap, a table) gets an intro, one cue per column or block with a marker such as "(Read the column.)", and an outro.
+- **No headers, timings or slide numbers in the notes.** The speaker takes the time the room needs; timings belong in the planning document, not on the teleprompter.
+- **Customer-facing words only.** Internal shorthand ("long-running", "primary artifact", ticket names) stays out of anything the audience hears or votes on.
+
+Checks: `--spoken` catches the pronoun openers and compressed mechanisms; the buried lead, the caption-segue and the aphorism are judgment calls. Read the first paragraph of every slide in sequence and ask whether each one could stand alone as the slide's headline.
+
 ## Say it out loud
 
 The last step of a spoken edit, and the one no linter replaces: deliver every sentence at presentation speed. Any sentence you have to slow down for, re-run, or take a breath inside is compressed, and the fix is to walk the mechanism through rather than list its parts.
