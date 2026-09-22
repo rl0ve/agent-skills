@@ -81,6 +81,11 @@ Use `hue` when the goal is a reusable brand-derived system rather than only toke
 
 **Canonical:** `impeccable` → `addy-web-quality` → `jakub-better-stack` → `ibelick-ui`
 
+For explicit Impeccable reviews as well as router-selected reviews, apply the
+[rendered readability and composition gate](quality-gates.md#rendered-readability-and-composition-including-impeccable).
+Pair technical auditing with a visitor reading and composition critique; preserve
+provider identity and distinguish technical-only findings from overall acceptance.
+
 `antfu-guidelines` or `vercel-labs` may substitute for a focused web/React quality review. Stay read-only unless fixes were requested.
 
 ## Writing / anti-slop

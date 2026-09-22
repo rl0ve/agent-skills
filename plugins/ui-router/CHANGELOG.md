@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.16.12 - 2026-09-22
+
+- Require rendered reading and composition judgment alongside technical checks for broad reviews, including explicit Impeccable invocations.
+- Check dense openings, repetition, long-list grouping, responsive layouts and every requested sibling page; preserve useful content and scoped technical audits.
+- Block unsupported excellent verdicts and target-driven scoring; require version-specific evidence and reinspection. Add applicable and non-trigger policy exercises.
+
 ## 1.16.11 - 2026-09-22
 
 - Add focused spatial-realism checks for interface occlusion, complete placement chains,

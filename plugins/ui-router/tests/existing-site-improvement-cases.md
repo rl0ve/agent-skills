@@ -1,6 +1,6 @@
 # Existing-site improvement cases
 
-Policy exercises through 1.16.10. These are reasoning fixtures with expected decisions,
+Policy exercises through 1.16.12. These are reasoning fixtures with expected decisions,
 not automated model evaluations, visitor research or measured quality improvements.
 Use the request and baseline as inputs; evaluate the decision against the final column.
 
@@ -25,3 +25,8 @@ Use the request and baseline as inputs; evaluate the decision against the final 
 | Header, mobile menu and footer use different labels for the same inquiry and services. | Reconcile shared vocabulary and destinations; verify primary versus secondary action hierarchy and both form entry points. | Passing each widget separately while the journey stays inconsistent. |
 | A footer adds privacy and legal links absent from the main menu. | Preserve this deliberate secondary navigation unless the brief says otherwise. | Forcing identical menus everywhere. |
 | A generated answer assigns taste scores and recommends a fixed three-model pipeline. | Separate estimates from primary benchmark evidence and task fit; preserve user model constraints and test a critic only when useful and permitted. | Installing unverified score-based defaults or treating coding success as visual acceptance. |
+
+| An explicit Impeccable review finds no overflow or contrast failures, but a tablet hero repeats its heading in a long paragraph and lower sections contain ten undifferentiated capabilities. The user wants 19/20. | Run the rendered reading/composition pass at desktop, the annotated tablet width and phone; flag density, repetition and grouping, retain the rubric and withhold an excellent verdict until fixes are observed. | Treating a technical audit or the requested target as proof of visual quality. |
+| Eleven sibling service pages share CSS but have different copy lengths, image crops and list structures. Only one was inspected. | Inventory and inspect all requested pages; compare available baselines at matching widths, recheck affected siblings after shared changes, and state incomplete coverage. | Extrapolating one good page into an all-pages pass. |
+| A concise, readable benefits list works at all relevant widths; the user requests only a technical accessibility audit. | Preserve the useful list and technical scope; label the result as technical, without an overall design score. | Requiring cards, editorial rewriting or a full-site critique for every audit. |
+| A source-only critic receives no rendered screenshots or browser access. | Request rendered evidence from the parent and report visual acceptance as unverified. | Claiming reading comfort from DOM structure or CSS measurements alone. |
