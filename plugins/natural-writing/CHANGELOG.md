@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.15.0 - 2026-09-22
+
+Speaker notes are their own shape of spoken prose.
+
+A full pass on a fifteen-slide customer-council deck followed the spoken register correctly and still produced notes the presenter would not say: the strongest line sat at the end of each slide, segues were captions ("Before the product, thirty seconds on where it sits"), fields were read in order ("the primary artifact is"), and openers reached for aphorisms ("Case is for the work BPMN cannot draw"). Each was a rule the register did not state.
+
+- spoken-register.md gains **Speaker notes in a slide deck**: lead with the strongest line as the one bold paragraph; the next slide carries the segue, as a full sentence; anchor to the slide's words without reading its fields in order; plain statements, no aphorisms or superlatives about the deck; short beats with a blank line between and bullets for lists; a read-from slide gets intro, one cue per block, outro; no headers, timings or slide numbers in the notes; customer-facing words only.
+- SKILL.md's resource table names slide speaker notes as a spoken piece and points at the new section.
+- Forward case 42: buried lead plus caption segue plus field read-out in one set of notes.
+- Judgment calls stay judgment: the buried lead, the caption-segue and the aphorism are not linted; the section gives the manual test (read every slide's first paragraph in sequence as headlines).
+
 ## 1.14.1 - 2026-09-03
 
 The questions an editor cannot see it is guessing at.
