@@ -25,7 +25,7 @@ mechanical correction does not require a new semantic-owner/editor handoff.
 7. Substitute transparently. Never rename Anthropic `frontend-design` or another fallback as Taste, Hallmark, Interface Design, or Impeccable.
 8. Read only the selected section in [references/audiences.md](references/audiences.md).
 9. Load the complete selected skill instructions and the supporting files required for the chosen workflow. For external specialists, apply [references/upstream-skills.md](references/upstream-skills.md); a catalog link or router summary is not a loaded skill. Do not load the whole catalog into context.
-10. Apply [references/quality-gates.md](references/quality-gates.md) before declaring completion.
+10. Apply [references/quality-gates.md](references/quality-gates.md) before declaring completion. For broad visual reviews, including explicit Impeccable invocations, its rendered readability and composition pass is required alongside technical auditing; a technical pass alone cannot justify an overall quality score.
 
 ## Help the user establish design direction
 

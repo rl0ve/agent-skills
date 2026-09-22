@@ -34,6 +34,48 @@ Apply every relevant gate before declaring the routed task complete.
 - For substantial custom motion, scroll choreography, canvas or WebGL, apply
   [motion-quality.md](motion-quality.md). Ordinary static edits do not need profiling.
 
+## Rendered readability and composition (including Impeccable)
+
+For a broad visual-quality review, including an explicit Impeccable review, audit or
+polish request, perform both technical checks and a visitor reading pass. A technical
+`audit` alone is not an overall design verdict. Load the selected provider's critique
+capability when available; otherwise label this pass as router guidance, not an
+upstream Impeccable result. A deliberately technical-only request stays scoped, and
+its report must not imply full visual or editorial acceptance.
+
+- Read the actual rendered opening as a first-time visitor: is the purpose clear,
+  does the heading lead, and can the visitor understand the offer and next action
+  without working through a wall of text? Flag repetitive eyebrow/heading/body
+  promises, excessive hero copy, awkward wrapping and competing emphasis even when
+  font size, contrast and overflow checks pass. Check readability over real imagery.
+- Read lower sections at normal viewing size. Judge line length, paragraph density,
+  useful grouping, heading-to-copy relationships, alignment and hanging gaps. Long
+  lists need a deliberate treatment: group related capabilities, show process steps
+  in sequence, and make simple service-area names compact. Do not replace every list
+  with cards, tables, icons or accordions; retain useful bullets and avoid hiding
+  essential information. Preserve supported facts and meaningful source detail when
+  shortening or relocating copy.
+- Inspect the entire requested surface on desktop, an intermediate/tablet width and
+  a narrow phone, including the user's annotated width when supplied. A full-page
+  thumbnail or DOM metrics alone cannot establish reading comfort. For an all-pages
+  review, inventory every page and inspect each rendered page; shared templates do
+  not establish that different copy lengths, images and section combinations work.
+  Recheck each affected sibling after shared changes. For a small edit, inspect the
+  affected section and relevant responsive states without requiring a full-site audit.
+- Compare the candidate with the original/baseline and accepted reference at matching
+  widths when available. Record both retained strengths and remaining weaknesses;
+  being better than a poor baseline is not enough for an excellent rating. Identify
+  the reviewed version, pages, widths and concrete section-level findings. Mark any
+  unavailable or unreviewed surface explicitly instead of extrapolating coverage.
+- Keep technical, readability/content, composition, brief-fidelity and interaction
+  findings distinct. A material unresolved reading or layout problem blocks an
+  overall excellent/impeccable/complete verdict. If a score is requested, retain its
+  rubric and report deductions and unresolved findings; a target such as 19/20 is
+  an aspiration, not evidence. Do not raise scores by narrowing the rubric, averaging
+  away a failed requirement or carrying an earlier score past relevant changes.
+  Reinspect fixes in the running result before changing the verdict. Review-only
+  requests return findings; edit only when fixes are authorized.
+
 ## Interactive application outcomes
 
 - For task-driven scenes or simulations, use [interaction-contracts.md](interaction-contracts.md)
