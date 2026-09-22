@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.16.11 - 2026-09-22
+
+- Add focused spatial-realism checks for interface occlusion, complete placement chains,
+  generated/imported asset integration, baked dependencies and comparable runtime evidence.
+- Add Hyper3D/Rodin as a conditional connected asset route with live-schema, credit,
+  asynchronous-job and destination-validation boundaries. No mandatory generation.
+- Record applicable and nearby non-trigger cases; retain existing outcome-evidence rules.
+
 ## 1.16.10 - 2026-09-20
 
 - Add conditional generated visual comparisons before costly implementation, with authentic-content and native-CMS validation boundaries.
