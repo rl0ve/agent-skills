@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.7.3 - 2026-09-22
+
+- Recover interrupted processes and external jobs from current artifacts and original
+  handles; distinguish polling timeouts from termination and avoid duplicate paid work.
+- Preserve accepted work and user state on resume. Model, effort, delegation and
+  service-tier defaults remain unchanged.
+
 ## 1.7.2 - 2026-09-20
 
 - At long-task checkpoints, prioritize the highest-priority unmet requirement over

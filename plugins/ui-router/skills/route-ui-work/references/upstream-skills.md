@@ -83,6 +83,9 @@ substantiate photorealism; the rendered result decides.
 When the scene includes object tasks, apply [interaction-contracts.md](interaction-contracts.md)
 alongside the selected specialist. Detailed assets must preserve the task's meaning,
 selection, placement and recovery; visual fidelity alone does not verify those behaviors.
+For a substantial realism pass, use [spatial-realism.md](spatial-realism.md) for
+asset integration, interface framing, baked dependencies and comparable runtime evidence.
+It also describes the conditional Hyper3D/Rodin route without requiring generation.
 
 The existing optional installer groups the six web-design and capture/translation
 skills above into two bundles; installing a bundle does not require loading every

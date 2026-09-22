@@ -39,6 +39,9 @@ Apply every relevant gate before declaring the routed task complete.
 - For task-driven scenes or simulations, use [interaction-contracts.md](interaction-contracts.md)
   to check object meaning, complete actions, settled placement and claimed evidence.
   Decorative scenes and ordinary static edits do not need this additional mapping.
+- For a substantial spatial realism pass, apply [spatial-realism.md](spatial-realism.md):
+  inspect task objects with the interface visible, preserve placement chains and fallback
+  behavior, reconcile baked dependencies, and state the actual performance conditions.
 - For a graphical app, editor, game or simulation, exercise a representative user action
   through its visible result. Cover reversal, reset, cancellation or recovery when relevant.
 - Check requested persistence, data changes and exported output directly; label fixtures

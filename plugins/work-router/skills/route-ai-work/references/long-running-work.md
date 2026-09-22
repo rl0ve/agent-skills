@@ -62,6 +62,18 @@ it works; a fresh agent for every phase is an experiment, not a default. Verify 
 project state before the replacement continues. Stop when the requested outcome and
 required checks are complete, or report the actual blocking condition under host rules.
 
+## Resume interrupted external work from current evidence
+
+After interruption, first inspect the owned artifact and exact process/job/tab handle
+that was in flight. Retain job IDs, output paths and pending checks in the checkpoint;
+record observations separately from intended next steps. A stale summary, former port,
+or saved lock is not proof a service is still running. A polling timeout is not proof
+it stopped: re-poll the same handle or check another authoritative signal before
+restarting. Confirm termination or a missing handle before replacing a local process.
+For an ambiguous paid submission, follow the provider's recovery path rather than
+risking a duplicate charge. Reconnect only the affected handles; preserve user state
+and avoid rerunning accepted research, builds or actions without a relevant change.
+
 ## Handoff and context at a phase boundary
 
 Carrying a large transcript forward is not the lossless option people assume it is. The

@@ -83,6 +83,8 @@ suitable [upstream specialist](references/upstream-skills.md), including Dream L
 high graphical fidelity calls for its target/build/critique method. The lighter
 [visual build loop](references/visual-build-loop.md) is an adaptation for proportionate
 work or a stated fallback, not an equivalent replacement for a selected specialist.
+For realistic interactive 3D, apply the focused [spatial checks](references/spatial-realism.md)
+when assets, lighting, interface framing or delivery are the unresolved concern.
 Pair appearance with an exercised user action, keep generated targets distinct from
 working output, and verify assets in the destination. For spatial entrances and sound/media experiences,
 preserve the route into the real task and apply the relevant

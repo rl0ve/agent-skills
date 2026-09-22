@@ -64,6 +64,11 @@ runtime behavior. Evaluate a reference at the viewing distance and interaction m
 the project needs. A still or clip can establish appearance; inspect the live controls
 and geometry before treating it as evidence of an explorable, free-walking or XR world.
 
+For a generated model candidate, consider an already connected Hyper3D/Rodin MCP
+through [the scoped asset route](spatial-realism.md#conditional-generated-asset-route-hyper3d--rodin).
+It supplies candidate assets, not a verified interactive environment. Current connector
+capabilities, authorized credit use and destination checks decide whether it is useful.
+
 ### Use connected reference tools before assuming access is missing
 
 Inspect the tools exposed in the current session, including searchable connectors.
