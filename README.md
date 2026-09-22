@@ -1,7 +1,7 @@
 # agent-skills
 
 Agent skills and routers for Codex and Claude Code. Shared skills carry host-specific
-routing where needed. Work Router supports Astra alongside Sol, Terra, and Luna in
+routing where needed. Work Router supports GPT-6 Sol and Luna alongside conditional Astra and Terra routes in
 Codex, and Haiku, Sonnet, Opus, and Fable in Claude Code.
 
 | Start here | If you are |
