@@ -2,6 +2,8 @@
 
 ## 1.8.1 - 2026-09-22
 
+- Align the opening routing rules with upfront Astra/xhigh selection and remove
+  the unsupported claim that any retry proves a larger model is cheaper.
 - Make Sol xhigh and Astra xhigh explicit skill routes, including justified upfront
   selection; add review cases for effort, urgency and whole-job token tradeoffs.
 - Distinguish timing flexibility from an explicit cost-first request; no rush alone
