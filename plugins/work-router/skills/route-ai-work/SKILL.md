@@ -18,9 +18,9 @@ different order.
 3. Keep trivial, tightly coupled, or already-contained work in the parent session.
 4. Delegate only when a bounded specialist, context isolation, or independent read-only work repays startup and duplicated-context cost.
 5. Use one write-capable owner per working tree. Never run the parent and a writing subagent against overlapping files at the same time.
-6. Prefer a one-step effort increase before moving to a larger model when the model understood the problem but did not inspect, verify, or persist enough - except above Sonnet medium, where the next family is the cheaper step (see the dominance note below the Claude Code table).
-7. Prefer a larger model when the full relevant context was available, the model genuinely tried, and capability or judgment was still insufficient.
-8. Count retries, not token price. A route that lands on the first attempt is usually cheaper than a nominally cheaper route you correct twice. If you are re-prompting a model on the same problem, you are already past the point where the larger family was the economical choice.
+6. Choose the initial model and effort from the task requirements. Astra or xhigh can be selected upfront when warranted; the diagnostic steps below do not require a failed lower-capability attempt.
+7. After an inadequate attempt, fix missing context or tool problems first. Consider more effort when the model understood the problem but lacked depth; choose a more capable model when capability or judgment was insufficient. Apply the host-specific guidance below, including the Claude Sonnet medium boundary.
+8. Count total completion cost, including retries, review, and integration, rather than token price alone. Repeated capability failures favor a stronger route; a retry by itself does not prove that another model would be faster or cheaper. Use comparable task evidence where available.
 
 ## Missing skills, plugins or integrations
 
