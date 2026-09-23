@@ -79,6 +79,14 @@ phase's outcome, and the parent preserves the full task scope. A manager/impleme
 split is conditional; no agent-limit changes, goals, or background schedules are
 created by installing the skill. Social recommendations remain dated evidence.
 
+## Lower usage at the same quality
+
+For an explicit savings request, preserve acceptance criteria and first remove
+redundant context and repeated work. A current-state reader can omit archived phases
+without deleting them; source and required checks remain authoritative. Decision
+models are conditional experiments, not automatic additions. See the
+[procedure and measured-context limits](skills/route-ai-work/references/usage-economy.md).
+
 ## Codex profile setup
 
 The shared skill works without installing custom profiles. If requested, preview the

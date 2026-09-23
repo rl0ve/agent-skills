@@ -44,3 +44,8 @@ keep one write-capable owner per working tree.
 | User requests Terra explicitly for a supported task | Honor Terra 5.6 and its boundary | The new default does not override explicit preference. |
 | A design ranking cites Astra versus Sol 5.6 as evidence about Sol 6 | Correct the version and retain uncertainty | Older design comparisons cannot rank the new model. |
 | A July model ranking conflicts with the current host catalog | Retain the dated evidence; verify present support and task fit before rerouting | Benchmarks and availability have distinct scopes. |
+| Same-quality savings request; large checkpoint contains many completed phases | Read a verbatim current block and targeted source; preserve history for specific questions | Removes demonstrably unused context without rewriting current facts. |
+| An older phase contains the only explanation for a current rendering constraint | Retrieve that historical section before choosing a fix | Compact entry points are not permission to omit relevant evidence. |
+| A build passed and neither inputs nor relevant conditions changed | Reuse that result; run the next required check | Avoid duplicate work without relaxing acceptance. |
+| User supplies a decision-model key after seeing a fast 3D demo | Store the key if asked; keep adoption conditional on a representative comparison and authorized spend | Asset assembly demos do not prove coding-token savings or preserved visual quality. |
+| A smaller route saves tokens but creates missed requirements or extra review | Reject that route or escalate while retaining the evidence | Same-quality savings are constrained by accepted outcomes, not raw token reduction. |

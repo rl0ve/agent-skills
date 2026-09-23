@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.8.2 - 2026-09-22
+
+- Treat an explicit same-quality savings request as a constrained usage optimization;
+  remove redundant context and repeated work before reducing capability or checks.
+- Add a conditional verbatim current-state reading method, review cases, and a local
+  byte-volume observation that is explicitly not a token, quality or quota benchmark.
+- Require measured whole-task benefit before adding decision-model integrations;
+  credentials and social demos alone establish neither savings nor spending authority.
+
 ## 1.8.1 - 2026-09-22
 
 - Align the opening routing rules with upfront Astra/xhigh selection and remove
