@@ -31,6 +31,26 @@ models would add more handoff work than benefit.
 | Stable, bounded background work where cost matters more than latency | **Luna 6** | **max**, for the named economy profile | Measure accepted work, retries and review time; this setting is not proven cheapest for every task. |
 | Critical independent review when deliberately staying within Sol | **Sol 6** | **max**, conditionally | Use only when the risk or a prior strong failure warrants it; this is not a required rung before Astra. |
 
+### How latency and token use affect the choice
+
+The default priority is **total elapsed time first, reliable completion second, and
+token use third**, unless you choose another priority. These are ordered preferences,
+not a fixed numerical weighting. The table recommends a route likely to complete the
+work correctly; it does not optimize a cheap first attempt in isolation.
+
+| Task or preference | How the recommendation changes |
+|---|---|
+| Interactive work; fastest useful completion | Favor the capable route likely to finish with little rework. Avoid delegation when loading context and integrating results would take longer. |
+| Stable background work; explicit cost-first preference | Consider Luna and a bounded brief with objective checks. Include verification and retries in the cost; the named max-effort economy profile is conditional. |
+| Quality-first design or a consequential decision | Give capability and adequate reasoning more weight. Astra can be the first choice; use focused independent review when it adds assurance. |
+| A task already progressing well | Keep the active model and its useful context unless a demonstrated limit justifies a switch. |
+
+Assess token use across the whole job: input and duplicated context, reasoning and
+output, subagents, retries, and review. Lower token prices do not establish lower total
+cost, and API prices do not directly measure Codex subscription usage. Current matrices
+are policy recommendations, not a measured token-optimal result for every workload.
+Codex service stays **Standard** unless you explicitly choose Fast where available.
+
 **For demanding visual work:** Astra high is the starting recommendation when the
 creative or spatial direction itself is hard. Sol high fits substantial implementation
 once that direction is settled. Both still need rendered comparison and a working
