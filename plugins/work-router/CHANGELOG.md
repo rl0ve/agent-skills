@@ -2,6 +2,9 @@
 
 ## 1.8.1 - 2026-09-22
 
+- Add README task/model/effort and reasoning-level matrices, distinguishing starting
+  recommendations from measured benchmark results.
+
 - Assess all current Codex routes: Luna 6 for bounded objective work, Sol 6 for
   substantial everyday work, Astra 6 for the hardest judgment or quality-first
   direction, and Terra 5.6 as a conditional reading specialist.

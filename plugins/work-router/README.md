@@ -22,9 +22,36 @@ bounded repeatable work with objective checks. GPT-5.6 Terra remains a condition
 read-only specialist when user preference or workload evidence warrants it; no GPT-6
 Terra or retirement is inferred. Preserve a progressing capable parent.
 
-Medium/high are ordinary/complex effort starting points for Sol and Astra; xhigh is
-conditional on unresolved reasoning. Neither max nor ultra is automatic. The named
-Luna economy max route is conditional, not a proven cheapest route for every workload.
+Use the [task-by-task model and reasoning matrix](../../README.md#which-model-and-reasoning-level-should-i-use)
+to choose a starting route. It includes implementation, research, review, visual direction,
+spatial work and background jobs.
+
+### How to choose the reasoning level
+
+Effort gives a model more opportunity to reason; it does not turn one model into another.
+The same label across families is not an equal-time, equal-cost or equal-quality setting.
+Check which levels the current host actually supports.
+
+| Level | Good reason to use it | Boundary |
+|---|---|---|
+| **low** | Bounded, read-only triage or a quick first pass where low stakes and a small question justify it. | Not the default for demanding design, architecture or consequential review. Keep tiny work in the active session rather than switching merely to select low. |
+| **medium** | Sol's ordinary substantial-work default; Terra's conditional reading route; ordinary work in an already active Astra session. | Move to high when missing depth is the problem. Resolve missing context before increasing effort. |
+| **high** | Complex Sol work; a new demanding Astra task; bounded Luna work with objective acceptance checks. | This is the usual starting point for difficult work, not a universal quality guarantee. |
+| **xhigh** | Difficult reasoning remains unresolved after a serious attempt, and more depth is likely to help. | Consider Astra directly when the need is greater capability or judgment; do not exhaust every Sol effort level first. |
+| **max** | A justified critical review within Sol, or the explicitly cost-first Luna economy profile. | A conditional setting, not the default for an important task. The Luna profile is not a measured universal cost winner. |
+| **ultra** | A deliberately selected frontier task with a specific reason for this setting and compatible delegation requirements. | Verify model/host support and current delegation behavior. A long task, 3D scene, or executive audience alone does not justify it. |
+
+| Model | Usual starting point | Harder work | Special cases |
+|---|---|---|---|
+| **Luna 6** | high, for narrow work with clear checks | Send substantial ambiguity or judgment to Sol/Astra | max only for the conditional background economy route |
+| **Terra 5.6** | medium, when there is a reason to prefer its reading route | A capable Sol/Astra owner handles consequential synthesis | No assumed speed or cost advantage over the current GPT-6 models |
+| **Sol 6** | medium for ordinary substantial work | high; xhigh when unresolved reasoning needs more depth | low for bounded triage; max for justified critical review |
+| **Astra 6** | high for new unusually demanding work; preserve an effective active setting | xhigh when needed | max/ultra require a specific justification; Astra can be selected directly |
+
+A representative comparison should hold the task, tool access, acceptance criteria and
+service tier constant, then record accepted quality, elapsed time, retries and review
+work. We have not verified a current four-model visual-quality or matched wall-clock
+benchmark. These tables are routing recommendations with explicit limits.
 
 A handoff must repay context, startup, and review cost. Model release positioning is
 not proof of comparative UI quality, wall-clock speed, or lower end-to-end cost. A
