@@ -41,7 +41,8 @@ Infer the mode when the user's language is clear:
 
 - Treat "fast," "quick," "interactive," "now," or similar language as **Fast**.
 - Treat "balanced," "best tradeoff," or "quality per minute" as **Balanced**.
-- Treat "background," "no rush," "cheapest," "lowest cost," or similar language as **Economy**.
+- Treat "cheapest," "lowest cost," or similar explicit budget language as **Economy**.
+- Treat "background" or "no rush" as timing flexibility; consider **Balanced** or **Economy** according to task fit and the user's cost preference. Timing flexibility alone does not request Luna max.
 - Treat "quality first," "highest assurance," "executive-critical," or an explicit high-stakes boundary as **Quality-first**.
 
 When the user gives no timing signal:
@@ -127,6 +128,8 @@ quality ranking across these tasks. See [the evidence basis](references/routing-
 | Current capable parent | Trivial or tightly coupled work, orchestration, integration, final verification | Active model and effort | May write |
 | GPT-6 Astra parent or explicitly configured built-in agent | Hardest diagnosis or synthesis; unresolved creative/spatial direction with a quality-first requirement; demonstrated Sol capability limit | GPT-6 Astra; high for new demanding work, preserve active setting when progressing | Parent owns decisions; child read-only unless sole writer |
 | GPT-6 Sol parent or bounded built-in agent | Substantial everyday reasoning, complex implementation, architecture, diagnosis, synthesis, integration | GPT-6 Sol; medium ordinarily, high for complex work | Parent writes; child read-only unless sole writer |
+| Explicit Sol xhigh route | Difficult architecture, diagnosis, or reasoning with unresolved dependencies that merits more depth within Sol | GPT-6 Sol, xhigh; may be chosen upfront when warranted | Parent writes; child read-only unless sole writer |
+| Explicit Astra xhigh route | Exceptionally demanding reasoning or creative/spatial judgment with difficult unresolved tradeoffs | GPT-6 Astra, xhigh; may be chosen upfront when warranted | Parent owns decisions; child read-only unless sole writer |
 | `sol-advisor` | Bounded judgment, quick review, UX opinion, or first-pass diagnosis | GPT-6 Sol, medium | Read-only |
 | Built-in Sol `worker` or parent Sol | Defined multi-file implementation beyond Luna's scope | GPT-6 Sol, normally high; verify effective model | Sole writer |
 | `terra-explorer` | Independent reading or evidence extraction when user preference or workload evidence warrants this route | GPT-5.6 Terra, medium; only if currently available | Read-only; capable parent owns consequential synthesis |
@@ -141,15 +144,22 @@ integration. Do not launch a model tournament for ordinary work. When routing it
 is disputed, compare a representative task at the same acceptance criteria, tool access
 and service tier; record accepted quality, elapsed time, retries and review effort.
 
-**Effort:** preserve an effective active setting. Sol medium fits ordinary work; high
-fits complex reasoning. Astra medium is an ordinary-work setting when already active;
-high is a starting point for new unusually demanding work. Consider xhigh for unresolved
-reasoning on either capable family. Increase effort when depth is missing; consider
-Astra when adequate context and a serious Sol attempt still leave judgment insufficient.
-Do not automatically max out Sol before considering Astra. Max and ultra need a specific
-justification, not merely an executive audience, visual artifact, or long task. Check
-ultra's current delegation behavior, especially under a single-agent constraint. Luna
-economy's configured max is a conditional exception, not a general cost benchmark.
+**Effort:** preserve an effective active setting. Sol medium fits ordinary substantial
+work; high fits complex reasoning. Astra medium fits ordinary work when already active;
+high is the usual starting point for new unusually demanding work. **Sol xhigh** is an
+explicit choice for deeper reasoning, architecture or diagnosis within Sol. **Astra
+xhigh** is an explicit choice for exceptionally demanding reasoning or creative/spatial
+judgment. Either xhigh route may be selected upfront when the required depth is clear;
+a failed high-effort attempt is not a prerequisite.
+
+Increase effort when depth is missing; choose Astra directly when the task calls for
+the highest capability, or when adequate context and a serious Sol attempt reveal a
+judgment limit. Do not exhaust Sol's effort levels before considering Astra. Max and
+ultra need a specific justification, not merely an executive audience, visual artifact
+or long task. Check ultra's current delegation behavior, especially under a single-agent
+constraint. Luna economy's configured max is a conditional exception, not a general
+cost benchmark. These are task-based starting recommendations, not a measured ranking
+of every model/effort combination; higher effort does not guarantee a better result.
 
 **Model constraints and inheritance:** an explicit family choice applies to parent and
 children. Do not silently substitute Luna, Terra, Sol, or Astra. A `worker` or `explorer`
@@ -168,6 +178,15 @@ switch a running parent's model, effort, or service tier without application con
 
 ## Token and latency controls
 
+Use ordered preferences, not a fixed percentage weighting: total elapsed time first,
+reliable completion second, and token use third by default. Explicit timing, quality
+and budget choices can change that order. Compare routes that can meet the acceptance
+criteria; a fast incorrect attempt is not completion. For cost-first work, count the
+whole job: input and duplicated context, reasoning and output, subagents, retries,
+verification and integration. Where available, record actual usage and accepted
+completion time; label estimates and missing measurements. API token prices do not
+directly measure Codex subscription consumption.
+
 - Keep the routing skill and agent prompt concise; pass only the objective, exact inputs, owned files, acceptance criteria, and return format.
 - Do not copy the full conversation into a subagent. Summarize only the facts it needs.
 - Prefer one scout over several overlapping scouts.
@@ -175,7 +194,8 @@ switch a running parent's model, effort, or service tier without application con
 - Do not ask a writing agent to re-discover context the parent already has. Give it the precise file map.
 - Stop escalation once the acceptance criteria are satisfied.
 - Switch families at a phase or compaction boundary, not mid-turn. The prompt cache is per-model, so changing family rewrites the whole cached prefix at the cache-write premium. That cost is real but small; it is a reason to time the switch, never a reason to finish substantial work on a route you have already judged wrong.
-- Do not use `max` merely because a task is important. `max` is off the efficient frontier in every Claude family: Sonnet max scores below Opus low at several times the burn, Opus max adds nothing over xhigh, and Fable max ties Fable xhigh while costing a quarter more. Outside the explicitly cost-first Luna economy route, use it only after a strong route failed or for a critical one-shot decision.
+- In Codex, justify `max` or `ultra` against the task and supported host settings; importance alone is insufficient. A critical review or documented strong failure can justify extra effort. The named Luna economy profile is a conditional exception, not a universal cost result.
+- In Claude Code, retain the dated dominance guidance in the Claude table and its evidence reference. Do not apply its cross-family effort ranking to Codex models.
 
 ## Delegate safely
 
@@ -212,9 +232,12 @@ assignments, unexplained settings, claimed savings, or mandatory agent counts.
 ## Escalate deliberately
 
 - Fix missing context or a faulty tool/validation path before increasing model capability.
-- In Sol, use medium to high when depth is missing; consider xhigh for unresolved
-  reasoning, or Astra for a demonstrated capability limit. No mandatory max-first ladder.
-- Select Astra directly for the hardest quality-first work; preserve a progressing
+- In Sol, use medium to high when depth is missing; choose Sol xhigh when deeper
+  reasoning is justified, including upfront for a clearly exceptional task.
+- Select Astra directly for the hardest quality-first work or a demonstrated capability
+  limit. Astra high is the usual demanding-work start; Astra xhigh fits exceptionally
+  deep reasoning or creative/spatial judgment and can also be selected upfront. No
+  mandatory failed high attempt or Sol max-first ladder applies. Preserve a progressing
   Astra parent and its loaded context. Do not equate Sol's release with superior design.
 - Return ambiguous Luna work and judgment-heavy Terra findings to the capable Sol or
   Astra owner. Do not ask a bounded reader to make the consequential synthesis.

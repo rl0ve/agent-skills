@@ -16,12 +16,18 @@ keep one write-capable owner per working tree.
 | Stable background work with an explicit cost-first preference | Luna economy at max when that route fits | This is the named economy exception, not the interactive default. |
 | Sol diagnosis omitted a relevant file or test | Supply missing context and verify; consider one effort increase for insufficient depth | Missing evidence is not a capability failure. |
 | GPT-6 Sol high used the evidence and tried seriously, but judgment remains insufficient | Consider Astra high with the evidence; keep explicit family constraints | A capability limit need not pass through Sol max first. |
-| GPT-6 Sol high has unresolved consequential reasoning | Consider xhigh or a focused independent review | Risk alone does not require max. |
+| GPT-6 Sol high has unresolved consequential reasoning | Consider Sol xhigh or a focused independent review | Risk alone does not require max. |
+| A new architecture problem clearly requires unusually deep reasoning within Sol | Sol xhigh when available and permitted | A failed high attempt is not required; choose Astra instead if capability is the limiting factor. |
+| Exceptionally demanding creative/spatial tradeoffs with maximum quality requested | Astra xhigh may be selected upfront | High remains the usual demanding-work start; max/ultra need a separate justification. |
 | User says “Astra throughout,” but only named Sol/Terra/Luna profiles are available | Use a supported built-in Astra agent or remain in Astra parent | Explicit model choice still applies after a newer release. |
 | GPT-6 Sol unavailable and the user has no Sol-only constraint | Preserve the capable active parent or use a verified permitted fallback | Availability and user intent outrank the default. |
 | Requested family unavailable in both parent and compatible children | Explain the limit and request a supported configuration | Never silently substitute a different model. |
 | Built-in worker is offered without model metadata | Resolve its inheritance/override rules and verify configuration first | Role names do not select model families. |
 | User says “quickly” | Fast routing with Standard service | Urgency does not authorize Codex Fast. |
+| A bounded inventory is needed for an imminent demo | Consider Luna high when a narrow independent pass will finish sooner | Urgency does not exclude Luna; count handoff and verification time. |
+| User says “no rush” about an ambiguous consequential decision | Retain a capable Sol/Astra judgment owner; consider timing flexibility separately | A relaxed deadline does not make Luna appropriate or request Luna max. |
+| Timing is unclear and two suitable routes have materially different cost/time tradeoffs | Offer one optional Need it soon / Background is fine choice, preferably asynchronously; continue independent work | Without an answer, retain the established default. Avoid repeated questions and permission gates. |
+| A low-price route requires repeated corrections and duplicate context | Compare whole-job tokens, review effort and accepted completion time | Per-token price and fixed percentage weights do not identify the best route. |
 | User forbids delegation and asks for deepest reasoning | Keep single-agent execution; verify ultra behavior and recommend a compatible supported effort | Ultra may trigger automatic delegation. |
 | An executive deck reaches its rendering step | Use the current capable parent, render and inspect the artifact | An audience or file format is not a max-effort trigger. |
 | A one-file edit arrives with a link to a 96-agent workflow | Complete it in the parent | A source's setup is not the task's required setup. |
