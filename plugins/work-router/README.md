@@ -26,6 +26,11 @@ Use the [task-by-task model and reasoning matrix](../../README.md#which-model-an
 to choose a starting route. It includes implementation, research, review, visual direction,
 spatial work and background jobs.
 
+The [latency and token-use table](../../README.md#how-latency-and-token-use-affect-the-choice)
+explains how interactive, cost-first and quality-first work change the recommendation.
+The default uses ordered priorities rather than invented percentage weights, and
+considers the full task including context duplication, retries and review.
+
 ### How to choose the reasoning level
 
 Effort gives a model more opportunity to reason; it does not turn one model into another.
