@@ -7,12 +7,20 @@ the design method and acceptance evidence.
 
 ## Adopted policy
 
-| Model | Default role | Boundary |
-|---|---|---|
-| GPT-6 Luna | Narrow implementation, mechanical changes, bounded inventories and extraction with objective checks | Return ambiguity or consequential judgment to a capable parent; do not delegate trivial work merely to use a cheaper family. |
-| GPT-5.6 Terra | Conditional independent reading when user preference or workload evidence warrants it | Verify availability; do not invent Terra 6, infer retirement, or assume an automatic cost/latency advantage. |
-| GPT-6 Sol | Substantial everyday reasoning, difficult implementation, architecture, diagnosis, synthesis and integration | A strong default does not establish superiority on every difficult task. |
-| GPT-6 Astra | Hardest cross-system judgment, unresolved creative/spatial direction when maximum quality matters, or demonstrated Sol capability limits | Select it directly when warranted; no mandatory failed Sol/max attempt, and no automatic max/ultra setting. |
+| Model | Default role | Recommended reasoning | Boundary |
+|---|---|---|---|
+| GPT-6 Luna | Narrow implementation, mechanical changes, bounded inventories and extraction with objective checks | **high**; **max** only for the conditional economy profile | Return ambiguity or consequential judgment to a capable parent; do not delegate trivial work merely to use a cheaper family. |
+| GPT-5.6 Terra | Conditional independent reading when user preference or workload evidence warrants it | **medium** | Verify availability; do not invent Terra 6, infer retirement, or assume an automatic cost/latency advantage. |
+| GPT-6 Sol | Substantial everyday reasoning, difficult implementation, architecture, diagnosis, synthesis and integration | **medium** ordinarily; **high** for complex work; **xhigh** for difficult unresolved reasoning; **max** for justified critical review | A strong default does not establish superiority on every difficult task. |
+| GPT-6 Astra | Hardest cross-system judgment, unresolved creative/spatial direction when maximum quality matters, or demonstrated Sol capability limits | **high** for new demanding work; **xhigh** for exceptionally deep reasoning or judgment; preserve an effective active setting | Select it directly when warranted; no mandatory failed Sol/max attempt, and no automatic max/ultra setting. |
+
+**Xhigh is an explicit route.** Sol xhigh fits a task that needs deeper reasoning within
+Sol. Astra xhigh fits exceptionally demanding reasoning or creative/spatial judgment.
+It can be chosen upfront when that depth is clearly warranted; it is not a required
+stop before Astra or a claim that higher effort always improves the result. Max and
+ultra still need their own justification. The [task matrix](../README.md#which-model-and-reasoning-level-should-i-use)
+and [effort guide](../plugins/work-router/README.md#how-to-choose-the-reasoning-level)
+show these recommendations alongside latency and token tradeoffs.
 
 Preserve useful context, explicit model choices, one writer per working tree, and
 Standard service. Model recommendations do not switch a running parent. Optional
