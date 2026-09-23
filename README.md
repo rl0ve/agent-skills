@@ -47,6 +47,12 @@ work correctly; it does not optimize a cheap first attempt in isolation.
 | Quality-first design or a consequential decision | Give capability and adequate reasoning more weight. Astra can be the first choice; use focused independent review when it adds assurance. |
 | A task already progressing well | Keep the active model and its useful context unless a demonstrated limit justifies a switch. |
 
+Infer timing from the conversation first. If timing is unclear and would materially
+change the route, offer a brief **Need it soon / Background is fine** choice, using an
+asynchronous preference control when available. Do not repeatedly ask about settled
+preferences. Luna can also be the fastest route for a suitable narrow task; a relaxed
+deadline alone does not make it suitable for ambiguous or consequential work.
+
 Assess token use across the whole job: input and duplicated context, reasoning and
 output, subagents, retries, and review. Lower token prices do not establish lower total
 cost, and API prices do not directly measure Codex subscription usage. Current matrices

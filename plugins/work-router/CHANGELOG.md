@@ -2,6 +2,9 @@
 
 ## 1.8.1 - 2026-09-22
 
+- Infer urgency from context and use an occasional lightweight timing preference
+  when it materially changes the route; keep Luna eligible for suitable urgent work.
+
 - Add README task/model/effort and reasoning-level matrices, distinguishing starting
   recommendations from measured benchmark results.
 
