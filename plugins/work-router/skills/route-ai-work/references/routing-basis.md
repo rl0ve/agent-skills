@@ -102,7 +102,10 @@ Evidence sources:
 4. Keep Luna high narrow and Luna max explicitly cost-first. Old economy results do
    not prove GPT-6 Luna is cheaper end to end for a new workload.
 5. Escalate effort for missing depth, capability for insufficient judgment, and fix
-   missing inputs before either. Max and ultra are not artifact or audience defaults.
+   missing inputs before either. Sol xhigh and Astra xhigh are explicit depth choices
+   that may be selected upfront when warranted; no failed high attempt is required.
+   High remains the usual demanding-work start. Max and ultra need separate justification.
+   These are policy recommendations, not a measured ranking of every effort setting.
 6. Prefer one parent and one useful specialist. Preserve explicit model constraints,
    permit only one writer per working tree, and verify the actual child configuration.
 

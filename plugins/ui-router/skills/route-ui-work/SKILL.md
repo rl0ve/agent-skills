@@ -132,6 +132,14 @@ owns the design chain, rendered comparison and exercised interaction. A model re
 does not justify 3D, image generation or subagents. These Claude profiles do not switch
 the parent.
 
+For Codex effort selection, **Sol high** fits substantial implementation with a settled
+direction; **Sol xhigh** fits unusually deep implementation reasoning within Sol.
+**Astra high** is the usual starting point for difficult unresolved creative/spatial
+direction; **Astra xhigh** fits exceptionally demanding judgment or tradeoffs. Either
+xhigh route can be selected upfront when warranted. No failed Sol attempt or automatic
+max/ultra escalation is required. Apply Work Router's task-dependent latency/token
+tradeoffs and contextual timing check; do not ask a second timing question here.
+
 **Do not raise Sonnet above medium to get a better UI build.** Opus at low effort is the
 implementation route because the Sonnet effort rungs above medium cost more than Opus low
 without matching it. Use Sonnet low or medium for the mechanical tail: token renames,

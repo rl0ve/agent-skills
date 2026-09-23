@@ -2,6 +2,11 @@
 
 ## 1.8.1 - 2026-09-22
 
+- Make Sol xhigh and Astra xhigh explicit skill routes, including justified upfront
+  selection; add review cases for effort, urgency and whole-job token tradeoffs.
+- Distinguish timing flexibility from an explicit cost-first request; no rush alone
+  does not request the Luna max profile or relax judgment requirements.
+
 - Infer urgency from context and use an occasional lightweight timing preference
   when it materially changes the route; keep Luna eligible for suitable urgent work.
 

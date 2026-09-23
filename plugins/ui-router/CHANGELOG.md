@@ -2,6 +2,9 @@
 
 ## 1.17.1 - 2026-09-22
 
+- Make high and xhigh choices explicit for Sol implementation and Astra creative/spatial
+  judgment; inherit Work Router's timing and token policy without duplicate questions.
+
 - Follow Work Router's four-model assessment, including Astra for the hardest
   creative/spatial judgment and quality-first direction, Sol for substantial builds,
   Luna for objective bounded work, and conditional Terra 5.6 evidence collection.
