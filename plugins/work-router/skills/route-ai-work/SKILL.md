@@ -197,6 +197,23 @@ directly measure Codex subscription consumption.
 - In Codex, justify `max` or `ultra` against the task and supported host settings; importance alone is insufficient. A critical review or documented strong failure can justify extra effort. The named Luna economy profile is a conditional exception, not a universal cost result.
 - In Claude Code, retain the dated dominance guidance in the Claude table and its evidence reference. Do not apply its cross-family effort ranking to Codex models.
 
+## Save usage without lowering the quality bar
+
+When the user asks for lower usage at the same or better quality, treat quality as a
+constraint and optimize total usage among acceptable routes; do not simply lower every
+model or effort setting. Begin with redundant context and repeated work. Use a verbatim
+current-state view with targeted source reads, retain historical evidence on demand,
+and preserve unresolved limits, failed approaches and required verification. Do not
+replace meaningful context with an untested lossy summary.
+
+Use scripts and cached results for deterministic work; avoid rerunning accepted checks
+on unchanged inputs unless a new concern requires it. Keep rendered checks, critical
+review and demanding creative/spatial judgment. Introduce a decision model such as Jev
+only when a representative comparison shows less total usage at the same acceptance
+bar, including retries, review and integration. A new key or impressive demo alone
+does not establish savings or authorize spending. See the conditional
+[usage-saving procedure and evidence limits](references/usage-economy.md).
+
 ## Delegate safely
 
 Before substantial delegated work, announce exactly:
