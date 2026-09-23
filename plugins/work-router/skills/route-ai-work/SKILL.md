@@ -49,9 +49,26 @@ When the user gives no timing signal:
 1. Keep trivial work direct without asking.
 2. Default ordinary interactive work to **Fast**, because this router prioritizes wall-clock latency first, quality second, and cost third.
 3. Override that default only when safety, irreversibility, or explicit quality requirements demand it.
-4. Ask one concise question only when Fast and Economy or Balanced are both plausible and the choice would materially change elapsed time, cost, or quality: `Should I optimize for fastest completion, balanced quality, or lowest-cost background work?`
+4. Offer one short timing preference only when Fast and Economy or Balanced are both plausible and the choice would materially change elapsed time, cost, or quality. Prefer **Need it soon / Background is fine**; include a balanced option only when that distinction helps.
 
 Do not ask the timing question when the request or existing instructions already answer it.
+
+**Use context and a lightweight preference check.** An imminent meeting/demo, active
+incident, or interactive debugging session is a latency cue. "No rush," a later
+review date, batch processing, or explicit background work can support an Economy
+route when the task itself is suitable. Do not infer urgency from importance alone.
+When timing is unclear and it would materially change the model/effort route, offer
+one short choice such as **Need it soon / Background is fine**, preferably through an
+available asynchronous preference control. Continue useful independent work while the
+choice is pending. Treat it as an optional preference check, not a permission gate;
+without an answer, retain the existing default and state the assumption if material.
+Do not repeatedly ask on routine subtasks or when timing has already been established.
+
+Luna is eligible for bounded objective work in any mode, including urgent work when
+it is likely to finish sooner. A relaxed deadline makes its cost-first route more
+plausible; it does not make Luna suitable for ambiguous or consequential judgment.
+The recommendation still accounts for context loading, retries, review and integration.
+
 
 **Fast routing is separate from Codex Fast service.** Default the service tier to
 Standard. If Codex Fast could materially shorten model-bound interactive work, surface
