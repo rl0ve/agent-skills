@@ -1,10 +1,18 @@
 # Interactive-world tooling review — September 27, 2026
 
-This release distills three supplied AI research conversations into conditional
+The 1.18.0 release distilled three supplied AI research conversations into conditional
 engineering and design guidance. The two completed deep-research reports are dated
-September 23; the conversational report's publication date was not established. A
-fourth supplied source was inaccessible and is not represented as reviewed. Private
-share links and copied reports remain outside the repository.
+September 23; the conversational report's publication date was not established. The
+1.18.2 follow-up also incorporates the previously inaccessible fourth source, supplied
+as a 16-page decision report dated September 27. All pages were reviewed. An additional
+share was checked and contains identical completed report text to the second deep-research
+report, rather than a new independent source. Private share links and copied reports
+remain outside the repository.
+
+The decision report says its author could access only placeholders for the two
+ChatGPT reports. The completed reports were recovered and reviewed independently for
+this update. Its proposed experiments, purchases and schedules remain recommendations,
+not user instructions or evidence that those activities were performed.
 
 The reports disagree about the preferred browser stack: Three.js/R3F, Needle, or
 PlayCanvas/Babylon.js. None supplies a controlled comparison on the same product,
@@ -26,6 +34,17 @@ preferences, speed/cost claims and projected schedules are leads, not policy.
 | Generated spaces or Gaussian splats are complete interactive levels | **Reject the blanket claim.** Inspect actual exported geometry, collision and object semantics; add only missing components. An exported collider may be useful without providing manipulable semantic objects. |
 | Meng, Dream Loop, asset QA, voice auditions and model routing need replacement | **Already covered.** Preserve selected upstream workflows, spatial integration checks, the existing voice-narration owner and Work Router. No model ranking or agent-count rule changes. |
 | A fixed download/FPS target or attractive video proves success | **Reject.** Use device- and task-specific budgets and a representative playable slice. Existing interaction/evidence rules cover assisted completion versus competence and rubric scores versus measured learning. |
+
+## Follow-up decisions for 1.18.2
+
+| Candidate | Decision and owner |
+| --- | --- |
+| Verify editable export before relying on a hosted builder | **Adopt conditionally** in `interactive-worlds.md`. When portability matters, inspect plan/project rights and prove the exported project can be edited and rebuilt outside the service, including required integrations. Playable export, code-tab access and commercial rights are separate claims. |
+| Compare voice prices or provider response times directly | **Reject the shortcut.** Evaluate complete comparable interactions, audible useful-response latency and session reliability; cost assumptions must identify billing units, pauses, backend/context use, retries and included credits. No provider or price is frozen into the skill. |
+| English decision accuracy or confidence transfers to every language | **Reject.** Check supported inputs and representative target-language decisions, calibrate thresholds with a fallback and revisit them when the model changes. |
+| Add a new conversational-voice skill or expand narration scope | **Defer.** This update supplies conditional architecture/evaluation guidance in the interactive-world reference. The existing narration skill continues to own authored clips. |
+| Treat weighted engine scores, ten-minute cost scenarios or a small usability pilot as proof of superiority | **Reference only.** These are assumptions and proposed comparisons, not measured engine rankings, equivalent service quality or established learning effects. Existing evidence guidance covers the distinction; no mandatory benchmark project is added. |
+| Replace the current model-routing policy with the reports' model tables | **Reject.** Preserve the independent benchmark review shipped in 1.18.1 and Work Router's current evidence policy. No new model ranking is asserted here. |
 
 ## Primary-source checks
 
@@ -53,6 +72,22 @@ comparative quality, current account entitlements or a production benchmark.
   semantic infallibility or an unmeasured per-frame request pattern.
 - [World Labs API](https://docs.worldlabs.ai/api) separates splats, collider meshes and
   mesh exports. These outputs do not alone establish the product's object semantics.
+
+The follow-up also checked:
+
+- [Tesana export documentation](https://docs.tesana.ai/building/exports) distinguishes
+  playable builds from Godot source and limits source export by project provenance.
+  [Rosebud pricing and entitlements](https://rosebud.ai/pricing) separates code-tab
+  access, commercial rights and downloadable project code. These are reasons to check
+  actual entitlements and export artifacts, not blanket endorsements of either builder.
+- [TypeSafe model documentation](https://docs.typesafe.ai/models) describes input limits,
+  unequal language performance and moving model aliases. Validate the chosen version
+  and task before interpreting confidence as calibrated correctness.
+- [OpenAI voice-agent guidance](https://developers.openai.com/api/docs/guides/voice-agents)
+  distinguishes speech architectures and evaluates completed tasks, audible latency,
+  interruption and reliability. [Inworld pricing](https://inworld.ai/pricing) illustrates
+  different speech meters, separate model costs, concurrency limits and subscription
+  credits. Current account terms and measured session usage still need verification.
 
 ## Scope and validation
 
@@ -92,3 +127,20 @@ acceptance evidence. No new universal workflow or safety checklist was added.
   on both baseline and candidate. The [Agent Skills specification](https://agentskills.io/specification)
   permits it. Its value is unchanged; the remaining validator checks passed on a scratch
   copy omitting that field. Source frontmatter retains the portable declaration.
+
+### Follow-up policy exercises
+
+These are maintainer walkthroughs of the added guidance, not executed provider trials.
+
+| Request | Result |
+| --- | --- |
+| Adopt a hosted builder for an independently deployed lesson; its remix downloads as a playable build | Verify source rights for that project and perform an editable export/rebuild before claiming portability; retain the unverified dependency if source is unavailable. |
+| Compare a connected-minute voice service with character-billed TTS plus separate recognition/dialogue | Use the same lesson and language, include the full pipeline and pauses/credits, and compare useful audible responses and task outcomes as well as cost. |
+| Replace a single prerecorded greeting or adjust a recognition-only activity | Retain the narration owner or deterministic activity; do not introduce a live-conversation comparison. |
+| Apply an English-calibrated decision threshold to learner responses in another language | Validate representative target-language cases, retain abstention/fallback and track the selected model version before trusting that threshold. |
+
+The follow-up preserves 1.18.1's benchmark-based model guidance and leaves Work Router,
+voice-narration and the existing learning-mode contracts unchanged. All 22 package
+checks passed for 1.18.2, along with 39 local Markdown destinations, release-data/version
+parity and `git diff --check`. No paid trial or product benchmark is represented as
+completed.
