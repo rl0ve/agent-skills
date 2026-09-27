@@ -70,7 +70,11 @@ its report must not imply full visual or editorial acceptance.
 - Keep technical, readability/content, composition, brief-fidelity and interaction
   findings distinct. A material unresolved reading or layout problem blocks an
   overall excellent/impeccable/complete verdict. If a score is requested, retain its
-  rubric and report deductions and unresolved findings; a target such as 19/20 is
+  rubric and report deductions and unresolved findings. Name the source, scale and
+  dimensions of each score: a provider's technical Audit score, its Critique heuristic
+  score and a project-specific visual rating are separate judgments. Do not present
+  one as another, combine unlike scales into a new total, or imply a custom rating
+  came from Impeccable. A target such as 19/20 is
   an aspiration, not evidence. Do not raise scores by narrowing the rubric, averaging
   away a failed requirement or carrying an earlier score past relevant changes.
   Reinspect fixes in the running result before changing the verdict. Review-only

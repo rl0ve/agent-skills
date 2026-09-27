@@ -81,10 +81,20 @@ Use `hue` when the goal is a reusable brand-derived system rather than only toke
 
 **Canonical:** `impeccable` → `addy-web-quality` → `jakub-better-stack` → `ibelick-ui`
 
+Choose the Impeccable command by the unresolved question, not by a fixed sequence:
+use **Critique** for hierarchy, reading load, composition, brand fit and discoverability;
+use **Audit** for measurable accessibility, performance, responsive and implementation
+quality; use **Polish** only after the core page and interactions work, when the
+remaining findings concern alignment, spacing, terminology or states. Fix the
+high-impact critique findings before micro-polish. Do not run Audit or Polish just to
+inflate a visual review, or repeat a pass when the affected rendered result has
+already been checked. Load each selected provider command's full instructions.
+
 For explicit Impeccable reviews as well as router-selected reviews, apply the
 [rendered readability and composition gate](quality-gates.md#rendered-readability-and-composition-including-impeccable).
-Pair technical auditing with a visitor reading and composition critique; preserve
-provider identity and distinguish technical-only findings from overall acceptance.
+When technical auditing is selected for an overall review, pair its findings with a
+visitor reading and composition critique. Preserve provider identity and distinguish
+technical-only findings from overall acceptance.
 
 `antfu-guidelines` or `vercel-labs` may substitute for a focused web/React quality review. Stay read-only unless fixes were requested.
 

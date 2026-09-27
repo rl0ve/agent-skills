@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.18.3 - 2026-09-27
+
+- Select Impeccable Critique, Audit and Polish by the actual review question and
+  remaining findings, without a mandatory command stack.
+- Label provider scores and project-specific visual ratings separately; do not
+  exchange scales or use a technical score as an overall look-and-feel verdict.
+- Add policy exercises for broad visual review, narrow technical audit and mixed scores.
+
 ## 1.18.2 - 2026-09-27
 
 - Verify hosted-builder source rights and an editable export/rebuild when portability matters.
