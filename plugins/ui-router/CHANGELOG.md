@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.18.2 - 2026-09-27
+
+- Verify hosted-builder source rights and an editable export/rebuild when portability matters.
+- Evaluate live conversation using complete lesson outcomes, audible response latency,
+  recovery and comparable session-cost assumptions rather than provider billing units.
+- Check decision services in the target language and calibrate confidence with fallback.
+- Complete the supplied research coverage while preserving 1.18.1 model-routing policy,
+  existing narration ownership and learning-mode boundaries.
+
 ## 1.18.1 - 2026-09-27
 
 - Include Arena in model/design-routing reviews and inherit Work Router's regular

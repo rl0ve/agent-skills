@@ -41,6 +41,17 @@ shaders, input, persistence or a complete lesson. Include migration and regressi
 work before recommending a rewrite. Demo quality and model release dates do not
 establish an engine's superiority or change Work Router's model policy.
 
+## Verify a hosted builder's exit path
+
+Separate playable export, editable source, commercial rights and independent hosting.
+Check the current plan and project provenance: original projects, templates and remixes
+may have different export rights. A code tab or downloaded game does not establish a
+complete editable project. When portability is required, export a representative slice,
+open it in the supported editor/version, change it and rebuild outside the service.
+Verify scripts, scenes, assets/licenses and required backend or voice integrations;
+record any dependency that still requires the hosted service. Keep unverified export
+claims unresolved rather than treating a prototype as a portable production foundation.
+
 ## Keep live model decisions bounded
 
 Use authored rules or a state machine where they satisfy the behavior. Add a model
@@ -53,8 +64,11 @@ conditional structured-decision service, not a 3D engine or dialogue generator. 
 vendor describes typed probabilistic choices and gives up string generation. Output
 type guarantees and reported confidence do not prove a decision is correct for the
 game or learner; vendor demos are not a workload benchmark. Do not add it when ordinary
-rules work. Dialogue, speech and packaged NPC services need their own task-specific
-quality, delay, cost and recovery checks.
+rules work. Check the chosen model's supported inputs and evaluate decisions in the
+actual target language; English results do not establish multilingual accuracy. Calibrate
+any confidence threshold on representative task data, allow abstention/fallback, and
+recheck after a model change. Dialogue, speech and packaged NPC services need their own
+task-specific quality, delay, cost and recovery checks.
 
 Treat a model response as a proposal. Validate its action, target and preconditions
 against current authoritative state before applying it. Discard stale responses from
@@ -62,6 +76,32 @@ a prior scene/turn, prevent duplicate actions on retries, and preserve a useful 
 state and timeout fallback. Keep assessment evidence separate from the NPC's assertion
 that the player succeeded. Use [interaction-contracts.md](interaction-contracts.md)
 for the task and learning semantics.
+
+## Evaluate live conversation as a complete interaction
+
+Use this check when live conversation is part of the intended activity. Prerecorded
+clips remain with the voice-narration owner. Choose direct speech or a transcription,
+dialogue and speech-synthesis pipeline from the task's control and observability needs.
+When comparing candidates, use the same lesson, target language, input conditions and
+success criteria. Listen to pronunciation and intelligibility; exercise recognition,
+turn-taking, corrections, interruptions and connection recovery. Verify the resulting
+world/lesson state as well as the spoken response. Reuse [motion-quality.md](motion-quality.md)
+for microphone intent, cancellation and playback lifecycle checks.
+
+Measure the user's wait from the end of their speech to audible useful response,
+including endpoint detection, network, model/tool work, buffering and playback. Separate
+an acknowledgment from a useful answer. With repeated observations, report median and
+tail latency plus failures; provider time-to-first-byte is not the complete experience.
+
+Estimate cost per comparable completed lesson using current rates and explicit learner
+speech, NPC speech and pause durations. Identify the actual meters: connected time and
+any billed silence, audio/text tokens, characters, backend calls and growing context.
+Include retries, reconnects and applicable minimums; distinguish usage from subscription
+fees and included credits without double-counting. Character-to-minute assumptions need
+checking in the target language. Check expected concurrency separately from single-session
+cost. Label estimates and failed/incomplete sessions; cheaper output does not establish
+equivalent teaching quality. Align connection lifetime with the intended interaction
+and preserve lesson state when closing an idle metered session.
 
 ## Prove a representative playable slice
 

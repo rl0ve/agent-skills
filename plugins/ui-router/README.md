@@ -67,7 +67,10 @@ The [interactive-worlds guide](skills/route-ui-work/references/interactive-world
 helps choose a runtime from delivery and authoring needs, with conditional Three.js/R3F,
 Babylon.js, PlayCanvas, Needle and native-engine routes. It separates game state,
 assets/content and optional live intelligence, and calls for a representative playable
-slice before expansion or migration. It does not rank engines or require a new service.
+slice before expansion or migration. Hosted-builder choices include editable export
+checks when portability matters. Live-conversation choices compare full lesson quality,
+audible latency and session cost with explicit assumptions. It does not rank engines or
+require a new service.
 
 [Interaction contracts](skills/route-ui-work/references/interaction-contracts.md) preserve
 the agreed learning mode, ground language in visible tasks and distinguish speech
