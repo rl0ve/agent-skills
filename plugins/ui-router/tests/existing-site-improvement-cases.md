@@ -1,6 +1,6 @@
 # Existing-site improvement cases
 
-Policy exercises through 1.17.0. These are reasoning fixtures with expected decisions,
+Policy exercises through 1.18.3. These are reasoning fixtures with expected decisions,
 not automated model evaluations, visitor research or measured quality improvements.
 Use the request and baseline as inputs; evaluate the decision against the final column.
 
@@ -30,3 +30,6 @@ Use the request and baseline as inputs; evaluate the decision against the final 
 | Eleven sibling service pages share CSS but have different copy lengths, image crops and list structures. Only one was inspected. | Inventory and inspect all requested pages; compare available baselines at matching widths, recheck affected siblings after shared changes, and state incomplete coverage. | Extrapolating one good page into an all-pages pass. |
 | A concise, readable benefits list works at all relevant widths; the user requests only a technical accessibility audit. | Preserve the useful list and technical scope; label the result as technical, without an overall design score. | Requiring cards, editorial rewriting or a full-site critique for every audit. |
 | A source-only critic receives no rendered screenshots or browser access. | Request rendered evidence from the parent and report visual acceptance as unverified. | Claiming reading comfort from DOM structure or CSS measurements alone. |
+| A finished service site needs a final look-and-feel review; its visual hierarchy and lower-page rhythm are unsettled. | Select Impeccable Critique and inspect rendered pages at the relevant widths. Use its findings to prioritize structural fixes; consider Polish only for remaining details once the core journey works. | Running Audit as a substitute for design judgment or polishing minor spacing before resolving hierarchy. |
+| A user asks only for accessibility and performance findings on an accepted page. | Select Audit and keep its technical score labeled with its own dimensions and scale. Do not add Critique or Polish unless the user broadens the request or a specific finding requires them. | Stacking commands by default or treating an Audit score as a visual-quality rating. |
+| A review reports Impeccable Audit /20, Impeccable Critique heuristics /40 and a custom visual /20. | Keep all three scores separate, identify each source and rubric, and tie any changed verdict to a reinspection of the saved page. | Calling the custom /20 an Impeccable score, averaging unlike scales, or raising it to the requested target without evidence. |
