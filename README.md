@@ -26,7 +26,7 @@ models would add more handoff work than benefit.
 | Difficult architecture, diagnosis, or reasoning with unresolved dependencies that needs deeper analysis within Sol | **Sol 6** | **xhigh** | Use when the added depth is justified; choose Astra instead when model capability or judgment is the limiting factor. |
 | A quick independent UX opinion, implementation review, or first-pass diagnosis | **Sol 6** | **medium** | Use high for deep review. Low is an option only for bounded, read-only triage with low stakes. |
 | Substantial UI implementation with an established visual direction | **Sol 6** | **high** | Use Astra when the unresolved problem is unusually difficult creative or spatial judgment. |
-| Unresolved art direction, ambitious realistic 3D, or creative decisions where maximum quality matters | **Astra 6** | **high** | Consider xhigh if difficult decisions remain unresolved. A failed Sol attempt is not required. |
+| New substantial UI builds where visual quality is central; unresolved art direction or demanding creative/spatial work | **Astra 6** | **high** | Consider xhigh if difficult decisions remain unresolved. A failed Sol attempt is not required. |
 | The hardest reasoning, diagnosis, or synthesis across several systems | **Astra 6** | **high** | Consider xhigh when depth remains insufficient; justify max or ultra separately. |
 | Exceptionally demanding reasoning or creative/spatial judgment with difficult unresolved tradeoffs | **Astra 6** | **xhigh** | A deliberate deeper pass, including upfront when clearly warranted. Validate the result; max/ultra are not automatic next steps. |
 | Independent document or repository reading with a demonstrated Terra advantage, or an explicit Terra preference | **Terra 5.6** | **medium** | Use Luna for straightforward extraction or Sol for judgment-heavy interpretation when there is no reason to prefer Terra. |
@@ -60,7 +60,9 @@ are policy recommendations, not a measured token-optimal result for every worklo
 Codex service stays **Standard** unless you explicitly choose Fast where available.
 
 **For demanding visual work:** Astra high is the starting recommendation when the
-creative or spatial direction itself is hard. Sol high fits substantial implementation
+visual quality is central to a new substantial build or creative/spatial direction is
+hard. This is informed by the [dated Arena assessment](plugins/work-router/skills/route-ai-work/references/routing-basis.md).
+Sol high fits substantial implementation
 once that direction is settled. Both still need rendered comparison and a working
 interaction; neither a model label nor a screenshot proves the result is good.
 

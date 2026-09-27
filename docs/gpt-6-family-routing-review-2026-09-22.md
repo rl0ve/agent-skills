@@ -5,6 +5,11 @@ the earlier Sol/Luna release review: Astra has a direct task-based role, not mer
 exception for existing sessions. Work Router owns model/effort choices; UI Router owns
 the design method and acceptance evidence.
 
+The [September 27 independent-evidence addendum](../plugins/work-router/skills/route-ai-work/references/routing-basis.md#independent-evidence-addendum-september-27-2026)
+adds Arena and Artificial Analysis and strengthens the Astra preference for new substantial
+UI builds with visual quality central to acceptance. The tables below retain the earlier
+review's scope; the active skill and dated addendum govern the revised UI route.
+
 ## Adopted policy
 
 | Model | Default role | Recommended reasoning | Boundary |

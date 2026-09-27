@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.8.3 - 2026-09-27
+
+- Make Arena and Artificial Analysis regular model-review sources, with task-specific
+  original benchmarks, dated evidence, uncertainty and harness/effort boundaries.
+- Add a verified Arena/Artificial Analysis assessment and prefer Astra for new
+  substantial UI builds where visual quality is central; retain Sol for settled designs.
+- Keep benchmark reviews conditional, preserve active contexts, and avoid automatic
+  Max settings, paid trials or recurring monitors.
+
 ## 1.8.2 - 2026-09-22
 
 - Treat an explicit same-quality savings request as a constrained usage optimization;

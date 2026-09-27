@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.18.1 - 2026-09-27
+
+- Include Arena in model/design-routing reviews and inherit Work Router's regular
+  benchmark sources with a standalone evidence-checking fallback.
+- Prefer Astra for new substantial UI builds where visual quality is central to
+  acceptance; retain Sol for implementation with settled design and explicit checks.
+- Keep Max leaderboard evidence separate from high/xhigh recommendations and preserve
+  rendered, responsive, accessibility and interaction verification.
+
+
 ## 1.18.0 - 2026-09-27
 
 - Add conditional runtime and authoring selection for interactive worlds, with a playable

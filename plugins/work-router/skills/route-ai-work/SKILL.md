@@ -112,7 +112,10 @@ invent GPT-6 Terra, declare Terra retired, or silently change a selected model.
 available capability.** Sol remains a strong default for demanding implementation,
 diagnosis, synthesis, and integration. Select Astra directly for unusually difficult
 cross-system reasoning, unresolved creative or spatial direction where maximum quality
-matters, or a demonstrated Sol judgment limit. Do not require a failed Sol attempt
+matters, new substantial UI builds where visual quality is a primary acceptance
+criterion, or a demonstrated Sol judgment limit. The dated Arena assessment supports
+the UI preference; keep Sol eligible for implementation with a settled design. Do not
+require a failed Sol attempt
 before an obviously harder quality-first task. Preserve a progressing capable parent;
 a new release alone does not justify a handoff.
 
@@ -126,7 +129,7 @@ quality ranking across these tasks. See [the evidence basis](references/routing-
 | Route | Use it for | Default configuration | Write policy |
 |---|---|---|---|
 | Current capable parent | Trivial or tightly coupled work, orchestration, integration, final verification | Active model and effort | May write |
-| GPT-6 Astra parent or explicitly configured built-in agent | Hardest diagnosis or synthesis; unresolved creative/spatial direction with a quality-first requirement; demonstrated Sol capability limit | GPT-6 Astra; high for new demanding work, preserve active setting when progressing | Parent owns decisions; child read-only unless sole writer |
+| GPT-6 Astra parent or explicitly configured built-in agent | Hardest diagnosis or synthesis; substantial UI builds with visual quality central to acceptance; unresolved creative/spatial direction; demonstrated Sol capability limit | GPT-6 Astra; high for new demanding work, preserve active setting when progressing | Parent owns decisions; child read-only unless sole writer |
 | GPT-6 Sol parent or bounded built-in agent | Substantial everyday reasoning, complex implementation, architecture, diagnosis, synthesis, integration | GPT-6 Sol; medium ordinarily, high for complex work | Parent writes; child read-only unless sole writer |
 | Explicit Sol xhigh route | Difficult architecture, diagnosis, or reasoning with unresolved dependencies that merits more depth within Sol | GPT-6 Sol, xhigh; may be chosen upfront when warranted | Parent writes; child read-only unless sole writer |
 | Explicit Astra xhigh route | Exceptionally demanding reasoning or creative/spatial judgment with difficult unresolved tradeoffs | GPT-6 Astra, xhigh; may be chosen upfront when warranted | Parent owns decisions; child read-only unless sole writer |
@@ -175,6 +178,21 @@ explicitly configured for Astra. For unavailable optional routes, choose a permi
 capable parent or compatible built-in agent and state the substitution. Never claim to
 switch a running parent's model, effort, or service tier without application confirmation.
 
+
+## Benchmark evidence for routing
+
+When reviewing releases or changing comparative routing guidance, use
+[the regular benchmark sources and comparison rules](references/benchmark-sources.md):
+Arena's task-relevant boards, Artificial Analysis, and original task-specific evaluators
+such as SWE-bench/DeepSWE, Terminal-Bench, METR or OSWorld. Verify availability and
+supported settings with the host/provider. Apply this to Codex and Claude routes.
+
+Record dated results, model/effort/harness, uncertainty and limitations; distinguish
+preference, success, capability, cost and latency. Do not dismiss relevant UI evidence
+because no universal design benchmark exists, or promote a Max result into proof for
+other efforts. Refresh for new releases, material evidence changes or disputed routes;
+reuse the assessment during ordinary work rather than browsing every board each time.
+This policy does not create a scheduled monitor. See [the current assessment](references/routing-basis.md).
 
 ## Token and latency controls
 

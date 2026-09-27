@@ -129,15 +129,25 @@ When the Work Router is installed, apply its work route after composing the UI s
 | Consequential visual, accessibility, or system review | `ui-router:ui-critic` | Opus | high |
 
 Keep trivial UI adjustments in the parent. In Codex, follow Work Router's model policy:
-GPT-6 Sol for substantial design reasoning and broad implementation; GPT-6 Astra for
-the hardest creative/spatial judgment, unresolved quality-first direction, or a
+GPT-6 Sol for substantial implementation with settled design and explicit checks;
+prefer GPT-6 Astra for new substantial UI builds where visual quality is central to
+acceptance, the hardest creative/spatial judgment, unresolved quality-first direction, or a
 demonstrated Sol capability limit; GPT-6 Luna for narrow objectively verifiable work.
 GPT-5.6 Terra is a conditional reference/evidence reader, not the final visual judge.
-Preserve explicit model choices and a progressing capable parent. No current four-model
-benchmark establishes the best visual taste or fastest accepted design. UI Router still
-owns the design chain, rendered comparison and exercised interaction. A model release
+Preserve explicit model choices and a progressing capable parent. Arena's September 25
+WebDev results favor Astra Max over Sol Max and inform this task-specific preference;
+they do not establish the best effort, fastest accepted design or universal visual
+winner. UI Router still owns the design chain, rendered comparison and exercised interaction. A model release
 does not justify 3D, image generation or subagents. These Claude profiles do not switch
 the parent.
+
+For model/effort reviews, use Work Router's `references/benchmark-sources.md` when
+available. Include [Arena WebDev](https://arena.ai/leaderboard/code) and relevant design
+categories or Image-to-WebDev results, plus the Agent board when tool workflows matter;
+cross-check with Artificial Analysis and task-specific original benchmarks. In standalone
+use, retain dates, exact model/effort/harness, sample sizes and uncertainty. A coding or
+intelligence score does not measure taste, and missing coverage is not a low score.
+Refresh when reviewing a release or disputed route, not on every UI task.
 
 For Codex effort selection, **Sol high** fits substantial implementation with a settled
 direction; **Sol xhigh** fits unusually deep implementation reasoning within Sol.

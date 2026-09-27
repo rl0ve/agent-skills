@@ -49,3 +49,16 @@ keep one write-capable owner per working tree.
 | A build passed and neither inputs nor relevant conditions changed | Reuse that result; run the next required check | Avoid duplicate work without relaxing acceptance. |
 | User supplies a decision-model key after seeing a fast 3D demo | Store the key if asked; keep adoption conditional on a representative comparison and authorized spend | Asset assembly demos do not prove coding-token savings or preserved visual quality. |
 | A smaller route saves tokens but creates missed requirements or extra review | Reject that route or escalate while retaining the evidence | Same-quality savings are constrained by accepted outcomes, not raw token reduction. |
+
+## Benchmark evidence cases (September 27, 2026)
+
+| Situation | Expected decision | Reason |
+|---|---|---|
+| A new substantial web UI with visual quality central to acceptance; model choice is open | Prefer Astra, with UI Router's design and rendered checks | Dated Arena WebDev evidence favors Astra Max; family preference is useful without pretending high/xhigh were measured. |
+| A one-line token correction in a productive Sol session | Finish in Sol | A benchmark review is not a reason for a trivial handoff or new research. |
+| A fixed design needs a defined implementation | Sol remains eligible | The quality-first UI preference does not mandate Astra for all frontend code. |
+| An Arena Max result is used to demand Max for every design task | Reject that inference; choose supported effort for task needs | Configuration-specific results do not measure every effort or task. |
+| Arena WebDev and a general intelligence index disagree | Inspect category, version, harness and uncertainty; weight task relevance | Do not average unlike scores or call one rank a universal winner. |
+| A newly released model is absent from METR or an extracted leaderboard | Record missing coverage and qualify the assessment | Missing results do not mean poor results. |
+| A routing update relies only on vendor release claims | Check Arena, Artificial Analysis and relevant original evaluators; record unavailable comparisons | Regular independent evidence belongs in comparative policy reviews, not every ordinary task. |
+| The user asks to consider Arena regularly | Save the source/review policy without scheduling background checks | A regular evidence source is not authorization for a recurring monitor. |
