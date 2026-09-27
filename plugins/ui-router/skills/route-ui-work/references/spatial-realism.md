@@ -60,6 +60,17 @@ This route is optional, has no claimed quality advantage here, and does not repl
 architecture, rendering or headset validation. Connection discovery is not a generation
 trial; generation completion is not destination acceptance.
 
+## Generated worlds and semantic assets
+
+A navigable reconstruction or Gaussian splat is a visual representation; inspect what
+its export actually provides. For example, [World Labs' API](https://docs.worldlabs.ai/api)
+distinguishes splats, collider meshes and other mesh exports. A collider can support
+movement without providing separate manipulable objects, action anchors or task rules.
+Do not assume these are absent from every generator; verify and add the missing layer.
+Keep the visual environment separate from the semantic objects and authoritative state
+needed for the requested activity. For learning assets, retain relevant referent,
+localized labels and lesson tags alongside stable IDs when replacing the art.
+
 ## Treat baked lighting as a derived artifact
 
 When a scene uses baked light, occlusion or reflection captures, retain the source

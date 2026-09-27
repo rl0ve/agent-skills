@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.18.0 - 2026-09-27
+
+- Add conditional runtime and authoring selection for interactive worlds, with a playable
+  slice before expansion or migration and no universal engine/model ranking.
+- Separate authoritative state from optional dialogue/decision services; validate actions,
+  recover delayed responses and assess the actual latency and session-cost needs.
+- Add language-task contracts preserving comprehension or speaking goals, locale boundaries
+  and honest speech/learning evidence; clarify generated-world and semantic-asset limits.
+- Retain existing Meng, Dream Loop, asset, audio and model-routing owners. No new provider,
+  engine, integration, paid generation or mandatory multi-agent workflow is installed.
+
 ## 1.17.1 - 2026-09-22
 
 - Make high and xhigh choices explicit for Sol implementation and Astra creative/spatial
