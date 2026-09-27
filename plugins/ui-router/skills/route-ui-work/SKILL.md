@@ -1,6 +1,6 @@
 ---
 name: route-ui-work
-description: Route UI, UX, frontend, design review, motion, design-to-code, component-library, and interface-copy work through the researched skill catalog and live installed capabilities. Includes project-specific reference research, visual and component samples at useful decision points, iteration steering, and implementation-resource selection. Honor explicitly named skills and avoid unnecessary stacking.
+description: Route UI, UX, frontend, interactive games and worlds, design review, motion, design-to-code, component-library, and interface-copy work through the researched skill catalog and live installed capabilities. Includes project-specific reference research, visual and component samples at useful decision points, iteration steering, and implementation-resource selection. Honor explicitly named skills and avoid unnecessary stacking.
 compatibility: Codex and Claude Code with Agent Skills and plugin support.
 ---
 
@@ -77,6 +77,13 @@ Use [references/upstream-skills.md](references/upstream-skills.md) for exact Men
 Dream Loop entrypoints, selective loading/installation, and clearly labeled adaptations.
 
 ## Graphical and interactive builds
+
+For a playable world, simulation or spatial learning product whose runtime or AI
+architecture is unresolved, read [interactive-worlds.md](references/interactive-worlds.md).
+Choose from delivery, authoring and interaction needs; keep game state, content and
+optional live intelligence distinct. Use [interaction-contracts.md](references/interaction-contracts.md)
+for learning tasks and permitted actions. Settled stacks and small fixes stay direct; diagnose a scoped scene-quality issue
+with the existing owner before adding a specialist.
 
 For substantial graphical apps, scenes, creative tools or expressive sites, select a
 suitable [upstream specialist](references/upstream-skills.md), including Dream Loop when

@@ -54,6 +54,20 @@ when media is part of the work. Its focused question examples cover unresolved p
 purpose, navigation, sound entry and physical use. They do not create routine approval
 rounds or reopen settled preferences. See the [September 20 source review](docs/experiential-sites-review-2026-09-20.md).
 
+## Interactive worlds and learning tasks
+
+The [interactive-worlds guide](skills/route-ui-work/references/interactive-worlds.md)
+helps choose a runtime from delivery and authoring needs, with conditional Three.js/R3F,
+Babylon.js, PlayCanvas, Needle and native-engine routes. It separates game state,
+assets/content and optional live intelligence, and calls for a representative playable
+slice before expansion or migration. It does not rank engines or require a new service.
+
+[Interaction contracts](skills/route-ui-work/references/interaction-contracts.md) preserve
+the agreed learning mode, ground language in visible tasks and distinguish speech
+recognition from language evidence. Generated worlds still need verified semantic
+objects and interactions. See the [source review](docs/interactive-worlds-review-2026-09-27.md)
+for adopted guidance, existing coverage and unsupported claims left out.
+
 ## Graphical apps and visual refinement
 
 UI Router selects and coordinates; upstream specialists supply their detailed craft.

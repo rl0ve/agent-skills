@@ -20,6 +20,30 @@ attempt should leave a recoverable scene. Keep this logic separate from the inpu
 adapter so keyboard, touch and any later controller route can express the same intent.
 Shared intent does not establish that an untested input device works.
 
+## Language-learning scenarios
+
+When language learning is part of the product, connect each authored scenario's
+language target to an observable world task and its support/correction policy. For
+example, understanding a request and placing the named object can demonstrate
+comprehension without spoken production. Preserve the agreed learning mode; a
+comprehension-first brief does not authorize replacing the activity with compulsory
+conversation. Conversely, a speaking task needs evidence appropriate to speaking.
+
+Keep interface/help locale, target language and NPC utterances distinct. Ground
+utterances in the visible objects, allowed actions and selected vocabulary/structures;
+review linguistic accuracy and level fit before expanding generated lesson content.
+Model-generated dialogue may propose an action, but scenario code validates current
+preconditions before changing the world or awarding progress. World completion and
+language competence can require different evidence.
+
+When speech is included, distinguish recognition failure from learner error. Make
+uncertain recognition recoverable through replay, confirmation or another agreed input
+route; typing or selection is not equivalent evidence for a pronunciation task. Provide
+readable prompts/captions where appropriate and keep hint use visible to the evidence
+model. Use only the transcript/confidence information needed for the requested feedback;
+do not introduce raw-audio retention by default. An ASR transcript or a confident NPC
+reply alone is not a validated assessment of pronunciation or proficiency.
+
 ## Inspect assets at interaction distance
 
 An imported model can contain alternate variants, detached lids, display stands or
