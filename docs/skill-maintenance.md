@@ -27,6 +27,12 @@ Do not publish a user's bookmark archive, saved-item status, private annotations
 account details, or unrelated personal interests. Do not copy an external prompt or
 skill wholesale without reviewing its scope and license.
 
+For model, effort or comparative performance claims, use Work Router's
+[regular benchmark sources](../plugins/work-router/skills/route-ai-work/references/benchmark-sources.md).
+Arena and Artificial Analysis are regular review inputs; select original specialist
+benchmarks by the decision. Record coverage gaps, preserve exact tested configurations,
+and do not treat provider summaries or overlapping indexes as independent replications.
+
 ## Carry a release through
 
 - Work in the canonical checkout; inspect its instructions, dirty files and remote.

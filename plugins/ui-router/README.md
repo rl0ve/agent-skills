@@ -17,6 +17,13 @@ The plugin contributes:
 - a one-editor writing route that hands product or brand constraints to Natural Writing for the final prose pass;
 - a `PreToolUse` hook that blocks `sudo`.
 
+Model reviews include Arena's relevant WebDev/design categories and Work Router's
+[regular benchmark sources](../work-router/skills/route-ai-work/references/benchmark-sources.md).
+The September 27 evidence update prefers Astra for new substantial UI work where visual
+quality is central to acceptance, while retaining Sol for settled design implementation.
+Max leaderboard results do not establish the best high/xhigh setting or remove rendered
+and interaction checks.
+
 The router does not silently install third-party skills. The bundled installer refuses root and `sudo`, prints sources and commands before execution, and installs only explicit skills or curated profiles.
 
 Claude Code's official `frontend-design` plugin is a strong installed fallback, but it does not erase the canonical named lead when Taste, Hallmark, or Interface Design is the researched fit.

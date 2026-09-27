@@ -55,8 +55,12 @@ Check which levels the current host actually supports.
 
 A representative comparison should hold the task, tool access, acceptance criteria and
 service tier constant, then record accepted quality, elapsed time, retries and review
-work. We have not verified a current four-model visual-quality or matched wall-clock
-benchmark. These tables are routing recommendations with explicit limits.
+work. Arena's dated WebDev evidence supports preferring Astra for new substantial UI
+builds where visual quality is central to acceptance; Sol remains suitable for settled
+design implementation. The Max comparison does not validate other effort settings or
+native Codex completion time. These tables are starting recommendations, not a universal
+ranking. Model reviews regularly consult Arena, Artificial Analysis and original
+specialist evaluators through the [benchmark source policy](skills/route-ai-work/references/benchmark-sources.md).
 
 A handoff must repay context, startup, and review cost. Model release positioning is
 not proof of comparative UI quality, wall-clock speed, or lower end-to-end cost. A

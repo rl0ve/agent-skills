@@ -2,7 +2,56 @@
 
 Use this reference when explaining or revising the routing policy. Treat benchmark figures as dated evidence, not timeless product facts.
 
-## Current model and benchmark evidence: September 22, 2026
+## Independent evidence addendum: September 27, 2026
+
+Use the [regular source policy](benchmark-sources.md) for future reviews. The September
+22 review below did not evaluate Arena. Arena's [changelog](https://arena.ai/company/leaderboard-changelog)
+dates Sol Max's WebDev addition to September 23, after that review.
+
+The [WebDev board](https://arena.ai/leaderboard/code), dated September 25 and checked
+September 27, reports GPT-6 Astra Max at rank 2, score 1792 +/-11, 4,908 votes; GPT-6
+Sol Max at rank 5, score 1681 +/-15, 2,019 votes. This overall-category comparison
+provides meaningful evidence favoring Astra for generated web applications. The
+displayed intervals are separated. It does not establish a winner in every domain,
+production correctness, native Codex completion time, or high/xhigh effort performance.
+
+The [Agent board](https://arena.ai/leaderboard/agent), also dated September 25, reports
+Astra Max net improvement 10.85% +/-2.29% versus Sol Max 7.68% +/-2.57%; intervals
+overlap. Sol's steerability estimate is higher (15.70% +/-5.92% versus 0.89% +/-5.11%) and reported
+median task cost lower ($0.81 versus $2.69). These are distinct signals, not evidence
+that either model wins every workflow. [Agent methodology](https://arena.ai/blog/agent-arena-methodology)
+uses treatment-effect estimates; net improvement is not absolute task-success rate.
+
+Artificial Analysis's [Astra Max](https://artificialanalysis.ai/models/gpt-6-astra) and
+[Sol Max](https://artificialanalysis.ai/models/gpt-6-sol) pages, checked September 27,
+report Intelligence Index scores of 53 and 48 under
+[v4.3.2](https://artificialanalysis.ai/methodology/intelligence-benchmarking). This is
+an independent broad-capability cross-check, not a second visual-quality experiment.
+Do not infer total task speed from endpoint token throughput or combine this index
+numerically with Arena scores.
+
+**Decision:** prefer Astra for a new substantial UI build where visual quality is a
+primary acceptance criterion, subject to user constraints and current availability.
+Retain Sol for substantial implementation with settled design and objective checks,
+and preserve a progressing capable parent. Astra high/xhigh remain task-based starting
+recommendations, not efforts validated by the Max-only Arena comparison. No automatic
+Max setting, model switch, paid trial or delegation follows from these results.
+
+Source coverage for this addendum also included the original SWE-bench and DeepSWE
+pages, Terminal-Bench, METR methods/limitations and OSWorld. They inform task selection
+and interpretation in the source policy; this is not a claim that all supplied fresh
+Sol-6/Astra-6 comparisons. DeepSWE's extracted board showed Astra xhigh and older
+Sol-5.6 rows; no new Sol-6 row was verified there. Terminal-Bench's current 4.0 page
+did not expose populated result rows in the retrieved view. No values were inferred
+from either gap. The retrieved Arena rows did not specify exact harness versions, time/token budgets
+or service tiers; those fields remain unknown. No matched local Codex timing or
+visual-output trial was run.
+
+Revisit the UI preference when relevant category results, model revisions, uncertainty
+or representative accepted work change. Lower API price alone cannot establish the
+fastest accepted result; total elapsed time, quality and rework remain separate.
+
+## Model and benchmark evidence: September 22, 2026
 
 OpenAI's [current model guide](https://developers.openai.com/api/docs/guides/latest-model)
 distinguishes Astra for highest capability, Sol for strong reasoning on demanding tasks,
@@ -36,9 +85,10 @@ versus Astra low's 30.3% at 3.9 times the cost. That supports selecting Sol for 
 work; it does not establish that Sol exceeds Astra at every effort or on every task.
 
 The published internal design result compares Astra 50.0% with **GPT-5.6 Sol** 47.4%,
-not Sol 6. BenchCAD concerns reconstruction of geometry, not visual taste. No verified
-current four-model aesthetic comparison or matched wall-clock study supports a universal
-UI winner. Rendered task-specific review remains necessary. Release demos and social
+not Sol 6. BenchCAD concerns reconstruction of geometry, not visual taste. No
+current four-model aesthetic comparison or matched wall-clock study was verified in
+that review. The September 27 addendum adds relevant Arena evidence without claiming a
+universal UI winner. Rendered task-specific review remains necessary. Release demos and social
 examples are references, not controlled benchmarks.
 
 At review time, API input/output prices per million tokens are Astra $10/$50,
