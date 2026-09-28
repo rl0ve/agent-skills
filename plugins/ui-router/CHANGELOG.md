@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.18.4 - 2026-09-28
+
+- Fold the rendered-site UX annotation review procedure into a focused UI Router
+  reference. Track exact routes and selected wording, verify interactions and media,
+  and separate findings, source changes, saved retests and deployment.
+- Keep small edits scoped and review-only work read-only; retain existing design
+  leads, baseline guidance and completion gates without duplicating them.
+
 ## 1.18.3 - 2026-09-27
 
 - Select Impeccable Critique, Audit and Polish by the actual review question and

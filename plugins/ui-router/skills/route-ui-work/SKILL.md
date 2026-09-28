@@ -49,6 +49,16 @@ what works, prioritize the largest observed obstacle, and compare the candidate 
 the original visitor journey. Keep small defined edits scoped; an explicit rebrand
 can justify a broader change.
 
+## Review a rendered site or browser annotations
+
+For a rendered-site review, baseline comparison, or browser-annotation pass, read
+[references/rendered-site-annotation-review.md](references/rendered-site-annotation-review.md).
+Use its route and annotation ledger to separate observed findings from source edits,
+saved-page retests and deployment. Keep the selected review specialist responsible
+for aesthetic judgment and the [quality gates](references/quality-gates.md) responsible
+for acceptance. A single defined edit only needs focused verification; review-only
+requests remain read-only.
+
 ## Product decisions before polish
 
 For a broad redesign or unexplained usability problem, read
