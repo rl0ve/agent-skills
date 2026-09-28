@@ -78,6 +78,14 @@ recognition from language evidence. Generated worlds still need verified semanti
 objects and interactions. See the [source review](docs/interactive-worlds-review-2026-09-27.md)
 for adopted guidance, existing coverage and unsupported claims left out.
 
+## Rendered-site annotation review
+
+The [annotation review procedure](skills/route-ui-work/references/rendered-site-annotation-review.md)
+tracks exact routes and selected elements, exercises relevant media and controls, and
+keeps findings, saved fixes and deployment evidence separate. It complements the
+existing baseline-preservation and quality gates rather than adding another design
+lead. Small edits remain scoped; a site-wide review checks every requested page.
+
 ## Graphical apps and visual refinement
 
 UI Router selects and coordinates; upstream specialists supply their detailed craft.

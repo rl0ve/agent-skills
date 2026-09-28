@@ -36,6 +36,10 @@ Apply every relevant gate before declaring the routed task complete.
 
 ## Rendered readability and composition (including Impeccable)
 
+When review feedback arrives as browser annotations, use the focused
+[annotation review procedure](rendered-site-annotation-review.md) to identify each
+selected page/element and track finding, fix, saved retest and deployment separately.
+
 For a broad visual-quality review, including an explicit Impeccable review, audit or
 polish request, perform both technical checks and a visitor reading pass. A technical
 `audit` alone is not an overall design verdict. Load the selected provider's critique

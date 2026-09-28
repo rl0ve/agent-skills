@@ -1,6 +1,6 @@
 # Existing-site improvement cases
 
-Policy exercises through 1.18.3. These are reasoning fixtures with expected decisions,
+Policy exercises through 1.18.4. These are reasoning fixtures with expected decisions,
 not automated model evaluations, visitor research or measured quality improvements.
 Use the request and baseline as inputs; evaluate the decision against the final column.
 
@@ -33,3 +33,7 @@ Use the request and baseline as inputs; evaluate the decision against the final 
 | A finished service site needs a final look-and-feel review; its visual hierarchy and lower-page rhythm are unsettled. | Select Impeccable Critique and inspect rendered pages at the relevant widths. Use its findings to prioritize structural fixes; consider Polish only for remaining details once the core journey works. | Running Audit as a substitute for design judgment or polishing minor spacing before resolving hierarchy. |
 | A user asks only for accessibility and performance findings on an accepted page. | Select Audit and keep its technical score labeled with its own dimensions and scale. Do not add Critique or Polish unless the user broadens the request or a specific finding requires them. | Stacking commands by default or treating an Audit score as a visual-quality rating. |
 | A review reports Impeccable Audit /20, Impeccable Critique heuristics /40 and a custom visual /20. | Keep all three scores separate, identify each source and rubric, and tie any changed verdict to a reinspection of the saved page. | Calling the custom /20 an Impeccable score, averaging unlike scales, or raising it to the requested target without evidence. |
+| Several browser comments each use marker “1” on different service pages; one screenshot is from an older revision. | Identify each by route and selected wording, check the saved current render, and mark the stale item already fixed only when observed. Keep the remaining issues in a compact ledger. | Treating repeated marker numbers as one issue or editing from a stale screenshot. |
+| A local preview root loads but a nested service route fails, while a video poster appears on another page. | Verify the exact route/runtime before review, recover only within scope, and test actual video playback and controls before reporting media as verified. | Treating root reachability or a poster as proof of the requested route and playback. |
+| A reviewer changes a CMS page source and sees an export, but has not reopened the saved public page or deployed it. | Report source edit, saved-render verification, and deployment as separate states; retest the selected viewport and affected siblings after shared changes. | Calling an annotation resolved or the official site updated from source/export evidence alone. |
+| A user asks for one button label correction on a settled page. | Correct and check that control without imposing a full route matrix or design-lead stack. | Inflating a small edit into a site-wide audit. |
