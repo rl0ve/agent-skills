@@ -49,6 +49,14 @@ class RootInstallerTests(unittest.TestCase):
 
 
 class SudoHookTests(unittest.TestCase):
+    def test_both_hooks_use_seconds_for_timeout(self):
+        for plugin in ("ui-router", "work-router"):
+            config = json.loads(
+                (ROOT / "plugins" / plugin / "hooks" / "hooks.json").read_text()
+            )
+            hooks = config["hooks"]["PreToolUse"][0]["hooks"]
+            self.assertEqual(hooks[0]["timeout"], 5, plugin)
+
     def test_both_hooks_deny_sudo(self):
         payload = {"tool_name": "Bash", "tool_input": {"command": "git status && sudo make install"}}
         for hook in (ai_hook, ui_hook):

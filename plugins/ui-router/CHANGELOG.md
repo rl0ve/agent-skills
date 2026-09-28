@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.18.5 - 2026-09-28
+
+- Correct the PreToolUse hook timeout from 5,000 seconds to 5 seconds. The hook
+  schema uses seconds, so this keeps sudo blocking deterministic without allowing a
+  stalled hook to run for more than an hour.
+
 ## 1.18.4 - 2026-09-28
 
 - Fold the rendered-site UX annotation review procedure into a focused UI Router
