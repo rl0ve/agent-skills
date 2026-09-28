@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.8.4 - 2026-09-27
+
+- Store agent-profile backups beside the agents directory so recursive Codex discovery
+  cannot load duplicate roles. On apply, preserve and relocate existing nested backups,
+  even when the selected profiles are already current; dry runs report the move.
+
 ## 1.8.3 - 2026-09-27
 
 - Make Arena and Artificial Analysis regular model-review sources, with task-specific
