@@ -307,7 +307,8 @@ When asked to install, refresh, or inspect the bundled profiles:
 3. Run `scripts/sync_agent_profiles.py --apply`.
 4. Tell the user to start a new Codex task so new profiles are loaded.
 
-The sync tool backs up changed or renamed profiles, retires only known legacy names, and never deletes unrelated profiles. Do not hand-edit global routing configuration as part of this workflow.
+The sync tool stores backups outside the scanned agents directory and relocates old
+nested backups on apply. It backs up changed or renamed profiles, retires only known legacy names, and never deletes unrelated profiles. Do not hand-edit global routing configuration as part of this workflow.
 
 Load detailed references only when needed:
 

@@ -113,16 +113,29 @@ def main() -> int:
             )
             legacy_targets.append(legacy_target)
 
+    # Codex discovers profiles recursively; backups must live outside that tree.
+    backup_root = destination.with_name(destination.name + "-backups")
+    old_backups = destination / "backups"
+    migrate_backups = old_backups.is_dir()
+    if migrate_backups:
+        print(f"relocate  existing backups: {old_backups} -> {backup_root}")
+
     if not args.apply:
-        total = len(changes) + len(legacy_targets)
+        total = len(changes) + len(legacy_targets) + int(migrate_backups)
         print(f"Dry run: {total} profile operation(s) pending. Re-run with --apply.")
         return 0
+    if migrate_backups:
+        backup_root.mkdir(parents=True, exist_ok=True)
+        recovered = Path(tempfile.mkdtemp(prefix="recovered-", dir=backup_root))
+        shutil.move(str(old_backups), str(recovered / "backups"))
+        print(f"preserved existing backups: {recovered}")
+
     if not changes and not legacy_targets:
         print("All selected profiles are already current.")
         return 0
 
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    backup_dir = destination / "backups" / f"work-router-{timestamp}"
+    backup_dir = backup_root / f"work-router-{timestamp}"
     updated_targets = [target for _, target, status in changes if status == "update"]
     backup_targets = updated_targets + legacy_targets
     if backup_targets:
