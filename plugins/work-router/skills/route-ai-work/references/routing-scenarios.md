@@ -50,11 +50,27 @@ keep one write-capable owner per working tree.
 | User supplies a decision-model key after seeing a fast 3D demo | Store the key if asked; keep adoption conditional on a representative comparison and authorized spend | Asset assembly demos do not prove coding-token savings or preserved visual quality. |
 | A smaller route saves tokens but creates missed requirements or extra review | Reject that route or escalate while retaining the evidence | Same-quality savings are constrained by accepted outcomes, not raw token reduction. |
 
-## Benchmark evidence cases (updated October 1, 2026)
+## Claude Opus 5.5 cases (October 2, 2026)
 
 | Situation | Expected decision | Reason |
 |---|---|---|
-| A new substantial web UI with visual quality central to acceptance; model choice is open | Start with Sol 6.1 and UI Router's design and rendered checks; consider Astra for exceptionally hard quality-first direction | October 1 Arena WebDev retains a narrower Astra Max edge but does not prove the faster accepted result or high/xhigh ranking. |
+| New substantial multi-file feature in Claude Code, no explicit model constraint | Opus 5.5 medium after resolving actual model support | Recalibrate the new revision rather than inheriting Opus 5 low/high. |
+| Tiny rename in a productive Claude parent | Finish in the parent at its effective setting | A release is not a reason for a trivial switch. |
+| A long migration with objective milestones and no demonstrated capability limit | Opus 5.5 medium/high with bounded phases and one writer | Duration alone does not select Fable or an agent team. |
+| New narration or UX copy with an established voice | Opus 5.5 with the semantic owner as needed and Natural Writing as final editor | Prose alone no longer selects Fable; verify facts and voice. |
+| User explicitly wants the Fable voice used for an earlier talk track | Honor Fable and preserve the same writing checks | New defaults do not erase explicit style preference or representative evidence. |
+| Foundry's `opus` resolves to 4.6 | Report the revision and use a verified permitted full 5.5 ID if available; otherwise retain a disclosed compatible route | A family alias does not prove 5.5. Never silently claim the new capabilities. |
+| Someone says all Sonnet 5.5 settings above medium are dominated | Require current comparable evidence; keep suitable bounded Sonnet work eligible | Sonnet 5/Opus 5 rows cannot settle a 5.5 claim. |
+| A custom API harness disables thinking and forces one tool on Opus 5.5 | Follow the migration guide; verify request and response handling before use | Always-on adaptive thinking and forced-tool rejection are breaking changes, not prompting problems. |
+| An unattended Opus 5.5 run ends with a progress summary while required items remain | Inspect pending jobs and remaining requirements; continue within a bounded recovery policy or report the blocker | Text-only end-of-turn is not completion evidence; avoid infinite continuation. |
+| Host choice is open for a new substantial UI build with visual quality central | Consider Claude Opus 5.5 at task-appropriate effort and keep rendered checks | WebDev supports this quality-focused route; Max-only preference is not medium/high or speed proof. |
+| User requires Codex throughout despite Opus 5.5's WebDev score | Use the supported Codex table and preserve the family constraint | Cross-host quality evidence does not make Claude available inside Codex. |
+
+## Benchmark evidence cases (updated October 2, 2026)
+
+| Situation | Expected decision | Reason |
+|---|---|---|
+| A new substantial web UI inside Codex with visual quality central to acceptance; supported Codex model choice is open | Start with Sol 6.1 and UI Router's design and rendered checks; consider Astra for exceptionally hard quality-first direction | The within-Codex comparison does not prove the faster accepted result or high/xhigh ranking; open host choice is a separate decision. |
 | A one-line token correction in a productive Sol session | Finish in Sol | A benchmark review is not a reason for a trivial handoff or new research. |
 | A fixed design needs a defined implementation | Sol remains eligible | The quality-first UI preference does not mandate Astra for all frontend code. |
 | An Arena Max result is used to demand Max for every design task | Reject that inference; choose supported effort for task needs | Configuration-specific results do not measure every effort or task. |

@@ -1,6 +1,6 @@
 # Benchmark sources for routing decisions
 
-Reviewed October 1, 2026. Work Router owns this source policy for both Codex and
+Reviewed October 2, 2026. Work Router owns this source policy for both Codex and
 Claude Code. Benchmark rankings are evidence about tested configurations, not standing
 instructions to switch models. Keep dated measurements in `routing-basis.md` or a
 linked review, so the entrypoint does not accumulate volatile leaderboard tables.
@@ -76,8 +76,14 @@ routine work or spend on external evaluations without authorization.
 
 ## Applying the evidence to UI work
 
+The [October 2 Opus 5.5 assessment](opus-5-5-review.md) adds a quality-focused
+Claude route when host choice is open. It changes the Claude implementation start
+to Opus 5.5 medium and qualifies the former automatic Fable preference. Its WebDev
+Max result cannot establish medium/high quality, the fastest accepted result or a
+universal visual winner. Keep active host constraints and useful parent context.
+
 The October 1 Sol 6.1 review supersedes the September 27 family preference for ordinary
-new UI work: start with Sol 6.1 for a typical substantial build, including one with a
+new UI work within Codex: start with Sol 6.1 for a typical substantial build, including one with a
 visual-quality bar. Astra still has a narrower measured Max-effort WebDev advantage;
 prefer it when unresolved creative/spatial judgment is exceptionally difficult and
 maximum quality matters. Keep small changes in a capable parent and honor explicit

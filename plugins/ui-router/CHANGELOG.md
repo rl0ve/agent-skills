@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.18.9 - 2026-10-02
+
+- Start Claude UI implementation at Opus 5.5 medium and preserve high for consequential
+  review; verify actual provider alias resolution and qualify the old Sonnet effort ceiling.
+- Account for the current WebDev evidence in open host selection while preserving
+  Codex routes, concrete art direction, visual-input checks and rendered interaction validation.
+
 ## 1.18.8 - 2026-10-01
 
 - Add scene-audio authoring checks, early proofs for specialist VR input, and a conditional OpenAI Decisions route. Distinguish MiniMax Design asset workflows from coding tools; retain access, rights and quality evidence boundaries.

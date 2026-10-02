@@ -56,8 +56,8 @@ Check which levels the current host actually supports.
 
 A representative comparison should hold the task, tool access, acceptance criteria and
 service tier constant, then record accepted quality, elapsed time, retries and review
-work. October 1 Arena WebDev evidence shows a narrower Astra Max edge over Sol 6.1 Max;
-Sol 6.1 remains the starting route for typical new UI builds, with Astra reserved for
+work. Within Codex, October 1 Arena WebDev evidence shows a narrower Astra Max edge over Sol 6.1 Max;
+Sol 6.1 remains the starting route for typical new UI builds in Codex, with Astra reserved for
 exceptionally difficult quality-first direction. The Max comparison does not validate other effort settings or
 native Codex completion time. These tables are starting recommendations, not a universal
 ranking. Model reviews regularly consult Arena, Artificial Analysis and original
@@ -111,8 +111,18 @@ The stable Sol profile names now target GPT-6.1 Sol; Luna targets GPT-6 Luna and
 
 Stay in the parent for trivial or tightly coupled work. Use a bounded subagent only
 when specialization, context isolation, or independent reading repays the handoff.
-Fable handles long-horizon work and prose whose quality is the deliverable. The Claude
-route table and six Claude agent definitions are unchanged by the Sol 6.1 update.
+New substantial Claude work starts with **Opus 5.5 medium**, including implementation,
+analysis, long jobs and prose with Natural Writing. Use high for difficult diagnosis
+or consequential verification; xhigh/Max need a task-specific reason and a quality
+benefit. Low fits supervised small work. Fable is conditional on explicit preference,
+representative quality evidence or an Opus capability/style limit.
+
+Verify the actual provider model: `opus` is a portable alias and can resolve to an
+older revision. Opus 5.5 requires Claude Code 2.1.280+. The
+[October 2 assessment](skills/route-ai-work/references/opus-5-5-review.md) records
+the release, independent evidence and conditional API migration guidance. Current
+WebDev evidence supports an Opus 5.5 quality-focused route when host choice is open;
+it does not require leaving a productive Codex session or prove native task speed.
 
 The router does not modify user or managed settings. Organization model allowlists,
 effort caps, and explicit user choices always win.
