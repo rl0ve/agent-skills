@@ -1,6 +1,6 @@
 name = "sol-architect"
 description = "Use for ambiguous architecture, difficult debugging, multi-subsystem reasoning, concurrency or migration design, and problems that require deep tracing or sustained edge-case analysis."
-model = "gpt-6-sol"
+model = "gpt-6.1-sol"
 model_reasoning_effort = "high"
 sandbox_mode = "read-only"
 

@@ -1,6 +1,6 @@
 name = "sol-advisor"
 description = "Use for fast expert judgment, a sanity check on a design or approach, a quick UX opinion, focused review, or first-pass diagnosis before deeper investigation."
-model = "gpt-6-sol"
+model = "gpt-6.1-sol"
 model_reasoning_effort = "medium"
 sandbox_mode = "read-only"
 

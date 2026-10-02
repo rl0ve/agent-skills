@@ -2,6 +2,39 @@
 
 Use this reference when explaining or revising the routing policy. Treat benchmark figures as dated evidence, not timeless product facts.
 
+## GPT-6.1 Sol review: October 1, 2026
+
+[OpenAI's model page](https://developers.openai.com/api/docs/models/gpt-6.1-sol)
+positions GPT-6.1 Sol as near-Astra performance for complex coding, computer use and
+professional work; its [model selection guide](https://developers.openai.com/api/docs/guides/model-selection)
+still reserves Astra for the most demanding tasks. These are provider claims, not a
+matched Codex completion-time or visual-quality trial. The current host catalog lists
+`gpt-6.1-sol` with low through max effort. The three bundled Sol profiles are updated
+to that model ID; already installed copies require a separate sync.
+
+The [Arena WebDev board](https://arena.ai/leaderboard/code/webdev), checked October 1,
+reports Astra Max at rank 2, 1789 +/-10 with 5,918 votes and Sol 6.1 Max at rank 3,
+1759 +/-19 with 1,264 votes. Astra retains a measured Max-setting edge, but the gap
+is much smaller than the September 27 Astra-versus-Sol-6 comparison below. The
+displayed marginal intervals nearly meet; they are not a pairwise significance test.
+Different vote counts, release ages and unknown Codex harness settings limit transfer.
+
+[Artificial Analysis's comparison](https://artificialanalysis.ai/models/comparisons/gpt-6-1-sol-xhigh-vs-gpt-6-astra-xhigh),
+checked October 1, reports Intelligence Index 51 versus 52 and AutomationBench-AA
+67% for both at xhigh; Terminal-Bench 4.0 is 54% for Sol 6.1 versus 60% for Astra.
+The page's estimated per-task costs ($0.39 versus $2.31) are specific to its
+evaluation, not Codex subscription usage or accepted-work costs. These mixed results
+support Sol 6.1 as the normal substantial-work default and preserving Astra for a
+demonstrated or clearly anticipated capability limit. They do not establish equal
+performance on every task, equal effort cost or shorter native Codex wall time.
+
+**Decision:** route typical substantial implementation, architecture, diagnosis,
+synthesis and new UI builds to Sol 6.1 at task-appropriate effort. Reserve upfront
+Astra for the hardest quality-first judgment or exceptionally difficult unresolved
+creative/spatial direction; keep it when a capable Astra parent is progressing.
+Rendered comparison remains the acceptance test for UI. Revisit this decision when
+task-specific data or representative accepted-work trials change.
+
 ## Independent evidence addendum: September 27, 2026
 
 Use the [regular source policy](benchmark-sources.md) for future reviews. The September
@@ -30,7 +63,7 @@ an independent broad-capability cross-check, not a second visual-quality experim
 Do not infer total task speed from endpoint token throughput or combine this index
 numerically with Arena scores.
 
-**Decision:** prefer Astra for a new substantial UI build where visual quality is a
+**Decision at September 27:** prefer Astra for a new substantial UI build where visual quality is a
 primary acceptance criterion, subject to user constraints and current availability.
 Retain Sol for substantial implementation with settled design and objective checks,
 and preserve a progressing capable parent. Astra high/xhigh remain task-based starting
@@ -145,7 +178,8 @@ Evidence sources:
 
 1. Optimize total user-visible elapsed time, including duplicated context, retries,
    review, and integration. Neither a smaller model nor a handoff inherently saves time.
-2. Sol fits substantial everyday work; Astra fits the hardest judgment, unresolved
+2. Sol 6.1 fits substantial everyday and complex work, including typical new UI;
+   Astra fits the hardest judgment, exceptionally difficult unresolved
    quality-first direction, or a demonstrated Sol capability limit. Preserve useful context.
 3. Luna fits bounded objective work. Terra 5.6 is conditional on availability and user
    preference or workload evidence. A capable parent owns consequential synthesis.
@@ -161,7 +195,7 @@ Evidence sources:
 
 ## Profile compatibility
 
-The bundled Sol and Luna profiles now target `gpt-6-sol` and `gpt-6-luna`; profile
+The bundled Sol and Luna profiles now target `gpt-6.1-sol` and `gpt-6-luna`; profile
 names stay stable. Terra remains explicitly `gpt-5.6-terra`. Installing the plugin does not
 refresh standalone profiles already copied into user or project configuration. Use
 the included sync script when authorized, then start a new task to load them.

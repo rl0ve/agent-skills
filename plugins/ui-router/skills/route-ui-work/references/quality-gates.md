@@ -130,6 +130,11 @@ its report must not imply full visual or editorial acceptance.
   prototype scores or an earlier review forward as final evidence. Retain evidence for
   unaffected flows; a small change does not require a full-site audit. Label subjective
   ratings as reviewer judgments, not certification or measured customer outcomes.
+- When a CMS change is promoted from staging to live, verify the public result in the
+  authorized release scope: media URLs and served files resolve at the live paths,
+  forms use the intended real configuration rather than a staging demo, and cache state
+  does not mask the new result. A correct local or staging render is not live evidence;
+  if publication or public verification is out of scope, report those gates as unverified.
 
 ## Reference fidelity
 

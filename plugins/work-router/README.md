@@ -15,9 +15,10 @@ The plugin contributes:
 
 ## Codex with Astra, Sol, Luna, and Terra
 
-Use GPT-6 Sol for substantial everyday reasoning and implementation; choose GPT-6
-Astra directly for the hardest judgment, unresolved creative/spatial direction where
-maximum quality matters, or a demonstrated Sol capability limit. GPT-6 Luna handles
+Use GPT-6.1 Sol for substantial everyday and complex reasoning, implementation, and
+typical new UI builds; choose GPT-6 Astra directly for the hardest judgment,
+exceptionally difficult unresolved creative/spatial direction where maximum quality
+matters, or a demonstrated Sol capability limit. GPT-6 Luna handles
 bounded repeatable work with objective checks. GPT-5.6 Terra remains a conditional
 read-only specialist when user preference or workload evidence warrants it; no GPT-6
 Terra or retirement is inferred. Preserve a progressing capable parent.
@@ -40,7 +41,7 @@ Check which levels the current host actually supports.
 | Level | Good reason to use it | Boundary |
 |---|---|---|
 | **low** | Bounded, read-only triage or a quick first pass where low stakes and a small question justify it. | Not the default for demanding design, architecture or consequential review. Keep tiny work in the active session rather than switching merely to select low. |
-| **medium** | Sol's ordinary substantial-work default; Terra's conditional reading route; ordinary work in an already active Astra session. | Move to high when missing depth is the problem. Resolve missing context before increasing effort. |
+| **medium** | Sol 6.1's ordinary substantial-work default; Terra's conditional reading route; ordinary work in an already active Astra session. | Move to high when missing depth is the problem. Resolve missing context before increasing effort. |
 | **high** | Complex Sol work; a new demanding Astra task; bounded Luna work with objective acceptance checks. | This is the usual starting point for difficult work, not a universal quality guarantee. |
 | **xhigh** | Sol or Astra work with difficult unresolved dependencies or tradeoffs where added reasoning depth is justified. It can be selected upfront for an unusually deep task, or after high leaves important questions unanswered. | Sol xhigh deepens reasoning within Sol; Astra xhigh combines added depth with the more capable family. Do not exhaust every Sol effort level before considering Astra. |
 | **max** | A justified critical review within Sol, or the explicitly cost-first Luna economy profile. | A conditional setting, not the default for an important task. The Luna profile is not a measured universal cost winner. |
@@ -50,14 +51,14 @@ Check which levels the current host actually supports.
 |---|---|---|---|
 | **Luna 6** | high, for narrow work with clear checks | Send substantial ambiguity or judgment to Sol/Astra | max only for the conditional background economy route |
 | **Terra 5.6** | medium, when there is a reason to prefer its reading route | A capable Sol/Astra owner handles consequential synthesis | No assumed speed or cost advantage over the current GPT-6 models |
-| **Sol 6** | medium for ordinary substantial work | high; xhigh when unresolved reasoning needs more depth | low for bounded triage; max for justified critical review |
+| **Sol 6.1** | medium for ordinary substantial work | high; xhigh when unresolved reasoning needs more depth | low for bounded triage; max for justified critical review |
 | **Astra 6** | high for new unusually demanding work; preserve an effective active setting | xhigh when needed | max/ultra require a specific justification; Astra can be selected directly |
 
 A representative comparison should hold the task, tool access, acceptance criteria and
 service tier constant, then record accepted quality, elapsed time, retries and review
-work. Arena's dated WebDev evidence supports preferring Astra for new substantial UI
-builds where visual quality is central to acceptance; Sol remains suitable for settled
-design implementation. The Max comparison does not validate other effort settings or
+work. October 1 Arena WebDev evidence shows a narrower Astra Max edge over Sol 6.1 Max;
+Sol 6.1 remains the starting route for typical new UI builds, with Astra reserved for
+exceptionally difficult quality-first direction. The Max comparison does not validate other effort settings or
 native Codex completion time. These tables are starting recommendations, not a universal
 ranking. Model reviews regularly consult Arena, Artificial Analysis and original
 specialist evaluators through the [benchmark source policy](skills/route-ai-work/references/benchmark-sources.md).
@@ -104,14 +105,14 @@ From the repository root, rerun with `--apply` to install them after reviewing t
 and satisfying any destination write permissions. Changed profiles are backed up;
 unrelated profiles are preserved. Start a new Codex task to load the changes. A
 successful copy does not prove that the host supports a model or has loaded the profile.
-The stable Sol and Luna profile names now target GPT-6 model IDs; Terra retains its existing ID.
+The stable Sol profile names now target GPT-6.1 Sol; Luna targets GPT-6 Luna and Terra retains its existing ID.
 
 ## Claude Code
 
 Stay in the parent for trivial or tightly coupled work. Use a bounded subagent only
 when specialization, context isolation, or independent reading repays the handoff.
 Fable handles long-horizon work and prose whose quality is the deliverable. The Claude
-route table and six Claude agent definitions are unchanged by the GPT-6 Sol/Luna update.
+route table and six Claude agent definitions are unchanged by the Sol 6.1 update.
 
 The router does not modify user or managed settings. Organization model allowlists,
 effort caps, and explicit user choices always win.
