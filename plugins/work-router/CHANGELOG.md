@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.8.7 - 2026-10-01
+
+- Correct Claude Max Fable allowance guidance and separate subscription authentication, shared limits and API billing without changing performance rankings.
+
 ## 1.8.6 - 2026-10-01
 
 - Make GPT-6.1 Sol the default for substantial and complex Codex work, including

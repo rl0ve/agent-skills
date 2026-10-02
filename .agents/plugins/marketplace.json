@@ -25,7 +25,7 @@
         "installation": "AVAILABLE"
       },
       "category": "Developer Tools",
-      "version": "1.18.5"
+      "version": "1.18.7"
     },
     {
       "name": "work-router",
@@ -37,7 +37,7 @@
         "installation": "AVAILABLE"
       },
       "category": "Developer Tools",
-      "version": "1.8.5"
+      "version": "1.8.7"
     },
     {
       "name": "capability-storyboard",

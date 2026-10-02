@@ -82,3 +82,18 @@ over any leaderboard row, and over this paragraph.
 - https://claude.com/resources/tutorials/choosing-the-right-claude-model
 
 This router is an engineering policy. It is not a claim that the plugin itself has been benchmarked against Claude Code's native delegation behavior.
+
+## Subscription billing update: October 1, 2026
+
+The older claim that Fable always bills separately is superseded. Anthropic's
+[current plan documentation](https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan)
+includes Fable 5 and 5.1 on Max and specified premium seats, up to 50% of the
+regular weekly allowance. It shares that allowance and consumes it faster; it is
+not an additional 50%. Pro and standard Team seats require usage credits.
+API use is billed separately. Check live plan eligibility and remaining limits.
+
+[Claude Code plan authentication](https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan)
+also matters: subscription login and an API-key billing route are different.
+Do not convert benchmark API prices into subscription debits, or enable extra
+usage merely because a model is recommended. This correction does not establish
+a new performance ranking between Opus and Fable.

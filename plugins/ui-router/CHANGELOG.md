@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.18.7 - 2026-10-01
+
+- Add scoped Meng game-design, camera and audio routes; connect playable-world choices to observable engagement; trial ChatGPT host delivery before platform commitment.
+
 ## 1.18.6 - 2026-10-01
 
 - Verify intended audio in the final served video, review first paint through settled
