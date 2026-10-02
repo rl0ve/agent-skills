@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.18.8 - 2026-10-01
+
+- Add scene-audio authoring checks, early proofs for specialist VR input, and a conditional OpenAI Decisions route. Distinguish MiniMax Design asset workflows from coding tools; retain access, rights and quality evidence boundaries.
+
 ## 1.18.7 - 2026-10-01
 
 - Add scoped Meng game-design, camera and audio routes; connect playable-world choices to observable engagement; trial ChatGPT host delivery before platform commitment.

@@ -13,7 +13,7 @@
       "name": "ui-router",
       "source": "./plugins/ui-router",
       "description": "Design routing, interactive-world choices, visual resources, and verified interactions",
-      "version": "1.18.7",
+      "version": "1.18.8",
       "category": "Development",
       "tags": [
         "ui",
