@@ -104,20 +104,20 @@ Two caveats on Opus low, both of which cut against the arithmetic. Low effort do
 ### If you are Codex
 
 Resolve the active model, supported efforts, available agents, and user constraints
-against the current host catalog. As reviewed September 22, 2026, the current family
-contains GPT-6 Astra, Sol, and Luna; Terra remains GPT-5.6 Terra where offered. Do not
+against the current host catalog. As reviewed October 1, 2026, the current family
+contains GPT-6 Astra, GPT-6.1 Sol, and GPT-6 Luna; Terra remains GPT-5.6 Terra where offered. Do not
 invent GPT-6 Terra, declare Terra retired, or silently change a selected model.
 
-**Use Sol for substantial everyday work, and Astra when the task needs the highest
-available capability.** Sol remains a strong default for demanding implementation,
-diagnosis, synthesis, and integration. Select Astra directly for unusually difficult
-cross-system reasoning, unresolved creative or spatial direction where maximum quality
-matters, new substantial UI builds where visual quality is a primary acceptance
-criterion, or a demonstrated Sol judgment limit. The dated Arena assessment supports
-the UI preference; keep Sol eligible for implementation with a settled design. Do not
-require a failed Sol attempt
-before an obviously harder quality-first task. Preserve a progressing capable parent;
-a new release alone does not justify a handoff.
+**Use GPT-6.1 Sol for substantial everyday and complex work; reserve Astra for a
+clear maximum-capability need.** Sol 6.1 is the default for demanding implementation,
+architecture, diagnosis, synthesis, integration, and substantial UI work, including
+new builds with a normal visual-quality bar. Select Astra directly for the hardest
+cross-system judgment, exceptionally difficult unresolved creative/spatial direction
+where maximum quality matters, or a demonstrated Sol 6.1 capability limit. The newer
+Arena WebDev evidence narrows but does not reverse Astra's measured Max-effort visual
+edge; it no longer justifies a blanket Astra route for every substantial UI build.
+Do not require a failed Sol attempt before an obviously harder quality-first task.
+Preserve a progressing capable parent; a new release alone does not justify a handoff.
 
 Use Luna for stable, narrow, repeatable work with objective checks. Terra is a
 conditional reading specialist, not the automatic scout: use it when the user prefers
@@ -129,17 +129,17 @@ quality ranking across these tasks. See [the evidence basis](references/routing-
 | Route | Use it for | Default configuration | Write policy |
 |---|---|---|---|
 | Current capable parent | Trivial or tightly coupled work, orchestration, integration, final verification | Active model and effort | May write |
-| GPT-6 Astra parent or explicitly configured built-in agent | Hardest diagnosis or synthesis; substantial UI builds with visual quality central to acceptance; unresolved creative/spatial direction; demonstrated Sol capability limit | GPT-6 Astra; high for new demanding work, preserve active setting when progressing | Parent owns decisions; child read-only unless sole writer |
-| GPT-6 Sol parent or bounded built-in agent | Substantial everyday reasoning, complex implementation, architecture, diagnosis, synthesis, integration | GPT-6 Sol; medium ordinarily, high for complex work | Parent writes; child read-only unless sole writer |
-| Explicit Sol xhigh route | Difficult architecture, diagnosis, or reasoning with unresolved dependencies that merits more depth within Sol | GPT-6 Sol, xhigh; may be chosen upfront when warranted | Parent writes; child read-only unless sole writer |
+| GPT-6 Astra parent or explicitly configured built-in agent | Hardest diagnosis or synthesis; exceptionally difficult unresolved creative/spatial direction with maximum quality at stake; demonstrated Sol 6.1 capability limit | GPT-6 Astra; high for new demanding work, preserve active setting when progressing | Parent owns decisions; child read-only unless sole writer |
+| GPT-6.1 Sol parent or bounded built-in agent | Substantial everyday and complex reasoning, implementation, architecture, diagnosis, synthesis, integration, and typical substantial UI builds | GPT-6.1 Sol; medium ordinarily, high for complex work | Parent writes; child read-only unless sole writer |
+| Explicit Sol xhigh route | Difficult architecture, diagnosis, or reasoning with unresolved dependencies that merits more depth within Sol | GPT-6.1 Sol, xhigh; may be chosen upfront when warranted | Parent writes; child read-only unless sole writer |
 | Explicit Astra xhigh route | Exceptionally demanding reasoning or creative/spatial judgment with difficult unresolved tradeoffs | GPT-6 Astra, xhigh; may be chosen upfront when warranted | Parent owns decisions; child read-only unless sole writer |
-| `sol-advisor` | Bounded judgment, quick review, UX opinion, or first-pass diagnosis | GPT-6 Sol, medium | Read-only |
-| Built-in Sol `worker` or parent Sol | Defined multi-file implementation beyond Luna's scope | GPT-6 Sol, normally high; verify effective model | Sole writer |
+| `sol-advisor` | Bounded judgment, quick review, UX opinion, or first-pass diagnosis | GPT-6.1 Sol, medium | Read-only |
+| Built-in Sol `worker` or parent Sol | Defined multi-file implementation beyond Luna's scope | GPT-6.1 Sol, normally high; verify effective model | Sole writer |
 | `terra-explorer` | Independent reading or evidence extraction when user preference or workload evidence warrants this route | GPT-5.6 Terra, medium; only if currently available | Read-only; capable parent owns consequential synthesis |
 | Built-in Luna reader or `luna-builder` | Small inventories, extraction, narrow clear implementation, mechanical changes with objective checks | GPT-6 Luna, normally high; use a read-only role for reading | Sole writer only when implementation is assigned |
 | `luna-economy-worker` | Stable bounded background work with explicit cost-first preference and acceptable validation cost | GPT-6 Luna, max; conditional named profile, not proof of lowest cost | Sole writer |
-| `sol-architect` | Complex bounded specialist work when Sol is sufficient and a handoff helps | GPT-6 Sol, high | Read-only |
-| `sol-critical` | Critical independent review within the deliberately selected Sol family | GPT-6 Sol, max; not a required step before Astra | Read-only |
+| `sol-architect` | Complex bounded specialist work when Sol is sufficient and a handoff helps | GPT-6.1 Sol, high | Read-only |
+| `sol-critical` | Critical independent review within the deliberately selected Sol family | GPT-6.1 Sol, max; not a required step before Astra | Read-only |
 
 Keep delegation bounded and useful alongside parent work. A smaller model or a cheaper
 token rate need not shorten completion after context loading, retries, review, and
@@ -273,7 +273,7 @@ assignments, unexplained settings, claimed savings, or mandatory agent counts.
   limit. Astra high is the usual demanding-work start; Astra xhigh fits exceptionally
   deep reasoning or creative/spatial judgment and can also be selected upfront. No
   mandatory failed high attempt or Sol max-first ladder applies. Preserve a progressing
-  Astra parent and its loaded context. Do not equate Sol's release with superior design.
+  Astra parent and its loaded context. Do not equate Sol 6.1's release with proven superior design.
 - Return ambiguous Luna work and judgment-heavy Terra findings to the capable Sol or
   Astra owner. Do not ask a bounded reader to make the consequential synthesis.
 - When staying in the Sol family, escalate `sol-advisor` to `sol-architect` for deep

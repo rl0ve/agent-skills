@@ -1,7 +1,7 @@
 # agent-skills
 
 Agent skills and routers for Codex and Claude Code. Shared skills carry host-specific
-routing where needed. Work Router supports GPT-6 Sol and Luna alongside conditional Astra and Terra routes in
+routing where needed. Work Router supports GPT-6.1 Sol and GPT-6 Luna alongside conditional Astra and Terra routes in
 Codex, and Haiku, Sonnet, Opus, and Fable in Claude Code.
 
 | Start here | If you are |
@@ -12,7 +12,7 @@ Codex, and Haiku, Sonnet, Opus, and Fable in Claude Code.
 
 ## Which model and reasoning level should I use?
 
-These are **recommended starting routes**, reviewed September 22, 2026. They combine
+These are **recommended starting routes**, reviewed October 1, 2026. They combine
 current model guidance with task characteristics; they are not a benchmark ranking of
 every model-and-effort combination. Keep a capable, progressing session when changing
 models would add more handoff work than benefit.
@@ -21,17 +21,18 @@ models would add more handoff work than benefit.
 |---|---|---|---|
 | A tiny edit, one-step answer, or tightly connected follow-up | Current capable model | Keep the active level | Do it directly; creating another agent usually adds overhead. |
 | A small inventory, extraction, classification, or clearly specified mechanical edit | **Luna 6** | **high** | Use Sol when interpretation, ambiguity, or consequential judgment becomes the hard part. |
-| Routine coding, a defined feature, ordinary debugging, or substantive synthesis | **Sol 6** | **medium** | Raise to high when the task requires deeper tracing or more edge-case analysis. |
-| Complex implementation, architecture, difficult debugging, or integrating several systems | **Sol 6** | **high** | Consider xhigh for unresolved reasoning; choose Astra when maximum capability or better judgment is needed. |
-| Difficult architecture, diagnosis, or reasoning with unresolved dependencies that needs deeper analysis within Sol | **Sol 6** | **xhigh** | Use when the added depth is justified; choose Astra instead when model capability or judgment is the limiting factor. |
-| A quick independent UX opinion, implementation review, or first-pass diagnosis | **Sol 6** | **medium** | Use high for deep review. Low is an option only for bounded, read-only triage with low stakes. |
-| Substantial UI implementation with an established visual direction | **Sol 6** | **high** | Use Astra when the unresolved problem is unusually difficult creative or spatial judgment. |
-| New substantial UI builds where visual quality is central; unresolved art direction or demanding creative/spatial work | **Astra 6** | **high** | Consider xhigh if difficult decisions remain unresolved. A failed Sol attempt is not required. |
-| The hardest reasoning, diagnosis, or synthesis across several systems | **Astra 6** | **high** | Consider xhigh when depth remains insufficient; justify max or ultra separately. |
+| Routine coding, a defined feature, ordinary debugging, or substantive synthesis | **Sol 6.1** | **medium** | Raise to high when the task requires deeper tracing or more edge-case analysis. |
+| Complex implementation, architecture, difficult debugging, or integrating several systems | **Sol 6.1** | **high** | Consider xhigh for unresolved reasoning; choose Astra when maximum capability or better judgment is needed. |
+| Difficult architecture, diagnosis, or reasoning with unresolved dependencies that needs deeper analysis within Sol | **Sol 6.1** | **xhigh** | Use when the added depth is justified; choose Astra instead when model capability or judgment is the limiting factor. |
+| A quick independent UX opinion, implementation review, or first-pass diagnosis | **Sol 6.1** | **medium** | Use high for deep review. Low is an option only for bounded, read-only triage with low stakes. |
+| Substantial UI implementation with an established visual direction | **Sol 6.1** | **high** | Use Astra when the unresolved problem is exceptionally difficult creative or spatial judgment. |
+| New substantial UI build with a normal visual-quality bar | **Sol 6.1** | **high** | Render and compare the result; a model label does not establish visual quality. |
+| Exceptionally difficult unresolved art direction or creative/spatial work where maximum quality matters | **Astra 6** | **high** | Consider xhigh if difficult decisions remain unresolved. A failed Sol attempt is not required. |
+| The hardest reasoning, diagnosis, or synthesis across several systems where maximum capability is needed | **Astra 6** | **high** | Consider xhigh when depth remains insufficient; justify max or ultra separately. |
 | Exceptionally demanding reasoning or creative/spatial judgment with difficult unresolved tradeoffs | **Astra 6** | **xhigh** | A deliberate deeper pass, including upfront when clearly warranted. Validate the result; max/ultra are not automatic next steps. |
 | Independent document or repository reading with a demonstrated Terra advantage, or an explicit Terra preference | **Terra 5.6** | **medium** | Use Luna for straightforward extraction or Sol for judgment-heavy interpretation when there is no reason to prefer Terra. |
 | Stable, bounded background work where cost matters more than latency | **Luna 6** | **max**, for the named economy profile | Measure accepted work, retries and review time; this setting is not proven cheapest for every task. |
-| Critical independent review when deliberately staying within Sol | **Sol 6** | **max**, conditionally | Use only when the risk or a prior strong failure warrants it; this is not a required rung before Astra. |
+| Critical independent review when deliberately staying within Sol | **Sol 6.1** | **max**, conditionally | Use only when the risk or a prior strong failure warrants it; this is not a required rung before Astra. |
 
 ### How latency and token use affect the choice
 
@@ -59,11 +60,12 @@ cost, and API prices do not directly measure Codex subscription usage. Current m
 are policy recommendations, not a measured token-optimal result for every workload.
 Codex service stays **Standard** unless you explicitly choose Fast where available.
 
-**For demanding visual work:** Astra high is the starting recommendation when the
-visual quality is central to a new substantial build or creative/spatial direction is
-hard. This is informed by the [dated Arena assessment](plugins/work-router/skills/route-ai-work/references/routing-basis.md).
-Sol high fits substantial implementation
-once that direction is settled. Both still need rendered comparison and a working
+**For demanding visual work:** Sol 6.1 high is the starting recommendation for a
+typical new substantial build. Astra high is available upfront for exceptionally hard
+unresolved creative/spatial direction where maximum quality matters. The
+[dated Arena assessment](plugins/work-router/skills/route-ai-work/references/routing-basis.md)
+retains a narrower Astra Max edge but does not settle accepted-result speed. Both still
+need rendered comparison and a working
 interaction; neither a model label nor a screenshot proves the result is good.
 
 See the [reasoning-level guide](plugins/work-router/README.md#how-to-choose-the-reasoning-level)

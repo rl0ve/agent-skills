@@ -42,6 +42,11 @@ Prioritize problems that obstruct understanding, trust, or the main action befor
 spacing and decorative polish. Preserve accepted content, branding, and working
 interactions while correcting the observed issue.
 
+For an opening image, slideshow or animated hero, inspect first paint, the first
+transition, and the settled repeating state at the same viewport. Confirm that a
+temporary poster or eager image yields to the intended motion, and that overlays,
+shading and legibility remain consistent across those states.
+
 Exercise relevant controls from action to visible result: navigation, CTA fragments,
 forms without sending live data, gallery and before/after controls, video open and
 actual playback, keyboard/touch alternatives, and reduced-motion behavior. A poster,

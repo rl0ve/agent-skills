@@ -19,9 +19,9 @@ The plugin contributes:
 
 Model reviews include Arena's relevant WebDev/design categories and Work Router's
 [regular benchmark sources](../work-router/skills/route-ai-work/references/benchmark-sources.md).
-The September 27 evidence update prefers Astra for new substantial UI work where visual
-quality is central to acceptance, while retaining Sol for settled design implementation.
-Max leaderboard results do not establish the best high/xhigh setting or remove rendered
+The October 1 update starts typical substantial new UI work with Sol 6.1 and retains
+Astra for exceptionally difficult unresolved quality-first direction. Astra's narrower
+Max WebDev edge does not establish the best high/xhigh setting or remove rendered
 and interaction checks.
 
 The router does not silently install third-party skills. The bundled installer refuses root and `sudo`, prints sources and commands before execution, and installs only explicit skills or curated profiles.

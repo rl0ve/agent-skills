@@ -139,14 +139,14 @@ When the Work Router is installed, apply its work route after composing the UI s
 | Consequential visual, accessibility, or system review | `ui-router:ui-critic` | Opus | high |
 
 Keep trivial UI adjustments in the parent. In Codex, follow Work Router's model policy:
-GPT-6 Sol for substantial implementation with settled design and explicit checks;
-prefer GPT-6 Astra for new substantial UI builds where visual quality is central to
-acceptance, the hardest creative/spatial judgment, unresolved quality-first direction, or a
-demonstrated Sol capability limit; GPT-6 Luna for narrow objectively verifiable work.
+GPT-6.1 Sol for substantial UI builds and implementation, including new work with a
+normal visual-quality bar; prefer GPT-6 Astra for exceptionally difficult unresolved
+creative/spatial judgment where maximum quality matters or a demonstrated Sol 6.1
+capability limit; GPT-6 Luna for narrow objectively verifiable work.
 GPT-5.6 Terra is a conditional reference/evidence reader, not the final visual judge.
-Preserve explicit model choices and a progressing capable parent. Arena's September 25
-WebDev results favor Astra Max over Sol Max and inform this task-specific preference;
-they do not establish the best effort, fastest accepted design or universal visual
+Preserve explicit model choices and a progressing capable parent. The October 1
+Arena WebDev result still favors Astra Max over Sol 6.1 Max, but by a narrower margin;
+it does not establish the best effort, fastest accepted design or universal visual
 winner. UI Router still owns the design chain, rendered comparison and exercised interaction. A model release
 does not justify 3D, image generation or subagents. These Claude profiles do not switch
 the parent.
@@ -159,8 +159,8 @@ use, retain dates, exact model/effort/harness, sample sizes and uncertainty. A c
 intelligence score does not measure taste, and missing coverage is not a low score.
 Refresh when reviewing a release or disputed route, not on every UI task.
 
-For Codex effort selection, **Sol high** fits substantial implementation with a settled
-direction; **Sol xhigh** fits unusually deep implementation reasoning within Sol.
+For Codex effort selection, **Sol 6.1 high** fits substantial new or settled UI work;
+**Sol 6.1 xhigh** fits unusually deep implementation reasoning within Sol.
 **Astra high** is the usual starting point for difficult unresolved creative/spatial
 direction; **Astra xhigh** fits exceptionally demanding judgment or tradeoffs. Either
 xhigh route can be selected upfront when warranted. No failed Sol attempt or automatic

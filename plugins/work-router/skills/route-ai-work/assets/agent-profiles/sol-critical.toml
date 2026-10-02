@@ -1,6 +1,6 @@
 name = "sol-critical"
 description = "Use only for security-sensitive work, irreversible production changes, release-gating review, or a task where a prior strong attempt at architect-level reasoning failed."
-model = "gpt-6-sol"
+model = "gpt-6.1-sol"
 model_reasoning_effort = "max"
 sandbox_mode = "read-only"
 

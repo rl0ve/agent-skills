@@ -7,20 +7,20 @@ keep one write-capable owner per working tree.
 | Situation | Expected decision | Reason |
 |---|---|---|
 | Sol or Astra parent, a one-file correction with context loaded | Finish in the parent at its active setting | A handoff adds work. |
-| GPT-6 Sol parent, ambiguous requirements across several documents | Keep synthesis and decisions in Sol; recommend high if more depth is needed | Preserve context and demanding judgment. |
+| GPT-6.1 Sol parent, ambiguous requirements across several documents | Keep synthesis and decisions in Sol; recommend high if more depth is needed | Preserve context and demanding judgment. |
 | Sol parent, independent repository inventory while it designs a change | Luna for bounded objective extraction; Terra 5.6 medium when workload evidence or user preference warrants it; Sol for interpretive reading | Reading does not automatically imply Terra. Verify the effective model. |
 | Existing Astra parent, defined broad implementation with all context already loaded | Keep in Astra unless a phase boundary and concrete benefit repay a switch | A new release does not erase loaded context. |
-| New defined multi-file feature without architectural uncertainty | Sol worker, normally high, if a handoff is useful | Sol remains an implementation workhorse. |
-| New unusually difficult cross-system diagnosis with a quality-first requirement | GPT-6 Astra high if available and permitted | Do not require an avoidable failed Sol attempt. |
+| New defined multi-file feature without architectural uncertainty | Sol 6.1 worker, normally high, if a handoff is useful | Sol 6.1 is the implementation default. |
+| New unusually difficult cross-system diagnosis with a quality-first requirement | GPT-6 Astra high if maximum capability is clearly needed; otherwise Sol 6.1 high | Do not require an avoidable failed Sol attempt, but difficulty alone does not mandate Astra. |
 | Small repetitive implementation with objective checks | Luna high as sole writer if delegation pays | Narrow work has a bounded verification cost. |
 | Stable background work with an explicit cost-first preference | Luna economy at max when that route fits | This is the named economy exception, not the interactive default. |
 | Sol diagnosis omitted a relevant file or test | Supply missing context and verify; consider one effort increase for insufficient depth | Missing evidence is not a capability failure. |
-| GPT-6 Sol high used the evidence and tried seriously, but judgment remains insufficient | Consider Astra high with the evidence; keep explicit family constraints | A capability limit need not pass through Sol max first. |
-| GPT-6 Sol high has unresolved consequential reasoning | Consider Sol xhigh or a focused independent review | Risk alone does not require max. |
+| GPT-6.1 Sol high used the evidence and tried seriously, but judgment remains insufficient | Consider Astra high with the evidence; keep explicit family constraints | A capability limit need not pass through Sol max first. |
+| GPT-6.1 Sol high has unresolved consequential reasoning | Consider Sol xhigh or a focused independent review | Risk alone does not require max. |
 | A new architecture problem clearly requires unusually deep reasoning within Sol | Sol xhigh when available and permitted | A failed high attempt is not required; choose Astra instead if capability is the limiting factor. |
 | Exceptionally demanding creative/spatial tradeoffs with maximum quality requested | Astra xhigh may be selected upfront | High remains the usual demanding-work start; max/ultra need a separate justification. |
 | User says “Astra throughout,” but only named Sol/Terra/Luna profiles are available | Use a supported built-in Astra agent or remain in Astra parent | Explicit model choice still applies after a newer release. |
-| GPT-6 Sol unavailable and the user has no Sol-only constraint | Preserve the capable active parent or use a verified permitted fallback | Availability and user intent outrank the default. |
+| GPT-6.1 Sol unavailable and the user has no Sol-only constraint | Preserve the capable active parent or use a verified permitted fallback | Availability and user intent outrank the default. |
 | Requested family unavailable in both parent and compatible children | Explain the limit and request a supported configuration | Never silently substitute a different model. |
 | Built-in worker is offered without model metadata | Resolve its inheritance/override rules and verify configuration first | Role names do not select model families. |
 | User says “quickly” | Fast routing with Standard service | Urgency does not authorize Codex Fast. |
@@ -50,11 +50,11 @@ keep one write-capable owner per working tree.
 | User supplies a decision-model key after seeing a fast 3D demo | Store the key if asked; keep adoption conditional on a representative comparison and authorized spend | Asset assembly demos do not prove coding-token savings or preserved visual quality. |
 | A smaller route saves tokens but creates missed requirements or extra review | Reject that route or escalate while retaining the evidence | Same-quality savings are constrained by accepted outcomes, not raw token reduction. |
 
-## Benchmark evidence cases (September 27, 2026)
+## Benchmark evidence cases (updated October 1, 2026)
 
 | Situation | Expected decision | Reason |
 |---|---|---|
-| A new substantial web UI with visual quality central to acceptance; model choice is open | Prefer Astra, with UI Router's design and rendered checks | Dated Arena WebDev evidence favors Astra Max; family preference is useful without pretending high/xhigh were measured. |
+| A new substantial web UI with visual quality central to acceptance; model choice is open | Start with Sol 6.1 and UI Router's design and rendered checks; consider Astra for exceptionally hard quality-first direction | October 1 Arena WebDev retains a narrower Astra Max edge but does not prove the faster accepted result or high/xhigh ranking. |
 | A one-line token correction in a productive Sol session | Finish in Sol | A benchmark review is not a reason for a trivial handoff or new research. |
 | A fixed design needs a defined implementation | Sol remains eligible | The quality-first UI preference does not mandate Astra for all frontend code. |
 | An Arena Max result is used to demand Max for every design task | Reject that inference; choose supported effort for task needs | Configuration-specific results do not measure every effort or task. |

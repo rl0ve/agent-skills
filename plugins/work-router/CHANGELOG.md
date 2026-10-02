@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.8.6 - 2026-10-01
+
+- Make GPT-6.1 Sol the default for substantial and complex Codex work, including
+  typical new UI builds; retain upfront Astra for the hardest quality-first judgment.
+- Record dated OpenAI, Arena, and Artificial Analysis evidence and limits, update
+  routing cases and documentation, and retarget bundled Sol profiles to `gpt-6.1-sol`.
+
 ## 1.8.5 - 2026-09-28
 
 - Correct the PreToolUse hook timeout from 5,000 seconds to 5 seconds. The hook

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.18.6 - 2026-10-01
+
+- Verify intended audio in the final served video, review first paint through settled
+  hero motion, and conditionally verify live CMS media, forms, cache, and public result.
+- Start typical substantial UI work with GPT-6.1 Sol; retain Astra for exceptionally
+  difficult unresolved quality-first direction, with dated Max-only evidence limits.
+
 ## 1.18.5 - 2026-09-28
 
 - Correct the PreToolUse hook timeout from 5,000 seconds to 5 seconds. The hook

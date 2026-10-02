@@ -46,6 +46,9 @@ or video is part of the task. A silent decorative page does not need an audio sy
 - Establish the sound-starting gesture and the intended quiet state. Keep Play, Pause,
   Continue, Stop and Mute behavior distinct where those actions are offered. Do not
   assume that opening a page authorizes autoplay or microphone capture.
+- When sound is intended in delivered video, inspect the final served or exported file's
+  audio stream and listen to playback at the destination. Source-file audio or an
+  unmuted player state does not prove that optimization preserved the audio track.
 - Keep the relevant controls reachable during the main activity. For use away from a
   desk or with occupied hands, test readable controls in the intended orientation and
   provide a usable touch/keyboard path alongside optional voice or gesture controls.
