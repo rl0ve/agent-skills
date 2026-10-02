@@ -52,6 +52,47 @@ Verify scripts, scenes, assets/licenses and required backend or voice integratio
 record any dependency that still requires the hosted service. Keep unverified export
 claims unresolved rather than treating a prototype as a portable production foundation.
 
+## Prove specialist device input early
+
+When a required target uses eye/hand input, a locomotion treadmill or another
+specialist peripheral, inspect the actual SDK, driver and distribution path before
+committing to an engine. WebXR support does not establish that an external device's
+input reaches the web application. For example, Meta's
+[VR Glasses web guide](https://developers.meta.com/vr/documentation/iwsdk/guides/get-started-glasses/)
+and Virtuix's [Omni One PCVR guide](https://support.virtuix.com/hc/en-us/articles/36063096094349-Intro-to-Using-Omni-One-for-PCVR)
+describe different integration paths. Check the selected device/version and account
+access rather than inferring universal support from the product family.
+
+Keep targeting, selection and locomotion adapters separate from semantic actions,
+collision, learning evidence and save state. Prove one representative action and
+movement sequence, including interruption and fallback. Do not combine tracked head
+pose with artificial movement twice. Preserve stationary/accessible play when it
+fits the brief. Emulation and a related headset can expose gaps; only the actual
+device establishes its tracking, comfort and sustained performance.
+
+## Author sound as part of the scene
+
+Use when a game/world needs music, environmental loops or action sounds. Separate
+these asset jobs from narration and from the runtime mix; the voice-narration owner
+continues to own generated speech. Specify the place, material, action, duration,
+loop behavior and mood. Prefer isolated effects when the engine will supply space
+and ambience; keep speech intelligible with separate levels and ducking.
+
+A multimodal workspace such as [MiniMax Design](https://design.minimax.io/en) and
+an asset service such as [Higgsfield's CLI catalog](https://github.com/higgsfield-ai/cli/blob/main/MODELS.md)
+are conditional authoring routes, not game engines or proven quality winners.
+[ElevenLabs Sound Effects](https://elevenlabs.io/docs/api-reference/text-to-sound-effects/convert)
+is another candidate when explicit loop/duration control fits. Compare a short,
+same-brief kit with existing recordings or licensed assets; inspect loop seams,
+naturalness, speech masking, export, editing time and cost across attempts.
+
+Verify access, the actual billing route and commercial rights for the selected
+model, plan and delivery platforms. Music rights can differ from speech/effects;
+an aggregator's web allowance can differ from CLI/API credits. Cache accepted
+assets with provenance and test their final in-scene playback, mute, separate
+volumes, speech transitions and suspend/resume. A creator's tool mention is a lead,
+not evidence to replace working assets or purchase a plan.
+
 ## Keep live model decisions bounded
 
 Use authored rules or a state machine where they satisfy the behavior. Add a model
@@ -69,6 +110,13 @@ actual target language; English results do not establish multilingual accuracy. 
 any confidence threshold on representative task data, allow abstention/fallback, and
 recheck after a model change. Dialogue, speech and packaged NPC services need their own
 task-specific quality, delay, cost and recovery checks.
+
+OpenAI's [Decisions API announcement](https://x.com/OpenAIDevs/status/2105003318917697873)
+describes selection from predefined answers, powered by Luna, in limited preview
+as of September 29, 2026. Treat it as another conditional decision route, distinct
+from Jev and other services with the same API name. Verify official request schema,
+account availability and pricing at use. A model's presence in a coding host does
+not establish access to that runtime API or a benefit over authored rules.
 
 Treat a model response as a proposal. Validate its action, target and preconditions
 against current authoritative state before applying it. Discard stale responses from
