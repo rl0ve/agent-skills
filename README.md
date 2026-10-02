@@ -2,7 +2,7 @@
 
 Agent skills and routers for Codex and Claude Code. Shared skills carry host-specific
 routing where needed. Work Router supports GPT-6.1 Sol and GPT-6 Luna alongside conditional Astra and Terra routes in
-Codex, and Haiku, Sonnet, Opus, and Fable in Claude Code.
+Codex, and Haiku, Sonnet, Opus 5.5, and conditional Fable routes in Claude Code.
 
 | Start here | If you are |
 |---|---|
@@ -12,10 +12,19 @@ Codex, and Haiku, Sonnet, Opus, and Fable in Claude Code.
 
 ## Which model and reasoning level should I use?
 
-These are **recommended starting routes**, reviewed October 1, 2026. They combine
+These are **recommended starting routes**, reviewed October 2, 2026. They combine
 current model guidance with task characteristics; they are not a benchmark ranking of
 every model-and-effort combination. Keep a capable, progressing session when changing
 models would add more handoff work than benefit.
+
+For Claude Code, start substantial implementation, analysis, long jobs and prose
+with **Opus 5.5 medium**; use high for difficult diagnosis and consequential review.
+Fable remains available for explicit preference or a demonstrated capability/style
+benefit. Check that the provider's `opus` alias actually resolves to 5.5 and that
+Claude Code 2.1.280+ supports it. See the
+[dated release assessment](plugins/work-router/skills/route-ai-work/references/opus-5-5-review.md).
+
+The following matrix selects models **within Codex**:
 
 | What you need done | Start with | Reasoning | When to change the route |
 |---|---|---|---|
@@ -60,13 +69,17 @@ cost, and API prices do not directly measure Codex subscription usage. Current m
 are policy recommendations, not a measured token-optimal result for every workload.
 Codex service stays **Standard** unless you explicitly choose Fast where available.
 
-**For demanding visual work:** Sol 6.1 high is the starting recommendation for a
+**For demanding visual work within Codex:** Sol 6.1 high is the starting recommendation for a
 typical new substantial build. Astra high is available upfront for exceptionally hard
 unresolved creative/spatial direction where maximum quality matters. The
 [dated Arena assessment](plugins/work-router/skills/route-ai-work/references/routing-basis.md)
 retains a narrower Astra Max edge but does not settle accepted-result speed. Both still
 need rendered comparison and a working
 interaction; neither a model label nor a screenshot proves the result is good.
+
+When starting substantial UI work with host choice open, consider Opus 5.5 as a
+quality-focused Claude route. Preserve an effective active session; a leaderboard
+result does not authorize a cross-host handoff or prove the fastest accepted result.
 
 See the [reasoning-level guide](plugins/work-router/README.md#how-to-choose-the-reasoning-level)
 for low through ultra, and the [dated benchmark evidence](plugins/work-router/skills/route-ai-work/references/routing-basis.md)
@@ -202,7 +215,7 @@ and [the source review](docs/research-review-2026-09-05.md) for recent adoption 
 
 ## Version boundary
 
-The packages use the documented Claude Code plugin layout and validate with `claude plugin validate`. Model and effort aliases are intentionally policy-aware: company allowlists win. Fable requires Claude Code 2.1.170 or later and organizational access. Newer conveniences may require a newer client, but the core skills, agents, hook, and marketplace layout remain conventional.
+The packages use the documented Claude Code plugin layout and validate with `claude plugin validate`. Model and effort aliases are intentionally policy-aware: company allowlists win. Opus 5.5 requires Claude Code 2.1.280 or later; provider aliases may still resolve to older models. Fable requires organizational access. Newer conveniences may require a newer client, but the core skills, agents, hook, and marketplace layout remain conventional.
 
 ## Icons
 

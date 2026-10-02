@@ -1,12 +1,15 @@
 # Routing policy basis
 
-**Verified:** 2026-08-18 against current Claude Code and Claude model documentation.
+**Current review:** October 2, 2026 against Claude Code, Anthropic, Arena and
+Artificial Analysis. See the [Opus 5.5 assessment](opus-5-5-review.md) for exact
+configurations, dates, evidence limits and conditional integration guidance.
 
 ## Product facts used by the router
 
 - Claude Code supports the model aliases `haiku`, `sonnet`, `opus`, and `fable` for subagents. A company allowlist can substitute or block a requested family.
 - Current Claude Code effort levels are `low`, `medium`, `high`, `xhigh`, and `max` on current model families, with model- and organization-specific limits.
-- Anthropic describes Haiku as the lightest quick route, Sonnet as the versatile coding default, Opus as the complex-reasoning expert, and Fable as the heaviest long-horizon model.
+- Opus 5.5 defaults to medium effort in the current Claude Code documentation.
+  Verify the provider's actual alias resolution and current host support.
 - Anthropic recommends checking context first. Increase model capability when the model knew the relevant facts and still could not solve the problem; increase effort when it skipped files, verification, or follow-through.
 - Higher effort changes more than private thinking. It also affects files read, tool use, verification, and persistence through multi-step work.
 - Skills load their full body only when invoked, while component descriptions contribute a small always-on token cost. Keep descriptions short and detailed references lazy.
@@ -15,18 +18,22 @@
 
 1. Parent execution is the latency winner for trivial and tightly coupled work.
 2. Haiku is useful for bounded evidence collection, not ambiguous implementation.
-3. Sonnet low and medium are the routine routes for mechanical and already-planned work. Sonnet high, xhigh and max are dominated: Opus low reaches higher quality for comparable or lower cost per completed task, so Opus low is the implementation and planning default and Opus medium is its first escalation. Basis and limits below.
-4. Opus high is for expert judgment and hard diagnosis, not every code change.
-5. Fable is for projects larger than a normal sitting and should not be a default merely because it is available.
-5a. Fable is also the route for prose whose quality is the deliverable, at any size. Family ranking by reasoning difficulty does not predict writing quality, so a short talk track can be correct work for the heaviest family while a large refactor is not. Basis: observed on a keynote talk-track set in Sep 2026, where a Fable pass found key-point echo, stage directions in spoken lines and unsayable written constructions that two prior Opus passes had walked past, and correctly declined to edit 11 of 40 pieces. That is one session, not a benchmark.
+3. Keep Sonnet low/medium for bounded planned work when it meets the checks. Start
+   substantial Claude implementation and planning at Opus 5.5 medium; high fits
+   difficult diagnosis and consequential edge-case verification.
+4. Choose xhigh/max for justified deeper work, not from an old model's effort label
+   or a Max-only leaderboard row. Low fits supervised small tasks or measured savings.
+5. Prefer Opus 5.5 for long work and prose before automatically selecting Fable.
+   Retain Fable for explicit preference, representative quality evidence or an Opus
+   capability/style limit. Natural Writing remains the final prose editor.
 6. Parallel subagents multiply context and output tokens. Use them only for independent questions.
 7. One writer avoids conflict, duplicated verification, and expensive integration repair.
 
-## The Sonnet-above-medium dominance claim
+## Historical Sonnet 5 dominance claim: superseded for current models
 
-**Reviewed 2026-09-17.** The direction rests on this repository's own harness evidence.
-The prompt that triggered the change was a secondary synthesis whose numbers do not
-survive checking; keep the conclusion and discard its table.
+**Reviewed 2026-09-17; qualified October 2.** The direction rested on older harness evidence.
+The prompt that triggered the old change was a secondary synthesis whose numbers
+did not survive checking. Retain the verified older rows, not that synthesis table.
 
 The load-bearing evidence is already in
 [source-wall-clock-evidence.md](source-wall-clock-evidence.md): on the DeepSWE
@@ -38,9 +45,11 @@ at $8.24 for 0.667. [source-research-evidence.md](source-research-evidence.md) r
 same verdict on Sonnet 5 max independently: avoid it unless cost-pinned to Sonnet and
 latency is irrelevant, given a 188-second measured TTFT.
 
-That is enough to retire Sonnet above medium and to treat `max` as off the frontier in
-every family. It does not by itself establish the Opus-low-versus-Sonnet-medium margin,
-which remains a judgment.
+Those rows do not establish a universal Sonnet effort ceiling, rank Sonnet 5.5,
+or make Max inefficient in every current family. Opus 5.5's medium/high/xhigh/Max
+rows now have distinct tradeoffs. Preserve this history to explain the old route;
+follow the current assessment for new decisions. The original Opus-low versus
+Sonnet-medium margin was a judgment even at the time.
 
 **What was discarded, and why it matters.** The synthesis that prompted this revision
 presented an Intelligence Index v4.3 score-versus-burn table covering all fifteen
@@ -54,24 +63,17 @@ published conversion to Pro/Max allowance depletion, and it carried no retry col
 hence policy rule 8: count retries, because a first-attempt success usually beats a
 nominally cheaper route corrected twice.
 
-One caveat on Opus low survives from the practitioner reports rather than from
-measurement: low effort is said not to shorten its output, and it delegates to subagents
-readily, so real burn can exceed a per-task estimate. Treat that as a thing to watch on a
-long run, not an established figure.
+Older practitioner reports about Opus-low output length and eager delegation do
+not establish 5.5's behavior. Count actual output, duplicate context and retries;
+retain bounded delegation and one writer independently of model revision.
 
-**This policy steers away from a product default.** Sonnet 5 high is the default effort on
-the Claude API and in Claude Code. Narrowing Sonnet to low and medium is therefore a
-deliberate departure, and worth restating to anyone who inherits this router.
+The prior automatic Fable prose route was based on one September talk-track session,
+where Fable caught issues two Opus passes had missed and left 11 of 40 pieces alone.
+The Opus revision was not a controlled 5.5 comparison. Retain that evidence for the
+same voice/assignment; do not transfer it into a universal Fable preference.
 
-Anthropic's own guidance still names Sonnet the everyday interactive default and Opus
-the escalation for hard diagnosis and multi-file scope, and separate guidance argues
-xhigh is the floor for demanding long-horizon agentic runs. This policy does not
-contradict either: it narrows Sonnet to low and medium rather than demoting the family,
-and it keeps high and xhigh Opus for long autonomous runs where low effort stalls.
-
-Treat the ordering as falsifiable. If a Sonnet high route is landing work you keep on the
-first attempt, that evidence outranks this note. Prefer a measured run in your own harness
-over any leaderboard row, and over this paragraph.
+Representative accepted work can override these starting recommendations. Preserve
+task, tools, acceptance criteria, effort, actual revision and total completion cost.
 
 ## Primary sources
 

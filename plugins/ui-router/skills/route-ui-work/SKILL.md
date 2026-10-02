@@ -135,8 +135,16 @@ When the Work Router is installed, apply its work route after composing the UI s
 | UI work | Agent | Model | Effort |
 |---|---|---|---|
 | Route discovery, inventory, and reference mapping | `ui-router:ui-scout` | Sonnet | medium |
-| Defined UI implementation | `ui-router:ui-builder` | Opus | low |
-| Consequential visual, accessibility, or system review | `ui-router:ui-critic` | Opus | high |
+| Defined or substantial UI implementation | `ui-router:ui-builder` | Opus 5.5 | medium |
+| Consequential visual, accessibility, or system review | `ui-router:ui-critic` | Opus 5.5 | high |
+
+For new substantial Claude UI work, start at Opus 5.5 medium. Verify `opus` resolves
+to `claude-opus-5-5` on the current provider and that Claude Code 2.1.280+ permits it;
+the bundled agents retain portable aliases. Low fits a small supervised change,
+high a difficult bug or consequential review. Raise effort for a demonstrated need
+for depth, not merely because the previous Opus used a higher label.
+An explicit 5.5 requirement remains unmet when only an older model is available;
+disclose that limit and obtain authorization before substituting another revision.
 
 Keep trivial UI adjustments in the parent. In Codex, follow Work Router's model policy:
 GPT-6.1 Sol for substantial UI builds and implementation, including new work with a
@@ -167,17 +175,26 @@ xhigh route can be selected upfront when warranted. No failed Sol attempt or aut
 max/ultra escalation is required. Apply Work Router's task-dependent latency/token
 tradeoffs and contextual timing check; do not ask a second timing question here.
 
-**Do not raise Sonnet above medium to get a better UI build.** Opus at low effort is the
-implementation route because the Sonnet effort rungs above medium cost more than Opus low
-without matching it. Use Sonnet low or medium for the mechanical tail: token renames,
-copy swaps, class cleanups, test and story files, and any surface where a plan already
-exists and latency matters more than judgment. When `ui-builder` stalls or thrashes,
-raise it to Opus medium rather than reaching for a different family.
+When host choice is open for a new substantial UI build, consider Opus 5.5 as a
+quality-focused Claude route. The October 1 Arena WebDev overall board places its
+Max configuration ahead of Astra Max and Sol 6.1 Max, with rank uncertainty; it does
+not validate medium/high or native completion time. An active Codex task keeps its
+supported model policy. Any cross-host handoff must be available, authorized and
+worth its integration cost. Read Work Router's
+[dated assessment](../../../work-router/skills/route-ai-work/references/opus-5-5-review.md)
+or, in standalone use, the original sources under the benchmark rules above.
 
-Watch two things on Opus low: replies stay long, and it delegates to subagents readily.
-Give `ui-builder` an exact file map and hold it to sole-writer scope so that eagerness
-does not turn into a second writer in the tree. See Work Router's
-`references/routing-policy.md` for the basis and its limits.
+Keep Sonnet for mechanical or planned work that meets the checks. The previous
+Sonnet-above-medium ban came from Sonnet 5/Opus 5 evidence and cannot rank their
+5.5 revisions. Give `ui-builder` a precise file map and sole-writer scope; improved
+delegation does not authorize a second writer or an agent team.
+
+For Opus 5.5 output that feels generic, specify concrete reference traits and the
+observed patterns that conflict with this brief. Avoid a universal style blacklist
+or a vague instruction to make it less generic. Inspect the rendered representative
+slice and refine it with the selected design lead. For dense visual inputs, use the
+original resolution and crop/zoom where useful; higher effort alone does not prove
+chart-reading accuracy. Better model capability preserves all quality gates.
 
 ## Selection order
 

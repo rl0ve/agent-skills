@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.8.8 - 2026-10-02
+
+- Start new substantial Claude work at Opus 5.5 medium, including long projects and
+  prose; keep Fable conditional on preference, representative benefit or a capability/style limit.
+- Record current Anthropic, Claude Code, Arena, Artificial Analysis and METR evidence;
+  retire the old blanket Sonnet effort claim and preserve host, alias, effort and billing boundaries.
+- Add conditional API migration/completion guidance and realistic routing review cases.
+
 ## 1.8.7 - 2026-10-01
 
 - Correct Claude Max Fable allowance guidance and separate subscription authentication, shared limits and API billing without changing performance rankings.

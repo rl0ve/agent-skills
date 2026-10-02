@@ -2,6 +2,17 @@
 
 Use this reference when explaining or revising the routing policy. Treat benchmark figures as dated evidence, not timeless product facts.
 
+## Opus 5.5 review: October 2, 2026
+
+Read the [Opus 5.5 release assessment](opus-5-5-review.md) when choosing Claude
+model/effort, evaluating an open host choice, or maintaining an Opus API harness.
+It supersedes the old Opus-low implementation default and automatic Fable routes
+for prose and long jobs. Opus 5.5 medium is the new substantial-work Claude start;
+high fits difficult diagnosis and consequential verification. Current Arena WebDev
+supports a quality-focused Opus 5.5 choice when host selection is open, with Max-only
+evidence limits. It does not change the available Codex models or require switching
+a productive parent. The Sol 6.1 review below remains the within-Codex policy.
+
 ## GPT-6.1 Sol review: October 1, 2026
 
 [OpenAI's model page](https://developers.openai.com/api/docs/models/gpt-6.1-sol)

@@ -84,24 +84,59 @@ matches the agent you are running as, and ignore the other.
 
 ### If you are Claude Code
 
+For new substantial Claude work, prefer **Opus 5.5 at medium effort** when supported
+and permitted. Verify that `opus` resolves to `claude-opus-5-5` on this provider;
+an alias, installed plugin or older client does not prove the model revision. Opus
+5.5 requires Claude Code 2.1.280 or later. Keep portable family aliases in the
+bundled agents; request the full provider-supported ID when revision fidelity matters.
+Preserve an explicit model/effort choice and a capable parent already progressing.
+If the user requires exactly 5.5 and it is unavailable, report the unmet constraint;
+an older alias is not a completed 5.5 route or permission to substitute.
+
 | Work shape | Route | Model | Effort | Notes |
 |---|---|---|---|---|
 | One-step, tightly coupled, or conversational | Parent | active model | active effort | Delegation overhead would dominate. |
 | Narrow lookup, classification, repository map, or evidence collection | `work-router:fast-scout` | Haiku | low | Read-only; return compact evidence. |
 | Defined implementation with clear acceptance criteria | `work-router:sonnet-builder` | Sonnet | medium | Sole writer; verify proportionately. |
-| Reasoning-dense implementation: a feature, a multi-file change, or work where the plan is not yet settled | Parent | Opus | low | Primary default for real implementation. No subagent; the parent already holds the context. |
-| Difficult diagnosis, architecture, or consequential tradeoff | `work-router:opus-architect` | Opus | high | Read-only by default; parent integrates. |
-| High-stakes final review after a strong implementation | `work-router:critical-reviewer` | Opus | xhigh | Read-only; use only when the risk justifies it. |
-| Long-horizon, multi-stage, highly ambiguous autonomous project | `work-router:fable-runner` | Fable | high | Sole writer; only when Fable is permitted and the task is large enough. |
-| Prose whose quality is the deliverable: talk track, narration, naming, UX copy, executive writing, voice match | `work-router:fable-wordsmith` | Fable | high | Read-only; returns text the parent verifies and applies. |
+| Substantial implementation, planning, synthesis, or a multi-file change | Parent | Opus 5.5 | medium | New substantial-work default; preserve useful parent context. |
+| Difficult diagnosis, architecture, or consequential tradeoff | `work-router:opus-architect` | Opus 5.5 | high | Read-only by default; parent integrates. |
+| High-stakes final review after a strong implementation | `work-router:critical-reviewer` | Opus 5.5 | xhigh | Read-only; justify added depth by the critical boundary and verify its benefit. |
+| Long-horizon, multi-stage autonomous project | Parent or sole assigned writer | Opus 5.5 | medium or high | Start with bounded phases; duration alone does not require Fable or delegation. |
+| Prose whose quality is the deliverable: talk track, narration, naming, UX copy, executive writing, voice match | Parent with Natural Writing | Opus 5.5 | medium | Preserve facts and register; judge the delivered prose. |
+| A demonstrated Opus 5.5 capability/style limit or explicit Fable choice | `work-router:fable-runner` or `work-router:fable-wordsmith` | Fable | high | Conditional specialist; runner is sole writer, wordsmith returns text for parent review. |
 
-**Language work routes on a different axis.** The table above ranks families by reasoning difficulty, and that ranking does not carry over to writing. When the deliverable is the prose itself - a line a person will say on a stage, a name, a paragraph of UX copy, a voice match against a sample - route to `work-router:fable-wordsmith` rather than to `opus-architect`, at any difficulty. Opus is the better diagnostician; Fable hears cadence, register and the tics a reader feels but cannot name. Use Opus for prose only when the hard part is the argument or the facts rather than the words. Keep the wordsmith read-only: prose edits are cheap to review and expensive to apply blindly, and the parent owns checking every figure before anything ships.
+**Calibrate effort for the new revision.** Start new substantial work at medium;
+low fits a small, supervised exchange or a measured cost-sensitive route. High fits
+deep diagnosis and edge-case verification. Use xhigh/max selectively when the task
+and observed quality benefit justify their extra work; do not carry an Opus 5 setting
+over by label alone. Fix missing context before escalating. The previous blanket
+Sonnet-above-medium dominance claim used Sonnet 5/Opus 5 evidence and cannot rank
+Sonnet 5.5 against Opus 5.5. Retain Sonnet for bounded planned implementation when
+it meets the checks; choose Opus 5.5 for substantial judgment without a mandatory retry.
 
-**Sonnet above medium is a dead rung.** Sonnet high, xhigh and max cost more per completed task than Opus low without matching its quality, so treat Sonnet medium as the top of that family and step to Opus low rather than raising Sonnet effort. Reserve Sonnet low and medium for what they are genuinely best at: mechanical edits, tests, boilerplate, config, and fast interactive work where a plan already exists and latency is the binding constraint. Opus low is the route for anything with real reasoning content, and Opus medium is the first escalation when Opus low stalls or thrashes. In the frontier band, Fable medium is the value rung and Fable high is the route for the hardest repo-wide and architectural work; Fable xhigh is a ceiling for genuinely frontier tasks. Fable low is situational rather than cheap - it edges past Opus medium on quality but costs more, so reach for it only on long agentic runs made of individually easy steps, and never as a routine shortcut. For a long autonomous run, compare Opus high or xhigh with Fable medium using current task evidence and the actual account allowance. Do not assume Fable always bills separately; see the subscription boundary below.
+**Writing and long work no longer automatically select Fable.** Opus 5.5's new
+communication and knowledge-work evidence warrants a fresh starting route. The old
+Fable preference from one talk-track session remains useful for that voice, not a
+universal writing ranking. Use the existing semantic owner and Natural Writing as
+the final editor. Retain Fable when explicitly preferred, when representative work
+demonstrates a benefit, or when Opus 5.5 reaches a capability/style limit. Keep prose
+specialists read-only and verify every material fact before applying their text.
+Task-specific voice evidence and explicit style preferences take precedence over
+generic task size and family rankings, including for a single spoken line.
 
 **Subscription and API billing are separate.** As checked October 1, 2026, Fable 5 and 5.1 are included on Claude Max within a limit of up to 50% of the regular weekly allowance; this is a shared limit, not an extra allowance. Pro and standard Team seats use usage credits for Fable. Check the current plan, remaining allowance and authentication route before choosing on cost. Claude Code subscription login can use the plan; an API-key route can incur separate API charges. Do not enable extra usage or substitute API billing without authorization. See [current billing evidence](references/routing-policy.md#subscription-billing-update-october-1-2026).
 
-Two caveats on Opus low, both of which cut against the arithmetic. Low effort does not shorten its replies, and output is the expensive half of the meter, so a run can cost more than a per-task estimate predicts. It also delegates to subagents readily, which multiplies context. Give it an exact file map, hold the one-writer rule, and check actual burn on a long run instead of assuming the low setting is thrifty. The basis for this ordering, and its limits, are in [references/routing-policy.md](references/routing-policy.md).
+For Opus 5.5's long runs and custom API harnesses, read the focused
+[release assessment](references/opus-5-5-review.md). It covers effort, actual alias
+resolution, migration breaks, progress delivery and completion checks. Better native
+delegation does not authorize more agents: keep exact ownership and one writer,
+count duplicated context, and measure accepted work. API savings and output speed
+do not establish subscription burn or native Claude Code completion time.
+
+If host choice is genuinely open for a new substantial UI task, Opus 5.5 is a
+strong quality-focused Claude route based on the current WebDev evidence. In an
+active Codex task, retain the Codex table and preserve useful context; any cross-host
+handoff must be available, authorized and worth its startup/integration cost.
 
 ### If you are Codex
 
