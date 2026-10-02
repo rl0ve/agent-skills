@@ -103,6 +103,40 @@ cost. Label estimates and failed/incomplete sessions; cheaper output does not es
 equivalent teaching quality. Align connection lifetime with the intended interaction
 and preserve lesson state when closing an idle metered session.
 
+## Design a reason to keep playing
+
+Use for a playable world or a learning product whose engagement is unresolved.
+Define a concrete goal, the information the player must interpret, meaningful
+actions or choices, visible consequences, useful recovery and a reason to explore
+the changed world. Object counts, a free camera and a sequence of Next buttons do
+not establish this loop. Preserve a calm or input-first brief; game structure does
+not require points, streaks, combat, timers or forced speech.
+
+Build one connected scenario before adding many isolated activities. For learning,
+make understanding the target language useful to the action, reintroduce it in a
+changed context, and distinguish assisted success from independent recognition.
+Exercise alternative choices, understandable mistakes, recovery and resume.
+Record whether a learner understands the goal and voluntarily continues; keep
+observed engagement separate from delayed transfer or retention evidence.
+Self-scored rubrics and social likes cannot substitute for those observations.
+
+## Treat host plugins as a delivery choice
+
+When a ChatGPT plugin or MCP App is proposed, use current official platform docs
+and the host's app-development specialist. The October 2026
+[extensions documentation](https://developers.openai.com/plugins/build/extensions)
+supports fullscreen sidebar apps and conversation panels. That is an additional
+surface, not evidence that the host supplies a game engine or supports immersive XR.
+Keep the scene, rules and content separable from a small host adapter where practical.
+
+Trial one real scene in the target host before committing: WebGL/resource loading,
+input focus and pointer behavior, user-gesture audio, resizing, background/return,
+save/resume and accessible controls. Check the current
+[UI/CSP and state guidance](https://developers.openai.com/plugins/build/chatgpt-ui).
+Authoritative progress must survive widget remounts; do not rely only on ephemeral
+widget state. Verify actual headset support separately when required. A launch/resume
+or contextual-help companion may be the appropriate first surface.
+
 ## Prove a representative playable slice
 
 Before expanding or migrating, exercise one scenario with a representative asset and
@@ -124,3 +158,5 @@ uncertainty; a policy walkthrough or attractive video does not establish a succe
 migration, headset support or learning benefit.
 
 Source checks and adoption decisions: [September 27 review](../../../docs/interactive-worlds-review-2026-09-27.md).
+
+October 1 follow-up: [playable-world and host review](../../../docs/playable-worlds-review-2026-10-01.md).

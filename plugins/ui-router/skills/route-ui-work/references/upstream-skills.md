@@ -46,6 +46,23 @@ The Meng catalog aliases name concerns or bundles, not a single universal skill.
 | High graphical fidelity through target/build/critique iteration | [Dream Loop](https://github.com/achimala/dream-loop/blob/main/SKILL.md) and the selected workflow's required references |
 | Playable browser-game controls, progression, save/retry and device regression checks | [test-playable-web-games](https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/test-playable-web-games/SKILL.md); use deterministic review states and the host-approved browser surface. A build or screenshot alone does not establish playability. |
 
+### Playable-world design and feedback
+
+Selected paths below were reviewed at MengTo/Skills revision
+[`d5bd3a7e`](https://github.com/MengTo/Skills/tree/d5bd3a7e9c9f4b00853e84fffa60bc38eee9e744)
+on October 1, 2026. Load only the complete specialist that fits the task.
+
+| Need | Exact entrypoint and boundary |
+| --- | --- |
+| Objectives, consequential choices, pacing and recovery | [design-game-encounters](https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/design-game-encounters/SKILL.md). It targets action combat; a learning-world adaptation preserves decisions and recovery without importing enemies, timers or combat pressure. |
+| Legible space, landmarks and collision authoring | [author-game-levels](https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/author-game-levels/SKILL.md). Its strict flat-plane convention belongs to its game workflow; do not impose it on an existing multi-level architectural or XR world. |
+| Camera framing, occlusion, touch and reduced motion | [build-game-camera-controls](https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/build-game-camera-controls/SKILL.md). Match the actual locomotion and input design. |
+| Responsive sound and browser audio lifecycle | [build-game-audio-feedback](https://github.com/MengTo/Skills/blob/main/agent-skills/game-development/build-game-audio-feedback/SKILL.md). Preserve narration intelligibility, mute and visual equivalents; the voice-narration owner still owns generated speech. |
+
+Use the [playable-slice criteria](interactive-worlds.md#design-a-reason-to-keep-playing)
+for shared product decisions. A popular video is reference evidence, not a
+playthrough, performance benchmark or proof of educational value.
+
 ### Photoreal interactive worlds and spatial scenes
 
 The current Meng 3D bundle is under `agent-skills/3d/`. Select by the camera freedom
