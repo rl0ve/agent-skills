@@ -13,6 +13,15 @@ The plugin contributes:
 - six separately installable Codex profiles spanning Sol, Terra, and Luna;
 - a Claude `PreToolUse` hook that blocks Bash commands containing `sudo`.
 
+## Optional routing override
+
+Use a [removable override](skills/route-ai-work/references/routing-overrides.md) when you
+want different priorities for a task, project, or all chats on a host. Choose accuracy,
+latency and credit conservation independently of an optional model constraint. For
+example, prioritize quality and use available credits with Astra throughout, then later
+release the model constraint or turn the override off. Normal router defaults remain
+unchanged. These are instruction preferences, not account settings or a live model switch.
+
 ## Codex with Astra, Sol, Luna, and Terra
 
 Use GPT-6.1 Sol for substantial everyday and complex reasoning, implementation, and

@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.8.9 - 2026-10-04
+
+- Add reversible task, project and host-wide routing overrides with ordered priorities,
+  a separate credit policy, optional model/effort constraints, and explicit on/off behavior.
+- Preserve default routing and separate useful allowance use from extra spending, service
+  tier changes and waste; document child-model constraints and loaded-session limits.
+- Add setup diagnostics and realistic override review cases.
+
 ## 1.8.8 - 2026-10-02
 
 - Start new substantial Claude work at Opus 5.5 medium, including long projects and
