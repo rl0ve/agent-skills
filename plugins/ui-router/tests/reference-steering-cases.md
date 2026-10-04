@@ -72,6 +72,22 @@ scene build, asset generation, device test or behavioral benchmark is claimed.
 | Runtime does not expose texture memory | Identify the missing measurement or a labeled estimate; do not invent observed GPU memory. | Measurement boundary |
 | Existing static form needs a spacing correction | Apply the small edit directly; no 3D specialist, asset ledger or scene-performance workflow. | Nearby non-trigger case |
 
+## Hybrid asset-pipeline additions - 1.18.11
+
+Manual policy consistency review from observed authoring/export/runtime failures;
+these cases are not a new asset build, behavioral benchmark or device trial.
+
+| Case | Expected route and evidence | Review |
+|---|---|---|
+| Three.js environment needs authored steps, distinctive buildings and responsive water | Choose offline authoring for reusable shape/detail and a bounded runtime effect for responsive water where suitable; record the contract and measure the actual task. Neither Blender-only nor primitives-only is the default. | Applicable hybrid case |
+| A colored master exports with a color attribute whose values are all white | Compare expected values across the source and actual export, retaining hashes/options/version evidence. Presence and export success alone do not establish preservation; isolate the failing boundary before remodeling. | Export-value diagnosis |
+| An uncompressed export is correct but its optimized runtime file loses texture detail | Compare actual uncompressed and optimized artifacts and runtime setup; repair the responsible layer rather than replacing sound geometry. | Optimization boundary |
+| Label bounds pass because invisible current/selected targets were filtered out | Require target presence in the settled camera view as well as containment. Report the framing gap; do not move real landmark coordinates or claim a pass from remaining labels. | Runtime-framing evidence |
+| A previously rejected scene now passes export checks and unit tests | Reinspect delivered affected states and execute the selected craft workflow; keep the old visual verdict unresolved until new rendered evidence supports acceptance. | Separate acceptance gates |
+| The user requires full Dream Loop for substantial high-fidelity 3D work | Retain the selected upstream execution and stall policy; export repair is not a substitute for live comparison, fresh critique, refinement and performance evidence. | Workflow execution boundary |
+| A native-engine project has a settled non-Three.js pipeline | Preserve the existing stack and choose compatible responsibilities; apply relevant boundary checks without mandating Three.js or Blender. | Stack boundary |
+| An accepted static form needs one spacing correction | Verify the affected UI directly; no authoring map, asset export investigation or Dream Loop requirement. | Nearby non-trigger case |
+
 ## Evidence decisions
 
 - **Adopt:** the sample checkpoints and task-specific resource selection; extend the

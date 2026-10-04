@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.18.11 - 2026-10-04
+
+- Choose asset-authoring and runtime responsibilities per task; use a compatible
+  hybrid Blender/Three.js pipeline without making either tool generate everything.
+- Diagnose source, export, optimization and runtime defects before remodeling;
+  inspect actual delivered attribute values and affected state variants.
+- Check target presence in settled camera views as well as containment, and retain
+  separate artifact, rendered-craft, UI/UX and performance verdicts after repairs.
+- Add applicable and nearby non-trigger policy exercises; preserve the required
+  fidelity execution gate and existing authorization boundaries.
+
 ## 1.18.10 - 2026-10-04
 
 - Require an evidence-backed fidelity execution gate for substantial high-fidelity
