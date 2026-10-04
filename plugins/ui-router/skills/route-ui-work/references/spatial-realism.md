@@ -21,6 +21,29 @@ Change composition or a scoped placement when needed; preserve semantics and res
 scene-specific offsets when leaving the activity. Do not hide required text to win
 a screenshot comparison.
 
+## Assign authoring and runtime responsibilities
+
+For a Three.js web experience, prefer a hybrid pipeline when it fits the existing
+stack. Choose per asset and behavior from fidelity at task distance, editability,
+reuse, export support and measured delivery cost; no tool is the universal winner.
+Record a short owner/format/runtime-contract map before substantial asset work.
+
+| Work | Useful owner and boundary |
+| --- | --- |
+| Distinctive architecture, terrain, steps, close-up props or characters | Blender or another compatible authoring tool for intentional silhouette, detail, UVs, collision/source geometry and reusable assets. Do not remodel a sound asset to repair a runtime camera or shader defect. |
+| Rigging, authored animation clips, static texture/AO/light baking | Author offline where useful; runtime code owns playback, blending, state changes and any dynamic lighting those bakes cannot represent. |
+| Scene assembly, camera/framing, input, legal actions and feedback | Three.js and the application's authoritative state. An exported scene does not supply gameplay or learning semantics. |
+| Responsive water, wind, particles, material/light changes and simple repeated forms | Consider bounded runtime shaders or procedural geometry. Reuse/instance appropriate authored geometry rather than regenerate each copy. Measure the chosen effect on target conditions. |
+
+Do not make Blender generate the whole experience by default, or replace distinctive
+art with crude code primitives merely because they are easy to generate. A licensed,
+authored or procedural asset earns its place through the representative task and
+requested craft. Reuse audited assets first when they fit; new generation/downloads
+still need the applicable authorization and provenance. Three.js recommends
+[glTF/GLB for runtime assets](https://threejs.org/manual/pages/loading-3d-models.html);
+[instancing](https://threejs.org/docs/pages/InstancedMesh.html) can reduce draw calls
+for repeated geometry/materials, but does not by itself establish a performance pass.
+
 ## Select and integrate assets
 
 Choose licensed/scanned assets, authored modeling, procedural geometry or generation
@@ -37,6 +60,36 @@ arrangement, not just one object: successive objects placed beside earlier objec
 must all remain supported. A container's outside bounds do not prove its interior fits.
 Check facing direction and visibility as well as intersection: paper can be inside a
 bag yet need part of its label above the rim to communicate the action.
+
+### Verify the asset boundary before remodeling
+
+For unexpected white/missing colors, flat lighting, lost texture detail or wrong
+scale, locate the first failing boundary: source/master, exported asset, optional
+compression/optimization, or destination loader/material/render setup. Compare the
+actual files used; a good authoring preview is not proof of a faithful shipped asset.
+Record source/exporter versions, relevant export options and source/delivered hashes.
+
+Use deterministic representative checks for required material/mesh IDs, color or
+custom attributes, UVs, texture references, transforms and state variants as relevant.
+An attribute's presence, an object count or an export exit code does not prove its
+values survived. When feasible, inspect a minimal uncompressed export to isolate a
+loss before changing geometry, rebaking everything or blaming the runtime. Preserve
+the working master and failure evidence; diagnostic markers/copies are not shipping
+art. Do not generalize a version-specific exporter workaround into a universal rule.
+
+Verify the resulting delivered asset in the real runtime, in each affected state
+(for example Day/Night), with the real action and UI. Capture after camera/layout
+transitions settle and record current/selected/task-target presence as well as
+containment: filtering off-screen targets can make a bounds check pass vacuously.
+Keep real landmark coordinates honest; if a target is absent, report the framing
+gap rather than declare success from the remaining labels. Fix it in its owning
+layer and recheck dependent states and performance before expanding the asset set.
+
+Keep artifact correctness, rendered craft, non-3D UI/UX and device performance
+verdicts separate. A passing build/test or repaired export does not erase a rejected
+visual score; rerender and use the selected specialist's actual critique/refinement
+and stall policy. Honor explicit full Dream Loop requirements rather than substitute
+a lighter loop silently. Unknown human/device/accessibility gates remain unknown.
 
 ### Conditional generated-asset route: Hyper3D / Rodin
 

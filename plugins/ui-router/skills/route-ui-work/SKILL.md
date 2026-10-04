@@ -106,7 +106,9 @@ When no target is supplied, use the available host Imagegen tool within authoriz
 to author a product-specific target from the current baseline before implementation.
 Listing or loading Dream Loop is not evidence that its loop ran or passed.
 For realistic interactive 3D, apply the focused [spatial checks](references/spatial-realism.md)
-when assets, lighting, interface framing or delivery are the unresolved concern.
+when asset-pipeline ownership, assets, lighting, interface framing or delivery are
+the unresolved concern. Choose authoring versus runtime responsibilities per task;
+verify the delivered asset boundary before rebuilding art to fix a visual defect.
 Pair appearance with an exercised user action, keep generated targets distinct from
 working output, and verify assets in the destination. For spatial entrances and sound/media experiences,
 preserve the route into the real task and apply the relevant
