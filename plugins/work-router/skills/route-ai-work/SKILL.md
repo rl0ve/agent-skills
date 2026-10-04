@@ -11,6 +11,23 @@ handoffs, retries, and integration. A smaller model is not automatically faster.
 time first, reliable completion second, and token use third unless the user chooses a
 different order.
 
+## Routing overrides
+
+Resolve an active user override before applying the defaults below. Users can separately
+choose ordered accuracy/latency/credit-conservation priorities, a credit policy, and an
+optional model or effort constraint. “Use available credits” favors useful quality over
+saving allowance; it never requests waste or authorizes extra spend. A locked model
+applies to children as well as the parent. Generic default routes do not cancel it.
+
+For an override request, persistence, change, or disable operation, follow the
+[override contract and removable instruction block](references/routing-overrides.md).
+Listen for clear task-local quality, speed and credit cues; ask one optional preference
+question only when consequential ambiguity remains. Preserve explicit model constraints
+and persist changes only when requested. Keep normal defaults intact: disabling the
+override returns to those defaults. Changes
+are scoped to the user's request; never claim a saved instruction switched a running
+model, propagated to other hosts, or activated a different service tier.
+
 ## Route the task
 
 1. Honor explicit model, effort, timing, budget, delegation, and safety choices.

@@ -78,3 +78,21 @@ keep one write-capable owner per working tree.
 | A newly released model is absent from METR or an extracted leaderboard | Record missing coverage and qualify the assessment | Missing results do not mean poor results. |
 | A routing update relies only on vendor release claims | Check Arena, Artificial Analysis and relevant original evaluators; record unavailable comparisons | Regular independent evidence belongs in comparative policy reviews, not every ordinary task. |
 | The user asks to consider Arena regularly | Save the source/review policy without scheduling background checks | A regular evidence source is not authorization for a recurring monitor. |
+
+## Reversible override cases
+
+| Situation | Expected decision | Reason |
+|---|---|---|
+| Global accuracy/use-available override locks Astra; narrow reading could use Luna | Stay in a compatible Astra parent or use an explicitly configured Astra child if useful | Model constraints cover all children, including readers. |
+| Active Astra lock plus “minimize latency for this task” | Optimize completion time within Astra; retain the global lock afterward | A priority change does not release a model constraint or rewrite global scope. |
+| “Use available credits before reset” with no reset time verified | Spend authorized allowance only on useful requested work; retain manual expiry unless user supplied a boundary | No invented burn rate, paid API fallback, automatic redemption or token padding. |
+| Accuracy-first override has model_constraint none | Select the strongest permitted route likely to improve the task, with appropriate effort and verification | Quality preference does not require a model lock, automatic max effort or extra agents. |
+| User disables the override | Ignore its routing fields and use normal router defaults plus any other explicit constraints | Disabling does not remove the plugin or alter account settings. |
+| Generic project latency-first boilerplate conflicts with active global accuracy override | Apply the override subject to normal instruction hierarchy and explicit project constraints | Copied defaults are not a new user choice. |
+| Explicit task budget conflicts with global use_available | Honor the narrower explicit budget | Credit utilization is constrained by authorization. |
+| Astra lock exists but host cannot supply Astra | Report the constraint and supported ways to select it; do not silently use Sol | An instruction cannot create model availability. |
+| Global file saved while another chat is already running | Report saved scope; require supported reload or explicit instruction before claiming that chat uses it | File state, loaded instructions and active model are separate. |
+| User says “accuracy at all costs” while service is Standard | Use useful quality routes within authorized allowance; keep service choice separate | This phrase does not activate paid usage or Fast. |
+| “Performance matters” with no evidence whether speed or quality matters, and routes differ materially | Ask once for an optional accuracy/time/credits preference; continue independent work and retain current choices if unanswered | Ambiguity merits a lightweight check, not a blocking permission gate. |
+| “Quick answer” while a global Astra/accuracy override is active | Treat speed cue as task-local, within Astra and explicit quality constraints; do not rewrite global preferences | Inferred cues do not silently revoke persistent explicit choices. |
+| User repeatedly chooses quality but never asks to save it globally | Apply each task choice; offer a standing override if useful rather than silently persisting | Repetition is a clue, not automatic global authorization. |

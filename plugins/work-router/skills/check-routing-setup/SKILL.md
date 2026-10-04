@@ -20,7 +20,7 @@ or full model-cache records; extract only relevant model and effort metadata.
 3. Distinguish bundled profiles, files installed in `~/.codex/agents/` or project
    `.codex/agents/`, and agents actually loaded/callable. A plugin install does not
    establish the latter two. The profile sync script's dry run only compares files.
-4. Check explicit model and delegation constraints. A named profile retains its configured family under a different parent; a built-in worker may inherit or accept overrides according
+4. Check the effective user/project instruction sources for an active [routing override](../route-ai-work/references/routing-overrides.md). Report its scope, enabled state, priorities, credit policy, model constraint and expiry; distinguish saved instructions from the configuration loaded by this chat. Check explicit model and delegation constraints. A named profile retains its configured family under a different parent; a built-in worker may inherit or accept overrides according
    to the host. Verify effective model and effort before recommending that route.
 5. Separate Fast routing from service-tier state. Treat unknown service status as
    unverified, and require an explicit user choice for any move from Standard to Fast.
