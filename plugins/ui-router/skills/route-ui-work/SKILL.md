@@ -100,6 +100,11 @@ suitable [upstream specialist](references/upstream-skills.md), including Dream L
 high graphical fidelity calls for its target/build/critique method. The lighter
 [visual build loop](references/visual-build-loop.md) is an adaptation for proportionate
 work or a stated fallback, not an equivalent replacement for a selected specialist.
+For substantial high-fidelity 3D work, apply the required
+[fidelity execution gate](references/upstream-skills.md#fidelity-execution-gate).
+When no target is supplied, use the available host Imagegen tool within authorization
+to author a product-specific target from the current baseline before implementation.
+Listing or loading Dream Loop is not evidence that its loop ran or passed.
 For realistic interactive 3D, apply the focused [spatial checks](references/spatial-realism.md)
 when assets, lighting, interface framing or delivery are the unresolved concern.
 Pair appearance with an exercised user action, keep generated targets distinct from

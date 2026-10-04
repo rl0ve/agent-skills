@@ -98,7 +98,16 @@ Meng skill entrypoints and Dream Loop. Load the complete selected procedure and 
 references; install selected complete folders for repeated use within authorization.
 Keep shared principles in the router and preserve source/version information.
 
-Dream Loop is an optional specialist for high graphical fidelity. The
+Substantial high-fidelity 3D work selects Dream Loop unless the user chooses another
+method, and uses a required [execution gate](skills/route-ui-work/references/upstream-skills.md#fidelity-execution-gate):
+locked target, running comparison, fresh-context critique, checked refinement and
+performance evidence. Listed, loaded, executed and accepted remain separate outcomes;
+unmet gates stay explicit. Ordinary UI edits do not trigger the loop.
+
+The host's Imagegen tool authors a product-specific target from the existing baseline
+when no target is supplied and generation is authorized; real routes and readable
+navigation remain constraints rather than invented image content. See the
+[execution review](docs/dream-loop-execution-review-2026-10-04.md). The
 [visual build loop](skills/route-ui-work/references/visual-build-loop.md) remains a lighter,
 explicitly labeled adaptation whose comparative effectiveness is untested. It does not
 override a selected upstream workflow. User and host constraints still govern model,

@@ -99,6 +99,9 @@ its report must not imply full visual or editorial acceptance.
 - When using a generated target, distinguish proposed appearance, actual running capture
   and observed behavior. Use the selected [upstream workflow](upstream-skills.md) or
   explicitly labeled [router adaptation](visual-build-loop.md), without claiming parity.
+- For substantial high-fidelity 3D work, retain the
+  [fidelity execution gate](upstream-skills.md#fidelity-execution-gate) evidence and
+  unresolved gates. Listing, loading or a self-awarded visual score is not acceptance.
 - For a spatial entrance leading into a product, verify entry, direct navigation when
   applicable, selection and return without losing the chosen item or useful controls.
 - For sound/media tasks, apply [the sound and media checks](motion-quality.md#sound-and-media-when-the-task-uses-them).

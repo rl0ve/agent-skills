@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.18.10 - 2026-10-04
+
+- Require an evidence-backed fidelity execution gate for substantial high-fidelity
+  3D work: locked target, running comparison, fresh-context critique, checked
+  refinement and measured performance.
+- Distinguish listed, loaded, executed and accepted workflows; keep unmet gates and
+  material adaptations explicit without expanding model, delegation or spending access.
+- Preserve direct handling of ordinary edits and separate UI/UX and interaction gates.
+- Author missing targets with the host Imagegen tool from the existing product's
+  baseline and real navigation constraints; retain prompt/output identity and keep
+  unavailable or unauthorized generation visibly blocked.
+
 ## 1.18.9 - 2026-10-02
 
 - Start Claude UI implementation at Opus 5.5 medium and preserve high for consequential
