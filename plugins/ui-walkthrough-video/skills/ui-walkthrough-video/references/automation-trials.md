@@ -18,9 +18,11 @@ These are executed capability trials, not a general visual-quality benchmark.
   [native-projects.md](native-projects.md). Capture/config/export alone does not prove
   editable zooms, narration or cursor layers. Validate actual pixels and reopen the
   complete packaged project before claiming an editable handoff.
-- **Repeatable authored edits:** use HyperFrames for HTML/CSS/GSAP composition or
+- **Repeatable authored edits:** offer optional HyperFrames for HTML/CSS/GSAP composition or
   Remotion for a React timeline. Preserve real footage, narration, timed action evidence,
   captions and source. Prompt-driven changes still require code/render verification.
+  Ask the user before choosing HyperFrames; follow the current
+  [opt-in production route](hyperframes.md). The older trial below is historical.
 - **Recordly specifically requested:** its tested bundled capture engine is an
   experimental option. This does not establish automatic control of its editor.
 - **Refining an existing video:** inspect its audio, dimensions and available sources;

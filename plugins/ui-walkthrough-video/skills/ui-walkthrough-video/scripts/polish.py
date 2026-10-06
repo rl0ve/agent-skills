@@ -147,6 +147,18 @@ def read_frame(pipe,n):
         chunks.append(chunk);total+=len(chunk)
     return b''.join(chunks)
 
+def captions_for(beat, audio, audio_duration, offset):
+    if 'captions' in beat:
+        if not isinstance(beat['captions'], list) or not beat['captions']:
+            raise ValueError('Explicit captions must be a nonempty list')
+        return beat['captions'], 'supplied'
+    sidecar=Path(audio)/(beat['id']+'.words.json')
+    if sidecar.is_file():
+        aligned=media.load_words(sidecar,audio_duration)
+        return [dict(c,start=c['start']+offset,end=c['end']+offset) for c in media.word_cues(aligned['words'])], aligned['timing']
+    return [{'start':offset,'end':offset+audio_duration,'text':beat['narration']}], 'scene-level; not word aligned'
+
+
 def build(args):
     manifest=Path(args.manifest).resolve();spec=json.loads(manifest.read_text())
     if spec.get('mode')!='polished-capture':raise ValueError('Expected capture-polished manifest')
@@ -171,7 +183,7 @@ def build(args):
         validate_camera(keys,width,height,duration)
         start_frame=marker_end(source)
         if media.duration(source)+.05<start_frame/FPS+duration:raise ValueError('Capture shorter than planned visible beat')
-        captions=b.get('captions') or [{'start':offset,'end':offset+adur,'text':b['narration']}]
+        captions,caption_kind=captions_for(b,audio,adur,offset)
         end=-1
         for cue in captions:
             if not end<=cue['start']<cue['end']<=duration:raise ValueError('Caption intervals overlap or exceed the beat')
@@ -188,12 +200,12 @@ def build(args):
                 if not r['x']<=p['x']<=r['x']+r['width'] or not r['y']<=p['y']<=r['y']+r['height']:raise ValueError('Click outside target bounds')
                 x,y,cw,ch=camera_at(keys,e['time'],width,height)
                 if not x<=p['x']<=x+cw or not y<=p['y']<=y+ch:raise ValueError('Camera hides the click target')
-        prepared.append((b,source,wav,adur,frames,duration,start_frame,captions))
+        prepared.append((b,source,wav,adur,frames,duration,start_frame,captions,caption_kind))
     out.mkdir(parents=True)
     base,mask,font,small=canvas_assets(font_path)
     timeline=[];cursor=0;srt=[];cue_id=1
     total=sum(x[5] for x in prepared)
-    for index,(b,source,wav,adur,frames,duration,start_frame,captions) in enumerate(prepared):
+    for index,(b,source,wav,adur,frames,duration,start_frame,captions,caption_kind) in enumerate(prepared):
         label=f'{index+1:02d} / {len(prepared):02d}    {b["title"]}'
         layers=[]
         for cue in captions:
@@ -233,7 +245,7 @@ def build(args):
         if dcode or ecode:raise ValueError('Video decode/encode failed; inspect dependencies and input media')
         for cue in captions:
             srt.append(f'{cue_id}\n{media.tc(cursor+cue["start"])} --> {media.tc(cursor+cue["end"])}\n{cue["text"]}\n');cue_id+=1
-        timeline.append({'id':b['id'],'start':cursor,'duration':duration,'sourceTrimFrames':start_frame,'syncToleranceSeconds':max(1/FPS,1/25),'audioOffset':offset,'audioDuration':adur,'camera':b['camera'],'events':b['events'],'captionTiming':'scene-level; not word aligned'})
+        timeline.append({'id':b['id'],'start':cursor,'duration':duration,'sourceTrimFrames':start_frame,'syncToleranceSeconds':max(1/FPS,1/25),'audioOffset':offset,'audioDuration':adur,'camera':b['camera'],'events':b['events'],'captionTiming':caption_kind})
         cursor+=duration
     (out/'concat.txt').write_text(''.join(f"file '{i:03}.mp4'\n" for i in range(len(prepared))))
     media.run([media.FFMPEG,'-v','error','-f','concat','-safe','1','-i',out/'concat.txt','-c','copy','-movflags','+faststart',out/'walkthrough.mp4'])

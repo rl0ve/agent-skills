@@ -10,6 +10,8 @@ For a quick site snapshot, start with [quick capture](skills/ui-walkthrough-vide
 
 For a produced walkthrough, start with the [preferred Mac approach and ratings](skills/ui-walkthrough-video/references/preferred-approach.md) for the recommendation, pros/cons, narration status and evidence limits.
 
+For more authored motion, offer the [optional HyperFrames production route](skills/ui-walkthrough-video/references/hyperframes.md) and ask the user to choose it for each new video. It adds an audio-first storyboard, measured speech cues, word-triggered highlights, explicit camera paths, optional music ducking and separately authored portrait layouts. The ordinary capture/composition route remains available. HyperFrames requires Node 22+ and Chrome; the bundled project pins its dependencies.
+
 Source and fixture checks are in `VALIDATION.md`. The approved Kore audition was reused; these trials did not compare speech providers. A separate direct-Gemini production established Algieba + Sulafat as a useful two-host profile, with the long-section limitation recorded below.
 
 ## Preferred approach and ratings — Mac, no NVIDIA
@@ -41,8 +43,8 @@ A working export does not establish viewer approval.
 | Remotion | **Strong — reusable videos driven by data** | Actual walkthrough plus two audience editions from one React composition | Reusable components, structured inputs and application logic | More engineering for a single demo; initial render needed a media-component/configuration correction |
 | Screen Studio | **Unrated — candidate for a manually finished Mac demo** | No local trial | Documented screen-demo presentation features | No executed comparison or verified agent editing interface here |
 
-HyperFrames and Remotion can produce the same visual result. Prefer HyperFrames
-for a custom motion piece; prefer Remotion when maintaining a video-generating
+Offer HyperFrames for a custom motion piece and wait for the user's choice;
+prefer Remotion when maintaining a video-generating
 application or using existing React components. Both can generate variants.
 Their showcases are separate from the product-demo comparison page.
 
@@ -96,3 +98,5 @@ Version 1.5 adds the separate narration skill and MiniMax speech support. MiniMa
 adapter passed offline contract and media-conversion tests; no live voice-quality
 comparison was run. [MiniMax routing](skills/ui-walkthrough-video/references/minimax.md)
 distinguishes Desktop Design, coding, hosted speech and generated assets.
+
+Version 1.6 adds the optional HyperFrames builder, ElevenLabs timestamp sidecars shared by the existing renderers, and a final-video verifier. Landscape and portrait synthetic fixtures were rendered and decoded; this is technical evidence, not a voice-quality or visual-quality comparison.

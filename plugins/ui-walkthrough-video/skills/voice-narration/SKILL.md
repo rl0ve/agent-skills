@@ -85,6 +85,13 @@ video fields are unnecessary. The output contains `ID.wav` at 48kHz stereo, sour
 audio and `voice.json`. `--allow-paid` records prior authorization, not a budget
 limit enforced by the helper. Keep the original transcript/manifest with delivery.
 
+For ElevenLabs, optional `voice.timestamps: true` also saves `ID.words.json` from
+the provider's character alignment. Review normalized wording and pass those real
+boundaries to video assembly or the optional HyperFrames route. Other providers may
+supply aligned sidecars; this helper does not force-align existing audio. Revoicing,
+trimming or splicing audio requires revised cue points. Timing availability does
+not establish voice quality and does not change the user's selected voice/provider.
+
 Use an existing secret manager according to host instructions. Check which providers
 it actually supports; do not assume the Mac helper has a MiniMax entry. MiniMax's
 adapter expects `MINIMAX_API_KEY` supplied securely to the process. Never put keys

@@ -1,4 +1,15 @@
-# Validation — 2026-09-05
+# Validation
+
+## 1.6.0 — 2026-10-06
+
+- Forty-two plugin tests pass, including absent opt-in with no output, portrait/landscape layout validation, source trim/audio-offset preservation, alignment grouping, explicit-caption precedence in both renderers, and malformed timing rejection. A mocked ElevenLabs timestamp response containing a real MP3 tone converts to stereo 48kHz WAV plus a validated sidecar; paid-call preflight and one-call behavior are checked. No live hosted speech call was made. The basic assembler also fully decoded a real synthetic MP4 using supplied alignment and labeled its caption timing correctly.
+- HyperFrames 0.8.137 / GSAP 3.14.2, Node 24.13.1 and FFmpeg 8.1.1 rendered two six-second, two-scene synthetic fixtures: 960×540 landscape and 540×960 portrait, each 30fps with AAC audio. They use moving test footage, authored camera keys, supplied word alignment, speech-offset tones and a music tone. These are technical fixtures, not product demos or listening benchmarks.
+- Both outputs fully decode, measure 6.0s, and have no black/freeze intervals detected. Input loudness measures -19.55 LUFS / -17.80 dBTP. Extracted camera-end, caption/highlight and scene-cut frames were inspected. Full motion playback, arbitrary backward/random seek equivalence and perceptual listening remain production acceptance checks.
+- A landscape project rebuilt from its packaged storyboard/media rerendered successfully. Its live CLI lint/runtime/layout/motion/contrast checks pass with zero findings at scene boundaries and camera samples. Intentional camera overscan is marked and clipped by the authored frame. A generated ducking derivative measures a 0.250002 RMS ratio during speech versus an unducked interval for the requested 0.25 gain.
+- The CLI warned about sparse keyframes in the synthetic source and initialized a browser cache; preserve originals, prepare seek-friendly derivatives when needed, and check browser availability before production. The initial single-file nested clip structure failed lint; separately timed scene subcompositions pass. Source editability is HTML/GSAP, not a native Cap/Recordly timeline.
+- Policy cases: a generic request for a dynamic video requires the HyperFrames choice; a declined choice uses existing routes; an explicit current-project selection permits setup; revisions reuse that selection; music, hosted speech and publication remain separately authorized. These are reviewed policy cases, not an autonomous user-conversation benchmark.
+
+## Initial validation — 2026-09-05
 
 - Actual two-beat synthetic interface capture in Microsoft Edge using bundled Playwright: passed. Button click revealed the expected detail panel; evidence screenshots checked.
 - macOS Samantha narration: two WAVs, 2.822s and 3.360s. No paid API call or credentials used.

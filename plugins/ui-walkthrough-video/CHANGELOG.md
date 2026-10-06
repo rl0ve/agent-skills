@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.6.0 — 2026-10-06
+
+- Offer HyperFrames as an explicit choice for each new video, carrying that choice through revisions; keep ordinary capture/composition and paid-media authorization separate.
+- Add a pinned HTML/GSAP project builder with measured footage, an audio-first storyboard, camera paths, speech-linked highlights, phrase captions, optional music/SFX and music ducking. Author portrait layouts separately and preserve portable source assets.
+- Add optional ElevenLabs character timestamps and validated word sidecars; existing basic and polished assemblers consume measured captions while retaining their labeled fallback and explicit-cue precedence.
+- Add full-decode, media-spec, black/freeze and loudness checks plus transition review frames. Record synthetic landscape/portrait render evidence separately from listening and viewer acceptance.
+
 ## 1.5.6 — 2026-09-20
 
 - Add a conditional application-narration route covering whole-operation budgets,

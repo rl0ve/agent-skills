@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>UI walkthrough composition</title>
+  <script src="./node_modules/gsap/dist/gsap.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: @@WIDTH@@px; height: @@HEIGHT@@px; overflow: hidden; background: #111d28; }
+    .stage { position: relative; width: @@WIDTH@@px; height: @@HEIGHT@@px; background: #111d28; color: #f5f8fa; font-family: Arial, sans-serif; }
+    section { position: absolute; inset: 0; }
+    h1 { position: absolute; margin: 0; display: flex; align-items: center; font-size: @@TITLE_SIZE@@px; line-height: 1.15; }
+    .frame { position: absolute; overflow: hidden; background: #111d28; border-radius: 16px; }
+    .footage { position: absolute; transform-origin: 0 0; }
+    video { display: block; }
+    .focus { position: absolute; border: 5px solid #ef8a55; pointer-events: none; }
+    .caption { position: absolute; display: flex; align-items: center; justify-content: center; text-align: center; font-size: @@CAPTION_SIZE@@px; line-height: 1.25; }
+  </style>
+</head>
+<body>
+  <main id="stage-@@COMPOSITION_ID@@" class="stage" data-composition-id="@@COMPOSITION_ID@@" data-start="0" data-duration="@@DURATION@@" data-width="@@WIDTH@@" data-height="@@HEIGHT@@" data-fps="@@FPS@@">
+@@CONTENT@@
+  </main>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+@@ANIMATION@@
+    window.__timelines = window.__timelines || {};
+    window.__timelines["@@COMPOSITION_ID@@"] = tl;
+  </script>
+</body>
+</html>

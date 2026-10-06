@@ -1,6 +1,6 @@
 ---
 name: ui-walkthrough-video
-description: Produce narrated UI walkthroughs with real capture, synchronized voiceover and captions. Offer an editable Cap Studio or Recordly native project with source assets and an MP4, or rendered-only output. Use for quick site screenshots or recordings, product demos, tutorials, portfolio walkthroughs, and editable video handoffs.
+description: Produce narrated UI walkthroughs with real capture, synchronized voiceover and captions. Offer an editable native project or rendered-only output; ask before choosing optional HyperFrames composition. Use for screenshots, recordings, dynamic product demos, tutorials, portrait variants and editable video handoffs.
 ---
 
 # UI walkthrough video
@@ -43,6 +43,21 @@ a preferred provider is unavailable.
 
 ## Choose the production route
 
+**HyperFrames is optional. Ask the user for each new production before choosing it**,
+unless they have explicitly selected HyperFrames for that same project already.
+Ask: "Would you like the usual recorded walkthrough, or a HyperFrames composition
+with more directed scenes, motion and timing?" A request for a polished or dynamic
+demo does not select HyperFrames. Wait for the choice before its installation,
+project creation or rendering. A declined choice keeps the existing capture/native
+editor/Pillow route available. Reuse a choice during revisions of that project.
+The composition choice does not authorize paid speech, generated music or publishing.
+
+If selected, read [the HyperFrames production route](references/hyperframes.md).
+It provides a storyboard contract, a pinned project builder, measured speech cues,
+optional music/SFX and separate landscape/portrait layouts. HyperFrames source is
+an editable HTML composition; it does not fulfill a Cap/Recordly native-project
+request without a separately verified handoff. Resolve that delivery tradeoff first.
+
 For MiniMax, read [where it fits](references/minimax.md). Its speech API may supply
 narration, and its generative models may supply illustrative assets. MiniMax Code
 and Desktop Design are separate workspaces; a named desktop-app request is not an
@@ -82,8 +97,10 @@ frame and captions outside the UI. Read [polished-example.md](references/polishe
 for the tested existing-site recipe. A conservative automatic zoom is available when keyframes are omitted;
 camera direction and action timing still need editorial review. Native source footage
 may remain 25fps; 60fps composition smooths the cursor/camera, not app animation.
-Neither route performs word-level forced alignment or proves
-parity with an editing product.
+Both renderers can import measured word sidecars for phrase captions; ElevenLabs
+can supply character timestamps that the helper groups into words. Without those
+sidecars or explicit cues, captions remain estimated or scene-level. Neither route
+performs speech recognition or proves parity with an editing product.
 If specialist tools are unavailable, preserve footage and a concrete edit plan,
 report the missing capability, and continue only the portions the available tools
 can perform. Do not quietly downgrade a requested polished final into raw footage.
@@ -93,6 +110,10 @@ can perform. Do not quietly downgrade a requested polished final into raw footag
 1. Inspect the actual interface and implementation or accessibility tree. Write a
    brief scene plan: starting state → action → observed result → narration. Explain
    the user's benefit; avoid narrating every click or making unverified claims.
+   For authored demos, use [STORYBOARD.md](assets/STORYBOARD.template.md) to bind
+   source ranges, global time, spoken cues, focal rectangles and transition seams.
+   Keep approved wording in SCRIPT.md. Choose tutorial, demo or teaser treatment;
+   a tutorial needs readable action/results, while a teaser can use a measured beat grid.
 2. Use a demo/fixture environment for actions that change data. A recording request
    alone does not authorize production approvals, sends, resets or submissions.
    Record authentication state only in ignored local files. Use synthetic data or
@@ -152,6 +173,9 @@ warnings: shorten the copy, remove dead time with explicit cuts, split the beat 
 recapture. This preserves evidence but is not automatic semantic synchronization.
 To tightly align “click,” “opens,” and “result,” use separate beats or edit explicit
 visual cue points. Do not imply that proportional captions are word-aligned.
+With `voice.timestamps: true` on ElevenLabs, the helper saves `ID.words.json` and
+both renderers prefer those measured cue boundaries unless explicit captions are
+supplied. Other providers can supply aligned sidecars without changing voice choice.
 
 ## Quality gate and delivery
 
@@ -171,6 +195,13 @@ and retake. For a narrated comparison, give every example its promised soundtrac
 and verify non-silent decoded audio plus an unmuted player; label any intentionally
 silent technical take clearly. Keep unrelated framework showcases on their own page.
 Use natural-writing's spoken guidance if available, without making it a dependency.
+
+For authored compositions, compare forward, backward and random seeks at motion
+midpoints and both sides of every cut. Run
+`python3 scripts/verify_video.py FINAL.mp4 REVIEW --timeline timeline.json`
+to decode, measure loudness/true peak, flag black/frozen
+intervals and extract review frames. Inspect flags before treating them as defects;
+held UI may be intentional. Record visual playback and listening review separately.
 
 For native delivery, package the project and every required source asset with the
 MP4. Reopen the packaged copy in the target editor, verify its media and representative

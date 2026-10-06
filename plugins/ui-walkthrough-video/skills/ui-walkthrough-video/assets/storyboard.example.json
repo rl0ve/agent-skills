@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "treatment": "demo",
+  "width": 1920,
+  "height": 1080,
+  "fps": 60,
+  "duration": 24,
+  "scenes": [
+    {
+      "id": "open-request",
+      "start": 0,
+      "duration": 12,
+      "title": "Review the request",
+      "video": "capture/open-request/capture.webm",
+      "sourceStart": 0,
+      "rect": [80, 180, 1760, 760],
+      "titleRect": [80, 40, 1760, 100],
+      "captionRect": [80, 960, 1760, 90],
+      "audio": "audio/open-request.wav",
+      "audioOffset": 0.5,
+      "words": "audio/open-request.words.json",
+      "camera": [
+        {"time": 0, "zoom": 1, "cx": 960, "cy": 540},
+        {"time": 1, "zoom": 1, "cx": 960, "cy": 540},
+        {"time": 1.6, "zoom": 1.3, "cx": 1000, "cy": 320}
+      ]
+    },
+    {
+      "id": "read-result",
+      "start": 12,
+      "duration": 12,
+      "title": "Read the result",
+      "video": "capture/read-result/capture.webm",
+      "sourceStart": 0,
+      "rect": [80, 180, 1760, 760],
+      "titleRect": [80, 40, 1760, 100],
+      "captionRect": [80, 960, 1760, 90],
+      "audio": "audio/read-result.wav",
+      "audioOffset": 0.5,
+      "words": "audio/read-result.words.json"
+    }
+  ],
+  "audioTracks": []
+}

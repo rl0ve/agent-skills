@@ -1,4 +1,6 @@
 import sys
+import json
+import tempfile
 from pathlib import Path
 import unittest
 from unittest.mock import patch
@@ -6,6 +8,21 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 import polish as p
 
 class PolishTests(unittest.TestCase):
+    def test_measured_captions_apply_audio_offset(self):
+        with tempfile.TemporaryDirectory() as d:
+            Path(d,'intro.words.json').write_text(json.dumps({'version':1,'timing':'supplied-alignment',
+                'words':[{'word':'Open','start':.1,'end':.4},{'word':'it.','start':.5,'end':.9}]}))
+            cues,kind=p.captions_for({'id':'intro','narration':'Open it.'},d,1,.5)
+            self.assertEqual((cues,kind),([{'start':.6,'end':1.4,'text':'Open it.'}],'supplied-alignment'))
+
+    def test_explicit_captions_override_sidecar_and_empty_values_fail(self):
+        with tempfile.TemporaryDirectory() as d:
+            Path(d,'intro.words.json').write_text('invalid sidecar should not be read')
+            beat={'id':'intro','narration':'Open it.','captions':[{'start':.2,'end':.9,'text':'Reviewed cue'}]}
+            self.assertEqual(p.captions_for(beat,d,1,.5),(beat['captions'],'supplied'))
+            for captions in ([],None):
+                with self.assertRaises(ValueError):p.captions_for(dict(beat,captions=captions),d,1,.5)
+
     def test_pointer_interpolates_at_output_frames_and_holds_destination(self):
         events=[{'type':'pointer','start':1,'end':2,'from':{'x':0,'y':0},'to':{'x':100,'y':200}}]
         self.assertEqual(p.pointer_at(events,0),{'x':0,'y':0})
