@@ -16,7 +16,9 @@ project must preserve the actual zoom/audio/overlay edits; a raw capture project
 or a finished MP4 alone does not fulfill that requirement.
 
 For a controlled foreground session, use **Cap for agent-controlled recording of real UI**, keep its native export when
-that meets the brief, and add **HyperFrames only when custom composition is useful**.
+that meets the brief, and offer **HyperFrames only when custom composition is useful**.
+Ask the user before selecting it for each new production; see the
+[optional production route](hyperframes.md). Reuse that choice during project revisions.
 Use **Gemini Kore through OpenRouter when the accepted female-presenting,
 Southern-inflected product-demo delivery fits**. For conversational business or
 interview material, direct Gemini with **Algieba + Sulafat** is an accepted two-host
@@ -36,7 +38,7 @@ compositor plus Kore is the most directly reproduced complete narrated example.
 It remains the fallback when that known recipe is the quickest suitable answer.
 
 Choose **Remotion** when the deliverable is a reusable video system: one composition,
-many data inputs, audiences or formats. Choose **HyperFrames** for a custom explainer
+many data inputs, audiences or formats. Offer **HyperFrames** for a custom explainer
 or motion piece authored in HTML/CSS/JavaScript. Both can do either job; the distinction
 is workflow fit, not an inherent difference in image quality.
 

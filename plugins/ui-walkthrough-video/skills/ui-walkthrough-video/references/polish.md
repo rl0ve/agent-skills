@@ -30,6 +30,12 @@ not invent evidence. Keep raw source-time and final edit-time mappings separate.
 
 ## Available routes
 
+HyperFrames: offer the [optional authored composition route](hyperframes.md) when
+the user wants more deliberate motion, speech-linked emphasis or a portrait cut.
+Ask before choosing it for a new video and carry that choice through revisions.
+Its builder uses real footage and a binding storyboard; installing the framework
+does not establish product fidelity or viewer approval.
+
 Clueso: inspect current official `polish-screen-demo`, `revoice-video` and (for
 stills only) `screenshots-to-walkthrough`. Its MCP documents automatic recording,
 voiceovers, synchronization points, animated elements and export. Verify actual

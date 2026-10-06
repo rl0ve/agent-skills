@@ -47,6 +47,13 @@ provider or transcription tool for final caption accuracy. Without cues the rend
 proportionally estimates phrase timing and flags this in the timeline. It does not
 perform speech recognition. Empty or overlapping supplied cues fail validation.
 
+Optional ElevenLabs `voice.timestamps: true` selects the `/with-timestamps` endpoint.
+The helper saves character-derived `ID.words.json` with measured word boundaries and
+normalized text. Both renderers use that sidecar when explicit cues/captions are absent.
+Other providers can supply the version-1 `words` format with alignment provenance;
+the adapter does not obtain timestamps for them or perform speech recognition.
+See [the composition/audio contract](hyperframes.md) for offsets and supplied alignment.
+
 Custom capture backends may populate this manifest with actual video paths. The
 assembler accepts footage with any FFmpeg-decodable video format. A snapshot-only
 backend must first render stills into clips and explicitly label the resulting

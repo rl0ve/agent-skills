@@ -1,0 +1,13 @@
+{
+  "name": "ui-walkthrough-composition",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "lint": "hyperframes lint",
+    "check": "hyperframes check",
+    "snapshot": "hyperframes snapshot --describe false",
+    "render": "hyperframes render --workers 1 --quality high"
+  },
+  "dependencies": { "gsap": "3.14.2", "hyperframes": "0.8.137" }
+}

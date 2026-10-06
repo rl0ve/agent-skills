@@ -44,11 +44,13 @@ def load(file):
     if spec.get('version') != 1 or not spec.get('beats'):
         raise ValueError('Expected manifest version 1 and nonempty beats')
     voice = spec.get('voice', {})
-    allowed = {'provider','model','voice','quality','rate','instructions','speed','voice_settings'}
+    allowed = {'provider','model','voice','quality','rate','instructions','speed','voice_settings','timestamps'}
     if set(voice) - allowed:
         raise ValueError('Unknown voice field; credentials belong in environment variables')
     if set(voice.get('voice_settings', {})) - {'stability','similarity_boost','style','use_speaker_boost','speed'}:
         raise ValueError('Unknown voice_settings field')
+    if 'timestamps' in voice and (type(voice['timestamps']) is not bool or voice.get('provider') != 'elevenlabs'):
+        raise ValueError('timestamps is a boolean supported only by the ElevenLabs adapter')
     seen = set()
     for b in spec['beats']:
         if not re.fullmatch(r'[a-z0-9][a-z0-9_-]*', b['id']) or b['id'] in seen or not b['narration'].strip():
@@ -74,6 +76,8 @@ def fresh(out):
 
 def request_config(voice, text):
     provider = voice['provider']
+    if 'timestamps' in voice and (type(voice['timestamps']) is not bool or provider != 'elevenlabs'):
+        raise ValueError('timestamps is a boolean supported only by the ElevenLabs adapter')
     if provider == 'minimax':
         if set(voice) - {'provider','model','voice','quality','speed'}:
             raise ValueError('MiniMax adapter supports model, voice and speed; other delivery controls are not mapped')
@@ -101,7 +105,8 @@ def request_config(voice, text):
         payload = {'model_id':voice['model'], 'text':text}
         if 'voice_settings' in voice:
             payload['voice_settings'] = voice['voice_settings']
-        return ('https://api.elevenlabs.io/v1/text-to-speech/' + urllib.parse.quote(voice['voice'],safe='') + '?output_format=mp3_44100_128',
+        suffix = '/with-timestamps' if voice.get('timestamps') else ''
+        return ('https://api.elevenlabs.io/v1/text-to-speech/' + urllib.parse.quote(voice['voice'],safe='') + suffix + '?output_format=mp3_44100_128',
                 'ELEVENLABS_API_KEY', payload)
     if provider == 'openrouter':
         if not re.fullmatch(r'[a-zA-Z0-9._:-]+/[a-zA-Z0-9._:-]+', voice['model']):
@@ -127,6 +132,92 @@ def request_config(voice, text):
         return ('https://generativelanguage.googleapis.com/v1beta/models/' + voice['model'] + ':generateContent',
                 'GEMINI_API_KEY', payload)
     raise ValueError('Unknown network provider')
+
+
+def alignment_words(alignment):
+    """Group provider character alignment into words without inventing timings."""
+    try:
+        chars = alignment['characters']
+        starts = alignment['character_start_times_seconds']
+        ends = alignment['character_end_times_seconds']
+        if not chars or not len(chars) == len(starts) == len(ends):
+            raise ValueError('Incomplete character alignment')
+        previous_start = previous_end = 0
+        words, current = [], None
+        for char, start, end in zip(chars, starts, ends):
+            if not isinstance(char, str) or len(char) != 1:
+                raise ValueError('Alignment requires individual characters')
+            if (type(start) not in (int, float) or type(end) not in (int, float)
+                    or not math.isfinite(start) or not math.isfinite(end)
+                    or not previous_start <= start <= end or end < previous_end):
+                raise ValueError('Invalid character alignment times')
+            previous_start, previous_end = start, end
+            if char.isspace():
+                if current:
+                    words.append(current); current = None
+            elif current:
+                current['word'] += char; current['end'] = end
+            else:
+                current = {'word': char, 'start': start, 'end': end}
+        if current:
+            words.append(current)
+        validate_words(words)
+        return {'version': 1, 'timing': 'provider-character-alignment',
+                'text': ''.join(chars), 'words': words}
+    except (KeyError, TypeError, AttributeError):
+        raise ValueError('Invalid character alignment; provider payload not logged') from None
+
+
+def validate_words(words, audio_duration=None):
+    if not isinstance(words, list) or not words:
+        raise ValueError('Aligned words must be nonempty')
+    previous = 0
+    for word in words:
+        if not isinstance(word, dict) or not {'start', 'end', 'word'} <= word.keys():
+            raise ValueError('Aligned word requires word, start and end')
+        a, b, text = word['start'], word['end'], word['word']
+        if (type(a) not in (int, float) or type(b) not in (int, float)
+                or not math.isfinite(a) or not math.isfinite(b) or not previous <= a < b
+                or not isinstance(text, str) or not text.strip() or re.search(r'\s', text)
+                or (audio_duration is not None and b > audio_duration + .05)):
+            raise ValueError('Invalid/overlapping aligned words or timing beyond audio')
+        previous = b
+
+
+def load_words(file, audio_duration):
+    data = json.loads(Path(file).read_text())
+    if not isinstance(data, dict) or data.get('version') != 1 or data.get('timing') not in ('provider-character-alignment', 'forced-alignment', 'supplied-alignment'):
+        raise ValueError('Expected version-1 aligned word sidecar with timing provenance')
+    validate_words(data.get('words'), audio_duration)
+    return data
+
+
+def word_cues(words, max_chars=48, max_words=8):
+    """Readable phrase cues retaining the first/last measured word boundaries."""
+    validate_words(words)
+    groups, group = [], []
+    for word in words:
+        if group and (len(group) >= max_words or len(' '.join(w['word'] for w in group + [word])) > max_chars
+                      or word['start'] - group[-1]['end'] > .6):
+            groups.append(group); group = []
+        group.append(word)
+    if group:
+        groups.append(group)
+    return [{'start': g[0]['start'], 'end': g[-1]['end'], 'text': ' '.join(w['word'] for w in g)} for g in groups]
+
+
+def write_elevenlabs_timed(response_data, source):
+    try:
+        response = json.loads(response_data)
+        audio = base64.b64decode(response['audio_base64'], validate=True)
+        if not (audio.startswith(b'ID3') or (len(audio) > 2 and audio[0] == 255 and audio[1] & 224 == 224)):
+            raise ValueError('ElevenLabs returned unexpected audio format')
+        alignment = response.get('normalized_alignment') or response.get('alignment')
+        words = alignment_words(alignment)
+    except (json.JSONDecodeError, KeyError, TypeError, AttributeError, binascii.Error, UnicodeDecodeError):
+        raise ValueError('Invalid ElevenLabs timed response; check usage before retrying') from None
+    Path(source).write_bytes(audio)
+    return words
 
 
 def write_minimax_mp3(response_data, source):
@@ -210,6 +301,7 @@ def voice_command(args):
                 cmd += ['-v',voice['voice']]
             run(cmd)
         else:
+            aligned = None
             url, env, payload = request_config(voice,b['narration'])
             key = os.environ[env]
             headers = {'Content-Type':'application/json'}
@@ -221,7 +313,10 @@ def voice_command(args):
             try:
                 with urllib.request.urlopen(request,timeout=120) as response:
                     response_data = response.read()
-                    if provider == 'minimax':
+                    if provider == 'elevenlabs' and voice.get('timestamps'):
+                        aligned = write_elevenlabs_timed(response_data, source)
+                        (out / (b['id'] + '.words.json')).write_text(json.dumps(aligned, indent=2))
+                    elif provider == 'minimax':
                         write_minimax_mp3(response_data,source)
                     elif provider == 'gemini':
                         write_gemini_wav(response_data,source)
@@ -245,7 +340,10 @@ def voice_command(args):
             except urllib.error.URLError:
                 raise ValueError(f'{b["id"]}: network failed; check provider usage before retrying') from None
         run([FFMPEG,'-v','error','-i',source,'-ar','48000','-ac','2',target])
-        print(f'{b["id"]}: {duration(target):.2f}s')
+        measured = duration(target)
+        if provider == 'elevenlabs' and voice.get('timestamps'):
+            validate_words(aligned['words'], measured)
+        print(f'{b["id"]}: {measured:.2f}s')
     (out/'voice.json').write_text(json.dumps(voice,indent=2))
 
 
@@ -257,7 +355,7 @@ def tc(seconds):
     return f'{h:02}:{m:02}:{s:02},{ms:03}'
 
 
-def cues_for(beat, audio_duration):
+def cues_for(beat, audio_duration, aligned=None):
     if 'cues' in beat:
         cues = beat['cues']
         end = 0
@@ -269,6 +367,9 @@ def cues_for(beat, audio_duration):
         if not cues:
             raise ValueError('Explicit cues cannot be empty')
         return cues, 'supplied'
+    if aligned is not None:
+        validate_words(aligned['words'], audio_duration)
+        return word_cues(aligned['words']), aligned['timing']
     words = beat['narration'].split()
     chunks, current = [], []
     for word in words:
@@ -301,7 +402,9 @@ def assemble(args):
             raise ValueError('Capture has no video stream')
         if not any(s['codec_type']=='audio' for s in probe(wav)['streams']):
             raise ValueError('Narration has no audio stream')
-        cues, kind = cues_for(b,adur)
+        sidecar = audio / (b['id'] + '.words.json')
+        aligned = load_words(sidecar, adur) if sidecar.is_file() and 'cues' not in b else None
+        cues, kind = cues_for(b,adur,aligned)
         items.append((b,video,wav,vdur,adur,cues,kind))
     out = fresh(args.out)
     timeline, srt, built, cursor, cue_id = [], [], [], 0, 1

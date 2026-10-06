@@ -225,9 +225,10 @@ Each plugin bundles a square PNG icon for the website and portable package. Clau
 
 [UI Walkthrough Video](plugins/ui-walkthrough-video/README.md) records real interface
 flows as scene clips and screenshots, then creates narrated MP4s, captions and silent
-revoice copies. It prompts for voice quality or a quality range and supports local
-draft speech, OpenAI, ElevenLabs and supplied audio. Browser/media runtimes are
-required for this plugin; see its skill for setup and the synthetic smoke test.
+revoice copies. It offers optional HyperFrames composition and asks before choosing
+it for a new video. Measured speech cues, an audio-first storyboard and separately
+authored portrait layouts support more directed demos. Browser/media runtimes are
+required; see its skill for provider choices, setup and synthetic validation.
 
 Install: `codex plugin add ui-walkthrough-video@rl0ve-agent-skills` or
 `claude plugin install ui-walkthrough-video@rl0ve-agent-skills`.
