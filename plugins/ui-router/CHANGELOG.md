@@ -2,6 +2,7 @@
 
 ## 1.19.0 - 2026-10-11
 
+- Keep the repo project-neutral: the paired eval and split review no longer name a consuming project; project task briefs and results live in that project's repo.
 - `install_optional_skills.py` honors `AGENT_HOST=codex` for skills-CLI installs (previously always `--agent claude-code`).
 - Add `route-3d-work`, a separate ~800-word skill for real-time 3D: project-as-lead,
   runtime → knowledge map, specialists by need, Dream Loop under the fidelity gate,
