@@ -1,52 +1,59 @@
 # Model and agent routing for writing
 
-Use this reference only when model or agent selection matters. Do not turn an ordinary writing request into a routing exercise.
+Use this reference only when model or agent selection matters. Do not turn an ordinary
+writing request into a routing exercise.
 
 ## Core rule
 
-The parent agent that holds the conversation should normally write the final copy. It has the best access to the user's audience, intent, corrections, source material, and voice samples. Treat Natural Writing as the editorial specialization; a separate “writer agent” is usually unnecessary.
+The parent agent that holds the conversation writes the final copy. It has the best
+access to the user's audience, intent, corrections, sources and voice samples. Natural
+Writing is the editorial specialization; a separate "writer agent" is usually
+unnecessary.
 
-Use the host the user chose. Do not dispatch work between Codex and Claude unless the user explicitly asks for a cross-provider comparison or workflow.
+**Host-native:** write in the host and model the user is working in. Do not dispatch
+writing between Codex and Claude unless the user asks for a cross-provider comparison
+or workflow. When Work Router is installed it owns model, effort and delegation; this
+file only adds what is specific to prose.
 
-Prefer model families or roles over exact version numbers. Select the newest permitted model in the named family so this guidance does not become stale when providers update their lineups.
+## Effort for prose
 
-## Default routing matrix
+- Medium effort is the default. More reasoning is not automatically better prose.
+- Use high effort for difficult argument structure, ambiguous evidence, delicate
+  positioning or close voice calibration.
+- Reserve xhigh or max for high-stakes review, not routine composition. Excess
+  deliberation produces scaffolding, taxonomies, caveats and symmetrical structure
+  the prose does not need.
+- A strong writing sample matters more than a one-step model upgrade.
 
-| Work | Codex | Claude | Notes |
-| --- | --- | --- | --- |
-| Routine drafting, editing, and rewriting | Parent Sol-family model, medium effort | Parent Sonnet-family model, medium effort | Best default balance of judgment, speed, and voice fidelity. |
-| Executive, persuasive, creative, or unusually voice-sensitive prose | Parent Sol-family model, high effort | Parent Opus-family model, medium or high effort | Escalate only when nuance or consequences justify it. |
-| Source-heavy writing | Terra-family explorer gathers and organizes evidence; parent Sol writes | Haiku may scan or gather; parent Sonnet or Opus writes | The research agent must not become the final voice. |
-| Consequential final audit | Sol advisor or equivalent read-only reviewer | Opus-family read-only reviewer | Reviewer returns findings; parent decides and applies edits. |
-| Long-horizon, corpus-scale project | Parent Sol with research support | Fable-family model only when sustained autonomous work is genuinely needed | Do not use a long-horizon agent merely to improve an email, memo, post, or article. |
+## Source-heavy writing
 
-## Effort policy
+A scout or research agent may gather and organize evidence. It must not become the
+final voice. The parent writes from the evidence it returns.
 
-- Default to medium effort. More reasoning is not automatically better prose.
-- Use high effort for difficult argument structure, ambiguous evidence, delicate positioning, or close voice calibration.
-- Reserve xhigh or max for exceptional analysis or high-stakes review, not routine composition. Excess deliberation can produce scaffolding, taxonomies, caveats, and symmetrical structure the prose does not need.
-- A strong representative writing sample matters more than a one-step model upgrade.
+## One writer, one reviewer
 
-## One-writer, one-reviewer pattern
-
-For consequential prose, use two passes:
+For consequential prose:
 
 1. The parent writes or edits the complete piece with the user's full context.
-2. A fresh read-only reviewer checks factual preservation, voice drift, generic assistant phrasing, repetition, over-formatting, and the strength of the opening and ending.
+2. A fresh read-only reviewer checks factual preservation, voice drift, generic
+   assistant phrasing, repetition, over-formatting and the strength of the opening
+   and ending.
 3. The parent evaluates the findings and makes the final changes.
 
-Do not let two write-capable agents revise the same artifact in parallel. Competing rewrites tend to blur ownership and flatten voice.
+Do not let two write-capable agents revise the same artifact in parallel. Competing
+rewrites blur ownership and flatten voice.
 
 ## Reviewer contract
 
-If a dedicated Natural Writing Reviewer is available, it should:
+A Natural Writing reviewer:
 
-- be read-only;
-- quote only the smallest useful excerpts;
-- separate factual or voice failures from optional preferences;
-- identify no more issues than materially affect the reader;
-- propose repair directions rather than replacing the entire piece;
-- avoid AI-authorship guesses and detector claims;
-- return “no material issues” when the draft already works.
+- is read-only;
+- quotes only the smallest useful excerpts;
+- separates factual or voice failures from optional preferences;
+- raises no more issues than materially affect the reader;
+- proposes repair directions rather than replacing the piece;
+- makes no AI-authorship guesses or detector claims;
+- returns "no material issues" when the draft already works.
 
-Do not use a fast scout, implementation-focused agent, or research agent as the final editorial authority. Those roles can locate patterns or evidence, but the context-holding parent should own the finished prose.
+A fast scout, an implementation agent or a research agent is never the final
+editorial authority.

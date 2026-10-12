@@ -2,6 +2,7 @@
 
 ## 1.19.0 - 2026-10-11
 
+- `install_optional_skills.py` honors `AGENT_HOST=codex` for skills-CLI installs (previously always `--agent claude-code`).
 - Add `route-3d-work`, a separate ~800-word skill for real-time 3D: project-as-lead,
   runtime → knowledge map, specialists by need, Dream Loop under the fidelity gate,
   tools and seven completion gates. `route-ui-work` stays a layer for HUD and overlays.

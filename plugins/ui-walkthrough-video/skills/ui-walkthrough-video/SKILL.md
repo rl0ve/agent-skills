@@ -52,7 +52,8 @@ project creation or rendering. A declined choice keeps the existing capture/nati
 editor/Pillow route available. Reuse a choice during revisions of that project.
 The composition choice does not authorize paid speech, generated music or publishing.
 
-If selected, read [the HyperFrames production route](references/hyperframes.md).
+If selected, read [the HyperFrames production route](references/hyperframes.md). It
+names the few official HyperFrames skills to install by name, under this route.
 It provides a storyboard contract, a pinned project builder, measured speech cues,
 optional music/SFX and separate landscape/portrait layouts. HyperFrames source is
 an editable HTML composition; it does not fulfill a Cap/Recordly native-project
@@ -90,8 +91,7 @@ the requested visual quality. Clueso's official skills/MCP are a close documente
 fit. Recordly is an editor/capture route; do not rely on its internal smoke-export
 hook as a supported headless API. Remotion is a programmable composition option.
 
-The basic `capture.mjs` / `render.py` route remains available. Version 1.3 provides a
-working polished route: `capture-polished.mjs` records clean footage, pointer endpoints,
+The basic `capture.mjs` / `render.py` route remains available. The polished route: `capture-polished.mjs` records clean footage, pointer endpoints,
 clicks and scroll events; `polish.py` renders the cursor/camera at 60fps, a presentation
 frame and captions outside the UI. Read [polished-example.md](references/polished-example.md)
 for the tested existing-site recipe. A conservative automatic zoom is available when keyframes are omitted;

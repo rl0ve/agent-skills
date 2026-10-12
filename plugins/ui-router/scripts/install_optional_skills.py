@@ -76,7 +76,7 @@ def build_command(
     else:
         installer = item["installer"]
     if installer == "skills":
-        command = ["npx", "-y", "skills", "add", item["source"], "--agent", "claude-code"]
+        command = ["npx", "-y", "skills", "add", item["source"], "--agent", "codex" if agent == "codex" else "claude-code"]
         for skill in item.get("skills", []):
             command.extend(["--skill", skill])
         if scope == "user":
@@ -106,7 +106,8 @@ def print_catalog(catalog: dict[str, Any]) -> None:
 def print_plan(
     items: list[dict[str, Any]], scope: str, assume_yes: bool, allow_third_party_hooks: bool
 ) -> None:
-    print(f"Plan: {len(items)} selected item(s) | agent=claude-code | scope={scope}")
+    host = "codex" if os.environ.get("AGENT_HOST", "").lower() == "codex" else "claude-code"
+    print(f"Plan: {len(items)} selected item(s) | agent={host} | scope={scope}")
     print("Nothing runs unless --execute is supplied.\n")
     for number, item in enumerate(items, start=1):
         command = build_command(item, scope, assume_yes, allow_third_party_hooks)

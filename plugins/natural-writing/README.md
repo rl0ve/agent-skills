@@ -1,4 +1,4 @@
-# Natural Writing for Claude Code
+# Natural Writing for Claude Code and Codex
 
 Natural Writing is a voice-preserving editor and writing router. It handles drafts, rewrites, diagnosis, voice matching, product copy, documentation, executive prose, and cleanup of common assistant-like writing patterns.
 

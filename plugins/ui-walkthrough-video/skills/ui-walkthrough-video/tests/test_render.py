@@ -3,6 +3,7 @@ from pathlib import Path
 import tempfile
 import json
 import base64
+import io
 import wave
 from types import SimpleNamespace
 from unittest.mock import patch
@@ -72,6 +73,40 @@ class GeminiTests(unittest.TestCase):
         self.assertTrue(url.endswith(':generateContent'))
         self.assertEqual(body['generationConfig']['speechConfig']['voiceConfig']['prebuiltVoiceConfig']['voiceName'],'Kore')
         self.assertIn('Hello',body['contents'][0]['parts'][0]['text'])
+
+    def test_gemini_38_verbatim_contract(self):
+        url,key,body=r.request_config({'provider':'gemini','model':'gemini-3.8-flash-tts','voice':'Kore','instructions':'Calm, medium pace'},'Hello')
+        part=body['contents'][0]['parts'][0]
+        self.assertEqual(part['text'],'Hello')
+        self.assertEqual(part['speech_metadata'],{'style':'Calm, medium pace'})
+        self.assertEqual(body['generationConfig']['speechConfig']['voiceConfig'],{'voice':'Kore'})
+        self.assertTrue(url.endswith('/gemini-3.8-flash-tts:generateContent'))
+        _,_,lite=r.request_config({'provider':'gemini','model':'gemini-3.8-flash-lite-tts','voice':'voice_abc'},'Hi')
+        self.assertNotIn('speech_metadata',lite['contents'][0]['parts'][0])
+        self.assertEqual(lite['generationConfig']['speechConfig']['voiceConfig'],{'voice':'voice_abc'})
+        for model,verbatim in [('gemini-3.1-flash-tts-preview',False),('gemini-2.5-pro-preview-tts',False),
+                               ('gemini-3.10-flash-tts',True),('gemini-4-flash-tts',True),('google/gemini-3.8-flash-tts',True)]:
+            with self.subTest(model=model): self.assertEqual(r.gemini_verbatim_model(model),verbatim)
+
+    def test_gemini_wav_response_written_without_rewrap(self):
+        buf=io.BytesIO()
+        with wave.open(buf,'wb') as w:
+            w.setnchannels(1); w.setsampwidth(2); w.setframerate(24000); w.writeframes(b'\x00\x00'*240)
+        data=buf.getvalue()
+        resp=json.dumps({'candidates':[{'finishReason':'STOP','content':{'parts':[{'inlineData':{'mimeType':'audio/wav','data':base64.b64encode(data).decode()}}]}}]})
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/'audio.wav'; r.write_gemini_wav(resp,p)
+            self.assertEqual(p.read_bytes(),data)
+            bad=json.dumps({'candidates':[{'finishReason':'STOP','content':{'parts':[{'inlineData':{'mimeType':'audio/wav','data':base64.b64encode(b'\x00'*64).decode()}}]}}]})
+            q=Path(d)/'bad.wav'
+            with self.assertRaises(ValueError): r.write_gemini_wav(bad,q)
+            self.assertFalse(q.exists())
+
+    def test_eleven_v4_settings_restricted(self):
+        _,_,body=r.request_config({'provider':'elevenlabs','model':'eleven_v4','voice':'id','voice_settings':{'stability':0.5,'similarity_boost':0.75}},'Hi')
+        self.assertEqual(body['model_id'],'eleven_v4')
+        with self.assertRaises(ValueError):
+            r.request_config({'provider':'elevenlabs','model':'eleven_v4','voice':'id','voice_settings':{'style':0.3}},'Hi')
 
     def test_pcm_wrapped_correctly(self):
         with tempfile.TemporaryDirectory() as d:

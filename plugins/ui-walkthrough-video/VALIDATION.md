@@ -1,5 +1,11 @@
 # Validation
 
+## 1.7.0 — 2026-10-11
+
+- Forty-five plugin tests pass. New offline tests cover the Gemini 3.8 request contract (style in `speech_metadata`, `voiceConfig.voice`, Flash-Lite without style), a RIFF WAV response written byte-for-byte, a malformed WAV rejected with no file written, and Eleven v4 voice-setting restriction.
+- **No live Gemini 3.8 or Eleven v4 call was made.** The request shape follows Google's generateContent speech guide and ElevenLabs' model docs as read on 2026-10-11. Run a short paid audition before a full take; check that the first 3.8 response's MIME type is accepted and that `eleven_v4` `/with-timestamps` returns alignment.
+- The HyperFrames pin was not changed, so no new render proof was needed.
+
 ## 1.6.0 — 2026-10-06
 
 - Forty-two plugin tests pass, including absent opt-in with no output, portrait/landscape layout validation, source trim/audio-offset preservation, alignment grouping, explicit-caption precedence in both renderers, and malformed timing rejection. A mocked ElevenLabs timestamp response containing a real MP3 tone converts to stereo 48kHz WAV plus a validated sidecar; paid-call preflight and one-call behavior are checked. No live hosted speech call was made. The basic assembler also fully decoded a real synthetic MP4 using supplied alignment and labeled its caption timing correctly.

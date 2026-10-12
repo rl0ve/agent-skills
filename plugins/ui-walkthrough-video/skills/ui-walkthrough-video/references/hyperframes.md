@@ -57,6 +57,25 @@ source length, speech duration, scene continuity, layout and timing before creat
 a fresh project. It cannot infer whether the footage establishes a product claim.
 The template pins HyperFrames 0.8.137 and GSAP 3.14.2 with a lockfile. Repeat the
 proof when deliberately upgrading. The earlier 0.8.29 trials remain historical.
+Upstream had reached v0.8.149 by 2026-10-11; upgrade only with a fresh landscape and
+portrait proof recorded in VALIDATION.md.
+
+**Official HyperFrames skills.** HeyGen publishes 21 agent skills with `/hyperframes`
+as their router ([repo](https://github.com/heygen-com/hyperframes)). Load them for
+composition authoring detail under this route, which keeps ownership of real capture,
+the storyboard contract, narration and QA. Install by name; a non-interactive
+`npx skills add heygen-com/hyperframes` with no `--skill` installs all 21, and their
+broad triggers then compete with this skill:
+
+```sh
+npx skills add heygen-com/hyperframes --skill hyperframes --skill hyperframes-core \
+  --skill hyperframes-keyframes --skill hyperframes-cli
+```
+
+Add `embedded-captions` or `hyperframes-audio` only when that layer is in scope.
+Leave `product-launch-video`, `faceless-explainer`, `talking-head-recut` and the other
+creation workflows uninstalled. They would replace the observed-UI walkthrough with a
+generated composition.
 Consult the installed CLI `--help`/`doctor` before changing browser/GPU settings;
 do not install another browser implicitly. Begin with one render worker.
 Check browser availability before rendering: the CLI may otherwise download its
