@@ -1,6 +1,6 @@
 ---
 name: route-ui-work
-description: Route UI, UX, frontend, interactive games and worlds, design review, motion, design-to-code, component-library, and interface-copy work through the researched skill catalog and live installed capabilities. Includes project-specific reference research, visual and component samples at useful decision points, iteration steering, and implementation-resource selection. Honor explicitly named skills and avoid unnecessary stacking.
+description: Route UI, UX, frontend, design review, motion, design-to-code, component-library, and interface-copy work through the researched skill catalog and live installed capabilities. Includes project-specific reference research, visual and component samples at useful decision points, iteration steering, and implementation-resource selection. Honor explicitly named skills and avoid unnecessary stacking.
 compatibility: Codex and Claude Code with Agent Skills and plugin support.
 ---
 
@@ -83,39 +83,27 @@ not by themselves establish that the requested visual direction was delivered.
 
 Prefer the complete selected upstream workflow when its distinctive method fits.
 UI Router owns selection and shared checks; specialists own detailed execution.
-Use [references/upstream-skills.md](references/upstream-skills.md) for exact Meng and
-Dream Loop entrypoints, selective loading/installation, and clearly labeled adaptations.
+Use [references/upstream-skills.md](references/upstream-skills.md) for exact Meng
+entrypoints, selective loading/installation, and clearly labeled adaptations.
 
 ## Graphical and interactive builds
 
-For a playable world, simulation or spatial learning product whose runtime or AI
-architecture is unresolved, read [interactive-worlds.md](references/interactive-worlds.md).
-Choose from delivery, authoring and interaction needs; keep game state, content and
-optional live intelligence distinct. Use [interaction-contracts.md](references/interaction-contracts.md)
-for learning tasks and permitted actions. Settled stacks and small fixes stay direct; diagnose a scoped scene-quality issue
-with the existing owner before adding a specialist.
+**Real-time 3D goes to `route-3d-work`:** playable worlds, simulations, spatial scenes,
+three.js/WebGL/WebXR builds, Blender-to-web pipelines, Dream Loop and high-fidelity 3D.
+That skill owns the runtime map, specialists, fidelity gate and tools. This router
+stays a layer for the interface over the scene: HUD, menus, overlays and typography.
 
-For substantial graphical apps, scenes, creative tools or expressive sites, select a
-suitable [upstream specialist](references/upstream-skills.md), including Dream Loop when
-high graphical fidelity calls for its target/build/critique method. The lighter
+For substantial 2D graphical apps, creative tools or expressive sites, select a suitable
+[upstream specialist](references/upstream-skills.md). The lighter
 [visual build loop](references/visual-build-loop.md) is an adaptation for proportionate
-work or a stated fallback, not an equivalent replacement for a selected specialist.
-For substantial high-fidelity 3D work, apply the required
-[fidelity execution gate](references/upstream-skills.md#fidelity-execution-gate).
-When no target is supplied, use the available host Imagegen tool within authorization
-to author a product-specific target from the current baseline before implementation.
-Listing or loading Dream Loop is not evidence that its loop ran or passed.
-For realistic interactive 3D, apply the focused [spatial checks](references/spatial-realism.md)
-when asset-pipeline ownership, assets, lighting, interface framing or delivery are
-the unresolved concern. Choose authoring versus runtime responsibilities per task;
-verify the delivered asset boundary before rebuilding art to fix a visual defect.
-Pair appearance with an exercised user action, keep generated targets distinct from
-working output, and verify assets in the destination. For spatial entrances and sound/media experiences,
-preserve the route into the real task and apply the relevant
-[motion and media checks](references/motion-quality.md). A public page can also be
-the working product; use the hybrid case in the taxonomy and the focused question
-examples in design steering when intent remains consequentially unclear. Small edits
-and settled designs stay direct.
+work or a stated fallback, not a replacement for a selected specialist. For scroll-world
+3D on a marketing page, use the creative-expressive chain and apply the 3D route's
+[fidelity gate](../route-3d-work/references/fidelity-loop.md#fidelity-execution-gate)
+when high fidelity is requested. For spatial entrances and sound/media experiences,
+preserve the route into the real task and apply the
+[motion and media checks](references/motion-quality.md). A public page can also be the
+working product; use the hybrid case in the taxonomy. Small edits and settled designs
+stay direct.
 
 ## Inspiration sources and visual resources
 
@@ -133,11 +121,11 @@ For inspiration, substantial new visual work with unresolved direction, motion r
 - Honor an explicit free-only constraint: public browsing, verified free code and free allowances are eligible; paid MCPs, trials that require billing and usage that incurs charges are not. Existing user authorization covers the agreed install scope; do not ask again solely because an installer is plan-first.
 - A previous tool failure does not establish continuing unavailability. Retry an already configured and authorized connected service when it is relevant, then record the current result. Keep account status session-scoped.
 
-In Codex, use Work Router's Codex table or stay in the parent. The Claude agent names and model defaults below apply only in Claude Code.
+## Execution routes
 
-## Claude execution routes
-
-When the Work Router is installed, apply its work route after composing the UI skill chain. Otherwise use these defaults:
+**Work Router owns model, effort and delegation.** When it is installed, apply its
+route after composing the UI skill chain. Without it, stay in the parent in Codex; in
+Claude Code use these bundled agents, which do not switch the parent's model:
 
 | UI work | Agent | Model | Effort |
 |---|---|---|---|
@@ -145,63 +133,10 @@ When the Work Router is installed, apply its work route after composing the UI s
 | Defined or substantial UI implementation | `ui-router:ui-builder` | Opus 5.5 | medium |
 | Consequential visual, accessibility, or system review | `ui-router:ui-critic` | Opus 5.5 | high |
 
-For new substantial Claude UI work, start at Opus 5.5 medium. Verify `opus` resolves
-to `claude-opus-5-5` on the current provider and that Claude Code 2.1.280+ permits it;
-the bundled agents retain portable aliases. Low fits a small supervised change,
-high a difficult bug or consequential review. Raise effort for a demonstrated need
-for depth, not merely because the previous Opus used a higher label.
-An explicit 5.5 requirement remains unmet when only an older model is available;
-disclose that limit and obtain authorization before substituting another revision.
-
-Keep trivial UI adjustments in the parent. In Codex, follow Work Router's model policy:
-GPT-6.1 Sol for substantial UI builds and implementation, including new work with a
-normal visual-quality bar; prefer GPT-6 Astra for exceptionally difficult unresolved
-creative/spatial judgment where maximum quality matters or a demonstrated Sol 6.1
-capability limit; GPT-6 Luna for narrow objectively verifiable work.
-GPT-5.6 Terra is a conditional reference/evidence reader, not the final visual judge.
-Preserve explicit model choices and a progressing capable parent. The October 1
-Arena WebDev result still favors Astra Max over Sol 6.1 Max, but by a narrower margin;
-it does not establish the best effort, fastest accepted design or universal visual
-winner. UI Router still owns the design chain, rendered comparison and exercised interaction. A model release
-does not justify 3D, image generation or subagents. These Claude profiles do not switch
-the parent.
-
-For model/effort reviews, use Work Router's `references/benchmark-sources.md` when
-available. Include [Arena WebDev](https://arena.ai/leaderboard/code) and relevant design
-categories or Image-to-WebDev results, plus the Agent board when tool workflows matter;
-cross-check with Artificial Analysis and task-specific original benchmarks. In standalone
-use, retain dates, exact model/effort/harness, sample sizes and uncertainty. A coding or
-intelligence score does not measure taste, and missing coverage is not a low score.
-Refresh when reviewing a release or disputed route, not on every UI task.
-
-For Codex effort selection, **Sol 6.1 high** fits substantial new or settled UI work;
-**Sol 6.1 xhigh** fits unusually deep implementation reasoning within Sol.
-**Astra high** is the usual starting point for difficult unresolved creative/spatial
-direction; **Astra xhigh** fits exceptionally demanding judgment or tradeoffs. Either
-xhigh route can be selected upfront when warranted. No failed Sol attempt or automatic
-max/ultra escalation is required. Apply Work Router's task-dependent latency/token
-tradeoffs and contextual timing check; do not ask a second timing question here.
-
-When host choice is open for a new substantial UI build, consider Opus 5.5 as a
-quality-focused Claude route. The October 1 Arena WebDev overall board places its
-Max configuration ahead of Astra Max and Sol 6.1 Max, with rank uncertainty; it does
-not validate medium/high or native completion time. An active Codex task keeps its
-supported model policy. Any cross-host handoff must be available, authorized and
-worth its integration cost. Read Work Router's
-[dated assessment](../../../work-router/skills/route-ai-work/references/opus-5-5-review.md)
-or, in standalone use, the original sources under the benchmark rules above.
-
-Keep Sonnet for mechanical or planned work that meets the checks. The previous
-Sonnet-above-medium ban came from Sonnet 5/Opus 5 evidence and cannot rank their
-5.5 revisions. Give `ui-builder` a precise file map and sole-writer scope; improved
-delegation does not authorize a second writer or an agent team.
-
-For Opus 5.5 output that feels generic, specify concrete reference traits and the
-observed patterns that conflict with this brief. Avoid a universal style blacklist
-or a vague instruction to make it less generic. Inspect the rendered representative
-slice and refine it with the selected design lead. For dense visual inputs, use the
-original resolution and crop/zoom where useful; higher effort alone does not prove
-chart-reading accuracy. Better model capability preserves all quality gates.
+Keep trivial adjustments in the parent. Give `ui-builder` a precise file map and
+sole-writer scope. When output feels generic, name the concrete reference traits and
+the conflicting patterns you observed rather than asking for something "less generic",
+then inspect the rendered slice. A model choice never relaxes the quality gates.
 
 ## Selection order
 

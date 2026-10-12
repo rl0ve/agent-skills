@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.9.0 - 2026-10-11
+
+- Slim `route-ai-work/SKILL.md` from ~4,290 to ~1,550 words: overrides, timing, the
+  eight routing rules, both route tables, lean-context rules, delegation, escalation
+  and host notes stay; the full rationale moves verbatim to `references/model-routes.md`.
+- Narrow the description so ordinary single-session architecture, debugging and review
+  tasks no longer load the skill; model/effort choice, delegation, parallel and long
+  autonomous work still do.
+- Add the host-native harness rule: host-sensitive workflows such as Dream Loop run in
+  the active host's model (Codex → GPT-6 Astra, Claude Code → Claude Opus 5.5) unless
+  the user names another; no cross-host move to match an upstream harness.
+- Root README keeps a short summary; the task-by-task matrix and latency/token table
+  move to the Work Router README as the single human-facing copy.
+
 ## 1.8.9 - 2026-10-04
 
 - Add reversible task, project and host-wide routing overrides with ordered priorities,

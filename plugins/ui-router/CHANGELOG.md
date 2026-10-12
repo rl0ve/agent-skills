@@ -1,5 +1,33 @@
 # Changelog
 
+## 1.19.0 - 2026-10-11
+
+- Add `route-3d-work`, a separate ~800-word skill for real-time 3D: project-as-lead,
+  runtime → knowledge map, specialists by need, Dream Loop under the fidelity gate,
+  tools and seven completion gates. `route-ui-work` stays a layer for HUD and overlays.
+- Move `interactive-worlds.md` (split into `runtime-and-slice.md` and on-demand
+  `live-ai-and-hosts.md`), `spatial-realism.md`, `interaction-contracts.md` and the
+  Dream Loop/fidelity-gate and photoreal/playable sections of `upstream-skills.md`
+  into `route-3d-work/references/`. Redirect stubs keep old anchors for one release.
+- Host-native harness: Dream Loop runs in the active host's model (Codex → GPT-6 Astra,
+  Claude Code → Claude Opus 5.5) unless the user names another; no cross-host moves.
+- Add knowledge layers and tools: three.js `llms.txt`, Meng water/sky and
+  `optimize-threejs-games`, 3dviz-pro-max as CLI retrieval only, two read-only
+  threejs-game-skills references, Blender CLI/MCP split, Needle Inspector trial,
+  conditional Spark. Exclude foreign-runtime and generator-first packs by default.
+- `optional-skills.json`: `claudedesignskills` now installs only `gsap-scrolltrigger`,
+  `threejs-webgl` and `blender-web-pipeline`; `awwwards-3d` leaves the `creative`
+  profile; new `meng-3d`, `meng-game-dev` entries and a `3d` profile.
+- `route-ui-work/SKILL.md`: remove the model-policy block (Work Router owns model and
+  effort), keep the three Claude agents, drop "interactive games and worlds" from the
+  description. 2,866 → ~2,160 words.
+- No-marketplace installer copies both routing skills.
+- Field guide data (`docs/router-data.json`, `docs/field-guide.html`): the
+  creative-expressive canonical chain reflects the ClaudeDesign/Awwwards demotion and
+  the 3D handoff to `route-3d-work`.
+- Add a paired-eval protocol (`tests/route-3d-paired-eval.md`) and the
+  [October 11 review](docs/router-3d-split-review-2026-10-11.md).
+
 ## 1.18.11 - 2026-10-04
 
 - Choose asset-authoring and runtime responsibilities per task; use a compatible

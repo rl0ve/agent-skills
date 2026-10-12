@@ -12,79 +12,18 @@ Codex, and Haiku, Sonnet, Opus 5.5, and conditional Fable routes in Claude Code.
 
 ## Which model and reasoning level should I use?
 
-These are **recommended starting routes**, reviewed October 2, 2026. They combine
-current model guidance with task characteristics; they are not a benchmark ranking of
-every model-and-effort combination. Keep a capable, progressing session when changing
-models would add more handoff work than benefit.
+Work Router owns this. Short version, reviewed October 2026:
 
-For Claude Code, start substantial implementation, analysis, long jobs and prose
-with **Opus 5.5 medium**; use high for difficult diagnosis and consequential review.
-Fable remains available for explicit preference or a demonstrated capability/style
-benefit. Check that the provider's `opus` alias actually resolves to 5.5 and that
-Claude Code 2.1.280+ supports it. See the
-[dated release assessment](plugins/work-router/skills/route-ai-work/references/opus-5-5-review.md).
+- **Codex:** GPT-6.1 Sol for substantial work (medium, or high for complex work);
+  GPT-6 Astra for maximum-capability needs; GPT-6 Luna for narrow work with objective checks.
+- **Claude Code:** Opus 5.5 medium for substantial work, high for difficult diagnosis
+  and consequential review; Fable on explicit preference or demonstrated benefit.
+- **Dream Loop and other host-sensitive workflows** run in the host you are in
+  (Codex → Astra, Claude Code → Opus 5.5) unless you name another model.
 
-The following matrix selects models **within Codex**:
-
-| What you need done | Start with | Reasoning | When to change the route |
-|---|---|---|---|
-| A tiny edit, one-step answer, or tightly connected follow-up | Current capable model | Keep the active level | Do it directly; creating another agent usually adds overhead. |
-| A small inventory, extraction, classification, or clearly specified mechanical edit | **Luna 6** | **high** | Use Sol when interpretation, ambiguity, or consequential judgment becomes the hard part. |
-| Routine coding, a defined feature, ordinary debugging, or substantive synthesis | **Sol 6.1** | **medium** | Raise to high when the task requires deeper tracing or more edge-case analysis. |
-| Complex implementation, architecture, difficult debugging, or integrating several systems | **Sol 6.1** | **high** | Consider xhigh for unresolved reasoning; choose Astra when maximum capability or better judgment is needed. |
-| Difficult architecture, diagnosis, or reasoning with unresolved dependencies that needs deeper analysis within Sol | **Sol 6.1** | **xhigh** | Use when the added depth is justified; choose Astra instead when model capability or judgment is the limiting factor. |
-| A quick independent UX opinion, implementation review, or first-pass diagnosis | **Sol 6.1** | **medium** | Use high for deep review. Low is an option only for bounded, read-only triage with low stakes. |
-| Substantial UI implementation with an established visual direction | **Sol 6.1** | **high** | Use Astra when the unresolved problem is exceptionally difficult creative or spatial judgment. |
-| New substantial UI build with a normal visual-quality bar | **Sol 6.1** | **high** | Render and compare the result; a model label does not establish visual quality. |
-| Exceptionally difficult unresolved art direction or creative/spatial work where maximum quality matters | **Astra 6** | **high** | Consider xhigh if difficult decisions remain unresolved. A failed Sol attempt is not required. |
-| The hardest reasoning, diagnosis, or synthesis across several systems where maximum capability is needed | **Astra 6** | **high** | Consider xhigh when depth remains insufficient; justify max or ultra separately. |
-| Exceptionally demanding reasoning or creative/spatial judgment with difficult unresolved tradeoffs | **Astra 6** | **xhigh** | A deliberate deeper pass, including upfront when clearly warranted. Validate the result; max/ultra are not automatic next steps. |
-| Independent document or repository reading with a demonstrated Terra advantage, or an explicit Terra preference | **Terra 5.6** | **medium** | Use Luna for straightforward extraction or Sol for judgment-heavy interpretation when there is no reason to prefer Terra. |
-| Stable, bounded background work where cost matters more than latency | **Luna 6** | **max**, for the named economy profile | Measure accepted work, retries and review time; this setting is not proven cheapest for every task. |
-| Critical independent review when deliberately staying within Sol | **Sol 6.1** | **max**, conditionally | Use only when the risk or a prior strong failure warrants it; this is not a required rung before Astra. |
-
-### How latency and token use affect the choice
-
-The default priority is **total elapsed time first, reliable completion second, and
-token use third**, unless you choose another priority. These are ordered preferences,
-not a fixed numerical weighting. The table recommends a route likely to complete the
-work correctly; it does not optimize a cheap first attempt in isolation.
-
-| Task or preference | How the recommendation changes |
-|---|---|
-| Interactive work; fastest useful completion | Favor the capable route likely to finish with little rework. Avoid delegation when loading context and integrating results would take longer. |
-| Stable background work; explicit cost-first preference | Consider Luna and a bounded brief with objective checks. Include verification and retries in the cost; the named max-effort economy profile is conditional. |
-| Quality-first design or a consequential decision | Give capability and adequate reasoning more weight. Astra can be the first choice; use focused independent review when it adds assurance. |
-| A task already progressing well | Keep the active model and its useful context unless a demonstrated limit justifies a switch. |
-
-Infer timing from the conversation first. If timing is unclear and would materially
-change the route, offer a brief **Need it soon / Background is fine** choice, using an
-asynchronous preference control when available. Do not repeatedly ask about settled
-preferences. Luna can also be the fastest route for a suitable narrow task; a relaxed
-deadline alone does not make it suitable for ambiguous or consequential work.
-
-Assess token use across the whole job: input and duplicated context, reasoning and
-output, subagents, retries, and review. Lower token prices do not establish lower total
-cost, and API prices do not directly measure Codex subscription usage. Current matrices
-are policy recommendations, not a measured token-optimal result for every workload.
-Codex service stays **Standard** unless you explicitly choose Fast where available.
-
-**For demanding visual work within Codex:** Sol 6.1 high is the starting recommendation for a
-typical new substantial build. Astra high is available upfront for exceptionally hard
-unresolved creative/spatial direction where maximum quality matters. The
-[dated Arena assessment](plugins/work-router/skills/route-ai-work/references/routing-basis.md)
-retains a narrower Astra Max edge but does not settle accepted-result speed. Both still
-need rendered comparison and a working
-interaction; neither a model label nor a screenshot proves the result is good.
-
-When starting substantial UI work with host choice open, consider Opus 5.5 as a
-quality-focused Claude route. Preserve an effective active session; a leaderboard
-result does not authorize a cross-host handoff or prove the fastest accepted result.
-
-See the [reasoning-level guide](plugins/work-router/README.md#how-to-choose-the-reasoning-level)
-for low through ultra, and the [dated benchmark evidence](plugins/work-router/skills/route-ai-work/references/routing-basis.md)
-for what has actually been measured. Terra is still 5.6 where available; do not assume
-there is a Terra 6 or that Terra has been retired.
+The full matrix, effort guide and latency/token tradeoffs are in the
+[Work Router README](plugins/work-router/README.md#task-by-task-starting-routes);
+the agent-facing policy is the [route-ai-work skill](plugins/work-router/skills/route-ai-work/SKILL.md).
 
 ## Layout
 
@@ -114,7 +53,7 @@ not the same on both.
 | | What it does |
 |---|---|
 | **Natural Writing** | Diagnoses, edits, rewrites, voice-matches, or drafts prose while preserving facts, formatting, terminology, register, and the author's voice. Ships a linter with a per-document mode and a set-level mode. |
-| **UI Router** | Routes UI, UX, design-review, motion, design-to-code, and interface-copy work through a researched skill catalog and what is actually installed. Uses Natural Writing as its sole final editor for copy. |
+| **UI Router** | Routes UI, UX, design-review, motion, design-to-code, and interface-copy work through a researched skill catalog and what is actually installed. Its `route-3d-work` skill routes real-time 3D worlds, Blender-to-web pipelines and Dream Loop fidelity passes. Uses Natural Writing as its sole final editor for copy. |
 | **Work Router** | Chooses whether work stays in the parent session or moves to a bounded subagent, on task shape, ambiguity, risk, latency and token use rather than defaulting to the largest model. One method, with a route table for each agent. |
 | **Capability Storyboard** | Builds a capability-first HTML storyboard for a keynote or demo: Acts as capabilities, one running example, a talk track and director's notes per scene. Ships a template and a finished nine-scene example board to lift components from. |
 | **Deck Builder** | Builds `.pptx` on top of any corporate template and verifies by rendering slides to images. The brand is configuration: a generator reads your template and writes the palette, grid, layouts, and logo zone for you. |
@@ -136,8 +75,8 @@ codex plugin add ui-router@rl0ve-agent-skills
 ```
 
 Swap `ui-router` for `natural-writing` or `work-router`. If you would rather not add a
-marketplace, `plugins/ui-router/scripts/install-into-codex-skills.sh` copies the routing
-skill straight into `~/.codex/skills`, and `plugins/ui-router/docs/field-guide.html` opens
+marketplace, `plugins/ui-router/scripts/install-into-codex-skills.sh` copies the two routing
+skills (`route-ui-work`, `route-3d-work`) straight into `~/.codex/skills`, and `plugins/ui-router/docs/field-guide.html` opens
 standalone.
 
 ## Fast local test (Claude Code)
@@ -196,6 +135,7 @@ The UI router does not silently install its catalog. List or plan a curated prof
 ```bash
 python3 plugins/ui-router/scripts/install_optional_skills.py --list
 python3 plugins/ui-router/scripts/install_optional_skills.py --profile product
+python3 plugins/ui-router/scripts/install_optional_skills.py --profile 3d   # Meng 3D + game-dev, three named claudedesignskills
 ```
 
 Execution is explicit:

@@ -1,0 +1,4 @@
+interface:
+  display_name: "3D Router"
+  short_description: "Route real-time 3D work to layers, loop and tools"
+  default_prompt: "Use $route-3d-work to pick the lead, knowledge layers, specialists and gates for this 3D task."

@@ -9,6 +9,8 @@ Status language:
 - **canonical** — part of the original routing system;
 - **sub-skill** — supplied inside another canonical repository;
 - **local** — user-specific capability rather than a third-party dependency;
+- **layer** — kept as a named layer under another lead, no longer a lead itself (1.19.0);
+- **conditional** — use only on an explicit request (1.19.0);
 - **lower confidence** — useful lead whose upstream availability or packaging needed another check in the supplied research.
 
 ## Aesthetic and interface leads
@@ -51,8 +53,8 @@ Impeccable modes are part of routing: **Persuade** for marketing, **Operate** fo
 |---|---|---|---|---|
 | `meng-webgl-stack` | `MengTo/Skills` | Specialist library for cinematic motion, Three.js, capture and reference workflows | Select the exact matching [upstream skill](upstream-skills.md); this is a bundle alias, not one universal lead | canonical |
 | `dream-loop` | [achimala/dream-loop](https://github.com/achimala/dream-loop) | Target/build/critique workflow for high graphical fidelity | Optional specialist under the chosen lead; load the [original workflow](upstream-skills.md), label adaptations | optional; source reviewed, comparative quality untested |
-| `claudedesignskills` | `freshtechbro/claudedesignskills` | Three.js, GSAP, R3F, Framer Motion, Babylon.js, Spline, and Rive pack | Creative-expressive lead option | canonical |
-| `awwwards-3d` | `tsogjavklann/awwwards-3d` | Scroll-driven 3D visual language | Portfolio and Awwwards-style experiences | canonical |
+| `claudedesignskills` | `freshtechbro/claudedesignskills` | Pack (last updated Nov 2025); the optional installer selects only `gsap-scrolltrigger`, `threejs-webgl` and `blender-web-pipeline` | Named layers, not a lead | layer |
+| `awwwards-3d` | `tsogjavklann/awwwards-3d` | Scroll-driven 3D visual language | Only when explicitly requested for an Awwwards-style portfolio | conditional |
 | `industrial-brutalist-ui` | `code-yeongyu/lazycodex` · `industrial-brutalist-ui` | Swiss-modernist and military-terminal aesthetic | Explicitly requested data-heavy aesthetic | canonical |
 | `huashu-design` | `alchaincyf/huashu-design` | HTML-native prototypes, slides, animation, MP4/GIF export | Expressive campaigns and presentations | canonical |
 | `garden-skills` | `ConardLi/garden-skills` | Web design, video presentation, article, and image-generation stack | Optional expressive production layer | canonical |
