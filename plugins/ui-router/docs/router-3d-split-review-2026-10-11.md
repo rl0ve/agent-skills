@@ -1,7 +1,7 @@
 # Router 3D split and slimming review: October 11, 2026
 
 Record behind UI Router 1.19.0 and Work Router 1.9.0. The draft was independently
-verified by Claude Fable 5.1 (max reasoning) against this repo, Lumbre,
+verified by Claude Fable 5.1 (max reasoning) against this repo, a production three.js project,
 threejs-game-skills and 3dviz-pro-max before the changes were made.
 
 ## Measurements before the change
@@ -39,11 +39,11 @@ for Codex sessions only; the harness rule is host-native.
 
 ## Verifier corrections adopted
 
-- Blender MCP was already installed for Lumbre with a CLI-for-builds,
+- Blender MCP was already in use in a production project with a CLI-for-builds,
   MCP-for-inspection policy; the gap was only this repo's silence.
 - Dream Loop had been loaded with a locked target; the open question was the harness.
   The user set the rule: the active host's model, overridable per run.
-- `blender-web-pipeline`, used by Lumbre, comes from `claudedesignskills`, so the pack
+- `blender-web-pipeline`, already relied on in practice, comes from `claudedesignskills`, so the pack
   is demoted rather than dropped.
 - `route-3d-work` lives inside the ui-router plugin (the package tests assert four
   plugins), with redirect stubs for moved anchors.
