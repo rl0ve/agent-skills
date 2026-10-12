@@ -25,7 +25,8 @@ Use exactly one broad lead and no more than three focused layers. Optional entri
 ## Creative / expressive
 
 For substantial graphical builds with a visual target, consider a focused
-[upstream workflow](upstream-skills.md), including Dream Loop. Load the selected
+[upstream workflow](upstream-skills.md). Real-time 3D worlds and Dream Loop route
+through `route-3d-work`. Load the selected
 method's full instructions and required references under the chosen lead. Use the
 [router adaptation](visual-build-loop.md) only when proportionate or as a stated
 fallback; neither route adds a second aesthetic director.
@@ -34,10 +35,12 @@ When selecting examples or dependencies, read [visual-resources.md](visual-resou
 
 Choose one lead by medium:
 
-- WebGL/cinematic: `meng-webgl-stack`;
-- framework-rich 3D/motion: `claudedesignskills`;
-- portfolio scroll experience: `awwwards-3d`;
+- WebGL/cinematic or scroll-world 3D: `meng-webgl-stack`;
 - explicitly generative: `p5-pipeline`.
+
+`claudedesignskills` is no longer a lead; its `gsap-scrolltrigger`, `threejs-webgl`
+and `blender-web-pipeline` skills remain named layers. `awwwards-3d` is conditional
+on an explicit request.
 
 **Canonical layers:** chosen lead → `impeccable Experience` → `emil-motion` → `gsap-scrolltrigger`
 

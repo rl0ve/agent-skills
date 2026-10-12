@@ -10,6 +10,7 @@ It preserves the original named skill universe—including Taste, Hallmark, Inte
 The plugin contributes:
 
 - `/ui-router:route-ui-work`, an auto-invocable UI routing skill;
+- `/ui-router:route-3d-work`, an auto-invocable real-time 3D routing skill (1.19.0);
 - `/ui-router:install-ui-stack`, a manual, plan-first optional installer;
 - read-only scout and critic agents plus one sole-writer UI builder;
 - the complete routing catalog and quality references;
@@ -65,22 +66,22 @@ when media is part of the work. Its focused question examples cover unresolved p
 purpose, navigation, sound entry and physical use. They do not create routine approval
 rounds or reopen settled preferences. See the [September 20 source review](docs/experiential-sites-review-2026-09-20.md).
 
-## Interactive worlds and learning tasks
+## Real-time 3D, interactive worlds and learning tasks
 
-The [interactive-worlds guide](skills/route-ui-work/references/interactive-worlds.md)
-helps choose a runtime from delivery and authoring needs, with conditional Three.js/R3F,
-Babylon.js, PlayCanvas, Needle and native-engine routes. It separates game state,
-assets/content and optional live intelligence, and calls for a representative playable
-slice before expansion or migration. Hosted-builder choices include editable export
-checks when portability matters. Live-conversation choices compare full lesson quality,
-audible latency and session cost with explicit assumptions. It does not rank engines or
-require a new service.
-
-[Interaction contracts](skills/route-ui-work/references/interaction-contracts.md) preserve
-the agreed learning mode, ground language in visible tasks and distinguish speech
-recognition from language evidence. Generated worlds still need verified semantic
-objects and interactions. See the [source review](docs/interactive-worlds-review-2026-09-27.md)
-for adopted guidance, existing coverage and unsupported claims left out.
+Since 1.19.0, [route-3d-work](skills/route-3d-work/SKILL.md) owns playable worlds,
+spatial scenes, three.js/WebGL/WebXR builds, Blender-to-web pipelines and Dream Loop.
+It keeps the project's own pipeline as lead and maps the runtime to knowledge layers
+(three.js `llms.txt`, Meng 3D and game-development, `blender-web-pipeline`,
+3dviz-pro-max retrieval), tools (Blender CLI and MCP, capture harnesses, a Needle
+Inspector trial) and exclusions. Dream Loop runs in the host you are in. Its references:
+[specialists](skills/route-3d-work/references/specialists.md),
+[fidelity loop and gate](skills/route-3d-work/references/fidelity-loop.md),
+[runtime and playable slice](skills/route-3d-work/references/runtime-and-slice.md),
+[live AI and host delivery](skills/route-3d-work/references/live-ai-and-hosts.md),
+[spatial realism](skills/route-3d-work/references/spatial-realism.md) and
+[interaction contracts](skills/route-3d-work/references/interaction-contracts.md).
+The old `route-ui-work` reference paths remain as redirect stubs for one release.
+See the [source review](docs/interactive-worlds-review-2026-09-27.md).
 
 ## Rendered-site annotation review
 
@@ -94,24 +95,16 @@ lead. Small edits remain scoped; a site-wide review checks every requested page.
 
 UI Router selects and coordinates; upstream specialists supply their detailed craft.
 The [upstream routes](skills/route-ui-work/references/upstream-skills.md) point to exact
-Meng skill entrypoints and Dream Loop. Load the complete selected procedure and required
+Meng skill entrypoints. Load the complete selected procedure and required
 references; install selected complete folders for repeated use within authorization.
 Keep shared principles in the router and preserve source/version information.
 
-Substantial high-fidelity 3D work selects Dream Loop unless the user chooses another
-method, and uses a required [execution gate](skills/route-ui-work/references/upstream-skills.md#fidelity-execution-gate):
-locked target, running comparison, fresh-context critique, checked refinement and
-performance evidence. Listed, loaded, executed and accepted remain separate outcomes;
-unmet gates stay explicit. Ordinary UI edits do not trigger the loop.
-
-The host's Imagegen tool authors a product-specific target from the existing baseline
-when no target is supplied and generation is authorized; real routes and readable
-navigation remain constraints rather than invented image content. See the
-[execution review](docs/dream-loop-execution-review-2026-10-04.md). The
-[visual build loop](skills/route-ui-work/references/visual-build-loop.md) remains a lighter,
-explicitly labeled adaptation whose comparative effectiveness is untested. It does not
-override a selected upstream workflow. User and host constraints still govern model,
-delegation and spending choices. See the [review](docs/upstream-skills-review-2026-09-20.md).
+Substantial high-fidelity 3D work routes to `route-3d-work`, which uses Dream Loop
+under the [fidelity execution gate](skills/route-3d-work/references/fidelity-loop.md#fidelity-execution-gate).
+The [visual build loop](skills/route-ui-work/references/visual-build-loop.md) remains a
+lighter, explicitly labeled adaptation. See the
+[execution review](docs/dream-loop-execution-review-2026-10-04.md) and the
+[review](docs/upstream-skills-review-2026-09-20.md).
 
 ## Design direction without a prompting course
 

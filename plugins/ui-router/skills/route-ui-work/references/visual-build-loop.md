@@ -5,7 +5,7 @@ full workflow. Choose the route using [upstream-skills.md](upstream-skills.md) f
 Use this adaptation when proportionate, explicitly chosen, or as a stated fallback;
 do not layer its pass limits or parent-only option over a selected upstream procedure.
 For substantial high-fidelity 3D work, the
-[execution gate](upstream-skills.md#fidelity-execution-gate) governs selection and
+[execution gate](../../route-3d-work/references/fidelity-loop.md#fidelity-execution-gate) governs selection and
 completion claims; this adaptation does not silently close unmet upstream gates.
 It applies to substantial graphical work needing refinement under the design lead.
 Small edits, settled components and ordinary forms stay on their existing route.

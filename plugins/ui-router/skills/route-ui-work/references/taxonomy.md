@@ -16,7 +16,7 @@ Expression and density are separate choices, and neither is fixed by an audience
 |---|---|---|
 | `marketing-landing` | A public page must explain, persuade, establish trust, or convert | A signed-in product workflow |
 | `product-app` | Users complete recurring tasks in an application, dashboard, portal, admin, or tool | A campaign or brand page |
-| `creative-expressive` | Visual expression, art direction, 3D, WebGL, generative work, or cinematic interaction is itself part of the value | Decorative motion added to an ordinary app |
+| `creative-expressive` | Visual expression, art direction, scroll-world 3D, WebGL, generative work, or cinematic interaction is itself part of the value. Playable or real-time 3D worlds route to `route-3d-work`. | Decorative motion added to an ordinary app |
 | `content-editorial` | The main surface is built for reading, reference, publication, documentation, or a sustained editorial narrative | Copy-only editing or a conversion-first campaign page |
 | `motion-only` | The structure and visual system are accepted; only transition, animation, gesture, or feedback behavior should change | A redesign |
 | `image-to-code` | A screenshot, Figma node, URL, video, or existing design is the visual specification | A loose inspiration moodboard |

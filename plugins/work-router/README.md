@@ -32,14 +32,55 @@ bounded repeatable work with objective checks. GPT-5.6 Terra remains a condition
 read-only specialist when user preference or workload evidence warrants it; no GPT-6
 Terra or retirement is inferred. Preserve a progressing capable parent.
 
-Use the [task-by-task model and reasoning matrix](../../README.md#which-model-and-reasoning-level-should-i-use)
-to choose a starting route. It includes implementation, research, review, visual direction,
-spatial work and background jobs.
+### Task-by-task starting routes
 
-The [latency and token-use table](../../README.md#how-latency-and-token-use-affect-the-choice)
-explains how interactive, cost-first and quality-first work change the recommendation.
-The default uses ordered priorities rather than invented percentage weights, and
-considers the full task including context duplication, retries and review.
+These are **recommended starting routes**, reviewed October 2, 2026 (moved here from the
+root README in 1.9.0). They combine current model guidance with task characteristics;
+they are not a benchmark ranking of every model-and-effort combination. Keep a capable,
+progressing session when changing models would add more handoff work than benefit. The
+agent-facing tables are in the [route-ai-work skill](skills/route-ai-work/SKILL.md#default-routes).
+
+| What you need done | Start with | Reasoning | When to change the route |
+|---|---|---|---|
+| A tiny edit, one-step answer, or tightly connected follow-up | Current capable model | Keep the active level | Do it directly; creating another agent usually adds overhead. |
+| A small inventory, extraction, classification, or clearly specified mechanical edit | **Luna 6** | **high** | Use Sol when interpretation, ambiguity, or consequential judgment becomes the hard part. |
+| Routine coding, a defined feature, ordinary debugging, or substantive synthesis | **Sol 6.1** | **medium** | Raise to high when the task requires deeper tracing or more edge-case analysis. |
+| Complex implementation, architecture, difficult debugging, or integrating several systems | **Sol 6.1** | **high** | Consider xhigh for unresolved reasoning; choose Astra when maximum capability or better judgment is needed. |
+| Difficult architecture, diagnosis, or reasoning with unresolved dependencies that needs deeper analysis within Sol | **Sol 6.1** | **xhigh** | Use when the added depth is justified; choose Astra instead when model capability or judgment is the limiting factor. |
+| A quick independent UX opinion, implementation review, or first-pass diagnosis | **Sol 6.1** | **medium** | Use high for deep review. Low is an option only for bounded, read-only triage with low stakes. |
+| Substantial UI implementation with an established visual direction | **Sol 6.1** | **high** | Use Astra when the unresolved problem is exceptionally difficult creative or spatial judgment. |
+| New substantial UI build with a normal visual-quality bar | **Sol 6.1** | **high** | Render and compare the result; a model label does not establish visual quality. |
+| Exceptionally difficult unresolved art direction or creative/spatial work where maximum quality matters | **Astra 6** | **high** | Consider xhigh if difficult decisions remain unresolved. A failed Sol attempt is not required. |
+| The hardest reasoning, diagnosis, or synthesis across several systems where maximum capability is needed | **Astra 6** | **high** | Consider xhigh when depth remains insufficient; justify max or ultra separately. |
+| Exceptionally demanding reasoning or creative/spatial judgment with difficult unresolved tradeoffs | **Astra 6** | **xhigh** | A deliberate deeper pass, including upfront when clearly warranted. Validate the result; max/ultra are not automatic next steps. |
+| Independent document or repository reading with a demonstrated Terra advantage, or an explicit Terra preference | **Terra 5.6** | **medium** | Use Luna for straightforward extraction or Sol for judgment-heavy interpretation when there is no reason to prefer Terra. |
+| Stable, bounded background work where cost matters more than latency | **Luna 6** | **max**, for the named economy profile | Measure accepted work, retries and review time; this setting is not proven cheapest for every task. |
+| Critical independent review when deliberately staying within Sol | **Sol 6.1** | **max**, conditionally | Use only when the risk or a prior strong failure warrants it; this is not a required rung before Astra. |
+
+Host-sensitive workflows such as Dream Loop run in the host you are in (Codex → Astra,
+Claude Code → Opus 5.5) unless you name another model; no cross-host move is made to
+match an upstream harness.
+
+### How latency and token use affect the choice
+
+The default priority is **total elapsed time first, reliable completion second, and
+token use third**, unless you choose another priority. These are ordered preferences,
+not a fixed numerical weighting. The table recommends a route likely to complete the
+work correctly; it does not optimize a cheap first attempt in isolation.
+
+| Task or preference | How the recommendation changes |
+|---|---|
+| Interactive work; fastest useful completion | Favor the capable route likely to finish with little rework. Avoid delegation when loading context and integrating results would take longer. |
+| Stable background work; explicit cost-first preference | Consider Luna and a bounded brief with objective checks. Include verification and retries in the cost; the named max-effort economy profile is conditional. |
+| Quality-first design or a consequential decision | Give capability and adequate reasoning more weight. Astra can be the first choice; use focused independent review when it adds assurance. |
+| A task already progressing well | Keep the active model and its useful context unless a demonstrated limit justifies a switch. |
+
+Infer timing from the conversation first. If timing is unclear and would materially
+change the route, offer a brief **Need it soon / Background is fine** choice. Assess
+token use across the whole job: input and duplicated context, reasoning and output,
+subagents, retries, and review. Lower token prices do not establish lower total cost,
+and API prices do not directly measure Codex subscription usage. Full rules:
+[model-routes.md](skills/route-ai-work/references/model-routes.md#token-and-latency-controls).
 
 ### How to choose the reasoning level
 

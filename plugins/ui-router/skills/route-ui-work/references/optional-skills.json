@@ -34,7 +34,6 @@
     "creative": [
       "meng-webgl-stack",
       "claudedesignskills",
-      "awwwards-3d",
       "impeccable",
       "emil-motion"
     ],
@@ -49,6 +48,11 @@
       "no-ai-slop",
       "blader-humanizer",
       "write-like-me"
+    ],
+    "3d": [
+      "meng-3d",
+      "meng-game-dev",
+      "claudedesignskills"
     ]
   },
   "skills": [
@@ -180,6 +184,44 @@
       "note": "Installs only the three named creative skills, not the entire large repository."
     },
     {
+      "key": "meng-3d",
+      "name": "Meng 3D specialists",
+      "source": "MengTo/Skills",
+      "url": "https://github.com/MengTo/Skills",
+      "installer": "skills",
+      "skills": [
+        "3d-high-resolution-textures",
+        "3d-high-poly-models",
+        "3d-virtual-tour",
+        "3d-retina-resolution",
+        "3d-ultra-realistic-water",
+        "3d-sky-background"
+      ],
+      "profiles": [
+        "3d"
+      ],
+      "note": "Installs only the named 3D specialists used by route-3d-work. Add others individually when a new need appears."
+    },
+    {
+      "key": "meng-game-dev",
+      "name": "Meng game-development specialists",
+      "source": "MengTo/Skills",
+      "url": "https://github.com/MengTo/Skills",
+      "installer": "skills",
+      "skills": [
+        "design-game-encounters",
+        "author-game-levels",
+        "build-game-camera-controls",
+        "build-game-audio-feedback",
+        "test-playable-web-games",
+        "optimize-threejs-games"
+      ],
+      "profiles": [
+        "3d"
+      ],
+      "note": "Installs only the named playable-world specialists used by route-3d-work."
+    },
+    {
       "key": "meng-reference-tools",
       "name": "Meng reference tools",
       "source": "MengTo/Skills",
@@ -202,9 +244,15 @@
       "url": "https://github.com/freshtechbro/claudedesignskills",
       "installer": "skills",
       "profiles": [
-        "creative"
+        "creative",
+        "3d"
       ],
-      "note": "Creative 3D and motion pack; review each skill before enabling it in a managed Claude Code workspace."
+      "note": "Installs only the three named skills. The rest of the pack (Babylon, PlayCanvas, A-Frame, Spline, R3F, Substance, PixiJS and others) is excluded by default; last upstream update Nov 2025.",
+      "skills": [
+        "gsap-scrolltrigger",
+        "threejs-webgl",
+        "blender-web-pipeline"
+      ]
     },
     {
       "key": "awwwards-3d",
@@ -212,10 +260,8 @@
       "source": "tsogjavklann/awwwards-3d",
       "url": "https://github.com/tsogjavklann/awwwards-3d",
       "installer": "skills",
-      "profiles": [
-        "creative"
-      ],
-      "note": "Scroll-driven 3D visual language."
+      "profiles": [],
+      "note": "Scroll-driven 3D visual language. Conditional: install only on an explicit request (1.19.0)."
     },
     {
       "key": "industrial-brutalist-ui",

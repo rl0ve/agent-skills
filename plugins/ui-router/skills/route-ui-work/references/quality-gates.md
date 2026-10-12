@@ -100,7 +100,7 @@ its report must not imply full visual or editorial acceptance.
   and observed behavior. Use the selected [upstream workflow](upstream-skills.md) or
   explicitly labeled [router adaptation](visual-build-loop.md), without claiming parity.
 - For substantial high-fidelity 3D work, retain the
-  [fidelity execution gate](upstream-skills.md#fidelity-execution-gate) evidence and
+  [fidelity execution gate](../../route-3d-work/references/fidelity-loop.md#fidelity-execution-gate) evidence and
   unresolved gates. Listing, loading or a self-awarded visual score is not acceptance.
 - For a spatial entrance leading into a product, verify entry, direct navigation when
   applicable, selection and return without losing the chosen item or useful controls.
