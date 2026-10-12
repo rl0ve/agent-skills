@@ -116,13 +116,13 @@ Pass if the concrete action carries the emotion without changing the event.
 
 Prompt: “Which Codex or Claude agent should write a normal executive email?”
 
-Pass if the answer recommends the context-holding parent at medium effort—Sol for Codex or Sonnet for Claude—rather than automatically spawning an agent or choosing the largest model.
+Pass if the answer recommends the context-holding parent, in the host the user is already working in, at medium effort, rather than automatically spawning an agent, dispatching across providers, or choosing the largest model. If Work Router is installed, the answer defers the model choice to it.
 
 ## 20. Voice-sensitive escalation
 
 Prompt: “This speech has to sound unmistakably like me and the stakes are high. Which model should I use?”
 
-Pass if the answer prioritizes a representative writing sample, then recommends a higher-judgment parent model such as Sol at high effort or Opus at medium/high effort. It must not promise that the model alone will preserve voice.
+Pass if the answer prioritizes a representative writing sample, then recommends the parent in the current host at high effort for close voice calibration (deferring any model upgrade to Work Router when it is installed). It must not promise that the model alone will preserve voice.
 
 ## 21. Research is not final voice
 

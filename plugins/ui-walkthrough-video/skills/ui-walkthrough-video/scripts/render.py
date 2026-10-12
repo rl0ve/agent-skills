@@ -2,6 +2,7 @@
 """Dependency-light narration and assembly. No keys in files or subprocess arguments."""
 import argparse
 import base64
+import io
 import binascii
 import wave
 import json
@@ -74,6 +75,12 @@ def fresh(out):
     return out
 
 
+def gemini_verbatim_model(model):
+    """True for Gemini TTS 3.8 and later, which use the verbatim-transcript schema."""
+    m = re.match(r'(?:google/)?gemini-(\d+)(?:\.(\d+))?-', model or '')
+    return bool(m) and (int(m.group(1)), int(m.group(2) or 0)) >= (3, 8)
+
+
 def request_config(voice, text):
     provider = voice['provider']
     if 'timestamps' in voice and (type(voice['timestamps']) is not bool or provider != 'elevenlabs'):
@@ -104,6 +111,9 @@ def request_config(voice, text):
     if provider == 'elevenlabs':
         payload = {'model_id':voice['model'], 'text':text}
         if 'voice_settings' in voice:
+            if (str(voice['model']).startswith('eleven_v4') and isinstance(voice['voice_settings'], dict)
+                    and set(voice['voice_settings']) - {'stability','similarity_boost'}):
+                raise ValueError('Eleven v4 models use only stability and similarity_boost voice settings')
             payload['voice_settings'] = voice['voice_settings']
         suffix = '/with-timestamps' if voice.get('timestamps') else ''
         return ('https://api.elevenlabs.io/v1/text-to-speech/' + urllib.parse.quote(voice['voice'],safe='') + suffix + '?output_format=mp3_44100_128',
@@ -123,12 +133,23 @@ def request_config(voice, text):
     if provider == 'gemini':
         if not re.fullmatch(r'[a-zA-Z0-9._-]+', voice['model']):
             raise ValueError('Invalid Gemini model identifier')
-        prompt = text
-        if voice.get('instructions'):
-            prompt = voice['instructions'] + '\nRead only the following transcript, without adding words:\n' + text
-        payload = {'contents':[{'parts':[{'text':prompt}]}],
-                   'generationConfig':{'responseModalities':['AUDIO'],
-                     'speechConfig':{'voiceConfig':{'prebuiltVoiceConfig':{'voiceName':voice['voice']}}}}}
+        if gemini_verbatim_model(voice['model']):
+            # Gemini 3.8+ TTS: text is a verbatim transcript; sustained delivery goes in
+            # speech_metadata.style and the voice (prebuilt name, library ID or voice_...)
+            # in speechConfig.voiceConfig.voice. Checked against the generateContent docs 2026-10-11.
+            part = {'text':text}
+            if voice.get('instructions'):
+                part['speech_metadata'] = {'style':voice['instructions']}
+            payload = {'contents':[{'role':'user','parts':[part]}],
+                       'generationConfig':{'responseModalities':['AUDIO'],
+                         'speechConfig':{'voiceConfig':{'voice':voice['voice']}}}}
+        else:
+            prompt = text
+            if voice.get('instructions'):
+                prompt = voice['instructions'] + '\nRead only the following transcript, without adding words:\n' + text
+            payload = {'contents':[{'parts':[{'text':prompt}]}],
+                       'generationConfig':{'responseModalities':['AUDIO'],
+                         'speechConfig':{'voiceConfig':{'prebuiltVoiceConfig':{'voiceName':voice['voice']}}}}}
         return ('https://generativelanguage.googleapis.com/v1beta/models/' + voice['model'] + ':generateContent',
                 'GEMINI_API_KEY', payload)
     raise ValueError('Unknown network provider')
@@ -241,7 +262,8 @@ def write_minimax_mp3(response_data, source):
 
 
 def write_gemini_wav(response_data, source):
-    # generateContent's documented output is PCM16 little-endian mono, 24 kHz.
+    # Legacy preview models return headerless PCM16 (audio/L16, 24 kHz mono);
+    # Gemini 3.8+ returns a complete WAV. Both are validated before writing.
     try:
         response = json.loads(response_data)
         candidates = response.get('candidates', [])
@@ -253,13 +275,23 @@ def write_gemini_wav(response_data, source):
         if len(clips) != 1:
             raise ValueError('Gemini returned no single audio payload; no automatic retry')
         clip = clips[0]
-        mime = clip['mimeType']
-        if not mime.startswith('audio/L16') or 'rate=24000' not in mime:
+        mime = clip['mimeType'].lower()
+        data = base64.b64decode(clip['data'], validate=True)
+        if mime.split(';')[0].strip() in ('audio/wav','audio/x-wav','audio/wave'):
+            # Gemini 3.8+ unary responses are a complete RIFF WAV (24 kHz mono PCM16).
+            if data[:4] != b'RIFF' or data[8:12] != b'WAVE':
+                raise ValueError('Gemini returned a WAV MIME type without a RIFF/WAVE header')
+            with wave.open(io.BytesIO(data)) as check:
+                if (check.getnchannels(), check.getsampwidth(), check.getframerate()) != (1, 2, 24000) or not check.getnframes():
+                    raise ValueError('Unexpected Gemini WAV parameters; verify current API docs before conversion')
+            Path(source).write_bytes(data)
+            return
+        if not mime.startswith('audio/l16') or 'rate=24000' not in mime:
             raise ValueError('Unexpected Gemini audio format; verify current API docs before conversion')
-        pcm = base64.b64decode(clip['data'], validate=True)
+        pcm = data
         if not pcm or len(pcm) % 2:
             raise ValueError('Gemini returned empty or invalid PCM audio')
-    except (json.JSONDecodeError, KeyError, TypeError, AttributeError, binascii.Error):
+    except (json.JSONDecodeError, KeyError, TypeError, AttributeError, binascii.Error, EOFError, wave.Error):
         raise ValueError('Invalid Gemini response; provider payload not logged') from None
     with wave.open(str(source),'wb') as wav:
         wav.setnchannels(1); wav.setsampwidth(2); wav.setframerate(24000)

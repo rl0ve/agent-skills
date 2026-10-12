@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.15.1 - 2026-10-11
+
+- Codex parity: `compatibility`, README title and trigger cases now name Claude Code and Codex; "Claude UI Router" becomes UI Router.
+- `references/model-routing.md` defers model, effort and delegation to Work Router and adopts the host-native rule: the parent in the user's current host writes. The dated family matrix (a Sonnet default, Terra explorers, Fable) is removed; the prose-specific effort guidance, one-writer/one-reviewer pattern and reviewer contract stay.
+
 ## 1.15.0 - 2026-09-22
 
 Speaker notes are their own shape of spoken prose.

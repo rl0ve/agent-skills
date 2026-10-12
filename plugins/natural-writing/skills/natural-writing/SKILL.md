@@ -1,7 +1,7 @@
 ---
 name: natural-writing
 description: Diagnoses, edits, rewrites, voice-matches, or drafts reader-ready prose while preserving facts, intent, register, formatting, product terminology, and distinctive author voice. Use for any request whose intended outcome is clearer, more natural, less generic, less assistant-like, more audience-appropriate, or more recognizably the author's writing—even when the user never says “humanize” or “AI slop.” This includes implicit intent expressed through a draft plus requests to tighten, polish, simplify, make ready to send, sound more candid or direct, match a sample, explain why prose feels synthetic, or improve emails, reports, essays, posts, product and interface copy, documentation, marketing copy, and executive writing. Also use when prose contains dialogue residue, ritual validation, prompt echoes, coaching theater, taxonomy reflexes, fake contrasts, excessive headings, or generic endings.
-compatibility: Claude Code with Agent Skills and plugin support.
+compatibility: Claude Code and Codex with Agent Skills; plugin manifests ship for both.
 ---
 
 # Natural Writing
@@ -128,7 +128,7 @@ After drafting, apply the same layered edit and evaluation. If the brief lacks a
 - Round-tripping prose through another agent or a plain-text scratch file converts inline markup to whatever carrier you chose (`<b>` to `**`, `<i>` to `_`). Convert every one of them back, and verify by counting each token type in the source and the result. A count that matches on bold and silently drops italics ships a literal underscore into the artifact.
 - When another task embeds this skill, return only the finished artifact unless a change note is useful to that workflow.
 
-When the Claude UI Router supplies product semantics, UX labels, states, marketing claims, or brand constraints, treat them as protected inputs. Natural Writing is the final prose editor; it must not redesign the interface or invent product behavior.
+When UI Router supplies product semantics, UX labels, states, marketing claims, or brand constraints, treat them as protected inputs. Natural Writing is the final prose editor; it must not redesign the interface or invent product behavior.
 
 ## Supporting resources
 

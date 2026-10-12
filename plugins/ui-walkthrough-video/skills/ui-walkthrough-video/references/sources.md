@@ -42,3 +42,22 @@ No indexed matches from those queries; that does not establish absence. Homepage
 of Skillselion, SkillsMP and Skill Leaderboard were opened; this was not an exhaustive
 internal catalog search. Exact Clueso upstream/MCP docs yielded the actionable result.
 No additional plugin was installed. Read polish.md and benchmarks.md for decisions.
+
+## October 2026 landscape check
+
+Checked 2026-10-11 (GitHub API stars). None replaces this skill's core job, which is
+narrating a recording of real UI actions. Each one fits a different deliverable.
+
+| Candidate | Stars | Fit | Decision |
+|---|---|---|---|
+| [video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) | 11.3k | Cinematic Remotion promos/teasers: 152 shot recipes, page captures, 2.5D camera, beat-synced SFX | **Use for a promo or launch teaser**, not a tutorial. Label rebuilt or animated UI as such. |
+| [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) official skills | 61k (repo) | HTML composition authoring | Layer under the HyperFrames route; install by name ([hyperframes.md](hyperframes.md)). |
+| [remotion-dev/skills](https://github.com/remotion-dev/skills) | 5.0k | Remotion best practices | Unchanged: conditional composition layer. |
+| [onetake](https://github.com/feitangyuan/onetake) | 2.1k | Continuous-camera launch films with a continuity check | Promo alternative. Not for step-by-step walkthroughs. |
+| [agentic-product-demo](https://github.com/Alexwtlf/agentic-product-demo) | 396 | Demo built in React instead of recorded | Use only when a simulated UI is acceptable and disclosed. |
+| [product-demo-director](https://github.com/crimeacs/product-demo-director) | 34 | Narration-paced cuts from raw footage | Watchlist; closest in intent, too early to adopt. |
+| [clueso-ai/skills](https://github.com/clueso-ai/skills) | 27 | Polish, revoice, screenshots-to-walkthrough | Unchanged: close documented fit when Clueso is authorized. |
+| [elevenlabs/skills](https://github.com/elevenlabs/skills) | 484 | ElevenLabs TTS, including `eleven_v4` | Conditional, when ElevenLabs is already chosen. |
+
+Index for later scans: [awesome-claude-video-skills](https://github.com/zhuyansen/awesome-claude-video-skills)
+(277 repos, each with a security rating).

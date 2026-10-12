@@ -1,6 +1,6 @@
 # Semantic trigger cases
 
-Run each prompt in a fresh authenticated Claude Code session with the plugin enabled. These cases test intent matching, not literal phrases.
+Run each prompt in a fresh authenticated Claude Code or Codex session with the plugin enabled. These cases test intent matching, not literal phrases.
 
 ## Should route to Natural Writing
 
@@ -18,7 +18,7 @@ Run each prompt in a fresh authenticated Claude Code session with the plugin ena
 11. “Here is the talk track for Thursday's demo. Make it something I can actually say on stage.”
 12. “These 40 captions all read the same. Fix that without making them all read the same in a different way.”
 
-Pass if Claude loads `natural-writing:natural-writing` even though none of these prompts uses the phrases “humanize,” “AI slop,” or “less robotic.” For 11 the skill must also read `references/spoken-register.md`; for 12 it must read **Editing a set** in the catalog.
+Pass if the agent loads `natural-writing:natural-writing` (Codex: `natural-writing`) even though none of these prompts uses the phrases “humanize,” “AI slop,” or “less robotic.” For 11 the skill must also read `references/spoken-register.md`; for 12 it must read **Editing a set** in the catalog.
 
 ## Should not route to Natural Writing
 
@@ -27,4 +27,4 @@ Pass if Claude loads `natural-writing:natural-writing` even though none of these
 3. “Summarize these logs to find the failing service.”
 4. “Change the button color to the existing primary token.”
 
-Pass if Claude does not load Natural Writing unless prose quality becomes a material part of the requested deliverable.
+Pass if the agent does not load Natural Writing unless prose quality becomes a material part of the requested deliverable.

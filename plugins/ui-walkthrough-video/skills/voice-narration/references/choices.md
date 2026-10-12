@@ -1,6 +1,9 @@
 # Narration choices and evidence
 
-Reviewed 2026-09-13. These are routes to audition, not a naturalness leaderboard.
+Reviewed 2026-09-13; model notes updated 2026-10-11 (Gemini 3.8 TTS GA, Eleven v4).
+These are routes to audition, not a naturalness leaderboard. Accepted profiles below
+were heard on `gemini-3.1-flash-tts-preview`; re-audition the same voice name on 3.8
+before treating it as the same accepted voice.
 The package's [validation record](../../../VALIDATION.md) owns executed test claims.
 
 | Choice | Useful when | Main tradeoff | Evidence in this package |

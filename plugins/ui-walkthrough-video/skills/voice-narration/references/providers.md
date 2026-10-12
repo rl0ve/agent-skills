@@ -16,14 +16,34 @@ requested engineering tests via `--allow-local-test`; it is not a quality tier t
 recommend. A high-ranked model can still produce a voice the user dislikes.
 
 Google Gemini adapter: `provider: "gemini"`, explicit `model` and `voice`, optional
-`instructions`, and `GEMINI_API_KEY`. Model checked 2026-09-05:
-`gemini-3.1-flash-tts-preview`. Any of the model's prebuilt voice names is valid in
-`voice`; the names appearing anywhere in this package are dated listening results,
-not a supported subset, and none is a default. Ask for or carry forward the voice the
-brief already uses. The adapter uses Google's documented legacy generateContent
-endpoint, validates returned PCM and wraps it in WAV. It is separate from Google
-Cloud Chirp/Studio/WaveNet and from Gemini Live. Do not infer a model from the voice
-name alone. Preview models may change or have rate limits.
+`instructions`, and `GEMINI_API_KEY`.
+
+**Current models (GA 2026-09-22, checked 2026-10-11):** `gemini-3.8-flash-tts`
+(flagship, expressive, long-form) and `gemini-3.8-flash-lite-tts` (cheaper; Google's
+stated replacement for `gemini-3.1-flash-tts-preview`). See the
+[speech guide](https://ai.google.dev/gemini-api/docs/generate-content/speech-generation)
+and [release notes](https://ai.google.dev/gemini-api/docs/changelog). For 3.8+ the
+adapter sends the verbatim transcript as `text`, puts `instructions` in
+`speech_metadata.style`, passes `voice` as `speechConfig.voiceConfig.voice` (a prebuilt
+name, an Extended Voice Library ID or a `voice_...` design/replication ID), and saves
+the returned RIFF WAV after checking it is 24 kHz mono PCM16. Inline tags such as
+`<short pause>` belong in the transcript only when you want them spoken as events.
+Keep `instructions` short on 3.8 (one clause such as "calm, conversational, medium
+pace"): Google's guide says long style or "director's notes" blocks are the main cause
+of voice drift, and most takes need no style at all.
+The 3.8 path is covered by offline request/response tests; **no live 3.8 call has
+been made by this package yet**, so run a short audition before a full take.
+
+`gemini-3.1-flash-tts-preview` still uses the legacy schema (instructions prefixed to
+the text, `prebuiltVoiceConfig`, headerless PCM wrapped in WAV). Keep it only to
+continue an accepted take; it is slated for replacement.
+
+The 30 prebuilt names (Kore, Algenib, Algieba, Sulafat and others) carry over to 3.8,
+but **the same name on a new model is a new voice for acceptance purposes**:
+re-audition before mixing 3.1 and 3.8 clips in one production. Voice design and
+replication need their own authorization; never replicate an identifiable voice
+without consent. The adapter is separate from Google Cloud Chirp/Studio/WaveNet and
+from Gemini Live. Do not infer a model from the voice name alone.
 
 `gemini-3.5-transcribe` is a distinct, opposite-direction model: audio-to-text
 (speech recognition with diarization/timestamps), not text-to-speech. Its similar
@@ -38,11 +58,24 @@ up-to-two-speaker configuration. This package's `gemini` and `openrouter` adapte
 currently synthesize one configured voice per beat; use a supported direct Gemini
 tool for native two-speaker generation rather than implying the helper implements it.
 
-Verified API examples on 2026-09-05, not permanent defaults or quality guarantees:
-OpenAI `gpt-4o-mini-tts` supports delivery instructions; legacy `tts-1` / `tts-1-hd`
-do not support that control. ElevenLabs uses a voice ID and `model_id`; options
-include Multilingual v2, Flash v2.5 and v3 with different latency/expressiveness
-tradeoffs. Check current model/voice availability and prices before paid generation.
+API examples, not permanent defaults or quality guarantees. OpenAI (checked
+2026-09-05): `gpt-4o-mini-tts` supports delivery instructions; legacy `tts-1` /
+`tts-1-hd` do not. ElevenLabs (checked 2026-10-11): `eleven_v4` is the current
+flagship ([models](https://elevenlabs.io/docs/overview/models)) and accepts only
+`stability` and `similarity_boost` in `voice_settings`, which the adapter enforces;
+`eleven_v4_turbo` targets ~100 ms real-time streaming and is not needed for
+narration. v3, Multilingual v2 and Flash v2.5 remain available. Whether the
+`/with-timestamps` endpoint returns alignment for `eleven_v4` has not been verified
+here; check the first response before relying on word sidecars. ElevenLabs also
+publishes [official agent skills](https://github.com/elevenlabs/skills) that can
+handle a request already committed to ElevenLabs. Check current model/voice
+availability and prices before paid generation.
+
+**Blind-preference snapshot** ([Artificial Analysis Speech Arena](https://artificialanalysis.ai/text-to-speech/leaderboard/provider-voice),
+2026-10-10): Eleven v4 Turbo and Eleven v4 lead, followed by Qwen-Audio-3.1-TTS-Plus,
+Cartesia Sonic 3.6 and Gemini 3.8 Flash TTS. Use it to pick audition candidates,
+not to choose a winner: the arena measures short generic clips, not this script,
+voice or delivery.
 
 Suggested delivery instruction: “Speak clearly and conversationally for a product
 walkthrough. Calm, confident, medium pace. Brief pause after each UI result. Avoid

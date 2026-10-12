@@ -1,6 +1,6 @@
 {
   "name": "ui-walkthrough-video",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Record real UI walkthroughs with editable native-project handoffs or optional HyperFrames composition, plus standalone narration and measured speech cues.",
   "author": {
     "name": "rl0ve"

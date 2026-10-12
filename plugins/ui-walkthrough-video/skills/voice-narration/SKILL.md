@@ -34,9 +34,11 @@ choices that affect execution. Do not force a fresh audition for an already acce
 voice unless the script, language or delivery changes enough to warrant one.
 
 Read [provider guidance](references/providers.md) for the selected provider and
-[provider choices and evidence](references/choices.md) for comparisons. MiniMax
-Speech is a candidate alongside Gemini, OpenAI and ElevenLabs; a social endorsement
-or a provider benchmark does not establish this script's quality.
+[provider choices and evidence](references/choices.md) for comparisons. Current
+hosted candidates (checked 2026-10-11): **Gemini 3.8 Flash TTS / Flash-Lite TTS**, now
+GA, and **Eleven v4**, plus OpenAI and MiniMax. Leaderboards and endorsements pick
+what to audition; only the audition decides for this script. An accepted voice heard
+on an older model needs a new audition on the new one.
 
 Track **voice identity** separately from **provider route**. A Gemini prebuilt voice
 may be available through both direct Gemini and OpenRouter when both expose the same

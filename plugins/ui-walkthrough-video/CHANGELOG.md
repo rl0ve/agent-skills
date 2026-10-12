@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.7.0 — 2026-10-11
+
+- Gemini adapter supports the GA **Gemini 3.8 Flash TTS / Flash-Lite TTS** schema: verbatim transcript in `text`, `instructions` in `speech_metadata.style`, `speechConfig.voiceConfig.voice` (prebuilt, library or `voice_...` IDs), and a validated RIFF WAV response saved without re-wrapping. `gemini-3.1-flash-tts-preview` keeps the legacy path.
+- ElevenLabs: document `eleven_v4` as the current flagship and reject voice settings v4 does not accept (only `stability` and `similarity_boost`).
+- Provider guidance: dated Oct 10 blind-preference snapshot as audition candidates, plus re-audition required when an accepted voice name moves to a new model.
+- HyperFrames: install the official skills by name (`hyperframes`, `hyperframes-core`, `hyperframes-keyframes`, `hyperframes-cli`) under this route; note upstream v0.8.149 while keeping the proven 0.8.137 pin.
+- Sources: October landscape check (video-shotcraft, onetake, agentic-product-demo, product-demo-director, official HyperFrames/Remotion/ElevenLabs skills).
+
 ## 1.6.0 — 2026-10-06
 
 - Offer HyperFrames as an explicit choice for each new video, carrying that choice through revisions; keep ordinary capture/composition and paid-media authorization separate.
