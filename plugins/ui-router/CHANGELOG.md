@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.19.1 - 2026-10-15
+
+- For requested overall UI ratings, define a task-specific acceptance matrix, scoring
+  anchors and evidence before the first edit. Cover relevant visual-system consistency,
+  typography, alignment, spacing, content and interactions without imposing a fixed
+  checklist on small changes.
+- Keep unverified dimensions and material acceptance failures visible; do not infer
+  visual quality from technical checks or reshape a rubric to meet its requested target.
+- Add a dense account-drawer policy case and a nearby small-copy-change case.
+
 ## 1.19.0 - 2026-10-11
 
 - Keep the repo project-neutral: the paired eval and split review no longer name a consuming project; project task briefs and results live in that project's repo.
