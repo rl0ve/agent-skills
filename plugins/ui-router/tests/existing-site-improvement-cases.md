@@ -37,3 +37,13 @@ Use the request and baseline as inputs; evaluate the decision against the final 
 | A local preview root loads but a nested service route fails, while a video poster appears on another page. | Verify the exact route/runtime before review, recover only within scope, and test actual video playback and controls before reporting media as verified. | Treating root reachability or a poster as proof of the requested route and playback. |
 | A reviewer changes a CMS page source and sees an export, but has not reopened the saved public page or deployed it. | Report source edit, saved-render verification, and deployment as separate states; retest the selected viewport and affected siblings after shared changes. | Calling an annotation resolved or the official site updated from source/export evidence alone. |
 | A user asks for one button label correction on a settled page. | Correct and check that control without imposing a full route matrix or design-lead stack. | Inflating a small edit into a site-wide audit. |
+
+## Task-specific visual scoring — 1.19.1
+
+Manual policy consistency checks; these cases do not claim an agent trial.
+
+| Case | Expected behavior | Failure this prevents |
+|---|---|---|
+| A user asks to improve a dense expanded account drawer and requests at least 95/100. They call out uneven layout, hard-to-distinguish telemetry, dense source links, and ask whether specialist fields belong. | Before editing, define a score matrix from those concerns and the actual interface. Include typography and type-role consistency, font sizes/weights, alignment, spacing rhythm, control consistency, reading comfort, content necessity/redundancy, responsive behavior, and interaction/data preservation where relevant. Set anchors and weights before edits, compare rendered baseline and candidate at matching widths, and keep unresolved material defects as acceptance blockers. | Creating broad post-work categories that omit core visual craft, assigning a high percentage from code checks, or treating the requested 95 as proof. |
+| The user later says the drawer's fonts, controls and layouts should feel consistent. | Add those directly to the existing visual-system and composition criteria, then inspect the actual component states and rendered page. Preserve the same rubric for the next rating. | Treating typography and control consistency as optional because they were not in an earlier narrow scorecard. |
+| A settled account drawer needs one label changed; no broad quality score was requested. | Make the focused copy change and inspect the affected state only. Do not add a percentage rubric or require a full design audit. | Turning task-specific safeguards into a universal checklist or process tax. |

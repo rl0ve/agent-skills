@@ -15,6 +15,47 @@ Apply every relevant gate before declaring the routed task complete.
   not compensate for obscured focal content, displaced actions or a promised detail
   page whose substantive content was removed.
 
+## Criteria before implementation
+
+When the user asks for an overall quality judgment or a numeric target, write a short
+acceptance matrix before editing. Derive it from the user's stated needs, the actual
+surface and its established design system. Include every explicit concern and the
+craft dimensions needed to judge that surface. For an interface these often include:
+
+- **Visual-system consistency:** font families and roles, type sizes and weights,
+  heading and label treatments, control dimensions and states, color roles, borders,
+  radii, and icon treatment across the reviewed area.
+- **Typography and reading comfort:** hierarchy, contrast, line height, line length,
+  wrapping, and legibility at the real viewport and zoom.
+- **Composition and spacing:** shared edges, column alignment, grid behavior, spacing
+  rhythm, intentional whitespace, density, and section transitions.
+- **Content and information structure:** useful priority, necessary detail, repeated
+  information, clear labels, compact source links, and appropriate disclosure.
+- **Responsive behavior and operation:** fit at the requested widths, control
+  consistency, keyboard and touch access, visible focus, and preserved actions/data.
+
+These are prompts for judgment, not a mandatory checklist or fixed weights. Tailor the
+matrix: include relevant dimensions, identify explicit exclusions, and do not score a
+small defined correction as a full redesign. Mark requirements as acceptance gates
+when a failure cannot be compensated by strength in an unrelated dimension.
+
+If the user requests a percentage, define non-overlapping dimensions, weights that sum
+to 100, and observable anchors for each score before the first edit. Show how each
+stated concern maps to a dimension or a clearly explained exclusion. Do not invent the
+rubric after implementation, narrow or reweight it to meet the target, or treat the
+requested threshold as evidence. A score is a labeled reviewer judgment, not a user
+study or objective measurement. If a material ambiguity would change the rubric or
+acceptance decision, ask; otherwise make a reasonable choice and state it.
+
+For every scored dimension, name the rendered evidence that will establish it. Keep
+unreviewed evidence explicitly unverified and withhold an overall score until all
+required dimensions have been reviewed. Compare the candidate and baseline at matching
+widths and states when available. A material failure in a required dimension blocks
+overall acceptance; do not average it away. Keep technical checks separate from visual
+points. When a user rejects a prior rating, withdraw it, preserve the original rubric,
+map the feedback to its dimensions, and score again only after inspecting the revised
+render.
+
 ## Visual and interaction quality
 
 - Hierarchy remains clear when squinting or at 200% zoom.
