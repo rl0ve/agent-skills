@@ -88,6 +88,15 @@ these cases are not a new asset build, behavioral benchmark or device trial.
 | A native-engine project has a settled non-Three.js pipeline | Preserve the existing stack and choose compatible responsibilities; apply relevant boundary checks without mandating Three.js or Blender. | Stack boundary |
 | An accepted static form needs one spacing correction | Verify the affected UI directly; no authoring map, asset export investigation or Dream Loop requirement. | Nearby non-trigger case |
 
+## Task-focused interface copy — 1.19.2
+
+Manual policy cases from a browser annotation; they do not claim a new usability study.
+
+| Case | Expected route and evidence | Review |
+|---|---|---|
+| A process table has disclosure chevrons and a subtitle saying “Open a process to see its usage breakdown” | Remove the instructional subtitle and verify the compact rendered header. The visible affordance already explains the action. | Applicable copy-density gate |
+| Some rows are excluded because their folder type cannot be verified | Keep a concise count and “View all folders” action beside the table controls; this communicates missing scope and a recovery action that the controls alone do not reveal. | Nearby non-trigger case |
+
 ## Evidence decisions
 
 - **Adopt:** the sample checkpoints and task-specific resource selection; extend the

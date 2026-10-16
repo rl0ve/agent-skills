@@ -219,6 +219,11 @@ its report must not imply full visual or editorial acceptance.
 ## Writing and interface copy
 
 - Supported facts, material qualifications, product terminology, identifiers, labels, states, links, and formatting are preserved.
+- In task-focused screens, review every subtitle, table-heading description, and
+  persistent helper line. Remove copy that merely narrates visible controls or repeats
+  the heading; it consumes scanning space without helping the user decide or act. Keep
+  concise context for non-obvious scope, excluded data, consequences, recovery, or
+  genuinely unfamiliar actions beside the relevant control or state.
 - UX, product, or marketing constraints are settled before the final prose pass.
 - One context-holding editor owns the finished copy; any second agent is read-only and returns findings.
 - A representative author sample outranks generic style preferences.

@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.19.2 - 2026-10-16
+
+- Audit persistent copy in task-focused views. Remove subtitles and helper lines that
+  only describe visible controls or repeat headings; keep concise context for
+  non-obvious scope, excluded data, consequences, and recovery beside the relevant state.
+- Add paired cases for a redundant process-table instruction and a useful excluded-row
+  count with an action.
+
 ## 1.19.1 - 2026-10-15
 
 - For requested overall UI ratings, define a task-specific acceptance matrix, scoring

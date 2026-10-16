@@ -1,7 +1,7 @@
 {
   "name": "ui-router",
-  "version": "1.19.1",
-  "description": "Route UI and interactive-world work to selected specialists, focused design guidance, runtime choices, and verified interactions. Updated 2026-10-15: define task-specific UI scoring criteria before implementation.",
+  "version": "1.19.2",
+  "description": "Route UI and interactive-world work to selected specialists, focused design guidance, runtime choices, and verified interactions. Updated 2026-10-16: remove redundant persistent UI instructions.",
   "author": {
     "name": "rl0ve"
   },
