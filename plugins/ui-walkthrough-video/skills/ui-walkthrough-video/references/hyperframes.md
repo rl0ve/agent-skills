@@ -60,17 +60,25 @@ proof when deliberately upgrading. The earlier 0.8.29 trials remain historical.
 Upstream had reached v0.8.149 by 2026-10-11; upgrade only with a fresh landscape and
 portrait proof recorded in VALIDATION.md.
 
-**Official HyperFrames skills.** HeyGen publishes 21 agent skills with `/hyperframes`
-as their router ([repo](https://github.com/heygen-com/hyperframes)). Load them for
-composition authoring detail under this route, which keeps ownership of real capture,
+**Official HyperFrames skills.** HeyGen publishes a multi-skill package with `/hyperframes`
+as its router ([repo](https://github.com/heygen-com/hyperframes)). Load selected skills
+for composition authoring detail under this route, which keeps ownership of real capture,
 the storyboard contract, narration and QA. Install by name; a non-interactive
-`npx skills add heygen-com/hyperframes` with no `--skill` installs all 21, and their
-broad triggers then compete with this skill:
+`npx skills add heygen-com/hyperframes` with no `--skill` can install the full package,
+whose broad creation triggers then compete with this skill:
 
 ```sh
 npx skills add heygen-com/hyperframes --skill hyperframes --skill hyperframes-core \
   --skill hyperframes-keyframes --skill hyperframes-cli
 ```
+
+For authored composition and typography, select `hyperframes-creative`; for
+choreography and scene handoffs, select `hyperframes-animation`. Read the complete
+selected entrypoints and required references, including creative's house-style,
+video-composition and beat-direction guidance for substantial multi-scene work.
+These address motion-design craft; the builder's camera paths and technical checks
+alone do not establish it. Preserve the user's reference and tutorial pacing over
+promotional house defaults. Keep a short moving proof and review transition midpoints.
 
 Add `embedded-captions` or `hyperframes-audio` only when that layer is in scope.
 Leave `product-launch-video`, `faceless-explainer`, `talking-head-recut` and the other

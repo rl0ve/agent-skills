@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.19.5 - 2026-10-18
+
+- Add a `motion-explainer` route for conceptual animation and authored films,
+  separating creative direction from rendering, voice and recorded UI evidence.
+- Plan composition, typography, visual continuity and explanatory motion; prove
+  one representative moving sequence and review transition midpoints before
+  treating a technically valid export as aesthetically complete.
+- Conditionally select official HyperFrames creative/animation skills,
+  video-shotcraft with Remotion guidance, or a stated adaptation in an existing
+  pipeline. Keep teaching pace, deliberate stillness and supplied references.
+- Add a dated public-source review, nearby non-trigger cases and field-guide routing.
+
 ## 1.19.4 - 2026-10-18
 
 - `route-ui-work`: add the MIT Shaders library as a conditional source for a decorative

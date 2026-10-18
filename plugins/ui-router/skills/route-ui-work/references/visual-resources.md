@@ -285,6 +285,15 @@ quality, production readiness, conversion performance or use by a specific desig
 - The skill invents a metaphor and drives readouts from its own small model. Give it the real numbers, and check the metaphor and every displayed value against the actual system before publishing.
 - With the user's approval, install it only for such a request (catalog key `anatomy`, upstream `npx skills add wheresryan22/anatomy`; about 10 MB with examples). It needs Node 20.10+ and Chrome for its own checks, and React 18+ only for React output. Expect a long session. Its gallery submission opens a public pull request on the anatomy-community repository, a separate publishing step that needs the user's yes.
 
+### Authored motion and explainer craft
+
+Use [motion-explainers.md](motion-explainers.md) for composition, typography,
+beat direction, scene continuity and a representative moving proof. The official
+HyperFrames creative/animation skills and community video-shotcraft address that
+craft layer. UI gesture/easing skills and a rendering engine do not replace it.
+The [dated source review](../../../docs/motion-explainer-review-2026-10-18.md)
+separates documented capability and adoption signals from tested output quality.
+
 ### HyperFrames: local product videos and explainers
 
 - Sources: [official repository](https://github.com/heygen-com/hyperframes), [documentation](https://hyperframes.heygen.com/introduction), [Apache 2.0 license](https://github.com/heygen-com/hyperframes/blob/main/LICENSE). The route follows [HeyGen's public announcement](https://x.com/HeyGen/status/2048882211022311614), not a Meng recommendation.

@@ -53,7 +53,7 @@ not the same on both.
 | | What it does |
 |---|---|
 | **Natural Writing** | Diagnoses, edits, rewrites, voice-matches, or drafts prose while preserving facts, formatting, terminology, register, and the author's voice. Ships a linter with a per-document mode and a set-level mode. |
-| **UI Router** | Routes UI, UX, design-review, motion, design-to-code, and interface-copy work through a researched skill catalog and what is actually installed. Its `route-3d-work` skill routes real-time 3D worlds, Blender-to-web pipelines and Dream Loop fidelity passes. Uses Natural Writing as its sole final editor for copy. |
+| **UI Router** | Routes UI, UX, design-review, motion, animated-explainer, design-to-code, and interface-copy work through a researched skill catalog and what is actually installed. Its `route-3d-work` skill routes real-time 3D worlds, Blender-to-web pipelines and Dream Loop fidelity passes. Uses Natural Writing as its sole final editor for copy. |
 | **Work Router** | Chooses whether work stays in the parent session or moves to a bounded subagent, on task shape, ambiguity, risk, latency and token use rather than defaulting to the largest model. One method, with a route table for each agent. |
 | **Capability Storyboard** | Builds a capability-first HTML storyboard for a keynote or demo: Acts as capabilities, one running example, a talk track and director's notes per scene. Ships a template and a finished nine-scene example board to lift components from. |
 | **Deck Builder** | Builds `.pptx` on top of any corporate template and verifies by rendering slides to images. The brand is configuration: a generator reads your template and writes the palette, grid, layouts, and logo zone for you. |
@@ -126,7 +126,7 @@ Restart Claude Code or run `/reload-plugins` after installation.
 
 Your administrator can restrict models, effort levels, local marketplaces, and plugin enablement. The routers honor those controls. See [ADMIN.md](ADMIN.md) for the exact marketplace settings pattern to give your Claude Code administrator.
 
-The AI router uses family aliases rather than pinning provider-specific IDs. If Fable is unavailable, its long-horizon route falls back to the newest permitted Opus family model or the inherited session model, and Claude Code reports the substitution.
+Work Router uses family aliases rather than pinning provider-specific IDs. If Fable is unavailable, its long-horizon route falls back to the newest permitted Opus family model or the inherited session model, and Claude Code reports the substitution.
 
 ## Optional UI skills
 

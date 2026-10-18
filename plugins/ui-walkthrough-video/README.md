@@ -48,6 +48,15 @@ prefer Remotion when maintaining a video-generating
 application or using existing React components. Both can generate variants.
 Their showcases are separate from the product-demo comparison page.
 
+### Conceptual explainers
+
+Authored diagrams and motion-graphics films need a motion-design lead. UI Router's
+`motion-explainer` route plans composition, typography, visual continuity and a
+short moving proof. This plugin keeps capture, narration and delivery ownership
+for mixed productions. The optional HyperFrames route now names its official
+creative and animation skills for the relevant layers; a working render does not
+by itself demonstrate aesthetic polish.
+
 ### Native editing comparison
 
 | Editing need | Cap Studio | Recordly | Preference |

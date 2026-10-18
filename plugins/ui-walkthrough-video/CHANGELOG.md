@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.7.2 — 2026-10-18
+
+- Route conceptual motion explainers to a motion-design lead; retain real capture,
+  narration and delivery ownership for mixed films and ordinary walkthroughs.
+- Name official HyperFrames creative and animation skills for composition and
+  choreography under the existing optional route. Require a representative moving
+  proof for substantial authored inserts, preserving reference direction and teaching
+  pace rather than importing promo defaults.
+- Link the public-source decision review; no renderer, paid service or installation
+  is added by this guidance update.
+
 ## 1.7.1 — 2026-10-18
 
 - HyperFrames route: when a requested mix includes SFX or music, earshot (MIT, CPU-only)

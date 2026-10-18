@@ -1,6 +1,6 @@
 # Canonical chain composition
 
-The named chains below preserve the original Perplexity research. They describe the intended division of labor even when a dependency is missing. After choosing a canonical chain, inspect the live catalog and produce an executable chain with explicit substitutions.
+The original named chains preserve the Perplexity research; later medium-specific routes cite their source reviews. They describe the intended division of labor even when a dependency is missing. After choosing a chain, inspect live capabilities and produce an executable chain with explicit substitutions.
 
 Use exactly one broad lead and no more than three focused layers. Optional entries are alternatives, not an instruction to load everything.
 
@@ -58,9 +58,22 @@ compatible expressive lead and the relevant Read/Experience concerns. Do not let
 editorial label silently restore an old paper palette or exclude the requested motion.
 Apply [art-direction.md](art-direction.md) when purpose and appearance could diverge.
 
+## Motion explainer / authored video
+
+Read [motion-explainers.md](motion-explainers.md) for the lead, beat contract,
+representative proof and moving-result checks. Choose one route: official
+HyperFrames creative + animation under its core contract, video-shotcraft with
+Remotion implementation guidance, or an explicit craft adaptation in an existing
+pipeline. These are alternatives, not a stack. Voice and real UI capture retain
+separate owners. A slide layout with entrance effects is insufficient evidence of
+reference fidelity; compare the actual moving sequence. Tool adoption remains
+conditional on availability, user choice, scope and license.
+
 ## Motion only
 
 **Canonical:** `emil-motion` → `jakub-feel-better` → `transitions-dev`
+
+This chain owns interface interaction timing and feedback. Use the motion-explainer route above for film composition, typography in time and scene continuity.
 
 Add `gsap-scrolltrigger` only for a GSAP/scroll-driven implementation. Preserve the existing layout, type, color, and copy.
 

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "UI Router",
-    "version": "1.19.4",
+    "version": "1.19.5",
     "reviewed": "2026-10-18",
     "objective": "Route by surface and audience while showing the named canonical research chain separately from the installed executable chain."
   },
@@ -152,6 +152,37 @@
       "substitutions": [
         "frontend-design substitutes for Taste docs mode",
         "UX copy and accessibility cover part of the focused review"
+      ]
+    },
+    {
+      "id": "motion-explainer",
+      "label": "Motion explainer / authored video",
+      "short": "Teach through moving visual states",
+      "leadRole": "Motion-design direction",
+      "installed": [],
+      "layers": [
+        "Compatible renderer and runtime",
+        "Voice narration when requested",
+        "Observed UI capture for mixed films"
+      ],
+      "external": [
+        "heygen-com/hyperframes:hyperframes-creative + hyperframes-animation",
+        "Vincentwei1021/video-shotcraft",
+        "remotion-dev/skills"
+      ],
+      "guardrail": "Preserve correct content and the supplied reference. Prove visual continuity in playback; an encode or contact sheet alone does not establish motion craft.",
+      "canonical": [
+        "One motion-design lead",
+        "Beat, type and continuity plan",
+        "Representative moving proof",
+        "Separate aesthetic, content, audio and export checks"
+      ],
+      "available": [
+        "Inspect current skills, tools and project pipeline before selecting a route"
+      ],
+      "substitutions": [
+        "HyperFrames, Remotion and custom pipelines are alternatives",
+        "State adaptations and missing capabilities; do not silently bulk-install skills"
       ]
     },
     {

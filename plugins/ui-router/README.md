@@ -36,6 +36,16 @@ Claude Code's official `frontend-design` plugin is a strong installed fallback, 
 For copy, the router does not stack humanizers. It selects one product/UX or marketing semantics owner only when needed, then uses the companion `natural-writing` plugin as the sole final editor. Verify that companion separately; package presence is not installation evidence. If it is unavailable, select exactly one documented fallback.
 
 
+## Animated explainers and authored video
+
+The [motion-explainer route](skills/route-ui-work/references/motion-explainers.md)
+selects creative direction separately from rendering and narration. It uses the
+supplied reference, plans visual changes and scene continuity, and checks a short
+moving proof before a full film. Official HyperFrames creative/animation skills,
+video-shotcraft with Remotion, and an existing custom pipeline are conditional
+routes. Recorded walkthroughs and ordinary UI interactions keep their own workflows.
+See the [source review](docs/motion-explainer-review-2026-10-18.md) for evidence and limits.
+
 ## Inspiration sources and visual resources
 
 The [resource map](skills/route-ui-work/references/visual-resources.md) selects inspiration by design question. Mobbin and Refero cover product screens, styles and flows; 21st.dev adds component and section samples with selected implementation candidates. Beautiful UI, AI Elements, Agent Elements and PAIR apply when users encounter AI behavior. Motion references include Transitions.dev and the existing product, experimental and spatial sources. Inspect exposed tools and actual access before assuming a service is available or missing.

@@ -62,3 +62,16 @@ narrating a recording of real UI actions. Each one fits a different deliverable.
 
 Index for later scans: [awesome-claude-video-skills](https://github.com/zhuyansen/awesome-claude-video-skills)
 (277 repos, each with a security rating).
+
+## Motion-design craft review — 2026-10-18
+
+Conceptual motion explainers and recorded UI tutorials have different creative
+needs. UI Router now owns an authored-film route; this skill retains real capture,
+speech and delivery. Official [HyperFrames creative](https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-creative)
+and [animation](https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-animation)
+provide composition/beat and choreography guidance under the optional production
+route. [video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) is a
+conditional Remotion craft workflow, independently linked in [Remotion's resources](https://www.remotion.dev/docs/resources).
+The [dated decision record](https://github.com/rl0ve/agent-skills/blob/main/plugins/ui-router/docs/motion-explainer-review-2026-10-18.md)
+records scope, licensing and adoption signals. Source review is not a rendered
+comparison, and no new candidate was installed for this update.

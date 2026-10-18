@@ -13,7 +13,7 @@
       "name": "ui-router",
       "source": "./plugins/ui-router",
       "description": "Design routing, interactive-world choices, visual resources, and verified interactions",
-      "version": "1.19.4",
+      "version": "1.19.5",
       "category": "Development",
       "tags": [
         "ui",
@@ -85,7 +85,7 @@
       "name": "ui-walkthrough-video",
       "source": "./plugins/ui-walkthrough-video",
       "description": "Real UI walkthroughs with optional HyperFrames composition, measured speech cues and reusable voice narration.",
-      "version": "1.7.1",
+      "version": "1.7.2",
       "category": "Productivity",
       "tags": [
         "video",

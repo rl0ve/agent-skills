@@ -37,6 +37,18 @@ record the actual variant and check it against [art-direction.md](art-direction.
 
 Impeccable modes are part of routing: **Persuade** for marketing, **Operate** for product work, **Read** for editorial/docs, and **Experience** for expressive/portfolio work.
 
+## Authored motion and explainer craft — reviewed 2026-10-18
+
+These later additions are conditional routes, not part of the original snapshot
+or assertions of installed availability. Read [motion-explainers.md](motion-explainers.md)
+for selection, complete-workflow loading, the moving proof and scope boundaries.
+
+| Candidate | Upstream | Owns | Use |
+| --- | --- | --- | --- |
+| HyperFrames creative + animation | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes/tree/main/skills) | Composition/beat direction plus choreography under its core contract | Authored HTML/video; select the named skills and only required supporting files |
+| video-shotcraft | [Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) | Product-film direction, shot recipes, typography, camera and scene transitions | Compatible Remotion projects; adapt promotional pacing to the actual viewer task |
+| Remotion official skills | [remotion-dev/skills](https://github.com/remotion-dev/skills) | Framework implementation and rendering | Supporting layer for a selected Remotion workflow, not a competing creative director |
+
 ## Motion and interaction
 
 | Key | Upstream | Role | Use | Research status |

@@ -41,6 +41,17 @@ finish with that skill without starting capture. Technical video tests can remai
 silent. Preserve a natural narration target; do not substitute system speech when
 a preferred provider is unavailable.
 
+## Conceptual explainers and motion graphics
+
+When the requested result teaches a concept through authored diagrams, type and
+scene transitions, use a motion-design lead rather than treating this capture
+workflow as the creative director. If available, UI Router's `motion-explainer`
+route owns composition, visual continuity and a representative moving proof.
+Otherwise select one compatible craft workflow and establish those decisions in
+the project before assembly. Keep accepted content and reuse approved narration.
+For a mixed film, this skill still owns real UI evidence, speech and delivery;
+the motion-design layer owns the authored inserts. A simple recording stays here.
+
 ## Choose the production route
 
 **HyperFrames is optional. Ask the user for each new production before choosing it**,

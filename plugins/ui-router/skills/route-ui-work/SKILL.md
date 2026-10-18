@@ -1,6 +1,6 @@
 ---
 name: route-ui-work
-description: Route UI, UX, frontend, design review, motion, design-to-code, component-library, and interface-copy work through the researched skill catalog and live installed capabilities. Includes project-specific reference research, visual and component samples at useful decision points, iteration steering, and implementation-resource selection. Honor explicitly named skills and avoid unnecessary stacking.
+description: Route UI, UX, frontend, design review, motion, animated explainers, authored video, design-to-code, component-library, and interface-copy work through the researched skill catalog and live installed capabilities. Includes project-specific reference research, visual and component samples at useful decision points, iteration steering, and implementation-resource selection. Honor explicitly named skills and avoid unnecessary stacking.
 compatibility: Codex and Claude Code with Agent Skills and plugin support.
 ---
 
@@ -87,6 +87,16 @@ UI Router owns selection and shared checks; specialists own detailed execution.
 Use [references/upstream-skills.md](references/upstream-skills.md) for exact Meng
 entrypoints, selective loading/installation, and clearly labeled adaptations.
 
+## Motion explainers and authored video
+
+For a conceptual explainer, motion-graphics film, kinetic typography, or feedback
+that a video feels like slides despite good content, use the `motion-explainer`
+surface and read [references/motion-explainers.md](references/motion-explainers.md).
+Select a motion-design lead separately from the renderer and narration provider.
+Preserve the reference's composition, typography, pacing and visual continuity;
+prove a short moving sequence before expanding. Recorded UI tasks keep their
+capture owner. Ordinary hover, gesture and feedback edits stay `motion-only`.
+
 ## Graphical and interactive builds
 
 **Real-time 3D goes to `route-3d-work`:** playable worlds, simulations, spatial scenes,
@@ -114,7 +124,7 @@ For inspiration, substantial new visual work with unresolved direction, motion r
 - Use ThreeUI Community for procedural 3D examples, Toolcraft for a canvas with creative controls, Canvas UI or the WebGPU-only Shaders library for a specific GPU effect, and Anatomy for an interactive figure that explains a mechanism. They are implementation resources, not additional aesthetic directors.
 - Treat Neuform and Aura as exploration, prototype and handoff tools. Their generated or exported HTML can provide a visual direction and implementation reference, but does not establish a clean import into a CMS or a maintainable page-builder edit. Recreate the selected structure in the destination and verify it there.
 - Treat ThreeUI Pro as an entitled source-delivery route for a compatible code project, not a native CMS component library. Keep any selected spatial scene bounded, preserve a readable fallback, and test the destination's actual runtime.
-- For an exported product video or animated explainer, consider HyperFrames' free local renderer. A website animation and a rendered video need different validation; select the output route first.
+- For an authored product film or animated explainer, use the [motion-explainer route](references/motion-explainers.md). It separates creative direction from HyperFrames, Remotion or an existing custom renderer; a successful export alone does not establish the requested polish.
 - For product screens and flows consider Mobbin or Refero; inspect available connector tools before assuming access is missing. Consider 21st.dev for component samples and selected code, Component Gallery for conventions, and the resource map for expressive and editorial references. Select AI-interface examples only when the product exposes AI behavior.
 - Choose motion references by behavior: product feedback, page/scroll choreography, experimental interaction, small interaction details, or spatial 3D. Use the matching resource-map row and inspect actual motion; screenshots alone do not establish timing or gestures.
 - Keep dependencies project-local and add only what the chosen output needs. A resource catalog entry is not an installed plugin. A Blender workflow skill is not the Blender application.
