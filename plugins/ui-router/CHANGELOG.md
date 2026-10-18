@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.19.4 - 2026-10-18
+
+- `route-ui-work`: add the MIT Shaders library as a conditional source for a decorative
+  GPU effect. It is WebGPU only and leaves a transparent canvas where WebGPU is missing,
+  so the page needs a fallback underneath. Components sample 5% of visitors for
+  telemetry unless `disableTelemetry` is set. Canvas UI stays the choice when an effect
+  needs a WebGL path.
+- `route-ui-work`: add Anatomy as a conditional, opt-in catalog skill for interactive
+  figures that explain a mechanism. Check its metaphor and every displayed number
+  against the real system; gallery submission is a separate publishing step.
+- Add applicable and nearby non-trigger policy cases and the
+  [October 18 UI leads review](docs/ui-leads-review-2026-10-18.md).
+
 ## 1.19.3 - 2026-10-18
 
 - `route-3d-work`: when the camera moves, runtime evidence includes a short clip along

@@ -113,6 +113,18 @@ before and after the edit; see the
 | The agent must choose ambience and interaction sounds it cannot hear | A local analysis tool may screen candidates and check sync; acceptance still needs listening in the scene, and any cloud critique needs consent. | Conditional audio aid |
 | A fixed, static product render for a landing page | Stills are the evidence; no clip review, bake transport or startup investigation. Landing-page work stays with `route-ui-work`. | Nearby non-trigger case |
 
+## Shaders and Anatomy — 1.19.4
+
+Manual policy cases from the upstream repositories; nothing was installed or rendered.
+See the [October 18 UI leads review](../docs/ui-leads-review-2026-10-18.md).
+
+| Case | Expected route and evidence | Review |
+|---|---|---|
+| A Svelte marketing hero wants an animated gradient with noise and a cursor trail | Shaders is eligible: a CSS or image background underneath, a WebGPU-missing check in the user's browsers, reduced motion supplied by the project, and a telemetry decision recorded before launch. | Applicable GPU effect |
+| A page already renders a three.js scene and wants a glow pass on it | Keep the existing renderer; Shaders' advice against adding three.js does not apply, and a WebGPU-only effect needs its own fallback. | Renderer boundary |
+| Docs for a connection pool want an interactive figure of borrowing and queueing | Anatomy is eligible as a specialist under the editorial lead: real pool size and limits supplied, the metaphor and readouts checked against the system, reduced motion checked. | Applicable explainer figure |
+| A dashboard needs a monthly revenue chart | Use the chart route; Anatomy does not draw axes or series. | Nearby non-trigger case |
+
 ## Evidence decisions
 
 - **Adopt:** the sample checkpoints and task-specific resource selection; extend the

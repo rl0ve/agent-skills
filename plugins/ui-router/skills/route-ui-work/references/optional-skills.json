@@ -264,6 +264,15 @@
       "note": "Scroll-driven 3D visual language. Conditional: install only on an explicit request (1.19.0)."
     },
     {
+      "key": "anatomy",
+      "name": "Anatomy",
+      "source": "wheresryan22/anatomy",
+      "url": "https://github.com/wheresryan22/anatomy",
+      "installer": "skills",
+      "profiles": [],
+      "note": "Interactive isometric explainer figures (SVG, optional WebGL). Conditional: install for a figure that explains a mechanism (1.19.4)."
+    },
+    {
       "key": "industrial-brutalist-ui",
       "name": "Industrial brutalist UI",
       "source": "code-yeongyu/lazycodex",

@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Portable agent skills and Claude Code routing plugins: natural-writing (tool-neutral), plus model and UI routers.",
-    "version": "1.19.3"
+    "version": "1.19.4"
   },
   "plugins": [
     {
       "name": "ui-router",
       "source": "./plugins/ui-router",
       "description": "Design routing, interactive-world choices, visual resources, and verified interactions",
-      "version": "1.19.3",
+      "version": "1.19.4",
       "category": "Development",
       "tags": [
         "ui",
@@ -85,7 +85,7 @@
       "name": "ui-walkthrough-video",
       "source": "./plugins/ui-walkthrough-video",
       "description": "Real UI walkthroughs with optional HyperFrames composition, measured speech cues and reusable voice narration.",
-      "version": "1.7.0",
+      "version": "1.7.1",
       "category": "Productivity",
       "tags": [
         "video",

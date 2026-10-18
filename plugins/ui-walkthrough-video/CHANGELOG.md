@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.7.1 — 2026-10-18
+
+- HyperFrames route: when a requested mix includes SFX or music, earshot (MIT, CPU-only)
+  can screen sound-to-cut offsets against the storyboard's cues and render code-built
+  effects with measured sync points. Listening still accepts the mix; narration review,
+  loudness measurement and the full listening reviewer are unchanged. Its optional
+  cloud critique uploads audio and stays off without consent.
+- Record the decision in the [October 18 earshot review](docs/earshot-review-2026-10-18.md).
+
 ## 1.7.0 — 2026-10-11
 
 - Gemini adapter supports the GA **Gemini 3.8 Flash TTS / Flash-Lite TTS** schema: verbatim transcript in `text`, `instructions` in `speech_metadata.style`, `speechConfig.voiceConfig.voice` (prebuilt, library or `voice_...` IDs), and a validated RIFF WAV response saved without re-wrapping. `gemini-3.1-flash-tts-preview` keeps the legacy path.

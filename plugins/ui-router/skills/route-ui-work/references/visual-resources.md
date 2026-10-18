@@ -1,6 +1,6 @@
 # Inspiration sources and implementation references
 
-Source map updated 2026-09-20; retained resource details were reviewed 2026-09-05, the paid design/prototype routes on 2026-09-17, and 21st/Motion access on 2026-09-20. This map guides selection, not a mandatory browsing checklist. Check current tool availability and access in the host; recheck upstream terms before adding code or purchasing access. Public reference access does not grant rights to redistribute pictured assets.
+Source map updated 2026-09-20; retained resource details were reviewed 2026-09-05, the paid design/prototype routes on 2026-09-17, 21st/Motion access on 2026-09-20, and Shaders and Anatomy on 2026-10-18. This map guides selection, not a mandatory browsing checklist. Check current tool availability and access in the host; recheck upstream terms before adding code or purchasing access. Public reference access does not grant rights to redistribute pictured assets.
 
 ## Choose by the work
 
@@ -268,6 +268,22 @@ quality, production readiness, conversion performance or use by a specific desig
 - Components are copied into a project through its shadcn registry. Use the exact current command for the chosen component, framework and renderer; never install the whole registry by default.
 - Prefer a WebGL path and readable HTML fallback. Live HTML-in-canvas effects depend on experimental browser support; never enable flags silently or promise equal effects in all browsers. Test in the user's chosen browser with ordinary settings.
 - A registry that supports shadcn MCP is not itself an installed MCP connection. The existing shadcn skill/CLI may be sufficient.
+
+### Shaders: WebGPU effect components
+
+- Sources: [official repository](https://github.com/shader-effects-inc/shaders), [docs](https://shaders.com/docs/components), [platform terms](https://shaders.com/license). Meng To [shared the open-source release](https://x.com/MengTo/status/2108924473265275003).
+- The `shaders` npm package (engine, 200+ components, React/Vue/Svelte/Solid/JS bindings) is MIT. The design editor, presets, website sections, Framer plugin and unwatermarked rendering are platform features with their own terms; library presets and sections need Pro, and the CLI's free fallback is a watermarked preview.
+- Choose it for a decorative effect such as a gradient, noise, glass or cursor trail. It is WebGPU only. Where WebGPU is unavailable it leaves a transparent canvas and logs nothing, so put a CSS or image fallback underneath and use `isWebGPUSupported` or `onError` where the state matters. Check WebGPU in the owner's target browsers; visitors without it see only the fallback. Use Canvas UI when the effect needs a WebGL path. No reduced-motion handling was found upstream; supply it.
+- Components sample 5% of visitors and report frame timing, component names, domain, browser family and device type to shaders.com; preview components always report. Tell the site owner, and set `disableTelemetry` unless they accept it.
+- With the user's approval, add it as a project dependency (`npm install shaders`). `npx shaders connect` also signs in, writes config and installs the upstream skill; use it only when the user wants editor sync. That skill says not to add three.js or raw WebGL for an effect a component covers. In a project already rendering with three.js, keep its renderer.
+
+### Anatomy: interactive explainer figures
+
+- Sources: [official MIT repository](https://github.com/wheresryan22/anatomy), [site](https://skills.wheresryan.sh/anatomy). Meng To [shared it](https://x.com/MengTo/status/2109182449179836579).
+- Fit: a figure for docs, a blog post or a landing page that explains how something works, built as an isometric machine whose motion is the concept and which responds to pointer and keyboard. It outputs standalone HTML, a lone SVG, or React/Next.js components; WebGL layers are optional, the SVG reads without them and the figure stays still under reduced motion.
+- Not for charts or data plots, people, maps, product screenshots or decoration. An exported explainer video stays with HyperFrames.
+- The skill invents a metaphor and drives readouts from its own small model. Give it the real numbers, and check the metaphor and every displayed value against the actual system before publishing.
+- With the user's approval, install it only for such a request (catalog key `anatomy`, upstream `npx skills add wheresryan22/anatomy`; about 10 MB with examples). It needs Node 20.10+ and Chrome for its own checks, and React 18+ only for React output. Expect a long session. Its gallery submission opens a public pull request on the anatomy-community repository, a separate publishing step that needs the user's yes.
 
 ### HyperFrames: local product videos and explainers
 

@@ -58,6 +58,7 @@ narrating a recording of real UI actions. Each one fits a different deliverable.
 | [product-demo-director](https://github.com/crimeacs/product-demo-director) | 34 | Narration-paced cuts from raw footage | Watchlist; closest in intent, too early to adopt. |
 | [clueso-ai/skills](https://github.com/clueso-ai/skills) | 27 | Polish, revoice, screenshots-to-walkthrough | Unchanged: close documented fit when Clueso is authorized. |
 | [elevenlabs/skills](https://github.com/elevenlabs/skills) | 484 | ElevenLabs TTS, including `eleven_v4` | Conditional, when ElevenLabs is already chosen. |
+| [earshot](https://github.com/Leonxlnx/earshot) | 755 (Oct 18) | Sound-to-cut offsets, loudness, a code-built SFX bank, launch-film critique | Conditional screening aid when the mix has SFX or music ([hyperframes.md](hyperframes.md)). Not a narration reviewer. |
 
 Index for later scans: [awesome-claude-video-skills](https://github.com/zhuyansen/awesome-claude-video-skills)
 (277 repos, each with a security rating).

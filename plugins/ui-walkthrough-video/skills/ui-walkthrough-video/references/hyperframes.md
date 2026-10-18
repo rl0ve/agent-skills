@@ -117,6 +117,22 @@ EQ or limit the final mix. Listen and measure final loudness/true peak. Choose a
 delivery target (for example -16 LUFS and <=-1 dBTP); finish a separate derivative
 when needed and disclose edits baked into the MP4 rather than editable source.
 
+When the requested mix includes SFX or music, [earshot](https://github.com/Leonxlnx/earshot)
+(MIT, CPU-only CLI and MCP; checked 2026-10-18) can screen it. `timeline FINAL.mp4 --cues cues.json`
+reports each sound's offset from its cut or cue. Pass the storyboard's SFX times as
+cues, because camera moves and crossfades are not detected as cuts, and trust only
+offsets it rates better than chance. If the user wants SFX, has no assets and agrees to
+generated ones, `sfx render` or `kit render` makes code-built effects with measured onset and peak
+times, with no models or network; the bank ships under the package's MIT license.
+It is a screening aid, and acceptance still needs listening. It detects voice but not
+words, so narration review stays with the listener, and `verify_video.py` already
+measures loudness. Its launch-film `critique` scores against seven launch films, so
+treat it as a hint for a teaser, not a tutorial. The optional `llm --yes-upload`
+critique sends audio to Gemini; leave it off without consent. Install it project-local
+with approval: a git clone, a venv and CPU torch. The first model call downloads about
+1.1 GB. `measure`, `sfx` and `kit` load no models, and the sound bank is on `main`
+after the v0.2.0 tag, so pin a commit.
+
 Author landscape and portrait as separate storyboards. Change canvas size and
 `rect/titleRect/captionRect` plus focal points for actual viewing size. Portrait
 may need split surfaces or reconstructed panels: extend HTML deliberately and
