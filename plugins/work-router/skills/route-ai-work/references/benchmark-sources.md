@@ -1,9 +1,10 @@
 # Benchmark sources for routing decisions
 
-Reviewed October 2, 2026. Work Router owns this source policy for both Codex and
-Claude Code. Benchmark rankings are evidence about tested configurations, not standing
-instructions to switch models. Keep dated measurements in `routing-basis.md` or a
-linked review, so the entrypoint does not accumulate volatile leaderboard tables.
+Reviewed October 2, 2026; AA-3D added October 18. Work Router owns this source
+policy for both Codex and Claude Code. Benchmark rankings are evidence about tested
+configurations, not standing instructions to switch models. Keep dated measurements
+in `routing-basis.md` or a linked review, so the entrypoint does not accumulate
+volatile leaderboard tables.
 
 ## When to refresh
 
@@ -24,6 +25,7 @@ merely because the skill was invoked. Reuse a still-relevant dated assessment.
 | [Arena WebDev](https://arena.ai/leaderboard/code) and its relevant domain categories | Human preference for generated web applications; UI implementation and design direction | Preserve category, effort, votes, confidence/rank intervals and harness. Inspect reference-based design or frontend categories when relevant; do not transfer an overall rank into an unmeasured category. Preference does not prove accessibility, maintainability or production correctness. |
 | [Arena Agent](https://arena.ai/leaderboard/agent) and [methodology](https://arena.ai/blog/agent-arena-methodology) | Agent completion, response to corrections, tool recovery and task cost | Agent Arena uses causal treatment-effect estimates from randomized components, not WebDev's pairwise preference scores. Net improvement is not an absolute task-success rate. Inspect individual signals and uncertainty, not only overall rank. |
 | [Artificial Analysis](https://artificialanalysis.ai/) with [intelligence](https://artificialanalysis.ai/methodology/intelligence-benchmarking) and [performance methods](https://artificialanalysis.ai/methodology/performance-benchmarking) | Independent capability evaluations, supported effort variants, API response time, throughput and cost tradeoffs | Preserve index version, subtest, endpoint, effort and reasoning-token accounting. Use task-relevant subtests; an aggregate intelligence score is not a visual-quality test. API latency or tokens/second is not accepted Codex task time. |
+| [AA-3D](https://artificialanalysis.ai/evaluations/aa-3d) and its [methodology](https://artificialanalysis.ai/methodology/aa-3d) | Model and effort choice for an agent building an interactive three.js scene from a brief; preference against average cost per task | Blind pairwise panel votes on one attempt per brief, built in Artificial Analysis's offline Stirrup sandbox with software WebGL. Preserve version, board date, the effort label exactly as printed and the 95% interval; treat overlapping leaders as tied. Cost is average token cost in that harness, not accepted task cost or subscription usage. It does not measure Claude Code or Codex behavior, frame rate on real devices, Blender production or a fidelity loop; 3D build method stays with UI Router. |
 | [SWE-bench](https://www.swebench.com/) and [DeepSWE](https://deepswe.datacurve.ai/) | Repository issue resolution and substantial engineering | Preserve dataset/version, same-harness comparisons, budget, pass metric and verification status. SWE-bench's checked entries and Bash Only view help distinguish submissions and model effects. DeepSWE uses mini-swe-agent. Neither is a UI taste benchmark; check saturation, contamination concerns and author corrections. |
 | [Terminal-Bench](https://www.tbench.ai/) and its [updates](https://www.tbench.ai/news) | Terminal workflows, tool use, debugging and environment work | Compare model plus agent/harness, benchmark version, resources and time limits. Check integrity notices and revised tasks; do not pool different versions or infer raw-model superiority from different agents. |
 | [METR time horizons](https://metr.org/time-horizons/) and [limitations](https://metr.org/notes/2026-01-22-time-horizon-limitations/) | Reliability on longer software/research tasks and autonomy-related decisions | Human task-duration at a stated success probability is not AI runtime or safe unattended duration. Keep confidence intervals, task distribution and 50%/80% reliability separate. Missing models are missing coverage, not inferior models. |
@@ -34,6 +36,8 @@ These are selected sources with inspectable methods, not an exhaustive or perman
 ranking of evaluators. Add another original evaluator when it addresses a missing
 task dimension and exposes methods, configuration and limitations. Social posts and
 aggregators are leads; follow them to the original evidence before adopting a claim.
+The [October 18 3D benchmark review](3d-benchmarks-review-2026-10-18.md) records why
+3JSBench, Blender Bench v1 and LuminaBench were not added.
 
 ## Record and compare
 

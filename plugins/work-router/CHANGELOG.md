@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.9.1 - 2026-10-18
+
+- Add Artificial Analysis AA-3D to the benchmark sources as a conditional input for
+  model and effort choice on agent-built interactive three.js scenes. Keep its version,
+  board date, printed effort label and 95% interval, treat overlapping leaders as tied,
+  and read cost per task as token cost in its harness. It does not measure Claude Code
+  or Codex behavior, device frame rate, Blender production or a fidelity loop.
+- Record the October 18 review in `references/3d-benchmarks-review-2026-10-18.md`:
+  defer 3JSBench until its grader and full results are published, keep Blender Bench v1
+  as reference only (two models, effort not stated), and reject LuminaBench 3D Seaplane
+  as a routing source (scoring method not published). No default route changes.
+- Policy walkthrough: a fresh read-only agent used AA-3D only for a three.js scene
+  brief, read the overlapping leaders as tied without an effort or cost-per-result
+  claim, and left Blender scripting and a 2D dashboard on their existing sources.
+
 ## 1.9.0 - 2026-10-11
 
 - Slim `route-ai-work/SKILL.md` from ~4,290 to ~1,550 words: overrides, timing, the
