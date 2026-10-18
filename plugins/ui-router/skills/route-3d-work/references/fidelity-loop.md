@@ -67,8 +67,11 @@ do not treat a planned check as a result.
   state. For an existing product, preserve its useful interface and interactions.
   Do not replace a missed target with an easier one without explicitly revising the brief.
 - **Rendered comparison:** capture the actual working slice under comparable conditions,
-  with required UI visible, and exercise its promised action. A generated target, asset
-  render or successful build is not a running-product comparison.
+  with required UI visible, and exercise its promised action. When the camera moves,
+  include a clip along the real path ([moving-view check](spatial-realism.md#compare-runtime-evidence-fairly)).
+  Luminance and color statistics against the target can flag drift; they support the
+  critique and do not replace it. A generated target, asset render, offline
+  accumulation still or successful build is not a running-product comparison.
 - **Fresh-context critique:** obtain an independent read-only judgment with target,
   current capture, concrete discrepancies and the selected workflow's rubric. Preserve
   previous evidence where that workflow requires it. A builder's self-score is not an

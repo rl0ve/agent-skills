@@ -81,7 +81,8 @@ Inspector trial) and exclusions. Dream Loop runs in the host you are in. Its ref
 [spatial realism](skills/route-3d-work/references/spatial-realism.md) and
 [interaction contracts](skills/route-3d-work/references/interaction-contracts.md).
 The old `route-ui-work` reference paths remain as redirect stubs for one release.
-See the [source review](docs/interactive-worlds-review-2026-09-27.md).
+See the [source review](docs/interactive-worlds-review-2026-09-27.md) and the
+[October 18 three.js builder review](docs/threejs-builders-review-2026-10-18.md).
 
 ## Rendered-site annotation review
 

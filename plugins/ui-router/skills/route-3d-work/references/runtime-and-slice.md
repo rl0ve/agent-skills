@@ -78,6 +78,12 @@ is another candidate when explicit loop/duration control fits. Compare a short,
 same-brief kit with existing recordings or licensed assets; inspect loop seams,
 naturalness, speech masking, export, editing time and cost across attempts.
 
+When the agent cannot listen, a local analysis tool such as
+[earshot](https://github.com/Leonxlnx/earshot) (MIT, CPU-only, CLI and MCP) can
+describe candidates, score them against the brief and time effects against picture.
+Use it to screen and catch sync errors; accept sounds by listening in the scene. Its
+optional cloud critique uploads audio, so leave it off without the user's consent.
+
 Verify access, the actual billing route and commercial rights for the selected
 model, plan and delivery platforms. Music rights can differ from speech/effects;
 an aggregator's web allowance can differ from CLI/API credits. Cache accepted
@@ -125,6 +131,7 @@ migration, headset support or learning benefit.
 Source checks and adoption decisions: [September 27 review](../../../docs/interactive-worlds-review-2026-09-27.md).
 
 October 1 follow-up: [playable-world and host review](../../../docs/playable-worlds-review-2026-10-01.md).
+October 18: [three.js builder review](../../../docs/threejs-builders-review-2026-10-18.md).
 
 ## Gate
 

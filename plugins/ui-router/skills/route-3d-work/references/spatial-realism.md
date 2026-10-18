@@ -35,6 +35,12 @@ Record a short owner/format/runtime-contract map before substantial asset work.
 | Scene assembly, camera/framing, input, legal actions and feedback | Three.js and the application's authoritative state. An exported scene does not supply gameplay or learning semantics. |
 | Responsive water, wind, particles, material/light changes and simple repeated forms | Consider bounded runtime shaders or procedural geometry. Reuse/instance appropriate authored geometry rather than regenerate each copy. Measure the chosen effect on target conditions. |
 
+Code-built geometry is an authoring method, not necessarily a runtime one. When its
+construction shows up as a startup long task, bake the generated meshes into a
+compressed asset during the build or build them off the main thread, then compare
+startup on the same device ([Athenaion](https://github.com/Leonxlnx/athenaion) ships
+such a bake step for its heaviest procedural meshes).
+
 Do not make Blender generate the whole experience by default, or replace distinctive
 art with crude code primitives merely because they are easy to generate. A licensed,
 authored or procedural asset earns its place through the representative task and
@@ -60,6 +66,11 @@ arrangement, not just one object: successive objects placed beside earlier objec
 must all remain supported. A container's outside bounds do not prove its interior fits.
 Check facing direction and visibility as well as intersection: paper can be inside a
 bag yet need part of its label above the rim to communicate the action.
+
+Seat scanned, imported and generated props in their surroundings. Sink bases below the
+ground line, vary scale and rotation, cluster things that naturally cluster, and give
+trunks and posts a footing (soil, a planter, a cut in the paving, contact shadow)
+rather than letting them pierce the floor. Fix placement before remodeling the asset.
 
 ### Verify the asset boundary before remodeling
 
@@ -133,6 +144,13 @@ its contents before claiming a whole-scene match. After a relevant change, rebak
 affected dependencies or record why the existing result remains adequate and what it
 cannot represent. Do not rebake unrelated regions merely to produce a fresh artifact.
 
+glTF has no ratified lightmap slot; [KHR_lightmap](https://github.com/KhronosGroup/glTF/pull/2679)
+was still an open proposal in October 2026. Record how each bake travels (a second UV
+set with a separately loaded texture, or the emissive-map workaround) and, after every
+export, check the UV set, color space and intensity in the running scene. Keep a review
+switch that turns baked layers off, so a capture shows which light is baked and which
+is live.
+
 Keep direct light, diffuse bounce, contact shadow and reflected light conceptually
 separate when diagnosing a discrepancy. Static captures do not automatically track
 moved props, switched lamps or closed doors. Inspect a relevant changed state for leaks,
@@ -148,17 +166,25 @@ or manipulation; include frame-time variation rather than only a short average F
 Distinguish compressed transfer bytes, decoded geometry/textures and estimated GPU
 allocation. A successful desktop pass is not a mobile or stereo-headset result.
 
+Settled stills miss defects that appear only in motion. When the camera walks, orbits
+or follows a path, record a short clip along the real path and review it with
+timestamps for flicker (coplanar surfaces fighting, shadow acne, texture shimmer from
+missing mips), pop-in (LOD, culling, streaming) and parts that float, detach or
+collapse at some angles ([example review](https://x.com/MengTo/status/2111147234171764759)).
+Fix each in its owning layer and recheck the same path.
+
 Apply [interaction-contracts.md](interaction-contracts.md) for task/evidence semantics
 and [motion-quality.md](../../route-ui-work/references/motion-quality.md) for input, media and lifecycle. Capture the
 final changed view and exercise its affected action after the last material edit.
-Review record and conditional cases: [September 22 spatial review](../../../docs/spatial-workflow-review-2026-09-22.md).
+Review record and conditional cases: [September 22 spatial review](../../../docs/spatial-workflow-review-2026-09-22.md)
+and [October 18 three.js builder review](../../../docs/threejs-builders-review-2026-10-18.md).
 
 ## Gate
 
 - [ ] Asset, material, geometry and lighting plan recorded with provenance.
 - [ ] Defect diagnosed at its stage (source, export, optimization, runtime) before remodeling.
 - [ ] Delivered attribute values inspected, not just presence or counts.
-- [ ] Baked dependencies listed and rebuilt when their inputs change.
-- [ ] Settled camera views captured from the running build on a named device.
+- [ ] Baked dependencies listed, rebuilt when their inputs change, and their transport (UV set, color space, intensity) checked after export.
+- [ ] Settled camera views captured from the running build on a named device, plus a reviewed clip of the real path when the camera moves.
 - [ ] Frame time, draw calls, triangles, texture memory and transfer size measured or marked estimated.
 - [ ] Separate verdicts for artifact, rendered craft, UI/UX and performance.

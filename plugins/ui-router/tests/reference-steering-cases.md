@@ -97,6 +97,22 @@ Manual policy cases from a browser annotation; they do not claim a new usability
 | A process table has disclosure chevrons and a subtitle saying “Open a process to see its usage breakdown” | Remove the instructional subtitle and verify the compact rendered header. The visible affordance already explains the action. | Applicable copy-density gate |
 | Some rows are excluded because their folder type cannot be verified | Keep a concise count and “View all folders” action beside the table controls; this communicates missing scope and a recovery action that the controls alone do not reveal. | Nearby non-trigger case |
 
+## Three.js builder additions — 1.19.3
+
+Manual policy cases from public builder posts and linked repositories; no scene build,
+device trial or audio tool trial is claimed. Read-only subagents ran related briefs
+before and after the edit; see the
+[October 18 review](../docs/threejs-builders-review-2026-10-18.md).
+
+| Case | Expected route and evidence | Review |
+|---|---|---|
+| A rug flickers only while the first-person camera walks past it | Capture a short clip along the real path and review it with timestamps; diagnose z-fighting, LOD or shadow causes in the runtime layer before remodeling. Settled stills alone cannot close it. | Applicable temporal case |
+| A code-built market scene adds a one-second startup task | Measure the construction cost, then bake the generated meshes into a compressed asset in the build or build them off the main thread; compare startup on the same device. | Startup boundary |
+| A scanned tree trunk emerges straight through stone paving | Seat the asset: sunk base, footing, contact shadow, varied scale and rotation. Do not remodel the tree to fix placement. | Asset integration |
+| Re-exported baked lighting looks washed out though the Blender preview looked right | Check the lightmap's UV set, color space and intensity in the delivered asset and runtime, and record how the bake travels; toggle the bake off to separate baked from live light. | Lightmap transport |
+| The agent must choose ambience and interaction sounds it cannot hear | A local analysis tool may screen candidates and check sync; acceptance still needs listening in the scene, and any cloud critique needs consent. | Conditional audio aid |
+| A fixed, static product render for a landing page | Stills are the evidence; no clip review, bake transport or startup investigation. Landing-page work stays with `route-ui-work`. | Nearby non-trigger case |
+
 ## Evidence decisions
 
 - **Adopt:** the sample checkpoints and task-specific resource selection; extend the

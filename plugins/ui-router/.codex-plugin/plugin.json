@@ -1,7 +1,7 @@
 {
   "name": "ui-router",
-  "version": "1.19.2",
-  "description": "Route UI and interactive-world work to selected specialists, focused design guidance, runtime choices, and verified interactions. Updated 2026-10-16: remove redundant persistent UI instructions.",
+  "version": "1.19.3",
+  "description": "Route UI and interactive-world work to selected specialists, focused design guidance, runtime choices, and verified interactions. Updated 2026-10-18: review moving 3D views as clips; bake slow code-built geometry; ground imported props; check lightmap transport.",
   "author": {
     "name": "rl0ve"
   },

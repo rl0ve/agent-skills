@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.19.3 - 2026-10-18
+
+- `route-3d-work`: when the camera moves, runtime evidence includes a short clip along
+  the real path, reviewed with timestamps for flicker, z-fighting, pop-in and floating
+  parts. Settled stills cannot show these.
+- `spatial-realism.md`: bake code-built geometry or build it off the main thread when
+  construction shows up as a startup long task; seat scanned and imported props in
+  their surroundings; record how lightmaps travel (glTF has no ratified lightmap slot)
+  and check UV set, color space and intensity after export; keep a switch that turns
+  baked layers off for review.
+- `fidelity-loop.md`: optional color statistics against the locked target support,
+  but do not replace, the critique.
+- `runtime-and-slice.md`: when the agent cannot listen, a local audio-analysis tool can
+  screen sounds; acceptance still needs human listening, and cloud critique needs consent.
+- Add applicable and nearby non-trigger policy cases and the
+  [October 18 three.js builder review](docs/threejs-builders-review-2026-10-18.md).
+
 ## 1.19.2 - 2026-10-16
 
 - Audit persistent copy in task-focused views. Remove subtitles and helper lines that

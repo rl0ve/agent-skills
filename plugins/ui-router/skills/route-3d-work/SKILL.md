@@ -43,7 +43,8 @@ Do not install broad packs for a runtime the project does not use.
 - **Water, sky, atmosphere:** Meng `3d-ultra-realistic-water`, `3d-sky-background`.
 - **Tours, orbit inspection or free walking:** Meng `3d-virtual-tour`. Match the
   controls to the brief.
-- **Frame-time, memory or load budget failures:** Meng `optimize-threejs-games`.
+- **Frame-time, memory or load budget failures:** Meng `optimize-threejs-games`; for
+  startup stalls from code-built geometry, [spatial-realism.md](references/spatial-realism.md#assign-authoring-and-runtime-responsibilities).
 - **Object tasks** (pick up, place, combine, inspect):
   [interaction-contracts.md](references/interaction-contracts.md).
 
@@ -77,9 +78,10 @@ Treat a pass as complete only when every applicable gate is **met**, or is marke
 1. **Lead and layers named:** which skills were loaded and which ran.
 2. **Provenance ledger:** source, license, generated or procedural status, and camera
    distance for each new asset.
-3. **Runtime evidence:** screenshots or clips from the running build on a named device,
-   plus frame time, draw calls, triangles, texture memory and transfer size. Estimates
-   are labeled as estimates.
+3. **Runtime evidence:** screenshots from the running build on a named device, plus a
+   short clip along the real camera path when the camera moves (stills miss flicker,
+   pop-in and floating parts); frame time, draw calls, triangles, texture memory and
+   transfer size. Estimates are labeled as estimates.
 4. **Target comparison:** for a fidelity pass, the build has been compared with the
    locked target and the remaining gaps are recorded.
 5. **Interaction intact:** task meaning, selection, placement and recovery still work
