@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.9.2 - 2026-10-19
+
+- Extend capability discovery to review the distribution and freshness of installed
+  plugins. Honor plugin preferences and inspect a maintained upstream plugin before
+  recommending a collection of standalone skills.
+- Add a shared distribution guide covering separate publication paths, content parity,
+  authenticated connectors and host runtimes, incomplete inventories, migration scope,
+  exact plugin targeting and separate installed/enabled/loaded verification.
+- Connect standalone-to-plugin consolidation to the existing deduplication workflow.
+  An audit remains read-only; no automatic migration, cleanup or monitor is introduced.
+
 ## 1.9.1 - 2026-10-18
 
 - Add Artificial Analysis AA-3D to the benchmark sources as a conditional input for

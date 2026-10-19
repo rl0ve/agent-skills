@@ -184,6 +184,13 @@ across domains. It checks installed capabilities, searches a conditional shortli
 and verifies upstream fit and overlap. UI Router adds design-specific checks when
 available; neither router requires the other.
 
+It also reviews installed packages' distribution and freshness. When you prefer plugins,
+it checks for a maintained upstream plugin before recommending standalone skills. A
+directory release can lag GitHub without implying that every plugin is stale. The
+[distribution guide](skills/discover-capabilities/references/plugin-distribution.md)
+keeps connectors, host runtimes, hooks, content differences and update paths in the
+decision, and distinguishes an audit recommendation from permission to migrate.
+
 ## Skill deduplication
 
 Use [deduplicate-skills](skills/deduplicate-skills/SKILL.md) for duplicate copies,

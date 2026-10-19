@@ -1,6 +1,6 @@
 ---
 name: discover-capabilities
-description: Find and evaluate missing agent skills, plugins, or integrations when the user asks to extend capabilities or an installed capability cannot cover the task. Check existing capabilities, compare current sources, and avoid duplicate installs.
+description: Find missing agent capabilities or review how existing plugins and skills are distributed and updated. Compare maintained upstream packages, preserve plugin preferences and integrations, and avoid duplicate installs.
 ---
 
 # Discover capabilities
@@ -44,6 +44,12 @@ The upstream [Skills CLI](https://github.com/vercel-labs/skills) supports
 `npx skills find <keywords>`; check current syntax before installing.
 
 ## Evaluate and adopt
+
+For installation-source choices or a freshness audit of existing packages, read
+[plugin distribution](references/plugin-distribution.md). Prefer a maintained,
+host-supported plugin when that matches the user's preference; check the creator's
+upstream plugin before falling back to standalone skills. Keep connectors and host
+runtimes on their supported path unless a verified replacement preserves their behavior.
 
 - Inspect the exact owner, complete SKILL.md, executable scripts, hooks, permissions,
   current activity/issues, license, host compatibility and update mechanism.

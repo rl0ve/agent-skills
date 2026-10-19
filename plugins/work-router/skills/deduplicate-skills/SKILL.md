@@ -1,6 +1,6 @@
 ---
 name: deduplicate-skills
-description: Audit and consolidate duplicate or overlapping installed skills across Codex. Use for skill cleanup, competing routers, repeated skill names, or duplicate plugins; distinguish exact copies, variants, complementary specialists and inactive remnants before proposing or applying scoped changes.
+description: Audit and consolidate duplicate or overlapping installed skills and plugins across Codex, including standalone-to-plugin consolidation. Distinguish copies, variants, useful specialists and inactive remnants before scoped changes.
 ---
 
 # Deduplicate skills
@@ -75,6 +75,12 @@ scope, update path and demonstrated fit. Keep one owner per broad concern when t
 removes a real conflict; preserve useful focused capabilities. If a useful method
 belongs in the retained owner, migrate that method within authorized scope and check
 licensing before retiring its source.
+
+For directory-versus-upstream freshness or standalone-to-plugin decisions, use
+[plugin distribution](../discover-capabilities/references/plugin-distribution.md).
+Honor a plugin preference without replacing authenticated tools with instructions.
+Include the proposed distribution, parity gaps, local customizations and migration
+prerequisites in the decision table; an audit alone does not authorize replacement.
 
 ## Make cleanup reviewable and apply only its authorized scope
 
