@@ -63,8 +63,13 @@ approval policy. Preserve existing work and any explicit user-controlled edit/sa
 
 ## Use existing production tools
 
-Use the available browser, document, PDF, writing or rendering tools for the chosen
-output. No named design plugin, model, paid service or browser is a requirement.
+Before selecting authoring tools, read [supporting skills and tools](references/supporting-tools.md).
+Route by the actual explanatory task: Diagram Design for relationships and structural
+before/after diagrams; Visual Explainer when HTML materially helps; doc-coauthoring
+for substantial collaborative writing and fresh-reader clarity; document/PDF tools for
+file construction and rendered checks. These collaborators are optional, not bundled
+dependencies. Resolve the current catalog and read any selected skill before using it.
+No named plugin, model, paid service or browser is required.
 Preserve screenshot pixels with native annotations or overlays; never generate factual
 UI evidence. Use a short GIF only when motion or interaction helps explain the issue,
 and provide a static/text alternative. Use AI imagery only for a necessary labeled

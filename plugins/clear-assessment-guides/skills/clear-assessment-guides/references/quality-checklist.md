@@ -18,6 +18,17 @@ outline, GIF or interactive board when the user asked for a simple correction.
 - Has the actual final output been inspected for clipping, readability, broken links,
   detached evidence and misleading status? Report what could not be verified.
 
+## Supporting tools
+
+- Was each collaborator selected for a concrete task and verified available, without
+  installing optional dependencies or changing the requested mode by default?
+- Were relationships distinguished from simple text changes, and useful HTML from
+  unnecessary animation or elaborate layouts?
+- Can an unfamiliar reader understand the artifact? Is a self-review honestly
+  distinguished from an independent fresh-reader test?
+- Were document/PDF rendering checks used for actual final exports, with imagery
+  and motion included only when they materially help?
+
 ## Document
 
 - Does the opening establish the current state and purpose for an unfamiliar reader?

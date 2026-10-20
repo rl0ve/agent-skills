@@ -1,6 +1,16 @@
 # Validation
 
-Release 1.0.0, checked 2026-10-20.
+Release 1.1.0, checked 2026-10-20.
+
+The 1.1.0 change adds instructions and collaborator routing only; the interactive
+template and feedback code are unchanged. Rechecked skill validation, both manifests,
+repository package parity, feedback tests, local reference targets and product-neutral
+content. Routing reviewed against a relationship diagram, a simple label correction,
+a substantial guide and a one-issue screenshot review: optional collaborators are
+chosen by task, the three delivery modes remain available, and unavailable tools have
+simpler fallbacks. No optional collaborator was installed or integration-tested.
+
+The following template checks and limits were recorded for 1.0.0:
 
 - Skill Creator quick_validate.py: valid skill.
 - Claude plugin manifest validation: passed.
