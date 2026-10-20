@@ -79,6 +79,17 @@
         "installation": "AVAILABLE"
       },
       "category": "Productivity"
+    },
+    {
+      "name": "clear-assessment-guides",
+      "source": {
+        "source": "local",
+        "path": "./plugins/clear-assessment-guides"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
     }
   ]
 }

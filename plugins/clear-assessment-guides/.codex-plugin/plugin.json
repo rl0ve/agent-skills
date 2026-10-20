@@ -1,0 +1,31 @@
+{
+  "name": "clear-assessment-guides",
+  "version": "1.0.0",
+  "description": "Source-backed assessments, practical guides, annotated issue triage, and interactive HTML review with comments and decisions. Product- and vendor-neutral.",
+  "author": {
+    "name": "rl0ve"
+  },
+  "keywords": [
+    "assessment",
+    "guide",
+    "review",
+    "evidence",
+    "annotations",
+    "triage",
+    "html"
+  ],
+  "homepage": "https://github.com/rl0ve/agent-skills",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Clear Assessment Guides",
+    "shortDescription": "Source-backed assessments and guided review",
+    "developerName": "rl0ve",
+    "category": "Productivity",
+    "defaultPrompt": [
+      "Assess this experience in a concise illustrated brief",
+      "Walk through one annotated issue at a time",
+      "Create an interactive review with comments and decisions"
+    ]
+  }
+}

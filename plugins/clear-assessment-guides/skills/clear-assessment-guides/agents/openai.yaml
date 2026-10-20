@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clear Assessment Guides"
+  short_description: "Evidence-backed assessments and guided review"
+  default_prompt: "Use $clear-assessment-guides to assess this experience and choose a document, one-issue walkthrough, or interactive review."

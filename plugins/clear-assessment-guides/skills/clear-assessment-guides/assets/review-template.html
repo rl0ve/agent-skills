@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Assessment review</title>
+<style>
+:root{font-family:Arial,sans-serif;color:#202a33;background:#fff;line-height:1.55;font-size:17px;--blue:#225c87;--line:#ccd5de}
+*{box-sizing:border-box}body{margin:0}header,main{max-width:1200px;margin:auto;padding:24px}h1{font-size:30px;margin:0 0 8px;line-height:1.2}h2{font-size:25px;line-height:1.25}h3{font-size:18px}p{margin:10px 0 16px}a{color:var(--blue)}button,select,textarea{font:inherit;color:inherit}button,select{background:white;border:1px solid #8c9dab;border-radius:5px;padding:9px 13px}button{cursor:pointer}button:hover{background:#edf4fa}button:disabled{cursor:default;opacity:.65}:focus-visible{outline:3px solid #2569a0;outline-offset:3px}.toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:18px}.primary{color:white;background:var(--blue)}.primary:hover{background:#17476a}.notice{font-size:15px;color:#485761;margin-bottom:0}.status{padding:12px 0;border-bottom:1px solid var(--line);min-height:48px}main{display:grid;grid-template-columns:260px minmax(0,1fr);gap:34px;padding-top:8px}nav{align-self:start;position:sticky;top:16px}nav h2{font-size:18px;margin:16px 0}nav button{display:block;text-align:left;width:100%;margin:0 0 10px;padding:12px}nav button[aria-current="true"]{border-left:5px solid var(--blue);background:#edf4fa}nav small{display:block;font-size:14px;color:#485761}.issue{padding:0 0 30px;border-bottom:1px solid var(--line);margin-bottom:30px;min-width:0}.issue h2{margin-top:14px}.meta{font-size:14px;color:#4d5d69}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:22px 0}.comparison section{border:1px solid var(--line);padding:15px;min-width:0}.comparison h3{margin:0 0 8px}.comparison p{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}figure{margin:20px 0}figure img{max-width:100%;height:auto;border:1px solid var(--line)}figcaption{font-size:14px;color:#485761;margin-top:4px}label{display:block;font-weight:700;margin:16px 0 6px}textarea{width:100%;min-height:125px;border:1px solid #8c9dab;border-radius:5px;padding:12px;resize:vertical}.execution{font-size:14px;background:#f4f6f8;padding:12px;white-space:pre-wrap}.print-note{display:none}[hidden]{display:none!important}#progress{font-size:15px;color:#485761}#status[data-kind="error"]{color:#a12723;font-weight:700}#import-file{display:none}.empty{font-size:15px;color:#485761}header{padding-bottom:10px}footer{max-width:1200px;margin:auto;padding:10px 24px 30px;font-size:14px;color:#485761}
+@media(max-width:750px){header,main{padding:18px}main{grid-template-columns:1fr;gap:12px}nav{position:static}nav button{display:inline-block;width:auto;margin-right:8px}h1{font-size:26px}.comparison{grid-template-columns:1fr}.toolbar{gap:8px}.toolbar button{flex:1 1 auto}}
+@media print{header,main{max-width:none;padding:0}main{display:block}nav,.toolbar,.notice,#status,.interactive-hint{display:none!important}.issue[hidden]{display:block!important}.issue{break-inside:avoid;padding-bottom:18px;margin-bottom:18px}h1{font-size:24pt}h2{font-size:18pt}textarea,select,label{display:none}.print-note{display:block;white-space:pre-wrap;overflow-wrap:anywhere}.comparison{display:grid;grid-template-columns:1fr 1fr}body{font-size:11pt}a{color:inherit}figure img{max-height:320px;object-fit:contain}}
+</style>
+</head>
+<body>
+<header>
+<h1 id="title">Assessment review</h1><p id="context"></p>
+<p class="notice">Review feedback only. Choosing “Accept proposal” does not edit, save or publish anything in the source system.</p>
+<div class="toolbar"><button class="primary" id="export">Export feedback</button><button id="import">Import feedback</button><input id="import-file" type="file" accept=".json,application/json"><button id="print">Print all issues</button><span id="progress"></span></div>
+<p id="status" class="status" role="status" aria-live="polite"></p>
+</header>
+<main><nav aria-label="Review issues"><h2>Issues</h2><div id="issue-list"></div></nav><div id="issues"></div></main>
+<footer>Feedback stays in this browser until exported. Export the JSON file to share it with your collaborator or agent. Browser storage is a convenience, not a backup or cross-device sync.</footer>
+<!-- Replace this fictional dataset with the project's issue register. Escape < as \u003c in JSON strings. -->
+<script type="application/json" id="assessment-data">
+{
+  "schemaVersion":1,"assessmentId":"fictional-help-center","revision":"1",
+  "title":"Help center review",
+  "context":"Fictional example. Readers use this help center to find setup and account guidance. Existing topic groups are useful; these proposals clarify labels and next steps. No live site was inspected for this sample.",
+  "issues":[
+    {"id":"ISSUE-01","title":"Make the setup guide title readable","problem":"A guide card displays an upload-style filename.","impact":"Readers may need to open the resource to understand its purpose.","impactBasis":"inferred","proposal":"Use a descriptive card display title while preserving the linked source.","before":"Setup_Guide_Final_v3","after":"Account setup guide","evidence":[],"execution":{"state":"not started","location":"review copy","editor":"user","saver":"user"}},
+    {"id":"ISSUE-02","title":"Explain where the account link goes","problem":"The link label says only More.","impact":"Readers cannot predict which task the destination supports.","impactBasis":"inferred","proposal":"Use a specific action after verifying the destination. The replacement URL remains an open check.","before":"More","after":"View account settings","evidence":[],"execution":{"state":"not started","location":"not yet selected","editor":"not assigned","saver":"not assigned"}},
+    {"id":"ISSUE-03","title":"Keep instructions beside their example","problem":"The example sits far below the step it illustrates.","impact":"Readers may lose their place while comparing the two.","impactBasis":"inferred","proposal":"Place the existing example directly after the relevant step and test narrow-screen reading.","before":"Step → unrelated topics → example","after":"Step → example → next step","evidence":[],"execution":{"state":"not started","location":"review copy","editor":"user","saver":"user"}}
+  ]
+}
+</script>
+<script id="review-core">
+/* Pure feedback operations are kept separate for deterministic testing. No live-system actions. */
+const ReviewState = (() => {
+  const decisions = ['unreviewed','accept proposal','revise','defer','reject'];
+  const states = ['not started','edited','saved','verified live','unknown'];
+  const text = (value, limit=20000) => typeof value==='string' && value.length<=limit;
+  function validateAssessment(a) {
+    if (!a || a.schemaVersion!==1 || !text(a.assessmentId,150) || !a.assessmentId || !text(a.revision,150) || !a.revision || !text(a.title) || !text(a.context) || !Array.isArray(a.issues) || a.issues.length===0 || a.issues.length>500) throw Error('Invalid assessment data.');
+    const seen = new Set();
+    for (const i of a.issues) {
+      if (!i || !text(i.id,150) || !i.id || seen.has(i.id) || !['title','problem','impact','proposal','before','after'].every(k=>text(i[k])) || !['observed','inferred','unknown'].includes(i.impactBasis)) throw Error('Invalid or duplicate issue data.');
+      if (i.execution && (!states.includes(i.execution.state) || !['location','editor','saver'].every(k=>text(i.execution[k],300)))) throw Error('Invalid execution record.');
+      if (i.evidence && (!Array.isArray(i.evidence) || !i.evidence.every(e=>e && text(e.src,15000000) && text(e.alt,500) && text(e.caption)))) throw Error('Invalid evidence record.');
+      if (i.sourceUrl!==undefined && !text(i.sourceUrl,3000)) throw Error('Invalid source URL.');
+      if (i.capturedAt!==undefined && !text(i.capturedAt,100)) throw Error('Invalid capture date.');
+      seen.add(i.id);
+    }
+    return a;
+  }
+  function empty(a) { return new Map(a.issues.map(i=>[i.id,{id:i.id,decision:'unreviewed',comment:''}])); }
+  function validateFeedback(raw,a) {
+    if (!raw || raw.schemaVersion!==1 || raw.assessmentId!==a.assessmentId || raw.revision!==a.revision) throw Error('Feedback belongs to a different assessment or revision.');
+    if (!Array.isArray(raw.reviews) || raw.reviews.length!==a.issues.length) throw Error('Feedback must contain every issue exactly once.');
+    const allowed=new Set(a.issues.map(i=>i.id)); const result=new Map();
+    for (const r of raw.reviews) {
+      if (!r || !allowed.has(r.id) || result.has(r.id) || !decisions.includes(r.decision) || !text(r.comment)) throw Error('Invalid review decision, comment or issue ID.');
+      result.set(r.id,{id:r.id,decision:r.decision,comment:r.comment});
+    }
+    return result;
+  }
+  function envelope(a,reviews) { return {schemaVersion:1,assessmentId:a.assessmentId,revision:a.revision,exportedAt:new Date().toISOString(),reviews:a.issues.map(i=>({...reviews.get(i.id)}))}; }
+  return {decisions,validateAssessment,validateFeedback,empty,envelope};
+})();
+</script>
+<script>
+(() => {
+  const $=id=>document.getElementById(id);
+  const el=(tag,txt,cls)=>{const e=document.createElement(tag);if(txt!==undefined)e.textContent=txt;if(cls)e.className=cls;return e;};
+  const status=(txt,kind='info')=>{$('status').textContent=txt;$('status').dataset.kind=kind;};
+  let a;
+  try {a=ReviewState.validateAssessment(JSON.parse($('assessment-data').textContent));}
+  catch(e){status(e.message,'error');for(const id of ['export','import','print'])$(id).disabled=true;return;}
+  document.title=a.title+' · Review';$('title').textContent=a.title;$('context').textContent=a.context;
+  const key='assessment-review:'+JSON.stringify([a.assessmentId,a.revision]);
+  let reviews=ReviewState.empty(a), dirty=false, storageOK=true;
+  function persist(){try{localStorage.setItem(key,JSON.stringify({feedback:ReviewState.envelope(a,reviews),dirty}));storageOK=true;}catch{storageOK=false;}}
+  function announce(){status((dirty?'Changes pending export. ':'')+(storageOK?'Feedback kept in this browser; export a file for a durable copy.':'Browser storage unavailable; export feedback before closing.'), storageOK?'info':'error');}
+  try{const raw=localStorage.getItem(key);if(raw){const saved=JSON.parse(raw);reviews=ReviewState.validateFeedback(saved.feedback,a);dirty=saved.dirty!==false;status('Restored browser feedback. '+(dirty?'Changes pending export. ':'')+'Export a file to keep or share it.');}else announce();}
+  catch{storageOK=false;status('Browser feedback unavailable or invalid. Nothing restored; export to keep new feedback.','error');}
+  const panels=new Map(), navs=new Map(), controls=new Map();
+  function summary(){let done=0;for(const r of reviews.values())if(r.decision!=='unreviewed')done++;$('progress').textContent=done+' of '+a.issues.length+' reviewed';}
+  function update(id){const r=reviews.get(id),c=controls.get(id);c.select.value=r.decision;c.comment.value=r.comment;c.print.textContent='Review decision: '+r.decision+'\nComment: '+(r.comment||'None');navs.get(id).querySelector('small').textContent=r.decision;summary();}
+  function change(id){const c=controls.get(id);reviews.set(id,{id,decision:c.select.value,comment:c.comment.value});dirty=true;persist();update(id);announce();}
+  function show(id,focus=false){for(const [key,panel] of panels){panel.hidden=key!==id;navs.get(key).setAttribute('aria-current',key===id?'true':'false');}if(focus)panels.get(id).querySelector('h2').focus();}
+  function sourceLink(raw){try{const url=new URL(raw);return ['https:','http:'].includes(url.protocol)?url.href:null;}catch{return null;}}
+  function evidenceSrc(raw){if(/^data:image\/(png|jpeg|webp|gif);base64,/i.test(raw))return raw;if(/^[a-z][a-z0-9+.-]*:/i.test(raw)||/^[\/\\]/.test(raw)||raw.includes('\\'))return null;return raw;}
+  for(const i of a.issues){
+    const button=el('button');button.append(el('span',i.id+' · '+i.title),el('small',reviews.get(i.id).decision));button.setAttribute('aria-controls','panel-'+i.id);$('issue-list').append(button);navs.set(i.id,button);
+    const panel=el('article',undefined,'issue');panel.id='panel-'+i.id;const heading=el('h2',i.id+' · '+i.title);heading.tabIndex=-1;panel.append(heading);
+    const meta=el('p',undefined,'meta');if(i.capturedAt)meta.append(el('span','Evidence captured '+i.capturedAt+'. '));const url=sourceLink(i.sourceUrl);if(url){const link=el('a','Open source');link.href=url;link.target='_blank';link.rel='noopener noreferrer';meta.append(link);}if(meta.childNodes.length)panel.append(meta);
+    for(const [label,content] of [['Problem',i.problem],['Impact ('+i.impactBasis+')',i.impact],['Proposed solution',i.proposal]]){const p=el('p');p.append(el('strong',label+': '),document.createTextNode(content));panel.append(p);}
+    const compare=el('div',undefined,'comparison');for(const [label,txt]of [['Before',i.before],['Proposed after',i.after]]){const box=el('section');box.append(el('h3',label),el('p',txt));compare.append(box);}panel.append(compare);
+    if(i.evidence?.length){for(const e of i.evidence){const fig=el('figure'),src=evidenceSrc(e.src);if(src){const img=el('img');img.src=src;img.alt=e.alt;fig.append(img);}else fig.append(el('p','Evidence image omitted: unsupported source.','empty'));fig.append(el('figcaption',e.caption));panel.append(fig);}}
+    else panel.append(el('p','No screenshot attached. See the finding and source above; proposed wording is not observed interface evidence.','empty'));
+    const execution=i.execution||{state:'unknown',location:'not specified',editor:'not assigned',saver:'not assigned'};panel.append(el('p','Execution: '+execution.state+' · Location: '+execution.location+'\nEditor: '+execution.editor+' · Saver: '+execution.saver,'execution'));
+    const dl=el('label','Review decision');dl.htmlFor='decision-'+i.id;const select=el('select');select.id=dl.htmlFor;for(const value of ReviewState.decisions){const option=el('option',value==='accept proposal'?'Accept proposal (feedback only)':value);option.value=value;select.append(option);}
+    const cl=el('label','Comment');cl.htmlFor='comment-'+i.id;const comment=el('textarea');comment.id=cl.htmlFor;comment.maxLength=20000;const print=el('p',undefined,'print-note');panel.append(dl,select,cl,comment,print);$('issues').append(panel);panels.set(i.id,panel);controls.set(i.id,{select,comment,print});select.addEventListener('change',()=>change(i.id));comment.addEventListener('input',()=>change(i.id));button.addEventListener('click',()=>show(i.id,true));update(i.id);
+  }
+  show(a.issues[0].id);
+  $('export').addEventListener('click',()=>{const blob=new Blob([JSON.stringify(ReviewState.envelope(a,reviews),null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),link=el('a');link.href=url;link.download=a.assessmentId.replace(/[^a-z0-9_-]/gi,'-')+'-feedback.json';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);dirty=false;persist();status('Feedback download requested. Keep the JSON file; send it to your collaborator or agent when ready.');});
+  $('import').addEventListener('click',()=>{$('import-file').click();});
+  $('import-file').addEventListener('change',async()=>{const file=$('import-file').files[0];if(!file)return;try{if(file.size>20000000)throw Error('Feedback file is too large.');const next=ReviewState.validateFeedback(JSON.parse(await file.text()),a);if(dirty&&!window.confirm('Replace feedback that has not been exported? Export first if you want to keep it.')){status('Import cancelled. Current feedback unchanged.');return;}reviews=next;dirty=false;persist();for(const i of a.issues)update(i.id);status('Feedback imported. '+(storageOK?'Kept in this browser.':'Browser storage unavailable; retain the imported file.'));}catch(e){status('Import failed: '+e.message+' Current feedback unchanged.','error');}finally{$('import-file').value='';}});
+  $('print').addEventListener('click',()=>window.print());
+  window.addEventListener('beforeunload',event=>{if(dirty){event.preventDefault();event.returnValue='';}});
+})();
+</script>
+</body>
+</html>

@@ -93,6 +93,22 @@
         "voiceover",
         "playwright"
       ]
+    },
+    {
+      "name": "clear-assessment-guides",
+      "source": "./plugins/clear-assessment-guides",
+      "description": "Source-backed assessments, practical guides, annotated issue triage, and interactive HTML review with comments and decisions. Product- and vendor-neutral.",
+      "version": "1.0.0",
+      "category": "Productivity",
+      "tags": [
+        "assessment",
+        "guide",
+        "review",
+        "evidence",
+        "annotations",
+        "triage",
+        "html"
+      ]
     }
   ]
 }

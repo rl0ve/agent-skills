@@ -52,6 +52,7 @@ not the same on both.
 
 | | What it does |
 |---|---|
+| **Clear Assessment Guides** | Creates source-backed documents, one-issue annotated reviews, or interactive HTML with comments and decisions. Product-neutral, with a shared issue register and explicit review versus execution states. |
 | **Natural Writing** | Diagnoses, edits, rewrites, voice-matches, or drafts prose while preserving facts, formatting, terminology, register, and the author's voice. Ships a linter with a per-document mode and a set-level mode. |
 | **UI Router** | Routes UI, UX, design-review, motion, animated-explainer, design-to-code, and interface-copy work through a researched skill catalog and what is actually installed. Its `route-3d-work` skill routes real-time 3D worlds, Blender-to-web pipelines and Dream Loop fidelity passes. Uses Natural Writing as its sole final editor for copy. |
 | **Work Router** | Chooses whether work stays in the parent session or moves to a bounded subagent, on task shape, ambiguity, risk, latency and token use rather than defaulting to the largest model. One method, with a route table for each agent. |
@@ -172,3 +173,14 @@ required; see its skill for provider choices, setup and synthetic validation.
 
 Install: `codex plugin add ui-walkthrough-video@rl0ve-agent-skills` or
 `claude plugin install ui-walkthrough-video@rl0ve-agent-skills`.
+
+## Clear Assessment Guides
+
+[Clear Assessment Guides](plugins/clear-assessment-guides/skills/clear-assessment-guides/SKILL.md)
+selects a full assessment/guide, a one-issue walkthrough, or a local interactive review.
+Its templates and method are product-neutral; project evidence stays in the project.
+
+Install the `clear-assessment-guides@rl0ve-agent-skills` plugin through your host's
+plugin manager. This is a shared Codex/Claude package, with one skill source. Other
+hosts may load the portable skill folder through their own supported mechanism.
+Publication, installation and loading into a session are separate steps.
