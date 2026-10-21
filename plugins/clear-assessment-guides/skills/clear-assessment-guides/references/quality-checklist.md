@@ -17,6 +17,11 @@ outline, GIF or interactive board when the user asked for a simple correction.
   user's editor/saver choices and existing work preserved?
 - Has the actual final output been inspected for clipping, readability, broken links,
   detached evidence and misleading status? Report what could not be verified.
+- Before anything is reported missing or broken, were its route, alternate modes and
+  loading state checked?
+- If delivered as one standalone file, are images embedded and does it open with
+  networking off? If hosted, was the returned URL opened? Local success is not proof
+  that hosting worked.
 
 ## Supporting tools
 

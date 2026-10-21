@@ -26,7 +26,7 @@ without losing the current choices. Downloading a file does not mean an agent re
 
 Before delivery, exercise decisions, multiline comments, reload persistence,
 export/import round-trip, wrong assessment/revision rejection, malformed imports,
-keyboard navigation and mobile stacking. Inspect desktop and narrow renders, and the
+keyboard navigation, the image size toggle, before/after pairing and mobile stacking. Inspect desktop and narrow renders, and the
 print layout if a print/export view is delivered. Keep private findings and test
 captures outside the shared package. The included examples are fictional help-center
 content; replace them, not their proper nouns, with actual evidence-backed findings.

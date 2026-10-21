@@ -21,3 +21,8 @@ const duplicate=structuredClone(data);duplicate.issues[1].id=duplicate.issues[0]
 const badEvidence=structuredClone(data);badEvidence.issues[0].evidence=[{src:15,alt:'Example',caption:'Example'}];assert.throws(()=>api.validateAssessment(badEvidence));
 for(const script of [...html.matchAll(/<script(?: id="review-core")?>([\s\S]*?)<\/script>/g)]) new vm.Script(script[1]);
 console.log('Review feedback: valid round-trip, multiline text, nine invalid-import cases, ignored execution claims, duplicate assessment IDs and invalid evidence verified. Script syntax valid.');
+const pair=structuredClone(data);pair.issues[0].evidence=[{src:'before.png',alt:'Settings page before',caption:'Current settings page',side:'before',kind:'deployed capture',source:'https://example.com/settings',capturedAt:'2026-10-20 14:05'},{src:'after.png',alt:'Settings page after',caption:'Preview with the fix',side:'after',kind:'fresh capture',source:'commit 0000000'}];
+api.validateAssessment(pair);
+assert.deepEqual([...api.evidenceKinds],['fresh capture','deployed capture','historical capture','proposed','source only']);
+for(const mutate of [e=>e.kind='screenshot',e=>e.side='middle',e=>e.source=15,e=>e.capturedAt='x'.repeat(101)]){const bad=structuredClone(pair);mutate(bad.issues[0].evidence[0]);assert.throws(()=>api.validateAssessment(bad));}
+console.log('Evidence provenance: before/after pair, five evidence kinds and four invalid provenance cases verified.');

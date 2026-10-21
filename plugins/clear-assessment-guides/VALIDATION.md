@@ -1,5 +1,16 @@
 # Validation
 
+Release 1.3.0, checked 2026-10-20.
+
+The 1.3.0 change adds evidence provenance to the review template. Node tests cover a
+valid before/after pair, the five evidence kinds and four invalid provenance records,
+alongside the existing feedback cases. A test copy with a before/after pair and a
+proposed image was rendered in headless Chromium at 1280 and 390 px wide and printed to
+PDF: no script errors, pair images aligned, proposed image labeled as not observed, the
+size toggle worked by keyboard with aria-pressed updated, the page did not overflow
+horizontally, and the pair stacked on narrow screens. The browser file-picker import
+was not exercised.
+
 Release 1.1.0, checked 2026-10-20.
 
 The 1.1.0 change adds instructions and collaborator routing only; the interactive

@@ -20,7 +20,7 @@ One successful written-brief baseline is Arial 11.5 pt body with 14.5 pt leading
 
 ## Screenshots and images
 
-Use actual current screenshots when discussing a visible issue. Prefer a relevant section crop that retains enough labels or surroundings to orient a new reader. Use a full-page view only when overall layout is the issue. Do not fabricate, redraw, or generatively replace evidence.
+Use actual current screenshots when discussing a visible issue. Prefer a relevant section crop that retains enough labels or surroundings to orient a new reader. Use the full viewport when overall layout or relative prominence is the issue; a crop cannot show prominence. Do not fabricate, redraw, or generatively replace evidence.
 
 Place a thin visible border box around every image, including diagrams and mockups. A light gray-blue 0.6–1 pt border works for documents; choose a comparable subtle border on other media. Ensure the border remains visible in the exported PDF.
 

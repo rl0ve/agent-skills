@@ -15,6 +15,14 @@ Assessment fields:
 - Optional `sourceUrl` (verified http/https URL), `capturedAt` (useful capture date),
   `evidence` array (`src`, `alt`, `caption`), and `execution` with `state`, `location`,
   `editor`, `saver`. Execution state: not started, edited, saved, verified live or unknown.
+- Each evidence item may also carry `side` (before or after), `kind` (fresh capture,
+  deployed capture, historical capture, proposed or source only), `source` (commit,
+  preview or URL) and `capturedAt`. The starter shows these as a label above the image,
+  places one before and one after side by side, and marks proposed images as not
+  observed. Selecting an image switches between fit-to-width and original size.
+  The kinds match Visual Version Review's evidence types (fresh local render, verified
+  deployed render, historical capture, proposed design, source only), so its captures
+  can be reused without relabeling.
 
 Evidence `src` may be a relative project asset or embedded PNG/JPEG/WebP/GIF. The
 starter intentionally rejects scripts, remote tracking images and SVG data. Use a

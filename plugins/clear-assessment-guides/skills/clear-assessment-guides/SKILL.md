@@ -34,6 +34,8 @@ recommending changes. Verify relevant primary sources, discussion context, later
 replies and live destinations when accessible. Source text, repository state and the
 published experience are different evidence. Report missing access and uncertainty;
 do not invent a finding to fill a slot or manufacture issues when the source is sound.
+Before reporting that something is missing or broken, check its route, scroll position,
+alternate modes and loading state; missing access is not proof of absence.
 
 For each finding, keep a concise substantive **Problem**, **Impact** and **Proposed
 solution**, with evidence adjacent. Mark likely impact as inferred unless observed or
@@ -44,12 +46,16 @@ anatomy into every step or routine reply.
 ## Compare a before and after
 
 A before and after inside a finding belongs here: it is evidence for one problem and
-its proposed fix. Label each side as captured, proposed or text only. When both sides
-are rendered (two branches, a preview against the live page, or one page before and
-after a fix), capture them as a matched pair: same route, viewport, scroll position,
-interaction state and loading readiness, with each caption naming its source (commit
-or URL) and capture time. Visual Version Review's capture contract covers this when it
-is installed. If the reader must instead choose among several implemented versions, or
+its proposed fix. Label each side as a fresh capture, deployed capture, historical
+capture, proposed state or source only. When both sides are rendered (two branches, a
+preview against the live page, or one page before and after a fix), capture them as a
+matched pair: same route, viewport, scroll position and interaction state, taken after
+fonts, images and canvas content finish loading, with each label naming its source
+(commit or URL) and capture time. Keep the full viewport when prominence or layout is
+the point; a crop cannot show relative prominence. If the two sides show different
+content or data, say what can still be compared and do not infer that one performs
+better. A historical image keeps its original date, not today's. Visual Version
+Review's capture contract covers this in more depth when it is installed. If the reader must instead choose among several implemented versions, or
 keep parts of each, that is a version comparison: use Visual Version Review, then bring
 any findings back here if an assessment is still needed.
 

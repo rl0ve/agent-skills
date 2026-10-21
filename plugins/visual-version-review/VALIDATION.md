@@ -1,5 +1,9 @@
 # Validation
 
+Release: 1.1.0, October 20, 2026 (US Eastern). Adds the feedback contract; a
+repository test parses its example and checks the choice values. Instructions only: no
+comparison page was regenerated for this release.
+
 Release: 1.0.0, October 20, 2026 (US Eastern).
 
 ## Checks performed

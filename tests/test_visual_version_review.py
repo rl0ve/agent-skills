@@ -22,7 +22,7 @@ class VisualVersionReviewTests(unittest.TestCase):
     def test_hub_references_resolve(self):
         text = (SKILL / "SKILL.md").read_text()
         references = re.findall(r"`(references/[^`]+)`", text)
-        self.assertEqual(len(references), 2)
+        self.assertEqual(len(references), 3)
         for reference in references:
             self.assertTrue((SKILL / reference).is_file(), reference)
 
@@ -43,6 +43,18 @@ class VisualVersionReviewTests(unittest.TestCase):
         capture = version["captures"][0]
         for field in ("state", "file", "viewport", "captured_at", "crop", "interaction_verified"):
             self.assertIn(field, capture)
+
+    def test_feedback_example_is_parseable_and_separates_choices(self):
+        text = (SKILL / "references" / "feedback-contract.md").read_text()
+        block = json.loads(re.search(r"```json\n(.*?)\n```", text, re.S).group(1))
+        for field in ("schemaVersion", "comparisonId", "revision", "exportedAt", "choices"):
+            self.assertIn(field, block)
+        for choice in block["choices"]:
+            self.assertEqual(set(choice), {"component", "version", "choice", "comment"})
+            self.assertIn(choice["choice"], ("keep", "change", "leave out"))
+        for phrase in ("implementation status", "Validate the whole file", "not instructions"):
+            self.assertIn(phrase, text)
+        self.assertIn("references/feedback-contract.md", (SKILL / "SKILL.md").read_text())
 
     def test_no_project_capture_assets_in_skill(self):
         for path in SKILL.rglob("*"):

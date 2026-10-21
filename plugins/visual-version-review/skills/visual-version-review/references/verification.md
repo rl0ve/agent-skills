@@ -7,7 +7,7 @@ Run these checks against the final artifact. Record project-specific outcomes ou
 3. Test all filters and restore all-views mode. Test hiding and restoring versions; prevent a silently empty comparison.
 4. Open an image, navigate if supported, switch fit/original size, close by button and Escape, and verify keyboard focus returns to its opener.
 5. Test narrow width and desktop-to-mobile-to-desktop resizing. Check that content stays within its container and metadata remains readable. Exercise controls at each size.
-6. If comments exist, test export/import and state-retention claims. Validate imported version IDs and text; never execute imported content.
+6. If comments exist, test against `feedback-contract.md`: export/import round trip, multiline comments, rejection of a wrong comparison ID, wrong revision, unknown version or invalid choice without losing current choices, and the warning before replacing unexported choices. Never execute imported content.
 7. For an offline file, disable networking and open the final single HTML file. Verify media, fonts and controls without sibling assets or CDN requests.
 8. For a hosted preview, open the returned deployed URL and repeat the main comparison flow. Local checks do not prove hosting succeeded.
 9. Confirm every absent capture has an explanation and each historical or proposed image is labeled. Verify that crops and content mismatches are disclosed.
@@ -23,6 +23,7 @@ Should not trigger alone:
 - "Invent three new homepage directions." Use design exploration.
 - "Write a keynote storyboard." Use capability storytelling.
 - "Triage these copy issues one by one." Use guided assessment.
+- "Did the fix make this page better? Show the before and after." Use Clear Assessment Guides.
 
 ## Failure remedies
 
