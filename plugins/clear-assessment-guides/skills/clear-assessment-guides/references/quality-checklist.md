@@ -25,6 +25,12 @@ outline, GIF or interactive board when the user asked for a simple correction.
 
 ## Supporting tools
 
+- For a substantial assessment, were the central findings reviewed for the few visual
+  explanations that would reduce interpretation work? Are selected visuals present
+  and checked in the delivered artifact, rather than promised for later? If a complex
+  relationship, handoff or sequence remains prose-only, is the reason concrete?
+- If motion was invited, was it included or omitted for a stated learning-value reason,
+  with a static alternative when included?
 - Was each collaborator selected for a concrete task and verified available, without
   installing optional dependencies or changing the requested mode by default?
 - Were relationships distinguished from simple text changes, and useful HTML from
@@ -36,6 +42,7 @@ outline, GIF or interactive board when the user asked for a simple correction.
 
 ## Document
 
+- Is there one primary document format, with both DOCX and PDF produced only if requested?
 - Does the opening establish the current state and purpose for an unfamiliar reader?
 - Are assessment findings prioritized, with substantive Problem/Impact/Proposed solution
   lines? Does a guide instead use actions and visible success checks?

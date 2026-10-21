@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.1 — 2026-10-21
+
+- Add explicit pre-delivery checks for selected visual explanations actually present
+  in the artifact, a learning-value decision for invited motion, and one primary
+  document format unless both DOCX and PDF were requested.
+
 ## 1.4.0 — 2026-10-21
 
 - Hand open-ended research synthesis and substantial meeting research to Research

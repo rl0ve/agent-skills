@@ -28,6 +28,12 @@ question each candidate answers, its source/proposal status and why prose alone 
 harder to interpret. Select the few that earn their place; neither zero nor a quota is
 the goal. Keep essential interpretation, source and limitations adjacent to the visual.
 
+Use a short project-local decision record for the central findings: reader question,
+visual/table/text choice and reason, evidence/proposal status, selected collaborator
+or fallback, and included/checked/pending state. Revisit it against the final artifact.
+This catches the case where a visual was appropriate but disappeared during writing
+or export; a visual plan alone is not completion evidence.
+
 | Explanatory need | Useful visual | Important boundary |
 |---|---|---|
 | Who does what, and where work crosses teams | Swimlane or service blueprint | Distinguish proposed responsibilities from an agreed charter. |

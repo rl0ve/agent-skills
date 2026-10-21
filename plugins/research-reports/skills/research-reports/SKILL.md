@@ -91,6 +91,15 @@ links, labels, contrast and interaction where present. A rendered chart must pre
 its denominator and source; a diagram must distinguish observed from proposed state.
 Report material checks that could not be completed.
 
+For a substantial report, apply the **visual completion gate** before delivery:
+check the central findings against the visual plan, include the selected explanatory
+visuals in the actual artifact, and inspect their rendered meaning. If a load-bearing
+relationship, handoff or sequence remains hard to follow in prose, add the appropriate
+visual or record a concrete reason that the existing explanation is sufficient. A
+promise to add a diagram later does not pass. When motion was invited, record its
+included/omitted decision and learning-value reason. Keep this brief record in the
+task workspace; the reader does not need a repeated process checklist.
+
 For a continuation, inventory the existing deliverables. Update the appropriate
 current assets and identify what supersedes what. Keep useful original research and
 source distinctions; label historical bodies or addenda so stale claims cannot look

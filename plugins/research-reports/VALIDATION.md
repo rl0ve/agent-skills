@@ -1,5 +1,15 @@
 # Validation
 
+Release 1.0.1, checked 2026-10-21.
+
+Instruction-only follow-up: add a visual completion gate and a short decision record
+that must be reconciled with the delivered artifact. This covers a visual chosen
+during planning but lost during writing/export, and an invited motion overview whose
+learning-value decision otherwise goes unrecorded. It does not impose a visual quota.
+Rechecked both skill validators, all 49 repository tests, changed plugin/marketplace
+validation and whitespace checks. The 1.0.0 independent behavioral exercises below
+remain relevant; no new end-to-end renderer or model trial is claimed for this patch.
+
 Release 1.0.0, checked 2026-10-21.
 
 ## Package checks

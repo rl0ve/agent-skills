@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.1 — 2026-10-21
+
+- Make visual selection a completion check, with a short project-local decision record
+  and verification that selected explanations reached the actual artifact.
+- Require a concrete reason for prose-only treatment of a hard-to-follow central
+  relationship, handoff or sequence, and an included/omitted learning-value decision
+  when a motion overview was invited. Keep selection conditional rather than a quota.
+
 ## 1.0.0 — 2026-10-21
 
 - Add a research-synthesis entry point distinct from issue-by-issue assessments.

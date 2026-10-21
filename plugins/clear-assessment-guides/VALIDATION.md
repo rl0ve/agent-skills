@@ -1,5 +1,14 @@
 # Validation
 
+Release 1.4.1, checked 2026-10-21.
+
+Instruction-only patch: the selected-mode quality checklist now explicitly checks
+that chosen visuals are present and inspected, complex prose-only treatment has a
+concrete reason, invited motion has a learning-value decision, and a second document
+format was requested. Both skill validators, 49 repository tests, changed plugin and
+marketplace validation and whitespace checks passed. No template or feedback runtime
+changed; earlier rendered and behavioral evidence retains its original scope.
+
 Release 1.4.0, checked 2026-10-21.
 
 This release changes instructions and routing only. Research Reports now owns
