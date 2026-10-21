@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "research-reports",
+  "version": "1.0.0",
+  "description": "Evidence-backed research reports and decision briefs with selected explanatory visuals and an optional motion overview. One primary document format by default.",
+  "author": {
+    "name": "rl0ve"
+  },
+  "keywords": [
+    "research",
+    "report",
+    "brief",
+    "evidence",
+    "diagrams",
+    "visuals",
+    "meeting"
+  ],
+  "homepage": "https://github.com/rl0ve/agent-skills",
+  "license": "MIT"
+}

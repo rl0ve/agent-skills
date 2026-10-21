@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Reports"
+  short_description: "Deep research with selected explanatory visuals"
+  default_prompt: "Use $research-reports to investigate this question and prepare a source-backed report with the few visuals that best explain its strongest findings."

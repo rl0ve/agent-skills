@@ -1,5 +1,18 @@
 # Validation
 
+Release 1.4.0, checked 2026-10-21.
+
+This release changes instructions and routing only. Research Reports now owns
+open-ended synthesis; assessment document mode defaults to one requested document
+format; visual selection and invited conceptual motion are explicit decisions.
+Skill validation, 49 repository tests, existing assessment Node tests, all nine
+plugin manifests and the marketplace passed. The other package suites passed
+(109 Natural Writing tests; 45 UI Walkthrough Video tests). All fourteen local
+assessment reference targets resolve. The HTML template and feedback code are
+unchanged, so their prior rendered checks are retained rather than claimed as fresh.
+Research Reports' validation record describes the independent format/visual/motion
+forward tests; these are not a new rendering or full research benchmark.
+
 Release 1.3.0, checked 2026-10-20.
 
 The 1.3.0 change adds evidence provenance to the review template. Node tests cover a

@@ -1,6 +1,6 @@
 ---
 name: clear-assessment-guides
-description: Create source-backed assessments and practical guides, walk through annotated issues one at a time, or build an interactive HTML review with comments and decisions. Use for improvement briefs, content reviews, guided triage and before/after checks of a change; to choose among several implemented versions, use Visual Version Review. Not a mandatory format for ordinary replies or every document.
+description: Create source-backed assessments, practical guides, annotated issue triage and interactive HTML reviews with comments and decisions. Use for improvement proposals and content reviews. Use Research Reports for open-ended research synthesis and Visual Version Review to compare implemented versions. Ordinary replies do not need this format.
 ---
 
 # Clear Assessment Guides
@@ -9,6 +9,11 @@ Help a reader understand the current experience, assess a proposed change, and d
 what to do next. This method is product-, vendor-, and host-neutral. Apply the user's
 chosen audience, medium, style, editing roles and scope; do not infer them from the
 application under review.
+
+For an open-ended investigation, strategic research report or evidence-backed meeting
+preparation, look for Research Reports. It owns research synthesis and the reading
+package; this skill owns findings and decisions about an experience or proposed change.
+Do not force a research argument into repeated Problem/Impact/Proposed solution blocks.
 
 ## Choose the review mode
 
@@ -82,6 +87,10 @@ approval policy. Preserve existing work and any explicit user-controlled edit/sa
 ## Use existing production tools
 
 Before selecting authoring tools, read [supporting skills and tools](references/supporting-tools.md).
+For a substantial assessment, deliberately identify the select few findings where a
+relationship, handoff, mechanism or structural change benefits from a visual. Build
+those explanations when they reduce interpretation work. Cards, tabs and colored
+headings do not replace an explanatory diagram; simple copy corrections need no diagram.
 Route by the actual explanatory task: Diagram Design for relationships and structural
 before/after diagrams; Visual Explainer when HTML materially helps; doc-coauthoring
 for substantial collaborative writing and fresh-reader clarity; document/PDF tools for

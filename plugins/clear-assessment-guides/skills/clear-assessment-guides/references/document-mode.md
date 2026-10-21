@@ -20,7 +20,8 @@ Do not require tabs, an accordion, another site or a sources appendix to underst
 recommendation. A source list is supplemental; essential links belong inline. Use
 figures only when they improve understanding, with borders and adjacent captions.
 
-If a standalone editable document is requested, produce that and a matching PDF when
-useful or requested, using the environment's document/export skills. Do not produce
-slides unless the reader will present or asks for them. Render and inspect every page
-of the final versions, including borders, hyperlinks and image-caption placement.
+Produce one primary document format: honor the requested medium, or choose DOCX for
+substantive editing and PDF for finished reading. Produce both only when the user asks;
+an export option is not a reason to create an extra file. Do not produce slides unless
+the reader will present or asks for them. Render and inspect every final page,
+including borders, hyperlinks and image-caption placement.

@@ -1,6 +1,6 @@
 # agent-skills
 
-Eight plugins of agent skills for Codex and Claude Code. Each plugin installs in both
+Nine plugins of agent skills for Codex and Claude Code. Each plugin installs in both
 hosts from one shared source; where the hosts differ, the shared file says so instead
 of forking.
 
@@ -15,6 +15,7 @@ of forking.
 | [Capability Storyboard](plugins/capability-storyboard/README.md) | Builds an HTML storyboard for a keynote or demo, with a talk track and director's notes per scene. |
 | [Deck Builder](plugins/deck-builder/README.md) | Builds `.pptx` decks on your own template and verifies them by rendering slides. |
 | [Clear Assessment Guides](plugins/clear-assessment-guides/skills/clear-assessment-guides/SKILL.md) | Produces source-backed assessments, one-issue walkthroughs, or interactive HTML reviews with comments and decisions. |
+| [Research Reports](plugins/research-reports/README.md) | Investigates a consequential question and builds an evidence-backed report with selected explanatory visuals and an optional motion overview. Defaults to one primary document format. |
 | [Visual Version Review](plugins/visual-version-review/README.md) | Compares implemented branches and previews in one labeled HTML page, with matched captures, distinctive visuals and full-size inspection. |
 
 ### When two plugins could apply
@@ -23,6 +24,7 @@ of forking.
 |---|---|
 | Choose which implemented version, or which parts of each, to keep | Visual Version Review |
 | Explain what is wrong and what to change, including a before/after of one change | Clear Assessment Guides |
+| Investigate a strategic question or prepare a deep research report for a meeting | Research Reports |
 | Track comments on a rendered page through to a verified fix | UI Router |
 | Plan a keynote or demo with mockups and a talk track | Capability Storyboard |
 | Record a narrated video of the real product | UI Walkthrough Video |
@@ -55,7 +57,7 @@ python3 install.py --plugin all --execute    # run it
 ```
 
 Choose a subset with repeated `--plugin` flags: `ai`, `ui`, `writing`, `video`,
-`storyboard`, `deck`, `assessment`, `versions`.
+`storyboard`, `deck`, `assessment`, `research`, `versions`.
 
 **Try one plugin without installing:**
 

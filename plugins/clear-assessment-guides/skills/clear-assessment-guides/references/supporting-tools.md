@@ -76,6 +76,7 @@ reader comprehension, not an additional serial style-cleanup process for every p
 
 Use the available document workflow for editable documents, PDF tools for inspection
 or export, and presentation tools only for requested or genuinely presented slides.
+Choose one primary document format; produce both DOCX and PDF only when requested.
 Resolve current names, runtimes and capabilities from the host rather than embedding
 machine-specific commands. Use the relevant connected native-document integration if
 that is the requested destination.
@@ -105,10 +106,13 @@ is nonessential or the capability is missing, omit it rather than delay the asse
 ## Video and motion only when sequence matters
 
 Use a short GIF or clip for an interaction whose sequence or state changes cannot be
-explained clearly by a still. A substantial requested walkthrough may warrant an
-available workflow using HyperFrames, Remotion or another suitable tool. Verify and
-read the selected integration before promising formats, narration or portability.
-Do not assume the tools are interchangeable or installed.
+explained clearly by a still. An invited short conceptual overview may also help a
+reader understand a mechanism or ordered change; it does not require a real UI
+recording. Use Research Reports for a wider research package, an authored-motion
+workflow for conceptual animation, and UI Walkthrough Video for recorded interaction.
+HyperFrames, Remotion or another renderer may support the selected job. Verify and
+read the workflow before promising formats, narration or portability; tools are not
+interchangeable merely because they can export video.
 
 Do not turn a concise brief into an animation or narrated deck by default. A numbered
 screenshot sequence or static sequence diagram is a useful alternative, including for

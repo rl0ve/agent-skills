@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.4.0 — 2026-10-21
+
+- Hand open-ended research synthesis and substantial meeting research to Research
+  Reports, retaining this plugin's assessment and review scope.
+- Deliberately consider the select few relationships, handoffs or mechanisms that
+  benefit from explanatory visuals; presentation cards do not count as diagrams.
+- Allow a short invited conceptual motion overview when it adds understanding;
+  distinguish authored motion from a recorded UI walkthrough and keep a static alternative.
+- Default to one primary document format; create both DOCX and PDF only on request.
+
 ## 1.3.0 — 2026-10-20
 
 - Adopt Visual Version Review's capture rules for before/after pairs: five evidence kinds, loading readiness, full viewport when prominence matters, content-mismatch disclosure and original dates for historical images.

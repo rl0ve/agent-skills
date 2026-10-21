@@ -1,7 +1,7 @@
 {
   "name": "clear-assessment-guides",
-  "version": "1.3.0",
-  "description": "Source-backed assessments, practical guides, annotated issue triage, and interactive HTML review with comments and decisions. Product- and vendor-neutral.",
+  "version": "1.4.0",
+  "description": "Source-backed assessments, practical guides and issue reviews with evidence and decisions. For open-ended research synthesis, use Research Reports.",
   "author": {
     "name": "Robert Love"
   },

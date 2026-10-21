@@ -91,6 +91,17 @@
         "installation": "AVAILABLE"
       },
       "category": "Productivity"
+    },
+    {
+      "name": "research-reports",
+      "source": {
+        "source": "local",
+        "path": "./plugins/research-reports"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
     }
   ]
 }
