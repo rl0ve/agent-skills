@@ -8,7 +8,7 @@ of forking.
 
 | Plugin | What it does |
 |---|---|
-| [Work Router](plugins/work-router/README.md) | Decides whether work stays in the parent session or goes to a bounded subagent, and at which model and effort. One method, a route table per host. |
+| [Work Router](plugins/work-router/README.md) | Decides whether work stays in the parent session or goes to a bounded subagent, and at which model and effort. One method, a route table per host. Also audits the skills ecosystem against bookmarks, stars, and current discussion. |
 | [UI Router](plugins/ui-router/README.md) | Routes UI, UX, design review, motion, design-to-code, interface copy and real-time 3D work to the right specialist skills and checks the result in a browser. |
 | [Natural Writing](plugins/natural-writing/README.md) | Edits, rewrites, voice-matches or drafts prose while keeping facts, terminology and the author's voice. Includes a linter. |
 | [UI Walkthrough Video](plugins/ui-walkthrough-video/README.md) | Records real interface flows and turns them into narrated MP4s with captions. Needs browser and media runtimes. |

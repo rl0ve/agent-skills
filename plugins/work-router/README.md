@@ -9,6 +9,8 @@ The plugin contributes:
 - `/work-router:check-routing-setup`, a manual, read-only environment check;
 - `/work-router:discover-capabilities`, focused discovery for missing capabilities;
 - `/work-router:deduplicate-skills`, installed-skill auditing and scoped consolidation;
+- [`/work-router:skills-ecosystem-audit`](skills/skills-ecosystem-audit/SKILL.md),
+  comparison of bookmarks, GitHub stars, and current discussion with the full ecosystem;
 - Claude subagents for scouting, building, architecture, critical review and Fable
   specialists, plus an opt-in, untested Haiku builder for mechanical edits;
 - six separately installable Codex profiles spanning Sol, Terra, and Luna;

@@ -1,7 +1,7 @@
 {
   "name": "work-router",
-  "version": "1.11.0",
-  "description": "Routes substantial agent work to the leanest reliable parent or subagent configuration on task shape, ambiguity, risk, latency, and token use. Carries a route table for Claude Code and one for Codex. Includes capability discovery, plugin distribution audits, and scoped deduplication of installed skills.",
+  "version": "1.12.0",
+  "description": "Routes substantial agent work by task shape, ambiguity, risk, latency, and token use, with tables for Claude Code and Codex. Includes capability discovery, skills ecosystem audits, plugin distribution audits, and scoped deduplication of installed skills.",
   "author": {
     "name": "Robert Love"
   },

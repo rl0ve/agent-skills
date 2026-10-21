@@ -9,6 +9,11 @@ Own the general discovery process across domains. Work Router chooses execution;
 UI Router chooses the design lead and focused layers. Neither requires a new install
 when an existing capability or direct work can finish the task.
 
+For a broad review of bookmarks, starred repositories, and current discussions against
+the whole skills and plugins ecosystem, use
+[skills-ecosystem-audit](../skills-ecosystem-audit/SKILL.md). Keep focused capability
+lookups here.
+
 ## Start from the missing outcome
 
 Identify the task, host and actual gap. Check session-listed skills and tools first,

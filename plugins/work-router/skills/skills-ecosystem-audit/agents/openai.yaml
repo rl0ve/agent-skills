@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skills ecosystem audit"
+  short_description: "Audit skills and plugins against saved and current ideas"
+  default_prompt: "Use $skills-ecosystem-audit to review my bookmarks, GitHub starred repositories, and current discussions against my full skills and plugins ecosystem and recommend worthwhile improvements."

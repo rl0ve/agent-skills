@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.12.0 - 2026-10-21
+
+- Add Skills ecosystem audit: compare bookmarks, GitHub stars, and current discussion
+  against every skill and plugin, with source coverage, evidence-backed dispositions,
+  existing ownership, and concrete validation. Keep private research out of public
+  commits and distinguish audit recommendations from authorized implementation.
+
 ## 1.11.0 - 2026-10-20
 
 - Add host-native long-task features to the long-running guide. Claude Code dynamic
