@@ -2,6 +2,21 @@
 
 Use this reference when explaining or revising the routing policy. Treat benchmark figures as dated evidence, not timeless product facts.
 
+## Haiku 5.5 and Ultrafast review: October 20, 2026
+
+Read the [Haiku 5.5 review](haiku-5-5-review.md) before choosing a Haiku route.
+Haiku 5.5 (October 7) is priced at $0.10 / $0.50 per million tokens up to 100k and adds
+effort settings, but the `haiku` alias resolves to it only on the Anthropic API with
+Claude Code 2.1.293+. Bedrock, Vertex and Foundry still map `haiku` to Haiku 4.5.
+Defaults are unchanged: `fast-scout` stays at low, implementation stays on Sonnet, and
+`haiku-builder` is an opt-in, untested route for mechanical edits.
+
+Codex Ultrafast (GPT-6 Astra and GPT-6.1 Sol) is a service tier, not a capability
+route. It bills at 8x Standard usage then 6x credits on Pro $500, uses workspace credits
+in eligible Enterprise and Edu workspaces, and is unavailable on Plus, Pro $100, Pro
+$200 and Business. Use it only on request or when a stated deadline repays the cost
+([OpenAI](https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex)).
+
 ## Opus 5.5 review: October 2, 2026
 
 Read the [Opus 5.5 release assessment](opus-5-5-review.md) when choosing Claude

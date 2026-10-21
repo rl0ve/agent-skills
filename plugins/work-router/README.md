@@ -9,7 +9,8 @@ The plugin contributes:
 - `/work-router:check-routing-setup`, a manual, read-only environment check;
 - `/work-router:discover-capabilities`, focused discovery for missing capabilities;
 - `/work-router:deduplicate-skills`, installed-skill auditing and scoped consolidation;
-- six Claude subagents spanning Haiku, Sonnet, Opus, and Fable;
+- Claude subagents for scouting, building, architecture, critical review and Fable
+  specialists, plus an opt-in, untested Haiku builder for mechanical edits;
 - six separately installable Codex profiles spanning Sol, Terra, and Luna;
 - a Claude `PreToolUse` hook that blocks Bash commands containing `sudo`.
 
@@ -118,9 +119,10 @@ not proof of comparative UI quality, wall-clock speed, or lower end-to-end cost.
 built-in worker's name does not establish its model; verify the effective model and
 effort. The router recommends settings but cannot silently switch a running session.
 
-Fast routing and Codex Fast service are separate. Service defaults to Standard; offer
-Fast once only when it could materially help, and require explicit user choice plus
-account/workspace availability before changing it.
+Fast routing and Codex Fast or Ultrafast service are separate. Service defaults to
+Standard; offer Fast once only when it could materially help, and require explicit user
+choice plus account/workspace availability before changing it. Ultrafast bills at a
+large multiple of Standard and is used only on request or for a stated deadline.
 
 See the [policy](skills/route-ai-work/SKILL.md),
 [evidence basis](skills/route-ai-work/references/routing-basis.md), and

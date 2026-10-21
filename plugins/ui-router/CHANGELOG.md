@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.20.0 - 2026-10-20
+
+- Name verification tools in the completion gates: the host-native browser first
+  (Codex desktop Browser and Computer Use with optional CDP Developer mode; Claude in
+  Chrome), then the Chrome DevTools MCP server when a host lacks a browser or needs
+  performance and accessibility evidence, then one scripted browser per project.
+- Point the visual build loop's capture step at that tool order.
+- Add a word-budget test for `route-ui-work/SKILL.md`.
+
 ## 1.19.5 - 2026-10-18
 
 - Add a `motion-explainer` route for conceptual animation and authored films,

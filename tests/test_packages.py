@@ -41,10 +41,14 @@ class RootInstallerTests(unittest.TestCase):
         plugins = root_installer.normalize_plugins(["all"])
         commands = root_installer.build_plan(plugins, "user")
         rendered = [" ".join(command) for command in commands]
-        self.assertEqual(len(commands), 4)
-        self.assertTrue(any("work-router@rl0ve-agent-skills" in line for line in rendered))
-        self.assertTrue(any("ui-router@rl0ve-agent-skills" in line for line in rendered))
-        self.assertTrue(any("natural-writing@rl0ve-agent-skills" in line for line in rendered))
+        listed = [
+            entry["name"]
+            for entry in json.loads((ROOT / ".claude-plugin" / "marketplace.json").read_text())["plugins"]
+        ]
+        self.assertEqual(sorted(plugins), sorted(listed), "--plugin all must cover every listed plugin")
+        self.assertEqual(len(commands), len(listed) + 1)
+        for name in listed:
+            self.assertTrue(any(f"{name}@rl0ve-agent-skills" in line for line in rendered), name)
         self.assertFalse(any("sudo" in command for line in rendered for command in line.split()))
 
 

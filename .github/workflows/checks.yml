@@ -1,0 +1,69 @@
+name: checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install FFmpeg (walkthrough decode tests)
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+
+      # tests/ is run as the start directory because test_skill_inventory imports test_packages.
+      - name: Repository package and routing tests
+        working-directory: tests
+        run: python -m unittest -v
+
+      - name: Natural Writing tests
+        working-directory: plugins/natural-writing/skills/natural-writing
+        run: python -m unittest discover -s tests -v
+
+      - name: UI Walkthrough Video tests
+        working-directory: plugins/ui-walkthrough-video/skills/ui-walkthrough-video
+        run: python -m unittest discover -s tests -v
+
+      - name: Node tests
+        run: |
+          set -e
+          for test in plugins/*/tests/*.mjs; do
+            echo "node $test"
+            node "$test"
+          done
+
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Validate marketplace and every plugin
+        run: |
+          set -e
+          claude plugin validate .
+          for plugin in plugins/*/; do
+            echo "validate $plugin"
+            claude plugin validate "$plugin"
+          done

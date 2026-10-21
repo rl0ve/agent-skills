@@ -20,6 +20,10 @@ PLUGIN_NAMES = {
     "ai": "work-router",
     "ui": "ui-router",
     "writing": "natural-writing",
+    "video": "ui-walkthrough-video",
+    "storyboard": "capability-storyboard",
+    "deck": "deck-builder",
+    "assessment": "clear-assessment-guides",
 }
 
 
@@ -95,7 +99,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--plugin",
         action="append",
-        choices=["ai", "ui", "writing", "all"],
+        choices=[*PLUGIN_NAMES, "all"],
         default=[],
         help="Plugin to install. Repeat as needed; default is all.",
     )

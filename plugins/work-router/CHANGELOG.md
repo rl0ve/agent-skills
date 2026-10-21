@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.10.0 - 2026-10-20
+
+- Add Codex Ultrafast (GPT-6 Astra and GPT-6.1 Sol) as a separate service tier: 8x
+  Standard usage then 6x credits on Pro $500, workspace credits on eligible Enterprise
+  and Edu. Never a default; offer it only on request or for a stated deadline, after
+  confirming access. Setup checks report it as unavailable unless shown.
+- Add a dated Haiku 5.5 review. `haiku` resolves to Haiku 5.5 only on the Anthropic API
+  with Claude Code 2.1.293+; Bedrock, Vertex and Foundry still map it to Haiku 4.5.
+  `fast-scout` stays at low effort and implementation stays on Sonnet.
+- Add `haiku-builder`, an opt-in, untested sole writer for mechanical edits with
+  objective checks. It is not in the default route table.
+- Add known engineering-discipline collaborators (mattpocock/skills,
+  addyosmani/agent-skills, obra/superpowers) to capability discovery as leads to
+  inspect, with one-family-per-concern and handoff-overlap rules. Nothing is installed.
+- Document Codex and ChatGPT publication paths: workspace import with daily sync and
+  admin-set policy, the root `plugin.json` portable manifest, and hook-based plugins'
+  ineligibility for OpenAI's public directory.
+- Make the README's subagent summary version-free.
+
 ## 1.9.2 - 2026-10-19
 
 - Extend capability discovery to review the distribution and freshness of installed

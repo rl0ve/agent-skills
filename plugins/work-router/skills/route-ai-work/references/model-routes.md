@@ -64,6 +64,18 @@ Standard versus Fast once; Fast requires account and workspace availability and 
 explicit user choice. Never enable it or claim it is active without confirmation from
 the application. A request for quick routing alone does not authorize a service-tier change.
 
+**Ultrafast is a separate, costlier tier.** As checked October 20, 2026, Ultrafast
+offers lower-latency GPT-6 Astra and GPT-6.1 Sol responses. On Pro $500 it draws
+included usage at 8x the Standard rate, then credits at 6x; in eligible Enterprise and
+Edu workspaces it is charged to workspace credits and depends on workspace
+permissions. It is not available on Plus, Pro $100, Pro $200 or Business
+([OpenAI](https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex)).
+Never default to it and never treat "fast" or "now" as authorization. Recommend it
+only when the user asks for it, or a stated deadline makes the latency worth the
+multiplier for model-bound interactive work; confirm account and workspace access
+first. Ultrafast does not change model capability, so it never substitutes for a
+stronger route, and it does not shorten work bound by tools, tests or review.
+
 ## Routing rules: wording condensed in 1.9.0
 
 The eight rules in `SKILL.md` are shortened. The 1.8.9 sentences they dropped:
@@ -115,6 +127,14 @@ Task-specific voice evidence and explicit style preferences take precedence over
 generic task size and family rankings, including for a single spoken line.
 
 **Subscription and API billing are separate.** As checked October 1, 2026, Fable 5 and 5.1 are included on Claude Max within a limit of up to 50% of the regular weekly allowance; this is a shared limit, not an extra allowance. Pro and standard Team seats use usage credits for Fable. Check the current plan, remaining allowance and authentication route before choosing on cost. Claude Code subscription login can use the plan; an API-key route can incur separate API charges. Do not enable extra usage or substitute API billing without authorization. See [current billing evidence](routing-policy.md#subscription-billing-update-october-1-2026).
+
+**Haiku 5.5 changes the alias, not the defaults.** As checked October 20, 2026,
+`haiku` resolves to Haiku 5.5 only on the Anthropic API with Claude Code 2.1.293+;
+Bedrock, Vertex and Foundry still resolve it to Haiku 4.5. Keep `fast-scout` at low
+effort and keep defined implementation on Sonnet: Haiku 5.5's Terminal-Bench 4.0
+score (39.2% versus Sonnet 5.5's 70.6%) does not repay its lower price on general
+coding. `haiku-builder` is an opt-in, untested route for mechanical edits with
+objective checks. See the [Haiku 5.5 review](haiku-5-5-review.md).
 
 For Opus 5.5's long runs and custom API harnesses, read the focused
 [release assessment](opus-5-5-review.md). It covers effort, actual alias

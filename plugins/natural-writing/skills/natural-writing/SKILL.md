@@ -1,6 +1,6 @@
 ---
 name: natural-writing
-description: Diagnoses, edits, rewrites, voice-matches, or drafts reader-ready prose while preserving facts, intent, register, formatting, product terminology, and distinctive author voice. Use for any request whose intended outcome is clearer, more natural, less generic, less assistant-like, more audience-appropriate, or more recognizably the author's writing—even when the user never says “humanize” or “AI slop.” This includes implicit intent expressed through a draft plus requests to tighten, polish, simplify, make ready to send, sound more candid or direct, match a sample, explain why prose feels synthetic, or improve emails, reports, essays, posts, product and interface copy, documentation, marketing copy, and executive writing. Also use when prose contains dialogue residue, ritual validation, prompt echoes, coaching theater, taxonomy reflexes, fake contrasts, excessive headings, or generic endings.
+description: Diagnoses, edits, rewrites, voice-matches, or drafts reader-ready prose, preserving facts, intent, register, terminology, and author voice. Use whenever the outcome should be clearer, more natural, less generic or assistant-like, or more recognizably the author's, even without the words "humanize" or "AI slop", including polishing, making ready to send, matching a sample, explaining why prose feels synthetic, or improving interface copy.
 compatibility: Claude Code and Codex with Agent Skills; plugin manifests ship for both.
 ---
 

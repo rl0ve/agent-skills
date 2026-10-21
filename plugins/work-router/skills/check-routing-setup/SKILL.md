@@ -23,7 +23,8 @@ or full model-cache records; extract only relevant model and effort metadata.
 4. Check the effective user/project instruction sources for an active [routing override](../route-ai-work/references/routing-overrides.md). Report its scope, enabled state, priorities, credit policy, model constraint and expiry; distinguish saved instructions from the configuration loaded by this chat. Check explicit model and delegation constraints. A named profile retains its configured family under a different parent; a built-in worker may inherit or accept overrides according
    to the host. Verify effective model and effort before recommending that route.
 5. Separate Fast routing from service-tier state. Treat unknown service status as
-   unverified, and require an explicit user choice for any move from Standard to Fast.
+   unverified, and require an explicit user choice for any move from Standard to Fast
+   or Ultrafast. Report Ultrafast as unavailable unless the plan and workspace show it.
    Check ultra's delegation behavior before recommending it with restricted delegation.
 
 ## Claude Code
@@ -31,7 +32,9 @@ or full model-cache records; extract only relevant model and effort metadata.
 1. Run `claude --version`.
 2. Run `claude plugin list --json` and confirm this plugin is enabled.
 3. Run `claude agents` and confirm the router agents are listed.
-4. Ask the user to open `/model` or `/effort` only when model visibility cannot be
+4. Report the provider and client version behind `haiku`: Haiku 5.5 requires the
+   Anthropic API and Claude Code 2.1.293+; Bedrock, Vertex and Foundry map it to 4.5.
+5. Ask the user to open `/model` or `/effort` only when model visibility cannot be
    verified another way.
 
 ## Capability and plugin overlap

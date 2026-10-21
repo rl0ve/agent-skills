@@ -59,6 +59,29 @@ does not by itself establish a marketplace install path. Verify host support, ma
 metadata and the selected plugin root before proposing a command. Do not invent public
 listings, automatic updates or release synchronization from a manifest or fresh commit.
 
+### Codex and ChatGPT publication paths
+
+Checked October 20, 2026. Three paths update separately; verify each before claiming it.
+
+- **Workspace import.** A ChatGPT workspace admin can import a public or private
+  GitHub marketplace (Admin Console, Plugins, Import marketplace). Import reads
+  `.agents/plugins/marketplace.json` or `.claude-plugin/marketplace.json`, syncs daily,
+  and can add new plugins on sync without per-plugin approval. Repository `policy`
+  values such as `AVAILABLE` are **not** applied; the admin sets installation policy
+  per plugin ([OpenAI](https://help.openai.com/articles/20001504)). A member cannot
+  complete this path; it needs the workspace admin.
+- **Portable manifest.** OpenAI recommends a root `plugin.json` (Agent Plugins 1.0
+  schema) with skills under `skills/`; `.codex-plugin/plugin.json` remains a
+  compatibility overlay for OpenAI-specific settings when the root manifest has no
+  `extensions.com.openai` object
+  ([OpenAI plugin docs](https://developers.openai.com/plugins/build/plugins.md)).
+  Claude Code still reads `.claude-plugin/plugin.json`; keep all three in version parity.
+- **Public directory.** Plugins with lifecycle hooks cannot be submitted to OpenAI's
+  public directory; distribute them for manual install in Codex desktop instead.
+  Claude marketplace listings and approvals do not transfer
+  ([submission guide](https://developers.openai.com/plugins/guides/submit-claude-plugin)).
+  Plugin-bundled hooks also stay inactive until the user reviews and trusts them.
+
 ## Recommend before migrating
 
 For an audit, return an actionable table with exact ID, installed state/source, upstream

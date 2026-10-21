@@ -20,8 +20,11 @@ not automatically faster.
   Economy; "quality first/executive-critical" → Quality-first. No signal → Fast for
   ordinary interactive work. Ask one short timing question only when the answer would
   materially change the route. [Full rules](references/model-routes.md#timing-full-rules).
-- **Codex Fast service tier** is separate from Fast routing. Never enable it or claim
-  it is active without application confirmation.
+- **Codex Fast and Ultrafast service tiers** are separate from Fast routing. Never
+  enable either or claim it is active without application confirmation. Ultrafast
+  (Astra and Sol) bills far above Standard; offer it only when the user asks or a
+  stated deadline repays the cost, never as a default.
+  [Service tiers](references/model-routes.md#timing-full-rules).
 - **Host-native harness:** host-sensitive workflows such as Dream Loop run in the host
   the user is in (Codex → GPT-6 Astra, Claude Code → Claude Opus 5.5) unless the user
   names another model for that run. Never move work to another host to match an
@@ -61,7 +64,7 @@ report it rather than substituting.
 | Work shape | Route | Model | Effort | Notes |
 |---|---|---|---|---|
 | One-step, tightly coupled, or conversational | Parent | active model | active effort | Delegation overhead would dominate. |
-| Narrow lookup, classification, repository map, or evidence collection | `work-router:fast-scout` | Haiku | low | Read-only; return compact evidence. |
+| Narrow lookup, classification, repository map, or evidence collection | `work-router:fast-scout` | Haiku | low | Read-only; return compact evidence. `haiku` is 5.5 only on the Anthropic API with 2.1.293+. |
 | Defined implementation with clear acceptance criteria | `work-router:sonnet-builder` | Sonnet | medium | Sole writer; verify proportionately. |
 | Substantial implementation, planning, synthesis, or a multi-file change | Parent | Opus 5.5 | medium | New substantial-work default; preserve useful parent context. |
 | Difficult diagnosis, architecture, or consequential tradeoff | `work-router:opus-architect` | Opus 5.5 | high | Read-only by default; parent integrates. |
@@ -70,7 +73,9 @@ report it rather than substituting.
 | Prose whose quality is the deliverable: talk track, narration, naming, UX copy, executive writing, voice match | Parent with Natural Writing | Opus 5.5 | medium | Preserve facts and register; judge the delivered prose. |
 | A demonstrated Opus 5.5 capability/style limit or explicit Fable choice | `work-router:fable-runner` or `work-router:fable-wordsmith` | Fable | high | Conditional specialist; runner is sole writer, wordsmith returns text for parent review. |
 
-Calibration, Fable and billing notes:
+`work-router:haiku-builder` (Haiku, high) is an opt-in, untested sole writer for
+mechanical edits with objective checks; use it only when the user or an override
+names it. Calibration, Haiku 5.5, Fable and billing notes:
 [Claude Code detail](references/model-routes.md#claude-code-calibration-billing-and-host-choice).
 
 ### If you are Codex
@@ -153,5 +158,6 @@ decisions, integration, final validation and the user-facing answer.
 - [routing-basis.md](references/routing-basis.md): distilled policy and current-product overlay.
 - [benchmark-sources.md](references/benchmark-sources.md): release reviews and comparisons.
 - [opus-5-5-review.md](references/opus-5-5-review.md): Opus 5.5 long runs and API harnesses.
+- [haiku-5-5-review.md](references/haiku-5-5-review.md): Haiku 5.5 alias gate, scout and opt-in builder.
 - Historical source packs (`source-*.md`) predate GPT-6 Sol and Luna and do not override
   this policy; search them by model or claim rather than reading them whole.

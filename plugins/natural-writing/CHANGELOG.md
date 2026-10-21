@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.15.2 - 2026-10-20
+
+- Trim the auto-loaded skill description from 121 to 60 words without dropping the
+  implicit-intent triggers covered by `tests/trigger-cases.md`.
+
 ## 1.15.1 - 2026-10-11
 
 - Codex parity: `compatibility`, README title and trigger cases now name Claude Code and Codex; "Claude UI Router" becomes UI Router.

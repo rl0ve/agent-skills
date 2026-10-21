@@ -52,8 +52,8 @@ codex plugin add ui-router@rl0ve-agent-skills
 codex plugin add work-router@rl0ve-agent-skills
 ```
 
-All three are shared plugins rather than Codex ports: one folder, one `skills/` directory,
-a `.codex-plugin` and a `.claude-plugin` side by side. `work-router` carries a route table
+All are shared plugins rather than Codex ports: one folder, one `skills/` directory,
+a root `plugin.json`, and a `.codex-plugin` and a `.claude-plugin` side by side. `work-router` carries a route table
 for each agent under `## Default routes` - read the one matching the agent you are running
 as. `ui-router`'s optional-skill catalog carries `installer_codex` where the install command
 differs.
@@ -78,9 +78,12 @@ override it. `natural-writing` also stands alone.
 ## Conventions
 
 - Skills are `plugins/<plugin>/skills/<skill>/SKILL.md` with frontmatter.
-- Versions live in both `plugins/<plugin>/.claude-plugin/plugin.json` and
-  `plugins/<plugin>/.codex-plugin/plugin.json`, plus `.claude-plugin/marketplace.json`.
-  Keep all three aligned and add a `CHANGELOG.md` entry.
+- Versions live in `plugins/<plugin>/plugin.json` (portable root manifest),
+  `plugins/<plugin>/.claude-plugin/plugin.json` and `plugins/<plugin>/.codex-plugin/plugin.json`,
+  plus `.claude-plugin/marketplace.json`. Keep name, version and description aligned
+  and add a `CHANGELOG.md` entry. `metadata.version` in the Claude marketplace tracks
+  UI Router. `tests/test_repository_parity.py` enforces this.
+- Skill descriptions stay at 60 words or fewer; they load into every session.
 - The routing plugins ship a deterministic `PreToolUse` hook that blocks Bash
   commands containing `sudo`. Installers refuse root and never evaluate a shell string.
 

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "natural-writing",
+  "version": "1.15.2",
+  "description": "Diagnose, edit, rewrite, or draft natural prose while preserving facts, formatting, intent, register, and author voice.",
+  "author": {
+    "name": "rl0ve"
+  },
+  "homepage": "https://github.com/rl0ve/agent-skills",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "editing",
+    "natural-prose",
+    "reader-ready",
+    "voice",
+    "claude-code",
+    "product-copy",
+    "executive-writing"
+  ]
+}

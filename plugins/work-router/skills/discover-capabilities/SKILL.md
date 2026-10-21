@@ -43,6 +43,10 @@ heuristics do not replace source inspection or exclude a well-supported niche sk
 The upstream [Skills CLI](https://github.com/vercel-labs/skills) supports
 `npx skills find <keywords>`; check current syntax before installing.
 
+For engineering method (spec, TDD, diagnosis, review, hardening), check the
+[known collaborators](references/known-collaborators.md) before writing a new skill.
+Those families are leads to inspect, not approved installs.
+
 ## Evaluate and adopt
 
 For installation-source choices or a freshness audit of existing packages, read

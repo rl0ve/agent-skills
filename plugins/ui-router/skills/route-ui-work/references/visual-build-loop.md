@@ -37,7 +37,8 @@ reference, current capture and useful decisions in project-local notes.
 
 1. Build a runnable slice in the destination stack with realistic content and the main
    interaction. Start with composition, hierarchy and input behavior before fine detail.
-2. Capture the actual running result at a comparable viewport and application state.
+2. Capture the actual running result at a comparable viewport and application state,
+   using the host's browser first ([verification tools](quality-gates.md#verification-tools)).
    Compare framing, type, color, content and, when relevant, lighting and materials.
 3. Exercise the promised interaction from its initial state through its result. Check
    recovery, interruption or reversal where relevant, plus keyboard/touch alternatives.

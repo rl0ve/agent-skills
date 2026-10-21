@@ -36,10 +36,12 @@ and do not treat provider summaries or overlapping indexes as independent replic
 ## Carry a release through
 
 - Work in the canonical checkout; inspect its instructions, dirty files and remote.
-- Update each changed plugin's two manifests, Claude marketplace version, changelog,
+- Update each changed plugin's three manifests (root `plugin.json`, `.claude-plugin`,
+  `.codex-plugin`), Claude marketplace version, changelog,
   and any affected discovery data or field-guide version. Codex marketplace entries
   that resolve versions from plugin manifests do not need invented version fields.
-- Run the relevant package checks and inspect the diff. Stage only intended files,
+- Run the relevant package checks (the same set as `.github/workflows/checks.yml`) and
+  inspect the diff. Stage only intended files,
   commit, and make a normal push within the maintainer's authorized update scope.
   Reconcile remote changes without discarding others' work or force-pushing.
 - Verify the published commit. Refresh requested installed copies from that release

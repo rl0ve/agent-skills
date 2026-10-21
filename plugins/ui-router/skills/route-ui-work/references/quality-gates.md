@@ -216,6 +216,33 @@ its report must not imply full visual or editorial acceptance.
   does not substitute for those observations. Reopen accepted work only for a relevant
   regression, new requirement or observed defect.
 
+### Verification tools
+
+Checked October 20, 2026. Rendered captures and exercised flows need a real browser.
+Use the first option the host already provides; install nothing for a check the host
+can already make.
+
+1. **Host-native browser first.** In the ChatGPT desktop app, Codex can drive the
+   built-in browser with Computer Use (`@Browser`) or a regular Chrome profile
+   (`@Chrome`); Developer mode adds full Chrome DevTools Protocol access for console,
+   network, DOM and performance inspection after explicit approval. These are not
+   available in Codex CLI or the IDE extension, and admins can restrict origins,
+   uploads, downloads and CDP access ([Codex browser docs](https://developers.openai.com/codex/browser)).
+   In Claude Code, use Claude in Chrome when it is connected.
+2. **Chrome DevTools for agents (conditional).** When a CLI or IDE host lacks a browser,
+   or the check needs Lighthouse-style performance, accessibility or memory evidence,
+   use the [Chrome DevTools MCP server](https://developer.chrome.com/blog/devtools-for-agents-v1)
+   (stable since May 2026). Its debugging skills depend on the MCP server; installing
+   the skills alone does not provide a browser.
+3. **Scripted alternatives.** For repeatable multi-viewport or multi-step flows, use one
+   of [Playwright MCP](https://github.com/microsoft/playwright-mcp) or the lighter
+   [agent-browser](https://github.com/vercel-labs/agent-browser) CLI. Pick one per
+   project rather than mixing them.
+
+Whatever the tool, record the viewport, device emulation, application state and
+entrypoint version with each capture. Keyboard navigation, a narrow mobile render and
+file-picker or upload flows are exercised checks, not inferences from source.
+
 ## Writing and interface copy
 
 - Supported facts, material qualifications, product terminology, identifiers, labels, states, links, and formatting are preserved.

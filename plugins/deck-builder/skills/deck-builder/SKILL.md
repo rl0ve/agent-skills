@@ -1,6 +1,6 @@
 ---
 name: deck-builder
-description: Build, edit, and quality-check PowerPoint decks (.pptx) with python-pptx, and verify them by rendering slides and running automated checks rather than by re-reading the build script. Use when building a presentation from a brief or narrative, restyling or condensing an existing deck, or producing on-brand output from a corporate template. Also use to diagnose a specific deck defect: a repair dialog on open, text overflowing or cut off, a shape covering text, content sitting off the slide or under the logo, every slide using the same layout, text too small to read, or a rebuild that silently dropped statistics and proof points from the original.
+description: Build, edit, and quality-check PowerPoint decks (.pptx) with python-pptx, verifying through rendered slides and automated checks rather than rereading the build script. Use to build a deck from a brief, restyle or condense one, apply a corporate template, or diagnose defects such as a repair dialog, overflowing or covered text, off-slide content, repetitive layouts, or dropped proof points.
 ---
 
 # Deck Builder

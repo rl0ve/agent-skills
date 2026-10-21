@@ -1,6 +1,6 @@
 {
   "name": "deck-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Build and quality-check PowerPoint decks on top of any corporate template, with the brand supplied as configuration rather than baked into the skill.",
   "author": {
     "name": "Robert Love"

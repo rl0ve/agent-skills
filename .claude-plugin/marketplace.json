@@ -1,19 +1,19 @@
 {
   "name": "rl0ve-agent-skills",
-  "description": "Portable agent skills and Claude Code routing plugins: natural-writing (tool-neutral), plus model and UI routers.",
+  "description": "Portable agent skills and routing plugins: model and UI routers, natural writing, walkthrough video, capability storyboards, decks, and assessment guides.",
   "owner": {
     "name": "Robert Love"
   },
   "metadata": {
-    "description": "Portable agent skills and Claude Code routing plugins: natural-writing (tool-neutral), plus model and UI routers.",
-    "version": "1.19.4"
+    "description": "Portable agent skills and routing plugins: model and UI routers, natural writing, walkthrough video, capability storyboards, decks, and assessment guides.",
+    "version": "1.20.0"
   },
   "plugins": [
     {
       "name": "ui-router",
       "source": "./plugins/ui-router",
       "description": "Design routing, interactive-world choices, visual resources, and verified interactions",
-      "version": "1.19.5",
+      "version": "1.20.0",
       "category": "Development",
       "tags": [
         "ui",
@@ -27,7 +27,7 @@
       "name": "natural-writing",
       "source": "./plugins/natural-writing",
       "description": "Diagnose, edit, rewrite, or draft natural prose while preserving facts, formatting, intent, register, and author voice.",
-      "version": "1.15.1",
+      "version": "1.15.2",
       "category": "Productivity",
       "tags": [
         "writing",
@@ -41,7 +41,7 @@
       "name": "work-router",
       "source": "./plugins/work-router",
       "description": "Routes substantial agent work to the leanest reliable parent or subagent configuration on task shape, ambiguity, risk, latency, and token use. Carries a route table for Claude Code and one for Codex. Includes capability discovery and scoped deduplication of installed skills.",
-      "version": "1.9.2",
+      "version": "1.10.0",
       "category": "Productivity",
       "tags": [
         "routing",
@@ -55,7 +55,7 @@
       "name": "capability-storyboard",
       "source": "./plugins/capability-storyboard",
       "description": "Build a capability-first, multi-tool HTML storyboard for a keynote, demo walkthrough, or narrative product doc. Ships a working template and a finished nine-scene example board to lift components from.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "Productivity",
       "tags": [
         "storyboard",
@@ -70,7 +70,7 @@
       "name": "deck-builder",
       "source": "./plugins/deck-builder",
       "description": "Build and quality-check PowerPoint decks on top of any corporate template. Reads the template and generates a brand pack, so the palette, grid, layouts, and logo zone are configuration rather than code.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "Productivity",
       "tags": [
         "powerpoint",

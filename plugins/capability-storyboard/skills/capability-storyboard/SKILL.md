@@ -1,6 +1,6 @@
 ---
 name: capability-storyboard
-description: Build a capability-first, multi-tool HTML storyboard for a product keynote, demo walkthrough, or "here's what happens when..." narrative doc. Use this whenever asked to build a keynote/demo storyboard, turn a beat-by-beat customer-scenario script into something a large or mixed audience can actually follow, add a spoken talk-track and director's-notes column to a demo doc, make several different tools visually distinguishable in one mockup document, or add realistic screen chrome (browser, native app, or a bare presentation slide) to HTML product mockups. Trigger this even if the user doesn't say "storyboard" — phrases like "walk through the demo", "build the keynote deck for X", "mock up what the presenter sees", or "make this less confusing for the audience" all fit.
+description: Build a capability-first HTML storyboard for a product keynote, demo walkthrough, or "here's what happens when..." narrative, with talk track, director's notes, distinct multi-tool mockups, and realistic screen chrome. Use when a customer-scenario script must be followable by a large or mixed audience, even if the user never says "storyboard" ("walk through the demo", "mock up what the presenter sees").
 ---
 
 ## When to use this vs. a full beat-by-beat walkthrough
