@@ -13,7 +13,7 @@ a review into an editing assignment. Keep essential explanation beside its evide
 Apply the chosen mode's quality checks; a collaborator's default aesthetic does not
 override the actual project brief.
 
-## Diagram Design for relationships and structural comparisons
+## Diagram Design or Archify for relationships and structure
 
 Look for `diagram-design` or an available Diagram Design plugin. Use it for current-state
 maps, process relationships, handoffs, architecture or structural before/after change.
@@ -21,6 +21,12 @@ Select the meaning before the layout. Align unchanged nodes across a before/afte
 so the difference is visible. Retain editable source, such as vector/native shapes or
 the supported diagram source, beside the rendered asset. Verify the selected tool's
 actual formats; HTML/SVG output does not imply editable presentation shapes.
+
+[Archify](https://github.com/tt-a1i/archify) (MIT) is an alternative when the job is an
+interactive diagram of a codebase, plan or architecture: the agent writes typed JSON that
+Archify validates and renders as one self-contained HTML file, with PNG and PDF export.
+It does not produce editable presentation shapes. It checks for updates over the network
+unless `ARCHIFY_UPDATE_CHECK_DISABLED=1` is set; set it for confidential work.
 
 Skip a diagram for a simple list or a change consisting only of a label, attribute or
 sentence. Use a compact table or before/after text instead. If Diagram Design is not

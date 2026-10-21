@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.16.0 - 2026-10-20
+
+- Add an opt-in controlled-English register under technical documentation, based on
+  ASD-STE100 Issue 9 (one instruction per sentence, 20/25-word sentence limits, six
+  sentences per paragraph, active voice, simple tenses, three-word noun clusters).
+  Apply it most of the way by default and fully only on request. Never claim conformance
+  without the controlled dictionary, and keep it out of persuasive and voice-matched work.
+
 ## 1.15.2 - 2026-10-20
 
 - Trim the auto-loaded skill description from 121 to 60 words without dropping the

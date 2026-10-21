@@ -59,8 +59,8 @@ Use **Unrated** when no listening review occurred. Record who listened and any
 remaining acceptance decision. If audio playback/listening is unavailable, say so;
 a waveform, transcription or successful decode cannot prove naturalness.
 
-For a Mac, consider the actual chip/runtime. Chatterbox and Kokoro are local trial
-candidates, not bundled generation adapters. A CUDA recipe is not a Mac default.
+For a Mac, consider the actual chip/runtime. Chatterbox, Kokoro and the VoiceStudio app
+are local trial candidates, not bundled generation adapters. A CUDA recipe is not a Mac default.
 Hosted speech APIs do not require a local NVIDIA GPU, and a Mac desktop client does
 not establish offline inference. No system-voice substitution when a preferred
 provider is unavailable; return an honest blocker or a silent video proof instead.

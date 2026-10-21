@@ -281,7 +281,9 @@ For work spanning several dependent phases or losing time to repeated polishing,
 [references/long-running-work.md](long-running-work.md). Use bounded phase
 outcomes and evidence of completion; add a manager/implementer split only when it earns
 its coordination cost. This does not create a goal, schedule background work, or change
-agent limits. Follow the host's authorization rules for those actions.
+agent limits. Follow the host's authorization rules for those actions. For Claude Code
+dynamic workflows and Codex cross-window notes, see
+[host-native long-task features](long-running-work.md#host-native-long-task-features).
 
 Treat social recommendations as dated, task-specific evidence. A saved post, impressive
 demo, or benchmark rank does not override the user's model choices or prove a cheaper

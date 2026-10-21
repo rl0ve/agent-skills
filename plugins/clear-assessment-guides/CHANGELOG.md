@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1 — 2026-10-20
+
+- Supporting tools: add Archify as an alternative for interactive codebase, plan and
+  architecture diagrams delivered as self-contained HTML, with its update check disabled
+  for confidential work.
+
 ## 1.1.0 — 2026-10-20
 
 - Add optional collaborator routing for Diagram Design, Visual Explainer, doc-coauthoring

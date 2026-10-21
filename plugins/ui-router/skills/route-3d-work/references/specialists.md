@@ -13,6 +13,7 @@ when they exist; entries here are layers or tools under that lead.
 | Close-up wood, stone, fabric and foliage materials | Meng `3d-high-resolution-textures`, `3d-high-poly-models` | Layer for a named surface or prop; follow the asset plan in [spatial-realism.md](spatial-realism.md). |
 | Water, fountains, open sky | Meng `3d-ultra-realistic-water`, `3d-sky-background` | Load when the scene contains that element. |
 | Frame time, draw calls, memory, load cost | Meng `optimize-threejs-games` | Load when a measured budget fails. |
+| Blender production procedures and asset QA before delivery | [EL4CTEO/blender-skills](https://github.com/EL4CTEO/blender-skills) (MIT, Blender 5.2+; 6 commits and 317 stars on October 20, 2026) | **Trial.** Read `blender-core` and `blender-asset-qa` first; the QA skill reports numbers and a visual check for z-fighting, floating parts, bad normals and weights. Load other skills (retopology and UVs, baking, rigging, animation, export) only for that stage. Install per project with `--project`, because the default installer writes to the global Claude and agents skill folders. The project's CLI build script stays the source of truth. |
 | Sourced Blender-to-three.js, IBL, baking and XR recipes | [3dviz-pro-max](https://github.com/viettranx/3dviz-pro-max) (MIT, targets three 0.180) | **Retrieval only.** Clone outside skill folders and query from the clone root with `python3 skills/3dviz-pro-max/scripts/search.py "<question>"` (add `--kind` or `--collection` to narrow; `resolve.py <id>` prints a record). Do not install it as a skill: its description would trigger on every 3D edit and its kit defaults conflict with an established pipeline. |
 | Technical-art and debugging checklists | [threejs-game-skills](https://github.com/majidmanzarpour/threejs-game-skills) `technical-art.md`, `debug-playbook.md` | **Read those two files only.** Do not install or run its director or asset generators: its credential probe reads shell profiles and starts paid generation when keys exist, which this router forbids. |
 | Gaussian-splat captured spaces | three.js [`GaussianSplat`](https://threejs.org/docs/pages/GaussianSplat.html) (r186+), or [Spark](https://sparkjs.dev/docs/overview/) | Only when a captured-space study is in scope; a study does not change the production stack. Use the built-in add-on for object- or room-scale captures in a `WebGPURenderer` project; it has no streaming or level of detail. Use Spark (WebGL2) for `WebGLRenderer` projects, mobile or WebXR. For streaming or level of detail, check the current support of whichever renderer you choose. Checked October 20, 2026. |
@@ -30,8 +31,14 @@ when they exist; entries here are layers or tools under that lead.
 
 Babylon.js, PlayCanvas, A-Frame, Spline, React Three Fiber, pmndrs/xr, Substance, PixiJS
 and WebGPU/TSL-only packs (for example linegel/threejs-complete-set-of-skill) when the
-project runs another runtime. Generator-first packs (Tripo, Hyper3D/Rodin) stay
-conditional on explicit authorization. Load one of these only for a runtime decision
+project runs another runtime. Generator-first packs stay conditional on explicit
+authorization: Tripo, Hyper3D/Rodin, [image-blaster](https://github.com/neilsonnn/image-blaster)
+(one image to a splat room, GLB props and sound, through World Labs and FAL keys) and
+[Scenario's skills](https://github.com/scenario-labs/skills), sold as GameDev OS
+(generation through the Scenario MCP and an account). An image-to-world result is a
+blockout or reference, not a finished scene; take it through the asset plan and gates
+like any other source. Scenario's separate expert-tool skills for Blender and game
+engines run locally without the Scenario MCP; treat them like the Blender pack above. Load one of these only for a runtime decision
 or an approved pilot.
 
 ### Playable-world design and feedback

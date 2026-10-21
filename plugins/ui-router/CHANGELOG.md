@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.21.0 - 2026-10-20
+
+- `route-3d-work`: add EL4CTEO/blender-skills as a trial Blender layer (read `blender-core`
+  and `blender-asset-qa` first, install per project, keep the CLI build as source of
+  truth). Name image-blaster and Scenario's skills (GameDev OS) as generator-first packs
+  that need authorization; image-to-world output is a blockout, not a finished scene.
+- Runtime-evidence gate: moving parts that turn about the wrong pivot.
+- Motion explainers: add OpenDesign as a workspace lead that renders through HyperFrames;
+  its generative-video presets are paid routes.
+
 ## 1.20.1 - 2026-10-20
 
 - Fidelity loop: reject the generic flat, pastel, toy-like look agents fall back to,

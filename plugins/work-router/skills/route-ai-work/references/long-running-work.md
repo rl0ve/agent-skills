@@ -74,6 +74,50 @@ For an ambiguous paid submission, follow the provider's recovery path rather tha
 risking a duplicate charge. Reconnect only the affected handles; preserve user state
 and avoid rerunning accepted research, builds or actions without a relevant change.
 
+## Host-native long-task features
+
+Use a host feature when it fits the work's shape; do not rebuild it by hand, and do not
+turn it on just because it exists. Both features below change cost or configuration, so
+they follow the host's authorization rules.
+
+**Claude Code dynamic workflows.** Claude writes a JavaScript orchestration script that
+runs many subagents in the background and can be saved and rerun as a command. Fit:
+the same check or edit across many files or items, large migrations, codebase-wide
+audits, research whose claims must be cross-checked, several independent drafts of a
+plan, or a checker-and-fix cycle that repeats until it passes or stops improving. Not a
+fit: ordinary edits, work one conversation can coordinate, or work that needs the user
+between stages.
+
+- **Opt in per task.** "Use a workflow" or the `ultracode` keyword in a typed prompt
+  opts one task in; `/effort ultracode` opts in every substantive task in the session,
+  removes the large-run warning and the concurrent-subagent limit, and sets `xhigh` when
+  started from the command line. Keep it per task unless the whole session is fan-out
+  work. The keyword counts only as human input, so a `claude -p` call, a scheduled
+  prompt or a relayed comment does not start a workflow.
+- **No input mid-run.** A run pauses only for permission prompts or usage limits. Run
+  each stage that needs sign-off as its own workflow.
+- **Cost.** Workflows can use meaningfully more tokens than the same task in
+  conversation and count toward plan limits. Start with a scoped run to gauge usage
+  before a codebase-wide one.
+- **Acceptance stays with the parent.** Inspect the result and run the checks; agent
+  votes or reviewer agreement do not replace them. `/deep-research` is the built-in
+  cross-checked research workflow and needs web search.
+
+**Codex cross-window notes with Astra.** OpenAI describes an experimental mode in which
+Astra keeps notes across context windows and can search earlier windows instead of
+compressing them into one summary. It is set in the Codex config under
+`features.context_management`, and OpenAI says it will become the Astra default. As of
+October 20, 2026, the Codex configuration reference still lists it as not currently
+available, so check the installed client before relying on it. When it is active, prefer
+it over a hand-written handoff for an unfinished Astra session. Still write the
+state-spec file below when the work changes model, agent or host, because notes stay
+inside one Codex task.
+
+Sources, checked October 20, 2026: [Claude Code dynamic workflows](https://code.claude.com/docs/en/workflows),
+[Anthropic launch article](https://claude.com/resources/articles/introducing-dynamic-workflows-in-claude-code),
+[OpenAI GPT-6 Astra](https://openai.com/index/gpt-6-astra/),
+[Codex configuration reference](https://developers.openai.com/codex/config-reference).
+
 ## Handoff and context at a phase boundary
 
 Carrying a large transcript forward is not the lossless option people assume it is. The

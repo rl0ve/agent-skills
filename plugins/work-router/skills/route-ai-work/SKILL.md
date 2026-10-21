@@ -157,7 +157,8 @@ decisions, integration, final validation and the user-facing answer.
 - [model-routes.md](references/model-routes.md): full override, timing, Claude, Codex,
   benchmark, token, long-task, escalation and host-specific notes (managed workspaces,
   Codex profile sync).
-- [long-running-work.md](references/long-running-work.md): multi-phase work and outside advice.
+- [long-running-work.md](references/long-running-work.md): multi-phase work, Claude Code
+  dynamic workflows, Codex cross-window notes and outside advice.
 - [routing-scenarios.md](references/routing-scenarios.md): representative decisions.
 - [routing-basis.md](references/routing-basis.md): distilled policy and current-product overlay.
 - [benchmark-sources.md](references/benchmark-sources.md): release reviews and comparisons.

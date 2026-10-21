@@ -83,7 +83,7 @@ Treat a pass as complete only when every applicable gate is **met**, or is marke
    distance for each new asset.
 3. **Runtime evidence:** screenshots from the running build on a named device, plus a
    short clip along the real camera path when the camera moves (stills miss flicker,
-   pop-in and floating parts); frame time, draw calls, triangles, texture memory and
+   pop-in, floating parts and moving parts that turn about the wrong pivot); frame time, draw calls, triangles, texture memory and
    transfer size. Estimates are labeled as estimates.
 4. **Target comparison:** for a fidelity pass, the build has been compared with the
    locked target and the remaining gaps are recorded.

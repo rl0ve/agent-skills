@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.11.0 - 2026-10-20
+
+- Add host-native long-task features to the long-running guide. Claude Code dynamic
+  workflows fit fan-out audits, migrations, cross-checked research and repeated
+  check-and-fix cycles. Opt in per task, run each stage that needs sign-off as its own
+  workflow, and start with a scoped run because token use is higher. The `ultracode`
+  keyword counts only as human input. Codex cross-window notes for Astra are
+  experimental and still listed as unavailable in the configuration reference; check
+  the client first, and keep the state-spec handoff for changes of model, agent or host.
+
 ## 1.10.1 - 2026-10-20
 
 - Add a fidelity-rounds default for Dream Loop and the visual build loop in both hosts:

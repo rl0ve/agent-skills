@@ -26,6 +26,20 @@ Lead with the decision, risk, result, or request. Keep commercial and organizati
 
 Optimize for correct action. Preserve identifiers and defined terms. Prefer actor-action sentences and concrete conditions. Repetition is often safer than synonym cycling. Do not add personality that competes with instructions.
 
+#### Controlled English (opt-in)
+
+Use this register when the user asks for controlled, plain or "STE" English, or when the reader must act on the text in a second language or through translation. It is based on [ASD-STE100 Simplified Technical English, Issue 9](https://www.asd-ste100.org/assets/files/ASD-STE100_ISSUE9.pdf), a standard written for aerospace maintenance documents. Apply these rules in full only when the user asks for strict compliance; otherwise apply them most of the way, the "80% of the way to ASD-STE100" that [Karpathy suggests](https://x.com/karpathy/status/2105819303471976479) for explanations.
+
+- One instruction per sentence, unless the actions happen at the same time. Put instructions in the imperative.
+- At most 20 words in a procedural sentence (this includes warnings and cautions) and 25 in a descriptive sentence. At most six sentences in a paragraph.
+- Active voice. Use the passive only in description, and only when the actor is unknown.
+- Simple present, past and future tenses. No progressive or perfect constructions.
+- Use one word for one meaning throughout. Keep the user's technical names, identifiers and units exactly.
+- Noun clusters of at most three words. Write a longer technical name in full once, then give it a short form.
+- Keep articles and demonstratives ("the", "this"). Do not drop them to save words.
+
+The standard also has a controlled dictionary of about 900 approved words. Do not claim conformance without checking against it. Do not apply this register to persuasive, narrative or voice-matched writing; there it removes the author's voice and makes the text read as flat as the generic prose this skill exists to fix.
+
 ### Email and chat
 
 Match the relationship and power distance. Keep greetings and sign-offs that fit the sender. Use contractions if the author does. Do not turn a short note into a memo or add warmth the sender did not express.

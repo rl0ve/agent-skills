@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.7.3 — 2026-10-20
+
+- Voice narration: add the VoiceStudio desktop app as an unrated local trial candidate,
+  with its AGPL-3.0 app license separated from model terms and the permission rule for
+  cloning.
+
 ## 1.7.2 — 2026-10-18
 
 - Route conceptual motion explainers to a motion-design lead; retain real capture,
