@@ -17,6 +17,10 @@ outline, GIF or interactive board when the user asked for a simple correction.
   user's editor/saver choices and existing work preserved?
 - Has the actual final output been inspected for clipping, readability, broken links,
   detached evidence and misleading status? Report what could not be verified.
+- Have final headings, captions and prose been reviewed for concrete meaning, with
+  requested writing guidance actually applied? A linter alone is not a prose review.
+- Are body text, metadata, diagram labels and print styles readable at their actual
+  size? Were automated design findings checked against the render and triaged honestly?
 - Before anything is reported missing or broken, were its route, alternate modes and
   loading state checked?
 - If delivered as one standalone file, are images embedded and does it open with
@@ -35,6 +39,8 @@ outline, GIF or interactive board when the user asked for a simple correction.
   installing optional dependencies or changing the requested mode by default?
 - Were relationships distinguished from simple text changes, and useful HTML from
   unnecessary animation or elaborate layouts?
+- Does each interactive control serve exploration, substantial optional detail or
+  feedback? Keep short evidence and caveats visible; HTML diagrams need no controls.
 - Can an unfamiliar reader understand the artifact? Is a self-review honestly
   distinguished from an independent fresh-reader test?
 - Were document/PDF rendering checks used for actual final exports, with imagery

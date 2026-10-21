@@ -13,6 +13,12 @@ accessible. A shared excerpt, assistant recap or attachment title can omit later
 steering or an entire deliverable. Preserve source IDs within their original namespace
 or make an explicit mapping; never reuse an ID for a different source silently.
 
+Match the investigation to the breadth of the question. For organizational strategy,
+check the relevant primary strategy records and how distinct audiences, routes to
+market and product roles relate. A deep product case can test a wider argument, but
+does not establish company-wide coverage. Identify which parts are supported, sampled
+or still unexamined; do not relabel a similarly themed meeting as the recalled one.
+
 ## Give each source the authority it earns
 
 Use an exact source link and enough context to support the associated claim. A
@@ -26,6 +32,10 @@ Compare source and event dates, definitions, scope and later replies. An old iss
 not a current defect until its status or behavior is checked. A public vendor claim
 is not an independent benchmark; a proposed operating practice is not an observed
 performance gain. Do not treat several retellings of one result as independent proof.
+
+Describe actual source access precisely: a fresh query, saved extract, displayed
+dashboard, schema inspection and failed connection establish different things. Do not
+imply every requested system was queried because related data appeared elsewhere.
 
 Keep a bounded claim record, for example:
 
@@ -53,6 +63,13 @@ lineage. Keep parent accounts, subsidiaries, people, projects, primary transacti
 and invoked child executions distinct. Preserve pending, failed, unknown and unmatched
 records. A selected sample that favors established workloads cannot estimate all-user
 adoption. Show plausible selection and missingness effects.
+
+For persona or customer-origin claims, inspect populated values and coverage, not
+just available field names. CRM contacts, product users, buyers and acquisition sources
+are different populations. Check identity joins and overlapping groups before combining
+them. Sparse role labels or account-level product overlap cannot establish the share
+of developers, who introduced the product, or the route that caused adoption. Keep
+unknowns visible rather than treating missing labels as a negative classification.
 
 Do not infer acquisition from first product activity, retention from the returning
 share of today's active users, or business value from runtime thresholds. Compare

@@ -67,10 +67,13 @@ the artifact and realistic reader questions, without coaching them with the inte
 answer. If only the author can review it, call it a self-review, not an independent
 reader test. Record unresolved gaps rather than inventing missing context.
 
-If unavailable, draft directly and apply the same clarity questions. A final prose
-editor such as Natural Writing can improve wording when appropriate; keep one final
-editor and do not repeat multiple humanizing passes. Co-authoring owns structure and
-reader comprehension, not an additional serial style-cleanup process for every paragraph.
+If unavailable, draft directly and apply the same clarity questions. Use Natural Writing
+or another suitable final prose editor when available and useful, and honor an explicit
+request to use one. Review the actual final headings, captions and body for concrete
+meaning while preserving evidence and qualifiers. A planned pass or pattern linter
+alone does not count as a completed prose review. Keep one final editor rather than
+repeating humanizing passes. Co-authoring owns structure and reader comprehension,
+not an additional serial style-cleanup process for every paragraph.
 
 ## Document and PDF tools for the actual deliverable
 

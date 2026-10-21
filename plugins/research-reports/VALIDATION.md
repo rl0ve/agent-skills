@@ -1,5 +1,25 @@
 # Validation
 
+Release 1.0.2, checked 2026-10-21.
+
+Instruction-only patch covering strategy/source scope, actual data-access coverage,
+populated persona fields and joins, final prose review, purposeful HTML controls and
+readable rendered/print text. No renderer, template or feedback runtime changed.
+
+- Both Skill Creator validators passed; 49 repository tests, 109 Natural Writing
+  tests, 45 UI Walkthrough Video tests and the assessment Node suite passed.
+- Marketplace and both changed plugin manifests passed Claude Code validation;
+  whitespace and local reference targets checked.
+- Author policy review: a broad strategy brief with one product example, sparse CRM
+  roles and a saved dashboard must retain scope, missingness and access limits, keep
+  short evidence visible and review final prose. An explicitly requested interactive
+  cohort explorer may still use controls; an explicit dual-format request remains
+  valid. A single-heading correction does not trigger a new investigation.
+
+These are package checks and an author review of instruction behavior, not a new
+independent model trial or rendered-report benchmark. Prior independent exercises
+retain their recorded scope. No private source captures or research facts were added.
+
 Release 1.0.1, checked 2026-10-21.
 
 Instruction-only follow-up: add a visual completion gate and a short decision record

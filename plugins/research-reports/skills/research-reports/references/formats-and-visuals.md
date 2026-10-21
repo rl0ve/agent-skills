@@ -21,6 +21,19 @@ muted brown, a dark dashboard, decorative cards or any other aesthetic from the 
 a collaborator's shipped default does not override it. Retain legible text, sufficient
 contrast and a coherent reading order at the actual output size.
 
+HTML can earn its place through clear diagrams and a coherent reading layout without
+requiring interactive controls. For independent reading, keep short evidence,
+qualifiers and conclusions visible. Section links can aid navigation; an accordion
+that only hides a short paragraph adds work. Use interaction when a reader benefits
+from exploring alternatives, filtering data, inspecting substantial optional detail
+or recording decisions. An explicitly requested interactive exploration remains valid.
+
+Inspect body text, diagram labels, metadata and print styles at their actual reading
+size. Do not shrink evidence or caveats to fit, or turn them into decorative microtext
+above headings. Review automated design findings against the rendered artifact; fix
+real problems and disclose any intentional exceptions rather than claiming an unchecked
+or merely linted artifact has passed visual inspection.
+
 ## Select a few visuals by the explanation
 
 For the central findings, make a small visual plan before implementation. Record the

@@ -1,5 +1,18 @@
 # Validation
 
+Release 1.4.2, checked 2026-10-21.
+
+Instruction-only patch clarifying final prose review, purposeful controls and rendered
+reading/print typography. Both skill validators, 49 repository tests, 109 Natural
+Writing tests, 45 UI Walkthrough Video tests, the assessment Node suite, marketplace
+and changed plugin manifest validation passed. Whitespace and local references checked.
+
+Author policy review: a static guide keeps short evidence visible and reviews actual
+headings/captions/prose; an interactive issue board still supports comments and decisions.
+A simple wording correction requires neither a diagram nor an interactive board.
+This is instruction review, not a fresh model trial or rendered-template test. The
+feedback template/runtime is unchanged; earlier evidence retains its original scope.
+
 Release 1.4.1, checked 2026-10-21.
 
 Instruction-only patch: the selected-mode quality checklist now explicitly checks

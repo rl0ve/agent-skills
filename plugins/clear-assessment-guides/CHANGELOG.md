@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.4.2 — 2026-10-21
+
+- Make the final prose review explicit, including headings and captions; apply requested
+  writing guidance rather than treating a plan or pattern linter as completion.
+- Check that controls serve exploration, substantial optional detail or feedback;
+  keep short evidence and caveats visible in reading artifacts.
+- Check actual-size metadata, diagram labels and print typography, and triage automated
+  design findings against the rendered artifact.
+
 ## 1.4.1 — 2026-10-21
 
 - Add explicit pre-delivery checks for selected visual explanations actually present

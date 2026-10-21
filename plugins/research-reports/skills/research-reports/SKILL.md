@@ -23,6 +23,11 @@ strongest plausible alternative. A request for independent insight is not a requ
 to manufacture disagreement or claim that stakeholders overlooked their own stated
 plans. Distinguish agreement, extension and a supported challenge.
 
+For a company-wide question, check the relevant strategy and distinct audiences or
+motions before using one product as the frame. Verify a recalled meeting or discussion
+against its participants, date and content; a related source does not establish that
+the requested source was found. Keep an unresolved identification explicit.
+
 Choose **one primary document format** from the task. PDF suits finished reading;
 DOCX suits substantive editing; use the requested medium when specified. Do not
 produce both DOCX and PDF unless the user asks. A useful HTML guide, a requested
@@ -82,7 +87,10 @@ video. Keep it optional, source-consistent and supported by a static alternative
 Write so a reader without the chat can identify the question, strongest findings,
 evidence, uncertainty, recommendation and next decision. Use a concise opening and
 deeper supporting material without repeating the whole report in several formats.
-Use one final prose editor when appropriate; it must preserve the research claims.
+Review the actual final prose, including headings and captions, for concrete meaning.
+Use Natural Writing or another suitable final prose editor when available and useful,
+and honor an explicit request to use one. Preserve claims and qualifiers. Planning a
+writing pass or running a pattern linter alone does not establish that it happened.
 
 Check the claims against the ledger, especially changing facts, quotations,
 denominators, causal wording and whether a recommendation duplicates existing work.

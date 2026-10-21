@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.2 — 2026-10-21
+
+- Check broad strategy and audience coverage before framing a company-wide question
+  through one product; retain uncertainty about recalled sources.
+- Distinguish actual query/access coverage, populated persona fields and identity joins
+  from schemas, saved extracts and account-level overlap.
+- Require a final prose review, honor requested writing guidance and distinguish it
+  from a planned pass or pattern linter.
+- Keep short evidence visible in reading HTML; select interaction for a concrete
+  reader benefit and inspect text, labels and print styles at reading size.
+
 ## 1.0.1 — 2026-10-21
 
 - Make visual selection a completion check, with a short project-local decision record

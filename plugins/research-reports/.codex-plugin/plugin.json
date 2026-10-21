@@ -1,6 +1,6 @@
 {
   "name": "research-reports",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Evidence-backed research reports and decision briefs with selected explanatory visuals and an optional motion overview. One primary document format by default.",
   "author": {
     "name": "rl0ve"
