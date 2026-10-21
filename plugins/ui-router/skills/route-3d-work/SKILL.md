@@ -57,6 +57,9 @@ When acceptance depends on requested high graphical fidelity, use Dream Loop und
   Code uses Claude Opus 5.5. A model the user names overrides this. Never move the work
   to another host to match upstream's tested harness.
 - **Target first:** lock a product-specific in-engine target before the build pass.
+  Reject the generic flat, pastel, toy-like look unless the brief asks for it.
+- **Rounds:** start at medium effort, cap at 2–3 rounds, and stop when recorded gaps
+  close. Work Router owns any effort increase.
 - **Fallback:** UI Router's [visual-build-loop](../route-ui-work/references/visual-build-loop.md)
   is a disclosed adaptation, not Dream Loop. Report it by name.
 

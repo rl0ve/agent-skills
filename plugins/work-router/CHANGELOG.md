@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.10.1 - 2026-10-20
+
+- Add a fidelity-rounds default for Dream Loop and the visual build loop in both hosts:
+  start at medium, cap at 2–3 rounds with stop criteria recorded first, and raise effort
+  one level only when a round stops closing a recorded gap.
+
 ## 1.10.0 - 2026-10-20
 
 - Add Codex Ultrafast (GPT-6 Astra and GPT-6.1 Sol) as a separate service tier: 8x

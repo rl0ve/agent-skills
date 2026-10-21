@@ -39,6 +39,11 @@ current running state and supply that baseline with the agreed changes and const
 do not start from an unrelated generic scene. Ask for an intended in-engine screenshot,
 not mood art or a cinematic image that the destination cannot deliver.
 
+Reject the generic look agents fall back to: flat pastel color, uniform soft lighting,
+rounded toy-like props and empty, evenly spaced layouts. A target or build with that
+look fails the target gate unless the brief asks for it. Name the product's own
+palette, materials, lighting and density in the target prompt instead.
+
 For a world map, ground the prompt in the actual destination names, route graph and
 navigation states. Include the requested terrain variety, water and recognizable
 landmarks while retaining readable navigation and space for the selected destination.

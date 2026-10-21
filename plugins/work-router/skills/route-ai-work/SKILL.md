@@ -30,6 +30,10 @@ not automatically faster.
   names another model for that run. Never move work to another host to match an
   upstream harness; a cross-host handoff needs availability, authorization and a
   benefit that repays its startup and integration cost.
+- **Fidelity rounds** (Dream Loop or the visual build loop) start at medium effort and
+  stop after 2–3 rounds or when the recorded gaps close. Raise effort only when a round
+  at the current level stops closing gaps.
+  [Rounds and effort](references/model-routes.md#fidelity-rounds).
 
 ## Route the task
 

@@ -210,6 +210,18 @@ explicitly configured for Astra. For unavailable optional routes, choose a permi
 capable parent or compatible built-in agent and state the substitution. Never claim to
 switch a running parent's model, effort, or service tier without application confirmation.
 
+## Fidelity rounds
+
+Dream Loop and UI Router's visual build loop follow the same rule in either host
+(Astra in Codex, Opus 5.5 in Claude Code). Start at medium. Cap the pass at 2–3 build-and-compare rounds, with stop criteria recorded before the
+first round: the locked target, the gaps that matter, and the device and camera path.
+Stop early when those gaps close. Raise effort one level only when a round at the
+current level no longer closes a recorded gap; go to xhigh or max only after a higher
+level has measurably closed more gaps on the same slice. A round that only shifts style
+without closing a recorded gap counts as stalled. Report rounds run, effort used and
+remaining gaps. Public demos of max-effort visual passes report much higher usage for
+modest gains; their quota figures do not carry over to another account.
+
 ## Benchmark evidence for routing
 
 When reviewing releases or changing comparative routing guidance, use

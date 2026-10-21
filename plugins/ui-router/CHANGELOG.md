@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.20.1 - 2026-10-20
+
+- Fidelity loop: reject the generic flat, pastel, toy-like look agents fall back to,
+  unless the brief asks for it; name the product's palette, materials, lighting and
+  density in the target prompt.
+- `route-3d-work`: state the medium-effort, 2–3 round default and defer increases to
+  Work Router.
+- Gaussian splats: list three.js r186's built-in `GaussianSplat` add-on for object- or
+  room-scale captures in `WebGPURenderer` projects, with Spark for WebGL2, mobile and WebXR.
+
 ## 1.20.0 - 2026-10-20
 
 - Name verification tools in the completion gates: the host-native browser first

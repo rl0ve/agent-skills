@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "work-router",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "description": "Routes substantial agent work to the leanest reliable parent or subagent configuration on task shape, ambiguity, risk, latency, and token use. Carries a route table for Claude Code and one for Codex. Includes capability discovery, plugin distribution audits, and scoped deduplication of installed skills.",
   "author": {
     "name": "rl0ve"
