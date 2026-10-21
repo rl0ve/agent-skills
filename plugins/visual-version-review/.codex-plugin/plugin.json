@@ -1,0 +1,21 @@
+{
+  "name": "visual-version-review",
+  "version": "1.0.0",
+  "description": "Compare implemented UI versions, branches and previews in one source-labeled HTML review with matched captures, globe and map distinctions, and element-level decisions.",
+  "author": {"name": "rl0ve"},
+  "homepage": "https://github.com/rl0ve/agent-skills",
+  "license": "MIT",
+  "keywords": ["visual-review", "versions", "branches", "screenshots", "comparison", "html"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Visual Version Review",
+    "shortDescription": "Compare existing branches and UI versions",
+    "developerName": "rl0ve",
+    "category": "Productivity",
+    "defaultPrompt": [
+      "Show the existing branches together so I can choose what to keep",
+      "Build one HTML comparison of these implemented UI approaches",
+      "Find the distinctive visuals missing from this version comparison"
+    ]
+  }
+}

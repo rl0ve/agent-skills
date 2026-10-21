@@ -1,0 +1,4 @@
+interface:
+  display_name: "Visual Version Review"
+  short_description: "Compare existing branches and UI versions"
+  default_prompt: "Use $visual-version-review to inventory these implementations and compare their actual screens in one labeled review page."

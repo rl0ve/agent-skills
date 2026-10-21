@@ -1,0 +1,7 @@
+{
+  "name": "visual-version-review",
+  "version": "1.0.0",
+  "description": "Compare implemented UI versions, branches and previews in one source-labeled HTML review with matched captures, globe and map distinctions, and element-level decisions.",
+  "author": {"name": "Robert Love"},
+  "keywords": ["visual-review", "versions", "branches", "screenshots", "comparison", "html"]
+}

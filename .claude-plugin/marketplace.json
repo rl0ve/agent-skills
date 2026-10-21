@@ -1,11 +1,11 @@
 {
   "name": "rl0ve-agent-skills",
-  "description": "Portable agent skills and routing plugins: model and UI routers, natural writing, walkthrough video, capability storyboards, decks, and assessment guides.",
+  "description": "Portable agent skills and routing plugins: model and UI routers, natural writing, walkthrough video, capability storyboards, decks, assessment guides, and visual version review.",
   "owner": {
     "name": "Robert Love"
   },
   "metadata": {
-    "description": "Portable agent skills and routing plugins: model and UI routers, natural writing, walkthrough video, capability storyboards, decks, and assessment guides.",
+    "description": "Portable agent skills and routing plugins: model and UI routers, natural writing, walkthrough video, capability storyboards, decks, assessment guides, and visual version review.",
     "version": "1.21.0"
   },
   "plugins": [
@@ -92,6 +92,21 @@
         "walkthrough",
         "voiceover",
         "playwright"
+      ]
+    },
+    {
+      "name": "visual-version-review",
+      "source": "./plugins/visual-version-review",
+      "description": "Compare implemented UI versions, branches and previews in one source-labeled HTML review with matched captures, globe and map distinctions, and element-level decisions.",
+      "version": "1.0.0",
+      "category": "Productivity",
+      "tags": [
+        "visual-review",
+        "versions",
+        "branches",
+        "screenshots",
+        "comparison",
+        "html"
       ]
     },
     {

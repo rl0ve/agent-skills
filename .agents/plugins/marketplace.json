@@ -71,6 +71,17 @@
       "category": "Productivity"
     },
     {
+      "name": "visual-version-review",
+      "source": {
+        "source": "local",
+        "path": "./plugins/visual-version-review"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "clear-assessment-guides",
       "source": {
         "source": "local",

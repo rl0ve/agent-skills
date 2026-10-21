@@ -1,6 +1,6 @@
 # agent-skills
 
-Seven plugins of agent skills for Codex and Claude Code. Each plugin installs in both
+Eight plugins of agent skills for Codex and Claude Code. Each plugin installs in both
 hosts from one shared source; where the hosts differ, the shared file says so instead
 of forking.
 
@@ -15,6 +15,7 @@ of forking.
 | [Capability Storyboard](plugins/capability-storyboard/README.md) | Builds an HTML storyboard for a keynote or demo, with a talk track and director's notes per scene. |
 | [Deck Builder](plugins/deck-builder/README.md) | Builds `.pptx` decks on your own template and verifies them by rendering slides. |
 | [Clear Assessment Guides](plugins/clear-assessment-guides/skills/clear-assessment-guides/SKILL.md) | Produces source-backed assessments, one-issue walkthroughs, or interactive HTML reviews with comments and decisions. |
+| [Visual Version Review](plugins/visual-version-review/README.md) | Compares implemented branches and previews in one labeled HTML page, with matched captures, distinctive visuals and full-size inspection. |
 
 ## Install
 
@@ -40,7 +41,7 @@ python3 install.py --plugin all --execute    # run it
 ```
 
 Choose a subset with repeated `--plugin` flags: `ai`, `ui`, `writing`, `video`,
-`storyboard`, `deck`, `assessment`.
+`storyboard`, `deck`, `assessment`, `versions`.
 
 **Try one plugin without installing:**
 

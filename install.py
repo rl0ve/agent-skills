@@ -24,6 +24,7 @@ PLUGIN_NAMES = {
     "storyboard": "capability-storyboard",
     "deck": "deck-builder",
     "assessment": "clear-assessment-guides",
+    "versions": "visual-version-review",
 }
 
 
