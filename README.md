@@ -1,75 +1,20 @@
 # agent-skills
 
-Agent skills and routers for Codex and Claude Code. Shared skills carry host-specific
-routing where needed. Work Router supports GPT-6.1 Sol and GPT-6 Luna alongside conditional Astra and Terra routes in
-Codex, and Haiku, Sonnet, Opus 5.5, and conditional Fable routes in Claude Code.
+Seven plugins of agent skills for Codex and Claude Code. Each plugin installs in both
+hosts from one shared source; where the hosts differ, the shared file says so instead
+of forking.
 
-| Start here | If you are |
+## Plugins
+
+| Plugin | What it does |
 |---|---|
-| [AGENTS.md](AGENTS.md) | Codex, or any agent that reads `AGENTS.md` |
-| `claude plugin marketplace add rl0ve/agent-skills` | Claude Code |
-| `plugins/natural-writing/skills/natural-writing/SKILL.md` | Anything else — it is plain Markdown and Python |
-
-## Which model and reasoning level should I use?
-
-Work Router owns this. Short version, reviewed October 2026:
-
-- **Codex:** GPT-6.1 Sol for substantial work (medium, or high for complex work);
-  GPT-6 Astra for maximum-capability needs; GPT-6 Luna for narrow work with objective checks.
-- **Claude Code:** Opus 5.5 medium for substantial work, high for difficult diagnosis
-  and consequential review; Fable on explicit preference or demonstrated benefit.
-- **Dream Loop and other host-sensitive workflows** run in the host you are in
-  (Codex → Astra, Claude Code → Opus 5.5) unless you name another model.
-
-The full matrix, effort guide and latency/token tradeoffs are in the
-[Work Router README](plugins/work-router/README.md#task-by-task-starting-routes);
-the agent-facing policy is the [route-ai-work skill](plugins/work-router/skills/route-ai-work/SKILL.md).
-
-## Layout
-
-Three manifests over **one** plugin tree. Every plugin here is installable by both agents, so
-every plugin is one folder with one `skills/` directory, a portable root `plugin.json`
-(Agent Plugins 1.0), and a `.claude-plugin` and `.codex-plugin` beside it, all carrying the
-same name, version and description. The `.codex-plugin` manifest is the OpenAI
-compatibility overlay for interface metadata; Claude Code reads `.claude-plugin`. No plugin
-is named after an agent, because none of them belongs to one.
-
-```
-.claude-plugin/marketplace.json    Claude Code discovery
-.agents/plugins/marketplace.json   Codex discovery
-plugins/
-  natural-writing/          plugin.json + .claude-plugin/ + .codex-plugin/
-  ui-router/                plugin.json + .claude-plugin/ + .codex-plugin/
-  work-router/              plugin.json + .claude-plugin/ + .codex-plugin/
-  ui-walkthrough-video/     plugin.json + .claude-plugin/ + .codex-plugin/
-  capability-storyboard/    plugin.json + .claude-plugin/ + .codex-plugin/
-  deck-builder/             plugin.json + .claude-plugin/ + .codex-plugin/
-  clear-assessment-guides/  plugin.json + .claude-plugin/ + .codex-plugin/
-```
-
-`tests/test_repository_parity.py` keeps the marketplaces, the three manifests and the
-skill-description budget in step.
-
-Where the two agents genuinely differ, the difference is carried inside the shared file
-rather than by forking it: `work-router` has one method and two route tables, and
-`ui-router`'s catalog carries `installer_codex` for the two skills whose install command is
-not the same on both.
-
-## What is in it
-
-| | What it does |
-|---|---|
-| **Clear Assessment Guides** | Creates source-backed documents, one-issue annotated reviews, or interactive HTML with comments and decisions. Product-neutral, with a shared issue register and explicit review versus execution states. |
-| **Natural Writing** | Diagnoses, edits, rewrites, voice-matches, or drafts prose while preserving facts, formatting, terminology, register, and the author's voice. Ships a linter with a per-document mode and a set-level mode. |
-| **UI Router** | Routes UI, UX, design-review, motion, animated-explainer, design-to-code, and interface-copy work through a researched skill catalog and what is actually installed. Its `route-3d-work` skill routes real-time 3D worlds, Blender-to-web pipelines and Dream Loop fidelity passes. Uses Natural Writing as its sole final editor for copy. |
-| **Work Router** | Chooses whether work stays in the parent session or moves to a bounded subagent, on task shape, ambiguity, risk, latency and token use rather than defaulting to the largest model. One method, with a route table for each agent. |
-| **Capability Storyboard** | Builds a capability-first HTML storyboard for a keynote or demo: Acts as capabilities, one running example, a talk track and director's notes per scene. Ships a template and a finished nine-scene example board to lift components from. |
-| **Deck Builder** | Builds `.pptx` on top of any corporate template and verifies by rendering slides to images. The brand is configuration: a generator reads your template and writes the palette, grid, layouts, and logo zone for you. |
-| **UI Walkthrough Video** | Records real interface flows as scene clips and screenshots, then produces narrated MP4s, captions and revoice copies. See [below](#ui-walkthrough-video). |
-
-All seven install in Claude Code and Codex. The routers ship a deterministic hook that blocks
-Bash commands containing `sudo`; the installers refuse root or `sudo` execution and never
-evaluate a shell string.
+| [Work Router](plugins/work-router/README.md) | Decides whether work stays in the parent session or goes to a bounded subagent, and at which model and effort. One method, a route table per host. |
+| [UI Router](plugins/ui-router/README.md) | Routes UI, UX, design review, motion, design-to-code, interface copy and real-time 3D work to the right specialist skills and checks the result in a browser. |
+| [Natural Writing](plugins/natural-writing/README.md) | Edits, rewrites, voice-matches or drafts prose while keeping facts, terminology and the author's voice. Includes a linter. |
+| [UI Walkthrough Video](plugins/ui-walkthrough-video/README.md) | Records real interface flows and turns them into narrated MP4s with captions. Needs browser and media runtimes. |
+| [Capability Storyboard](plugins/capability-storyboard/README.md) | Builds an HTML storyboard for a keynote or demo, with a talk track and director's notes per scene. |
+| [Deck Builder](plugins/deck-builder/README.md) | Builds `.pptx` decks on your own template and verifies them by rendering slides. |
+| [Clear Assessment Guides](plugins/clear-assessment-guides/skills/clear-assessment-guides/SKILL.md) | Produces source-backed assessments, one-issue walkthroughs, or interactive HTML reviews with comments and decisions. |
 
 ## Install
 
@@ -83,95 +28,86 @@ codex plugin marketplace add rl0ve/agent-skills
 codex plugin add ui-router@rl0ve-agent-skills
 ```
 
-Swap `ui-router` for any plugin folder name under `plugins/`. If you would rather not add a
-marketplace, `plugins/ui-router/scripts/install-into-codex-skills.sh` copies the two routing
-skills (`route-ui-work`, `route-3d-work`) straight into `~/.codex/skills`, and `plugins/ui-router/docs/field-guide.html` opens
-standalone.
+Use any folder name under `plugins/` in place of `ui-router`. In Claude Code, restart or
+run `/reload-plugins` afterward.
 
-## Fast local test (Claude Code)
+**From a local clone (Claude Code).** `install.py` prints its plan and runs nothing
+until you add `--execute`:
 
-From this directory, start a disposable session with any one plugin:
+```bash
+python3 install.py --plugin all              # review the plan
+python3 install.py --plugin all --execute    # run it
+```
+
+Choose a subset with repeated `--plugin` flags: `ai`, `ui`, `writing`, `video`,
+`storyboard`, `deck`, `assessment`.
+
+**Try one plugin without installing:**
 
 ```bash
 claude --plugin-dir ./plugins/work-router
-claude --plugin-dir ./plugins/ui-router
-claude --plugin-dir ./plugins/natural-writing
 ```
 
-Then try:
-
-```text
-/work-router:route-ai-work review this task and choose the leanest reliable route
-/ui-router:route-ui-work design a B2B operations dashboard
-Humanize this email and keep my voice: ...
-```
-
-## Install from the local marketplace
-
-The installer is a plan by default:
-
-```bash
-python3 install.py --plugin all
-```
-
-Execute only after reviewing the printed commands:
-
-```bash
-python3 install.py --plugin all --execute
-```
-
-`--plugin all` installs all seven. Pick a subset with repeated `--plugin` flags:
-`ai`, `ui`, `writing`, `video`, `storyboard`, `deck`, `assessment`. Equivalent Claude
-Code commands for one plugin:
-
-```bash
-claude plugin marketplace add . --scope user
-claude plugin install work-router@rl0ve-agent-skills --scope user
-```
-
-Restart Claude Code or run `/reload-plugins` after installation.
-
-## Company-managed Claude Code
-
-Your administrator can restrict models, effort levels, local marketplaces, and plugin enablement. The routers honor those controls. See [ADMIN.md](ADMIN.md) for the exact marketplace settings pattern to give your Claude Code administrator.
-
-Work Router uses family aliases rather than pinning provider-specific IDs. If Fable is unavailable, its long-horizon route falls back to the newest permitted Opus family model or the inherited session model, and Claude Code reports the substitution.
-
-## ChatGPT and Codex workspaces
-
-A ChatGPT workspace admin can import this repository as a marketplace (Admin Console,
-Plugins, Import marketplace) and it syncs daily. Import reads either marketplace file,
-but it does not apply the repository's `policy` values; the admin sets installation
-policy per plugin. See [ADMIN.md](ADMIN.md#chatgpt-and-codex-workspace-import).
-
-Work Router and UI Router ship a lifecycle hook (`block_sudo`), which makes them
-ineligible for OpenAI's public plugin directory as packaged. They install manually in
-Codex desktop and through workspace import.
-
-## Optional UI skills
-
-The UI router does not silently install its catalog. List or plan a curated profile:
+**Optional UI skills.** UI Router never installs its catalog silently. List or plan a
+profile, then execute explicitly (also available as `/ui-router:install-ui-stack`):
 
 ```bash
 python3 plugins/ui-router/scripts/install_optional_skills.py --list
-python3 plugins/ui-router/scripts/install_optional_skills.py --profile product
-python3 plugins/ui-router/scripts/install_optional_skills.py --profile 3d   # Meng 3D + game-dev, three named claudedesignskills
-```
-
-Execution is explicit:
-
-```bash
 python3 plugins/ui-router/scripts/install_optional_skills.py --profile product --execute
 ```
 
-The same flow is available inside Claude Code through `/ui-router:install-ui-stack`.
+**Safety.** Work Router and UI Router ship a hook that blocks Bash commands containing
+`sudo`. Every installer refuses to run as root and never evaluates a shell string.
 
-## Checks
+## Model routing
 
-`.github/workflows/checks.yml` runs on every push and pull request: the repository tests
-in `tests/`, the Natural Writing and UI Walkthrough Video suites, the Node tests under
-`plugins/*/tests/`, and `claude plugin validate` for the marketplace and every plugin.
-Run the same locally before publishing:
+Work Router owns model and effort choice. Reviewed October 2026:
+
+- **Codex:** GPT-6.1 Sol for substantial work (medium, high when complex), GPT-6 Astra
+  for maximum capability, GPT-6 Luna for narrow work with objective checks. Fast and
+  Ultrafast service tiers are opt-in only.
+- **Claude Code:** Opus 5.5 at medium for substantial work, high for hard diagnosis and
+  consequential review; Sonnet for defined implementation; Haiku for scouting; Fable on
+  explicit preference.
+- Host-sensitive workflows stay in the host you are in unless you name another model.
+
+See the [task-by-task routes](plugins/work-router/README.md#task-by-task-starting-routes)
+and the agent-facing [route-ai-work skill](plugins/work-router/skills/route-ai-work/SKILL.md).
+
+## Managed environments
+
+- **Claude Code admins** can restrict models, effort, marketplaces and plugins; the
+  routers follow those limits. Settings patterns are in [ADMIN.md](ADMIN.md).
+- **ChatGPT workspace admins** can import this repository as a marketplace that syncs
+  daily. Installation policy is set in the workspace, not by this repository. See
+  [workspace import](ADMIN.md#chatgpt-and-codex-workspace-import).
+- Because of the `sudo` hook, Work Router and UI Router are not eligible for OpenAI's
+  public plugin directory; install them manually or through workspace import.
+
+**Client versions.** Opus 5.5 needs Claude Code 2.1.280+. `haiku` means Haiku 5.5 only on
+the Anthropic API with Claude Code 2.1.293+; Bedrock, Vertex and Foundry resolve it to
+Haiku 4.5. Fable needs organizational access; without it, Work Router falls back to the
+newest permitted Opus and says so.
+
+## Repository layout
+
+```
+.claude-plugin/marketplace.json    Claude Code marketplace
+.agents/plugins/marketplace.json   Codex marketplace
+plugins/<name>/
+  plugin.json                      portable manifest (Agent Plugins 1.0)
+  .claude-plugin/plugin.json       Claude Code manifest
+  .codex-plugin/plugin.json        OpenAI overlay (interface metadata)
+  skills/<skill>/SKILL.md
+```
+
+All three manifests carry the same name, version and description. Agents working in
+this repository read [AGENTS.md](AGENTS.md).
+
+## Development
+
+CI ([checks.yml](.github/workflows/checks.yml)) runs on every push and pull request.
+Run the same checks locally before publishing:
 
 ```bash
 (cd tests && python3 -m unittest)
@@ -181,40 +117,5 @@ for t in plugins/*/tests/*.mjs; do node "$t"; done
 claude plugin validate . && for p in plugins/*/; do claude plugin validate "$p"; done
 ```
 
-## Skill maintenance
-
-Skill updates are maintained in this canonical repository and published with ordinary
-Git commits. Publication does not itself refresh installed plugin caches or reload
-active tasks. See [skill maintenance](docs/skill-maintenance.md) for the release workflow
-and [the source review](docs/research-review-2026-09-05.md) for recent adoption decisions.
-
-## Version boundary
-
-The packages use the documented Claude Code plugin layout and validate with `claude plugin validate`. Model and effort aliases are intentionally policy-aware: company allowlists win. Opus 5.5 requires Claude Code 2.1.280 or later. `haiku` resolves to Haiku 5.5 only on the Anthropic API with Claude Code 2.1.293 or later; Bedrock, Vertex and Foundry still resolve it to Haiku 4.5. Provider aliases may resolve to older models. Fable requires organizational access. Newer conveniences may require a newer client, but the core skills, agents, hook, and marketplace layout remain conventional.
-
-## Icons
-
-Each plugin bundles a square PNG icon for the website and portable package. Claude Code's current plugin manifest does not expose a rendered icon field, so the files are metadata/assets rather than a promise that `/plugin` will display artwork.
-
-## UI Walkthrough Video
-
-[UI Walkthrough Video](plugins/ui-walkthrough-video/README.md) records real interface
-flows as scene clips and screenshots, then creates narrated MP4s, captions and silent
-revoice copies. It offers optional HyperFrames composition and asks before choosing
-it for a new video. Measured speech cues, an audio-first storyboard and separately
-authored portrait layouts support more directed demos. Browser/media runtimes are
-required; see its skill for provider choices, setup and synthetic validation.
-
-Install: `codex plugin add ui-walkthrough-video@rl0ve-agent-skills` or
-`claude plugin install ui-walkthrough-video@rl0ve-agent-skills`.
-
-## Clear Assessment Guides
-
-[Clear Assessment Guides](plugins/clear-assessment-guides/skills/clear-assessment-guides/SKILL.md)
-selects a full assessment/guide, a one-issue walkthrough, or a local interactive review.
-Its templates and method are product-neutral; project evidence stays in the project.
-
-Install the `clear-assessment-guides@rl0ve-agent-skills` plugin through your host's
-plugin manager. This is a shared Codex/Claude package, with one skill source. Other
-hosts may load the portable skill folder through their own supported mechanism.
-Publication, installation and loading into a session are separate steps.
+Publishing a commit does not refresh installed plugin caches. The release workflow is in
+[skill maintenance](docs/skill-maintenance.md).

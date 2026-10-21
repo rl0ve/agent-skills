@@ -23,7 +23,7 @@ review's scope; the active skill and dated addendum govern the revised UI route.
 Sol. Astra xhigh fits exceptionally demanding reasoning or creative/spatial judgment.
 It can be chosen upfront when that depth is clearly warranted; it is not a required
 stop before Astra or a claim that higher effort always improves the result. Max and
-ultra still need their own justification. The [task matrix](../README.md#which-model-and-reasoning-level-should-i-use)
+ultra still need their own justification. The [task matrix](../README.md#model-routing)
 and [effort guide](../plugins/work-router/README.md#how-to-choose-the-reasoning-level)
 show these recommendations alongside latency and token tradeoffs.
 
