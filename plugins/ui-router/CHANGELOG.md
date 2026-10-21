@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.21.1 — 2026-10-20
+
+- Rendered-site annotation review names Clear Assessment Guides for shareable assessments and decision boards, and Visual Version Review for choosing among implemented versions.
+
 ## 1.21.0 - 2026-10-20
 
 - `route-3d-work`: add EL4CTEO/blender-skills as a trial Blender layer (read `blender-core`

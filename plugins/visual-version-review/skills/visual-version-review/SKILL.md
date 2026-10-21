@@ -1,6 +1,6 @@
 ---
 name: visual-version-review
-description: "Compare implemented UI versions, branches and previews through labeled screenshots in one review page. Use for 'I am losing track of versions,' 'show these approaches together,' or choosing which parts to keep. Not for generating design concepts, capability storyboards, or general issue triage."
+description: "Compare implemented UI versions, branches and previews through labeled screenshots in one review page. Use for 'I am losing track of versions,' 'show these approaches together,' or choosing which parts to keep. Not for assessing what to fix, even with a before/after (Clear Assessment Guides), design concepts or storyboards."
 ---
 
 # Visual Version Review
@@ -9,7 +9,7 @@ Help the user identify what exists, compare equivalent screens, and choose eleme
 
 ## Scope
 
-Use a standalone comparison workflow. General assessments may consume its findings; demo storyboards may consume its captures. Neither is a mandatory dependency. Keep project names, branch inventories, screenshots and decisions in the consuming project, outside this skill.
+Use this workflow when the question is which existing version, or which parts of each, to keep. When the question is what is wrong and what should change, use Clear Assessment Guides, even if the review shows a before and after; this skill's capture contract can supply that pair. Capability Storyboard may reuse its captures as reference. None of these is a required dependency. Keep project names, branch inventories, screenshots and decisions in the consuming project, outside this skill.
 
 ## Workflow
 

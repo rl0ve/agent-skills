@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Portable agent skills and routing plugins: model and UI routers, natural writing, walkthrough video, capability storyboards, decks, assessment guides, and visual version review.",
-    "version": "1.21.0"
+    "version": "1.21.1"
   },
   "plugins": [
     {
       "name": "ui-router",
       "source": "./plugins/ui-router",
       "description": "Design routing, interactive-world choices, visual resources, and verified interactions",
-      "version": "1.21.0",
+      "version": "1.21.1",
       "category": "Development",
       "tags": [
         "ui",
@@ -55,7 +55,7 @@
       "name": "capability-storyboard",
       "source": "./plugins/capability-storyboard",
       "description": "Build a capability-first, multi-tool HTML storyboard for a keynote, demo walkthrough, or narrative product doc. Ships a working template and a finished nine-scene example board to lift components from.",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "category": "Productivity",
       "tags": [
         "storyboard",
@@ -85,7 +85,7 @@
       "name": "ui-walkthrough-video",
       "source": "./plugins/ui-walkthrough-video",
       "description": "Real UI walkthroughs with optional HyperFrames composition, measured speech cues and reusable voice narration.",
-      "version": "1.7.3",
+      "version": "1.7.4",
       "category": "Productivity",
       "tags": [
         "video",
@@ -98,7 +98,7 @@
       "name": "visual-version-review",
       "source": "./plugins/visual-version-review",
       "description": "Compare implemented UI versions, branches and previews in one source-labeled HTML review with matched captures, globe and map distinctions, and element-level decisions.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "Productivity",
       "tags": [
         "visual-review",
@@ -113,7 +113,7 @@
       "name": "clear-assessment-guides",
       "source": "./plugins/clear-assessment-guides",
       "description": "Source-backed assessments, practical guides, annotated issue triage, and interactive HTML review with comments and decisions. Product- and vendor-neutral.",
-      "version": "1.1.1",
+      "version": "1.2.0",
       "category": "Productivity",
       "tags": [
         "assessment",

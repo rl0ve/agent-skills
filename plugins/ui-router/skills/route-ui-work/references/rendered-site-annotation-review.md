@@ -68,3 +68,7 @@ what was observed, what changed, the widths and interactions tested, and what re
 Store a compact ledger or review note in the project when work spans turns so another
 agent can resume without redoing the whole sweep. Do not transfer private annotations
 or project screenshots into a shared UI Router package.
+
+This procedure tracks feedback to a verified fix. For a shareable assessment or a
+comment-and-decision board built from the same annotations, use Clear Assessment
+Guides; to choose among several implemented versions, use Visual Version Review.

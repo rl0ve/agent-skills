@@ -1,6 +1,6 @@
 {
   "name": "capability-storyboard",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Build a capability-first, multi-tool HTML storyboard for a keynote, demo walkthrough, or narrative product doc.",
   "author": {
     "name": "Robert Love"

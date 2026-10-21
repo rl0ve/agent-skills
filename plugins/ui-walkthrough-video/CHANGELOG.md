@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.4 — 2026-10-20
+
+- A Capability Storyboard can supply the talk track and scene order; its mockups are replaced by real capture or labeled.
+
 ## 1.7.3 — 2026-10-20
 
 - Voice narration: add the VoiceStudio desktop app as an unrated local trial candidate,

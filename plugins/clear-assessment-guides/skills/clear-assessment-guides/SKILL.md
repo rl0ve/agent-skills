@@ -1,6 +1,6 @@
 ---
 name: clear-assessment-guides
-description: Create source-backed assessments and practical guides, walk through annotated issues one at a time, or build an interactive HTML review with comments and decisions. Use for improvement briefs, content reviews, and guided triage; not as a mandatory format for ordinary replies or every document.
+description: Create source-backed assessments and practical guides, walk through annotated issues one at a time, or build an interactive HTML review with comments and decisions. Use for improvement briefs, content reviews, guided triage and before/after checks of a change; to choose among several implemented versions, use Visual Version Review. Not a mandatory format for ordinary replies or every document.
 ---
 
 # Clear Assessment Guides
@@ -40,6 +40,18 @@ solution**, with evidence adjacent. Mark likely impact as inferred unless observ
 measured. Use concrete before/after wording when helpful, and label the proposed state.
 A procedural guide instead uses actions and success checks; do not force assessment
 anatomy into every step or routine reply.
+
+## Compare a before and after
+
+A before and after inside a finding belongs here: it is evidence for one problem and
+its proposed fix. Label each side as captured, proposed or text only. When both sides
+are rendered (two branches, a preview against the live page, or one page before and
+after a fix), capture them as a matched pair: same route, viewport, scroll position,
+interaction state and loading readiness, with each caption naming its source (commit
+or URL) and capture time. Visual Version Review's capture contract covers this when it
+is installed. If the reader must instead choose among several implemented versions, or
+keep parts of each, that is a version comparison: use Visual Version Review, then bring
+any findings back here if an assessment is still needed.
 
 ## Keep findings and decisions consistent
 

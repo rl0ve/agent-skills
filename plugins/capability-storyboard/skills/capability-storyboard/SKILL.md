@@ -12,6 +12,8 @@ Two shapes for a demo document, and they solve different problems:
 
 Ask which one the user actually needs before building. If an existing beat-by-beat script exists, this skill is often used to *compress* it: pull out the handful of moments that best demonstrate distinct capabilities, and cut everything else. Don't invent new capabilities to demo — the ones worth showing usually already exist in the source material (a script, a set of feature notes, a leadership deck) and can be adapted with light rewrites, not paraphrased into marketing copy from scratch.
 
+Neighboring plugins: for a recorded, narrated video of the real product, use UI Walkthrough Video (this storyboard's talk track can be its script, but its mockups are not capture evidence); for slides, use Deck Builder; to compare implemented versions, use Visual Version Review.
+
 ## The eight things that make this format work
 
 These are lessons pulled from actually building one of these under real back-and-forth review with the person it was for. Read `references/example-full.html` afterward: a worked board, in an invented scenario, that has every mechanism below wired up and running.

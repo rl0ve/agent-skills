@@ -52,6 +52,8 @@ outline, GIF or interactive board when the user asked for a simple correction.
 - Do overview, issue navigation, decisions and comments work by keyboard and at narrow widths?
 - Are the explanation and evidence visible for the selected issue without nested disclosure?
 - Do before/after and execution labels distinguish actual captures from proposed changes?
+- When both sides of a before/after are rendered, do they match route, viewport and
+  state, and does each caption name its source and capture time?
 - Are review choices stored separately from execution state, with no live action behind them?
 - Do export/import round-trip decisions and multiline comments? Do invalid, wrong-revision
   and duplicate-ID imports fail without overwriting current work?

@@ -123,7 +123,8 @@ can perform. Do not quietly downgrade a requested polished final into raw footag
    the user's benefit; avoid narrating every click or making unverified claims.
    For authored demos, use [STORYBOARD.md](assets/STORYBOARD.template.md) to bind
    source ranges, global time, spoken cues, focal rectangles and transition seams.
-   Keep approved wording in SCRIPT.md. Choose tutorial, demo or teaser treatment;
+   A Capability Storyboard can supply the talk track and scene order; replace its
+   mockups with real capture or label them as mockups. Keep approved wording in SCRIPT.md. Choose tutorial, demo or teaser treatment;
    a tutorial needs readable action/results, while a teaser can use a measured beat grid.
 2. Use a demo/fixture environment for actions that change data. A recording request
    alone does not authorize production approvals, sends, resets or submissions.

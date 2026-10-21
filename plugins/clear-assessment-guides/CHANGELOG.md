@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0 — 2026-10-20
+
+- Add a before-and-after section: a before/after inside a finding stays here; rendered pairs are captured as matched pairs with source and capture time; choosing among implemented versions goes to Visual Version Review.
+- Description names the before/after case and the handoff; quality checklist adds the matched-pair check.
+
 ## 1.1.1 — 2026-10-20
 
 - Supporting tools: add Archify as an alternative for interactive codebase, plan and

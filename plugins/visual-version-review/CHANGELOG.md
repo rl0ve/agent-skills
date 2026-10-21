@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 — 2026-10-20
+
+- Scope and description separate choosing versions (this skill) from assessing what to fix, which goes to Clear Assessment Guides even when it shows a before and after.
+
 ## 1.0.0 - 2026-10-20
 
 - Add a standalone skill for comparing implemented branches, previews and historical captures.

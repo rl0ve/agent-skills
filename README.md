@@ -17,6 +17,20 @@ of forking.
 | [Clear Assessment Guides](plugins/clear-assessment-guides/skills/clear-assessment-guides/SKILL.md) | Produces source-backed assessments, one-issue walkthroughs, or interactive HTML reviews with comments and decisions. |
 | [Visual Version Review](plugins/visual-version-review/README.md) | Compares implemented branches and previews in one labeled HTML page, with matched captures, distinctive visuals and full-size inspection. |
 
+### When two plugins could apply
+
+| You want to | Use |
+|---|---|
+| Choose which implemented version, or which parts of each, to keep | Visual Version Review |
+| Explain what is wrong and what to change, including a before/after of one change | Clear Assessment Guides |
+| Track comments on a rendered page through to a verified fix | UI Router |
+| Plan a keynote or demo with mockups and a talk track | Capability Storyboard |
+| Record a narrated video of the real product | UI Walkthrough Video |
+| Build or fix slides | Deck Builder |
+
+These hand off to each other. A before/after in an assessment can use Visual Version
+Review's capture rules, and a storyboard's talk track can become a walkthrough script.
+
 ## Install
 
 ```bash
