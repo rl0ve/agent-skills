@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.18.0 - 2026-10-22
+
+- Recommend a useful main-thread model or reasoning change before substantial work
+  and at phase boundaries, including reductions and increases in capability or depth.
+- Respect explicit choices, account for remaining work and switching costs, and avoid
+  tiny-task interruptions or repeated prompts without a material change in evidence.
+- Separate confirmed settings, recommendations and host-applied changes. Handle unknown
+  active settings and missing controls without inventing a switch or creating workers
+  merely to bypass the limitation. Preserve task-only exceptions and paid-tier boundaries.
+- Add main-thread routing scenarios; no runtime or personal-preference change.
+
 ## 1.17.0 - 2026-10-22
 
 - Add explicit loop controls for verification, applicable limits, progress checks,

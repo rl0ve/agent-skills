@@ -51,6 +51,11 @@ not automatically faster.
    depth, or a stronger model for missing capability or judgment.
 8. Count total completion cost: retries, review and integration, not token price alone.
 
+Before substantial work and at phase boundaries, [reassess the main thread's model
+and effort](references/model-routes.md#reassess-the-main-thread). Give one brief
+recommendation when a change would materially help, respecting explicit choices.
+Separate the recommendation from a confirmed host setting change.
+
 Before a substantial retry or refinement loop, use the
 [loop controls](references/long-running-work.md#define-the-loop-before-repeating-attempts)
 to establish verification, applicable limits, progress checks and recovery. Continue

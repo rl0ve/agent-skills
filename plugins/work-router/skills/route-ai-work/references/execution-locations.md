@@ -34,6 +34,9 @@ when a phase is accepted, a worker becomes available, a dependency blocks progre
 scope or the deadline changes, and before ending the run. Keep this check brief and
 reuse unchanged evidence; it is not a periodic scan of every host.
 
+Include the [main thread's model and effort](model-routes.md#reassess-the-main-thread)
+in this reassessment; a useful route change does not always require another worker.
+
 1. Refresh remaining authorized outcomes, dependencies and current ownership. Distinguish
    completion of one local phase from completion of the user's whole assignment.
 2. Identify useful independent work and compare viable current, thread, remote and

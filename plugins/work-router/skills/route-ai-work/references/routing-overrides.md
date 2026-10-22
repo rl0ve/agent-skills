@@ -17,7 +17,7 @@ Codex configuration keys or an automatically executed settings file.
 | `priorities` | Order `accuracy`, `latency`, and `credit_conservation`; earlier goals win tradeoffs. Preserve required acceptance criteria in every order. No invented percentage weights. |
 | `credit_policy` | `normal`, `conserve`, or `use_available`. This is separate from the priority order and any model constraint. |
 | `model_constraint` | `none`, an explicit family, or an exact supported model ID. Applies to parent and children; never silently substitute. |
-| `effort` | `task_appropriate` or an explicit supported level. Preserve an effective active setting unless the user requests a change. |
+| `effort` | `task_appropriate` or an explicit supported level. Recommend useful changes under the main-thread procedure; preserve the effective setting until an authorized change is confirmed. |
 | `expires` | `manual` or a user-specified time/boundary. Do not invent a reset time or create a monitor to manage it. |
 
 `accuracy` first means choose the strongest permitted route and verification likely
@@ -64,6 +64,8 @@ hosts or other applications. A saved block is not proof that existing chats relo
 it; new chats must load the updated instructions, and existing chats need a supported
 reload or an explicit instruction. A routing rule cannot switch a running parent's
 model, effort or service tier; report requested and confirmed settings separately.
+Use [main-thread recommendations](model-routes.md#reassess-the-main-thread) to surface
+a useful model or effort change without treating this constraint as a ban on advice.
 If the host loads a higher-precedence instruction file instead, update that effective
 location only within the user's authorized scope and preserve its other content.
 

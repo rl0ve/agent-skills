@@ -6,6 +6,8 @@ reliable completion second, and cost/token use third unless the user chooses oth
 The plugin contributes:
 
 - `/work-router:route-ai-work`, an auto-invocable policy with a table for each host;
+- [main-thread recommendations](skills/route-ai-work/references/model-routes.md#reassess-the-main-thread)
+  for useful model or reasoning changes, with explicit constraints and confirmed settings;
 - [execution location routing](skills/route-ai-work/references/execution-locations.md)
   for subagents, separate threads, connected machines and cloud tasks;
 - [orchestration compatibility](skills/route-ai-work/references/orchestration-compatibility.md)
@@ -139,7 +141,7 @@ work correctly; it does not optimize a cheap first attempt in isolation.
 | Interactive work; fastest useful completion | Favor the capable route likely to finish with little rework. Avoid delegation when loading context and integrating results would take longer. |
 | Stable background work; explicit cost-first preference | Consider Luna and a bounded brief with objective checks. Include verification and retries in the cost; the named max-effort economy profile is conditional. |
 | Quality-first design or a consequential decision | Give capability and adequate reasoning more weight. Astra can be the first choice; use focused independent review when it adds assurance. |
-| A task already progressing well | Keep the active model and its useful context unless a demonstrated limit justifies a switch. |
+| A task already progressing well | Keep its useful context; recommend a change only when the remaining work justifies the switching and verification cost. |
 
 Infer timing from the conversation first. If timing is unclear and would materially
 change the route, offer a brief **Need it soon / Background is fine** choice. Assess

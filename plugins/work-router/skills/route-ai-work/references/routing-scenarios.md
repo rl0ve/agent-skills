@@ -4,6 +4,29 @@ Use these cases to review policy changes. They are expected decisions, not model
 performance measurements. All delegation assumes host support and user permission;
 keep one write-capable owner per working tree.
 
+## Main-thread model and effort
+
+Review these against [main-thread reassessment](model-routes.md#reassess-the-main-thread).
+They exercise recommendations and host-control boundaries, not measured model savings.
+
+| Situation | Expected decision | Reason |
+|---|---|---|
+| Host confirms Astra max; substantial routine work remains; Astra-only with task-appropriate effort | Briefly recommend a suitable lower Astra effort if beneficial; preserve the actual setting until changed through supported controls | A model lock does not force max, and advice does not change the running turn. |
+| Same phase, but model choice is open and Sol fits the required quality | Consider a main-thread Sol recommendation with a supported effort, accounting for context and verification | Recommendations cover models as well as reasoning levels. |
+| Sustained narrow work with objective checks dominates the remaining task | Consider Luna if allowed and worthwhile; retain the parent when switching costs dominate | A smaller model is a task-based option, not an automatic saving. |
+| User deliberately selected Astra max, declined an earlier suggestion, and the task is unchanged | Continue without another prompt | A settled preference should not be challenged at every checkpoint. |
+| A new phase presents a material reason to consider a model outside an explicit lock | Identify the possible exception once, retain the lock, and continue useful work within it | A recommendation does not remove the user's constraint. |
+| A two-minute correction remains on Astra max | Complete it directly without a settings prompt or extra worker | The interruption and transfer cost outweigh likely benefit. |
+| The active model/effort is unavailable; a saved profile says Sol high | Label the current setting unverified and offer a suitable recommendation only if useful | A saved request is not confirmed runtime state. |
+| User accepts a change for the main thread, but tools only select settings for new workers | Explain the control limit and known manual next-turn path; continue compatible authorized work | A worker setting cannot switch the parent; no unrequested thread or fake confirmation. |
+| Adequate context and a serious attempt reveal a capability limit on a substantial task | Recommend a permitted stronger model or more depth according to the observed limit | Reassessment includes upgrades as well as reductions. |
+| User authorizes a task-only model exception and the host can confirm the next-turn change | Use that authority within the tool contract, confirm the applied setting and preserve global preferences and service tier | No repeated approval or persistent preference rewrite is needed. |
+
+October 22, 2026: an independent Astra pass exercised eight request variants covering
+effort changes, model choice, declined advice, unknown settings, missing parent controls,
+capability limits, model exceptions and confirmed next-turn changes. All produced
+compatible decisions. This was read-only reasoning validation, not a performance trial.
+
 ## Locations and orchestration
 
 Review these against [execution locations](execution-locations.md) and

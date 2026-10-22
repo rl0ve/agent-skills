@@ -21,6 +21,54 @@ override returns to those defaults. Changes
 are scoped to the user's request; never claim a saved instruction switched a running
 model, propagated to other hosts, or activated a different service tier.
 
+## Reassess the main thread
+
+Before substantial work or at a meaningful phase boundary, compare the main thread's
+model and reasoning effort with the remaining task. Consider both a different effort
+within the same model and a different model. Recommend more capability or depth when
+needed, or less when it should preserve required quality and improve total completion
+time or usage. Use the user's priorities and current host route table; these are
+task-based judgments, not guaranteed performance or savings claims.
+
+Use reliable host-reported settings when available. A requested model, saved preference,
+profile name or the assistant's response style does not establish the active setting.
+When the current model or effort is unknown, label it unverified and offer a suitable
+setting without claiming to have detected a mismatch. Do not spend more effort on
+setting discovery than the routing decision warrants.
+
+Give one brief, actionable recommendation when the expected benefit is material:
+
+- Name the relevant remaining work, the proposed model and effort, and why they fit.
+  Account for context continuity, switching, retries, review and integration. A lower
+  token price alone is insufficient; skip tiny tasks and marginal changes.
+- Preserve explicit model and effort choices. Under a family lock, normally recommend
+  changes within that family. If a materially useful alternative requires an exception,
+  identify that condition once; keep the constraint until the user changes it. Do not
+  repeatedly challenge a deliberate choice or persist a task-only exception globally.
+- State what is confirmed now, what is recommended, and how a change can actually take
+  effect. An instruction cannot switch the model generating the current turn. A change
+  to a later turn requires applicable user authorization, a supported host control and
+  confirmation; use existing authority without asking again. If no control is exposed,
+  explain that limit and suggest the host's model/effort selector for the next turn
+  when that control is known to exist. Do not invent a command or claim a switch.
+- Keep the recommendation non-blocking while useful authorized work can continue.
+  Do not stop a productive turn solely to obtain an optional preference. If a user
+  answer is required before a dependent action, keep that action pending. Revisit an
+  unanswered or declined suggestion only when the workload or evidence materially
+  changes; carry the decision through the existing checkpoint when needed.
+
+For example, a confirmed Astra max thread entering a substantial routine phase might
+benefit from Astra medium, or Sol medium when model choice is open. Sustained narrow
+work with objective checks may suit Luna; a brief mechanical step rarely justifies
+changing the parent. New ambiguity or a demonstrated capability limit can instead
+warrant a stronger route. Verify host availability and retain acceptance criteria.
+
+Delegating a suitable portion can help when already authorized and worthwhile, but it
+does not change the parent's settings or remove its coordination cost. Do not create
+extra agents or threads merely to avoid explaining the main thread's control limit.
+Model, reasoning effort and paid service tier remain separate choices; this procedure
+does not authorize a tier change, purchases or removal of a standing preference.
+
 ## Timing (full rules)
 
 
@@ -179,8 +227,10 @@ integration. Do not launch a model tournament for ordinary work. When routing it
 is disputed, compare a representative task at the same acceptance criteria, tool access
 and service tier; record accepted quality, elapsed time, retries and review effort.
 
-**Effort:** preserve an effective active setting. Sol medium fits ordinary substantial
-work; high fits complex reasoning. Astra medium fits ordinary work when already active;
+**Effort:** preserve an effective active setting until an authorized change is confirmed;
+[recommend a change](#reassess-the-main-thread) when it would materially help.
+Sol medium fits ordinary substantial work; high fits complex reasoning. Astra medium
+fits ordinary work when already active;
 high is the usual starting point for new unusually demanding work. **Sol xhigh** is an
 explicit choice for deeper reasoning, architecture or diagnosis within Sol. **Astra
 xhigh** is an explicit choice for exceptionally demanding reasoning or creative/spatial
