@@ -47,9 +47,12 @@ preference can say:
 > replace an unfinished goal. A later no-goal instruction overrides this preference.
 
 Persist that preference only when the user asks for ongoing automatic use, in the
-host's supported user-instruction location; preserve other instructions. Keep personal
-opt-ins out of the published plugin. State which host was updated; another machine,
-cloud executor or already-running chat may not have loaded it.
+host's supported user-instruction location; preserve other instructions. A published
+plugin must not activate a personal opt-in for its users. An explicitly selected,
+inert [portable profile](portable-preferences.md) may carry an authorized user's
+preference, but installing or reading the plugin alone supplies no consent. State
+which host was updated; another machine, cloud executor or already-running chat may
+not have loaded it.
 
 ## Inspect, then act once
 

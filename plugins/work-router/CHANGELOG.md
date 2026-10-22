@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.14.0 - 2026-10-22
+
+- Add explicitly selected portable user profiles and a Python setup/check/removal
+  script for Codex and Claude Code. Include the authorized `rl0ve` workflow profile
+  as inert data, with host-specific routing and conditional native-goal preferences.
+- Preserve unrelated instructions, migrate bounded legacy blocks, back up changed
+  files privately, and refuse ambiguous markers, linked paths and noticed concurrent
+  edits. Cover idempotence, failure recovery, host paths and Windows line endings.
+- Document per-environment adoption and refresh, managed/cloud limits and separate
+  publication, installation, application and session-loading checks. No automatic
+  profile activation, background sync or change to generic routing defaults.
+
 ## 1.13.0 - 2026-10-22
 
 - Add conditional native-goal routing: require a bounded outcome, verifiable finish

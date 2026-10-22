@@ -157,6 +157,10 @@ decisions, integration, final validation and the user-facing answer.
 
 ## Host notes
 
+- **Portable user preferences:** when a user asks to carry their workflow between
+  environments, use [profile setup](references/portable-preferences.md). Explicitly
+  select the profile and host, preview, apply and verify. Shipped templates are inert;
+  loading or installing this plugin never opts a user into personal preferences.
 - **Claude Code managed workspaces:** model aliases and effort levels are requests;
   company `availableModels`, effort caps and provider mappings win. Report the actual
   model when Claude Code substitutes one, and do not bypass company policy.

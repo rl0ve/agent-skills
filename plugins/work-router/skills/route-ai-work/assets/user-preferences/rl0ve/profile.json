@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "name": "rl0ve",
+  "revision": 1,
+  "description": "Accuracy-first workflow, conditional native goals, and a Codex-only Astra routing preference. Inert until explicitly selected and applied.",
+  "hosts": {
+    "codex": ["workflow.md", "codex-routing.md", "native-goals.md"],
+    "claude-code": ["workflow.md", "native-goals.md"]
+  }
+}

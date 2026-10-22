@@ -78,6 +78,13 @@ python3 plugins/ui-router/scripts/install_optional_skills.py --profile product -
 
 ## Model routing
 
+To carry the same personal workflow between machines, explicitly select and apply a
+[portable preference profile](plugins/work-router/skills/route-ai-work/references/portable-preferences.md)
+after installing Work Router. The included `rl0ve` profile supports Codex and Claude
+Code, preserves unrelated local instructions, and provides a repeatable drift check.
+Each machine or remote environment needs setup; plugin installation alone does not
+activate personal preferences or synchronize account settings.
+
 Work Router owns model and effort choice. Reviewed October 2026:
 
 - **Codex:** GPT-6.1 Sol for substantial work (medium, high when complex), GPT-6 Astra

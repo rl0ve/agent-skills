@@ -27,6 +27,15 @@ example, prioritize quality and use available credits with Astra throughout, the
 release the model constraint or turn the override off. Normal router defaults remain
 unchanged. These are instruction preferences, not account settings or a live model switch.
 
+## Portable workflow preferences
+
+Carry a selected profile across machines with the opt-in
+[preference setup script](skills/route-ai-work/references/portable-preferences.md).
+Preview, apply and check it separately on each host. The included `rl0ve` profile
+keeps shared workflow choices together with a Codex-only Astra constraint; Claude
+Code keeps its own model routing. Unrelated local instructions and credentials stay
+in place. Plugin installation and updates do not activate or synchronize a profile.
+
 ## Codex with Astra, Sol, Luna, and Terra
 
 Use GPT-6.1 Sol for substantial everyday and complex reasoning, implementation, and

@@ -54,8 +54,10 @@ fixed-model named profiles do not become compliant through the parent's model al
 For persistence, use the host's user instructions (Codex: the active Codex home's
 `AGENTS.md`; Claude Code: its user `CLAUDE.md`) with a small bounded block. Preserve
 unrelated instructions and keep a backup. Do not edit installed plugin caches, copied
-agent profiles or account settings to implement an instruction override. Do not publish
-personal active preferences in a shared plugin repository.
+agent profiles or account settings to implement an instruction override. Do not make
+personal preferences active defaults in a shared plugin. A user-authorized, inert
+[portable profile](portable-preferences.md) may be published for explicit adoption
+on each host; installation alone does not select or apply it.
 
 User instruction files are local to their host. They do not synchronize remote/cloud
 hosts or other applications. A saved block is not proof that existing chats reloaded
