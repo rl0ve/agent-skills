@@ -52,6 +52,11 @@ Once acceptance is met, move on. Reopen a completed phase for new evidence or a 
 requirement, not an unlimited request for perfection. A phase boundary is a checkpoint,
 not a reason to stop before the user's full task is complete.
 
+Use the [coordination checkpoint](execution-locations.md#reassess-at-coordination-checkpoints)
+to choose where the next useful work should run. Recheck when a worker becomes free,
+a dependency blocks progress, scope or timing changes, and before closing an authorized
+work window. Preserve the existing coordinator and integration owner.
+
 At a checkpoint, compare progress against the user's highest-priority unmet condition,
 not only the easiest things to count. More content, tests, assets or minor refinements
 do not compensate for an unresolved core requirement such as visual fidelity,

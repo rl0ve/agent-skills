@@ -27,6 +27,33 @@ cloud," or "compare routes first." Offer two or three viable options only when t
 tradeoff matters. Otherwise choose within existing authority and explain the benefit
 briefly. Do not interpret a location preference as a model or spending preference.
 
+## Reassess at coordination checkpoints
+
+During multi-phase coordination or a user-authorized work window, revisit the route
+when a phase is accepted, a worker becomes available, a dependency blocks progress,
+scope or the deadline changes, and before ending the run. Keep this check brief and
+reuse unchanged evidence; it is not a periodic scan of every host.
+
+1. Refresh remaining authorized outcomes, dependencies and current ownership. Distinguish
+   completion of one local phase from completion of the user's whole assignment.
+2. Identify useful independent work and compare viable current, thread, remote and
+   cloud routes. Include an existing suitable worker; idle capacity alone is not a task.
+3. For a promising route, check live capability and authority, required model, available
+   inputs, return path and expected benefit after setup, review and integration. Account
+   for the remaining work window; do not launch work that violates its stop condition.
+4. Dispatch or continue through supported controls when authorized and worthwhile.
+   Otherwise keep useful work here and record the concrete reason for the rejected
+   route in the existing checkpoint. Reconsider that reason when its premise changes.
+
+For asynchronous work with a hard cutoff, identify supported stopping controls before
+promising timed termination. A deadline in a worker's brief is a requested limit, not
+proof that the runtime will enforce it.
+
+Do not manufacture tasks, repeat passing checks, create extra goals or consume allowance
+just to keep workers busy. If the authorized outcome is complete, finish. If no useful
+work can proceed, report the actual limit under the host's continuation rules; an
+unfinished work window does not authorize a new schedule or an indefinite monitor.
+
 ## Capability and authority before dispatch
 
 Inspect only the candidate destinations needed for this decision. Record:
@@ -63,13 +90,21 @@ equivalent native controls only when those controls exist.
 | Action | Native controls and boundaries |
 |---|---|
 | Discover and inspect | `list_projects`, `list_threads`, `read_thread`, `list_artifacts`. Match the returned project/host IDs and thread titles; do not infer a destination from a path alone. |
-| Delegate within this task | The exposed subagent API. Local Codex requires a direct user request or applicable project/skill instruction requesting delegation. Verify role, effective model and write scope. |
+| Delegate within this task | The exposed subagent API under the live system/developer delegation rules. Verify applicable authority, role, effective model and write scope; a dated host summary does not override the current contract. |
 | Start a separate task | `create_thread` requires an explicit user request for a new task. List projects first for repository work. `environment: local` uses that project's configured host, which may be remote. A new worktree through this tool requires an explicit worktree request and a Git project. |
 | Fork | `fork_thread` retains history; a new task starts fresh. Use for an authorized separate workstream where inherited decisions help. Forking must not be used to evade new-task authorization or isolation requirements. |
 | Continue another task | `send_message_to_thread` requires human authorization to message that task. Another agent's request to report back is insufficient. Omit model/effort overrides unless the user authorized them; an existing task keeps its settings. |
 | Move an existing task | `handoff_thread` can move another Codex thread to a matching saved project on a connected host, or toggle its checkout/worktree on its host. It interrupts running work. It cannot move the calling thread or hand off to cloud. Prefer a safe checkpoint and an explicit move request. |
 | Start cloud work | `create_thread`'s `chatgptWorkCloud` target requires an explicit request for a cloud Work task. It is distinct from Codex Cloud; do not substitute one for the other. This target does not accept Codex model/effort overrides. Verify any locked-model requirement before dispatch, or leave a prepared brief. |
 | Observe progress | Use the returned IDs with `read_thread`, `wait_threads` or the operation-specific status tool. Some wait tools support only Codex threads; use the supported reader for other backends. |
+
+Creation and continuation are separate capabilities. Missing support for creating a
+new Codex Cloud task does not establish that existing Codex Cloud threads are unusable.
+Inspect a relevant existing thread's actual executor, current ownership, model and
+supported continuation controls before ruling out that route. A readable cloud thread
+is not necessarily messageable, movable or suitable for new work. Preserve the human
+authorization required to message it; do not substitute a cloud Work conversation
+merely because that creation target is exposed.
 
 For task creation, omit model unless explicitly requested by the user, as required by
 the current tool. If the routing recommendation needs a different model, explain that

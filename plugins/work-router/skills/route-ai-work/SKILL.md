@@ -66,6 +66,10 @@ Inspect relevant existing work before creating duplicates. Recommend a route fre
 execute it only within the user's authorization and the live tool contract. A request
 to improve this router does not itself authorize new tasks or messages to other chats.
 
+During coordinated work, [reassess routes at meaningful checkpoints](references/execution-locations.md#reassess-at-coordination-checkpoints),
+including phase completion and before closing an authorized work window. An initial
+local choice does not settle the route for later independent work.
+
 Choose one owner of decomposition, dispatch and acceptance. When Ultra or an explicitly
 selected development workflow already owns orchestration, avoid adding another manager
 or duplicate agents. Read [orchestration compatibility](references/orchestration-compatibility.md)

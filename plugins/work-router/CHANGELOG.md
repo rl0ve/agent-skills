@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.15.1 - 2026-10-22
+
+- Reassess execution routes at phase completion, worker availability, blocked
+  dependencies, scope/deadline changes and before ending an authorized work window.
+  Continue useful authorized work or record the concrete route limit; avoid idle
+  capacity quotas, invented tasks and repeated passing checks.
+- Distinguish creating new Codex Cloud tasks from continuing suitable existing cloud
+  threads. Apply live host delegation rules over dated capability descriptions.
+- Add decision scenarios for continued portable work, existing cloud threads,
+  dependency waits, changed deadlines and completion before a work window ends.
+
 ## 1.15.0 - 2026-10-22
 
 - Add execution location routing for the current task, subagents, existing/new

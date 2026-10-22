@@ -27,6 +27,10 @@ catalog may also expose `ultra` as an effort value. That value alone does not es
 permission to delegate, an active service tier, or the models used by children.
 [Official subagent guidance](https://learn.chatgpt.com/docs/agent-configuration/subagents).
 
+That is a dated observation. Inspect the live system/developer policy and available
+controls for the current host; they govern when its delegation behavior differs.
+Neither a source's proactive default nor this historical restriction supersedes them.
+
 - **Native orchestration leads:** when the user selects that behavior and the host
   supports it, let it decompose and dispatch. Work Router supplies constraints,
   destination suitability, one-writer boundaries and acceptance criteria. Do not add

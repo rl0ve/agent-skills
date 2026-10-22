@@ -27,13 +27,24 @@ exercises, not claims that a live remote/cloud job ran.
 | Full Superpowers selected with a locked model and existing integration owner | Let its controller own the assigned phase under those constraints | Its model economy or finish rules cannot replace explicit ownership. |
 | Two returned branches pass their own checks using different test runners | Check combined runner configuration and behavior before acceptance | Independent success does not establish integration success. |
 | Branch tip advanced since its earlier commit was merged | Preserve it until the new tip and artifacts are reconciled | Stale merge evidence is unsafe cleanup evidence. |
-| Coordinator has finished its bounded phase | Report actual completion; no claim of ongoing monitoring | Further wakeups require a separately authorized schedule. |
+| Two local phases finish during an authorized work window; independent portable analysis remains | Reassess routes, inspect a suitable cloud or existing-thread option, then dispatch if ready and authorized or record its concrete blocker and continue useful work | Local phase completion does not finish the remaining assignment. |
+| No tool can create new Codex Cloud tasks, but an existing cloud thread is reachable | Check its executor, model, ownership and supported continuation control before excluding it | Creation and continuation have separate capabilities and authorization. |
+| A worker becomes free while the next item needs an unfinished prerequisite | Reassess independent requirements; keep the dependent item waiting | Idle capacity does not justify invalid or invented work. |
+| Deadline changes and a former cloud route would return too late | Choose a route that meets the revised stop condition, or report the limit | An earlier routing decision can become unsuitable. |
+| A dated Ultra guide differs from current system/developer delegation rules | Follow the live host rules and verify supported controls | Historical documentation is evidence, not higher-priority authority. |
+| All authorized outcomes and required checks are complete while work-window time remains | Report completion; do not invent more work or claim ongoing monitoring | Remaining time is not a new assignment or a schedule. |
 
 October 22, 2026: an independent Astra review exercised six request variants covering
 location discretion, locked-model cloud work, authorized integration, restricted Ultra,
 an installed Superpowers workflow and uncertain task creation. It found no blocking
 dispatch conflict and prompted the operation-specific status clarification. This was
 read-only policy validation; no remote/cloud task was launched for the exercise.
+
+A second independent Astra pass exercised six checkpoint cases: remaining portable
+work, an unverified cloud model, existing cloud-thread discovery, early completion,
+dependency waiting and conflicting dated delegation guidance. All produced compatible
+decisions; the pass prompted clarification of requested deadlines versus verified
+runtime stopping controls. This was simulated reasoning, not an execution benchmark.
 
 ## Native-goal decisions
 
