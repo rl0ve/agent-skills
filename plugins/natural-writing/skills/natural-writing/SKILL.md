@@ -32,7 +32,14 @@ Route by semantic intent, not by literal trigger words. The examples in this ski
 
 ## Calibrate before writing
 
-Read the full input. Internally note:
+Read the full input and consult relevant saved writing preferences and prior corrections
+when available. Carry forward the author's choices about directness, bullets, selective
+bolding, headings and length when they fit this audience and channel. Do not ask again
+for a choice already established in the session or standing context; a current instruction
+or representative sample can override it. Keep personal preferences in the user's context,
+not in shared skill instructions. Persist new preferences only when authorized.
+
+Internally note:
 
 - the reader and what they should know, feel, or do;
 - the core point and the evidence that supports it;
@@ -56,7 +63,7 @@ For a spoken piece the list is in [references/spoken-register.md](references/spo
 
 When the pass is not substantial enough to ask, still state the defaults you took: the **What changed** note opens with one line of assumptions ("edited as a status report to a VP, your judgments kept"), so the author corrects before reading the edit rather than after.
 
-When the author answers a pre-pass question or a voice probe, record the answer as a standing preference wherever the harness keeps them (a memory, a CLAUDE.md, a project note), so it is asked once and not per piece.
+When the author answers a pre-pass question or a voice probe, carry the answer forward in the session. If authorized to persist it, record it wherever the harness keeps standing preferences (a memory, a CLAUDE.md, a project note), so it is asked once and not per piece.
 
 When no sample is provided and a small voice choice will recur through the piece (a short sentence kept whole with its conjunction or split in two, contractions or none, a typed dash or a comma), show the author one sentence both ways and ask which. One probe settles the pass; guessing installs your taste as theirs.
 
@@ -122,7 +129,11 @@ After drafting, apply the same layered edit and evaluation. If the brief lacks a
 ## Output discipline
 
 - Follow the requested format and length.
-- Keep headings and lists only when they help navigation or comparison.
+- Keep headings and lists when they help navigation or comparison. For a brief or
+  stakeholder update, put parallel actions, findings or requirements in short bullets;
+  use selective bold lead-ins when useful. Keep causal reasoning and necessary setup
+  in connected prose. Honor an author's established formatting preference without
+  turning every sentence into a list, and verify the actual channel renders the format.
 - Do not append a generic summary, uplift, call to action, or offer to continue.
 - Do not narrate the editing process unless the user asks.
 - Round-tripping prose through another agent or a plain-text scratch file converts inline markup to whatever carrier you chose (`<b>` to `**`, `<i>` to `_`). Convert every one of them back, and verify by counting each token type in the source and the result. A count that matches on bold and silently drops italics ships a literal underscore into the artifact.

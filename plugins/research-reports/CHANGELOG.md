@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.4 - 2026-10-22
+
+- Carry saved writing and formatting preferences into the report's reading contract.
+- Preserve essential current-state mechanisms when condensing a decision brief.
+- Make proposed workflow changes explicit about location, trigger, owner, timing and
+  required versus optional capture, using short labels with necessary definitions.
+- Use bullets and comparison tables where they reduce reading work without replacing
+  the reasoning that connects the recommendations.
+
 ## 1.0.3 — 2026-10-22
 
 - Route durable quantitative figures and in-chat exploration to available specialists

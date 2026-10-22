@@ -1,5 +1,19 @@
 # Validation
 
+Release 1.0.4, checked 2026-10-22.
+
+Instruction-only update: consult saved writing preferences and preserve current state,
+location and capture conditions when condensing a decision brief. Personal preferences
+and private research evidence remain outside the shared plugin.
+
+- Repository parity/package suite: 49 tests passed; Natural Writing: 109 tests passed.
+- Skill validation, changed manifests, marketplace parity and whitespace checked.
+- Author policy review: a short workflow proposal retains why each field belongs at
+  its proposed level and when it appears; a prose narrative is not forced into bullets;
+  a current instruction can override a saved formatting preference.
+- Applied the guidance to the existing document and inspected both rendered pages.
+  This is an author review and real artifact check, not an independent model trial.
+
 Release 1.0.3, checked 2026-10-22.
 
 Instruction-only patch adding surface-aware quantitative and in-chat routing,

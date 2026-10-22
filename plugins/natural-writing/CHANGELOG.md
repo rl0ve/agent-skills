@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.16.1 - 2026-10-22
+
+- Consult relevant saved author preferences before asking calibration questions again.
+- Use brief bullets and selective emphasis for parallel stakeholder content when they
+  suit the author and channel; preserve explanatory prose and verify rendered formatting.
+- Keep personal preferences in user context and persist new ones only when authorized.
+
 ## 1.16.0 - 2026-10-20
 
 - Add an opt-in controlled-English register under technical documentation, based on
