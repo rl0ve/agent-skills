@@ -41,7 +41,7 @@
       "name": "work-router",
       "source": "./plugins/work-router",
       "description": "Routes agent work by model, effort and execution location across tasks, threads, connected machines and cloud. Includes private project context, orchestration compatibility, conditional native goals, capability discovery, skills ecosystem audits and scoped deduplication.",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "category": "Productivity",
       "tags": [
         "routing",

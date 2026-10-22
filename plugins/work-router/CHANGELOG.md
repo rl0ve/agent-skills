@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.17.0 - 2026-10-22
+
+- Add explicit loop controls for verification, applicable limits, progress checks,
+  recovery and exit reasons. Distinguish hard limits from reassessment checkpoints
+  and requested deadlines from verified runtime enforcement; no universal attempt cap.
+- Reconcile goals when instructions or acceptance change, preserving clear user intent
+  and host lifecycle rules. Separate working-record updates from native objective edits
+  when the available goal tool supports status changes only.
+- Surface occasional evidence-based workflow improvements at useful checkpoints.
+  Separate project fixes, personal preferences and shared guidance, reuse existing
+  authorization, and avoid routine prompts, automatic self-rewrites or monitoring.
+- Add realistic goal, retry and maintenance scenarios. No runtime, new skill, schedule,
+  personal-profile change or storage migration.
+
 ## 1.16.1 - 2026-10-22
 
 - Keep private context out of public Git history without banning Git-backed state.

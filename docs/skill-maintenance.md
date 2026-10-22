@@ -3,6 +3,11 @@
 Use this when a source, bookmark, user correction, or observed failure suggests a skill
 change. A saved post is a research lead, not a standing instruction or an endorsement.
 
+During ordinary routed work, [workflow feedback](../plugins/work-router/skills/route-ai-work/references/workflow-feedback.md)
+defines when to surface a concrete improvement and how to separate project fixes,
+personal preferences and shared guidance. It does not grant maintenance authority for
+an unrelated task; apply this release process once the change is in scope.
+
 ## Decide what belongs
 
 1. Read the original claim and relevant follow-up. Separate an observed result from a

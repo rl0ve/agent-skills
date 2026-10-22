@@ -1,6 +1,6 @@
 {
   "name": "work-router",
-  "version": "1.16.1",
+  "version": "1.17.0",
   "description": "Routes agent work by model, effort and execution location across tasks, threads, connected machines and cloud. Includes private project context, orchestration compatibility, conditional native goals, capability discovery, skills ecosystem audits and scoped deduplication.",
   "author": {
     "name": "Robert Love"

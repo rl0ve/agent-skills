@@ -43,13 +43,53 @@ Do not create user-visible tasks, persistent goals, recurring jobs, or additiona
 capacity merely to imitate a source's setup. Those are separate host capabilities with
 their own authorization requirements.
 
+## Define the loop before repeating attempts
+
+For a substantial repair, experiment or refinement loop, put its controls in the
+existing plan/checkpoint. Ordinary edits need no extra record. A native goal supports
+continuation; it does not by itself supply a verifier or an execution limit.
+
+| Control | Record before relying on it |
+|---|---|
+| Success and scope | Observable acceptance checks, permitted changes and checks the agent must preserve. A proposed change to acceptance follows goal reconciliation. |
+| Baseline and recovery | Last verified artifact/version, observed failures and how to retain or recover useful work without discarding others' edits. |
+| Limits | Applicable user/host deadline, budget or attempt cap; what the limit counts, whether it covers the whole task or one phase, and what enforces it. Mark an unspecified limit as unset. |
+| Progress check | What counts as a new result or useful diagnostic evidence; when repeated failure triggers reassessment. Choose a task-appropriate checkpoint, not a universal retry count. |
+| Exit | What happens on verified success, a hard limit, an unresolved prerequisite or a material decision requiring the user. Preserve evidence and unmet criteria. |
+
+Distinguish a **hard limit** from a **reassessment checkpoint**. Honor explicit caps;
+never silently extend them. Supply a native-goal token budget only when explicitly
+requested. Do not invent a global attempt cap or treat available allowance as a
+spending target. A checkpoint prompts diagnosis or a different approach; it does not
+terminate useful authorized work just because the task is difficult. Carry applicable
+cumulative limits across workers, handoffs and context changes; a renamed attempt or
+fresh worker does not reset them.
+
+Identify the actual enforcement mechanism before promising an unattended cutoff.
+A deadline in a prompt expresses intent; it does not prove cancellation. Use supported
+runtime limits or controls for owned processes when available and authorized. If the
+host cannot enforce the requested boundary, disclose the gap and choose work that can
+stay within it, or resolve the constraint before starting an incompatible run. Do not
+create a controller, schedule or extra service merely to claim enforcement. Confirm
+termination before saying an in-flight process stopped.
+
+For each material attempt, preserve the hypothesis/change, exact check result and new
+evidence. Keep the last verified result available. Reject a candidate that fails the
+required gate; agent agreement cannot replace the gate. Do not weaken checks to obtain
+a pass. On a hard limit, stop new attempts and use supported stopping controls within
+their authority; record the best verified result, pending work and exit reason. A
+limit reached is not successful completion. Map the result to native goal status only
+under [that host's lifecycle rules](native-goals.md#lifecycle-and-stopping).
+
 ## When progress slows
 
 Look at the last verified outcome, unresolved blocker and work since then. Time without
 a checked box may reflect useful diagnosis; easy checkboxes may hide missing behavior.
-If work repeats without new evidence, diagnose the cause: missing input, broken tools,
-unclear acceptance, difficult reasoning, or optional polish. Repair the relevant cause
-or make progress on an independent requirement. Never skip a required dependency just
+If the same failure recurs without new evidence, stop repeating that approach and
+diagnose the cause: missing input, broken tools, unclear acceptance, difficult reasoning
+or optional polish. Test a materially different explanation, repair the relevant cause
+or make progress on an independent requirement. Ask only for a decision or prerequisite
+that cannot be resolved within scope. Never skip a required dependency just
 to improve the progress chart, weaken a failing test, or silently drop scope.
 
 Once acceptance is met, move on. Reopen a completed phase for new evidence or a changed
@@ -72,8 +112,10 @@ verified coverage and measured user outcomes separate. Preserve optional opportu
 as such instead of continually promoting them into new completion requirements.
 
 Adapt the implementation plan when new facts invalidate it, recording the reason and
-preserving the user's requested outcome. Ask only for a material decision that cannot
-be inferred within the authorized scope.
+preserving the user's requested outcome. If the outcome or acceptance conditions also
+change, apply [goal reconciliation](native-goals.md#reconcile-the-goal-as-work-changes).
+At a useful checkpoint, a demonstrated reusable process problem can become a scoped
+[workflow improvement](workflow-feedback.md); finish the current task within its scope.
 
 If a restart or handoff is necessary, pass the accepted decisions, exact artifacts,
 remaining checks, known failures and next action. Use normal context management while
@@ -172,6 +214,14 @@ benchmarks rather than on agentic coding. Use observed symptoms - instructions m
 decisions contradicted, files re-read wrongly - ahead of any token count.
 
 ## Evidence and limits
+
+Loop controls reviewed October 22, 2026. [Lummox's October 16 overview](https://x.com/Lummox_eth/status/2111100800625787154)
+identifies verification, attempt limits and repeated failures as useful controls; its
+ten-attempt example is not a recommended default. The
+[OpenAI Agents SDK runner](https://openai.github.io/openai-agents-python/running_agents/#the-agent-loop)
+provides an actual `max_turns` boundary. SDK turns are not interchangeable with repair
+attempts, wall-clock time or the native-goal API in this host. These sources support
+explicit controls, not a claim that this Markdown policy implements a runtime limit.
 
 Reviewed September 5, 2026. This is routing judgment, not a measured performance claim.
 

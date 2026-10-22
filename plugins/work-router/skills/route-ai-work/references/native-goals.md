@@ -82,6 +82,43 @@ back to that parent without creating another goal. Native goals never authorize 
 chats, recurring automations, extra workers, model or service-tier changes, purchases,
 paid APIs, usage resets or actions outside the user's task.
 
+## Reconcile the goal as work changes
+
+Recheck alignment when the user changes instructions, new evidence affects acceptance,
+or a meaningful phase/handoff exposes a mismatch. Compare the current user outcome,
+acceptance conditions, remaining work and applicable limits with the registered goal.
+Do not turn this into a status poll after every tool call.
+
+| Change | Response |
+|---|---|
+| A different implementation approach achieves the same outcome | Update the plan and checkpoint; keep the goal. |
+| The user clearly clarifies the outcome or acceptance checks | Apply the instruction without asking for approval again; record the change and reconcile native state where supported. |
+| New evidence creates a material scope or priority tradeoff | Explain the concrete choice and ask only if the answer cannot be inferred; continue independent authorized work. |
+| An added request is separable from an unrelated unfinished goal | Preserve that goal and handle the new authorized work normally; do not silently broaden its objective. |
+| A deadline or budget would be exceeded | Surface the conflict and honor the limit; a revised plan does not grant an extension. |
+| The user cancels or replaces the original outcome | Stop pursuing obsolete work and follow supported lifecycle controls; do not label the cancelled objective achieved. |
+
+Inspect the live tool contract before editing a registered objective. If it supports
+objective or acceptance updates, make the authorized change and verify the returned
+state. If it does not, update the existing working record with the goal identifier,
+registered wording, current accepted outcome/checks, reason for the change and remaining
+work. State the mismatch when material; do not claim the native goal was rewritten.
+
+For the Codex `create_goal` / `get_goal` / `update_goal` adapter reviewed October 22,
+2026, `update_goal` changes status only. It cannot edit the objective, resume a goal
+or set a new budget. Use currently supported controls rather than invented parameters.
+A compatible clarification can live in the checkpoint while the matching goal remains
+active; complete it only when the registered objective and current applicable acceptance
+conditions are both satisfied. Preserve a directly withdrawn condition as superseded.
+
+If the new outcome no longer satisfies the registered objective, do not mark the old
+goal complete to free a slot, force a blocked status, or pause it without the required
+user request. Use an authorized cancel/replace action only when the host actually
+provides one. Otherwise explain the native-state limitation and continue revised work
+without relying on the stale goal where possible. Request a user-controlled lifecycle
+action only when needed; do not keep executing a cancelled objective. A new goal still
+requires the usual fit, authority and available state.
+
 ## Lifecycle and stopping
 
 Continue against the existing acceptance conditions and preserve a concise checkpoint

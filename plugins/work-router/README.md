@@ -11,7 +11,11 @@ The plugin contributes:
 - [orchestration compatibility](skills/route-ai-work/references/orchestration-compatibility.md)
   for native Ultra and optional engineering workflows such as Superpowers;
 - [conditional native goals](skills/route-ai-work/references/native-goals.md), with
-  explicit authorization, live-state reuse and host lifecycle checks;
+  explicit authorization, live-state reuse, goal reconciliation and host lifecycle checks;
+- [loop controls](skills/route-ai-work/references/long-running-work.md#define-the-loop-before-repeating-attempts)
+  for verification, applicable limits, progress checks and recovery;
+- [workflow feedback](skills/route-ai-work/references/workflow-feedback.md) for
+  occasional evidence-based improvement suggestions during active work;
 - `/work-router:check-routing-setup`, a manual, read-only environment check;
 - `/work-router:discover-capabilities`, focused discovery for missing capabilities;
 - `/work-router:deduplicate-skills`, installed-skill auditing and scoped consolidation;
@@ -196,6 +200,13 @@ multi-stage work or repeated polishing stalls. Completion requires evidence for 
 phase's outcome, and the parent preserves the full task scope. A manager/implementer
 split is conditional; no agent-limit changes, goals, or background schedules are
 created by installing the skill. Social recommendations remain dated evidence.
+
+For repeated attempts, distinguish hard limits from checkpoints for changing approach;
+verify the runtime's stopping controls before promising an unattended cutoff. Reconcile
+the goal when the user changes the outcome or acceptance conditions. A status-only
+goal tool cannot rewrite an objective, and a working checkpoint must not imply it did.
+Recurring workflow problems can prompt a concrete maintenance proposal at a useful
+boundary, with project fixes, personal preferences and shared changes kept in scope.
 
 ## Lower usage at the same quality
 

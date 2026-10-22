@@ -1,6 +1,6 @@
 ---
 name: route-ai-work
-description: Choose model, effort, orchestration and execution location for agent work, including subagents, separate threads, remote machines and cloud tasks. Use for routing decisions, coordinated work, private project context, conditional native goals or workflow conflicts. Check host capabilities and authorization before dispatch. Ordinary contained work stays in the parent.
+description: Choose model, effort, orchestration and execution location for agent work, including subagents, separate threads, remote machines and cloud tasks. Use for routing decisions, coordinated work, private project context, conditional native goals, workflow conflicts or improvements. Check host capabilities and authorization before dispatch. Ordinary contained work stays in the parent.
 compatibility: Claude Code and Codex. Each has its own route table below; the method is the same.
 ---
 
@@ -51,6 +51,11 @@ not automatically faster.
    depth, or a stronger model for missing capability or judgment.
 8. Count total completion cost: retries, review and integration, not token price alone.
 
+Before a substantial retry or refinement loop, use the
+[loop controls](references/long-running-work.md#define-the-loop-before-repeating-attempts)
+to establish verification, applicable limits, progress checks and recovery. Continue
+useful work within scope; repeated activity alone does not establish progress.
+
 ## Choose where work runs and who coordinates it
 
 Execution location is separate from model, effort, service tier and engineering method.
@@ -93,6 +98,18 @@ host support, inspect current state, reuse a matching active goal, or create one
 none is unfinished. Ordinary edits and one-off reviews or audits need no automatic
 goal. Loading this skill or judging a task substantial is not consent. UI Router
 defers this decision here.
+
+When instructions, scope or acceptance conditions change, [reconcile the active goal](references/native-goals.md#reconcile-the-goal-as-work-changes).
+Apply clear user changes without asking again. Distinguish a revised working plan from
+a confirmed change to the host's registered objective; inspect the supported controls.
+
+## Notice reusable workflow improvements
+
+At meaningful checkpoints, a recurring routing problem, a clear reusable correction
+or a verified capability change may warrant an improvement. Use
+[workflow feedback](references/workflow-feedback.md) to distinguish project fixes,
+personal preferences and shared skill changes, then propose the smallest supported
+correction. Keep current work moving and avoid routine audits or repeated prompts.
 
 For new capabilities use [discover-capabilities](../discover-capabilities/SKILL.md); for
 duplicate skills use [deduplicate-skills](../deduplicate-skills/SKILL.md). Neither runs
@@ -209,7 +226,7 @@ decisions, integration, final validation and the user-facing answer.
   benchmark, token, long-task, escalation and host-specific notes (managed workspaces,
   Codex profile sync).
 - [long-running-work.md](references/long-running-work.md): multi-phase work, Claude Code
-  dynamic workflows, Codex cross-window notes and outside advice.
+  dynamic workflows, loop limits and progress checks, Codex cross-window notes and outside advice.
 - [execution-locations.md](references/execution-locations.md): current task, subagents,
   separate threads, remote and cloud execution; dispatch and return contracts.
 - [shared-project-state.md](references/shared-project-state.md): private project scope,
@@ -219,7 +236,9 @@ decisions, integration, final validation and the user-facing answer.
 - [orchestration-compatibility.md](references/orchestration-compatibility.md): one
   coordinator with native Ultra, Superpowers or another development workflow.
 - [native-goals.md](references/native-goals.md): conditional creation, standing opt-in,
-  existing-goal ownership and host lifecycle rules.
+  goal reconciliation, existing-goal ownership and host lifecycle rules.
+- [workflow-feedback.md](references/workflow-feedback.md): evidence-based improvement
+  suggestions during active work, scoped ownership and authorized maintenance.
 - [routing-scenarios.md](references/routing-scenarios.md): representative decisions.
 - [routing-basis.md](references/routing-basis.md): distilled policy and current-product overlay.
 - [benchmark-sources.md](references/benchmark-sources.md): release reviews and comparisons.
