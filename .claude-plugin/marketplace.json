@@ -129,7 +129,7 @@
       "name": "research-reports",
       "source": "./plugins/research-reports",
       "description": "Evidence-backed research reports and decision briefs with selected explanatory visuals and an optional motion overview. One primary document format by default.",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "category": "Productivity",
       "tags": [
         "research",

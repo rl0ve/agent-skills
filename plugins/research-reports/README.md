@@ -20,6 +20,12 @@ patterns. It does not require a diagram in every section or a video in every pac
 It preserves source distinctions, unit/period differences and the boundary between
 an observed result and a proposal.
 
+Visual routing preserves the selected surface: available Data Analytics tools can
+own durable quantitative figures and Visualize can support in-chat exploration.
+Standalone HTML guidance covers Observable Plot, Vega-Lite, ECharts, Plotly and D3
+as optional choices. ImageGen is optional for conceptual illustration; exact data
+and structural graphics remain code-rendered or editable.
+
 ## Install
 
 ```bash

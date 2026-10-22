@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.3 — 2026-10-22
+
+- Route durable quantitative figures and in-chat exploration to available specialists
+  while preserving the selected surface and research depth.
+- Add optional standalone HTML renderer guidance for Observable Plot, Vega-Lite,
+  ECharts, Plotly and D3, with delivered/exported verification.
+- Keep ImageGen optional for conceptual illustration, with exact data and structure
+  in editable or code-rendered graphics.
+
 ## 1.0.2 — 2026-10-21
 
 - Check broad strategy and audience coverage before framing a company-wide question

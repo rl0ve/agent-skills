@@ -1,5 +1,24 @@
 # Validation
 
+Release 1.0.3, checked 2026-10-22.
+
+Instruction-only patch adding surface-aware quantitative and in-chat routing,
+optional standalone HTML renderer choices, and conceptual-image boundaries.
+No chart runtime or new mandatory dependency was added.
+
+- Skill Creator validation passed; 49 repository tests, 109 Natural Writing tests,
+  45 UI Walkthrough Video tests and the assessment Node suite passed.
+- Marketplace and all plugin manifests passed Claude Code validation; whitespace,
+  local reference targets and three-manifest/marketplace version parity checked.
+- Author policy review: a standalone HTML statistical comparison can select Plot or
+  Vega-Lite; a report already owned by Data Analytics retains its rendering contract;
+  in-chat exploration can use Visualize without creating a report. A PDF-only request
+  retains its medium. A conceptual illustration may use ImageGen, while exact charts,
+  relationships and interface evidence retain their appropriate source/renderers.
+- Reviewed current upstream library documentation and selected skill instructions.
+  This was a routing/source review, not a new independent behavioral trial, renderer
+  benchmark or end-to-end export test. Existing artifact verification still applies.
+
 Release 1.0.2, checked 2026-10-21.
 
 Instruction-only patch covering strategy/source scope, actual data-access coverage,

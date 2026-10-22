@@ -76,6 +76,13 @@ document tools own construction and export. None is a required dependency, and a
 named capability is not proof it is installed or usable. Use an appropriate simpler
 fallback and disclose a material substitution.
 
+For durable quantitative artifacts, consider `data-analytics:visualize-data` when
+available; for exploration directly in chat, consider `visualize:visualize`. Preserve
+the selected surface's rendering contract. For standalone HTML chart choices and
+optional illustrations, read the [renderer guidance](references/formats-and-visuals.md#choose-a-renderer-for-the-selected-surface).
+Keep research depth, evidence and user constraints in control when a collaborator
+defaults to a compressed, figure-led page.
+
 A short **HyperFrames-style overview** may help orient the reader to a mechanism or
 ordered change. Consider it deliberately when the user invites it, but produce it
 only if moving through the idea adds understanding beyond the chosen stills and

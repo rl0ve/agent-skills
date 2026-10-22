@@ -73,6 +73,43 @@ editable diagram source when practical, and inspect labels, connectors, captions
 page breaks after actual rendering. Card grids and colored typography do not satisfy
 the need for a visual explanation.
 
+## Choose a renderer for the selected surface
+
+Use an existing report, notebook or dashboard workflow's native chart renderer when
+that workflow owns the artifact. In particular, `data-analytics:visualize-data` owns
+durable quantitative figures under its selected surface contract; `visualize:visualize`
+supports exploration directly in chat. Read available collaborators' current
+instructions. Neither is a mandatory dependency or a reason to change the requested
+medium. Do not introduce React solely to draw a few standalone figures.
+
+For standalone HTML outside an owning workflow, choose by the explanation:
+
+| Need | Candidate | Selection reason |
+|---|---|---|
+| Statistical comparisons, distributions and small multiples | [Observable Plot](https://observablehq.com/plot/) | Concise layered marks and faceting for report figures. |
+| Declarative specifications and linked interactive views | [Vega-Lite](https://vega.github.io/vega-lite/) | Reproducible JSON specifications with layers, facets and selections. |
+| Rich exploration of dense or hierarchical data | [Apache ECharts](https://echarts.apache.org/en/feature.html) | Built-in zoom, brushing and a broad set of chart families. |
+| Scientific/statistical exploration alongside Python analysis | [Plotly](https://github.com/plotly/plotly.js) | Reuse the analysis ecosystem when it already fits. |
+| A bespoke explanatory graphic or unusual interaction | [D3](https://github.com/d3/d3) or authored SVG | Custom geometry and behavior when higher-level tools do not fit. |
+
+These are optional candidates, not a load list or a comparative performance ranking.
+Prefer one suitable renderer and verify its current API, runtime and needed export.
+Preserve editable source and data; inspect the delivered HTML and requested static
+export, including any view-dependent evidence. Keep essential conclusions and
+qualifiers readable without hover or interaction. Bundle dependencies when offline
+delivery is required and verify that delivered form.
+
+Visual Explainer can own an HTML companion or selected mechanism explanation, but
+its figure-led defaults must not compress away the report's reasoning, evidence or
+uncertainty. Keep the agreed palette and medium; avoid a picture for every number.
+Use available plugins rather than installing overlapping skills for the same job.
+
+ImageGen or another available image tool may help with a conceptual illustration
+when that image teaches something the exact figures do not. Label its illustrative
+status. Keep quantitative charts, exact labels and structural relationships in
+code-rendered or editable graphics; generated art is not observed evidence or an
+actual interface capture. Image generation is optional, not a default report step.
+
 ## Gate a HyperFrames-style overview on learning value
 
 A concise conceptual overview may be useful even when no real UI recording is needed.
