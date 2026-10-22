@@ -6,6 +6,10 @@ reliable completion second, and cost/token use third unless the user chooses oth
 The plugin contributes:
 
 - `/work-router:route-ai-work`, an auto-invocable policy with a table for each host;
+- [execution location routing](skills/route-ai-work/references/execution-locations.md)
+  for subagents, separate threads, connected machines and cloud tasks;
+- [orchestration compatibility](skills/route-ai-work/references/orchestration-compatibility.md)
+  for native Ultra and optional engineering workflows such as Superpowers;
 - [conditional native goals](skills/route-ai-work/references/native-goals.md), with
   explicit authorization, live-state reuse and host lifecycle checks;
 - `/work-router:check-routing-setup`, a manual, read-only environment check;
@@ -17,6 +21,35 @@ The plugin contributes:
   specialists, plus an opt-in, untested Haiku builder for mechanical edits;
 - six separately installable Codex profiles spanning Sol, Terra, and Luna;
 - a Claude `PreToolUse` hook that blocks Bash commands containing `sudo`.
+
+## Threads, remote machines and cloud tasks
+
+Work Router now chooses where work should run as well as who should do it. It uses
+the current host's native tools, with one coordinator and one writer per checkout.
+Ordinary contained work stays in the current task.
+
+| Choice | Use it when |
+|---|---|
+| Stay here | Loaded context and tightly connected steps make a handoff wasteful. |
+| Use a subagent | A bounded specialist or independent review can report back within this task. |
+| Continue or create a separate thread | A workstream benefits from durable ownership and separate history. |
+| Use a connected machine | Its tools, data, hardware or existing environment materially help. |
+| Use a cloud task | Inputs are portable, access is available, and the result can return for review. |
+
+For example, ask it to compare execution locations, create a separate task in a
+worktree for a named independent component, or coordinate specified existing threads.
+The [execution guide](skills/route-ai-work/references/execution-locations.md) checks
+destination capability and permission before dispatch, carries the exact base and
+acceptance criteria, and follows work through return, integration and cleanup. New
+tasks, messages and moves follow the host's authorization rules. A recommendation
+does not silently create them, and a cloud Work task is distinct from Codex Cloud.
+
+Ultra and Superpowers are optional. Ultra's delegation behavior depends on the host;
+local Codex's effort setting does not by itself authorize delegation. Superpowers can
+supply development methods, or own a selected implementation phase, while Work Router
+supplies model and location constraints. Choose one coordinator for each phase and
+avoid duplicate agent/review loops. Neither option is required for remote routing,
+and Ultra is separate from the Ultrafast service tier.
 
 ## Optional routing override
 

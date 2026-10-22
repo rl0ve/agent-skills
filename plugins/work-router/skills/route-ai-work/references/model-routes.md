@@ -191,8 +191,9 @@ Increase effort when depth is missing; choose Astra directly when the task calls
 the highest capability, or when adequate context and a serious Sol attempt reveal a
 judgment limit. Do not exhaust Sol's effort levels before considering Astra. Max and
 ultra need a specific justification, not merely an executive audience, visual artifact
-or long task. Check ultra's current delegation behavior, especially under a single-agent
-constraint. Luna economy's configured max is a conditional exception, not a general
+or long task. Check ultra's host-specific behavior and delegation authority using
+[orchestration compatibility](orchestration-compatibility.md), especially under a
+single-agent constraint. Luna economy's configured max is a conditional exception, not a general
 cost benchmark. These are task-based starting recommendations, not a measured ranking
 of every model/effort combination; higher effort does not guarantee a better result.
 

@@ -40,8 +40,8 @@
     {
       "name": "work-router",
       "source": "./plugins/work-router",
-      "description": "Routes substantial agent work by task shape, ambiguity, risk, latency, and token use, with tables for Claude Code and Codex. Includes capability discovery, skills ecosystem audits, plugin distribution audits, and scoped deduplication of installed skills.",
-      "version": "1.14.0",
+      "description": "Routes agent work by model, effort and execution location across current tasks, subagents, separate threads, connected machines and cloud tasks. Includes orchestration compatibility, conditional native goals, capability discovery, skills ecosystem audits and scoped deduplication.",
+      "version": "1.15.0",
       "category": "Productivity",
       "tags": [
         "routing",

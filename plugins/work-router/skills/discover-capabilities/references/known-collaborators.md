@@ -7,7 +7,7 @@ skill before adopting it, and install by name, not by collection.
 
 ## Engineering discipline
 
-Work Router decides **who** does coding work and at what model and effort. It does not
+Work Router decides **who** does coding work, **where**, and at what model and effort. It does not
 prescribe **how**: specification, test-first implementation, diagnosis, review or
 hardening. When that method is the missing capability, compare one family below
 before writing a new skill.
@@ -30,6 +30,10 @@ Stars and leaderboard rank are leads, not evidence of task quality.
   cover the same concern. Keep one; use [deduplicate-skills](../../deduplicate-skills/SKILL.md)
   when both are already installed.
 - **Routing still applies.** A discipline skill changes method, not model choice. The
-  route table in [route-ai-work](../../route-ai-work/SKILL.md) still picks the owner.
+  route table in [route-ai-work](../../route-ai-work/SKILL.md) supplies execution
+  constraints. If a framework also orchestrates workers, choose one coordinator using
+  [orchestration compatibility](../../route-ai-work/references/orchestration-compatibility.md).
+  Superpowers can augment a method or own a selected phase; it is not required for
+  thread, remote or cloud routing. Inspect the installed version before composing it.
 - **Verify on a representative task.** Report installed, enabled and loaded
   separately, then judge whether the method improved accepted output.

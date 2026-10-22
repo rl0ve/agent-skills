@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.15.0 - 2026-10-22
+
+- Add execution location routing for the current task, subagents, existing/new
+  threads, connected machines and cloud tasks. Check destination capability,
+  authorization, exact base/inputs and artifact return before dispatch.
+- Add a dated Codex desktop adapter for creation, messaging, forking, handoff and
+  observation, including cloud target/model limits and recovery from uncertain
+  creation. Keep one coordinator, isolated writers and explicit integration ownership;
+  verify returned artifacts and current branch tips before acceptance or cleanup.
+- Clarify host-specific Ultra behavior and optional Superpowers composition. Keep
+  model/effort, service tier, engineering method and execution location separate;
+  avoid duplicate orchestration and preserve explicit model constraints.
+- Expand setup inspection, discovery links and routing scenarios. No new runtime,
+  automatic task creation, monitoring, personal-profile change or plugin removal.
+
 ## 1.14.0 - 2026-10-22
 
 - Add explicitly selected portable user profiles and a Python setup/check/removal

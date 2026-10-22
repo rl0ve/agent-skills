@@ -1,7 +1,7 @@
 {
   "name": "work-router",
-  "version": "1.14.0",
-  "description": "Routes substantial agent work by task shape, ambiguity, risk, latency, and token use, with tables for Claude Code and Codex. Includes capability discovery, skills ecosystem audits, plugin distribution audits, and scoped deduplication of installed skills.",
+  "version": "1.15.0",
+  "description": "Routes agent work by model, effort and execution location across current tasks, subagents, separate threads, connected machines and cloud tasks. Includes orchestration compatibility, conditional native goals, capability discovery, skills ecosystem audits and scoped deduplication.",
   "author": {
     "name": "rl0ve"
   },
@@ -18,13 +18,13 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Work Router",
-    "shortDescription": "Route work to the leanest reliable agent",
+    "shortDescription": "Choose models, execution locations and ownership",
     "developerName": "rl0ve",
     "category": "Developer Tools",
     "defaultPrompt": [
-      "Route this task and pick the leanest reliable configuration",
-      "Should this be delegated, or does it belong in the parent session?",
-      "Which agent and effort level does this work actually need?"
+      "Compare local, separate-thread, remote and cloud routes for this task",
+      "Which model, effort and coordinator fit this work?",
+      "Check how Work Router should compose with Ultra or Superpowers"
     ]
   }
 }

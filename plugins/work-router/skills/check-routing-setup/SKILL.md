@@ -1,6 +1,6 @@
 ---
 name: check-routing-setup
-description: Inspect the active Codex or Claude Code host, router components, model catalog, and workspace constraints. Run only when the user explicitly asks to check or troubleshoot the router setup.
+description: Inspect the active host, router components, model catalog, execution locations, orchestration overlap and workspace constraints. Run only when the user explicitly asks to check or troubleshoot the router setup.
 disable-model-invocation: true
 ---
 
@@ -44,6 +44,24 @@ copies and matching installed skill names/paths. Compare instructions and proven
 not just names. Report legacy duplicate routers, competing broad leads, duplicate
 editors and complementary integrations separately. Recommend one canonical owner per
 concern; do not disable anything during this read-only check.
+
+When Ultra or Superpowers is relevant, use the
+[compatibility guide](../route-ai-work/references/orchestration-compatibility.md).
+Distinguish ChatGPT Work's native Ultra orchestration from local Codex effort and
+delegation permissions. Inspect the installed Superpowers version and exact skills;
+the upstream version can have different review or branch-finishing rules. Identify
+the current coordinator before recommending another orchestration layer.
+
+## Execution locations
+
+When the requested setup includes separate threads, remote or cloud work, use the
+[execution guide](../route-ai-work/references/execution-locations.md). Inspect the
+available creation, reading, messaging, handoff and wait controls and relevant saved
+projects. Report which destinations are discovered, reachable, model-compatible and
+ready with the required inputs; keep missing evidence explicit. Do not create a test
+task, send a message, move a live thread or install remote infrastructure during this
+read-only check. Distinguish a local task, a remote project, Codex Cloud and cloud Work.
+Report whether safe isolation and artifact return are available for a writing route.
 
 ## Report
 

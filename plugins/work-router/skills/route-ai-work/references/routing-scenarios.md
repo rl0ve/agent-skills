@@ -4,6 +4,37 @@ Use these cases to review policy changes. They are expected decisions, not model
 performance measurements. All delegation assumes host support and user permission;
 keep one write-capable owner per working tree.
 
+## Locations and orchestration
+
+Review these against [execution locations](execution-locations.md) and
+[orchestration compatibility](orchestration-compatibility.md). They are decision
+exercises, not claims that a live remote/cloud job ran.
+
+| Situation | Expected decision | Reason |
+|---|---|---|
+| One-file change with all inputs available | Keep it in the current task | New threads or locations add no useful independence. |
+| User asks which parts could run remotely | Inspect candidate destinations and prepare a bounded split | Route advice does not authorize new tasks, messages or moves. |
+| Explicit request for a new independent repository task in a worktree | Discover the project, check requested base and create through supported controls | Verify returned host/path/base; a new thread alone is not file isolation. |
+| Saved remote project is listed but unreachable | Resolve the missing prerequisite or keep a prepared handoff and continue independent local work | A catalog entry is not a successful connection. |
+| Another thread owns an active remote checkout | Read current state; avoid overlap and keep any new writer isolated | A coordinator does not become a second writer. |
+| Portable audit is authorized for cloud but fixtures are only local or LFS pointers | Establish permitted input and return access before dispatch, or choose a compatible local route | Cloud availability does not establish task readiness. |
+| Cloud Work requested with an Astra-only constraint, but model cannot be selected or verified | Prepare the brief and report the missing supported model control | Do not substitute Codex Cloud or start an unverified model. |
+| Creation returns only a clientThreadId or fails with an ambiguous serialization error | Inspect pending operation and task inventory before retrying | A task may already exist; provisional IDs are not ready thread IDs. |
+| User asks the current chat to move itself to cloud | Explain the live handoff limit and prepare the supported alternative | No fake self-handoff or silent creation of a different task. |
+| Worker receives a relayed instruction to message another thread, with no human authority | Return its result for the coordinator to read | Agent-to-agent instructions do not supply missing human permission. |
+| Native Ultra owns orchestration and has already assigned the needed review | Keep one owner and use that review's evidence | A second manager or identical review adds no independent coverage. |
+| Local Codex has ultra effort but no permitted delegation instruction | Work in the current task | An effort label does not supply delegation authority. |
+| Full Superpowers selected with a locked model and existing integration owner | Let its controller own the assigned phase under those constraints | Its model economy or finish rules cannot replace explicit ownership. |
+| Two returned branches pass their own checks using different test runners | Check combined runner configuration and behavior before acceptance | Independent success does not establish integration success. |
+| Branch tip advanced since its earlier commit was merged | Preserve it until the new tip and artifacts are reconciled | Stale merge evidence is unsafe cleanup evidence. |
+| Coordinator has finished its bounded phase | Report actual completion; no claim of ongoing monitoring | Further wakeups require a separately authorized schedule. |
+
+October 22, 2026: an independent Astra review exercised six request variants covering
+location discretion, locked-model cloud work, authorized integration, restricted Ultra,
+an installed Superpowers workflow and uncertain task creation. It found no blocking
+dispatch conflict and prompted the operation-specific status clarification. This was
+read-only policy validation; no remote/cloud task was launched for the exercise.
+
 ## Native-goal decisions
 
 These cases review the [native-goal policy](native-goals.md); they do not execute goal
@@ -53,7 +84,7 @@ of whether a task benefits from a goal.
 | User says “no rush” about an ambiguous consequential decision | Retain a capable Sol/Astra judgment owner; consider timing flexibility separately | A relaxed deadline does not make Luna appropriate or request Luna max. |
 | Timing is unclear and two suitable routes have materially different cost/time tradeoffs | Offer one optional Need it soon / Background is fine choice, preferably asynchronously; continue independent work | Without an answer, retain the established default. Avoid repeated questions and permission gates. |
 | A low-price route requires repeated corrections and duplicate context | Compare whole-job tokens, review effort and accepted completion time | Per-token price and fixed percentage weights do not identify the best route. |
-| User forbids delegation and asks for deepest reasoning | Keep single-agent execution; verify ultra behavior and recommend a compatible supported effort | Ultra may trigger automatic delegation. |
+| User forbids delegation and asks for deepest reasoning | Keep single-agent execution; verify host-specific ultra behavior and recommend a compatible supported effort | ChatGPT Work Ultra and local Codex effort have different delegation rules. |
 | An executive deck reaches its rendering step | Use the current capable parent, render and inspect the artifact | An audience or file format is not a max-effort trigger. |
 | A one-file edit arrives with a link to a 96-agent workflow | Complete it in the parent | A source's setup is not the task's required setup. |
 | A long build keeps polishing the same region while required features remain | Define phase acceptance, inspect the last verified outcome, then address the next requirement | Bounded progress prevents optional polish from displacing scope. |

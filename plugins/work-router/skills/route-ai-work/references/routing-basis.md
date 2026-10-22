@@ -2,6 +2,21 @@
 
 Use this reference when explaining or revising the routing policy. Treat benchmark figures as dated evidence, not timeless product facts.
 
+## Execution and orchestration review: October 22, 2026
+
+Execution location is independent of model, effort, service tier and engineering
+method. Use [execution locations](execution-locations.md) for threads, connected
+machines and cloud tasks, with current capabilities, authorization, isolated ownership
+and a reviewable return path. The current desktop adapter supports remote projects and
+another thread's host handoff; it cannot hand off the calling thread or move it to cloud.
+Cloud Work creation is a distinct target with different model controls from Codex.
+
+[Orchestration compatibility](orchestration-compatibility.md) distinguishes ChatGPT
+Work's native Ultra delegation from local Codex's direct/project/skill-triggered
+delegation. Superpowers is an optional engineering method whose full workflow also
+orchestrates workers. Choose one coordinator and preserve the user's model constraint.
+These are capability and workflow findings, not measured speed or quality improvements.
+
 ## Haiku 5.5 and Ultrafast review: October 20, 2026
 
 Read the [Haiku 5.5 review](haiku-5-5-review.md) before choosing a Haiku route.

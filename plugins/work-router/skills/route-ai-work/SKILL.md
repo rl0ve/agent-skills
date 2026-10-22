@@ -1,6 +1,6 @@
 ---
 name: route-ai-work
-description: Choose model, effort, delegation and conditional native goals for agent work. Use when selecting execution settings, planning long autonomous or multi-agent work, deciding whether a goal is warranted, or saving time or tokens. Ordinary single-session tasks stay in the parent. Do not delegate trivial work or create goals merely because work is substantial.
+description: Choose model, effort, orchestration and execution location for agent work, including subagents, separate threads, remote machines and cloud tasks. Use for routing decisions, coordinated work, conditional native goals or workflow conflicts. Check host capabilities and authorization before dispatch. Ordinary contained work stays in the parent.
 compatibility: Claude Code and Codex. Each has its own route table below; the method is the same.
 ---
 
@@ -40,8 +40,9 @@ not automatically faster.
 1. Honor explicit model, effort, timing, budget, delegation and safety choices.
 2. Check context before changing a knob. Missing requirements or files are not a model failure.
 3. Keep trivial, tightly coupled or already-contained work in the parent.
-4. Delegate only when a bounded specialist, context isolation or independent read-only
-   work repays startup and duplicated-context cost.
+4. Choose execution location and one orchestration owner using the section below.
+   Delegate only when isolation, specialist capability or independent work repays
+   startup, duplicated context, transfer, review and integration costs.
 5. **One write-capable owner per working tree.** Never run the parent and a writing
    subagent against overlapping files at the same time.
 6. Choose the initial model and effort from the task. Astra or xhigh can be chosen
@@ -49,6 +50,27 @@ not automatically faster.
 7. After an inadequate attempt, fix context or tools first; then add effort for missing
    depth, or a stronger model for missing capability or judgment.
 8. Count total completion cost: retries, review and integration, not token price alone.
+
+## Choose where work runs and who coordinates it
+
+Execution location is separate from model, effort, service tier and engineering method.
+Use the current task by default. Consider a bounded subagent for independent work within
+the task; an existing or new thread for a durable workstream; a connected remote machine
+for its files, tools or compute; and a cloud task for portable work with a reviewable
+return artifact. A separate chat is not automatically an isolated checkout or a remote
+executor. Moving the active work and creating a parallel worker are different actions.
+
+When one of these routes would help, read [execution locations](references/execution-locations.md)
+for selection, capability checks, authorization, dispatch, handoff and integration.
+Inspect relevant existing work before creating duplicates. Recommend a route freely;
+execute it only within the user's authorization and the live tool contract. A request
+to improve this router does not itself authorize new tasks or messages to other chats.
+
+Choose one owner of decomposition, dispatch and acceptance. When Ultra or an explicitly
+selected development workflow already owns orchestration, avoid adding another manager
+or duplicate agents. Read [orchestration compatibility](references/orchestration-compatibility.md)
+for host-specific Ultra behavior, Superpowers and other engineering frameworks. Work
+Router can supply constraints and location choice while that owner executes the plan.
 
 ## Decide whether a native goal helps
 
@@ -175,6 +197,10 @@ decisions, integration, final validation and the user-facing answer.
   Codex profile sync).
 - [long-running-work.md](references/long-running-work.md): multi-phase work, Claude Code
   dynamic workflows, Codex cross-window notes and outside advice.
+- [execution-locations.md](references/execution-locations.md): current task, subagents,
+  separate threads, remote and cloud execution; dispatch and return contracts.
+- [orchestration-compatibility.md](references/orchestration-compatibility.md): one
+  coordinator with native Ultra, Superpowers or another development workflow.
 - [native-goals.md](references/native-goals.md): conditional creation, standing opt-in,
   existing-goal ownership and host lifecycle rules.
 - [routing-scenarios.md](references/routing-scenarios.md): representative decisions.

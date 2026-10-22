@@ -8,6 +8,12 @@ For work that benefits from continued execution across turns, first apply the
 [native-goal policy](native-goals.md). A goal can keep a bounded outcome active;
 it does not replace the phase plan, evidence or authorization checks below.
 
+When phases span separate threads, remote machines or cloud tasks, use
+[execution locations](execution-locations.md) for destination checks, one coordinator,
+isolated writers and verified return/integration. Native orchestration or a selected
+engineering workflow may own a phase; resolve overlap through
+[orchestration compatibility](orchestration-compatibility.md).
+
 ## Phase ownership and completion
 
 Keep the overall user outcome and required scope visible, but detail only the current
