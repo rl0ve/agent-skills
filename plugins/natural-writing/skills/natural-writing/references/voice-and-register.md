@@ -16,6 +16,28 @@ Prefer stable tendencies over a memorable one-off line. Match the author's range
 
 If no sample exists, infer voice conservatively from the draft. Preserve unusual specifics, mixed feelings, and defensible quirks. Do not manufacture typos, slang, randomness, or false autobiography to seem human.
 
+## Format for the reader
+
+Treat formatting preferences as conditional choices, not an instruction to decorate every
+piece. Preserve an explicit plain-text, paragraph-only or spoken format.
+
+- **Selective bold:** emphasize a decision, action, key distinction or short lead-in that
+  helps scanning. Leave most text unbolded; do not highlight every sentence or add a
+  bold label to every bullet by habit.
+- **Sub-bullets:** use them for evidence, examples, caveats or next steps that belong to
+  one parent point. Keep independent points at the same level. Prefer one useful level
+  of nesting; deeper nesting needs a real hierarchy and a channel that renders it well.
+- **Headings and lists:** use direct action headings for a recommendation or plan and
+  bullets for parallel items. Keep explanations in connected prose; a short note may
+  need neither headings nor a list.
+- **Tables:** use a compact table when the reader compares the same attributes across
+  items. Do not turn long explanations into cells merely to make them look structured.
+- **Emojis:** use them sparingly when welcomed by the author and audience and when they
+  help identify an action or status. Do not treat them as a default emphasis style.
+
+Check rendered emphasis, list hierarchy and indentation in the destination. An independent
+export check does not establish that another viewer renders the same file correctly.
+
 ## Choose the register
 
 ### Executive and business writing

@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.16.2 - 2026-10-22
+
+- Clarify when selective bold, supporting sub-bullets, direct headings, tables and
+  occasional emojis help, and when prose or a flat list should remain unchanged.
+- Preserve explicit plain-text, paragraph-only and spoken requests; author preferences
+  guide the use case without becoming an always-on template.
+- Check the destination's actual rendering rather than inferring it from another viewer.
+- Validated with the package suites and an author policy review: a multi-topic brief
+  can group supporting evidence; a two-sentence note and a spoken script retain their
+  form. This is not a new independent model trial.
+
 ## 1.16.1 - 2026-10-22
 
 - Consult relevant saved author preferences before asking calibration questions again.

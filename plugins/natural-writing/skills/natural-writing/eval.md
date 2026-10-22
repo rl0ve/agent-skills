@@ -24,7 +24,7 @@ Run these checks before returning a diagnosis, edit, or draft. Fix every failed 
 12. Abstract claims are supported by available specifics, not stronger invented ones.
 13. Stock contrasts, fake insight, sales puffery, vague attribution, synonym cycling, canned transitions, and generic endings are absent or intentional.
 14. Sentence and paragraph rhythm varies because the ideas vary, not because variation was mechanically injected.
-15. Formatting follows the content; it does not decorate thin material.
+15. Formatting follows the content and relevant author preferences; it does not decorate thin material. Bold is selective, and sub-bullets support a parent rather than hiding independent points. Plain-text and spoken requests remain in their requested form.
 16. Standalone prose contains no ritual validation, prompt restatement, coaching theater, invented objection, or unrequested offer to continue.
 17. Creative prose modulates pace and earns figurative language instead of making every line vivid, explained, or profound.
 

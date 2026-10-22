@@ -134,6 +134,9 @@ After drafting, apply the same layered edit and evaluation. If the brief lacks a
   use selective bold lead-ins when useful. Keep causal reasoning and necessary setup
   in connected prose. Honor an author's established formatting preference without
   turning every sentence into a list, and verify the actual channel renders the format.
+- For choices about selective bold, sub-bullets, headings, tables or emojis, use
+  [Format for the reader](references/voice-and-register.md#format-for-the-reader).
+  Apply these selectively to the use case, not as an always-on author template.
 - Do not append a generic summary, uplift, call to action, or offer to continue.
 - Do not narrate the editing process unless the user asks.
 - Round-tripping prose through another agent or a plain-text scratch file converts inline markup to whatever carrier you chose (`<b>` to `**`, `<i>` to `_`). Convert every one of them back, and verify by counting each token type in the source and the result. A count that matches on bold and silently drops italics ships a literal underscore into the artifact.
@@ -149,7 +152,7 @@ Each reference has one job. Read the one the situation names and skip the rest.
 |---|---|---|
 | [references/pattern-catalog.md](references/pattern-catalog.md) | Every written-prose pattern, by family: content, structure, sentence, formatting, assistant residue, creative prose. Each table is followed by a worked before/after for every row in it, headed by the row's exact name. Also **Editing a set**, the false-positive guardrails, and the workflow examples. | The draft has repeated stock phrasing, generic structure, promotional tone, uniform cadence, or assistant-like residue; before editing many pieces to one standard; when a row's one-line repair is not enough to see the move. |
 | [references/spoken-register.md](references/spoken-register.md) | The spoken register in full: rules, the patterns that only fail out loud with a worked example for each, the pre-pass questions, the rules for speaker notes in a slide deck (lead with the strongest line, segue on the next slide, anchor to the slide without reading it), and the `--spoken` checks. | The piece is a talk track, demo script, presenter note, slide speaker notes, or narration. |
-| [references/voice-and-register.md](references/voice-and-register.md) | Building a voice model from samples, the written registers (including opt-in controlled English based on ASD-STE100), and the order in which conflicting instructions resolve. | Voice matching, or a channel-specific call. |
+| [references/voice-and-register.md](references/voice-and-register.md) | Building a voice model from samples, conditional formatting choices, the written registers (including opt-in controlled English based on ASD-STE100), and the order in which conflicting instructions resolve. | Voice matching, a channel-specific call, or deciding when emphasis and list nesting help. |
 | [references/model-routing.md](references/model-routing.md) | Who writes and who reviews: parent writes, read-only reviewer audits. | The user asks which model or agent should write or review, or consequential writing may justify an independent audit. |
 | [references/sources.md](references/sources.md) | Where the guidance came from and the rules for extending it. | Maintaining the skill. |
 
