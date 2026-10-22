@@ -43,6 +43,39 @@ Do not create user-visible tasks, persistent goals, recurring jobs, or additiona
 capacity merely to imitate a source's setup. Those are separate host capabilities with
 their own authorization requirements.
 
+## Collection work
+
+For large reviews, migrations or repeated edits across many items, establish the
+inventory and acceptance unit: an item, its supporting artifacts and any shared
+behavior. When standards or tooling are unsettled, calibrate on a small, varied
+pilot before scaling. A pilot does not replace required individual inspection.
+
+When repair needs are uncertain, triage the collection before serial deep
+reconstruction. Distinguish items that pass unchanged, local repairs, substantive
+repairs and genuine source limitations. Accept unchanged items after their required
+inspection; group proven defects into bounded repair batches and fix repeated
+defects at their shared owner. An urgent shared defect or blocking dependency may
+need repair first; then return to coverage. Triage is not permission to lower the
+standard, skip difficult items or invent missing source policy.
+
+Scope checks by item, shared component and final integration. Record which inputs
+or conditions invalidate accepted evidence. Reuse it while those remain unchanged;
+recheck affected dependencies when source, artifacts or shared behavior changes.
+Preserve required final gates. Check early that scoped generation and verification
+preserve aggregate records and unaffected outputs. If tooling forces global reruns
+or destroys unrelated evidence, repair it within scope or use an isolated batch
+before repeating the expensive loop.
+
+At meaningful batch checkpoints, assess accepted coverage, remaining proven repairs,
+newly discovered work and repeated verification effort. Reassess the method even
+when individual attempts succeed: serial refinement can leave the rest of the
+collection unexamined. Use observed throughput to inform forecasts; a growing
+artifact or test count alone does not establish progress toward acceptance. Consider
+sequencing, batching, tooling and evidence reuse before a model change, while keeping
+the full requested outcome intact. These are reassessment checkpoints, not invented
+budgets, stop conditions or reasons to reopen accepted work. Keep ordinary single
+fixes free of this collection-planning overhead.
+
 ## Define the loop before repeating attempts
 
 For a substantial repair, experiment or refinement loop, put its controls in the

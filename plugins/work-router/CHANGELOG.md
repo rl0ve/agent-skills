@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.18.1 - 2026-10-22
+
+- Add focused guidance for large collection reviews and repairs: calibrate when
+  needed, triage before serial deep reconstruction and batch proven shared defects.
+- Scope repeated checks by item, shared component and final integration; preserve
+  accepted evidence until relevant inputs change and check scoped tooling early.
+- Reassess overall coverage and repair throughput even when individual attempts
+  succeed. Preserve required review, full scope and final gates without adding
+  planning overhead to ordinary fixes or changing model and effort defaults.
+
 ## 1.18.0 - 2026-10-22
 
 - Recommend a useful main-thread model or reasoning change before substantial work

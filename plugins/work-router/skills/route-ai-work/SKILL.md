@@ -61,6 +61,10 @@ Before a substantial retry or refinement loop, use the
 to establish verification, applicable limits, progress checks and recovery. Continue
 useful work within scope; repeated activity alone does not establish progress.
 
+For large reviews, migrations or repeated edits across a collection, use
+[collection work](references/long-running-work.md#collection-work) to choose the
+acceptance unit, triage order, repair batches and scope of repeated checks.
+
 ## Choose where work runs and who coordinates it
 
 Execution location is separate from model, effort, service tier and engineering method.
