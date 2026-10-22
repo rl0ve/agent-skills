@@ -53,7 +53,7 @@ new application or a public copy of confidential sources.
 When a private shared project record already exists, link its knowledge section to
 this ledger instead of maintaining two copies. After accepting a phase or resolving
 conflicting evidence, update relevant claims and mark superseded conclusions with
-their replacements. Keep live records outside public repositories and preserve the
+their replacements. Keep confidential records out of public Git history and preserve the
 project's accepting owner and revision. If Work Router is available, its
 `route-ai-work/references/shared-project-state.md` supplies the coordination contract;
 research does not require that plugin or a shared-memory runtime.

@@ -1,7 +1,8 @@
 # Project context
 
-This is an empty template. Put live project records in approved private storage,
-outside code repositories. This folder does not synchronize itself.
+This is an empty template. Put private project records in approved private storage;
+an approved private Git repository is one option. Keep private context out of public
+history. This folder does not synchronize itself.
 
 Record the current outcome, scope and acceptance conditions here. Link only the
 resources needed for this project; repositories are optional. A project can link

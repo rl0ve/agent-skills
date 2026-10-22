@@ -70,6 +70,9 @@ When the requested setup includes shared project context, use
 the selected private record, not every project or personal memory store. Check realm,
 project, coordinator, revision and the actual backend/transport. Repositories are
 optional: desktop Work with local file access can use a private folder without Git.
+For a Git-backed record, verify the intended remote/audience and exact context commit;
+repository access does not imply file-level privacy. The helper requires `--allow-git`
+for explicitly selected checkouts and does not verify hosting visibility.
 
 For the local template layout, `private_project_state.py check` under
 `../route-ai-work/scripts/` checks placement, file modes, basic schema and an optional

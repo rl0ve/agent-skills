@@ -30,8 +30,9 @@ configure a work account. Company policy governs models, plugins, data and stora
    If unavailable, report the conflict and obtain a different explicit work choice;
    do not silently substitute a model or alter the personal profile. A company policy
    can restrict a preference. No profile changes the active model or service tier.
-4. Choose an approved private root outside all code repositories and a work realm
-   such as `work-example`. On a supported POSIX host, preview and then initialize an
+4. Choose an approved private root and a work realm such as `work-example`. A local
+   folder outside code repositories is the default; an approved private Git repository
+   is also an option. On a supported POSIX host, preview and then initialize an
    empty project from the trusted source checkout:
 
    ```bash
@@ -43,9 +44,14 @@ configure a work account. Company policy governs models, plugins, data and stora
    for an approved alternative. The helper copies empty templates only. It does not
    import personal notes, connect accounts or enable remote sharing. On Windows,
    use the templates with approved private ACLs; automatic initialization is POSIX-only.
+   For a selected Git checkout, use `--root` with its intended context subdirectory and
+   add `--allow-git`. Verify the actual repository audience separately; this option
+   neither verifies privacy nor commits or pushes files. Protect the local checkout
+   and Git object store as well as the working notes; the helper's permission check
+   covers only the state directory.
 5. In private work instructions or the task brief, bind this realm/project to its
    actual storage location, name the coordinator and identify permitted participants.
-   Avoid publishing that binding in a repository `AGENTS.md`. No repository is needed:
+   Keep that binding out of a public repository's `AGENTS.md`. No repository is needed:
    documents, folders and chats can be the project's only resources. Shared state is
    project-specific; a broader work reference library contains only approved reusable
    findings, not every project's active tasks.
@@ -58,7 +64,7 @@ configure a work account. Company policy governs models, plugins, data and stora
 For example, a work-only task instruction can say:
 
 > Use Work Router for this project. Read its private project record from the location
-> supplied in this task, keep live records outside repositories, and use only the
+> supplied in this task, keep private context out of public history, and use only the
 > selected work realm. Reconcile the current revision before accepting worker returns.
 
 Fill in the actual binding only on the approved private surface. Realm labels and
@@ -75,11 +81,18 @@ does not prove every Work surface can load it. Inspect the actual tools and supp
 instruction/skill surface.
 
 For a cloud or remote executor that cannot reach the folder, choose a company-approved
-shared document/tracker or pass an explicit revisioned snapshot and collect a return.
+shared document/tracker, private Git handoff, or explicit revisioned snapshot and collect a return.
 Use [the state contract](shared-project-state.md) for ownership and reconciliation.
 Do not copy personal cloud credentials, mount home folders or add a synchronization
 service to make the example work. Any broader sharing must fit the user's authorization
 and the organization's access rules.
+
+A private context repository may span several projects with one folder per project
+and a small reusable work library. All repository readers can see its committed
+content and history; use separate repositories for different audiences. An existing
+private code repository can also hold the state if that audience is appropriate.
+Public repositories should receive only reviewed, publishable handoffs. Git ignore
+rules and separate branches do not provide contributor-only secrecy.
 
 Obsidian is an optional Markdown reader/editor for the same private project files.
 It is unnecessary for Codex, and installing it or enabling its sync/plugins is a

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.6 - 2026-10-22
+
+- Clarify that confidential records stay out of public Git history; approved private
+  Git storage and reviewed publishable records remain valid project workflows.
+
 ## 1.0.5 - 2026-10-22
 
 - Reuse an existing private project claim ledger across coordinated work; link it

@@ -153,7 +153,8 @@ summarize summaries.
   what makes a replacement re-walk work you already ruled out.
 - **Save a durable private record.** Use the approved project file or document/tracker;
   a project without Git still needs a recoverable state spec. Keep private records
-  outside code repositories and pass an explicit snapshot if the destination lacks access.
+  out of public Git history. Approved private Git commits or document snapshots can
+  carry the handoff when the destination cannot read the same live folder.
 - **Expect the replacement to re-read current records.** Accepted project state and
   actual source artifacts take precedence over superseded transcript decisions. Check
   the revision and relevant inputs before continuing; load only the needed context.

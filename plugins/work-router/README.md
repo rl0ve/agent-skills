@@ -57,8 +57,10 @@ For shared context, use [private project state](skills/route-ai-work/references/
 Markdown decisions and knowledge, a compact task record, and one coordinator who
 accepts worker returns against current revisions. Projects can span repositories or
 have no Git repository, including ChatGPT Work with local files in desktop mode.
-The optional initializer creates empty owner-only local records outside Git; it does
-not synchronize machines. Obsidian is an optional viewer/editor for the Markdown.
+The optional initializer creates empty owner-only local records outside Git by default,
+with an explicit option for an approved checkout. A private project or companion
+repository can carry versioned handoffs; the helper does not commit, push or synchronize
+machines. Obsidian is an optional viewer/editor for the Markdown.
 
 The [work-account guide](skills/route-ai-work/references/work-account-setup.md) explains
 how to reuse public skills with separate private work records and managed policies.

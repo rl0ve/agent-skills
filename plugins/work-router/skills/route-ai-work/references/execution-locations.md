@@ -146,9 +146,10 @@ stable snapshot; record the reviewed commit and recheck changes that affect find
 
 Use the existing approved private project checkpoint or issue for a small coordination
 table. For shared decisions across tasks, apply [the state contract](shared-project-state.md)
-with revisions and per-attempt returns; keep local records outside code repositories.
+with revisions and per-attempt returns; keep private context out of public Git history.
 Projects can link multiple repositories or have none, including desktop Work with local
-documents. An executor's actual access determines the storage choice.
+documents. An executor's actual access determines the storage choice. An approved
+private project or companion repository can carry versioned context handoffs.
 
 | Work item / attempt | Owner / destination | Input revision / artifact base | Owned scope | Dependencies | State / return evidence |
 |---|---|---|---|---|---|

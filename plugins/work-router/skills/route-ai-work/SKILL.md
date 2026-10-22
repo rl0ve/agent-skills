@@ -73,7 +73,7 @@ local choice does not settle the route for later independent work.
 When tasks need shared decisions across sessions or environments, use
 [private project state](references/shared-project-state.md). Scope it by project,
 with optional repository links; desktop Work and other local projects can have no
-Git repository. Keep live records outside code checkouts, verify access and revision,
+Git repository. Keep private context out of public Git history, verify access and revision,
 and reconcile worker returns through one acceptance owner.
 
 Choose one owner of decomposition, dispatch and acceptance. When Ultra or an explicitly

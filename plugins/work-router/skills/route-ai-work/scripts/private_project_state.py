@@ -26,16 +26,21 @@ def slug(value: str) -> str:
     return value
 
 
-def checked_path(path: Path) -> Path:
+def in_git_checkout(path: Path) -> bool:
+    return any(os.path.lexists(part / ".git") for part in (path, *path.parents))
+
+
+def checked_path(path: Path, allow_git: bool = False) -> Path:
     path = Path(os.path.abspath(path.expanduser()))
     for part in (path, *path.parents):
         if part.is_symlink() or (hasattr(part, "is_junction") and part.is_junction()):
             raise ValueError("Use a canonical path without symlinks or junctions.")
-        if os.path.lexists(part / ".git") or (
-            (part / "HEAD").is_file() and (part / "objects").is_dir()
+        if ((part / "HEAD").is_file() and (part / "objects").is_dir()
             and (part / "refs").is_dir()
         ):
-            raise ValueError("Private state must be outside every Git checkout and bare repository.")
+            raise ValueError("Project state cannot be placed inside Git metadata or a bare repository.")
+    if in_git_checkout(path) and not allow_git:
+        raise ValueError("Git placement requires --allow-git after selecting the repository and reviewing its audience.")
     return path
 
 
@@ -149,8 +154,9 @@ def validate_record(record: dict, realm: str, project: str) -> None:
                    if task_id not in ready}
 
 
-def inspect_state(path: Path, realm: str, project: str, expected_revision: int | None = None) -> dict:
-    path = checked_path(path)
+def inspect_state(path: Path, realm: str, project: str, expected_revision: int | None = None,
+                  allow_git: bool = False) -> dict:
+    path = checked_path(path, allow_git=allow_git)
     if not path.is_dir():
         raise ValueError("State directory is unavailable on this executor.")
     inspect_entry(path)
@@ -178,21 +184,27 @@ def inspect_state(path: Path, realm: str, project: str, expected_revision: int |
         "revision": record["revision"],
         "coordinator_assigned": record["coordinator"] is not None,
         "task_count": len(record["tasks"]),
-        "git_placement": "outside-repositories",
+        "git_placement": "checkout-explicitly-selected" if in_git_checkout(path) else "outside-repositories",
+        "repository_visibility": "not-verified" if in_git_checkout(path) else "not-applicable",
         "permissions": "owner-only-posix" if os.name == "posix" else "acl-unverified",
+        "permissions_scope": "state-directory-only",
+        "git_storage_permissions": "not-verified" if in_git_checkout(path) else "not-applicable",
         "remote_access": "not-tested",
         "sync": "not-provided",
     }
 
 
-def initialize(root: Path, realm: str, project: str, apply: bool = False) -> dict:
+def initialize(root: Path, realm: str, project: str, apply: bool = False,
+               allow_git: bool = False) -> dict:
     slug(realm)
     slug(project)
-    destination = checked_path(root / realm / project)
+    destination = checked_path(root / realm / project, allow_git=allow_git)
     if destination.exists():
         raise ValueError("State already exists; inspect it instead of initializing over it.")
     if not apply:
-        return {"status": "preview", "destination": str(destination), "writes": False}
+        return {"status": "preview", "destination": str(destination), "writes": False,
+                "git_placement": "checkout-explicitly-selected" if in_git_checkout(destination) else "outside-repositories",
+                "repository_visibility": "not-verified" if in_git_checkout(destination) else "not-applicable"}
     if os.name != "posix":
         raise ValueError("Automatic initialization requires POSIX permissions; use the templates with an approved Windows ACL setup.")
     if os.geteuid() == 0 or os.environ.get("SUDO_UID"):
@@ -201,6 +213,8 @@ def initialize(root: Path, realm: str, project: str, apply: bool = False) -> dic
     # transcripts, credentials or environment values are copied by this command.
     templates = {name: (ASSETS / name).read_bytes()
                  for name in ("INDEX.md", "DECISIONS.md", "KNOWLEDGE.md")}
+    # Preserve the empty return area when a selected Git backend transfers a fresh project.
+    templates["returns/.gitkeep"] = b""
     missing = []
     parent = destination.parent
     while not parent.exists():
@@ -208,7 +222,7 @@ def initialize(root: Path, realm: str, project: str, apply: bool = False) -> dic
         parent = parent.parent
     for directory in reversed(missing):
         directory.mkdir(mode=0o700)
-    checked_path(destination)
+    checked_path(destination, allow_git=allow_git)
     destination.mkdir(mode=0o700)
     (destination / "returns").mkdir(mode=0o700)
     for name, content in templates.items():
@@ -224,7 +238,7 @@ def initialize(root: Path, realm: str, project: str, apply: bool = False) -> dic
     with os.fdopen(descriptor, "w", encoding="utf-8") as handle:
         json.dump(record, handle, indent=2)
         handle.write("\n")
-    result = inspect_state(destination, realm, project)
+    result = inspect_state(destination, realm, project, allow_git=allow_git)
     return {**result, "status": "initialized", "destination": str(destination)}
 
 
@@ -236,19 +250,25 @@ def main(argv: list[str] | None = None) -> int:
     init.add_argument("--realm", required=True)
     init.add_argument("--project", required=True)
     init.add_argument("--apply", action="store_true")
+    init.add_argument("--allow-git", action="store_true",
+                      help="Use an explicitly selected Git checkout; visibility and publication safety are not verified")
     check = modes.add_parser("check", help="Read-only local placement, permission and revision inspection")
     check.add_argument("--state-dir", type=Path, required=True)
     check.add_argument("--realm", required=True)
     check.add_argument("--project", required=True)
     check.add_argument("--expected-revision", type=int)
+    check.add_argument("--allow-git", action="store_true",
+                       help="Inspect an explicitly selected Git checkout; visibility and publication safety are not verified")
     args = parser.parse_args(argv)
     try:
         slug(args.realm)
         slug(args.project)
         if args.mode == "init":
-            result = initialize(args.root, args.realm, args.project, args.apply)
+            result = initialize(args.root, args.realm, args.project, args.apply,
+                                allow_git=args.allow_git)
         else:
-            result = inspect_state(args.state_dir, args.realm, args.project, args.expected_revision)
+            result = inspect_state(args.state_dir, args.realm, args.project, args.expected_revision,
+                                   allow_git=args.allow_git)
         print(json.dumps(result, indent=2))
         return 0
     except (OSError, ValueError, RecursionError) as error:

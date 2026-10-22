@@ -5,6 +5,8 @@ import json
 import os
 from pathlib import Path
 import stat
+import shutil
+import subprocess
 import tempfile
 import unittest
 
@@ -89,7 +91,7 @@ class PrivateProjectStateTests(unittest.TestCase):
                 else:
                     (repo / ".git").write_text("gitdir: elsewhere")
                 (repo / ".gitignore").write_text("private/\n")
-                with self.assertRaisesRegex(ValueError, "outside every Git"):
+                with self.assertRaisesRegex(ValueError, "Git placement requires"):
                     STATE.initialize(repo / "private", "personal", "project", apply=True)
                 self.assertFalse((repo / "private").exists())
 
@@ -97,14 +99,80 @@ class PrivateProjectStateTests(unittest.TestCase):
         (self.root / "HEAD").write_text("ref: refs/heads/main")
         (self.root / "objects").mkdir()
         (self.root / "refs").mkdir()
-        with self.assertRaisesRegex(ValueError, "outside every Git"):
+        with self.assertRaisesRegex(ValueError, "bare repository"):
             self.initialize()
+        with self.assertRaisesRegex(ValueError, "bare repository"):
+            STATE.initialize(self.storage, "work-example", "research", apply=True, allow_git=True)
 
     def test_state_copied_into_checkout_is_detected(self):
         self.initialize()
         (self.storage / ".git").mkdir()
-        with self.assertRaisesRegex(ValueError, "outside every Git"):
+        with self.assertRaisesRegex(ValueError, "Git placement requires"):
             self.inspect()
+
+    def test_explicit_git_placement_does_not_claim_visibility_or_sync(self):
+        self.storage.mkdir()
+        (self.storage / ".git").mkdir()
+        preview = STATE.initialize(self.storage, "work-example", "research", allow_git=True)
+        self.assertEqual(preview["git_placement"], "checkout-explicitly-selected")
+        self.assertEqual(preview["repository_visibility"], "not-verified")
+        self.assertFalse(self.folder.exists())
+        result = STATE.initialize(self.storage, "work-example", "research", apply=True, allow_git=True)
+        self.assertEqual(result["repository_visibility"], "not-verified")
+        self.assertEqual(result["permissions_scope"], "state-directory-only")
+        self.assertEqual(result["git_storage_permissions"], "not-verified")
+        self.assertEqual(result["sync"], "not-provided")
+        self.assertEqual(list((self.storage / ".git").iterdir()), [])
+        self.assertEqual(self.inspect(allow_git=True, expected_revision=0)["revision"], 0)
+        with self.assertRaisesRegex(ValueError, "Git placement requires"):
+            self.inspect()
+
+    def test_explicit_git_option_preserves_link_and_permission_checks(self):
+        self.storage.mkdir()
+        (self.storage / ".git").mkdir()
+        STATE.initialize(self.storage, "work-example", "research", apply=True, allow_git=True)
+        (self.folder / "STATE.json").chmod(0o644)
+        with self.assertRaisesRegex(ValueError, "group/other"):
+            self.inspect(allow_git=True)
+        alias = self.root / "alias"
+        alias.symlink_to(self.storage, target_is_directory=True)
+        with self.assertRaisesRegex(ValueError, "canonical path"):
+            STATE.initialize(alias, "work-example", "other", apply=True, allow_git=True)
+
+    def test_cli_git_option_is_explicit_and_does_not_publish(self):
+        self.storage.mkdir()
+        (self.storage / ".git").write_text("gitdir: synthetic-worktree-metadata")
+        output = io.StringIO()
+        with redirect_stdout(output), redirect_stderr(output):
+            code = STATE.main(["init", "--root", str(self.storage), "--realm", "work-example",
+                               "--project", "research", "--allow-git", "--apply"])
+        self.assertEqual(code, 0)
+        self.assertEqual(json.loads(output.getvalue())["repository_visibility"], "not-verified")
+        self.assertEqual((self.storage / ".git").read_text(), "gitdir: synthetic-worktree-metadata")
+
+    @unittest.skipUnless(shutil.which("git"), "Git is needed for the local transfer fixture")
+    def test_fresh_git_state_survives_commit_and_local_clone(self):
+        repository = self.root / "source-repo"
+        clone = self.root / "cloned-repo"
+        git_env = {**os.environ, "GIT_CONFIG_NOSYSTEM": "1", "GIT_CONFIG_GLOBAL": os.devnull}
+        def git(*args):
+            subprocess.run(["git", *map(str, args)], env=git_env, check=True,
+                           capture_output=True, text=True)
+        git("init", "-q", repository)
+        STATE.initialize(repository / "context", "work-example", "research", apply=True, allow_git=True)
+        git("-C", repository, "add", "context")
+        git("-C", repository, "-c", "user.name=State Fixture", "-c",
+            "user.email=fixture@example.invalid", "-c", "commit.gpgsign=false",
+            "commit", "-qm", "Synthetic empty project")
+        git("clone", "--quiet", repository, clone)
+        folder = clone / "context" / "work-example" / "research"
+        # Git does not carry owner-only mode bits; check the documented destination setup.
+        for path in [folder, *folder.rglob("*")]:
+            path.chmod(0o700 if path.is_dir() else 0o600)
+        self.assertTrue((folder / "returns" / ".gitkeep").is_file())
+        result = STATE.inspect_state(folder, "work-example", "research", 0, allow_git=True)
+        self.assertEqual(result["status"], "local-layout-checked")
+        self.assertEqual(result["repository_visibility"], "not-verified")
 
     def test_symlinked_root_is_refused(self):
         target = self.root / "real"

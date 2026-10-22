@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.16.1 - 2026-10-22
+
+- Keep private context out of public Git history without banning Git-backed state.
+  Support an approved private project repository, a private context repository across
+  projects with the same audience, and reviewed publishable handoffs in public repos.
+- Clarify that same-machine chats can share ordinary local files without a sync service.
+  GitHub access is repository-wide; ignored files and separate branches are not a
+  contributor-only privacy mechanism.
+- Add explicit `--allow-git` initialization/inspection while preserving local defaults,
+  permission checks and refusal of Git metadata/bare repositories. The helper does
+  not verify hosting visibility, initialize Git, commit, push or synchronize machines.
+- Preserve an empty returns directory through Git handoffs and distinguish the local
+  state-directory permission check from protection of copies in Git's object store.
+
 ## 1.16.0 - 2026-10-22
 
 - Add private project-state guidance for shared decisions, task/attempt revisions,

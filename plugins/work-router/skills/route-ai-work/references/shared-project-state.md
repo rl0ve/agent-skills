@@ -16,10 +16,10 @@ Choose storage by actual executor access, not by the product name or Git availab
 
 | Environment | Suitable starting point | What must be verified |
 |---|---|---|
-| Codex desktop or CLI with local files | Private folder outside all code repositories | Current account/realm, allowed folder, current revision and one coordinator |
+| Codex desktop or CLI with local files | Private local folder by default; approved Git placement is optional | Current account/realm, allowed folder, current revision and one coordinator |
 | ChatGPT Work in desktop mode with local file access, including projects without Git | The same private folder approach | The task's actual local file tools and sandbox access; no repository is required |
 | Cloud Work or another environment without that local folder | An approved private document/tracker, or an explicit versioned handoff | Reader/writer permissions, revision and return mechanism through supported tools |
-| Remote executor or several machines | An approved shared backend, or coordinator-issued snapshots with returns | Each executor reads the same accepted revision, or declares its snapshot and reconciles before acceptance |
+| Remote executor or several machines | An approved shared backend, private Git handoff, or coordinator-issued snapshots with returns | Each executor reads the same accepted revision, or declares its snapshot and reconciles before acceptance |
 
 Local folders with the same name, two Git checkouts, and an Obsidian vault on another
 machine are separate copies until transport and readback are verified. An approved
@@ -27,17 +27,51 @@ sync service may transfer files, but conflict copies and eventual consistency st
 require one acceptance owner. Do not add a sync service, connector, daemon, graph
 database or recurring job merely to follow this method.
 
-Public skills contain methods and empty templates. Live records, source excerpts,
-private resource links, machine paths and account bindings belong in approved private
-storage **outside every code checkout**, including ignored directories and worktrees.
-An ignored file can still be force-added or copied into an artifact. Before publishing,
-inspect the actual staged files and generated deliverables for copied private content.
+On one machine, several authorized chats can read the same local project folder; that
+is already shared state and needs no cloud synchronization. The default location is
+`~/.agent-skills/project-state/<realm>/<project>/`. Neither the number of chats nor a
+router installation selects OneDrive, Google Drive, Git hosting or another service.
+
+Keep private context out of **public Git history and public artifacts**. Local storage
+outside a checkout is a convenient default, not a ban on Git. A private repository
+can hold project state when its readers are the intended audience; a public repository
+can hold a reviewed, publishable handoff. Public skills packages contain generic methods
+and empty templates. Before committing or publishing, inspect the actual staged files,
+included history and generated deliverables for private content. An ignored file can
+still be force-added or copied into an artifact.
 
 Realm names such as `personal` and `work-example` prevent accidental mixing; they are
 not access controls. A process with the same OS permissions may read both. Use approved
 account/device isolation and storage permissions where that boundary matters. Keep
 credentials in the host's secret mechanism. Do not copy managed memory stores or
 disable host memory because an external workflow suggests one memory directory.
+
+## Git as a versioned handoff
+
+Git is a useful option when the relevant executors can use it. Use the existing project
+repository if its audience fits, or a separate private context repository. The latter
+can hold several projects under separate folders plus a curated shared library, as
+long as everyone with repository read access may see all of that material. Separate
+personal/work records, or teams with different audiences, into different repositories
+when access must differ. Folder names do not create per-project permissions.
+
+Standard GitHub repository access does not provide contributor-only hidden committed
+files. A reader can clone the committed files and history. `.gitignore` affects
+tracking; it neither hides an already committed file nor shares an untracked file with
+another machine. Keep a local-only note untracked if that is the chosen scope, and use
+an approved private repository or document for content that must be shared with fewer
+people than the code repository's readers. Do not invent a hidden branch or path ACL.
+
+For a Git handoff, record the exact context commit and project-state revision alongside
+the code/document input versions. The coordinator commits a coherent snapshot; the
+recipient fetches and reads that exact commit, then returns an artifact tied to it.
+Confirm the remote, visibility, audience and successful transfer under existing
+publication authority. Git is not live shared memory: reconcile a stale checkout and
+conflicting returns before acceptance. No force-push or public upload is implied.
+
+Use an already approved storage mechanism when it fits. If a new private repository,
+Drive location or permission grant is needed, resolve that concrete choice with the
+user under the host's rules. The skill configures none of these automatically.
 
 ## A small, readable record
 
@@ -51,6 +85,9 @@ existing private tracker can represent the same fields without these filenames.
 | `DECISIONS.md` | Accepted decisions, reasons, unresolved conflicts and supersessions |
 | `KNOWLEDGE.md` | Sourced findings useful beyond the current phase, or a link to an existing claim ledger |
 | `returns/` | Immutable report per task attempt, with exact inputs, artifacts, checks and limits |
+
+The initializer includes an empty `returns/.gitkeep` so a fresh Git handoff retains
+the return directory before any worker has submitted a report.
 
 Obsidian can view and link these Markdown files if the user wants it. It is optional;
 the files remain usable through ordinary file tools. Keep the same write ownership
@@ -73,7 +110,18 @@ private location. From an installed plugin, the script is under
 installed templates or put project data in the plugin cache.
 
 Initialization uses owner-only POSIX permissions and refuses root, linked paths and
-Git placement. Windows initialization needs an approved ACL setup using the templates;
+Git placement by default. Add `--allow-git` to `init` or `check` only for an explicitly
+selected checkout and storage/publication plan: keep local-only private files untracked,
+or verify the repository audience before sharing committed records. The flag reports repository
+visibility as unverified; it does not inspect hosting permissions, initialize Git,
+commit, push or make private content publishable. Git metadata directories and bare
+repositories remain invalid destinations. Git does not preserve owner-only file modes;
+verify local permissions after a clone/checkout. Committed content also lives in Git's
+object store, outside the state folder. Use an approved privacy boundary around the
+checkout and its Git storage, including a worktree's separate common directory. The
+helper checks only the state directory; it does not inspect or change Git storage
+permissions. Correct permissions only within the approved scope, rather than applying
+repository-wide changes automatically. Windows initialization needs an approved ACL setup using the templates;
 the checker reports Windows ACLs as unverified. `check` is read-only: it checks local
 placement, file modes, basic schema and an optional exact revision. It does not prove
 source correctness, account isolation, effective ACLs, remote access, live ownership
@@ -156,6 +204,8 @@ Reviewed October 22, 2026. This adapts a method, not a measured performance adva
 [his consolidation example](https://x.com/steipete/status/2105368397177389183),
 [OpenClaw's dreaming gates](https://github.com/openclaw/openclaw/blob/main/docs/concepts/dreaming.md),
 and [Open Knowledge Format provenance](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md).
+Git access boundaries follow [GitHub's repository model](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories)
+and [ignore-file behavior](https://docs.github.com/en/get-started/git-basics/ignoring-files).
 The router supplies an operating contract and a local layout checker, not those
 systems' runtimes. Validate stale returns, conflicting decisions, crash recovery,
 missing remote access and a project without Git before claiming a setup works across
