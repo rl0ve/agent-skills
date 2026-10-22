@@ -4,6 +4,31 @@ Use these cases to review policy changes. They are expected decisions, not model
 performance measurements. All delegation assumes host support and user permission;
 keep one write-capable owner per working tree.
 
+## Native-goal decisions
+
+These cases review the [native-goal policy](native-goals.md); they do not execute goal
+tools or establish host integration. Applicable explicit authorization is independent
+of whether a task benefits from a goal.
+
+| Situation | Expected decision | Reason |
+|---|---|---|
+| Defined branch integration needs dependent checks across turns; applicable standing opt-in; no unfinished goal | Inspect live state, create one parent-owned goal, omit an unrequested token budget | Fit, authority and capability are all present. |
+| Same integration task, but no explicit goal request or standing opt-in | Continue normally; recommend a goal only if materially helpful | A long task or loaded skill is not consent. |
+| User explicitly requests a specific goal for a short task | Honor it within the host's rules | Explicit intent overrides the usefulness recommendation. |
+| Standing opt-in, but a typo, bounded audit, one-off review or short visual pass | Finish normally without a goal | Native persistence adds no useful control. |
+| UI and 3D routes load while a matching goal is active | Reuse the parent's goal; no child or per-round goal | One accepting owner and one objective. |
+| An unrelated unfinished goal exists | Preserve it; continue separable authorized work normally | Never complete, pause or replace it to free a slot. |
+| Existing goal is user-paused, blocked or budget-limited | Follow host resume/limit semantics | Standing creation permission does not authorize resumption or a limit bypass. |
+| User says no goal despite a saved opt-in | Do not create one or silently mutate an existing goal | The current explicit instruction wins. |
+| Only a stop tool exists, inspection is unavailable, or creation fails | Continue with normal task/checkpoint management; describe limitations if relevant | Do not invent native state or a substitute scheduler. |
+| Creation response is uncertain | Inspect live state before retrying | Avoid duplicate or falsely reported goals. |
+| Two fidelity rounds end with a required visual check still failing | Preserve unmet criteria; reassess the approach within scope | A round cap is not successful completion. |
+| Same blocker recurs for three consecutive goal turns and no independent progress is possible | Mark blocked under the current Codex contract | Multiple retries within one turn do not establish the threshold. |
+| User resumes a previously blocked goal | Start a fresh blocker audit | Previous blocked turns do not immediately re-block the resumed run. |
+| Open-ended project coordination or indefinite monitoring | No automatic goal; use a bounded task or separately authorized schedule | An ambition has no verifiable finish line. |
+
+## Execution routes
+
 | Situation | Expected decision | Reason |
 |---|---|---|
 | Sol or Astra parent, a one-file correction with context loaded | Finish in the parent at its active setting | A handoff adds work. |

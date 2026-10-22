@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.21.2 - 2026-10-22
+
+- Defer native-goal decisions for substantial UI and 3D continuations to Work Router.
+  Keep one accepting owner and its authorization/state checks; do not create goals
+  per asset, specialist or fidelity round. Short passes use ordinary execution.
+
 ## 1.21.1 — 2026-10-20
 
 - Rendered-site annotation review names Clear Assessment Guides for shareable assessments and decision boards, and Visual Version Review for choosing among implemented versions.

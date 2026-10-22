@@ -6,6 +6,8 @@ reliable completion second, and cost/token use third unless the user chooses oth
 The plugin contributes:
 
 - `/work-router:route-ai-work`, an auto-invocable policy with a table for each host;
+- [conditional native goals](skills/route-ai-work/references/native-goals.md), with
+  explicit authorization, live-state reuse and host lifecycle checks;
 - `/work-router:check-routing-setup`, a manual, read-only environment check;
 - `/work-router:discover-capabilities`, focused discovery for missing capabilities;
 - `/work-router:deduplicate-skills`, installed-skill auditing and scoped consolidation;

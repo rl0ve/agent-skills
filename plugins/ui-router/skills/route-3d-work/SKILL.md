@@ -19,6 +19,8 @@ pipeline in charge, and judge the result from the running build.
 
 Use one lead. Add at most three layers for the current pass.
 
+Defer conditional native goals to Work Router; never one per round.
+
 ## 2. Map runtime to knowledge
 
 | Runtime | Base knowledge | Technique layers |

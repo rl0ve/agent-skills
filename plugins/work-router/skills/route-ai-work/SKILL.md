@@ -1,6 +1,6 @@
 ---
 name: route-ai-work
-description: Choose model, effort and delegation for agent work. Use when picking or changing a model or effort level, deciding whether to delegate or run parallel agents, planning long autonomous or multi-agent work, or when the user asks to save tokens or time. Ordinary single-session tasks stay in the parent without this skill. Do not delegate trivial work.
+description: Choose model, effort, delegation and conditional native goals for agent work. Use when selecting execution settings, planning long autonomous or multi-agent work, deciding whether a goal is warranted, or saving time or tokens. Ordinary single-session tasks stay in the parent. Do not delegate trivial work or create goals merely because work is substantial.
 compatibility: Claude Code and Codex. Each has its own route table below; the method is the same.
 ---
 
@@ -49,6 +49,18 @@ not automatically faster.
 7. After an inadequate attempt, fix context or tools first; then add effort for missing
    depth, or a stronger model for missing capability or judgment.
 8. Count total completion cost: retries, review and integration, not token price alone.
+
+## Decide whether a native goal helps
+
+For work likely to need continued execution across turns, or when the user asks about
+goals, apply [the native-goal policy](references/native-goals.md) once in the owning
+chat. Automatic creation requires a bounded outcome, verifiable finish and material
+continuation benefit. A user's explicit request for a specific goal overrides that
+usefulness recommendation, subject to host rules. With applicable authorization and
+host support, inspect current state, reuse a matching active goal, or create one when
+none is unfinished. Ordinary edits and one-off reviews or audits need no automatic
+goal. Loading this skill or judging a task substantial is not consent. UI Router
+defers this decision here.
 
 For new capabilities use [discover-capabilities](../discover-capabilities/SKILL.md); for
 duplicate skills use [deduplicate-skills](../deduplicate-skills/SKILL.md). Neither runs
@@ -159,6 +171,8 @@ decisions, integration, final validation and the user-facing answer.
   Codex profile sync).
 - [long-running-work.md](references/long-running-work.md): multi-phase work, Claude Code
   dynamic workflows, Codex cross-window notes and outside advice.
+- [native-goals.md](references/native-goals.md): conditional creation, standing opt-in,
+  existing-goal ownership and host lifecycle rules.
 - [routing-scenarios.md](references/routing-scenarios.md): representative decisions.
 - [routing-basis.md](references/routing-basis.md): distilled policy and current-product overlay.
 - [benchmark-sources.md](references/benchmark-sources.md): release reviews and comparisons.

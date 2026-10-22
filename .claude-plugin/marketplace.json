@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Portable agent skills and routing plugins: model and UI routers, natural writing, walkthrough video, capability storyboards, decks, assessment guides, and visual version review.",
-    "version": "1.21.1"
+    "version": "1.21.2"
   },
   "plugins": [
     {
       "name": "ui-router",
       "source": "./plugins/ui-router",
       "description": "Design routing, interactive-world choices, visual resources, and verified interactions",
-      "version": "1.21.1",
+      "version": "1.21.2",
       "category": "Development",
       "tags": [
         "ui",
@@ -41,7 +41,7 @@
       "name": "work-router",
       "source": "./plugins/work-router",
       "description": "Routes substantial agent work by task shape, ambiguity, risk, latency, and token use, with tables for Claude Code and Codex. Includes capability discovery, skills ecosystem audits, plugin distribution audits, and scoped deduplication of installed skills.",
-      "version": "1.12.0",
+      "version": "1.13.0",
       "category": "Productivity",
       "tags": [
         "routing",

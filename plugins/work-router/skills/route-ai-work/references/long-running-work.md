@@ -4,6 +4,10 @@ Use for several dependent phases, repeated loss of context, or stalled progress 
 by polishing already adequate work. Keep ordinary edits in the parent without creating
 a manager, dashboard, or elaborate checklist.
 
+For work that benefits from continued execution across turns, first apply the
+[native-goal policy](native-goals.md). A goal can keep a bounded outcome active;
+it does not replace the phase plan, evidence or authorization checks below.
+
 ## Phase ownership and completion
 
 Keep the overall user outcome and required scope visible, but detail only the current

@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.13.0 - 2026-10-22
+
+- Add conditional native-goal routing: require a bounded outcome, verifiable finish
+  and useful continuation across turns. Inspect live state, reuse a matching goal,
+  and create only with applicable explicit authorization and host support. Keep
+  personal standing opt-ins separate from the plugin; skip routine edits, one-off
+  audits and reviews, child goals and indefinite projects. Preserve host lifecycle
+  rules, budget boundaries and ordinary execution when goals are unavailable.
+
 ## 1.12.0 - 2026-10-21
 
 - Add Skills ecosystem audit: compare bookmarks, GitHub stars, and current discussion

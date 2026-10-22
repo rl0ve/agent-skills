@@ -16,6 +16,13 @@ capability-inventory or sample-selection sequence for a mechanical typo, token o
 contrast correction. Creating or rewriting prose needs the copy ownership below; a
 mechanical correction does not require a new semantic-owner/editor handoff.
 
+For a UI outcome likely to need continued execution across turns, let
+`work-router:route-ai-work` own the native-goal decision once. It checks fit, explicit
+authorization and existing state; UI Router adds no separate goal or permission.
+Small fixes, one-off reviews and short visual passes continue normally. If Work Router
+or native goals are unavailable, use the current plan and host rules without inventing
+a replacement goal mechanism.
+
 1. Honor explicit skill, model, framework, aesthetic, reference, fidelity, and scope choices.
 2. Read [references/taxonomy.md](references/taxonomy.md) and classify one primary surface plus one audience from this project's purpose. Do not inherit an audience or aesthetic from the user's profession, previous projects, or use of AI to build.
 3. Ask one short question only when two plausible classifications produce materially different work.
