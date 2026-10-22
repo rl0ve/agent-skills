@@ -1,6 +1,6 @@
 ---
 name: route-ai-work
-description: Choose model, effort, orchestration and execution location for agent work, including subagents, separate threads, remote machines and cloud tasks. Use for routing decisions, coordinated work, conditional native goals or workflow conflicts. Check host capabilities and authorization before dispatch. Ordinary contained work stays in the parent.
+description: Choose model, effort, orchestration and execution location for agent work, including subagents, separate threads, remote machines and cloud tasks. Use for routing decisions, coordinated work, private project context, conditional native goals or workflow conflicts. Check host capabilities and authorization before dispatch. Ordinary contained work stays in the parent.
 compatibility: Claude Code and Codex. Each has its own route table below; the method is the same.
 ---
 
@@ -69,6 +69,12 @@ to improve this router does not itself authorize new tasks or messages to other 
 During coordinated work, [reassess routes at meaningful checkpoints](references/execution-locations.md#reassess-at-coordination-checkpoints),
 including phase completion and before closing an authorized work window. An initial
 local choice does not settle the route for later independent work.
+
+When tasks need shared decisions across sessions or environments, use
+[private project state](references/shared-project-state.md). Scope it by project,
+with optional repository links; desktop Work and other local projects can have no
+Git repository. Keep live records outside code checkouts, verify access and revision,
+and reconcile worker returns through one acceptance owner.
 
 Choose one owner of decomposition, dispatch and acceptance. When Ultra or an explicitly
 selected development workflow already owns orchestration, avoid adding another manager
@@ -187,6 +193,9 @@ decisions, integration, final validation and the user-facing answer.
   environments, use [profile setup](references/portable-preferences.md). Explicitly
   select the profile and host, preview, apply and verify. Shipped templates are inert;
   loading or installing this plugin never opts a user into personal preferences.
+- **Work accounts:** use [work-account setup](references/work-account-setup.md) for
+  separate private project records, managed policies and per-environment verification.
+  A sign-in change or realm label alone does not establish data isolation.
 - **Claude Code managed workspaces:** model aliases and effort levels are requests;
   company `availableModels`, effort caps and provider mappings win. Report the actual
   model when Claude Code substitutes one, and do not bypass company policy.
@@ -203,6 +212,10 @@ decisions, integration, final validation and the user-facing answer.
   dynamic workflows, Codex cross-window notes and outside advice.
 - [execution-locations.md](references/execution-locations.md): current task, subagents,
   separate threads, remote and cloud execution; dispatch and return contracts.
+- [shared-project-state.md](references/shared-project-state.md): private project scope,
+  local and shared storage, revisions, worker returns and evidence consolidation.
+- [work-account-setup.md](references/work-account-setup.md): reuse the public method in
+  a work environment without importing personal records; includes desktop Work without Git.
 - [orchestration-compatibility.md](references/orchestration-compatibility.md): one
   coordinator with native Ultra, Superpowers or another development workflow.
 - [native-goals.md](references/native-goals.md): conditional creation, standing opt-in,

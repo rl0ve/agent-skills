@@ -51,6 +51,19 @@ supplies model and location constraints. Choose one coordinator for each phase a
 avoid duplicate agent/review loops. Neither option is required for remote routing,
 and Ultra is separate from the Ultrafast service tier.
 
+## Private project context
+
+For shared context, use [private project state](skills/route-ai-work/references/shared-project-state.md):
+Markdown decisions and knowledge, a compact task record, and one coordinator who
+accepts worker returns against current revisions. Projects can span repositories or
+have no Git repository, including ChatGPT Work with local files in desktop mode.
+The optional initializer creates empty owner-only local records outside Git; it does
+not synchronize machines. Obsidian is an optional viewer/editor for the Markdown.
+
+The [work-account guide](skills/route-ai-work/references/work-account-setup.md) explains
+how to reuse public skills with separate private work records and managed policies.
+Public packages contain methods and templates, never the live project library.
+
 ## Optional routing override
 
 Use a [removable override](skills/route-ai-work/references/routing-overrides.md) when you

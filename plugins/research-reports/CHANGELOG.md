@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.5 - 2026-10-22
+
+- Reuse an existing private project claim ledger across coordinated work; link it
+  instead of maintaining competing copies. Consolidate accepted evidence and mark
+  superseded conclusions while preserving private storage and acceptance ownership.
+- Point to Work Router's shared-state contract when available without adding a
+  required plugin or memory runtime dependency.
+
 ## 1.0.4 - 2026-10-22
 
 - Carry saved writing and formatting preferences into the report's reading contract.

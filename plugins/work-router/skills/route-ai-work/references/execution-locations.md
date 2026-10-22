@@ -13,7 +13,7 @@ create connections or make every host capable of dispatching tasks.
 | Existing separate thread | An established owner already has the context or is progressing on the dependency | Read its current state first; a message can start or steer work. |
 | New separate thread or fork | A separable workstream needs its own history, lifecycle or user inspection | Extra coordination and a return path are required. A fork carries history and can inherit an interrupted turn. |
 | Connected remote machine | Required software, hardware, data or an established checkout lives there | Connection, authentication, dependencies, model support and host policies must work there. |
-| Cloud task | Portable repository work, batch validation or independent analysis with transferable inputs and outputs | Setup, queues, repository access, missing assets and return/integration can erase the benefit. |
+| Cloud task | Portable repository work, batch validation or independent analysis with transferable inputs and outputs | Setup, queues, required data access, missing assets and return/integration can erase the benefit. |
 
 Compare end-to-end completion: startup + context and data transfer + execution +
 review + integration. Parallelism helps only independent work; do not dispatch a
@@ -144,15 +144,20 @@ resources such as a GUI session, browser tab, database, preview port or remote s
 Separate Git worktrees do not isolate those resources. Read-only reviewers may share a
 stable snapshot; record the reviewed commit and recheck changes that affect findings.
 
-Use the existing project checkpoint or issue for a small coordination table:
+Use the existing approved private project checkpoint or issue for a small coordination
+table. For shared decisions across tasks, apply [the state contract](shared-project-state.md)
+with revisions and per-attempt returns; keep local records outside code repositories.
+Projects can link multiple repositories or have none, including desktop Work with local
+documents. An executor's actual access determines the storage choice.
 
-| Work item | Owner / destination | Base / branch | Owned scope | Dependencies | State / return evidence |
+| Work item / attempt | Owner / destination | Input revision / artifact base | Owned scope | Dependencies | State / return evidence |
 |---|---|---|---|---|---|
-| Example validation tool | Assigned worker / isolated environment | Exact base and branch | Named script and tests | Fixture available | Dispatched; return commit, command results and limits |
+| Example validation / attempt 1 | Assigned worker / isolated environment | Accepted state revision and exact input version | Named script and tests | Fixture available | Assigned; return artifacts, command results and limits |
 
-Keep real thread IDs, machine paths and connection details in the project's local
-coordination record, not in a portable public profile. A task title is a label, not
-ownership evidence. Recheck active work before assigning overlapping scope.
+Keep real thread IDs, machine paths and connection details in the project's private
+coordination record, not in a portable public profile or public repository. A task
+title is a label, not ownership evidence. Recheck active work before assigning
+overlapping scope.
 
 ## Dispatch and return contract
 
@@ -161,7 +166,8 @@ separate destination, add its location, purpose and integration owner. Label set
 as requested or unverified where necessary. The brief should include:
 
 1. Outcome, acceptance conditions and the decision the worker can make independently.
-2. Destination, exact repository/base, allowed files, excluded scope and dependencies.
+2. Destination, private state revision, task/attempt IDs, exact input artifacts/versions,
+   allowed files, excluded scope and dependencies; repository/base only when applicable.
 3. Sole-writer assignment or read-only role; other agents' edits must be preserved.
 4. Model/effort constraints and relevant skills/instructions available at destination.
 5. Required validation and return artifact: commit or patch, changed files, exact checks,
@@ -180,6 +186,9 @@ a service, install infrastructure or expand data access as an implicit fallback.
 
 ## Accept, integrate and retire
 
+Reconcile each return against current accepted state and its assigned attempt before
+accepting it. Resolve stale inputs, superseded decisions and duplicate returns under
+[the shared-state protocol](shared-project-state.md#coordination-protocol).
 Review returned artifacts and their actual base before accepting them. Verify that
 commits or patches are accessible and assets are real payloads. A completed cloud chat
 can still contain work that exists only in its checkout. Record what is available before

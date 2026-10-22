@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.16.0 - 2026-10-22
+
+- Add private project-state guidance for shared decisions, task/attempt revisions,
+  stale returns, acceptance ownership and bounded evidence consolidation. Projects
+  can link zero or multiple repositories, including desktop Work with local files
+  and no Git repository. Keep live records outside code checkouts.
+- Add an optional preview-first local initializer and read-only layout/revision
+  checker, with empty Markdown templates and filesystem/schema regression tests.
+  No background synchronization, account migration, graph runtime or schedule.
+- Add work-account setup and shared-access diagnostics, preserving managed policies,
+  separate personal/work records and explicit verification on each executor. Obsidian
+  remains an optional editor for the same files.
+
 ## 1.15.1 - 2026-10-22
 
 - Reassess execution routes at phase completion, worker availability, blocked

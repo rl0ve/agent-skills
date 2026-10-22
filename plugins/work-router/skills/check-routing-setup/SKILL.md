@@ -63,6 +63,27 @@ task, send a message, move a live thread or install remote infrastructure during
 read-only check. Distinguish a local task, a remote project, Codex Cloud and cloud Work.
 Report whether safe isolation and artifact return are available for a writing route.
 
+## Private shared-state access
+
+When the requested setup includes shared project context, use
+[the state contract](../route-ai-work/references/shared-project-state.md). Inspect only
+the selected private record, not every project or personal memory store. Check realm,
+project, coordinator, revision and the actual backend/transport. Repositories are
+optional: desktop Work with local file access can use a private folder without Git.
+
+For the local template layout, `private_project_state.py check` under
+`../route-ai-work/scripts/` checks placement, file modes, basic schema and an optional
+`--expected-revision`. It is read-only and does not prove acceptance, effective ACLs,
+remote access or synchronization. Do not initialize, repair permissions, change a
+coordinator or write test records during this check.
+
+Verify the relevant executor can read the selected accepted revision using existing
+authorized tools. Local success is not remote evidence. Where checking another task
+requires a message, preserve that tool's human-authorization rule and report access
+as unverified until it can be checked. Identify stale snapshots, conflicting copies
+and missing access; never silently fall back to a different realm or personal library.
+Keep private record content and concrete bindings out of public diagnostic artifacts.
+
 ## Report
 
 Separate facts into `verified`, `organization-controlled`, and `not yet verified`.

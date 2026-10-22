@@ -27,6 +27,10 @@ phase and the next dependencies. For each phase record:
 Prefer the existing issue, plan or project note. Create a small checkpoint only when
 it will prevent rediscovery. A dashboard is useful when requested or when it makes a
 long run meaningfully easier to inspect; box count alone is not progress evidence.
+For records shared across tasks, use [private project state](shared-project-state.md):
+one acceptance owner, current revisions and scoped returns. At an accepted phase or
+handoff, consolidate useful new evidence into the existing decision/claim records;
+skip consolidation when nothing durable changed. This needs no recurring job.
 
 The parent owns scope, acceptance and integration. It can implement directly, or manage
 one writing implementer when delegation is permitted and worthwhile. The implementer
@@ -147,11 +151,12 @@ summarize summaries.
 - **Include the rejected alternatives and why they were rejected.** This is the part that
   exists only in the transcript and the part a lossy summary drops first, and losing it is
   what makes a replacement re-walk work you already ruled out.
-- **Write it to a file, not a message.** Files survive whatever a summary keeps.
-- **Expect the replacement to re-read files, and treat that as correct.** The repository is
-  the source of truth; a long transcript contains superseded decisions. Re-reads land at the
-  front of a clean window where recall is strongest. A small deliberate primer outperforms a
-  large history on any model.
+- **Save a durable private record.** Use the approved project file or document/tracker;
+  a project without Git still needs a recoverable state spec. Keep private records
+  outside code repositories and pass an explicit snapshot if the destination lacks access.
+- **Expect the replacement to re-read current records.** Accepted project state and
+  actual source artifacts take precedence over superseded transcript decisions. Check
+  the revision and relevant inputs before continuing; load only the needed context.
 - **Time a family switch to this boundary.** The cache is being rebuilt anyway, so the
   cache-write cost of changing model disappears.
 

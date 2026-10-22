@@ -40,8 +40,8 @@
     {
       "name": "work-router",
       "source": "./plugins/work-router",
-      "description": "Routes agent work by model, effort and execution location across current tasks, subagents, separate threads, connected machines and cloud tasks. Includes orchestration compatibility, conditional native goals, capability discovery, skills ecosystem audits and scoped deduplication.",
-      "version": "1.15.1",
+      "description": "Routes agent work by model, effort and execution location across tasks, threads, connected machines and cloud. Includes private project context, orchestration compatibility, conditional native goals, capability discovery, skills ecosystem audits and scoped deduplication.",
+      "version": "1.16.0",
       "category": "Productivity",
       "tags": [
         "routing",
@@ -129,7 +129,7 @@
       "name": "research-reports",
       "source": "./plugins/research-reports",
       "description": "Evidence-backed research reports and decision briefs with selected explanatory visuals and an optional motion overview. One primary document format by default.",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "category": "Productivity",
       "tags": [
         "research",

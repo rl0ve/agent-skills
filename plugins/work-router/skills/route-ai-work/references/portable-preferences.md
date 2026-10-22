@@ -10,6 +10,10 @@ Use this workflow when the user asks to carry their preferences to another machi
 or refresh a previously selected profile. Preserve newer explicit local choices;
 if they conflict with the selected profile, resolve that conflict before applying it.
 Keep credentials, machine paths, private context and account settings out of profiles.
+For adoption in a work account, use [the work-account guide](work-account-setup.md).
+The portable profile carries working preferences; separate private project records
+and verified access carry the work's context. Installing either does not synchronize
+the other or establish account isolation.
 
 ## Set up an environment
 

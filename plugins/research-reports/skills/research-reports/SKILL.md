@@ -50,6 +50,14 @@ type, relevant date/version, population/unit and uncertainty or counterevidence.
 Use it across the report and its derivatives. It is a working record, not a mandatory
 new application or a public copy of confidential sources.
 
+When a private shared project record already exists, link its knowledge section to
+this ledger instead of maintaining two copies. After accepting a phase or resolving
+conflicting evidence, update relevant claims and mark superseded conclusions with
+their replacements. Keep live records outside public repositories and preserve the
+project's accepting owner and revision. If Work Router is available, its
+`route-ai-work/references/shared-project-state.md` supplies the coordination contract;
+research does not require that plugin or a shared-memory runtime.
+
 Resolve the material conflicting evidence. Prefer the source fit for the claim:
 speaker-attributed records for who said what; governed definitions and appropriate
 data for measurements; observed behavior for a claimed working path. Separate direct
