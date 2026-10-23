@@ -91,6 +91,19 @@ dependency waiting and conflicting dated delegation guidance. All produced compa
 decisions; the pass prompted clarification of requested deadlines versus verified
 runtime stopping controls. This was simulated reasoning, not an execution benchmark.
 
+## Collection concurrency
+
+Use these cases with [collection work](long-running-work.md#collection-work). They
+specify expected decisions, not measured speedups or completed worker trials.
+
+| Situation | Expected decision | Reason |
+|---|---|---|
+| Many independent item repairs use a stable shared generator; delegation and isolated checkouts are authorized | Compare bounded parallel repair batches in separate worktrees with serial execution; keep shared-generator changes and integration under one owner | A common generator does not make every item repair dependent or restrict all workers to read-only reports. |
+| A shared generator defect is still changing every output, but source comparisons are independent | Centralize the shared repair while parallelizing useful independent inspection; defer dependent output acceptance | Shared implementation coupling does not automatically serialize source analysis. |
+| New repair worktrees start from the default branch while required fixes remain uncommitted in the parent | Establish and verify a baseline containing those fixes before dependent implementation | Checkout isolation does not transfer current state. |
+| Parallel batches finish faster than their coordinator can review and integrate them | Address the integration bottleneck and reassess batch size or concurrency before adding workers | Worker output volume is not accepted completion throughput. |
+| A single small correction remains or all remaining repairs depend on one unresolved shared change | Complete directly or resolve that dependency; record the concrete reason if a collection checkpoint warrants it | Parallelism must repay its overhead and cannot bypass dependencies or authority. |
+
 ## Native-goal decisions
 
 These cases review the [native-goal policy](native-goals.md); they do not execute goal

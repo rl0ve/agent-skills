@@ -33,10 +33,11 @@ handoff, consolidate useful new evidence into the existing decision/claim record
 skip consolidation when nothing durable changed. This needs no recurring job.
 
 The parent owns scope, acceptance and integration. It can implement directly, or manage
-one writing implementer when delegation is permitted and worthwhile. The implementer
-returns changed artifacts, observed check results and remaining failures. Inspect those
-results before accepting the phase; the agent's confidence or self-reported completion
-does not establish correctness. Reuse a progressing implementer for related fixes.
+bounded implementers when delegation is permitted and worthwhile, with one writer per
+working tree and separate checkouts for independent writers. Each implementer returns
+changed artifacts, observed check results and remaining failures. Inspect those results
+before accepting the phase; the agent's confidence or self-reported completion does
+not establish correctness. Reuse a progressing implementer for related fixes.
 
 When a consequential independent review is justified, keep it bounded and read-only.
 Do not create user-visible tasks, persistent goals, recurring jobs, or additional agent
@@ -57,6 +58,26 @@ inspection; group proven defects into bounded repair batches and fix repeated
 defects at their shared owner. An urgent shared defect or blocking dependency may
 need repair first; then return to coverage. Triage is not permission to lower the
 standard, skip difficult items or invent missing source policy.
+
+Distinguish shared-component dependencies from independent item work. A shared
+renderer, generator or acceptance checklist does not by itself require serial source
+analysis, review or item-specific repairs. One writer per working tree is not a
+project-wide writer limit. Compare serial work, concurrent read-only inspection and
+independent repairs in separate worktrees against total completion time, including
+setup, review and integration. Use a bounded parallel split when authorized and
+worthwhile; do not restrict useful workers to findings-only assignments merely
+because the parent is also writing in a different tree.
+
+For isolated repairs, establish a consistent baseline that includes required current
+changes; a new worktree does not inherit uncommitted work. Assign item batches and
+exclusive shared-component ownership, preserve required individual inspection, and
+keep acceptance and integration with one owner. Separate branches in one checkout
+do not isolate writers. At a batch checkpoint, reassess accepted throughput and the
+integration backlog before expanding concurrency. If serial execution remains
+preferable, record the concrete dependency or overhead in the existing checkpoint
+and reconsider when it changes; do not add planning overhead to a small correction.
+Use [execution locations](execution-locations.md) for host, isolation and dispatch
+requirements; these choices do not grant new authority.
 
 Scope checks by item, shared component and final integration. Record which inputs
 or conditions invalidate accepted evidence. Reuse it while those remain unchanged;

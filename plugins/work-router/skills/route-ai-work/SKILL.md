@@ -64,7 +64,8 @@ useful work within scope; repeated activity alone does not establish progress.
 
 For large reviews, migrations or repeated edits across a collection, use
 [collection work](references/long-running-work.md#collection-work) to choose the
-acceptance unit, triage order, repair batches and scope of repeated checks.
+acceptance unit, triage order, repair batches, useful parallel inspection or isolated
+implementation, and scope of repeated checks.
 
 ## Choose where work runs and who coordinates it
 

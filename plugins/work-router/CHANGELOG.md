@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.18.3 - 2026-10-23
+
+- Clarify that one writer per working tree is not a project-wide implementer limit;
+  independent repair workers can use separate checkouts with a verified current base.
+- Distinguish shared-component changes from parallel source analysis, inspection and
+  item repairs. Reassess accepted throughput and integration backlog at batch checkpoints.
+- Add collection routing cases for isolated repairs, changing shared generators, dirty
+  baselines, integration bottlenecks and work that should remain serial. Preserve host
+  authorization, individual acceptance and final gates; no model or service-tier change.
+
 ## 1.18.2 - 2026-10-22
 
 - Audit shared guidance for Claude compatibility. Add Claude main-thread examples,
