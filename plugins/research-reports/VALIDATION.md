@@ -1,5 +1,15 @@
 # Validation
 
+Release 1.0.7, checked 2026-10-23.
+
+Instruction-only clarification for concrete recommendations, adjacent reasons, field
+locations, new versus reused capture, and actual review-app editing capability.
+Author policy review: an operational brief names the changed record and action; a
+narrative or factual answer does not acquire a specification template. Generic examples
+and shared instructions only; no private source material or personal history added.
+No new independent model trial or document-renderer benchmark is claimed.
+
+
 Release 1.0.4, checked 2026-10-22.
 
 Instruction-only update: consult saved writing preferences and preserve current state,

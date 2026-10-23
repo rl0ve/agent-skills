@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.16.3 - 2026-10-23
+
+- Make decision-brief headings and bold lead-ins useful when read on their own.
+- Prefer concrete actions and named objects over recommendation preambles and
+  undefined shorthand; remove alternatives that do not affect the reader's decision.
+- Preserve material uncertainty and approval boundaries while tightening prose.
+
 ## 1.16.2 - 2026-10-22
 
 - Clarify when selective bold, supporting sub-bullets, direct headings, tables and

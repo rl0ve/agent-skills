@@ -27,7 +27,7 @@
       "name": "natural-writing",
       "source": "./plugins/natural-writing",
       "description": "Diagnose, edit, rewrite, or draft natural prose while preserving facts, formatting, intent, register, and author voice.",
-      "version": "1.16.2",
+      "version": "1.16.3",
       "category": "Productivity",
       "tags": [
         "writing",
@@ -129,7 +129,7 @@
       "name": "research-reports",
       "source": "./plugins/research-reports",
       "description": "Evidence-backed research reports and decision briefs with selected explanatory visuals and an optional motion overview. One primary document format by default.",
-      "version": "1.0.6",
+      "version": "1.0.7",
       "category": "Productivity",
       "tags": [
         "research",

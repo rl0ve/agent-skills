@@ -36,6 +36,9 @@ DOCX suits substantive editing; use the requested medium when specified. Do not
 produce both DOCX and PDF unless the user asks. A useful HTML guide, a requested
 one-page aid or a motion overview is a separate decision, not a default export set.
 Keep essential reasoning in the primary report even when a companion is useful.
+Distinguish an editable file format from direct editing in the reader's app; verify
+that capability before promising it. Choose the review surface for actual layout
+fidelity and the requested workflow.
 
 ## Gather before making the argument
 
@@ -74,9 +77,15 @@ an attractive summary. Prioritize recommendations by the decision, full cost,
 dependencies and the observation that would reverse them.
 
 When condensing a report, retain the current state and mechanism needed to understand
-why a change belongs where proposed. Distinguish what exists from what is new. For
-workflow recommendations, state the trigger, owner, timing and whether completion is
-required or optional; label proposed behavior separately from observed behavior. Shorter
+why a change belongs where proposed. State each recommendation as a concrete action
+on a named target, with its reason immediately afterward. Identify the affected system,
+record, field, program, workflow or report; distinguish a new field from a category or
+program name, and new capture from reusing or surfacing existing data. Give the actual
+location of referenced fields or records rather than assuming the reader knows it.
+For workflow recommendations, state the trigger, owner, timing and whether completion
+is required or optional; label proposed behavior separately from observed behavior.
+Use this precision to make an action proposal understandable, not to turn every brief
+into a full product or technical specification. Shorter
 labels must still be understandable, with concise definitions where needed. Put parallel
 findings or actions in bullets and comparable fields in a compact table; keep the
 reasoning that connects them in prose. Brevity should remove repetition, not the

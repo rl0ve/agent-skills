@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.7 - 2026-10-23
+
+- Name exactly what recommendations change, where the change belongs, and what is
+  new, reused or surfaced; place each reason immediately after its recommendation.
+- Distinguish fields from program/category names without forcing a full spec template.
+- Separate file-format editability from verified direct editing in the review app.
+
 ## 1.0.6 - 2026-10-22
 
 - Clarify that confidential records stay out of public Git history; approved private

@@ -23,7 +23,10 @@ piece. Preserve an explicit plain-text, paragraph-only or spoken format.
 
 - **Selective bold:** emphasize a decision, action, key distinction or short lead-in that
   helps scanning. Leave most text unbolded; do not highlight every sentence or add a
-  bold label to every bullet by habit.
+  bold label to every bullet by habit. In decision briefs and action proposals, read
+  the headings and bold lead-ins alone: they should state the finding or action, not
+  merely announce a topic such as "Coverage issues." The following text supplies the
+  evidence, reason or necessary detail.
 - **Sub-bullets:** use them for evidence, examples, caveats or next steps that belong to
   one parent point. Keep independent points at the same level. Prefer one useful level
   of nesting; deeper nesting needs a real hierarchy and a channel that renders it well.
@@ -43,6 +46,12 @@ export check does not establish that another viewer renders the same file correc
 ### Executive and business writing
 
 Lead with the decision, risk, result, or request. Keep commercial and organizational vocabulary when it carries precision. Name owners and dates when supplied. Avoid consultant filler, ceremonial importance, and decorative frameworks.
+
+When making a recommendation, use an actionable verb and a concrete object rather than
+"Propose a change" when the recommendation is already being made. Name the object before
+shortening it to "program," "record" or "field." Keep the reasoning needed to act; remove
+alternative designs and explanatory caveats that do not change the reader's decision.
+Preserve material uncertainty, qualifications and approval boundaries.
 
 ### Technical documentation
 
