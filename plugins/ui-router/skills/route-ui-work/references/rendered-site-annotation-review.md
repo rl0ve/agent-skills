@@ -8,6 +8,16 @@ reason to turn a small copy correction into a full-site review. Review-only requ
 stay read-only. When fixes are requested, follow the destination's edit and release
 rules as well as [the completion gates](quality-gates.md).
 
+## Explain an existing interface
+
+For "what do these icons mean?" or a request to label an actual screenshot, use
+Clear Assessment Guides' interface-explanation mode when available. Verify meanings
+and action consequences, then preserve the screenshot pixels with native annotations
+or overlays. This is an explanation task; do not start a design critique, redesign or
+video workflow. If the skill is unavailable, explain directly using the same evidence
+boundary; a simple definition needs no visual artifact. The review procedure below
+applies when the user actually asks for findings or changes.
+
 ## Establish what is being reviewed
 
 Identify the exact current URL/route, baseline or accepted reference, audience,

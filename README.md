@@ -14,7 +14,7 @@ of forking.
 | [UI Walkthrough Video](plugins/ui-walkthrough-video/README.md) | Records real interface flows and turns them into narrated MP4s with captions. Needs browser and media runtimes. |
 | [Capability Storyboard](plugins/capability-storyboard/README.md) | Builds an HTML storyboard for a keynote or demo, with a talk track and director's notes per scene. |
 | [Deck Builder](plugins/deck-builder/README.md) | Builds `.pptx` decks on your own template and verifies them by rendering slides. |
-| [Clear Assessment Guides](plugins/clear-assessment-guides/skills/clear-assessment-guides/SKILL.md) | Produces source-backed assessments, one-issue walkthroughs, or interactive HTML reviews with comments and decisions. |
+| [Clear Assessment Guides](plugins/clear-assessment-guides/skills/clear-assessment-guides/SKILL.md) | Explains interfaces with verified annotated screenshots; produces source-backed assessments, guided reviews and interactive decision boards. |
 | [Research Reports](plugins/research-reports/README.md) | Investigates a consequential question and builds an evidence-backed report with selected explanatory visuals and an optional motion overview. Defaults to one primary document format. |
 | [Visual Version Review](plugins/visual-version-review/README.md) | Compares implemented branches and previews in one labeled HTML page, with matched captures, distinctive visuals and full-size inspection. |
 
@@ -23,6 +23,7 @@ of forking.
 | You want to | Use |
 |---|---|
 | Choose which implemented version, or which parts of each, to keep | Visual Version Review |
+| Explain unfamiliar icons, controls or states in an actual screenshot | Clear Assessment Guides |
 | Explain what is wrong and what to change, including a before/after of one change | Clear Assessment Guides |
 | Investigate a strategic question or prepare a deep research report for a meeting | Research Reports |
 | Track comments on a rendered page through to a verified fix | UI Router |

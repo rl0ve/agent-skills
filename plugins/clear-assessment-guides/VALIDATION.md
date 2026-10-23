@@ -1,5 +1,24 @@
 # Validation
 
+Release 1.5.0, checked 2026-10-23.
+
+Instruction-only addition of interface explanation, with routing handoffs from UI
+Router 1.21.3 and UI Walkthrough Video 1.7.5. All 94 repository tests, 109 Natural
+Writing tests, 45 UI Walkthrough Video tests and the assessment Node suite passed.
+The marketplace and every plugin passed Claude manifest validation; the explanation
+and capture skills passed the system Skill Creator validator. UI Router retains its
+existing `compatibility` frontmatter field, which the generic system validator rejects
+on both the unchanged baseline and this release; repository package checks pass.
+All local Markdown reference targets in this skill resolve; whitespace checks pass.
+
+Author-reviewed policy cases: several unfamiliar controls use a verified numbered
+legend; an unknown icon stays unknown; a status badge is not described as an action;
+an archive/delete action's consequences need separate evidence; a simple known icon
+gets a direct definition; an interaction requiring motion uses the existing sequence
+or capture route. These are instruction reviews, not independent model trials.
+No screenshot, renderer, feedback schema or template/runtime changed. No private source
+capture or project-specific icon behavior is included in the package.
+
 Release 1.4.2, checked 2026-10-21.
 
 Instruction-only patch clarifying final prose review, purposeful controls and rendered

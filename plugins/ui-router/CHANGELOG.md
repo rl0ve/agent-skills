@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.21.3 — 2026-10-23
+
+- Route unfamiliar-control and annotated-screenshot explanation requests to Clear Assessment
+  Guides' interface-explanation mode when available, with a direct-answer fallback.
+- Keep descriptive explanation separate from design critique, redesign and video production;
+  verify meanings and action consequences before drawing factual labels.
+
 ## 1.21.2 - 2026-10-22
 
 - Defer native-goal decisions for substantial UI and 3D continuations to Work Router.

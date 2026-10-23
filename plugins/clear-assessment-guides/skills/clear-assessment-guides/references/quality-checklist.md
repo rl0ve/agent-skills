@@ -3,6 +3,21 @@
 Apply the common checks and only the selected mode's checks. Do not require a document
 outline, GIF or interactive board when the user asked for a simple correction.
 
+## Interface explanation
+
+- Were icon meanings verified through labels, tooltips, current documentation or source,
+  rather than inferred from shape or color? Are unresolved meanings explicit?
+- Are badges distinguished from controls, and important action consequences verified
+  separately? Has the explanation corrected any earlier mistaken claim?
+- Do numbered markers and the nearby legend map to the exact recognizable targets,
+  with enough context, readable magnification and a short text equivalent?
+- Were original pixels preserved with overlays, without reconstruction or distortion?
+- Can the reader identify the item and decide what to do without a fabricated finding,
+  forced redesign, interactive board or unnecessary recording?
+
+The assessment-specific Problem/Impact/Proposed solution and review-decision checks
+below apply only when an assessment or change review was requested.
+
 ## Common
 
 - Is the current experience and the user's task understandable, including what works?

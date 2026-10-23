@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.5.0 — 2026-10-23
+
+- Add a focused interface-explanation mode: verify unfamiliar icons and action consequences,
+  preserve actual screenshot pixels, and pair readable crops/insets with numbered legends.
+- Keep status badges distinct from controls, correct disproven labels, and avoid inventing
+  issues or imposing a redesign, interactive board or recording on a descriptive request.
+- Add mode-specific completion checks and discovery prompts. Existing assessment modes,
+  feedback contracts and the installed plugin/skill ID remain compatible.
+
 ## 1.4.2 — 2026-10-21
 
 - Make the final prose review explicit, including headings and captions; apply requested

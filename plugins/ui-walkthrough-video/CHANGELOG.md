@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.7.5 — 2026-10-23
+
+- Quick capture hands still-image icon/control explanations to Clear Assessment Guides'
+  interface-explanation mode, preserving real pixels and avoiding unnecessary recording,
+  narration or generative reconstruction.
+
 ## 1.7.4 — 2026-10-20
 
 - A Capability Storyboard can supply the talk track and scene order; its mockups are replaced by real capture or labeled.

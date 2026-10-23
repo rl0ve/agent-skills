@@ -26,6 +26,12 @@ Place a thin visible border box around every image, including diagrams and mocku
 
 Annotate only when it reduces interpretation work: a small numbered callout, outline, or arrow aligned to the exact issue. Preserve underlying pixels. Prefer native shapes or overlays in the document or design format so annotations remain editable; keep the original screenshot available. Do not obscure important labels, change source text, or imply that proposed elements already exist.
 
+For a guide to unfamiliar controls, use a uniformly enlarged crop or inset when needed,
+numbered markers and an adjacent matching legend. Verify each meaning before labeling;
+distinguish what a badge reports from what a control does. Follow the focused
+[interface explanation](interface-explanation.md) method without imposing assessment
+headings on a descriptive guide.
+
 Use short subordinate captions immediately below images. Identify what the reader is seeing, the relevant issue, and an inline source link where available. Label before/after and proposed mockups unmistakably. Use semantic alt text in supported formats. If a screenshot cannot be obtained, state that limitation and use a clearly labeled schematic or text explanation, not simulated evidence.
 
 ## Tables and diagrams

@@ -1,4 +1,4 @@
 interface:
   display_name: "Clear Assessment Guides"
-  short_description: "Evidence-backed assessments and guided review"
-  default_prompt: "Use $clear-assessment-guides to assess this experience and choose a document, one-issue walkthrough, or interactive review."
+  short_description: "Interface explanations and source-backed reviews"
+  default_prompt: "Use $clear-assessment-guides to explain this interface or assess this experience, choosing an annotated screenshot, document, guided review, or interactive review."

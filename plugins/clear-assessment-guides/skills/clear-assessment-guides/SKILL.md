@@ -1,6 +1,6 @@
 ---
 name: clear-assessment-guides
-description: Create source-backed assessments, practical guides, annotated issue triage and interactive HTML reviews with comments and decisions. Use for improvement proposals and content reviews. Use Research Reports for open-ended research synthesis and Visual Version Review to compare implemented versions. Ordinary replies do not need this format.
+description: Explain interfaces with verified annotated screenshots; create source-backed assessments, practical guides and interactive reviews. Use for unfamiliar controls, improvement proposals and content reviews. Use Research Reports for open-ended synthesis and Visual Version Review to compare implemented versions. Simple factual replies need no artifact.
 ---
 
 # Clear Assessment Guides
@@ -15,19 +15,23 @@ preparation, look for Research Reports. It owns research synthesis and the readi
 package; this skill owns findings and decisions about an experience or proposed change.
 Do not force a research argument into repeated Problem/Impact/Proposed solution blocks.
 
-## Choose the review mode
+## Choose the explanation or review mode
 
 These are alternatives, not compulsory stages. Honor an explicit choice; otherwise
 choose the smallest format that answers the reader's immediate need. Do not create
-three deliverables when one will do.
+extra deliverables when one will do.
 
 | Need | Mode | Read next |
 |---|---|---|
+| Understand unfamiliar icons, controls or states in an existing interface | Interface explanation | [Explain an interface](references/interface-explanation.md) |
 | Standalone assessment, full priority list or shareable guide | Document | [Document mode](references/document-mode.md) |
 | Discuss and resolve one issue together | Guided triage | [Guided review](references/guided-review.md) |
 | Collect comments, alternatives and decisions across issues | Interactive HTML | [Interactive review](references/interactive-review.md) |
 
 For visual artifacts, also read [design standard](references/design-standard.md).
+An interface explanation describes the current product; it needs neither a defect,
+a proposed redesign nor a review decision. Answer a simple factual question directly
+when an annotated image would add no useful understanding.
 Before delivering, apply the selected mode's [quality checks](references/quality-checklist.md).
 When choosing between a review copy and a live original, use the focused
 [edit-location rubric](references/edit-location-rubric.md).

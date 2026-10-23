@@ -94,6 +94,12 @@ The old `route-ui-work` reference paths remain as redirect stubs for one release
 See the [source review](docs/interactive-worlds-review-2026-09-27.md) and the
 [October 18 three.js builder review](docs/threejs-builders-review-2026-10-18.md).
 
+## Interface explanations
+
+For unfamiliar icons or controls, UI Router uses Clear Assessment Guides' interface-explanation
+mode when available: verify meanings and action consequences, preserve actual screenshot
+pixels, and use a readable numbered legend. A simple definition needs no visual artifact.
+
 ## Rendered-site annotation review
 
 The [annotation review procedure](skills/route-ui-work/references/rendered-site-annotation-review.md)

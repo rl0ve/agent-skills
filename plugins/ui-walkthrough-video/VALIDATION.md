@@ -1,5 +1,13 @@
 # Validation
 
+## 1.7.5 — 2026-10-23
+
+Instruction-only quick-capture handoff for static interface explanations. All 45
+walkthrough tests and the 94 repository tests passed, alongside manifest validation
+for the marketplace and every plugin. The system skill validator accepts the capture
+entrypoint. No recorder, renderer, paid service or output format changed; no new
+recording or media-quality result is claimed.
+
 ## 1.7.0 — 2026-10-11
 
 - Forty-five plugin tests pass. New offline tests cover the Gemini 3.8 request contract (style in `speech_metadata`, `voiceConfig.voice`, Flash-Lite without style), a RIFF WAV response written byte-for-byte, a malformed WAV rejected with no file written, and Eleven v4 voice-setting restriction.

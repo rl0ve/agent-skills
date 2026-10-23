@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ui-router",
-  "version": "1.21.2",
+  "version": "1.21.3",
   "description": "Route UI and interactive-world work to selected specialists, focused design guidance, runtime choices, and verified interactions. Updated 2026-10-20: verify renders with the host browser first, then Chrome DevTools MCP or one scripted browser.",
   "author": {
     "name": "rl0ve"
