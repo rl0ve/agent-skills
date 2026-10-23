@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.19.0 - 2026-10-23
+
+- Bring `handoff-doc` into the plugin: update an existing decision record with current
+  sources, verified saved/exported/published/deployed state and exact next actions.
+  Keep simple handoffs short and respect host and user memory-write permissions.
+- Extend retirement guidance with scoped cleanup review: preserve needed ignored data,
+  distinguish chats, project entries and checkouts, and measure real disk consumers.
+  Keep remote resource lifecycle with its platform owner and preserve cleanup authority.
+
 ## 1.18.3 - 2026-10-23
 
 - Clarify that one writer per working tree is not a project-wide implementer limit;

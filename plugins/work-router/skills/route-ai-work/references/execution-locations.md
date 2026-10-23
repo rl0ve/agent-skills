@@ -212,6 +212,12 @@ the tip before deletion, and retain work whose preservation is uncertain. Use ma
 worktree archive controls where required. Archiving a chat, merging a branch and
 deleting a checkout are separate actions.
 
+For cleanup or retirement reviews, use [cleanup and preservation](cleanup-review.md)
+to check ignored local data, stale project entries, archived history and measured disk
+consumers. A Git snapshot may exclude needed ignored files. For a durable context
+handoff, use [handoff-doc](../../handoff-doc/SKILL.md) to record authoritative artifacts,
+their verified delivery state and exact next actions in the existing project record.
+
 Apply [native goals](native-goals.md) in the accepting chat only when the defined phase
 benefits from continuation; a bounded worker does not need a duplicate goal. Neither
 goals nor an idle coordinator provide a recurring monitor. During an active run use

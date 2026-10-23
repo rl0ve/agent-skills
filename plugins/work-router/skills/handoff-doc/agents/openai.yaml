@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Handoff"
+  short_description: "Record decisions, artifact state and next actions."
+  default_prompt: "Use $handoff-doc to update the project handoff with current sources, verified delivery state and next actions."

@@ -21,6 +21,10 @@ The plugin contributes:
 - `/work-router:check-routing-setup`, a manual, read-only environment check;
 - `/work-router:discover-capabilities`, focused discovery for missing capabilities;
 - `/work-router:deduplicate-skills`, installed-skill auditing and scoped consolidation;
+- [`/work-router:handoff-doc`](skills/handoff-doc/SKILL.md), project decisions, current
+  sources, verified artifact state and next actions in one maintained handoff;
+- [cleanup and preservation](skills/route-ai-work/references/cleanup-review.md) for
+  authorized retirement reviews, including ignored data and separate chat/project controls;
 - [`/work-router:skills-ecosystem-audit`](skills/skills-ecosystem-audit/SKILL.md),
   comparison of bookmarks, GitHub stars, and current discussion with the full ecosystem;
 - Claude subagents for scouting, building, architecture, critical review and Fable
