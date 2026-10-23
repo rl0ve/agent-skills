@@ -57,11 +57,15 @@ Give one brief, actionable recommendation when the expected benefit is material:
   unanswered or declined suggestion only when the workload or evidence materially
   changes; carry the decision through the existing checkpoint when needed.
 
-For example, a confirmed Astra max thread entering a substantial routine phase might
-benefit from Astra medium, or Sol medium when model choice is open. Sustained narrow
-work with objective checks may suit Luna; a brief mechanical step rarely justifies
-changing the parent. New ambiguity or a demonstrated capability limit can instead
-warrant a stronger route. Verify host availability and retain acceptance criteria.
+Examples depend on the active host. In Codex, a confirmed Astra max thread entering
+a substantial routine phase might benefit from Astra medium, or Sol medium when
+model choice is open. Sustained narrow work with objective checks may suit Luna.
+In Claude Code, an Opus max thread might benefit from Opus medium; Sonnet medium
+fits bounded planned work, and Haiku remains a narrow scouting option under the
+Claude table. Neither example requires changing a capable parent for a brief step.
+New ambiguity or a demonstrated capability limit can instead warrant a stronger
+route. Verify host availability and retain acceptance criteria; do not transfer
+Codex model IDs or effort assumptions into Claude Code.
 
 Delegating a suitable portion can help when already authorized and worthwhile, but it
 does not change the parent's settings or remove its coordination cost. Do not create
@@ -126,12 +130,12 @@ stronger route, and it does not shorten work bound by tools, tests or review.
 
 ## Routing rules: wording condensed in 1.9.0
 
-The eight rules in `SKILL.md` are shortened. The 1.8.9 sentences they dropped:
+The eight rules in `SKILL.md` are shortened. These details expand the current policy:
 
-- Choose the initial model and effort from the task requirements. Astra or xhigh can be
-  selected upfront when warranted; the diagnostic steps do not require a failed
-  lower-capability attempt. Apply the host-specific guidance, including the Claude
-  Sonnet medium boundary.
+- Choose the initial model and effort from the task requirements. A stronger permitted
+  model or greater supported effort can be selected upfront when warranted; no failed
+  lower-capability attempt is required. Apply the current host-specific model and effort
+  assessment; historical Sonnet results do not impose a current effort ceiling.
 - Repeated capability failures favor a stronger route; a retry by itself does not prove
   that another model would be faster or cheaper. Use comparable task evidence where
   available.
@@ -154,6 +158,13 @@ bundled agents; request the full provider-supported ID when revision fidelity ma
 Preserve an explicit model/effort choice and a capable parent already progressing.
 If the user requires exactly 5.5 and it is unavailable, report the unmet constraint;
 an older alias is not a completed 5.5 route or permission to substitute.
+
+For a useful main-thread recommendation, Claude Code exposes `/model` and `/effort`
+to the user; `/status` or a configured status line can show the current model.
+Check the installed client's controls and organization restrictions. A plugin's
+agent metadata is not the parent's active setting, and advice does not operate these
+controls. See [Claude's model configuration](https://code.claude.com/docs/en/model-config)
+and [managed-workspace boundaries](managed-workspaces.md).
 
 **Calibrate effort for the new revision.** Start new substantial work at medium;
 low fits a small, supervised exchange or a measured cost-sensitive route. High fits
@@ -179,9 +190,9 @@ generic task size and family rankings, including for a single spoken line.
 **Haiku 5.5 changes the alias, not the defaults.** As checked October 20, 2026,
 `haiku` resolves to Haiku 5.5 only on the Anthropic API with Claude Code 2.1.293+;
 Bedrock, Vertex and Foundry still resolve it to Haiku 4.5. Keep `fast-scout` at low
-effort and keep defined implementation on Sonnet: Haiku 5.5's Terminal-Bench 4.0
-score (39.2% versus Sonnet 5.5's 70.6%) does not repay its lower price on general
-coding. `haiku-builder` is an opt-in, untested route for mechanical edits with
+effort and keep defined implementation on Sonnet. The reported Terminal-Bench 4.0
+gap supports that cautious default; it does not measure accepted Claude Code task
+cost or retry rates. `haiku-builder` is an opt-in, untested route for mechanical edits with
 objective checks. See the [Haiku 5.5 review](haiku-5-5-review.md).
 
 For Opus 5.5's long runs and custom API harnesses, read the focused
@@ -297,7 +308,7 @@ criteria; a fast incorrect attempt is not completion. For cost-first work, count
 whole job: input and duplicated context, reasoning and output, subagents, retries,
 verification and integration. Where available, record actual usage and accepted
 completion time; label estimates and missing measurements. API token prices do not
-directly measure Codex subscription consumption.
+directly measure subscription consumption on either host.
 
 - Keep the routing skill and agent prompt concise; pass only the objective, exact inputs, owned files, acceptance criteria, and return format.
 - Do not copy the full conversation into a subagent. Summarize only the facts it needs.
@@ -305,9 +316,9 @@ directly measure Codex subscription consumption.
 - Parallelize independent read-only questions; serialize dependent work.
 - Do not ask a writing agent to re-discover context the parent already has. Give it the precise file map.
 - Stop escalation once the acceptance criteria are satisfied.
-- Switch families at a phase or compaction boundary, not mid-turn. The prompt cache is per-model, so changing family rewrites the whole cached prefix at the cache-write premium. That cost is real but small; it is a reason to time the switch, never a reason to finish substantial work on a route you have already judged wrong.
+- Time family changes for a phase or compaction boundary. Account for the host's context and cache behavior without assuming a universal cache-write premium or subscription cost. Transfer overhead alone need not justify finishing substantial work on a route already judged unsuitable.
 - In Codex, justify `max` or `ultra` against the task and supported host settings; importance alone is insufficient. A critical review or documented strong failure can justify extra effort. The named Luna economy profile is a conditional exception, not a universal cost result.
-- In Claude Code, retain the dated dominance guidance in the Claude table and its evidence reference. Do not apply its cross-family effort ranking to Codex models.
+- In Claude Code, use the current revision's assessment. Historical Sonnet 5 dominance claims neither cap Sonnet 5.5 effort nor rank Codex models.
 
 ## Save usage without lowering the quality bar
 
@@ -345,6 +356,10 @@ assignments, unexplained settings, claimed savings, or mandatory agent counts.
 ## Escalation detail
 
 - Fix missing context or a faulty tool/validation path before increasing model capability.
+- Do not escalate solely because work is slow or difficult.
+
+### Codex
+
 - In Sol, use medium to high when depth is missing; choose Sol xhigh when deeper
   reasoning is justified, including upfront for a clearly exceptional task.
 - Select Astra directly for the hardest quality-first work or a demonstrated capability
@@ -358,8 +373,15 @@ assignments, unexplained settings, claimed savings, or mandatory agent counts.
   tracing or system design, and to `sol-critical` only for critical review or a
   documented strong failure. Critical work does not automatically require max if a
   capable parent and focused independent review can satisfy the acceptance criteria.
-- In Claude Code, escalate a draft from the parent to `work-router:fable-wordsmith` when a reader has rejected prose on feel rather than on content ("this sounds off", "I hate how this reads") and the parent's own revision did not land. That verdict is a language problem, not a reasoning one.
-- Do not escalate solely because work is slow or difficult.
+
+### Claude Code
+
+- Use the Claude table: raise Opus effort for missing depth or choose a permitted
+  stronger route for a capability limit. Neither a Sonnet failure nor every effort
+  level is a required step before a task warrants Opus.
+- Consider `work-router:fable-wordsmith` when a reader has rejected prose on feel
+  rather than content and the parent's revision did not land. Preserve explicit
+  model choices, availability and the conditional Fable policy above.
 
 Never execute an irreversible action without explicit user confirmation.
 
@@ -369,9 +391,12 @@ Never execute an irreversible action without explicit user confirmation.
 
 Model aliases and effort levels are requests, not authority. Company `availableModels`, effort caps, provider mappings, and marketplace rules win.
 
-- If Claude Code substitutes another model, report the requested route and the actual model shown by Claude Code.
-- If Fable is unavailable, use the newest permitted Opus route for deep work, or the inherited model when the organization blocks the family.
-- If the client does not support a requested effort level, use the nearest supported level at or below it and say so.
+- If Claude Code substitutes or caps a setting, report the requested and actual
+  configuration. An automatic fallback does not satisfy an explicit model, revision
+  or effort requirement that it violates.
+- Apply the [managed fallback rules](managed-workspaces.md#fallback-order): a permitted
+  fallback is available only within the user's constraints, or after an authorized
+  exception. Do not silently lower a required effort or change a locked family.
 - Do not edit managed settings or attempt to bypass a company policy.
 
 ### Codex: custom agent profiles

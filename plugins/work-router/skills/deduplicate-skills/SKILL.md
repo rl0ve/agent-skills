@@ -1,6 +1,6 @@
 ---
 name: deduplicate-skills
-description: Audit and consolidate duplicate or overlapping installed skills and plugins across Codex, including standalone-to-plugin consolidation. Distinguish copies, variants, useful specialists and inactive remnants before scoped changes.
+description: Audit and consolidate duplicate or overlapping installed skills and plugins in Codex or Claude Code, including standalone-to-plugin consolidation. Distinguish copies, variants, useful specialists and inactive remnants before scoped changes.
 ---
 
 # Deduplicate skills
@@ -9,6 +9,10 @@ Own installed-skill consolidation across domains. Work Router owns execution cho
 `discover-capabilities` owns finding missing capabilities. Do not start a global audit
 on ordinary work or install another router to solve an overlap. This skill's inventory
 helper is read-only; cleanup is a separate, explicitly scoped action.
+
+Identify the host and requested scope first, then use the matching inventory and
+cleanup instructions below. Do not apply Codex configuration or its plugin-list
+parser to Claude Code. An audit of one host does not establish another host's state.
 
 ## Inventory what Codex can use
 
@@ -48,6 +52,28 @@ and managed overrides before treating a disable-rule match or absence as effecti
 session state. It does not inventory a package's tools or hooks: record those manually
 before any package-level recommendation. Cache layout is host-specific and must be
 rechecked if current versions cannot be resolved.
+
+## Inventory what Claude Code can use
+
+Check the installed client's help, `claude plugin list --json`, and
+`claude plugin details <exact-plugin-id>` where supported. Record package versions,
+scopes, enablement and sibling components. Inspect candidate instructions from the
+reported installation; do not choose the newest cache folder or infer session loading.
+
+Check session-visible skills, personal/project `.claude/skills` and `.claude/commands`,
+and relevant managed, nested or additional-directory sources. Resolve actual host
+paths and scope. Include account-synced skills when exposed; local disk alone cannot
+establish cloud or Cowork availability. Use `/skills` evidence when needed.
+
+Read only relevant `enabledPlugins` and `skillOverrides` state, preserving namespaces
+and source precedence. Plugin skills are namespaced; a matching standalone short name
+can coexist. Synced skills have their own owner and controls. Keep private inventories
+out of public artifacts and record inaccessible sources as coverage gaps.
+
+This is a native/manual adapter; `inventory_skills.py` remains Codex-specific. Follow
+[Claude's skill locations and visibility rules](https://code.claude.com/docs/en/skills)
+and [plugin inventory controls](https://code.claude.com/docs/en/discover-plugins),
+checked October 22, 2026, plus the installed client's help.
 
 ## Decide what is redundant
 
@@ -115,6 +141,18 @@ For Codex, verify the current host's control and targeting semantics:
 - Archive an authorized standalone duplicate outside discovered roots if needed.
   Do not delete or edit managed plugin caches, symlink targets or bundled/system skills
   as a shortcut. Managed or ambiguous targets stay unresolved rather than being forced.
+
+For Claude Code, verify the client's controls and exact scope before an authorized change:
+
+- Local standalone skills can use supported `skillOverrides` targeting; it does not
+  control plugin skills. Verify same-name effects before changing visibility.
+- For a plugin, use `/plugin` or supported
+  `claude plugin disable <exact-plugin-id> --scope <scope>` after inspecting sibling
+  contributions. Removal needs its own authorized scope; never use a disable-all
+  command for one duplicate.
+- Manage account-synced skills through their account controls, not downloaded copies.
+  Archive authorized local standalone copies outside discovery roots when appropriate.
+  Preserve managed sources and installed caches; never apply Codex TOML selectors here.
 
 ## Verify the result
 

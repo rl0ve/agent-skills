@@ -27,6 +27,28 @@ effort changes, model choice, declined advice, unknown settings, missing parent 
 capability limits, model exceptions and confirmed next-turn changes. All produced
 compatible decisions. This was read-only reasoning validation, not a performance trial.
 
+## Claude compatibility
+
+Use the Claude route table, [setup check](../../check-routing-setup/SKILL.md),
+[managed rules](managed-workspaces.md) and host-specific
+[duplication inventory](../../deduplicate-skills/SKILL.md).
+
+| Situation | Expected decision | Reason |
+|---|---|---|
+| A Claude Opus max thread enters a substantial routine phase | Consider Opus medium, or Sonnet for bounded planned work, subject to current constraints and confirmed controls | Codex's Astra/Sol examples are not Claude model IDs. |
+| Exactly Opus 5.5 is required but the provider alias resolves to an older revision | Report the unmet exact-version requirement; check a supported explicit ID or obtain an exception before constrained dispatch | A family alias or managed fallback cannot satisfy an exact revision by itself. |
+| User requires xhigh but a managed cap permits only medium | Report the actual cap and unmet requirement; do not silently downgrade | Organization policy and the user's constraint must both be respected. |
+| Fable is a routing preference, with no family lock, and is unavailable | Consider permitted Opus or Sonnet according to the task and disclose the fallback | An unconstrained preference can fall back without pretending Fable ran. |
+| A current Sonnet task merits high effort | Assess current revision and task evidence; do not impose the old Sonnet 5 medium ceiling | Historical dominance claims do not rank current effort settings. |
+| User requests a read-only Claude overlap audit | Use Claude package/component inventory, relevant skill roots and visibility controls; do not apply the Codex helper or TOML selectors | Inventory and cleanup controls are host-specific. |
+| Claude's `agents` command shows running sessions, but the plugin lists seven definitions | Separate running work, installed components and session-callable agents | An installed definition is not a runtime availability check. |
+| A Claude host has no native goal controls | Continue with its plan/checkpoint and the shared acceptance conditions | Codex's lifecycle adapter is not an assumed Claude API. |
+
+October 22, 2026: an independent Astra reviewer simulated all eight Claude situations
+from the source guidance without the expected-decision table. The decisions preserved
+host controls, explicit constraints and audit-only scope. No live Claude model call,
+settings change or task dispatch was performed.
+
 ## Locations and orchestration
 
 Review these against [execution locations](execution-locations.md) and

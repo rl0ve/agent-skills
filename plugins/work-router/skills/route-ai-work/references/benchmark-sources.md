@@ -52,6 +52,12 @@ For a decision-driving result, retain:
   observed measurements. Include retries, human review and integration in local trials.
 - Decision, applicable task, remaining uncertainty and what would reverse the decision.
 
+For Pareto comparisons, name the axes and compare the same task mix and harness.
+Claim a configuration is dominated only when another is at least as good on every
+relevant measured axis and better on one, accounting for uncertainty. An API
+quality/cost frontier does not establish a native-agent quality/time frontier or
+subscription savings. An unmeasured retry or review cost remains unknown.
+
 Prefer the original live board or its dated dataset to cached search snippets or a
 homepage summary. Check [Arena's changelog](https://arena.ai/company/leaderboard-changelog)
 for model additions and [dataset documentation](https://arena.ai/blog/arena-leaderboard-dataset)

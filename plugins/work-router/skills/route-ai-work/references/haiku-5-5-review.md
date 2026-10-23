@@ -46,8 +46,9 @@ and token figures from [Artificial Analysis](https://artificialanalysis.ai/artic
    latency-bound. Haiku 5.5's gains do not justify raising `fast-scout` effort, and
    high/max token use erodes the price advantage.
 3. **General coding stays on Sonnet.** Terminal-Bench 4.0 at 39.2% versus Sonnet 5.5's
-   70.6% fails the completed-task economics bar: retries and review would exceed the
-   token savings on ordinary implementation.
+   70.6% supports keeping the stronger coding default pending representative paired
+   results. It does not measure local retry rates or establish that review costs
+   exceed token savings. This inference was clarified October 22; the default is unchanged.
 4. **Opt-in mechanical edits.** `work-router:haiku-builder` (Haiku, high) exists for
    bounded mechanical edits with objective checks: renames, format migrations,
    fixture regeneration, lint-rule fixes. It is **untested in this repository** and is

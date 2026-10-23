@@ -45,8 +45,9 @@ not automatically faster.
    startup, duplicated context, transfer, review and integration costs.
 5. **One write-capable owner per working tree.** Never run the parent and a writing
    subagent against overlapping files at the same time.
-6. Choose the initial model and effort from the task. Astra or xhigh can be chosen
-   upfront when warranted; no failed lower attempt is required.
+6. Choose the initial model and effort from the task and current host. A stronger
+   permitted model or greater effort can be chosen upfront; no failed lower attempt
+   is required.
 7. After an inadequate attempt, fix context or tools first; then add effort for missing
    depth, or a stronger model for missing capability or judgment.
 8. Count total completion cost: retries, review and integration, not token price alone.

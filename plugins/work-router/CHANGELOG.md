@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.18.2 - 2026-10-22
+
+- Audit shared guidance for Claude compatibility. Add Claude main-thread examples,
+  separate host-specific escalation details, and remove live references to the
+  superseded Sonnet effort ceiling without rewriting historical evidence.
+- Preserve explicit model, revision and effort requirements through managed-workspace
+  fallback. Expand Claude setup checks for provider aliases, constraints and active
+  settings; use component inventory instead of the running-session `claude agents` command.
+- Add a Claude-native installed-skill inventory and scoped-cleanup path while keeping
+  the existing Codex helper explicitly host-specific.
+- Keep the recent Opus/Haiku defaults. Qualify the Haiku cost inference and clarify
+  Pareto comparison boundaries; no new model performance or subscription-burn trial.
+
 ## 1.18.1 - 2026-10-22
 
 - Add focused guidance for large collection reviews and repairs: calibrate when

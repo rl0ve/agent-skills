@@ -29,13 +29,29 @@ or full model-cache records; extract only relevant model and effort metadata.
 
 ## Claude Code
 
-1. Run `claude --version`.
-2. Run `claude plugin list --json` and confirm this plugin is enabled.
-3. Run `claude agents` and confirm the router agents are listed.
-4. Report the provider and client version behind `haiku`: Haiku 5.5 requires the
-   Anthropic API and Claude Code 2.1.293+; Bedrock, Vertex and Foundry map it to 4.5.
-5. Ask the user to open `/model` or `/effort` only when model visibility cannot be
-   verified another way.
+1. Run `claude --version` and inspect command help when needed. Use
+   `claude plugin list --json` to check this plugin's version, scope and enablement.
+2. Inspect `claude plugin details <exact-plugin-id>` when supported, plus relevant
+   installed agent definitions. Distinguish packaged agents from those available
+   in this session. Do not assume `claude agents` lists definitions: current clients
+   use it to manage running sessions. No test agent or model call is required.
+3. Check effective user/project instructions for an active routing override and
+   explicit model, revision, effort or delegation constraints. Inspect only relevant
+   provider, alias, model allowlist and effort-cap metadata from authorized settings.
+   A fixed-model agent does not inherit the parent's family constraint automatically.
+4. Verify the actual provider/revision behind `opus`, `sonnet`, `haiku` and any proposed
+   Fable route. Apply the dated model assessments and current host catalog: for example,
+   Haiku 5.5 needs Claude Code 2.1.293+, and provider aliases can still resolve to older
+   models. An enabled plugin does not prove model availability or exact revision.
+5. Separate requested settings from host-reported active model and effort. Use available
+   session metadata; ask for `/status`, `/model` or `/effort` evidence only when needed.
+   Report unavailable evidence as unverified and a conflicting managed cap as an unmet
+   requirement, following [managed-workspace rules](../route-ai-work/references/managed-workspaces.md).
+   Do not change settings, start a session or bypass policy to complete the check.
+
+The [model controls](https://code.claude.com/docs/en/model-config) and
+[plugin component inventory](https://code.claude.com/docs/en/discover-plugins#see-what-an-installed-plugin-adds-to-your-sessions)
+were checked October 22, 2026; the installed client's help remains authoritative.
 
 ## Capability and plugin overlap
 
