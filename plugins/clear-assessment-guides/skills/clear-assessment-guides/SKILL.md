@@ -3,7 +3,7 @@ name: clear-assessment-guides
 description: Explain interfaces with verified annotated screenshots; create source-backed assessments, practical guides and interactive reviews. Use for unfamiliar controls, improvement proposals and content reviews. Use Research Reports for open-ended synthesis and Visual Version Review to compare implemented versions. Simple factual replies need no artifact.
 ---
 
-# Clear Assessment Guides
+# Explain & Review
 
 Help a reader understand the current experience, assess a proposed change, and decide
 what to do next. This method is product-, vendor-, and host-neutral. Apply the user's

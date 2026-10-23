@@ -1,5 +1,14 @@
 # Validation
 
+Release 1.5.1, checked 2026-10-23.
+
+Display-name and cross-reference update only: Explain & Review replaces the prior
+human-facing name, while the plugin ID, skill invocation, paths and behavior remain
+unchanged. All 94 repository, 109 Natural Writing and 45 UI Walkthrough Video tests,
+the Node assessment suite, marketplace and all nine plugin manifest validations,
+and the system Skill Creator validator passed. No new behavioral or rendering
+trial was needed for this metadata-only release.
+
 Release 1.5.0, checked 2026-10-23.
 
 Instruction-only addition of interface explanation, with routing handoffs from UI

@@ -7,7 +7,7 @@ unless they help meet an explicit requirement. Preserve requested native editabi
 when a video is required; an old production preference does not expand a screenshot task.
 
 If the goal is to understand icons, controls or states rather than obtain a recording,
-use Clear Assessment Guides' interface-explanation mode when available. Capture can
+use Explain & Review' interface-explanation mode when available. Capture can
 supply the source image; verified meanings, numbered callouts and the nearby legend
 belong to that explanation. Preserve the original pixels with overlays. Do not start
 recording, narration or generative UI reconstruction for a still-image explanation.

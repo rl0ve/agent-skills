@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.8 — 2026-10-23
+
+- Use the new Explain & Review display name in current routing/documentation references; keep its plugin and skill IDs unchanged.
+
 ## 1.0.7 - 2026-10-23
 
 - Name exactly what recommendations change, where the change belongs, and what is

@@ -11,7 +11,7 @@ rules as well as [the completion gates](quality-gates.md).
 ## Explain an existing interface
 
 For "what do these icons mean?" or a request to label an actual screenshot, use
-Clear Assessment Guides' interface-explanation mode when available. Verify meanings
+Explain & Review' interface-explanation mode when available. Verify meanings
 and action consequences, then preserve the screenshot pixels with native annotations
 or overlays. This is an explanation task; do not start a design critique, redesign or
 video workflow. If the skill is unavailable, explain directly using the same evidence
@@ -80,5 +80,4 @@ agent can resume without redoing the whole sweep. Do not transfer private annota
 or project screenshots into a shared UI Router package.
 
 This procedure tracks feedback to a verified fix. For a shareable assessment or a
-comment-and-decision board built from the same annotations, use Clear Assessment
-Guides; to choose among several implemented versions, use Visual Version Review.
+comment-and-decision board built from the same annotations, use Explain & Review; to choose among several implemented versions, use Visual Version Review.

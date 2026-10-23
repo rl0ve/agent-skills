@@ -1,6 +1,6 @@
 {
   "name": "clear-assessment-guides",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Verified interface explanations, annotated screenshots, source-backed assessments and guided reviews. For open-ended research synthesis, use Research Reports.",
   "author": {
     "name": "rl0ve"
@@ -18,7 +18,7 @@
   "license": "MIT",
   "skills": "./skills/",
   "interface": {
-    "displayName": "Clear Assessment Guides",
+    "displayName": "Explain & Review",
     "shortDescription": "Interface explanations and source-backed reviews",
     "developerName": "rl0ve",
     "category": "Productivity",

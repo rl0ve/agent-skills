@@ -46,7 +46,7 @@ the Claude installation plan. Add `--execute` only when ready to run it.
 ## Boundaries
 
 Visual Version Review compares implementations that exist. Capability Storyboard
-organizes a demo narrative; Clear Assessment Guides handles broader assessments and
+organizes a demo narrative; Explain & Review handles broader assessments and
 issue triage. Those plugins remain independent and are not required dependencies.
 
 Keep project captures, inventories and decisions in the consuming project. The shared

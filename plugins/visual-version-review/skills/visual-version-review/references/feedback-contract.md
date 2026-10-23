@@ -1,7 +1,7 @@
 # Feedback contract
 
 Use this when the comparison page collects choices or comments. It follows the same
-rules as Clear Assessment Guides' feedback file, keyed by version and component instead
+rules as Explain & Review' feedback file, keyed by version and component instead
 of issue.
 
 ## Choices are not implementation

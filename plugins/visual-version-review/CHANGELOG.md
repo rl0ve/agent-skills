@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1 — 2026-10-23
+
+- Use the new Explain & Review display name in current routing/documentation references; keep its plugin and skill IDs unchanged.
+
 ## 1.1.0 — 2026-10-20
 
 - Add a feedback contract adopted from Clear Assessment Guides: component choices kept separate from implementation status, export file keyed by version and component and tied to the capture manifest, whole-file import validation, pending-export and replace warnings, and script-safe embedding.

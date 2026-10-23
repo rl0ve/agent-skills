@@ -23,7 +23,7 @@ Should not trigger alone:
 - "Invent three new homepage directions." Use design exploration.
 - "Write a keynote storyboard." Use capability storytelling.
 - "Triage these copy issues one by one." Use guided assessment.
-- "Did the fix make this page better? Show the before and after." Use Clear Assessment Guides.
+- "Did the fix make this page better? Show the before and after." Use Explain & Review.
 
 ## Failure remedies
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.1 — 2026-10-23
+
+- Rename the display name to Explain & Review across plugin/skill UI metadata and current documentation. Keep the `clear-assessment-guides` plugin ID, skill name, invocation and paths stable.
+
 ## 1.5.0 — 2026-10-23
 
 - Add a focused interface-explanation mode: verify unfamiliar icons and action consequences,

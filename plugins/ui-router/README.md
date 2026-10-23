@@ -96,7 +96,7 @@ See the [source review](docs/interactive-worlds-review-2026-09-27.md) and the
 
 ## Interface explanations
 
-For unfamiliar icons or controls, UI Router uses Clear Assessment Guides' interface-explanation
+For unfamiliar icons or controls, UI Router uses Explain & Review' interface-explanation
 mode when available: verify meanings and action consequences, preserve actual screenshot
 pixels, and use a readable numbered legend. A simple definition needs no visual artifact.
 

@@ -6,7 +6,7 @@ specialist tools handle diagrams, charts, documents or an optional motion overvi
 
 Use it for strategic research, meeting preparation, a substantial source-backed
 report or a continuation of an existing research package. For issue-by-issue reviews
-and improvement proposals, use Clear Assessment Guides. For comparisons among
+and improvement proposals, use Explain & Review. For comparisons among
 implemented UI versions, use Visual Version Review.
 
 The default is one primary document format: PDF for finished reading or DOCX for

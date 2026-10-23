@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.21.4 — 2026-10-23
+
+- Use the new Explain & Review display name in current routing/documentation references; keep its plugin and skill IDs unchanged.
+
 ## 1.21.3 — 2026-10-23
 
 - Route unfamiliar-control and annotated-screenshot explanation requests to Clear Assessment

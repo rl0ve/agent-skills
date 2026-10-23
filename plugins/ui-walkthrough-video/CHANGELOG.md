@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.6 — 2026-10-23
+
+- Use the new Explain & Review display name in current routing/documentation references; keep its plugin and skill IDs unchanged.
+
 ## 1.7.5 — 2026-10-23
 
 - Quick capture hands still-image icon/control explanations to Clear Assessment Guides'
